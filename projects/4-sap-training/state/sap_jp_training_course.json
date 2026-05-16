@@ -1,0 +1,41 @@
+{
+  "id": "sap-jp-training-course",
+  "title": "SAP顾问日语培训课程资产生成",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-16T21:46:00+09:00",
+  "links": [
+    "../sap_jp_training_course/00_课程总设计.md",
+    "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
+    "../sap_jp_training_course/02_24课Codex提示词索引.md",
+    "../sap_jp_training_course/03_24课课程总览表.md",
+    "../sap_jp_training_course/04_Codex开工总提示词.md",
+    "../sap_jp_training_course/output/00_codex_understanding.md",
+    "../sap_jp_training_course/output/templates/ppt_outline_template.md",
+    "../sap_jp_training_course/output/templates/teacher_script_template.md",
+    "../sap_jp_training_course/output/templates/student_handout_template.md",
+    "../sap_jp_training_course/output/templates/phrases_template.md",
+    "../sap_jp_training_course/output/templates/roleplay_template.md",
+    "../sap_jp_training_course/output/templates/homework_template.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_ppt_outline.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_teacher_script.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_student_handout.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_phrases.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_roleplay.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_homework.md",
+    "../sap_jp_training_course/output/lesson_01/lesson_01_quality_check.md"
+  ],
+  "current_round": "Lesson 01 sample + shared templates",
+  "completed": [
+    "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
+    "Committed the course specification baseline before generating new assets.",
+    "Generated output/00_codex_understanding.md.",
+    "Generated six shared templates under output/templates/.",
+    "Generated Lesson 01 full sample package under output/lesson_01/.",
+    "Generated Lesson 01 quality check."
+  ],
+  "blocked": [],
+  "next_action": "Wait for user review of Lesson 01 style, depth, Japanese quality, and SAP scenario fit before generating Lesson 02-24.",
+  "notes": "Per user instruction, this round intentionally stops after Lesson 01 sample and templates. No Lesson 02-24 output was generated."
+}
