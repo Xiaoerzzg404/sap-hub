@@ -1,0 +1,42 @@
+{
+  "id": "curriculum-sap-japanese",
+  "title": "SAP 日本项目语言战斗力训练营 · 总进度",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "claude-code",
+  "updated_at": "2026-05-16T00:00:00+09:00",
+  "links": ["../_instructions.md", "knowledge/backbone/", "knowledge/case-packs/", "knowledge/units/"],
+  "positioning": "中国SAP顾问进入日本项目的语言战斗力训练营;学员缺的是日本项目现场表达套路",
+  "architecture": "module-agnostic backbone + replaceable case-pack + pack-template; 训练课(五动作)非讲解课",
+  "learner_profile": {
+    "jp_level": "N4-N3",
+    "sap_background": "已是某模块SAP顾问,只缺日语",
+    "design_rule": "不教SAP,只教把本模块业务用日语在真实日本项目说出来"
+  },
+  "course_format": { "standard_min": 60, "intensive_min": 90 },
+  "five_actions": ["听(听真实项目对话)","读(领读纠音)","换(句型替换)","演(角色扮演+评分)","录(课后1分钟录音作业)"],
+  "deliverables_per_unit": [
+    "01_syllabus.md","02_teacher_script.md","03_slides_prompt.md",
+    "04_student_handout.md","05_workbook.md","06_answer_key.md","07_roleplay_cards.md"
+  ],
+  "modules_target": ["FICO","SD","MM","PP","PS","QM","HCM","BASIS","ABAP/Fiori","PMO"],
+  "units": [
+    {
+      "unit_id": "u01-requirements-hearing",
+      "title": "要件定義ヒアリング：用日语问出现状·课题·要望",
+      "level": "L2-core",
+      "status": "ready_v3",
+      "format_min": {"standard": 60, "intensive": 90},
+      "backbone": "knowledge/backbone/u01-backbone.md",
+      "case_packs_done": ["FICO"],
+      "case_packs_pending": ["SD","MM","PP","PS","QM","HCM","BASIS","ABAP/Fiori","PMO"],
+      "files_done": ["01_syllabus","02_teacher_script","03_slides_prompt","04_student_handout","05_workbook","06_answer_key","07_roleplay_cards"]
+    }
+  ],
+  "course_levels_for_reference_only": "L0体验/L1生存/L2核心场景/L3模块专题/L4高级顾问表达——产品化与定价归6号Project,此处仅留索引",
+  "roadmap_next_units": [
+    "u02-fit-and-gap","u03-customize-explain","u04-test-defect",
+    "u05-progress-report","u06-uat-golive","u07-addon-requirement","u08-crisis-apology"
+  ],
+  "notes": "v3废止v1/v2 u01内容;训练课五动作;FICO为首个按v3模板补全的示范包;符合state.schema.json"
+}

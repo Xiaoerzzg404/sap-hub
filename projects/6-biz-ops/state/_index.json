@@ -2,12 +2,7 @@
   "id": "project-6-index",
   "title": "biz-ops 状态索引",
   "status": "in_progress",
-  "owner": "user",
   "updated_by": "claude-code",
   "updated_at": "2026-05-16T00:00:00+09:00",
-  "links": [
-    "../_instructions.md",
-    "../sources.yaml"
-  ],
-  "notes": "第②轮规格已填充，等大脑分批供给内容"
+  "notes": "6号v1法人经营方案已填充，含3个knowledge文件+3个state文件"
 }

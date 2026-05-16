@@ -1,0 +1,17 @@
+{
+  "id": "biz-objectives",
+  "title": "法人经营目标（阶段一·验证）",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "claude-code",
+  "updated_at": "2026-05-16T00:00:00+09:00",
+  "links": ["../knowledge/growth-path.md", "../knowledge/business-model.md"],
+  "current_stage": "阶段一·验证",
+  "objectives": [
+    {"o": "跑完 1 期 MVP 训练营", "metric": "完整开课并结课", "target": "用户定档期"},
+    {"o": "招到种子学员", "metric": "人数", "target_range": "5-10（用户定）"},
+    {"o": "攒可展示资产", "metric": "证言数/成长案例数", "target": "证言≥3, 案例≥1"},
+    {"o": "建错误数据库", "metric": "收录条目", "target": "够支撑课程迭代（用户判断）"}
+  ],
+  "notes": "目标值多为区间或留待用户定档——单人创业不宜由外部把数值写死;阶段一重在验证非营收"
+}

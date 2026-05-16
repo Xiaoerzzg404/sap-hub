@@ -1,0 +1,20 @@
+{
+  "id": "biz-pipeline",
+  "title": "业务机会管线（模板）",
+  "status": "todo",
+  "owner": "user",
+  "updated_by": "claude-code",
+  "updated_at": "2026-05-16T00:00:00+09:00",
+  "links": ["../knowledge/ops-playbook.md"],
+  "stages": ["线索(来自自媒体)", "体验课报名", "训练营洽谈", "成交", "结课", "复购/转介"],
+  "schema_per_lead": {
+    "lead_id": "稳定唯一",
+    "source": "公众号/视频号/小红书/转介",
+    "stage": "上列 stages 之一",
+    "module": "学员模块 FICO/SD/...",
+    "note": "进展",
+    "updated_at": "ISO8601 Asia/Tokyo"
+  },
+  "leads": [],
+  "notes": "空管线模板;有真实线索时按 schema_per_lead 追加,个人信息不入 git 跟踪文件"
+}
