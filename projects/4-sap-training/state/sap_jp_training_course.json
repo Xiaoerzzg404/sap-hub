@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-16T23:35:00+09:00",
+  "updated_at": "2026-05-17T00:40:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -45,9 +45,15 @@
     "../sap_jp_training_course/output/lesson_01_v3/lesson_01_teacher_script_v3.md",
     "../sap_jp_training_course/output/lesson_01_v3/lesson_01_dialogue_5_versions.md",
     "../sap_jp_training_course/output/lesson_01_v3/lesson_01_case_pack_fico.md",
-    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_quality_check_v3.md"
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_quality_check_v3.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/00_START_HERE_FOR_TEACHER.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/02_student_materials/01_student_ppt_outline_final.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/04_case_pack/01_case_pack_appendix_all_modules.md",
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/06_management/02_quality_check_teacher_usability.md"
   ],
-  "current_round": "Lesson 01 v3 final commercial sample package",
+  "current_round": "Lesson 01 v4 teacher-focused final package",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -59,9 +65,11 @@
     "Split Lesson 01 PPT outline into teacher and student versions.",
     "Added slide-script mapping, student deliverables manifest, cheatsheet, must-memorize sentences, meeting quick reference, homework v2, and Japanese naturalness review.",
     "Generated Lesson 01 v3 final commercial sample package under output/lesson_01_v3/.",
-    "Added hard 5 sentences, dialogue 5 versions, three-level expressions, CN-JP pitfalls Top5, workbook, answer key, recording homework guide, roleplay scoring, and five module case-packs."
+    "Added hard 5 sentences, dialogue 5 versions, three-level expressions, CN-JP pitfalls Top5, workbook, answer key, recording homework guide, roleplay scoring, and five module case-packs.",
+    "Generated Lesson 01 v4 teacher-focused final package under output/lesson_01_v4_teacher_focused/.",
+    "Merged v1/v2/v3 scattered assets into 12 concentrated files with student PPT, slide-by-slide teacher script, classroom practice, student handout/homework, case-pack appendix, expression appendix, source merge log, and teacher usability QA."
   ],
   "blocked": [],
-  "next_action": "Wait for user review of Lesson 01 v3 before generating or copying this structure to Lesson 02-24.",
-  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v3/. Repeated v2 assets were not reworked beyond v3 requirements. No Lesson 02-24 output was generated. PPTX was not generated; a PPTX generation note was added."
+  "next_action": "Wait for user review of Lesson 01 v4 teacher-focused package before generating Lesson 02 or any Lesson 02-24 batch.",
+  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v4_teacher_focused/. v1/v2/v3 source files were not modified, deleted, or overwritten. No Lesson 02-24 output was generated. v4 deliberately concentrates assets into 12 official files rather than continuing the 30-40 Markdown file pattern."
 }
