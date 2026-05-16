@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-16T23:02:00+09:00",
+  "updated_at": "2026-05-16T23:35:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -37,9 +37,17 @@
     "../sap_jp_training_course/output/lesson_01_v2/lesson_01_before_meeting_quick_reference.md",
     "../sap_jp_training_course/output/lesson_01_v2/lesson_01_homework_v2.md",
     "../sap_jp_training_course/output/lesson_01_v2/lesson_01_japanese_naturalness_review.md",
-    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_quality_check_v2.md"
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_quality_check_v2.md",
+    "../sap_jp_training_course/output/lesson_01_v3/00_lesson_01_v3_readme.md",
+    "../sap_jp_training_course/output/lesson_01_v3/01_lesson_01_v3_master_index.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_student_ppt_outline.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_teacher_ppt_outline.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_teacher_script_v3.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_dialogue_5_versions.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_case_pack_fico.md",
+    "../sap_jp_training_course/output/lesson_01_v3/lesson_01_quality_check_v3.md"
   ],
-  "current_round": "Lesson 01 v2 commercial delivery iteration",
+  "current_round": "Lesson 01 v3 final commercial sample package",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -49,9 +57,11 @@
     "Generated Lesson 01 quality check.",
     "Generated Lesson 01 v2 commercial delivery package under output/lesson_01_v2/.",
     "Split Lesson 01 PPT outline into teacher and student versions.",
-    "Added slide-script mapping, student deliverables manifest, cheatsheet, must-memorize sentences, meeting quick reference, homework v2, and Japanese naturalness review."
+    "Added slide-script mapping, student deliverables manifest, cheatsheet, must-memorize sentences, meeting quick reference, homework v2, and Japanese naturalness review.",
+    "Generated Lesson 01 v3 final commercial sample package under output/lesson_01_v3/.",
+    "Added hard 5 sentences, dialogue 5 versions, three-level expressions, CN-JP pitfalls Top5, workbook, answer key, recording homework guide, roleplay scoring, and five module case-packs."
   ],
   "blocked": [],
-  "next_action": "Wait for user review of Lesson 01 v2 commercial delivery style before generating or copying this structure to Lesson 02-24.",
-  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v2/. No Lesson 02-24 output was generated. PPTX was not generated because this round prioritized Markdown deliverables and no stable verified PPTX QA workflow was run."
+  "next_action": "Wait for user review of Lesson 01 v3 before generating or copying this structure to Lesson 02-24.",
+  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v3/. Repeated v2 assets were not reworked beyond v3 requirements. No Lesson 02-24 output was generated. PPTX was not generated; a PPTX generation note was added."
 }
