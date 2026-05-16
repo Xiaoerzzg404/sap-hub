@@ -1,0 +1,10 @@
+# sap-hub 全局忽略
+.DS_Store
+*.swp
+*.log
+node_modules/
+__pycache__/
+.env
+.env.*
+*.token
+*.secret

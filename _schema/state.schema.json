@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "sap-hub state item",
+  "type": "object",
+  "required": ["id", "title", "status", "updated_by", "updated_at"],
+  "properties": {
+    "id":         { "type": "string", "description": "稳定唯一标识" },
+    "title":      { "type": "string" },
+    "status":     { "type": "string",
+                    "enum": ["todo", "in_progress", "blocked", "done", "archived"] },
+    "owner":      { "type": "string", "description": "当前负责的人或 agent" },
+    "updated_by": { "type": "string",
+                    "description": "claude-code / cowork / codex / chatgpt / hermes / user" },
+    "updated_at": { "type": "string", "format": "date-time",
+                    "description": "ISO8601，Asia/Tokyo" },
+    "links":      { "type": "array", "items": { "type": "string" },
+                    "description": "相关产物/文件相对路径" },
+    "notes":      { "type": "string" }
+  },
+  "additionalProperties": true
+}
