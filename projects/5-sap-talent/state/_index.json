@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "claude-code",
-  "updated_at": "2026-05-16T17:04:56+09:00",
+  "updated_at": "2026-05-16T00:00:00+09:00",
   "links": [
     "../_instructions.md",
     "../sources.yaml"
