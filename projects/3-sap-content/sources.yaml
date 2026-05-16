@@ -1,5 +1,7 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "内容生产主要吃 2-sap-intel 的产料，本文件登记额外直采源"
+upstream:
+  - "projects/2-sap-intel/knowledge/"   # 主原料来自 SAP 情报
+sources: []   # 如有内容生产专用直采源，agent 按 2 号的结构追加

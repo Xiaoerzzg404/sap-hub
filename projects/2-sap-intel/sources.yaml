@@ -1,5 +1,27 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "起始模板，待用户/大脑补充偏好源（含日文 SAP 源）"
+sources:
+  - name: "SAP 官方新闻"
+    type: official
+    url: "https://news.sap.com"
+    priority: high
+    why: "版本/路线图/产品权威源"
+  - name: "SAP 官方路线图/帮助"
+    type: official
+    url: "https://roadmaps.sap.com"
+    priority: high
+    why: "教培与经营都依赖准确的版本路线"
+  - name: "SAP 日本（日文源）"
+    type: official
+    region: jp
+    url: "https://www.sap.com/japan/index.html"
+    priority: high
+    why: "用户在日本，日文 SAP 动态对教培/人才/经营直接相关"
+  - name: "SAP 社区"
+    type: community
+    url: "https://community.sap.com"
+    priority: medium
+    why: "项目经验与技术细节原料"
+  # agent 补充按此结构，日文源优先补

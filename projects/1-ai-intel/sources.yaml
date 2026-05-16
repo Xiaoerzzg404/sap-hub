@@ -1,5 +1,23 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+# AI 情报信源清单。agent 可增补，但每个源必须标 why 与 priority。
+# 用户后续会补充其偏好源；以下为起始模板。
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "起始模板，待用户/大脑补充偏好源"
+sources:
+  - name: "Anthropic 官方"
+    type: official
+    url: "https://www.anthropic.com/news"
+    priority: high
+    why: "主力模型方与产品变化，直接影响用户排兵布阵"
+  - name: "OpenAI 官方"
+    type: official
+    url: "https://openai.com/news"
+    priority: high
+    why: "主流大模型动态，影响内容选题与工具选型"
+  - name: "主流大模型用法/技巧"
+    type: topic
+    keyword: "LLM prompt engineering / agent best practices"
+    priority: medium
+    why: "用户需要主流大模型高效使用方法供自媒体与自用"
+  # agent 补充时按此结构追加，必填 name/type/priority/why

@@ -1,5 +1,11 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "经营 Project 主要消费 1-5 号产出，无独立外部信源"
+upstream:
+  - "projects/1-ai-intel/"
+  - "projects/2-sap-intel/"
+  - "projects/3-sap-content/"
+  - "projects/4-sap-training/"
+  - "projects/5-sap-talent/"
+sources: []

@@ -1,5 +1,8 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "教培内容原料来自 2-sap-intel + ChatGPT 输入 + 大脑检索"
+upstream:
+  - "projects/2-sap-intel/knowledge/"
+  - "projects/4-sap-training/knowledge/inputs/chatgpt/"
+sources: []

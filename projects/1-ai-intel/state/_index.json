@@ -1,0 +1,13 @@
+{
+  "id": "project-1-index",
+  "title": "ai-intel 状态索引",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "claude-code",
+  "updated_at": "2026-05-16T17:04:56+09:00",
+  "links": [
+    "../_instructions.md",
+    "../sources.yaml"
+  ],
+  "notes": "第②轮规格已填充，等大脑分批供给内容"
+}

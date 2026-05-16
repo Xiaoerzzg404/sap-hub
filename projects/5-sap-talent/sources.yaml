@@ -1,5 +1,7 @@
-# 待大脑提供
-# 形如:
-# - name: ""
-#   url: ""
-#   priority: 2
+meta:
+  owner: user
+  updated_by: claude-code
+  note: "上游为 4 号成长体系与 3 号引流；人才/企业数据由用户录入"
+upstream:
+  - "projects/4-sap-training/"
+sources: []
