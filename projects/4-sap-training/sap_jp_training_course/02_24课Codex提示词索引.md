@@ -1,0 +1,26 @@
+# 24课Codex提示词索引
+
+- [lesson_01_codex_prompt.md](prompts/lesson_01_codex_prompt.md)：“和”文化与“礼仪至上”理念解读
+- [lesson_02_codex_prompt.md](prompts/lesson_02_codex_prompt.md)：“严谨细致”与“责任担当”文化
+- [lesson_03_codex_prompt.md](prompts/lesson_03_codex_prompt.md)：日本职场基础礼仪
+- [lesson_04_codex_prompt.md](prompts/lesson_04_codex_prompt.md)：日本职场沟通习惯
+- [lesson_05_codex_prompt.md](prompts/lesson_05_codex_prompt.md)：日本职场敬语应用
+- [lesson_06_codex_prompt.md](prompts/lesson_06_codex_prompt.md)：日本企业整体信息化架构
+- [lesson_07_codex_prompt.md](prompts/lesson_07_codex_prompt.md)：日本企业信息化发展趋势
+- [lesson_08_codex_prompt.md](prompts/lesson_08_codex_prompt.md)：日本企业数据管理标准
+- [lesson_09_codex_prompt.md](prompts/lesson_09_codex_prompt.md)：日本企业信息安全制度
+- [lesson_10_codex_prompt.md](prompts/lesson_10_codex_prompt.md)：日本SAP市场规模与主要客户群体
+- [lesson_11_codex_prompt.md](prompts/lesson_11_codex_prompt.md)：日本SAP服务商与合作模式
+- [lesson_12_codex_prompt.md](prompts/lesson_12_codex_prompt.md)：日本SAP核心模块需求
+- [lesson_13_codex_prompt.md](prompts/lesson_13_codex_prompt.md)：日本SAP顾问人才标准
+- [lesson_14_codex_prompt.md](prompts/lesson_14_codex_prompt.md)：项目启动会议日语表达
+- [lesson_15_codex_prompt.md](prompts/lesson_15_codex_prompt.md)：需求调研日语交流
+- [lesson_16_codex_prompt.md](prompts/lesson_16_codex_prompt.md)：系统配置沟通日语
+- [lesson_17_codex_prompt.md](prompts/lesson_17_codex_prompt.md)：SAP Basis模块配置日语
+- [lesson_18_codex_prompt.md](prompts/lesson_18_codex_prompt.md)：测试阶段日语交流
+- [lesson_19_codex_prompt.md](prompts/lesson_19_codex_prompt.md)：项目上线支持日语
+- [lesson_20_codex_prompt.md](prompts/lesson_20_codex_prompt.md)：运维阶段日语交流
+- [lesson_21_codex_prompt.md](prompts/lesson_21_codex_prompt.md)：办公场景基础对话
+- [lesson_22_codex_prompt.md](prompts/lesson_22_codex_prompt.md)：邮件与会议基础日语
+- [lesson_23_codex_prompt.md](prompts/lesson_23_codex_prompt.md)：跨部门协作日语
+- [lesson_24_codex_prompt.md](prompts/lesson_24_codex_prompt.md)：职场问题应对日语
