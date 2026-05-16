@@ -4,11 +4,11 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-16T21:46:00+09:00",
+  "updated_at": "2026-05-16T23:02:00+09:00",
   "links": [
     "../_instructions.md",
     "../sources.yaml",
     "sap_jp_training_course.json"
   ],
-  "notes": "SAP顾问日语培训课程第一轮执行中：课程规格已接入，Lesson 01 样板课与统一模板已生成，等待用户确认后再推进 Lesson 02-24。"
+  "notes": "SAP顾问日语培训课程 Lesson 01 v2 商业交付版已生成到 sap_jp_training_course/output/lesson_01_v2/，等待用户确认后再决定是否复制到 Lesson 02-24。"
 }

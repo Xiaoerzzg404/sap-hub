@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-16T21:46:00+09:00",
+  "updated_at": "2026-05-16T23:02:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -24,18 +24,34 @@
     "../sap_jp_training_course/output/lesson_01/lesson_01_phrases.md",
     "../sap_jp_training_course/output/lesson_01/lesson_01_roleplay.md",
     "../sap_jp_training_course/output/lesson_01/lesson_01_homework.md",
-    "../sap_jp_training_course/output/lesson_01/lesson_01_quality_check.md"
+    "../sap_jp_training_course/output/lesson_01/lesson_01_quality_check.md",
+    "../sap_jp_training_course/output/lesson_01_v2/00_lesson_01_v2_readme.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_student_deliverables_manifest.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_teacher_ppt_outline.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_student_ppt_outline.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_slide_script_mapping.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_teacher_script_v2.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_student_handout_v2.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_student_cheatsheet.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_must_memorize_10_sentences.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_before_meeting_quick_reference.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_homework_v2.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_japanese_naturalness_review.md",
+    "../sap_jp_training_course/output/lesson_01_v2/lesson_01_quality_check_v2.md"
   ],
-  "current_round": "Lesson 01 sample + shared templates",
+  "current_round": "Lesson 01 v2 commercial delivery iteration",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
     "Generated output/00_codex_understanding.md.",
     "Generated six shared templates under output/templates/.",
     "Generated Lesson 01 full sample package under output/lesson_01/.",
-    "Generated Lesson 01 quality check."
+    "Generated Lesson 01 quality check.",
+    "Generated Lesson 01 v2 commercial delivery package under output/lesson_01_v2/.",
+    "Split Lesson 01 PPT outline into teacher and student versions.",
+    "Added slide-script mapping, student deliverables manifest, cheatsheet, must-memorize sentences, meeting quick reference, homework v2, and Japanese naturalness review."
   ],
   "blocked": [],
-  "next_action": "Wait for user review of Lesson 01 style, depth, Japanese quality, and SAP scenario fit before generating Lesson 02-24.",
-  "notes": "Per user instruction, this round intentionally stops after Lesson 01 sample and templates. No Lesson 02-24 output was generated."
+  "next_action": "Wait for user review of Lesson 01 v2 commercial delivery style before generating or copying this structure to Lesson 02-24.",
+  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v2/. No Lesson 02-24 output was generated. PPTX was not generated because this round prioritized Markdown deliverables and no stable verified PPTX QA workflow was run."
 }
