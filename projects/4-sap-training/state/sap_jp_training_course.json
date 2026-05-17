@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-17T00:40:00+09:00",
+  "updated_at": "2026-05-17T23:50:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -51,9 +51,19 @@
     "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/02_student_materials/01_student_ppt_outline_final.md",
     "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md",
     "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/04_case_pack/01_case_pack_appendix_all_modules.md",
-    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/06_management/02_quality_check_teacher_usability.md"
+    "../sap_jp_training_course/output/lesson_01_v4_teacher_focused/06_management/02_quality_check_teacher_usability.md",
+    "../sap_jp_training_course/00_课程总设计_V4.md",
+    "../sap_jp_training_course/04_Codex开工总提示词_V4.md",
+    "../sap_jp_training_course/templates_v4/lesson_v4_teacher_focused_template.md",
+    "../sap_jp_training_course/prompts_v4/single_lessons/lesson_02_v4_codex_prompt.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/00_START_HERE_FOR_TEACHER.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/02_student_materials/01_student_ppt_outline_final.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/04_case_pack/01_case_pack_appendix_all_modules.md",
+    "../sap_jp_training_course/output/lesson_02_v4_teacher_focused/06_management/02_quality_check_teacher_usability.md"
   ],
-  "current_round": "Lesson 01 v4 teacher-focused final package",
+  "current_round": "Lesson 02 v4 teacher-focused package",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -67,9 +77,12 @@
     "Generated Lesson 01 v3 final commercial sample package under output/lesson_01_v3/.",
     "Added hard 5 sentences, dialogue 5 versions, three-level expressions, CN-JP pitfalls Top5, workbook, answer key, recording homework guide, roleplay scoring, and five module case-packs.",
     "Generated Lesson 01 v4 teacher-focused final package under output/lesson_01_v4_teacher_focused/.",
-    "Merged v1/v2/v3 scattered assets into 12 concentrated files with student PPT, slide-by-slide teacher script, classroom practice, student handout/homework, case-pack appendix, expression appendix, source merge log, and teacher usability QA."
+    "Merged v1/v2/v3 scattered assets into 12 concentrated files with student PPT, slide-by-slide teacher script, classroom practice, student handout/homework, case-pack appendix, expression appendix, source merge log, and teacher usability QA.",
+    "Generated Lesson 02 v4 teacher-focused package under output/lesson_02_v4_teacher_focused/.",
+    "Created 28-page student PPT outline and matching slide-by-slide teacher script with detailed Chinese口播, Japanese examples, reading design, corrections, and transitions.",
+    "Concentrated Lesson 02 student handout/homework, classroom workbook/roleplay, multi-module case-pack, phrase/dialogue/pitfalls appendix, source merge log, usability QA, and handoff into the v4 12-file structure."
   ],
   "blocked": [],
-  "next_action": "Wait for user review of Lesson 01 v4 teacher-focused package before generating Lesson 02 or any Lesson 02-24 batch.",
-  "notes": "Per user instruction, this round intentionally modifies only Lesson 01 by adding output/lesson_01_v4_teacher_focused/. v1/v2/v3 source files were not modified, deleted, or overwritten. No Lesson 02-24 output was generated. v4 deliberately concentrates assets into 12 official files rather than continuing the 30-40 Markdown file pattern."
+  "next_action": "Wait for user review of Lesson 02 v4 teacher-focused package before generating Lesson 03-06 or any broader Lesson03-24 batch.",
+  "notes": "Per user instruction, this round intentionally generated only Lesson 02 v4 at output/lesson_02_v4_teacher_focused/. No Lesson03-24 output was generated. The package follows the v4 12-file concentrated teacher-focused structure and emphasizes a detailed slide-by-slide script for the testing-difference initial report scenario."
 }
