@@ -4,11 +4,11 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-17T23:50:00+09:00",
+  "updated_at": "2026-05-18T00:06:49+09:00",
   "links": [
     "../_instructions.md",
     "../sources.yaml",
     "sap_jp_training_course.json"
   ],
-  "notes": "SAP顾问日语培训课程 Lesson 02 v4 讲师聚焦版已按 v4 集中结构生成到 sap_jp_training_course/output/lesson_02_v4_teacher_focused/；本轮未生成 Lesson03-24，等待用户验收 Lesson02 后再决定是否进入 Lesson03-06。"
+  "notes": "SAP顾问日语培训课程 Lesson 03-06 v4 讲师聚焦版已按 v4 集中结构生成到 sap_jp_training_course/output/lesson_03_v4_teacher_focused/ 至 lesson_06_v4_teacher_focused/；本轮未生成 Lesson07-24，等待用户验收后再决定是否进入 Lesson07-12。"
 }
