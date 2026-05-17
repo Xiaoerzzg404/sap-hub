@@ -1,0 +1,31 @@
+# Lesson 07 v4 Source Merge Log
+
+updated_by: codex
+updated_at: 2026-05-18T07:39:40+09:00
+
+## 1. 输入来源
+
+| 来源 | 使用方式 |
+|---|---|
+| `00_课程总设计_V4.md` | 采用 v4 teacher-focused 集中结构、60 分钟五动作节奏、逐字稿质量标准 |
+| `04_Codex开工总提示词_V4.md` | 按单课执行并生成 QA 和 handoff |
+| `templates_v4/lesson_v4_teacher_focused_template.md` | 严格沿用 12 文件目录结构和逐页逐字稿页格式 |
+| `prompts_v4/single_lessons/lesson_07_v4_codex_prompt.md` | 采用 Lesson07 标题、主场景、核心句型、词汇、课堂互动和课后作业 |
+
+## 2. 内容吸收记录
+
+| Prompt 要求 | 本包落点 |
+|---|---|
+| 本课主题：日本企业信息化发展趋势 | 学生 PPT S01-S10、逐字稿 S01-S10 |
+| 主场景：面试或项目初期，顾问需要用简洁日语说明日本企业IT转型的大方向和SAP顾问应关注的点。 | S06、S20、练习包 Ex1/Ex8、录音作业 |
+| 核心句型 4 个 | S12-S18、学生讲义第 6 节、表达附录 |
+| 高频词汇 | S10-S11、讲义词汇表、术语表贡献 |
+| 课堂互动 | S26-S27、练习包 Ex8/Ex9 |
+| 课后作业 | 学生讲义第 8 节、S28、handoff |
+
+## 3. 刻意没有做的事
+
+- 未生成 Lesson11-24。
+- 未覆盖 Lesson01-06 v4。
+- 未生成 30+ 分散文件。
+- 未制作 PPTX / PDF / DOCX。
