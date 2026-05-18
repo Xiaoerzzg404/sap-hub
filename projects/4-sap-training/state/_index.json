@@ -4,11 +4,11 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-18T09:59:16+09:00",
+  "updated_at": "2026-05-19T01:35:49+09:00",
   "links": [
     "../_instructions.md",
     "../sources.yaml",
     "sap_jp_training_course.json"
   ],
-  "notes": "SAP顾问日语培训课程 Lesson 11-14 v4 讲师聚焦版已按 v4 集中结构生成到 sap_jp_training_course/output/lesson_11_v4_teacher_focused/ 至 lesson_14_v4_teacher_focused/；本轮未生成 Lesson15-24，等待用户验收后再决定是否继续 Lesson15-18。"
+  "notes": "SAP顾问日语培训课程 Lesson 15-24 v4 讲师聚焦版已按 v4 集中结构生成到 sap_jp_training_course/output/lesson_15_v4_teacher_focused/ 至 lesson_24_v4_teacher_focused/；至此 Lesson01-24 v4 Markdown 真相源已分批覆盖，建议下一步做全课总索引和 PPTX 生产计划。"
 }
