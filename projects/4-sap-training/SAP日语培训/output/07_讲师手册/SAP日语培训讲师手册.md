@@ -1,0 +1,80 @@
+# SAP日语培训讲师手册
+
+- generated_at: `2026-05-19T02:19:55+09:00`
+
+## 1. 这套 SAP 日语课的教学理念
+
+本课程是 SAP 顾问的日本项目现场表达训练，不是普通商务日语课。讲师每节课都要把学生从“会单词”带到“能完成顾问动作”。
+
+## 2. 如何从英文课迁移到日语课
+
+先从 Input 的逐字稿和时间线教程提取 SAP 场景、顾问动作、学生练习和可交付输出，再转成日本项目中自然的丁寧語表达。不要逐句翻译原英文课。
+
+## 3. 如何讲 SAP 术语
+
+保留 SAP 原词、英文缩写和日本项目常用片假名。比如 SAP GUI、T-code、UAT、P2P、Fiori 不要硬翻。术语必须放进句子和项目动作里讲。
+
+## 4. 如何训练学生开口
+
+每次只给一个场景，一个句型，一个替换对象。先跟读，再替换，再做30秒输出，最后进入Role Play。
+
+## 5. 如何做 shadowing
+
+三遍：慢速、正常速度、项目场景速度。讲师要纠正停顿、语气和句尾，不追求花哨敬语。
+
+## 6. 如何做 substitution drill
+
+固定结构，替换对象。例：認識が合っているか確認させてください -> 要件 / 仕様 / スコープ。
+
+## 7. 如何做 role play
+
+Role Play 必须有背景、角色、任务、必须句型、示例对话和点评点。不能只聊天，要完成顾问动作。
+
+## 8. 如何点评学生输出
+
+先肯定完成度，再指出一个最影响项目可信度的问题：没有确认范围、没有影响范围、没有期限、过度承诺、只说单词。
+
+## 9. 如何纠正日语表达
+
+不要把学生表达直接改成过度敬语。优先改成自然、清楚、可推进的项目日语。
+
+## 10. 如何处理学生不会说的情况
+
+给框架：まず、次に、システム上では、最終的に、次回までに。允许看稿，但必须说完整。
+
+## 11. 如何把学生回答升级成顾问表达
+
+把“分かりました”升级为“認識が合っているか確認させてください”。把“確認します”升级为“影響範囲を確認したうえで、対応方針を共有いたします”。
+
+## 12. 如何使用待复核清单
+
+待复核清单不是阻塞项。上课时不讲不确定原词，课后根据原视频、画面OCR或SAP资料复核。
+
+## 13. 每节课讲师备课清单
+
+| 课次 | 课程标题 | 备课动作 |
+|---|---|---|
+| lesson_01 | SAP概览与顾问身份建立 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_02 | SAP GUI登录、基础导航与T-code说明 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_03 | 会议复习、画面共享与项目经验提问 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_04 | 实施方法论、Blueprint与配置需求 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_05 | 业务需求、MM模块与P2P入口 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_06 | 三点照合、统制科目与会计联动 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_07 | 接口、税务系统与SAP回传字段 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_08 | 关键用户、数据交换与接口需求确认 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_09 | SD订单处理、报价到开票与流程说明 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_10 | 销售订单、客户需求与定制化报表 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_11 | 跨公司调拨、STO与供应链需求 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_12 | S/4HANA成本要素、Scope与客户需求管理 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_13 | 生产流程、模块边界与客户付款 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_14 | 测试场景、SAP GUI安装与标准包 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_15 | Fit-Gap、BTP/Fiori需求与方案选择 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_16 | Configuration说明、业务需求与测试步骤准备 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_17 | Enhancement、Customer Table与开发需求确认 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_18 | SAP Activate、Best Practice与标准流程角色 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_19 | Implementation Lifecycle、Discover/Prepare与Best Practice查找 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_20 | SAP Activate vs ASAP、ECC到S/4HANA差异 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_21 | ECC与S/4HANA架构、Fiori与CVI | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_22 | 第三方接口、大量数据处理与Reprocess | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_23 | SAP版本确认、前台操作与Fiori经验说明 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
+| lesson_24 | 项目经验、报表需求与综合面试输出 | 主题确认 -> 术语 -> 句型 -> Shadowing -> Drill -> Role Play -> 录音 |
