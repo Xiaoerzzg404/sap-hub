@@ -1,0 +1,770 @@
+[
+  {
+    "id": "lesson_01-assignment-vocabulary",
+    "lessonId": "lesson_01",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_01-assignment-phrase",
+    "lessonId": "lesson_01",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_01-assignment-recording",
+    "lessonId": "lesson_01",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "60秒日语顾问自我介绍",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_01-assignment-consultant-output",
+    "lessonId": "lesson_01",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、第一次参加日本SAP项目会议，需要简洁说明自己负责的模块和可以贡献的内容。。次にインプットは个人项目经验、模块背景。システム上では项目成员根据角色分工进入议题。アウトプットは自我介绍和担当范围说明。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_02-assignment-vocabulary",
+    "lessonId": "lesson_02",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_02-assignment-phrase",
+    "lessonId": "lesson_02",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_02-assignment-recording",
+    "lessonId": "lesson_02",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "用日语教用户完成一次SAP登录",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_02-assignment-consultant-output",
+    "lessonId": "lesson_02",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、用户第一次进入测试环境，顾问要说明登录、T-code输入和截图反馈。。次にインプットはclient、user ID、password、T-code。システム上ではSAP GUI登录并进入指定事务。アウトプットは用户进入正确画面并反馈截图。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_03-assignment-vocabulary",
+    "lessonId": "lesson_03",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_03-assignment-phrase",
+    "lessonId": "lesson_03",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_03-assignment-recording",
+    "lessonId": "lesson_03",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "主持5分钟SAP项目会议开场",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_03-assignment-consultant-output",
+    "lessonId": "lesson_03",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、线上周会开始时，顾问需要确认声音、共享画面、复习上节课并请成员说明项目经验。。次にインプットはagenda、前回宿題、成员状态。システム上では共享画面并推进复习。アウトプットは会议进入主议题并留下行动项。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_04-assignment-vocabulary",
+    "lessonId": "lesson_04",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_04-assignment-phrase",
+    "lessonId": "lesson_04",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_04-assignment-recording",
+    "lessonId": "lesson_04",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "用日语说明SAP implementation flow",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_04-assignment-consultant-output",
+    "lessonId": "lesson_04",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户询问从需求到配置再到上线的整体路径，顾问要用项目语言解释。。次にインプットは业务需求、现行流程、差异点。システム上では形成Blueprint并进入配置。アウトプットは需求清单、配置方针、测试准备。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_05-assignment-vocabulary",
+    "lessonId": "lesson_05",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_05-assignment-phrase",
+    "lessonId": "lesson_05",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_05-assignment-recording",
+    "lessonId": "lesson_05",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "完成一次P2P需求访谈Role Play",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_05-assignment-consultant-output",
+    "lessonId": "lesson_05",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、用户提出采购付款相关需求，顾问需要确认业务目的、现行流程和输出单据。。次にインプットは采购需求、供应商、品目、数量。システム上ではPR/PO/GR/IV/payment流程启动。アウトプットは需求确认记录和P2P流程草图。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_06-assignment-vocabulary",
+    "lessonId": "lesson_06",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_06-assignment-phrase",
+    "lessonId": "lesson_06",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_06-assignment-recording",
+    "lessonId": "lesson_06",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "90秒说明三点照合与会计影响",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_06-assignment-consultant-output",
+    "lessonId": "lesson_06",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、业务用户问为什么发票不能过账，顾问要确认PO、GR、Invoice三点是否一致。。次にインプットはPO、GR、Invoice、供应商主数据。システム上では系统执行三点照合并生成/阻止过账。アウトプットは差异原因和下一步确认项。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_07-assignment-vocabulary",
+    "lessonId": "lesson_07",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_07-assignment-phrase",
+    "lessonId": "lesson_07",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_07-assignment-recording",
+    "lessonId": "lesson_07",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明一个外部系统回传流程",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_07-assignment-consultant-output",
+    "lessonId": "lesson_07",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、税务或电子发票系统返回正式发票号码到SAP，顾问要说明字段和异常处理。。次にインプットはSAP凭证、外部系统请求、发票号码。システム上では接口发送、校验、回写reference field。アウトプットは回传号码、日志、错误清单。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_08-assignment-vocabulary",
+    "lessonId": "lesson_08",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_08-assignment-phrase",
+    "lessonId": "lesson_08",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_08-assignment-recording",
+    "lessonId": "lesson_08",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "完成一次接口需求访谈",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_08-assignment-consultant-output",
+    "lessonId": "lesson_08",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、关键用户描述外部系统与SAP之间的数据交换，顾问需要把口头说明整理成接口需求。。次にインプットは发送数据、接收数据、字段列表、频率。システム上ではSAP与外部系统交换订单/发票信息。アウトプットは接口需求记录和待确认字段。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_09-assignment-vocabulary",
+    "lessonId": "lesson_09",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_09-assignment-phrase",
+    "lessonId": "lesson_09",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_09-assignment-recording",
+    "lessonId": "lesson_09",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "用日语讲解一个OTC流程",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_09-assignment-consultant-output",
+    "lessonId": "lesson_09",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户想了解订单处理全流程，顾问要说明从询价、报价、销售订单、出货到Billing的步骤。。次にインプットは客户询价、报价、销售订单、出货信息。システム上ではSAP生成销售凭证并推进后续步骤。アウトプットはBilling信息、会计联动、交付状态。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_10-assignment-vocabulary",
+    "lessonId": "lesson_10",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_10-assignment-phrase",
+    "lessonId": "lesson_10",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_10-assignment-recording",
+    "lessonId": "lesson_10",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "完成一次报表需求确认对话",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_10-assignment-consultant-output",
+    "lessonId": "lesson_10",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、业务希望定制一个销售订单报表，顾问要确认字段、条件、频率和使用者。。次にインプットは销售订单、客户、日期、金额、状态。システム上では系统按条件抽取并展示报表。アウトプットは报表需求清单和样例输出。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_11-assignment-vocabulary",
+    "lessonId": "lesson_11",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_11-assignment-phrase",
+    "lessonId": "lesson_11",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_11-assignment-recording",
+    "lessonId": "lesson_11",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "90秒说明STO业务流程",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_11-assignment-consultant-output",
+    "lessonId": "lesson_11",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、小分公司向大分公司申请补货，顾问要说明STO流程、库存影响和后续单据。。次にインプットは需求数量、供货组织、收货组织、库存状态。システム上ではSAP创建STO并推进发货/收货。アウトプットは调拨单据、库存变动、待确认差异。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_12-assignment-vocabulary",
+    "lessonId": "lesson_12",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_12-assignment-phrase",
+    "lessonId": "lesson_12",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_12-assignment-recording",
+    "lessonId": "lesson_12",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明一个CO相关需求是否在范围内",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_12-assignment-consultant-output",
+    "lessonId": "lesson_12",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户提出CO相关需求，但范围和S/4HANA处理方式还未确认，顾问要稳住边界。。次にインプットは成本要素、管理会计需求、实施范围。システム上ではS/4HANA中配置/主数据对象被确认。アウトプットは范围判断和待确认事项。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_13-assignment-vocabulary",
+    "lessonId": "lesson_13",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_13-assignment-phrase",
+    "lessonId": "lesson_13",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_13-assignment-recording",
+    "lessonId": "lesson_13",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明一个跨模块流程边界",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_13-assignment-consultant-output",
+    "lessonId": "lesson_13",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、项目讨论涉及生产、销售、收款多个模块，顾问要说明谁负责什么以及如何联动。。次にインプットは生产需求、销售订单、客户付款。システム上では不同模块产生对应单据和会计影响。アウトプットは跨模块责任边界表。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_14-assignment-vocabulary",
+    "lessonId": "lesson_14",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_14-assignment-phrase",
+    "lessonId": "lesson_14",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_14-assignment-recording",
+    "lessonId": "lesson_14",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "讲解一个测试场景的前提和步骤",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_14-assignment-consultant-output",
+    "lessonId": "lesson_14",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、用户没有新SAP GUI，测试无法开始，顾问要说明安装、测试场景和前提条件。。次にインプットは测试用户、SAP GUI、测试数据、测试场景。システム上では环境准备后执行标准业务流程测试。アウトプットは测试证迹和问题清单。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_15-assignment-vocabulary",
+    "lessonId": "lesson_15",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_15-assignment-phrase",
+    "lessonId": "lesson_15",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_15-assignment-recording",
+    "lessonId": "lesson_15",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "处理一个BTP/Fiori追加需求",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_15-assignment-consultant-output",
+    "lessonId": "lesson_15",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户现行业务与SAP标准流程有差异，顾问要说明gap和可能方案。。次にインプットは现行业务、SAP标准流程、移动端需求。システム上では标准/扩展/BTP方案被评估。アウトプットはFit-Gap判断和方案比较表。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_16-assignment-vocabulary",
+    "lessonId": "lesson_16",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_16-assignment-phrase",
+    "lessonId": "lesson_16",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_16-assignment-recording",
+    "lessonId": "lesson_16",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明一项配置变更的测试步骤",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_16-assignment-consultant-output",
+    "lessonId": "lesson_16",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、配置已完成，但用户需要知道如何按步骤验证，顾问要说明业务需求、配置点和测试步骤。。次にインプットは业务需求、配置项、测试数据。システム上では系统按配置执行并产生结果。アウトプットは测试步骤、期待结果、证迹。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_17-assignment-vocabulary",
+    "lessonId": "lesson_17",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_17-assignment-phrase",
+    "lessonId": "lesson_17",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_17-assignment-recording",
+    "lessonId": "lesson_17",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "完成一次开发需求确认Role Play",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_17-assignment-consultant-output",
+    "lessonId": "lesson_17",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、用户提出新功能，顾问需要判断是标准功能、enhancement还是customer program。。次にインプットは功能需求、字段、表、画面、触发条件。システム上では开发或增强被评估并进入设计。アウトプットは技术确认清单和影响范围。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_18-assignment-vocabulary",
+    "lessonId": "lesson_18",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_18-assignment-phrase",
+    "lessonId": "lesson_18",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_18-assignment-recording",
+    "lessonId": "lesson_18",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明SAP Activate中的一个阶段",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_18-assignment-consultant-output",
+    "lessonId": "lesson_18",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户问如何使用SAP Best Practice和Activate方法推进项目，顾问要说明资料、角色和阶段。。次にインプットはBest Practice内容、客户独自流程、角色职责。システム上では标准流程被导入并结合客户流程调整。アウトプットは阶段任务、角色分工、确认事项。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_19-assignment-vocabulary",
+    "lessonId": "lesson_19",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_19-assignment-phrase",
+    "lessonId": "lesson_19",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_19-assignment-recording",
+    "lessonId": "lesson_19",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "主持一次Discover到Prepare阶段说明",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_19-assignment-consultant-output",
+    "lessonId": "lesson_19",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、项目刚启动，客户需要理解Discover和Prepare阶段要做什么。。次にインプットは解决方案能力、业务价值、项目团队。システム上では团队查找Best Practice并准备后续Explore。アウトプットは阶段说明资料和action item。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_20-assignment-vocabulary",
+    "lessonId": "lesson_20",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_20-assignment-phrase",
+    "lessonId": "lesson_20",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_20-assignment-recording",
+    "lessonId": "lesson_20",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "2分钟说明ECC与S/4HANA差异",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_20-assignment-consultant-output",
+    "lessonId": "lesson_20",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、客户想从ECC迁移到S/4HANA，顾问要说明方法论差异、简化点和不能自动迁移的内容。。次にインプットはECC现状、目标S/4、迁移对象。システム上では评估简化项和配置调整。アウトプットは差异清单和迁移风险。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_21-assignment-vocabulary",
+    "lessonId": "lesson_21",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_21-assignment-phrase",
+    "lessonId": "lesson_21",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_21-assignment-recording",
+    "lessonId": "lesson_21",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "说明ECC到S/4HANA的三个主要差异",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_21-assignment-consultant-output",
+    "lessonId": "lesson_21",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、用户问为什么S/4HANA要使用Fiori和CVI，顾问要用业务能懂的语言解释。。次にインプットはECC系统、客户/供应商主数据、UI需求。システム上ではS/4HANA简化数据模型并采用Fiori。アウトプットは差异说明和待确认影响。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_22-assignment-vocabulary",
+    "lessonId": "lesson_22",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_22-assignment-phrase",
+    "lessonId": "lesson_22",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_22-assignment-recording",
+    "lessonId": "lesson_22",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "汇报一个接口错误和再处理计划",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_22-assignment-consultant-output",
+    "lessonId": "lesson_22",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、SAP到第三方系统接口报错，大量记录未处理，顾问要说明数量、原因和再处理方法。。次にインプットは接口记录、错误日志、处理数量。システム上では系统重跑或手动reprocess。アウトプットは处理结果和剩余错误清单。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_23-assignment-vocabulary",
+    "lessonId": "lesson_23",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_23-assignment-phrase",
+    "lessonId": "lesson_23",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_23-assignment-recording",
+    "lessonId": "lesson_23",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "完成一次凭证查询操作说明",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_23-assignment-consultant-output",
+    "lessonId": "lesson_23",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、顾问在前台操作时，需要向用户说明公司代码、凭证号、会计年度和版本/Fiori经验。。次にインプットはcompany code、document number、fiscal year。システム上では系统按条件查询凭证或版本信息。アウトプットは查询结果、截图、操作记录。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_24-assignment-vocabulary",
+    "lessonId": "lesson_24",
+    "type": "vocabulary",
+    "title": "词汇作业",
+    "prompt": "用本课 SAP 术语写项目现场句子。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_24-assignment-phrase",
+    "lessonId": "lesson_24",
+    "type": "phrase",
+    "title": "句型作业",
+    "prompt": "完成本课句型替换练习。",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_24-assignment-recording",
+    "lessonId": "lesson_24",
+    "type": "recording",
+    "title": "Shadowing 录音",
+    "prompt": "2分钟日语项目经验说明",
+    "status": "not-started"
+  },
+  {
+    "id": "lesson_24-assignment-consultant-output",
+    "lessonId": "lesson_24",
+    "type": "consultant-output",
+    "title": "60 秒顾问输出",
+    "prompt": "请按以下框架完成：まず背景として、面试官或PM要求顾问说明全球项目经验、报表需求和ECC/S4差异。。次にインプットは项目背景、报表目的、模块经验。システム上では系统提供执行状态和余额状态追踪。アウトプットは项目经验说明和报表需求摘要。最後に次回までに確認結果を共有します。",
+    "status": "not-started"
+  }
+]

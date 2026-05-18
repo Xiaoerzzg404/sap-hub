@@ -3,6 +3,8 @@
 *.swp
 *.log
 node_modules/
+.next/
+tsconfig.tsbuildinfo
 __pycache__/
 .env
 .env.*

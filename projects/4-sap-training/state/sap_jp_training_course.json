@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T01:35:49+09:00",
+  "updated_at": "2026-05-19T02:54:56+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -223,9 +223,17 @@
     "../sap_jp_training_course/output/lesson_24_v4_teacher_focused/04_case_pack/01_case_pack_appendix_all_modules.md",
     "../sap_jp_training_course/output/lesson_24_v4_teacher_focused/06_management/02_quality_check_teacher_usability.md",
     "../sap_jp_training_course/prompts_v4/batch/batch_19_24_v4_prompt.md",
-    "../sap_jp_training_course/output/batch_15_24_quality_report.md"
+    "../sap_jp_training_course/output/batch_15_24_quality_report.md",
+    "../../app/page.tsx",
+    "../../app/courses/lessons/[lessonId]/page.tsx",
+    "../../components/audio/AudioPlayer.tsx",
+    "../../components/audio/RecordingPanel.tsx",
+    "../../components/speaking/ShadowingCard.tsx",
+    "../../scripts/convert-content.mjs",
+    "../../data/lessons.json",
+    "../../logs/data-quality-report.md"
   ],
-  "current_round": "Lesson 15-24 v4 teacher-focused batch",
+  "current_round": "SAP Japanese speaking training platform MVP",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -254,9 +262,13 @@
     "Generated batch_11_14_quality_report.md covering Lesson 11-14 file counts, slide counts, script coverage, QA status, fact/standard assertion risk, and next-step recommendation.",
     "Generated Lesson 15-24 v4 teacher-focused packages under output/lesson_15_v4_teacher_focused/ through output/lesson_24_v4_teacher_focused/.",
     "Created 28-page student PPT outlines and matching slide-by-slide teacher scripts for Lesson 15-24, each with detailed Chinese口播, Japanese examples, reading design, corrections, and transitions.",
-    "Generated batch_15_24_quality_report.md covering Lesson 15-24 file counts, slide counts, script coverage, QA status, confirmation-boundary risks, and overall next-step recommendation."
+    "Generated batch_15_24_quality_report.md covering Lesson 15-24 file counts, slide counts, script coverage, QA status, confirmation-boundary risks, and overall next-step recommendation.",
+    "Built a Next.js/TypeScript/Tailwind student-facing SAP Japanese speaking training platform at the repository root.",
+    "Converted the 24-lesson SAP日语培训/output Markdown corpus into data/lessons.json, data/glossary.json, data/phrases.json, data/roleplays.json, data/assignments.json, and data/review-terms.json.",
+    "Implemented native audio playback, repeat playback, AB Repeat, MediaRecorder recording, IndexedDB recording history, Shadowing, 30-second micro training, 60-second consultant output, Role Play, assignment, review, glossary, phrasebook, and teacher review pages.",
+    "Verified with npm run typecheck, npm run build, and browser smoke checks for home, lesson_01, shadowing, glossary, and teacher/review-terms."
   ],
   "blocked": [],
-  "next_action": "Review the full Lesson 01-24 v4 teacher-focused Markdown corpus, then create an all-lessons index, PPTX production plan, and final course handoff if requested.",
-  "notes": "Per user instruction, this round generated Lesson 15-24 v4. Each lesson follows the v4 12-file concentrated teacher-focused structure and emphasizes detailed slide-by-slide scripts with SAP project scenarios, student PPT alignment, classroom practice, case-pack, expression appendix, QA, and handoff. Lesson15-24 cover requirements interviews, configuration communication, Basis requests, testing, go-live, operations, office basics, email/meetings, cross-department coordination, and workplace problem handling. Configuration, Basis, testing, go-live, operations, and incident content deliberately includes confirmation boundaries where appropriate."
+  "next_action": "Add real standard audio files under public/audio/ and connect backend object storage, accounts, and teacher feedback workflows when moving beyond local MVP.",
+  "notes": "Per user instruction, this round upgraded the generated SAP Japanese training corpus into an online language training MVP rather than a Markdown display site. Data conversion produced 24 lessons, 528 terms, 576 phrases, 792 Shadowing items, 120 recording tasks, 48 Role Plays, and 127 review terms. Standard audio is currently placeholder paths; student recordings are local-only in browser IndexedDB."
 }

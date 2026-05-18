@@ -1,0 +1,66 @@
+import Link from "next/link";
+import { allLessons, allReviewTerms } from "@/lib/content-loader";
+import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
+import { StudentRecordingReview } from "@/components/teacher/StudentRecordingReview";
+import { TeacherScriptViewer } from "@/components/teacher/TeacherScriptViewer";
+
+export default function TeacherPage() {
+  const missing = allLessons.filter(
+    (lesson) =>
+      lesson.terms.length === 0 ||
+      lesson.phrases.length === 0 ||
+      lesson.shadowingItems.length === 0 ||
+      lesson.rolePlays.length === 0 ||
+      lesson.microTrainings.length === 0
+  );
+
+  return (
+    <div className="page-shell space-y-6">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold text-sap">Teacher</p>
+          <h1 className="text-2xl font-bold text-ink">讲师专区</h1>
+        </div>
+        <Link href="/teacher/review-terms" className="btn-primary">
+          待复核术语
+        </Link>
+      </div>
+      <section className="grid gap-4 md:grid-cols-4">
+        <Metric label="课程设计稿" value={`${allLessons.length}`} />
+        <Metric label="课堂逐字稿" value={`${allLessons.length}`} />
+        <Metric label="待复核术语" value={`${allReviewTerms.filter((item) => item.mustReview).length}`} />
+        <Metric label="缺失课程" value={`${missing.length}`} />
+      </section>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold text-ink">课程逐字稿速览</h2>
+        <div className="grid gap-4 lg:grid-cols-2">
+          {allLessons.slice(0, 6).map((lesson) => (
+            <TeacherScriptViewer key={lesson.id} lesson={lesson} />
+          ))}
+        </div>
+      </section>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold text-ink">待复核术语</h2>
+        <ReviewTermsTable items={allReviewTerms.slice(0, 20)} />
+      </section>
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold text-ink">学生录音作业占位列表</h2>
+        <StudentRecordingReview />
+      </section>
+      <section className="panel p-4">
+        <h2 className="font-semibold text-ink">课程质量检查表</h2>
+        <p className="mt-2 text-sm text-slate-600">每课检查：课程设计、逐字稿、术语、句型、Shadowing、30秒训练、60秒输出、Role Play、作业、待复核清单。</p>
+        <div className="mt-3 text-sm text-slate-600">{missing.length ? missing.map((lesson) => <p key={lesson.id}>{lesson.id} 内容不足</p>) : <p>24 课均已具备训练站 MVP 数据。</p>}</div>
+      </section>
+    </div>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="panel p-4">
+      <p className="text-xs text-slate-500">{label}</p>
+      <p className="mt-1 text-2xl font-bold text-ink">{value}</p>
+    </div>
+  );
+}
