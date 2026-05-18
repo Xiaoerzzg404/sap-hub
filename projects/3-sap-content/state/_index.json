@@ -3,11 +3,12 @@
   "title": "sap-content 状态索引",
   "status": "in_progress",
   "owner": "user",
-  "updated_by": "claude-code",
-  "updated_at": "2026-05-16T00:00:00+09:00",
+  "updated_by": "codex",
+  "updated_at": "2026-05-18T22:50:37+09:00",
   "links": [
     "../_instructions.md",
-    "../sources.yaml"
+    "../sources.yaml",
+    "sap-jp-training-campaign-20260518.json"
   ],
-  "notes": "第②轮规格已填充，等大脑分批供给内容"
+  "notes": "第②轮规格已填充；本轮新增 SAP顾问日本项目日语实战课宣传与直播文案客观修订包，位于 knowledge/campaigns/sap-jp-training-20260518/，包括 Markdown 真相源与两个已渲染 QA 的 DOCX。"
 }

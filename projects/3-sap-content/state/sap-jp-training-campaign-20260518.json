@@ -1,0 +1,18 @@
+{
+  "id": "sap-jp-training-campaign-20260518",
+  "title": "SAP顾问日本项目日语实战课宣传与直播文案客观修订",
+  "status": "done",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-18T22:50:37+09:00",
+  "links": [
+    "../knowledge/campaigns/sap-jp-training-20260518/README.md",
+    "../knowledge/campaigns/sap-jp-training-20260518/01_revision_principles.md",
+    "../knowledge/campaigns/sap-jp-training-20260518/02_revised_promo_copy.md",
+    "../knowledge/campaigns/sap-jp-training-20260518/03_revised_live_script.md",
+    "../knowledge/campaigns/sap-jp-training-20260518/04_docx_generation_notes.md",
+    "../knowledge/campaigns/sap-jp-training-20260518/SAP顾问日本项目日语实战课_宣传文案_客观修订版_20260518.docx",
+    "../knowledge/campaigns/sap-jp-training-20260518/日本SAP项目机会与顾问日语能力_直播讲稿_客观修订版_20260518.docx"
+  ],
+  "notes": "已读取两个用户提供的 Word 附件，并结合 Project 4 SAP 日语培训课程定位、讲师背景和课程边界，生成客观修订版宣传文案与直播讲稿。修订重点：弱化过度营销词，删除无法验证的母语级/高薪/就业承诺，统一讲师背景为 2007年来日本、15年+ SAP FICO、10个以上大型项目、日本项目现场日语沟通经验；课程定位为面向已有 SAP 经验和一定日语基础顾问的项目日语表达训练。DOCX 已渲染检查：宣传文案 4 页，直播讲稿 6 页。"
+}
