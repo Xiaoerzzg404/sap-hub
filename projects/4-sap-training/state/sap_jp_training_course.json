@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T12:12:23+09:00",
+  "updated_at": "2026-05-19T13:28:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -250,9 +250,14 @@
     "../web/components/audio/RecordingPanel.tsx",
     "../web/lib/progress-storage.ts",
     "../web/components/lesson/AssignmentTextInput.tsx",
-    "../web/components/teacher/StudentRecordingReview.tsx"
+    "../web/components/teacher/StudentRecordingReview.tsx",
+    "../web/components/lesson/LessonStepper.tsx",
+    "../web/components/lesson/LessonStepShell.tsx",
+    "../web/components/layout/MobileNav.tsx",
+    "../web/data/roleplays.json",
+    "../web/data/lessons.json"
   ],
-  "current_round": "SAP Japanese speaking training platform MVP",
+  "current_round": "SAP Japanese speaking training platform Phase 4 UX alpha",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -288,9 +293,12 @@
     "Verified with npm run typecheck, npm run build, and browser smoke checks for home, lesson_01, shadowing, glossary, and teacher/review-terms.",
     "Phase 0: migrated Next.js web app from sap-hub root to projects/4-sap-training/web/, preserved git history via git mv, typecheck and build green.",
     "Phase 1: added Track/Level/Lesson asset data model, generated tracks.json and Lesson.assets from 11-directory and v4 markdown sources, typecheck and build green.",
-    "Phase 2: bound Lesson.assets and cross-course library markdown into student lesson, teacher, and /library UI with role-aware Markdown rendering; typecheck, build, and browser smoke checks green."
+    "Phase 2: bound Lesson.assets and cross-course library markdown into student lesson, teacher, and /library UI with role-aware Markdown rendering; typecheck, build, and browser smoke checks green.",
+    "Phase 4: added LessonStepper and wrapped the lesson detail training flow into 5 guided steps while keeping reference assets visible.",
+    "Phase 4: updated home, dashboard, teacher, mobile navigation, and lang=ja Japanese font handling for v0.x alpha UX clarity.",
+    "Phase 4: rewrote RolePlay extraction to parse real Japanese from role labels, table rows, code blocks, and strict real-sentence fallbacks; generated 48 roleplays covering all 24 lessons."
   ],
   "blocked": [],
-  "next_action": "After Claude validates Phase 2, proceed to Phase 3: restore local training MVP with real audio assets, de-generated content cleanup, dashboard fixes, self-assessment persistence, text homework persistence, and teacher placeholder clarity.",
-  "notes": "Phase 3 MVP rescue completed by Codex on branch codex/phase-3-mvp-rescue: content conversion now extracts real Japanese only (480 phrases / 480 shadowing, no fabricated Chinese translations), TTS script added but not run per Ryan option C, Dashboard and lesson progress fixed, waveform uses AnalyserNode, blob URLs are no longer persisted, self-assessment and favoriteShadowing are stored in localStorage, teacher recording review is an explicit backend placeholder, text assignments persist locally, and data/_meta.json schemaVersion 1.1.0 records the data contract. RolePlay extraction remains 0 because no true A/B turn lines were found under the strict no-fabrication rule."
+  "next_action": "Stop and wait for Ryan / Claude to validate Phase 4 handoff before starting Phase 5 Auth + DB + server foundation.",
+  "notes": "Phase 4 UX alpha completed by Codex on branch codex/phase-4-ux: LessonStepper guides each lesson through 5 steps, home/dashboard/teacher/mobile navigation clarify v0.x alpha boundaries, lang=ja segments use the Japanese font stack, and RolePlay extraction now produces 48 real-Japanese roleplays covering all 24 lessons. Known engineering debt remains: lessons.json is 6.1 MB and data-heavy pages such as /library are above 600 KB First Load JS; defer per-lesson JSON and dynamic import work to Phase 5/6."
 }
