@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Mic2 } from "lucide-react";
 import { allAssignments, allLessons } from "@/lib/content-loader";
 import { RecordingPanel } from "@/components/audio/RecordingPanel";
+import { AssignmentTextInput } from "@/components/lesson/AssignmentTextInput";
 
 const typeLabels = {
   vocabulary: "词汇作业",
@@ -61,8 +62,7 @@ export default function AssignmentsPage() {
                 <span className="rounded-md bg-mist px-2 py-1 text-xs text-slate-600">{typeLabels[assignment.type]}</span>
               </div>
               <p className="mt-2 text-sm text-slate-600">{assignment.prompt}</p>
-              <textarea className="input mt-3 min-h-24 w-full" placeholder="本地输入区，后续可接入后端作业提交" />
-              <div className="mt-2 text-xs text-slate-500">状态：未开始 / 进行中 / 已完成 / 待讲师点评</div>
+              <AssignmentTextInput assignmentId={assignment.id} prompt={assignment.prompt} />
             </div>
           ))}
         </div>

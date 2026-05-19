@@ -1,5 +1,6 @@
 import type { Assignment } from "@/types/assignment";
 import { RecordingPanel } from "@/components/audio/RecordingPanel";
+import { AssignmentTextInput } from "./AssignmentTextInput";
 
 export function LessonAssignment({ assignments }: { assignments: Assignment[] }) {
   return (
@@ -25,7 +26,7 @@ export function LessonAssignment({ assignments }: { assignments: Assignment[] })
                 />
               </div>
             ) : (
-              <textarea className="input mt-3 min-h-24 w-full" placeholder="输入文本作业，本地保存版本后续可接入数据库" />
+              <AssignmentTextInput assignmentId={assignment.id} prompt={assignment.prompt} />
             )}
           </div>
         ))}
