@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T13:28:00+09:00",
+  "updated_at": "2026-05-20T08:07:02+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -257,7 +257,7 @@
     "../web/data/roleplays.json",
     "../web/data/lessons.json"
   ],
-  "current_round": "SAP Japanese speaking training platform Phase 4 UX alpha",
+  "current_round": "SAP Japanese speaking training platform Phase 5 Auth + Postgres backend MVP",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -296,9 +296,14 @@
     "Phase 2: bound Lesson.assets and cross-course library markdown into student lesson, teacher, and /library UI with role-aware Markdown rendering; typecheck, build, and browser smoke checks green.",
     "Phase 4: added LessonStepper and wrapped the lesson detail training flow into 5 guided steps while keeping reference assets visible.",
     "Phase 4: updated home, dashboard, teacher, mobile navigation, and lang=ja Japanese font handling for v0.x alpha UX clarity.",
-    "Phase 4: rewrote RolePlay extraction to parse real Japanese from role labels, table rows, code blocks, and strict real-sentence fallbacks; generated 48 roleplays covering all 24 lessons."
+    "Phase 4: rewrote RolePlay extraction to parse real Japanese from role labels, table rows, code blocks, and strict real-sentence fallbacks; generated 48 roleplays covering all 24 lessons.",
+    "Phase 5: added Auth.js v5 with Resend magic-link login and Drizzle Adapter backed by Neon Postgres.",
+    "Phase 5: created and migrated 19 Postgres tables for users, classes/enrollments, seeded lesson content, progress events, recordings, favorites, library items, and review terms.",
+    "Phase 5: seeded 24 lessons, 480 phrases, 480 shadowing items, 48 roleplays, 240 lesson assets, 528 glossary terms, 6 library items, 96 assignments, and 127 review terms into Postgres.",
+    "Phase 5: replaced local-only progress and recording metadata writes with authenticated APIs that isolate rows by session.user.id while keeping localStorage/IndexedDB offline cache.",
+    "Phase 5: switched server pages to DB-backed content loading and lazy-loaded lesson/library markdown, reducing all First Load JS pages below 500 KB."
   ],
   "blocked": [],
-  "next_action": "Stop and wait for Ryan / Claude to validate Phase 4 handoff before starting Phase 5 Auth + DB + server foundation.",
-  "notes": "Phase 4 UX alpha completed by Codex on branch codex/phase-4-ux: LessonStepper guides each lesson through 5 steps, home/dashboard/teacher/mobile navigation clarify v0.x alpha boundaries, lang=ja segments use the Japanese font stack, and RolePlay extraction now produces 48 real-Japanese roleplays covering all 24 lessons. Known engineering debt remains: lessons.json is 6.1 MB and data-heavy pages such as /library are above 600 KB First Load JS; defer per-lesson JSON and dynamic import work to Phase 5/6."
+  "next_action": "Stop and wait for Ryan / Claude to validate Phase 5 handoff before starting Phase 6 storage and teacher feedback workflows.",
+  "notes": "Phase 5 backend MVP completed by Codex on branch codex/phase-5-backend: Auth.js v5 magic-link login uses Resend, Neon Postgres holds 19 migrated tables, seed-db loaded the 24-lesson jp-foundation content, progress and recording metadata APIs enforce session.user.id isolation, and data-heavy pages were slimmed below 500 KB First Load JS. Recording blobs remain local IndexedDB until Phase 6 storage is explicitly approved."
 }

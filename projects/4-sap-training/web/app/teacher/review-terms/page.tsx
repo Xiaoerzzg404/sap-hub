@@ -1,7 +1,13 @@
+import { redirect } from "next/navigation";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
+import { auth } from "@/lib/auth/options";
 import { getReviewTerms } from "@/lib/content/lessons";
 
 export default async function ReviewTermsPage() {
+  const session = await auth();
+  if (!session?.user?.id) redirect("/login?callbackUrl=/teacher/review-terms");
+  if (session.user.role !== "teacher" && session.user.role !== "admin") redirect("/");
+
   const allReviewTerms = await getReviewTerms();
 
   return (

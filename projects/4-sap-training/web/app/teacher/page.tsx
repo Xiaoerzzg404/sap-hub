@@ -1,10 +1,16 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { auth } from "@/lib/auth/options";
 import { getAllLessonsWithContent, getReviewTerms } from "@/lib/content/lessons";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
 import { StudentRecordingReview } from "@/components/teacher/StudentRecordingReview";
 import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
 export default async function TeacherPage() {
+  const session = await auth();
+  if (!session?.user?.id) redirect("/login?callbackUrl=/teacher");
+  if (session.user.role !== "teacher" && session.user.role !== "admin") redirect("/");
+
   const [allLessons, allReviewTerms] = await Promise.all([getAllLessonsWithContent(), getReviewTerms()]);
   const missing = allLessons.filter(
     (lesson) =>

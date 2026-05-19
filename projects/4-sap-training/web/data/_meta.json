@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.1.0",
-  "generatedAt": "2026-05-19T04:19:37.281Z",
-  "sourceCommit": "98259aea943457a4c2e534dfe8346f8f53a69f85",
+  "schemaVersion": "1.2.0",
+  "generatedAt": "2026-05-19T23:07:10Z",
+  "sourceCommit": "6fa8fbf0db1ad41ffadf771e47f4f59c4eaa8964",
   "stats": {
     "tracks": 1,
     "lessons": 24,
@@ -17,10 +17,18 @@
     "voice": "ja-JP-NanamiNeural",
     "generated": false
   },
+  "backend": {
+    "auth": "next-auth@5",
+    "database": "neon postgres",
+    "email": "resend",
+    "tables": 19
+  },
   "notes": [
     "Chinese translation fields for phrases/shadowing are intentionally empty.",
     "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
     "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
-    "Phase 3 selected TTS path C: script only, no mp3 generation in this commit."
+    "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
+    "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
+    "Recording blobs still stay in IndexedDB until Phase 6 storage is approved."
   ]
 }
