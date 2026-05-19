@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allLessons, getLesson, nextLesson } from "@/lib/content-loader";
+import { getAllLessons, getLessonById, getNextLesson } from "@/lib/content/lessons";
 import { LessonHeader } from "@/components/lesson/LessonHeader";
 import { LessonObjective } from "@/components/lesson/LessonObjective";
 import { ScenarioMap } from "@/components/lesson/ScenarioMap";
@@ -17,15 +17,16 @@ import { ConsultantOutputRecorder } from "@/components/speaking/ConsultantOutput
 import { RolePlayRecorder } from "@/components/speaking/RolePlayRecorder";
 import { SubstitutionDrillCard } from "@/components/speaking/SubstitutionDrillCard";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const allLessons = await getAllLessons();
   return allLessons.map((lesson) => ({ lessonId: lesson.id }));
 }
 
 export default async function LessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = getLesson(lessonId);
+  const lesson = await getLessonById(lessonId);
   if (!lesson) notFound();
-  const next = nextLesson(lesson.id);
+  const next = await getNextLesson(lesson.id);
 
   return (
     <div className="page-shell space-y-6">

@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { allLessons } from "@/lib/content-loader";
+import { getAllLessons } from "@/lib/content/lessons";
 import { LessonNav } from "@/components/layout/LessonNav";
 
-export default function CoursesPage() {
+export default async function CoursesPage() {
+  const allLessons = await getAllLessons();
+
   return (
     <div className="page-shell space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-3">

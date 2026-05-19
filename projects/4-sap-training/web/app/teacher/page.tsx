@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { allLessons, allReviewTerms } from "@/lib/content-loader";
+import { getAllLessonsWithContent, getReviewTerms } from "@/lib/content/lessons";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
 import { StudentRecordingReview } from "@/components/teacher/StudentRecordingReview";
 import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
-export default function TeacherPage() {
+export default async function TeacherPage() {
+  const [allLessons, allReviewTerms] = await Promise.all([getAllLessonsWithContent(), getReviewTerms()]);
   const missing = allLessons.filter(
     (lesson) =>
       lesson.terms.length === 0 ||

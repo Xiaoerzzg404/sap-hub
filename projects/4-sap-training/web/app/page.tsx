@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BookOpen, GraduationCap, Headphones, Mic2, PlayCircle, Repeat2, RotateCcw } from "lucide-react";
-import { allLessons } from "@/lib/content-loader";
+import { getAllLessons } from "@/lib/content/lessons";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 
 const loop = [
@@ -11,7 +11,8 @@ const loop = [
   { label: "复盘", desc: "收藏难句、低分自评、待复习术语", icon: RotateCcw }
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const allLessons = await getAllLessons();
   const firstLesson = allLessons[0];
   const entries = [
     {
