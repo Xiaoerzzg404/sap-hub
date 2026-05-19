@@ -60,5 +60,5 @@ export async function deleteRecording(id: string) {
 
 export function recordingToObjectUrl(recording: RecordingAttempt) {
   if (recording.blob) return URL.createObjectURL(recording.blob);
-  return recording.audioUrl;
+  return recording.audioUrl ?? "";
 }

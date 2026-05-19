@@ -64,10 +64,24 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
               </button>
             </div>
             <p className="mb-2 text-sm text-slate-600">{item.promptText}</p>
-            <audio className="w-full" controls src={recordingToObjectUrl(item)} />
+            <RecordingPlayback item={item} />
           </div>
         ))}
       </div>
     </div>
   );
+}
+
+function RecordingPlayback({ item }: { item: RecordingAttempt }) {
+  const [src, setSrc] = useState("");
+
+  useEffect(() => {
+    const next = recordingToObjectUrl(item);
+    setSrc(next);
+    return () => {
+      if (next.startsWith("blob:")) URL.revokeObjectURL(next);
+    };
+  }, [item]);
+
+  return <audio className="w-full" controls src={src} />;
 }

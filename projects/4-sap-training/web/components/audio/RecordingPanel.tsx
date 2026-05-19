@@ -39,6 +39,8 @@ export function RecordingPanel({
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<number | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
   const [permissionReady, setPermissionReady] = useState(false);
   const [status, setStatus] = useState<"idle" | "recording" | "paused" | "stopped">("idle");
   const [error, setError] = useState("");
@@ -49,6 +51,12 @@ export function RecordingPanel({
   useEffect(() => {
     return () => {
       if (timerRef.current) window.clearInterval(timerRef.current);
+      void closeAudioContext();
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
       if (audioUrl) URL.revokeObjectURL(audioUrl);
     };
   }, [audioUrl]);
@@ -82,6 +90,20 @@ export function RecordingPanel({
     setAudioUrl("");
     setBlob(null);
     try {
+      const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (AudioContextClass) {
+        const audioContext = new AudioContextClass();
+        const source = audioContext.createMediaStreamSource(stream);
+        const analyser = audioContext.createAnalyser();
+        analyser.fftSize = 1024;
+        source.connect(analyser);
+        audioContextRef.current = audioContext;
+        analyserRef.current = analyser;
+      }
+    } catch (err) {
+      console.warn("AnalyserNode setup failed:", err);
+    }
+    try {
       const recorder = new MediaRecorder(stream);
       mediaRecorderRef.current = recorder;
       recorder.ondataavailable = (event) => {
@@ -89,6 +111,7 @@ export function RecordingPanel({
       };
       recorder.onstop = async () => {
         stream.getTracks().forEach((track) => track.stop());
+        await closeAudioContext();
         const nextBlob = new Blob(chunksRef.current, { type: recorder.mimeType || "audio/webm" });
         const nextUrl = URL.createObjectURL(nextBlob);
         setBlob(nextBlob);
@@ -96,7 +119,7 @@ export function RecordingPanel({
         setStatus("stopped");
         if (timerRef.current) window.clearInterval(timerRef.current);
         onRecordingComplete?.();
-        if (autoSaveOnStop) await saveCurrentRecording(nextBlob, nextUrl);
+        if (autoSaveOnStop) await saveCurrentRecording(nextBlob);
       };
       recorder.start();
       setStatus("recording");
@@ -131,10 +154,21 @@ export function RecordingPanel({
     }
   }
 
-  async function saveCurrentRecording(blobOverride?: Blob, urlOverride?: string) {
+  async function closeAudioContext() {
+    if (audioContextRef.current) {
+      try {
+        await audioContextRef.current.close();
+      } catch {
+        // Recorder cleanup should never fail because analyser cleanup failed.
+      }
+    }
+    audioContextRef.current = null;
+    analyserRef.current = null;
+  }
+
+  async function saveCurrentRecording(blobOverride?: Blob) {
     const activeBlob = blobOverride ?? blob;
-    const activeUrl = urlOverride ?? audioUrl;
-    if (!activeBlob || !activeUrl) {
+    if (!activeBlob) {
       setError("还没有可保存的录音。");
       return;
     }
@@ -145,7 +179,7 @@ export function RecordingPanel({
       practiceType,
       promptText,
       targetJapanese,
-      audioUrl: activeUrl,
+      audioUrl: "",
       blob: activeBlob,
       durationSec,
       createdAt: new Date().toISOString(),
@@ -177,7 +211,7 @@ export function RecordingPanel({
           {Math.floor(durationSec / 60)}:{String(durationSec % 60).padStart(2, "0")}
         </span>
       </div>
-      <WaveformVisualizer active={status === "recording"} />
+      <WaveformVisualizer active={status === "recording"} analyser={analyserRef.current} />
       {error ? <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div> : null}
       <div className="flex flex-wrap gap-2">
         <button type="button" className="btn-primary" onClick={startRecording} disabled={status === "recording"}>
