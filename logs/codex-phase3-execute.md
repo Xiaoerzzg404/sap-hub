@@ -150,28 +150,42 @@ git checkout -b codex/phase-3-mvp-rescue
 
 ---
 
-# 第 3 章 · TTS 凭据前置决定
+# 第 3 章 · TTS 路径已决定 · 选 C（Ryan 已拍板）
 
-Phase 3 子任务 3 要批量生成 240+ 音频 mp3 文件。3 选项：
+**Ryan 已经决定**：Phase 3 **暂时不跑 TTS**，你只把脚本写好 commit。
 
-| 选项 | 内容 | Ryan 需要 |
-|---|---|---|
-| **A**（推荐）| Azure Speech ja-JP-NanamiNeural（F0 免费月 50 万字符）| 在 `web/.env.local` 配 `AZURE_SPEECH_KEY` / `AZURE_SPEECH_REGION=japaneast` / `AZURE_TTS_VOICE=ja-JP-NanamiNeural` |
-| **B** | OpenAI tts-1（日语稍偏外国口音）| 配 `OPENAI_API_KEY=sk-...` |
-| **C** | 你只写脚本不跑，Ryan 之后自己跑 | 无 |
+## 你要做的（覆盖 phase3-prompt.md 子任务 0）
 
-**起手就做**：
+1. **不要**在 inbox 写 TTS ask 停手 —— Ryan 已经选好了，直接动手
+2. **不要**真跑 `npm run tts`
+3. **不要**碰 `web/.env.local`（凭据 Ryan 后续自己配）
 
-如果 Ryan 在你这次对话开头**已经**明确选定（如直接说"我选 A，凭据 30 分钟内放好"
-或"选 C 不跑 TTS"），跳过 ask 直接照路径走。
+## 具体口径
 
-如果 Ryan **没**明确说，立刻在
-`projects/4-sap-training/inbox/need-input-phase3-tts-{YYYYMMDD}.md` 写 ask 列出
-3 选项 + 停手等 Ryan 回复。
+- **子任务 3**：写 `scripts/generate-tts.mjs` + 给 `package.json` 加 `scripts.tts: "node scripts/generate-tts.mjs"` + 创建占位目录（`web/public/audio/phrase/.gitkeep` / `shadowing/.gitkeep` / `term/.gitkeep`）+ commit。**到此为止**，不要执行 `npm run tts`。
 
-> 提示：如果是选 C，子任务 3 你只 commit 脚本不真跑 TTS；子任务 5 跑 `convert:content`
-> 时 audioSrc 已经指向 `/audio/phrase/{id}.mp3` 等最终目标路径；浏览器跑 dev 时
-> audio 仍会 404，**属预期**，不算 Phase 3 失败。
+- **scripts/generate-tts.mjs 健壮性要求**（防 Ryan 后续误跑炸掉）：
+  - 顶部检测 `if (!process.env.AZURE_SPEECH_KEY && !process.env.OPENAI_API_KEY && process.env.TTS_PROVIDER !== "skip") { console.error("ERROR: 凭据缺失。配置 web/.env.local 后重跑，或设置 TTS_PROVIDER=skip 空跑。"); process.exit(1); }`
+  - `TTS_PROVIDER=skip` 模式下脚本只打印将要生成的目标列表然后 `process.exit(0)`，**不**真发请求
+  - 这样 Ryan 后续可以先用 `TTS_PROVIDER=skip npm run tts` 干跑验证脚本能跑、再配凭据真跑
+
+- **子任务 4**（更新 audioSrc 路径）：让 `convert-content.mjs` 输出的 audioSrc 已经指向最终目标 `/audio/phrase/{id}.mp3` / `/audio/shadowing/{id}.mp3` / `/audio/term/{id}.mp3`，**不要**继续指 `/audio/placeholders/...`
+
+- **验收时**：浏览器跑 dev server 会看到 audio 404 警告（因为 mp3 文件还没生成）。**这属预期，不算 Phase 3 失败**。Ryan 后续配凭据跑 TTS 后 404 自然消失。你不要为了清掉 404 而妥协（不要提交 placeholder mp3 / 不要把 audioSrc 改回 placeholders / 不要往 git 里 commit 任何 mp3）。
+
+- **handoff** 末尾的「下一步 / Phase 3.5」段落明确写一行：
+
+  > Phase 3.5 待 Ryan 自己跑：在 web/.env.local 配 AZURE_SPEECH_KEY / AZURE_SPEECH_REGION=japaneast / AZURE_TTS_VOICE=ja-JP-NanamiNeural 后跑 `cd web && npm run tts`，预计 5-20 分钟生成 240+ mp3 到 web/public/audio/。mp3 已 .gitignore 排除不入库。
+
+## 自检：起手验证你看到 Ryan 的选 C 决定
+
+读到本章你应当：
+
+- 知道 Phase 3 **不写** `inbox/need-input-phase3-tts-*.md`
+- 知道 `npm run tts` **不执行**
+- 知道 Phase 3 验收时 audio 404 **不阻塞**
+
+直接进第 4 章开干。
 
 ---
 
