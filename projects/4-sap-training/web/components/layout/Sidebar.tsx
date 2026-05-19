@@ -12,7 +12,8 @@ import {
   ScrollText,
   Users
 } from "lucide-react";
-import { allTracks } from "@/lib/content-loader";
+import tracks from "@/data/tracks.json";
+import type { Track } from "@/types/track";
 
 const navItems = [
   { href: "/", label: "首页", icon: Home },
@@ -33,7 +34,7 @@ const navItems = [
 ];
 
 export function Sidebar() {
-  const currentTrack = allTracks[0]; // Phase 1 阶段只有一个 track
+  const currentTrack = (tracks as Track[])[0]; // Phase 1 阶段只有一个 track
 
   return (
     <aside className="sticky top-0 hidden h-screen w-60 shrink-0 border-r border-line bg-white p-4 lg:block">

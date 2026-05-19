@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Lesson, LessonAsset } from "@/types/lesson";
 import { MarkdownView } from "./MarkdownView";
 
@@ -38,6 +38,35 @@ export function LessonAssetsTabs({
   );
   const [activeKind, setActiveKind] = useState<string>(visibleAssets[0]?.kind ?? "");
   const active = visibleAssets.find((a) => a.kind === activeKind) ?? visibleAssets[0];
+  const [markdown, setMarkdown] = useState(active?.markdown ?? "");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!active) return;
+    if (active.markdown) {
+      setMarkdown(active.markdown);
+      return;
+    }
+
+    let cancelled = false;
+    setLoading(true);
+    setMarkdown("");
+    fetch(`/api/lessons/${lesson.id}/assets/${active.kind}`, { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("asset fetch failed"))))
+      .then((data) => {
+        if (!cancelled) setMarkdown(data.asset?.markdown ?? "");
+      })
+      .catch(() => {
+        if (!cancelled) setMarkdown("资料正文暂时无法读取，请确认登录状态后重试。");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [active, lesson.id]);
 
   if (visibleAssets.length === 0) {
     return (
@@ -81,7 +110,7 @@ export function LessonAssetsTabs({
             </p>
           </div>
           <div className="max-h-[640px] overflow-y-auto pr-2">
-            <MarkdownView markdown={active.markdown} />
+            {loading ? <p className="text-sm text-slate-500">加载资料中...</p> : <MarkdownView markdown={markdown} />}
           </div>
         </div>
       ) : null}

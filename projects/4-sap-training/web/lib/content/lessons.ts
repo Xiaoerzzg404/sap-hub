@@ -1,6 +1,6 @@
 import "server-only";
 
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 import fallbackLessons from "@/data/lessons.json";
 import { db } from "@/lib/db";
 import {
@@ -68,7 +68,7 @@ function toAsset(row: LessonAssetRow): LessonAsset {
     kind: row.kind as LessonAsset["kind"],
     title: row.title,
     path: row.path,
-    markdown: row.markdown,
+    markdown: "",
     wordCount: row.wordCount,
     visibility: row.visibility
   };
@@ -159,7 +159,7 @@ function toLibraryItem(row: LibraryItemRow): LibraryItem {
     kind: row.kind as LibraryItem["kind"],
     title: row.title,
     path: row.path,
-    markdown: row.markdown,
+    markdown: "",
     wordCount: row.wordCount ?? 0,
     visibility: row.visibility
   };
@@ -214,4 +214,37 @@ export async function getReviewTerms() {
 export async function getLibraryItems() {
   const rows = await db.select().from(libraryItems);
   return rows.map(toLibraryItem);
+}
+
+export async function getLibraryItemByKind(kind: string) {
+  const [row] = await db.select().from(libraryItems).where(eq(libraryItems.kind, kind));
+  return row ? { ...toLibraryItem(row), markdown: row.markdown } : null;
+}
+
+export async function getLessonAssetByKind(lessonId: string, kind: string) {
+  const [row] = await db
+    .select()
+    .from(lessonAssets)
+    .where(and(eq(lessonAssets.lessonId, lessonId), eq(lessonAssets.kind, kind)));
+  return row ? { ...toAsset(row), markdown: row.markdown } : null;
+}
+
+export async function getGlossaryTerms() {
+  const rows = await db.select().from(glossaryTerms);
+  return rows.map(toGlossaryTerm);
+}
+
+export async function getPhrases() {
+  const rows = await db.select().from(phrases);
+  return rows.map(toPhrase);
+}
+
+export async function getRoleplays() {
+  const rows = await db.select().from(roleplays);
+  return rows.map(toRoleplay);
+}
+
+export async function getAssignments() {
+  const rows = await db.select().from(assignments);
+  return rows.map(toAssignment);
 }

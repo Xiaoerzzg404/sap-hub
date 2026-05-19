@@ -1,7 +1,9 @@
-import { allReviewTerms } from "@/lib/content-loader";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
+import { getReviewTerms } from "@/lib/content/lessons";
 
-export default function ReviewTermsPage() {
+export default async function ReviewTermsPage() {
+  const allReviewTerms = await getReviewTerms();
+
   return (
     <div className="page-shell space-y-6">
       <div>

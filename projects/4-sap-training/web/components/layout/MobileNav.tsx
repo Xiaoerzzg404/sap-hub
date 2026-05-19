@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { allTracks } from "@/lib/content-loader";
+import tracks from "@/data/tracks.json";
+import type { Track } from "@/types/track";
 
 const navItems = [
   { href: "/", label: "首页" },
@@ -25,7 +26,7 @@ const navItems = [
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const currentTrack = allTracks[0];
+  const currentTrack = (tracks as Track[])[0];
 
   return (
     <>
