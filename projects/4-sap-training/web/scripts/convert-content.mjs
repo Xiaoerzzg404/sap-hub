@@ -170,6 +170,72 @@ function buildTracks() {
   return tracks;
 }
 
+function buildLibrary() {
+  // 11 大目录里 6 个跨课总表
+  const items = [
+    {
+      kind: "glossary-master",
+      title: "SAP 日语高频术语总表",
+      sourceDir: "04_术语表",
+      sourceFile: "SAP日语高频术语总表.md",
+      visibility: "both",
+    },
+    {
+      kind: "phrasebook-master",
+      title: "SAP 日语高频句型总表",
+      sourceDir: "05_句型库",
+      sourceFile: "SAP日语高频句型总表.md",
+      visibility: "both",
+    },
+    {
+      kind: "roleplay-master",
+      title: "SAP 日语 RolePlay 总合集",
+      sourceDir: "06_RolePlay脚本",
+      sourceFile: "SAP日语RolePlay总合集.md",
+      visibility: "both",
+    },
+    {
+      kind: "teacher-handbook",
+      title: "SAP 日语培训讲师手册",
+      sourceDir: "07_讲师手册",
+      sourceFile: "SAP日语培训讲师手册.md",
+      visibility: "teacher",
+    },
+    {
+      kind: "student-handbook",
+      title: "SAP 日语培训学生讲义",
+      sourceDir: "08_学生讲义",
+      sourceFile: "SAP日语培训学生讲义.md",
+      visibility: "student",
+    },
+    {
+      kind: "quality-report",
+      title: "全课程质量审查报告",
+      sourceDir: "10_质量审查",
+      sourceFile: "全课程质量审查报告.md",
+      visibility: "teacher",
+    },
+  ];
+
+  const library = [];
+  for (const item of items) {
+    const abs = path.join(sourceRoot, item.sourceDir, item.sourceFile);
+    if (!fs.existsSync(abs)) continue;
+    const md = fs.readFileSync(abs, "utf8");
+    if (!md.trim()) continue;
+    library.push({
+      kind: item.kind,
+      title: item.title,
+      path: path.relative(path.resolve(root, "../../.."), abs),
+      markdown: md,
+      wordCount: md.length,
+      visibility: item.visibility,
+    });
+  }
+  writeJson("library.json", library);
+  return library;
+}
+
 function parseTable(markdown) {
   return markdown
     .split(/\r?\n/)
@@ -590,6 +656,7 @@ const lessonAssetTotal = lessons.reduce((sum, lesson) => sum + lesson.assets.len
 const lessonAssetAverage = lessons.length ? (lessonAssetTotal / lessons.length).toFixed(1) : "0.0";
 
 buildTracks();
+buildLibrary();
 writeJson("lessons.json", lessons);
 writeJson("glossary.json", allTerms);
 writeJson("phrases.json", allPhrases);

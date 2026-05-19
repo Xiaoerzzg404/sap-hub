@@ -5,8 +5,10 @@ import roleplays from "@/data/roleplays.json";
 import assignments from "@/data/assignments.json";
 import reviewTerms from "@/data/review-terms.json";
 import tracks from "@/data/tracks.json";
+import library from "@/data/library.json";
 import type { Assignment } from "@/types/assignment";
 import type { GlossaryTerm } from "@/types/glossary";
+import type { LibraryItem } from "@/types/library";
 import type { Lesson, ReviewItem, RolePlay } from "@/types/lesson";
 import type { Phrase } from "@/types/phrase";
 import type { Track, TrackId } from "@/types/track";
@@ -18,6 +20,7 @@ export const allRoleplays = roleplays as RolePlay[];
 export const allAssignments = assignments as Assignment[];
 export const allReviewTerms = reviewTerms as ReviewItem[];
 export const allTracks = tracks as Track[];
+export const allLibraryItems = library as LibraryItem[];
 
 export function getLesson(lessonId: string) {
   return allLessons.find((lesson) => lesson.id === lessonId);
