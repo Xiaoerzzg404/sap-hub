@@ -632,37 +632,159 @@ function buildShadowingItems(lessonId, phrases) {
   });
 }
 
-function buildRoleplays(lessonId, order) {
+function roleFromLabel(label) {
+  const s = label.replace(/\s+/g, " ").trim();
+  if (/^A$/i.test(s)) return "A";
+  if (/^B$/i.test(s)) return "B";
+  if (/^(顾问|顧問|Consultant|講師|讲师|SAP\s*顾问|SAP\s*顧問|模块顾问|モジュール|PM|PMO)/i.test(s)) return "A";
+  if (/^(客户|客戶|Customer|Key User|业务用户|業務ユーザー|ユーザー|お客様|客户侧用户|学生)/i.test(s)) return "B";
+  return null;
+}
+
+function roleFromContext(context) {
+  if (/(客户|客戶|Customer|Key User|業務|业务|ユーザー|お客様|客户台词)/i.test(context)) return "B";
+  if (/(顾问|顧問|Consultant|参考回应|参考答案|改写|標準|标准|跟读|熱身|热身|句型|模块|モジュール)/i.test(context)) return "A";
+  return null;
+}
+
+function cleanRoleplayText(raw) {
+  let text = cleanMarkdownLine(raw)
+    .replace(/\s*\/\s*/g, "")
+    .replace(/^[「『"“](.+)[」』"”]$/, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+  for (let i = 0; i < 2; i += 1) {
+    const quoted = text.match(/^[「『"“](.+)[」』"”]$/);
+    if (!quoted) break;
+    text = quoted[1].trim();
+  }
+  return text;
+}
+
+function pushJapaneseTurns(turns, seen, role, raw) {
+  const text = cleanRoleplayText(raw);
+  for (const part of text.split(/(?<=[。？！!?])\s*/)) {
+    const candidate = part.trim();
+    const key = `${role}:${candidate}`;
+    if (isRealJapanese(candidate) && !seen.has(key)) {
+      turns.push({ role, text: candidate });
+      seen.add(key);
+    }
+  }
+}
+
+function parseTableCells(raw) {
+  const trimmed = raw.trim();
+  if (!trimmed.startsWith("|") || !trimmed.endsWith("|")) return null;
+  if (/^\|\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|$/.test(trimmed)) return null;
+  return trimmed
+    .slice(1, -1)
+    .split("|")
+    .map((cell) => cell.replace(/<br\s*\/?>/gi, "\n").replace(/\*\*/g, "").trim());
+}
+
+function buildRoleplays(lessonId, order, phrases = []) {
   const numStr = String(order).padStart(2, "0");
   const rpSrc = path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md`);
   if (!fs.existsSync(rpSrc)) return [];
   const md = fs.readFileSync(rpSrc, "utf8");
   const turns = [];
-  for (const raw of md.split(/\r?\n/)) {
-    const match = raw.match(/^\s*(?:[-*•・]\s*)?\*?\*?([AB])\s*[:：]\*?\*?\s*(.+)$/);
-    if (!match) continue;
-    const role = match[1];
-    const text = cleanMarkdownLine(match[2]);
-    if (isRealJapanese(text)) turns.push({ role, text });
+  const fallbackTurns = [];
+  const turnSeen = new Set();
+  const fallbackSeen = new Set();
+  const lines = md.split(/\r?\n/);
+  let currentHeading = "";
+  let pendingRole = null;
+  let inFence = false;
+  let fenceRole = null;
+
+  for (const raw of lines) {
+    const heading = raw.match(/^#{2,4}\s+(.+)$/);
+    if (heading) currentHeading = heading[1].trim();
+
+    if (/^\s*```/.test(raw)) {
+      inFence = !inFence;
+      fenceRole = inFence ? pendingRole ?? roleFromContext(currentHeading) : null;
+      pendingRole = null;
+      continue;
+    }
+
+    if (inFence) {
+      if (fenceRole) {
+        pushJapaneseTurns(turns, turnSeen, fenceRole, raw);
+      } else if (roleFromContext(currentHeading)) {
+        pushJapaneseTurns(turns, turnSeen, roleFromContext(currentHeading), raw);
+      }
+      continue;
+    }
+
+    const labelOnly = raw.match(/^\s*(客户|客戶|顾问|顧問|Customer|Consultant|Key User|业务用户|業務ユーザー|ユーザー|お客様|A|B)\s*[:：]\s*$/i);
+    if (labelOnly) {
+      pendingRole = roleFromLabel(labelOnly[1]);
+      continue;
+    }
+
+    const colonMatch = raw.match(/^\s*(?:[-*•・]\s*)?\*?\*?(A|B|顾问|顧問|客户|客戶|Key User|业务用户|業務ユーザー|Consultant|Customer|ユーザー|お客様)\s*[:：]\*?\*?\s*(.+)$/i);
+    if (colonMatch) {
+      const role = roleFromLabel(colonMatch[1]);
+      if (role) pushJapaneseTurns(turns, turnSeen, role, colonMatch[2]);
+      continue;
+    }
+
+    const cells = parseTableCells(raw);
+    if (cells) {
+      const role = roleFromLabel(cells[0] ?? "");
+      if (role) {
+        for (const cell of cells.slice(1)) pushJapaneseTurns(turns, turnSeen, role, cell);
+      } else {
+        for (const cell of cells) pushJapaneseTurns(fallbackTurns, fallbackSeen, "A", cell);
+      }
+      continue;
+    }
+
+    if (!negativeExamplePattern.test(raw)) {
+      pushJapaneseTurns(fallbackTurns, fallbackSeen, "A", raw);
+    }
   }
-  if (turns.length < 4) return [];
+
+  const hasRoleA = turns.some((turn) => turn.role === "A");
+  const hasRoleB = turns.some((turn) => turn.role === "B");
+  const merged = [];
+  const mergedSeen = new Set();
+  for (const turn of turns.concat(fallbackTurns)) {
+    const key = `${turn.role}:${turn.text}`;
+    if (!mergedSeen.has(key)) {
+      merged.push(turn);
+      mergedSeen.add(key);
+    }
+  }
+  let sourceTurns = turns.length >= 4 && hasRoleA && hasRoleB ? turns : merged;
+  if (sourceTurns.length < 4) {
+    sourceTurns = phrases
+      .map((phrase) => cleanRoleplayText(phrase.japanese))
+      .filter((text) => isRealJapanese(text))
+      .slice(0, 8)
+      .map((text) => ({ role: "A", text }));
+  }
+  if (sourceTurns.length < 4) return [];
 
   const out = [];
-  const remaining = [...turns];
-  for (let rp = 0; rp < 2 && remaining.length >= 4; rp += 1) {
-    const slice = remaining.splice(0, Math.min(8, Math.ceil(remaining.length / (2 - rp))));
-    if (slice.length < 4) break;
+  const half = Math.ceil(sourceTurns.length / 2);
+  const groups = sourceTurns.length >= 8 ? [sourceTurns.slice(0, half), sourceTurns.slice(half)] : [sourceTurns];
+  groups.forEach((group, index) => {
+    const slice = group.slice(0, 12);
+    if (slice.length < 4) return;
     out.push({
-      id: `${lessonId}-roleplay-${rp + 1}`,
+      id: `${lessonId}-roleplay-${index + 1}`,
       lessonId,
-      title: `Role Play ${rp + 1}`,
+      title: `Role Play ${index + 1}`,
       scenario: "项目现场",
       roleA: "SAP 顾问",
       roleB: "业务用户 / Key User",
       requiredPhrases: [],
       dialogue: slice
     });
-  }
+  });
   return out;
 }
 
@@ -779,7 +901,7 @@ for (let order = 1; order <= 24; order += 1) {
   const microTrainings = parseMicroTrainings(assignmentMarkdown || designMarkdown, lessonId);
   const consultantOutputs = parseConsultantOutputs(assignmentMarkdown || designMarkdown, lessonId);
   const assignments = parseAssignmentTasks(assignmentMarkdown, lessonId, finalOutputTask);
-  const lessonRoleplays = buildRoleplays(lessonId, order);
+  const lessonRoleplays = buildRoleplays(lessonId, order, lessonPhrases);
   const shadowingItems = buildShadowingItems(lessonId, lessonPhrases);
   const reviewItems = reviewByLesson.get(lessonId) ?? [];
   const assets = buildLessonAssets(lessonId, order);

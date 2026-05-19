@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.1.0",
-  "generatedAt": "2026-05-19T03:09:42.692Z",
-  "sourceCommit": "d90a2d758ea802389096310a24e91070762272e4",
+  "generatedAt": "2026-05-19T04:19:37.281Z",
+  "sourceCommit": "98259aea943457a4c2e534dfe8346f8f53a69f85",
   "stats": {
     "tracks": 1,
     "lessons": 24,
     "phrases": 480,
     "shadowing": 480,
-    "roleplays": 0,
+    "roleplays": 48,
     "glossaryTerms": 528,
     "libraryItems": 6,
     "totalAssets": 240
