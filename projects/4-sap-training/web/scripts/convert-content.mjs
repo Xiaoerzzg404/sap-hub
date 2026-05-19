@@ -7,6 +7,18 @@ const sourceRoot = path.resolve(root, "../SAP日语培训/output");
 const dataDir = path.join(root, "data");
 const logsDir = path.resolve(root, "../../../logs");
 
+// Phase 1: Level 推断（按 lesson.order 1-24 分布）
+// 1-2 → 体验；3-6 → 生存；7-18 → 核心场景；19-24 → 模块专题
+function inferLevel(order) {
+  if (order <= 2) return "L0-trial";
+  if (order <= 6) return "L1-survival";
+  if (order <= 18) return "L2-core";
+  return "L3-module";
+}
+
+// v4 单课聚焦版素材根（与 sourceRoot 同级的兄弟目录）
+const v4Root = path.resolve(root, "../sap_jp_training_course/output");
+
 const categories = {
   "会议开场与课堂互动": "meeting",
   "会议开场": "meeting",
@@ -41,6 +53,121 @@ function read(file) {
 
 function writeJson(file, value) {
   fs.writeFileSync(path.join(dataDir, file), `${JSON.stringify(value, null, 2)}\n`);
+}
+
+function buildLessonAssets(lessonId, lessonOrder) {
+  // lessonId 形如 "lesson_01"；lessonOrder 1-24
+  const numStr = String(lessonOrder).padStart(2, "0");
+  const lessonNum = String(lessonOrder);
+  const assets = [];
+
+  function tryPush(kind, absPath, title, visibility) {
+    if (!fs.existsSync(absPath)) return;
+    const md = fs.readFileSync(absPath, "utf8");
+    if (!md.trim()) return;
+    assets.push({
+      kind,
+      title,
+      // path 字段存相对 sap-hub 仓库根的路径，便于追溯（不嵌入仓库实际硬路径）
+      path: path.relative(path.resolve(root, "../../.."), absPath),
+      markdown: md,
+      wordCount: md.length,
+      visibility,
+    });
+  }
+
+  // 11 大目录素材
+  tryPush(
+    "course-design",
+    path.join(sourceRoot, "01_单课课程设计稿", `lesson_${numStr}_SAP日语培训课程设计稿.md`),
+    "课程设计稿",
+    "both"
+  );
+  tryPush(
+    "classroom-transcript",
+    path.join(sourceRoot, "02_单课日语课堂逐字稿", `lesson_${numStr}_SAP日语课堂逐字稿.md`),
+    "课堂逐字稿",
+    "both"
+  );
+  tryPush(
+    "practice-homework",
+    path.join(sourceRoot, "03_单课练习与作业", `lesson_${numStr}_练习与作业.md`),
+    "练习与作业",
+    "student"
+  );
+  tryPush(
+    "review-checklist",
+    path.join(sourceRoot, "09_待复核清单", `lesson_${numStr}_待复核清单.md`),
+    "待复核清单",
+    "both"
+  );
+
+  // 11_24课独立课程包/lesson_XX/00_README*.md
+  const pkgDir = path.join(sourceRoot, "11_24课独立课程包", `lesson_${numStr}`);
+  if (fs.existsSync(pkgDir)) {
+    const readme = fs.readdirSync(pkgDir).find((f) => /^00_README/.test(f));
+    if (readme) {
+      tryPush(
+        "package-readme",
+        path.join(pkgDir, readme),
+        "独立课程包 README",
+        "student"
+      );
+    }
+  }
+
+  // v4 单课聚焦版（在 ../sap_jp_training_course/output/lesson_XX_v4_teacher_focused/ 下）
+  const v4Dir = path.join(v4Root, `lesson_${numStr}_v4_teacher_focused`);
+  if (fs.existsSync(v4Dir)) {
+    tryPush(
+      "teacher-script-v4",
+      path.join(v4Dir, "01_teacher_core", "01_teacher_full_script_slide_by_slide.md"),
+      "讲师逐字稿（v4）",
+      "teacher"
+    );
+    tryPush(
+      "student-ppt-v4",
+      path.join(v4Dir, "02_student_materials", "01_student_ppt_outline_final.md"),
+      "学生 PPT 大纲（v4）",
+      "student"
+    );
+    tryPush(
+      "classroom-workbook-v4",
+      path.join(v4Dir, "03_classroom_practice", "01_classroom_workbook_roleplay.md"),
+      "课堂练习 + RolePlay（v4）",
+      "student"
+    );
+    tryPush(
+      "case-pack-v4",
+      path.join(v4Dir, "04_case_pack", "01_case_pack_appendix_all_modules.md"),
+      "案例包附录（v4，多模块）",
+      "teacher"
+    );
+    tryPush(
+      "quality-check-v4",
+      path.join(v4Dir, "06_management", "02_quality_check_teacher_usability.md"),
+      "质量审查（v4）",
+      "teacher"
+    );
+  }
+
+  return assets;
+}
+
+function buildTracks() {
+  const tracks = [
+    {
+      id: "jp-foundation",
+      title: "SAP 日本项目语言战斗力训练营 · 基础线",
+      description: "面向中国 SAP 顾问进入日本项目的基础语言训练，覆盖 L0 体验 → L1 生存 → L2 核心场景 → L3 模块专题，24 课。",
+      level: "L2-core",
+      durationLabel: "24 课 · 约 8 周",
+      status: "active",
+      order: 1,
+    },
+  ];
+  writeJson("tracks.json", tracks);
+  return tracks;
 }
 
 function parseTable(markdown) {
@@ -411,6 +538,7 @@ for (let order = 1; order <= 24; order += 1) {
   const lessonRoleplays = roleplaysByLesson.get(lessonId) ?? [];
   const shadowingItems = buildShadowingItems(lessonPhrases, transcriptMarkdown, lessonId);
   const reviewItems = reviewByLesson.get(lessonId) ?? [];
+  const assets = buildLessonAssets(lessonId, order);
 
   if (terms.length < 5 || lessonPhrases.length < 5 || lessonRoleplays.length < 1 || shadowingItems.length < 5) {
     insufficientLessons.push(`${lessonId} ${title}: terms=${terms.length}, phrases=${lessonPhrases.length}, shadowing=${shadowingItems.length}, roleplays=${lessonRoleplays.length}`);
@@ -420,6 +548,9 @@ for (let order = 1; order <= 24; order += 1) {
     id: lessonId,
     title,
     order,
+    trackId: "jp-foundation",
+    level: inferLevel(order),
+    assets,
     sourceLessonId: lessonId,
     sapModules: splitParts(parseLineValue(designMarkdown, "对应 SAP 模块")).map((item) => (item === "Common" ? "Project" : item)),
     projectPhase: splitParts(parseLineValue(designMarkdown, "对应项目阶段")),
@@ -455,7 +586,10 @@ const classified = {
   assignments: mdFiles.filter((file) => /作业|练习|assignment|practice/i.test(path.basename(file))).length
 };
 const unclassified = mdFiles.filter((file) => !/(课程设计稿|课堂逐字稿|术语|句型|作业|练习|RolePlay|讲师|学生|质量|总目录|待复核|README)/i.test(path.basename(file)));
+const lessonAssetTotal = lessons.reduce((sum, lesson) => sum + lesson.assets.length, 0);
+const lessonAssetAverage = lessons.length ? (lessonAssetTotal / lessons.length).toFixed(1) : "0.0";
 
+buildTracks();
 writeJson("lessons.json", lessons);
 writeJson("glossary.json", allTerms);
 writeJson("phrases.json", allPhrases);
@@ -499,6 +633,7 @@ fs.writeFileSync(
     `- 共生成录音任务：${lessons.reduce((sum, lesson) => sum + lesson.microTrainings.length + lesson.consultantOutputs.length + lesson.assignments.filter((item) => item.type === "recording" || item.type === "consultant-output").length, 0)}`,
     `- 共生成 Role Play：${allRoleplays.length}`,
     `- 共生成待复核术语：${reviewTerms.length}`,
+    `- 共生成 LessonAsset：${lessonAssetTotal}（平均每课 ${lessonAssetAverage} 份）`,
     "",
     "## 内容不足课程",
     "",
