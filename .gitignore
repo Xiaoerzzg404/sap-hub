@@ -10,3 +10,29 @@ __pycache__/
 .env.*
 *.token
 *.secret
+
+# === pre-phase-0 cleanup (2026-05-19) ===
+
+# Obsidian 编辑器 UI 状态（每人不同，不该入 git）
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+**/.obsidian/app.json.bak
+
+# Claude / Codex worktree 元数据
+.claude/worktrees/
+.codex/worktrees/
+
+# 二进制录音（git 不友好；conversation 文字版可入库，.m4a 不入）
+conversation/**/*.m4a
+**/*.m4a
+**/*.mp3
+**/*.wav
+
+# 网站 web/ 子项目运行时（Phase 0 真正迁完后还会用到，提前加上）
+projects/4-sap-training/web/node_modules/
+projects/4-sap-training/web/.next/
+projects/4-sap-training/web/tsconfig.tsbuildinfo
+projects/4-sap-training/web/data/audio-cache/
+projects/4-sap-training/web/.baseline-*/
+projects/4-sap-training/web/.env.local
+projects/4-sap-training/web/.env*.local
