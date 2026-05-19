@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T02:54:56+09:00",
+  "updated_at": "2026-05-19T09:43:15+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -266,7 +266,8 @@
     "Built a Next.js/TypeScript/Tailwind student-facing SAP Japanese speaking training platform at the repository root.",
     "Converted the 24-lesson SAP日语培训/output Markdown corpus into data/lessons.json, data/glossary.json, data/phrases.json, data/roleplays.json, data/assignments.json, and data/review-terms.json.",
     "Implemented native audio playback, repeat playback, AB Repeat, MediaRecorder recording, IndexedDB recording history, Shadowing, 30-second micro training, 60-second consultant output, Role Play, assignment, review, glossary, phrasebook, and teacher review pages.",
-    "Verified with npm run typecheck, npm run build, and browser smoke checks for home, lesson_01, shadowing, glossary, and teacher/review-terms."
+    "Verified with npm run typecheck, npm run build, and browser smoke checks for home, lesson_01, shadowing, glossary, and teacher/review-terms.",
+    "Phase 0: migrated Next.js web app from sap-hub root to projects/4-sap-training/web/, preserved git history via git mv, typecheck and build green."
   ],
   "blocked": [],
   "next_action": "Add real standard audio files under public/audio/ and connect backend object storage, accounts, and teacher feedback workflows when moving beyond local MVP.",

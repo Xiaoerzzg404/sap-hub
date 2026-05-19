@@ -2,9 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const sourceRoot = path.join(root, "projects/4-sap-training/SAP日语培训/output");
+// 新位置：cwd 是 projects/4-sap-training/web，源在 ../SAP日语培训/output
+const sourceRoot = path.resolve(root, "../SAP日语培训/output");
 const dataDir = path.join(root, "data");
-const logsDir = path.join(root, "logs");
+const logsDir = path.resolve(root, "../../../logs");
 
 const categories = {
   "会议开场与课堂互动": "meeting",

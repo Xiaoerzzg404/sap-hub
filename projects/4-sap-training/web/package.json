@@ -1,5 +1,5 @@
 {
-  "name": "sap-jp-speaking-platform",
+  "name": "@sap-jp/speaking-platform",
   "version": "0.1.0",
   "private": true,
   "scripts": {

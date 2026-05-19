@@ -10,8 +10,8 @@
 
 ## 无法自动归类或仅作为辅助资料处理
 
-- projects/4-sap-training/SAP日语培训/output/99_run_logs/执行日志.md
-- projects/4-sap-training/SAP日语培训/output/99_run_logs/输入文件配对表.md
+- ../SAP日语培训/output/99_run_logs/执行日志.md
+- ../SAP日语培训/output/99_run_logs/输入文件配对表.md
 
 ## 转换备注
 
