@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.1.0",
+  "generatedAt": "2026-05-19T03:09:42.692Z",
+  "sourceCommit": "d90a2d758ea802389096310a24e91070762272e4",
+  "stats": {
+    "tracks": 1,
+    "lessons": 24,
+    "phrases": 480,
+    "shadowing": 480,
+    "roleplays": 0,
+    "glossaryTerms": 528,
+    "libraryItems": 6,
+    "totalAssets": 240
+  },
+  "audio": {
+    "provider": "azure",
+    "voice": "ja-JP-NanamiNeural",
+    "generated": false
+  },
+  "notes": [
+    "Chinese translation fields for phrases/shadowing are intentionally empty.",
+    "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
+    "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
+    "Phase 3 selected TTS path C: script only, no mp3 generation in this commit."
+  ]
+}

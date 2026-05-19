@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T10:34:26+09:00",
+  "updated_at": "2026-05-19T12:12:23+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -242,7 +242,15 @@
     "../web/components/teacher/TeacherLessonAssetsBrowser.tsx",
     "../web/app/library/page.tsx",
     "../web/data/library.json",
-    "../web/types/library.ts"
+    "../web/types/library.ts",
+    "../../logs/content-source-report.md",
+    "../web/data/_meta.json",
+    "../web/scripts/generate-tts.mjs",
+    "../web/components/audio/WaveformVisualizer.tsx",
+    "../web/components/audio/RecordingPanel.tsx",
+    "../web/lib/progress-storage.ts",
+    "../web/components/lesson/AssignmentTextInput.tsx",
+    "../web/components/teacher/StudentRecordingReview.tsx"
   ],
   "current_round": "SAP Japanese speaking training platform MVP",
   "completed": [
@@ -284,5 +292,5 @@
   ],
   "blocked": [],
   "next_action": "After Claude validates Phase 2, proceed to Phase 3: restore local training MVP with real audio assets, de-generated content cleanup, dashboard fixes, self-assessment persistence, text homework persistence, and teacher placeholder clarity.",
-  "notes": "Per user instruction, this round upgraded the generated SAP Japanese training corpus into an online language training MVP rather than a Markdown display site. Data conversion produced 24 lessons, 528 terms, 576 phrases, 792 Shadowing items, 120 recording tasks, 48 Role Plays, and 127 review terms. Standard audio is currently placeholder paths; student recordings are local-only in browser IndexedDB."
+  "notes": "Phase 3 MVP rescue completed by Codex on branch codex/phase-3-mvp-rescue: content conversion now extracts real Japanese only (480 phrases / 480 shadowing, no fabricated Chinese translations), TTS script added but not run per Ryan option C, Dashboard and lesson progress fixed, waveform uses AnalyserNode, blob URLs are no longer persisted, self-assessment and favoriteShadowing are stored in localStorage, teacher recording review is an explicit backend placeholder, text assignments persist locally, and data/_meta.json schemaVersion 1.1.0 records the data contract. RolePlay extraction remains 0 because no true A/B turn lines were found under the strict no-fabrication rule."
 }

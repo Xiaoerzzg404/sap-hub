@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execSync } from "node:child_process";
 
 const root = process.cwd();
 // 新位置：cwd 是 projects/4-sap-training/web，源在 ../SAP日语培训/output
@@ -708,6 +709,34 @@ function writeContentSourceReport(lessonsStats) {
   console.log("Wrote", reportPath);
 }
 
+function sourceCommit() {
+  try {
+    return execSync("git rev-parse HEAD", { cwd: path.resolve(root, "../../.."), encoding: "utf8" }).trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+function buildMeta(stats) {
+  writeJson("_meta.json", {
+    schemaVersion: "1.1.0",
+    generatedAt: new Date().toISOString(),
+    sourceCommit: sourceCommit(),
+    stats,
+    audio: {
+      provider: process.env.TTS_PROVIDER ?? "azure",
+      voice: process.env.AZURE_TTS_VOICE ?? "ja-JP-NanamiNeural",
+      generated: false
+    },
+    notes: [
+      "Chinese translation fields for phrases/shadowing are intentionally empty.",
+      "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
+      "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
+      "Phase 3 selected TTS path C: script only, no mp3 generation in this commit."
+    ]
+  });
+}
+
 ensureDir(dataDir);
 ensureDir(logsDir);
 
@@ -815,8 +844,8 @@ const unclassified = mdFiles.filter((file) => !/(课程设计稿|课堂逐字稿
 const lessonAssetTotal = lessons.reduce((sum, lesson) => sum + lesson.assets.length, 0);
 const lessonAssetAverage = lessons.length ? (lessonAssetTotal / lessons.length).toFixed(1) : "0.0";
 
-buildTracks();
-buildLibrary();
+const tracks = buildTracks();
+const libraryItems = buildLibrary();
 writeJson("lessons.json", lessons);
 writeJson("glossary.json", allTerms);
 writeJson("phrases.json", allPhrases);
@@ -824,6 +853,16 @@ writeJson("roleplays.json", allRoleplays);
 writeJson("assignments.json", allAssignments);
 writeJson("review-terms.json", reviewTerms);
 writeContentSourceReport(lessonsWithStats);
+buildMeta({
+  tracks: tracks.length,
+  lessons: lessons.length,
+  phrases: allPhrases.length,
+  shadowing: lessons.reduce((sum, lesson) => sum + lesson.shadowingItems.length, 0),
+  roleplays: allRoleplays.length,
+  glossaryTerms: allTerms.length,
+  libraryItems: libraryItems.length,
+  totalAssets: lessonAssetTotal
+});
 
 fs.writeFileSync(
   path.join(logsDir, "content-conversion-log.md"),
