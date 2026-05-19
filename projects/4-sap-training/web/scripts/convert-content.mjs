@@ -285,7 +285,104 @@ function lessonOrder(lessonId) {
 }
 
 function placeholderAudio(lessonId, type, index) {
-  return `/audio/placeholders/${lessonId}_${type}_${String(index).padStart(3, "0")}.mp3`;
+  return `/audio/${type}/${lessonId}-${type}-${String(index).padStart(3, "0")}.mp3`;
+}
+
+function phraseAudio(phraseId) {
+  return `/audio/phrase/${phraseId}.mp3`;
+}
+
+function shadowingAudio(shadowingId) {
+  return `/audio/shadowing/${shadowingId}.mp3`;
+}
+
+const chineseOnlyParticles = /[呢吧啊嘛吗哈哟啦哦呀]/;
+const simplifiedChineseSignals = /[这课顾问概览成员根据角色分工进入议题业务现状课题要望流程配置测试问题会议输出学习目标完成说明处理范围差异影响步骤用户项目后续已经暂无课堂练习作业词汇句型请核心模块需求讲师学生]/;
+const chineseInstructionPattern = /(如果|学生说|请改成|讲师|学生|第一遍|第二遍|中文|错误|改法|课堂|练习|作业)/;
+const negativeExamplePattern = /(错误|中式|初级表达|初級表現|悪い例|NG|直接否定|問題表現)/;
+const jpMarker = /(です|ます|ください|でしょう|ましょう|ません|だ。|た。|る。|る$|ない|から|まで|について|として|に対して|に関して|を確認|を教えて|していきます|していただ|させていただ|になります|いたしました|でしょうか|ございます|お願いいたします|と思います|考えております)/;
+
+function hasLongChinesePhrase(s) {
+  const normalized = s.replace(/[A-Za-z0-9/・ー％%（）()【】「」『』.,:：;；\s]/g, " ");
+  const runs = normalized.match(/[\u4e00-\u9fff]{6,}/g) ?? [];
+  return runs.some((run) => simplifiedChineseSignals.test(run));
+}
+
+function isRealJapanese(line) {
+  const s = line.trim();
+  if (s.length < 8) return false;
+  if (chineseOnlyParticles.test(s)) return false;
+  if (chineseInstructionPattern.test(s)) return false;
+  if (!jpMarker.test(s)) return false;
+  if (!/[。？！?!.]$/.test(s)) return false;
+  if (/^[-*•・]/.test(s)) return false;
+  if (hasLongChinesePhrase(s)) return false;
+  return true;
+}
+
+function cleanMarkdownLine(raw) {
+  let s = raw
+    .replace(/^\s*[-*•・]\s*/, "")
+    .replace(/^\s*\d+[.)．]\s*/, "")
+    .replace(/^#+\s+/, "")
+    .replace(/`/g, "")
+    .replace(/^\s*>\s*/, "")
+    .replace(/\*\*/g, "")
+    .replace(/^（[^）]*）/, "")
+    .replace(/^(?:[A-Z]|板書|例|日语|日本語|顾问|客户|講師|学生|参考答案)\s*[:：]\s*/, "")
+    .trim();
+  for (let i = 0; i < 2; i += 1) {
+    const prefix = s.match(/^([^:：]{1,40})[:：]\s*(.+)$/);
+    if (!prefix) break;
+    if (/[\u3040-\u30ff]/.test(prefix[1])) break;
+    if (/[\u4e00-\u9fff]/.test(prefix[1])) {
+      s = prefix[2].trim();
+      continue;
+    }
+    break;
+  }
+  return s;
+}
+
+function realSentenceSources(lessonId, order) {
+  const numStr = String(order).padStart(2, "0");
+  return [
+    path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md`),
+    path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/02_student_materials/01_student_ppt_outline_final.md`),
+    path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md`),
+    path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/04_case_pack/01_case_pack_appendix_all_modules.md`),
+    path.join(sourceRoot, `01_单课课程设计稿/${lessonId}_SAP日语培训课程设计稿.md`),
+    path.join(sourceRoot, `02_单课日语课堂逐字稿/${lessonId}_SAP日语课堂逐字稿.md`)
+  ];
+}
+
+function extractRealSentences(lessonId, order) {
+  const sentences = new Map();
+  for (const src of realSentenceSources(lessonId, order)) {
+    if (!fs.existsSync(src)) continue;
+    const md = fs.readFileSync(src, "utf8");
+    for (const raw of md.split(/\r?\n/)) {
+      if (negativeExamplePattern.test(raw)) continue;
+      const cleaned = cleanMarkdownLine(raw);
+      const parts = cleaned.split(/(?<=[。？！])/);
+      for (const part of parts) {
+        const candidate = part.trim();
+        if (isRealJapanese(candidate) && !sentences.has(candidate)) {
+          sentences.set(candidate, { text: candidate, source: src });
+        }
+      }
+    }
+  }
+  return Array.from(sentences.values());
+}
+
+function inferCategory(text) {
+  if (/確認|理解|よろしいでしょうか|前提|対象範囲/.test(text)) return "requirement-confirmation";
+  if (/影響範囲|観点|リスク|内部統制|会計連携|標準/.test(text)) return "scope-management";
+  if (/共有|説明|次回|持ち帰|お願いいたします/.test(text)) return "next-step";
+  if (/テスト|UAT|検証|不具合|障害/.test(text)) return "testing";
+  if (/設定|マスタ|権限|画面|システム/.test(text)) return "configuration";
+  return "meeting";
 }
 
 function parseTitle(markdown, fallbackId) {
@@ -499,45 +596,77 @@ function parseConsultantOutputs(markdown, lessonId) {
   ];
 }
 
-function buildSubstitutionDrills(phrases, lessonId) {
-  return phrases.slice(0, 12).map((phrase, index) => ({
-    id: `${lessonId}-drill-${index + 1}`,
-    lessonId,
-    baseSentence: phrase.japanese,
-    replacements: phrase.replaceableParts,
-    prompt: `请替换 ${phrase.replaceableParts.join(" / ") || "关键词"} 并录音。`
-  }));
+function buildPhrases(lessonId, order) {
+  const real = extractRealSentences(lessonId, order);
+  return real.slice(0, 20).map((sentence, index) => {
+    const idx = index + 1 + (order - 1) * 30;
+    const id = `${lessonId}-phrase-${String(idx).padStart(3, "0")}`;
+    return {
+      id,
+      lessonId,
+      category: inferCategory(sentence.text),
+      japanese: sentence.text,
+      chinese: "",
+      usage: "项目场景",
+      replaceableParts: [],
+      exampleVariations: [],
+      audioSrc: phraseAudio(id),
+      sourcePath: path.relative(path.resolve(root, "../../.."), sentence.source)
+    };
+  });
 }
 
-function buildShadowingItems(phrases, transcript, lessonId) {
-  const fromPhrases = phrases.map((phrase, index) => ({
-    id: `${lessonId}-shadow-phrase-${index + 1}`,
-    lessonId,
-    japanese: phrase.japanese,
-    chinese: phrase.chinese,
-    scenario: phrase.usage,
-    audioSrc: phrase.audioSrc,
-    requiredRepeats: 3
-  }));
-  const transcriptLines = [];
-  const lines = transcript.split(/\r?\n/);
-  for (let i = 0; i < lines.length; i += 1) {
-    if (/【学生跟读】/.test(lines[i])) {
-      const next = (lines[i + 1] ?? "").trim();
-      if (next && !fromPhrases.some((item) => item.japanese === next)) {
-        transcriptLines.push({
-          id: `${lessonId}-shadow-script-${transcriptLines.length + 1}`,
-          lessonId,
-          japanese: next,
-          chinese: "课堂跟读句",
-          scenario: "课堂 Shadowing",
-          audioSrc: placeholderAudio(lessonId, "shadowing", transcriptLines.length + 1),
-          requiredRepeats: 3
-        });
-      }
-    }
+function buildShadowingItems(lessonId, phrases) {
+  return phrases.slice(0, 20).map((phrase, index) => {
+    const id = `${lessonId}-shadow-${String(index + 1).padStart(2, "0")}`;
+    return {
+      id,
+      lessonId,
+      japanese: phrase.japanese,
+      chinese: phrase.chinese,
+      scenario: phrase.category,
+      audioSrc: shadowingAudio(id),
+      requiredRepeats: 3
+    };
+  });
+}
+
+function buildRoleplays(lessonId, order) {
+  const numStr = String(order).padStart(2, "0");
+  const rpSrc = path.join(v4Root, `lesson_${numStr}_v4_teacher_focused/03_classroom_practice/01_classroom_workbook_roleplay.md`);
+  if (!fs.existsSync(rpSrc)) return [];
+  const md = fs.readFileSync(rpSrc, "utf8");
+  const turns = [];
+  for (const raw of md.split(/\r?\n/)) {
+    const match = raw.match(/^\s*(?:[-*•・]\s*)?\*?\*?([AB])\s*[:：]\*?\*?\s*(.+)$/);
+    if (!match) continue;
+    const role = match[1];
+    const text = cleanMarkdownLine(match[2]);
+    if (isRealJapanese(text)) turns.push({ role, text });
   }
-  return [...fromPhrases, ...transcriptLines.slice(0, 12)];
+  if (turns.length < 4) return [];
+
+  const out = [];
+  const remaining = [...turns];
+  for (let rp = 0; rp < 2 && remaining.length >= 4; rp += 1) {
+    const slice = remaining.splice(0, Math.min(8, Math.ceil(remaining.length / (2 - rp))));
+    if (slice.length < 4) break;
+    out.push({
+      id: `${lessonId}-roleplay-${rp + 1}`,
+      lessonId,
+      title: `Role Play ${rp + 1}`,
+      scenario: "项目现场",
+      roleA: "SAP 顾问",
+      roleB: "业务用户 / Key User",
+      requiredPhrases: [],
+      dialogue: slice
+    });
+  }
+  return out;
+}
+
+function buildSubstitutionDrills() {
+  return [];
 }
 
 function scanFiles(dir) {
@@ -546,6 +675,37 @@ function scanFiles(dir) {
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? scanFiles(full) : [full];
   });
+}
+
+function writeContentSourceReport(lessonsStats) {
+  const lines = [
+    "# 内容来源真实性报告",
+    "",
+    `生成时间：${new Date().toISOString()}`,
+    "",
+    "本报告记录每课从真实素材抽到的句子数，遵循 N 节真实性硬底线，不编造。",
+    "",
+    "| Lesson | Phrases | Shadowing | RolePlays | 真句源命中 | 备注 |",
+    "|---|---|---|---|---|---|",
+  ];
+  let totalPhrases = 0;
+  let totalShadowing = 0;
+  const zeroLessons = [];
+  for (const lesson of lessonsStats) {
+    lines.push(`| ${lesson.id} | ${lesson.phrases} | ${lesson.shadowing} | ${lesson.roleplays} | ${lesson.realCount} | ${lesson.note ?? ""} |`);
+    totalPhrases += lesson.phrases;
+    totalShadowing += lesson.shadowing;
+    if (lesson.realCount === 0) zeroLessons.push(lesson.id);
+  }
+  lines.push("");
+  lines.push(`**合计**：phrases ${totalPhrases} / shadowing ${totalShadowing}`);
+  if (zeroLessons.length > 0) {
+    lines.push("");
+    lines.push(`**0 真句课次**（已诚实跳过，不编造）：${zeroLessons.join(", ")}`);
+  }
+  const reportPath = path.join(logsDir, "content-source-report.md");
+  fs.writeFileSync(reportPath, `${lines.join("\n")}\n`);
+  console.log("Wrote", reportPath);
 }
 
 ensureDir(dataDir);
@@ -560,27 +720,15 @@ for (const item of reviewTerms) {
 }
 const reviewSet = new Set(reviewTerms.map((item) => item.rawText.toLowerCase()));
 
-const phraseMarkdown = read(path.join(sourceRoot, "05_句型库/SAP日语高频句型总表.md"));
-const allPhrases = parsePhrasesFromGlobal(phraseMarkdown);
-const phrasesByLesson = new Map();
-for (const phrase of allPhrases) {
-  if (!phrasesByLesson.has(phrase.lessonId)) phrasesByLesson.set(phrase.lessonId, []);
-  phrasesByLesson.get(phrase.lessonId).push(phrase);
-}
-
-const roleplayMarkdown = read(path.join(sourceRoot, "06_RolePlay脚本/SAP日语RolePlay总合集.md"));
-const allRoleplays = parseRoleplays(roleplayMarkdown);
-const roleplaysByLesson = new Map();
-for (const rolePlay of allRoleplays) {
-  if (!roleplaysByLesson.has(rolePlay.lessonId)) roleplaysByLesson.set(rolePlay.lessonId, []);
-  roleplaysByLesson.get(rolePlay.lessonId).push(rolePlay);
-}
+const allPhrases = [];
+const allRoleplays = [];
 
 const lessons = [];
 const allTerms = [];
 const allAssignments = [];
 const conversionNotes = [];
 const insufficientLessons = [];
+const lessonsWithStats = [];
 
 for (let order = 1; order <= 24; order += 1) {
   const lessonId = `lesson_${String(order).padStart(2, "0")}`;
@@ -595,16 +743,26 @@ for (let order = 1; order <= 24; order += 1) {
   if (!assignmentMarkdown) conversionNotes.push(`- ${lessonId}: 缺少练习与作业 ${assignmentFile}`);
 
   const title = parseTitle(designMarkdown, lessonId);
-  const lessonPhrases = phrasesByLesson.get(lessonId) ?? [];
+  const realSentences = extractRealSentences(lessonId, order);
+  const lessonPhrases = buildPhrases(lessonId, order);
   const terms = parseTermsFromDesign(designMarkdown, lessonId, reviewSet);
   const finalOutputTask = parseLineValue(designMarkdown, "本课最终输出任务");
   const microTrainings = parseMicroTrainings(assignmentMarkdown || designMarkdown, lessonId);
   const consultantOutputs = parseConsultantOutputs(assignmentMarkdown || designMarkdown, lessonId);
   const assignments = parseAssignmentTasks(assignmentMarkdown, lessonId, finalOutputTask);
-  const lessonRoleplays = roleplaysByLesson.get(lessonId) ?? [];
-  const shadowingItems = buildShadowingItems(lessonPhrases, transcriptMarkdown, lessonId);
+  const lessonRoleplays = buildRoleplays(lessonId, order);
+  const shadowingItems = buildShadowingItems(lessonId, lessonPhrases);
   const reviewItems = reviewByLesson.get(lessonId) ?? [];
   const assets = buildLessonAssets(lessonId, order);
+  const substitutionDrills = buildSubstitutionDrills();
+  lessonsWithStats.push({
+    id: lessonId,
+    phrases: lessonPhrases.length,
+    shadowing: shadowingItems.length,
+    roleplays: lessonRoleplays.length,
+    realCount: realSentences.length,
+    note: realSentences.length === 0 ? "源文件未抽到合格真句，已跳过" : ""
+  });
 
   if (terms.length < 5 || lessonPhrases.length < 5 || lessonRoleplays.length < 1 || shadowingItems.length < 5) {
     insufficientLessons.push(`${lessonId} ${title}: terms=${terms.length}, phrases=${lessonPhrases.length}, shadowing=${shadowingItems.length}, roleplays=${lessonRoleplays.length}`);
@@ -628,7 +786,7 @@ for (let order = 1; order <= 24; order += 1) {
     terms,
     phrases: lessonPhrases,
     shadowingItems,
-    substitutionDrills: buildSubstitutionDrills(lessonPhrases, lessonId),
+    substitutionDrills,
     rolePlays: lessonRoleplays,
     microTrainings,
     consultantOutputs,
@@ -640,6 +798,8 @@ for (let order = 1; order <= 24; order += 1) {
 
   lessons.push(lesson);
   allTerms.push(...terms);
+  allPhrases.push(...lessonPhrases);
+  allRoleplays.push(...lessonRoleplays);
   allAssignments.push(...assignments);
 }
 
@@ -663,6 +823,7 @@ writeJson("phrases.json", allPhrases);
 writeJson("roleplays.json", allRoleplays);
 writeJson("assignments.json", allAssignments);
 writeJson("review-terms.json", reviewTerms);
+writeContentSourceReport(lessonsWithStats);
 
 fs.writeFileSync(
   path.join(logsDir, "content-conversion-log.md"),
@@ -708,7 +869,9 @@ fs.writeFileSync(
     "",
     "## 说明",
     "",
-    "- 标准音频暂未发现真实 mp3/wav 文件，已为每个可播放训练句生成 `/audio/placeholders/*.mp3` 占位路径。",
+    "- 可播放训练句的 audioSrc 已指向最终目标 `/audio/phrase/*.mp3` 与 `/audio/shadowing/*.mp3`；Phase 3 选 C，mp3 由 Ryan 后续手动 TTS 生成。",
+    "- 句型、Shadowing、Role Play 只从真实课程 Markdown 抽取；中文翻译字段留空，不编造。",
+    "- Substitution drill 暂返回空数组，等待后续 Phase 做真句替换识别。",
     "- 录音作业 MVP 使用浏览器 IndexedDB 保存，不上传服务器。",
     "- 待复核术语来自课程输出目录的待复核总表，状态统一初始化为 pending。",
     ""
