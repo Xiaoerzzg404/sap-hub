@@ -25,13 +25,40 @@ export default function TeacherPage() {
           待复核术语
         </Link>
       </div>
+      <div className="panel border-amber-300 bg-amber-50 p-4">
+        <p className="text-sm font-semibold text-amber-900">讲师专区 · 当前是教学内容预览站（v0.x alpha）</p>
+        <div className="mt-2 grid gap-3 text-xs text-amber-800 sm:grid-cols-3">
+          <div>
+            <p className="font-semibold">可用</p>
+            <ul className="mt-1 list-disc pl-4">
+              <li>浏览全部课程内容</li>
+              <li>查看待复核术语</li>
+              <li>抽样课程质量</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold">暂不可用</p>
+            <ul className="mt-1 list-disc pl-4">
+              <li>看学生录音作业</li>
+              <li>给学生打分</li>
+              <li>给学生反馈</li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold">预计 v1.0</p>
+            <ul className="mt-1 list-disc pl-4">
+              <li>真讲师后台（Phase 5/6）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <TeacherLessonAssetsBrowser lessons={allLessons} />
       <section className="grid gap-4 md:grid-cols-4">
         <Metric label="课程设计稿" value={`${allLessons.length}`} />
         <Metric label="课堂逐字稿" value={`${allLessons.length}`} />
         <Metric label="待复核术语" value={`${allReviewTerms.filter((item) => item.mustReview).length}`} />
         <Metric label="缺失课程" value={`${missing.length}`} />
       </section>
-      <TeacherLessonAssetsBrowser lessons={allLessons} />
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-ink">待复核术语</h2>
         <ReviewTermsTable items={allReviewTerms.slice(0, 20)} />
