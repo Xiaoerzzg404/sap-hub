@@ -6,7 +6,8 @@ import { LessonObjective } from "@/components/lesson/LessonObjective";
 import { ScenarioMap } from "@/components/lesson/ScenarioMap";
 import { TermCard } from "@/components/lesson/TermCard";
 import { PhraseCard } from "@/components/lesson/PhraseCard";
-import { ClassroomScriptViewer } from "@/components/lesson/ClassroomScriptViewer";
+import { LessonAssetsTabs } from "@/components/lesson/LessonAssetsTabs";
+import { LessonAssetBadge } from "@/components/lesson/LessonAssetBadge";
 import { LessonAssignment } from "@/components/lesson/LessonAssignment";
 import { SelfAssessmentRubric } from "@/components/lesson/SelfAssessmentRubric";
 import { ShadowingCard } from "@/components/speaking/ShadowingCard";
@@ -28,6 +29,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
   return (
     <div className="page-shell space-y-6">
       <LessonHeader lesson={lesson} />
+      <LessonAssetBadge assets={(lesson.assets ?? []).filter((a) => a.visibility !== "teacher")} />
       <LessonObjective lesson={lesson} />
       <ScenarioMap items={lesson.scenarioMap} />
 
@@ -49,7 +51,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
         </div>
       </section>
 
-      <ClassroomScriptViewer markdown={lesson.transcriptMarkdown} />
+      <LessonAssetsTabs lesson={lesson} viewerRole="student" />
 
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-ink">Shadowing</h2>
