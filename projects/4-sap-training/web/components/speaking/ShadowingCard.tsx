@@ -12,6 +12,7 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
   const [repeatDone, setRepeatDone] = useState(0);
   const [completed, setCompleted] = useState(false);
   const [favorite, setFavorite] = useState(false);
+  const [lastRecordingId, setLastRecordingId] = useState<string | undefined>();
 
   function markDone() {
     setCompleted(true);
@@ -31,7 +32,7 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
           className={favorite ? "btn-primary" : "btn-secondary"}
           onClick={() => {
             setFavorite((value) => !value);
-            toggleProgressList("favoriteSentences", item.id);
+            toggleProgressList("favoriteShadowing", item.id);
           }}
         >
           <Star className="h-4 w-4" />
@@ -78,10 +79,11 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
       <RecordingPanel
         lessonId={item.lessonId}
         practiceType="shadowing"
-        promptText={`跟读：${item.chinese}`}
+        promptText={`跟读：${item.chinese || item.japanese}`}
         targetJapanese={item.japanese}
+        onSaved={(recording) => setLastRecordingId(recording.id)}
       />
-      <SelfAssessmentForm />
+      <SelfAssessmentForm recordingId={lastRecordingId} />
     </div>
   );
 }

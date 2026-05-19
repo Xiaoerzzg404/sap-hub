@@ -7,6 +7,7 @@ import { SelfAssessmentForm } from "./SelfAssessmentForm";
 
 export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
   const [mode, setMode] = useState<"A" | "B" | "full">("full");
+  const [lastRecordingId, setLastRecordingId] = useState<string | undefined>();
   const prompt =
     mode === "A"
       ? `${rolePlay.title}：角色 A 台词录音`
@@ -56,8 +57,14 @@ export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
           </button>
         ))}
       </div>
-      <RecordingPanel lessonId={rolePlay.lessonId} practiceType="role-play" promptText={prompt} markAsAssignment />
-      <SelfAssessmentForm />
+      <RecordingPanel
+        lessonId={rolePlay.lessonId}
+        practiceType="role-play"
+        promptText={prompt}
+        markAsAssignment
+        onSaved={(recording) => setLastRecordingId(recording.id)}
+      />
+      <SelfAssessmentForm recordingId={lastRecordingId} />
       <div className="rounded-lg border border-line bg-mist p-3 text-sm text-slate-600">讲师点评占位：可接入后端后显示评分、纠错表达和重录建议。</div>
     </div>
   );

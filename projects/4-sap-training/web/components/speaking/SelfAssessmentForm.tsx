@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { SelfAssessment } from "@/types/audio";
+import { setSelfAssessment } from "@/lib/progress-storage";
 
 const fields: Array<[keyof SelfAssessment, string]> = [
   ["pronunciation", "发音清晰度"],
@@ -22,15 +23,18 @@ const defaultValue: SelfAssessment = {
 
 export function SelfAssessmentForm({
   value,
+  recordingId,
   onChange
 }: {
   value?: SelfAssessment;
+  recordingId?: string;
   onChange?: (value: SelfAssessment) => void;
 }) {
   const [form, setForm] = useState<SelfAssessment>(value ?? defaultValue);
 
   function update(next: SelfAssessment) {
     setForm(next);
+    if (recordingId) setSelfAssessment(recordingId, next);
     onChange?.(next);
   }
 
@@ -56,6 +60,9 @@ export function SelfAssessmentForm({
         onChange={(event) => update({ ...form, memo: event.target.value })}
         placeholder="学生备注：哪里卡住、哪些词想让讲师看"
       />
+      {!recordingId ? (
+        <p className="text-xs text-slate-500">提示：先保存录音后，自评分数会自动入库。</p>
+      ) : null}
     </div>
   );
 }

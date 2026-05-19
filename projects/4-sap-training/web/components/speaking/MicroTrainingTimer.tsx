@@ -12,6 +12,7 @@ export function MicroTrainingTimer({ task }: { task: MicroTraining }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [secondsLeft, setSecondsLeft] = useState(30);
   const [sessionKey, setSessionKey] = useState(0);
+  const [lastRecordingId, setLastRecordingId] = useState<string | undefined>();
 
   useEffect(() => {
     if (phase !== "prepare") return;
@@ -62,10 +63,11 @@ export function MicroTrainingTimer({ task }: { task: MicroTraining }) {
           promptText={task.prompt}
           maxDurationSec={task.durationSec}
           autoSaveOnStop
+          onSaved={(recording) => setLastRecordingId(recording.id)}
           onRecordingComplete={() => setPhase("finished")}
         />
       ) : null}
-      {phase === "finished" ? <SelfAssessmentForm /> : null}
+      {phase === "finished" ? <SelfAssessmentForm recordingId={lastRecordingId} /> : null}
     </div>
   );
 }

@@ -63,7 +63,7 @@ export default function DashboardPage() {
             <p>已完成课次：{progress.completedLessons.length}</p>
             <p>已完成跟读：{progress.completedShadowing.length}</p>
             <p>已完成录音：{progress.completedRecordings.length}</p>
-            <p>收藏难句：{progress.favoriteSentences.length}</p>
+            <p>收藏难句：{progress.favoriteShadowing.length}</p>
             <p>最近学习：{progress.recentStudyAt ? new Date(progress.recentStudyAt).toLocaleString() : "暂无"}</p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { ConsultantOutput } from "@/types/lesson";
 import { RecordingPanel } from "@/components/audio/RecordingPanel";
 import { SelfAssessmentForm } from "./SelfAssessmentForm";
@@ -14,6 +15,8 @@ const frameworkLabels: Array<[keyof ConsultantOutput["framework"], string]> = [
 ];
 
 export function ConsultantOutputRecorder({ task }: { task: ConsultantOutput }) {
+  const [lastRecordingId, setLastRecordingId] = useState<string | undefined>();
+
   return (
     <div className="panel space-y-4 p-4">
       <div>
@@ -39,8 +42,9 @@ export function ConsultantOutputRecorder({ task }: { task: ConsultantOutput }) {
         promptText={task.prompt}
         maxDurationSec={task.durationSec}
         markAsAssignment
+        onSaved={(recording) => setLastRecordingId(recording.id)}
       />
-      <SelfAssessmentForm />
+      <SelfAssessmentForm recordingId={lastRecordingId} />
     </div>
   );
 }
