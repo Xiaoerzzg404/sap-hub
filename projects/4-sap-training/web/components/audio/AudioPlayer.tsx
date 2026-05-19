@@ -100,7 +100,7 @@ export function AudioPlayer({
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-xs font-semibold text-sap">{current.scenario ?? "口语训练句"}</p>
-          <p className="mt-1 text-lg font-semibold leading-relaxed text-ink">{current.japanese}</p>
+          <p lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">{current.japanese}</p>
           <p className="mt-1 text-sm text-slate-600">{current.chinese}</p>
         </div>
         <div className="flex shrink-0 items-center gap-2">

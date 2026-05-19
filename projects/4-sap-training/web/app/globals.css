@@ -58,3 +58,9 @@ textarea {
 .input {
   @apply focus-ring rounded-md border border-line bg-white px-3 py-2 text-sm;
 }
+
+[lang="ja"] {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
+    "Meiryo", "Noto Sans CJK JP", sans-serif;
+  font-feature-settings: "palt";
+}

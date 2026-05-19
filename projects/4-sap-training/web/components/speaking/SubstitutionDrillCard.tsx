@@ -7,7 +7,7 @@ export function SubstitutionDrillCard({ drill }: { drill: SubstitutionDrill }) {
   return (
     <div className="rounded-lg border border-line bg-white p-4">
       <p className="text-xs font-semibold text-sap">Substitution Drill</p>
-      <h3 className="mt-1 text-lg font-semibold text-ink">{drill.baseSentence}</h3>
+      <h3 lang="ja" className="mt-1 text-lg font-semibold text-ink">{drill.baseSentence}</h3>
       <p className="mt-2 text-sm text-slate-600">{drill.prompt}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         {drill.replacements.map((replacement) => (

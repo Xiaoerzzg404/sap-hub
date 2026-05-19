@@ -39,10 +39,10 @@ export default function ReviewPage() {
             {favoritePhrases.length || favoriteShadowing.length ? (
               <>
                 {favoritePhrases.map((phrase) => (
-                  <p key={phrase.id} className="rounded-md bg-mist p-2 text-sm">{phrase.japanese}</p>
+                  <p key={phrase.id} lang="ja" className="rounded-md bg-mist p-2 text-sm">{phrase.japanese}</p>
                 ))}
                 {favoriteShadowing.map((item) => (
-                  <p key={item.id} className="rounded-md bg-mist p-2 text-sm">{item.japanese}</p>
+                  <p key={item.id} lang="ja" className="rounded-md bg-mist p-2 text-sm">{item.japanese}</p>
                 ))}
               </>
             ) : (
@@ -53,7 +53,7 @@ export default function ReviewPage() {
         <section className="panel p-4">
           <h2 className="font-semibold text-ink">待复习术语</h2>
           <div className="mt-3 space-y-2">
-            {favoriteTerms.length ? favoriteTerms.map((term) => <p key={term.id} className="rounded-md bg-mist p-2 text-sm">{term.japanese} · {term.chinese}</p>) : <p className="text-sm text-slate-500">暂无收藏术语。</p>}
+            {favoriteTerms.length ? favoriteTerms.map((term) => <p key={term.id} className="rounded-md bg-mist p-2 text-sm"><span lang="ja">{term.japanese}</span> · {term.chinese}</p>) : <p className="text-sm text-slate-500">暂无收藏术语。</p>}
           </div>
         </section>
       </div>

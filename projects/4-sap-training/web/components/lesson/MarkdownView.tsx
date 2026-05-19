@@ -9,7 +9,7 @@ export function MarkdownView({ markdown }: { markdown: string }) {
     return <p className="text-sm text-slate-500">暂无内容。</p>;
   }
   return (
-    <div className="prose-md max-w-none text-sm leading-7 text-slate-800">
+    <div lang="ja" className="prose-md max-w-none text-sm leading-7 text-slate-800">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}

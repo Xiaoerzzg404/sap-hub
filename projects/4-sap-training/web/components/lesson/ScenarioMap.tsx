@@ -19,7 +19,7 @@ export function ScenarioMap({ items }: { items: ScenarioItem[] }) {
               <tr key={item.id} className="border-t border-line">
                 <td className="px-3 py-2 font-semibold text-ink">{item.scene}</td>
                 <td className="px-3 py-2 text-slate-600">{item.consultantAction}</td>
-                <td className="px-3 py-2 text-slate-600">{item.japaneseTarget}</td>
+                <td lang="ja" className="px-3 py-2 text-slate-600">{item.japaneseTarget}</td>
                 <td className="px-3 py-2 text-slate-600">{item.studentOutput}</td>
               </tr>
             ))}

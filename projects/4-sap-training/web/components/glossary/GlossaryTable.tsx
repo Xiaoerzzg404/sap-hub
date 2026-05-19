@@ -20,8 +20,8 @@ export function GlossaryTable({ terms }: { terms: GlossaryTerm[] }) {
             <tr key={term.id} className="border-t border-line">
               <td className="px-3 py-2">{term.chinese}</td>
               <td className="px-3 py-2">{term.englishOrSap}</td>
-              <td className="px-3 py-2 font-semibold text-ink">{term.japanese}</td>
-              <td className="px-3 py-2">{term.reading}</td>
+              <td lang="ja" className="px-3 py-2 font-semibold text-ink">{term.japanese}</td>
+              <td lang="ja" className="px-3 py-2">{term.reading}</td>
               <td className="px-3 py-2">{term.scenario}</td>
               <td className="px-3 py-2">{term.lessonId}</td>
               <td className="px-3 py-2">{term.needsReview ? "待复核" : "可训练"}</td>

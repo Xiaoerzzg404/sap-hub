@@ -12,7 +12,7 @@ export function PhraseCard({ phrase }: { phrase: Phrase }) {
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold text-sap">{phrase.usage}</p>
-          <h3 className="mt-1 text-lg font-semibold leading-relaxed text-ink">{phrase.japanese}</h3>
+          <h3 lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">{phrase.japanese}</h3>
           <p className="mt-1 text-sm text-slate-600">{phrase.chinese}</p>
         </div>
         <button type="button" className="btn-secondary" onClick={() => toggleProgressList("favoritePhrases", phrase.id)}>

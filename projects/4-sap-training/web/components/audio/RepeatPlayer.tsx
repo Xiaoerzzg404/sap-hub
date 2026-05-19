@@ -58,7 +58,7 @@ export function RepeatPlayer({ sentences }: { sentences: AudioSentence[] }) {
         </button>
         {showAnswer ? (
           <div className="rounded-md border border-line bg-mist p-3 text-sm">
-            <p className="font-semibold text-ink">{current?.japanese}</p>
+            <p lang="ja" className="font-semibold text-ink">{current?.japanese}</p>
             <p className="mt-1 text-slate-600">{current?.chinese}</p>
           </div>
         ) : null}

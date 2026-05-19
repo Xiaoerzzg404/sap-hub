@@ -46,7 +46,7 @@ export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
         {rolePlay.dialogue.map((line, index) => (
           <div key={`${line.role}-${index}`} className="grid grid-cols-[72px_1fr] gap-3 border-b border-line p-3 last:border-b-0">
             <span className="font-semibold text-sap">角色 {line.role}</span>
-            <span className="text-sm leading-relaxed text-ink">{line.text}</span>
+            <span lang="ja" className="text-sm leading-relaxed text-ink">{line.text}</span>
           </div>
         ))}
       </div>

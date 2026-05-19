@@ -24,7 +24,7 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold text-sap">{item.scenario}</p>
-          <h3 className="mt-1 text-lg font-semibold leading-relaxed text-ink">{item.japanese}</h3>
+          <h3 lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">{item.japanese}</h3>
           <p className="mt-1 text-sm text-slate-600">{item.chinese}</p>
         </div>
         <button

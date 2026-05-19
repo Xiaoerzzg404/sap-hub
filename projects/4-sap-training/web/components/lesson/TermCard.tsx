@@ -12,7 +12,7 @@ export function TermCard({ term }: { term: GlossaryTerm }) {
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold text-sap">{term.lessonId}</p>
-          <h3 className="mt-1 text-lg font-bold text-ink">{term.japanese}</h3>
+          <h3 lang="ja" className="mt-1 text-lg font-bold text-ink">{term.japanese}</h3>
           <p className="text-sm text-slate-600">
             {term.chinese} · {term.englishOrSap}
           </p>
@@ -21,7 +21,7 @@ export function TermCard({ term }: { term: GlossaryTerm }) {
         {term.needsReview ? <span className="rounded-md bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700">待复核</span> : null}
       </div>
       <p className="mt-3 text-sm text-slate-600">使用场景：{term.scenario}</p>
-      <p className="mt-2 text-sm text-ink">示例句：{followSentence}</p>
+      <p className="mt-2 text-sm text-ink">示例句：<span lang="ja">{followSentence}</span></p>
       <div className="mt-3">
         <AudioPlayer
           sentences={[
