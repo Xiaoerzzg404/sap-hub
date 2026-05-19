@@ -2,7 +2,7 @@ import Link from "next/link";
 import { allLessons, allReviewTerms } from "@/lib/content-loader";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
 import { StudentRecordingReview } from "@/components/teacher/StudentRecordingReview";
-import { TeacherScriptViewer } from "@/components/teacher/TeacherScriptViewer";
+import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
 export default function TeacherPage() {
   const missing = allLessons.filter(
@@ -31,14 +31,7 @@ export default function TeacherPage() {
         <Metric label="待复核术语" value={`${allReviewTerms.filter((item) => item.mustReview).length}`} />
         <Metric label="缺失课程" value={`${missing.length}`} />
       </section>
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">课程逐字稿速览</h2>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {allLessons.slice(0, 6).map((lesson) => (
-            <TeacherScriptViewer key={lesson.id} lesson={lesson} />
-          ))}
-        </div>
-      </section>
+      <TeacherLessonAssetsBrowser lessons={allLessons} />
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-ink">待复核术语</h2>
         <ReviewTermsTable items={allReviewTerms.slice(0, 20)} />
