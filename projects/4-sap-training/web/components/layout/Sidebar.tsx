@@ -25,6 +25,7 @@ const navItems = [
   { href: "/speaking/consultant-output", label: "60 秒输出", icon: ScrollText },
   { href: "/roleplay", label: "Role Play", icon: Users },
   { href: "/glossary", label: "术语库", icon: Library },
+  { href: "/library", label: "总表 / 手册", icon: BookOpen },
   { href: "/phrasebook", label: "句型库", icon: GraduationCap },
   { href: "/assignments", label: "作业中心", icon: ClipboardCheck },
   { href: "/review", label: "复盘中心", icon: Repeat2 },
