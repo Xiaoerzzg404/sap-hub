@@ -15,7 +15,8 @@ export const defaultProgress: ProgressState = {
   favoriteTerms: [],
   favoritePhrases: [],
   favoriteShadowing: [],
-  selfAssessments: {}
+  selfAssessments: {},
+  lessonStep: {}
 };
 
 export function loadProgress(): ProgressState {
