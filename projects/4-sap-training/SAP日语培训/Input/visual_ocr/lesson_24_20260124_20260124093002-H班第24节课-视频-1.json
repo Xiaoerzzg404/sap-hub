@@ -1,0 +1,25 @@
+{
+  "source_file": "第24节20260124/20260124093002-H班第24节课-视频-1.mp4",
+  "interval_seconds": 600,
+  "review_state": "ocr_needs_human_review",
+  "items": [
+    {
+      "time_seconds": 0,
+      "time": "00:00:00",
+      "frame": "_outputs/visual_ocr/lesson_24_20260124_20260124093002-H班第24节课-视频-1_frames/frame_00001.jpg",
+      "text": "cro as eGeeseaewvwrs 2 GO FHM ow"
+    },
+    {
+      "time_seconds": 600,
+      "time": "00:10:00",
+      "frame": "_outputs/visual_ocr/lesson_24_20260124_20260124093002-H班第24节课-视频-1_frames/frame_00002.jpg",
+      "text": "enum 2 amano a BOOCOBBHS BB +46 eve ie"
+    },
+    {
+      "time_seconds": 1200,
+      "time": "00:20:00",
+      "frame": "_outputs/visual_ocr/lesson_24_20260124_20260124093002-H班第24节课-视频-1_frames/frame_00003.jpg",
+      "text": "1 50 ee gh + De@ 5 ono ga cGeceerfaes ee ee |"
+    }
+  ]
+}

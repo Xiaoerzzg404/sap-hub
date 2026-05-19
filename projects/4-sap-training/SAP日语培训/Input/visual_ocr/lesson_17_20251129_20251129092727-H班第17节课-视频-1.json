@@ -1,0 +1,49 @@
+{
+  "source_file": "第17节20251129/20251129092727-H班第17节课-视频-1.mp4",
+  "interval_seconds": 600,
+  "review_state": "ocr_needs_human_review",
+  "items": [
+    {
+      "time_seconds": 0,
+      "time": "00:00:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00001.jpg",
+      "text": "一 A & 会 . ‘UAI Meeting 1 umd : Please expected vs actual result.” a ‘We willl this as a defect and aasigh it to ABAPer 1728/2025 Ht topic: WAIKRFGUGH FS with developer 4. Meeting Kickoft Fc: Thanks for joining. Today I Walk SUOUGH the Functional specficaton fF the Custom Sales Order Status Report. DEV: Great. ve gone'through the FS briefly. Lets GooVer the detail. 2. Purpose of the Report sesso Boa LOeCEGR£sASD +83 con une"
+    },
+    {
+      "time_seconds": 600,
+      "time": "00:10:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00002.jpg",
+      "text": "Arvin ©@ot) EL D~ 0) > sa project partion VoabulanyQ. v na ° o Ay 2 Ae Aw 天 > Ke ag \" : 9. Technical Assumptions DEV: Any custom Z-tables involved? FC: No. All standard tables. DEV: Should | create a custom program or use an enhancement? FC: Create a new custom report: ZSD_ORDER_STATUS. 10. Deliverables & Timeline DEV: When do you need the technical spec (TS) and the first draft? 。 TS by Friday 。 First version in DEV by next Wednesday 。 User testing right after that DEV: Sounds good. I'll start with the TS. Useful Vocabularv = C re On Pk Accessibility: investigate Di Fox G@ 8 & + 本 各caoovaend Ba LeeceG 加 a F 6B AO coke SM g"
+    },
+    {
+      "time_seconds": 1200,
+      "time": "00:20:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00003.jpg",
+      "text": "Gruso ©) ED UD = sar rject reparation Vocabulary Qn ~ : 二 |全人 4 $\\4'! SAY 2A aa Bis: we lalla 6. Error Handling \"| DEV: What should happen if no data is found? FC: Display a message: \"No records found for the selected éritetia.” DEV: Any restrictions on authorization? FC: Yes, check sales organization authorization via object V_VBAK_VKO 7. Performance Requirements FC: MBXIMUR runtime should be under 5 seconds for 10,000 records. DEV: That's fine. I'l optimize SQL and avoid nested loops. 8. Output Format Requirements FC: Please implement + Color coding Red —» Open Yellow —» Partially Delivered ; oe, 2. Eel LEeosecgewse A & 9 FOR repos #"
+    },
+    {
+      "time_seconds": 1800,
+      "time": "00:30:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00004.jpg",
+      "text": "a @@ HD+ 出 。 strPreject reparation VoabularyO.. v ae | File Home WPSPDF Insert Draw Design Layout References Mailings Review View Help co Te Ae Leben |AIM] Bee Mig ee toe ae =~ 2 zs 。 Customer Number (Optional) 。 Sales Order Number 。 Date Range (Order Creation Date) 。 Status Filter (Open / Partially Delivered / Completed) DEV: For date range, is it a single field with \"from\" and \"to\"? FC: Yes — standard SAP select-options. 4, Report Output FC: The output columns /Row are: 。 Sales Order 。 Order Date 。 Customer 。 Material e 。 Order Quantity “ 本 Ba LOEOEBGSASH ~8h con ore"
+    },
+    {
+      "time_seconds": 2400,
+      "time": "00:40:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00005.jpg",
+      "text": "W Home 日:op onp + > Ele Format Painter BIUAS xX» Ay &e = = = = Il t= $= 1E~ Ele — Werdarstyles~ A text Outline ~ _ Text ‘Shape Styles ¥ Settings © = os 1 wu e ° 下 Ps 二人 e a 3 od —— Ben:Hi Alice. Yes, we with SAP S/4HANA last quarter ja local ERP, . > SAPis much more land ‘What system are you using now? , - Alice:We have a customized local ERP built ten years ago. It finance, inventory, 12 and basic sales processes. But is a challenge. . Ben:That’s common. With SAP, all modules—like SD, MM, FICO, and PP—work together in real-time. So there's no need for batch uploads or separate databases. ee, A beoecgeas o 8 0 eam EM g"
+    },
+    {
+      "time_seconds": 3000,
+      "time": "00:50:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00006.jpg",
+      "text": "WW Home BB spook up cass ppp + q) HE 。 -汪和 a Ed . 。 。 . 10 > 7 二三二二二一 Ben ISAP projects require strong change > Ae, PF once @ 时 users it, they ihe efficiency. eo en 8S | j 12 we — Ben:Anytime, Alice. if you'd like a system demo or user feedback from our = ae team. re : Slide 112/168 {2 Custom Font ising 加 习 Hnse- Qeommet (8 0 8 ox - — a a Q bEevsecgewssoga ^ 将可的 io 天"
+    },
+    {
+      "time_seconds": 3600,
+      "time": "01:00:00",
+      "frame": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1_frames/frame_00007.jpg",
+      "text": "站 。 . . © Walk © . ke . . r ewhois File Edit View B 能 Q s & ° = 935M 加 Ha EOESEGRSSSGE +88 con he"
+    }
+  ]
+}

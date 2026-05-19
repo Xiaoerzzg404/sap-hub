@@ -1,0 +1,3707 @@
+请不吝点赞 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+I'm so excited to have the first class with you guys.
+Hello, can you hear me clearly?
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+我可以分享一下
+是的
+OK, great
+所以,各位早上,各位早上
+所以,我们来到我们的SAP英语课程中
+这是一课程中的一课程中
+我给你一课程中的课程中
+OK, so
+It's up.
+我们主要学的内容呢
+就是SAP相关的一些内容
+那今天呢
+我们主要是讲一下子
+就是怎么样去学好这个SAP的音语
+那第二个呢
+我们要会去做一下那个SAP的一个介绍
+那还有就是我们怎么去login
+怎么去logout
+然后我们第一天去上班的时候
+我们是不是要在系统里头
+要装一个什么软件
+我们才能去login啊
+我看同学知道吗
+SAP软件吗
+SAP的那个软件
+记得吗
+好那没关系
+我们等会再讲
+然后呢
+我们进到项目以后呢
+我们就是要去装这个SAP的一个软件
+对吧
+每个人都要去装
+然后我们有可能也要去
+为我们用户装
+那我们怎么去沟通
+去帮别人装软件也好
+或者你请公司的IT
+给你装软件也好
+我们要学怎么去沟通
+然后我们怎么去
+给用户做一个基本的培训
+怎么去上系统
+怎么去下系统
+然后系统里头的一些
+关键的一些字段
+我们怎么去读
+好 那我们进了公司以后呢
+我们是不是要去进一个项目
+那我们假设我们的项目
+是从0到1
+from zero to one, okay?
+他不仅要对自己本模块要了解得清楚
+也要对这个上游
+比如说MMSD啊
+什么PP啊
+接口的地方也要去要有了解
+所以我们课程呢
+也会涉及到这个五大模块
+五大基本模块
+那最新的呢
+SAP还有一些是
+就是一些专业的术语
+那比如说BTP啊
+你们可能没听过什么的
+这些呢
+我们有专业的术语
+做一些讲解
+那就是做SAP顧问的话
+我们每天都要去什么
+我们几乎很多都是上线
+我们几乎每天都要去开会
+那至少我在这个Globe项目里头是开
+每天要开三个小时的会议的
+所以呢我们要学会
+就是怎么用这个会议的语言
+然后怎么去主持会议
+怎么样去激活你的这个同事去发言
+或者就是提供一些观点
+OK
+好
+那我们就是进入了ECC以后呢
+有很多企业它已经进入到云端
+或者已经进入到了S4HANA
+S4HANA是我们的最新的一个版本
+OK
+S4HANA的话我们有一些
+Project Agile Method
+就是介绍一些项目的那个
+实施用用Agile Method
+OK
+好
+那我们这个
+还有就是在实施的过程中
+我们用Active
+激活的这个
+for S4HANA
+那这个S4HANA和ECC
+有什么区别呢
+这个其实是一个面试题
+那我们也要去学习一下子
+所以如果您改变
+你的系统设计从ECC
+到S4HANA
+那么您必须明白
+什么差别是
+对于他们的分别
+好
+那就是有的同学呢
+他们的目标是要
+进入到Global项目
+进入到Global项目的话呢
+我们就是要给同学
+指导一下子就是
+用这个SWOT的分析法
+S stands for strength
+就是强弱
+opportunity就是机会
+T是threat
+就是
+危险在哪里
+对我们用这SWOT分析法来分析我们
+那就是说我们在面试的时候
+其实是我们convince
+convince them
+so I'm the best candidate
+就是我是最好的这个竞争对手
+那你要学会
+Tell your story
+OK
+你要学会讲故事
+我们不管是
+很多的面试问题
+就是不是技术上面的问题
+就是说
+你要学会Tell the story
+OK
+好那即使技术问题的话
+那有可能你也要学会去讲
+那有可能你讲不出来
+或者就是说一时梗住了
+那我们要学会打擦边球
+那我们就是绕来绕去
+我们可能就是把一些关键的点能绕出来
+好那同时呢
+我们这个FICO和这个SD接口呢
+现在是很流行
+现在有很多企业
+他们就要到这个
+就是concept
+这是一个属于一个interface
+那我们做一个case study
+这种interface的话
+我们怎么去写那个功能报告
+然后我们怎么去设计这个
+设计这个系统
+现在就是说牛的顾问不是说
+只是会几个简单的操作了
+我们要升级
+就是我们同学都已经有八年
+我看八年六年的经验
+那我们要学会升级
+就是说我们要把自己
+就是往中级高级上面拔
+那不是简单的操作
+也不是几个
+不是一个几个简单的操作的
+这么就能解决得了问题的
+那我们要学会深根
+好吗
+好
+那就是如果你们有这个心仪的工作
+或者就是有一些简历的话
+那你们如果想快速的想找工作的话
+那我也可以给你们做这个
+做这个工作的这个分析
+基本上就是说我们看了那个要求的话
+基本上我们其实也可以拆出很多这个面试题出来
+那有的同学他可能就是去使用别人给的面试题啊
+但是实际上我们要针对性的
+就是有job description上面
+其实我们是可以看得出来
+他可能会问到一些什么样的问题
+好
+so far so good
+那我们呢就是
+我们希望呢就是在课堂上呢
+就是希望大家就是能积极发言
+然后因为我们这个不是说一言堂
+不是老师在上面讲
+然后你们就听
+我们这个已经告别了那种传统的方法
+我们是要希望大家能就是involve this class
+就是能参与到这个课堂来
+然后我会要同学
+有的同学害羞
+那我就让他读课文
+有的同学基础比较好的话
+那我就让他主持招聚
+好吗
+然后每个人都要积极参与
+因为我们上了这个课
+就是相当于上战场
+你不积极参与的话
+那你就落后
+那你落后的话
+那你就浪费你自己的时间了
+对吧
+浪费你的金钱
+浪费你的时间
+浪费了机会
+那我们到战场上
+我们就要去抢机会
+抓机会好吗
+好那就是
+So far so good
+好那我们进入
+So let's dive into another topic
+OK
+我这个速度讲的话
+大家能听得懂吗
+如果就是说你觉得好像有点点难的
+或者口音听得有点不太清楚的话
+我可以稍微放慢一点速度
+好
+那我们来看一看思考一下子
+就是我想问一下同学
+就是你们觉得
+就是你们看了这几个七个点吧
+你们觉得哪个点是你做的最好的
+OK我们快速的来看一下
+当我们在不知道什么意思的时候
+我们要try to guess
+take a guess
+就是要猜一猜
+那我们在上下文的时候
+不可能说每个单词我们都会
+可能70%会
+30%可能不会
+但是我们根据这个上下文的话呢
+我们可以去guess
+what's the meaning of the words
+ok
+那经常的话
+如果我们猜的话
+其实我们常常是猜的对的
+好
+那我们第二点呢
+就是try to get their message across
+就是尽量去理解
+他们的意思
+即使就是说我们对这个语言
+掌握的不是很好
+那就是我们还是要尽量地去挑战
+就是一些沟通的一些技巧
+对吧
+然后就是说
+就是还是就是说
+那个try your best to guess
+try your best to challenge
+the communication skills
+ok
+好
+那第三点呢
+就是我们
+同学可能比较害羞
+OK
+So
+they dare not to speak up
+OK
+they always said
+I'm not ready yet
+就是我还没准备好
+那你没准备好
+任何时候你都觉得
+没有准备好
+那没有关系
+就是我们来到这里来的话
+我们就是要犯错误
+没关系
+OK
+那犯了错误的话
+我们有改正的机会
+那所以就大家就不要
+不要害羞
+不要觉得
+哎呀
+犯错误
+我觉得很
+很不好意思
+我们就是要
+lose your face
+就丢脸没关系的
+好的第四点
+try to figure out
+fig out的意思就是说
+想出来
+fig out how language works
+那我们要尽量去
+因为阅读很多
+然后我们尽量去想一想
+这个语言
+它是怎么样子
+比如说渠卫兵啊
+或者它导宗剧啊
+等等我们看看
+它这个language
+how the language works
+OK
+好那第五点呢
+就是我也送给大家
+那天我送给大家一句话
+就是
+practice makes perfect
+那就是说
+多练习
+那才能让我们
+就是能更加完美
+对吧
+那我们就是随时随地的练习
+那我想可能有的同学
+喜欢听那个周杰伦
+那我们好不好可以
+在我们学习期间
+我们好不好可以换成一个
+欧美的一个歌手
+比如说那个叫什么
+Speed
+OK
+好 那比如说梅梅
+对吧 我们可以换成梅梅的歌
+对吧
+好 那我们平时的时候喜欢看那个刷剧
+那我们可不可以刷一点那个英文那些
+短剧或者短视频
+对吧
+好 那我们如果就是说
+在回家的路上
+我们可能坐公交车
+或者就是赶地铁的时候
+我们能不能把那个小本子给拿出来
+就是看看单子
+那昨天呢 有一个G班的同学
+他就分享了他是怎么做的
+他是把我们的课件
+然后放到Deepseek
+但是我这边没有Deepseek
+因为我们不能用
+Deepseek
+然后他把那些单词就翻译
+然后音标什么的
+就一下子就给他弄出来了
+然后他就把这个
+粘贴到自己的那个小本子上面
+粘贴到自己的那个文档里面
+然后他说偷偷的拿出来看
+那我想他可能是上班的时候
+或者中午休息的时候
+他就把他那个小本子拿出来看
+他以前英文跟你们可能不如你们
+真是不如你们
+然后他现在已经上了半堂
+就是半节课了
+已经12堂课了
+然后他说他说amazing
+就是很神奇
+他说他现在可以去读一些PA的教材了
+以前他很多单词不会
+或者他现在已经可以读出来了
+所以他就很兴奋的去分享他的那个成果
+然后还介绍新学员给我们
+所以就是有时候同学的那个经验
+我们可以去分享一下
+好
+那我们还要分析一下
+就是别人怎么说的
+就是别人在talk的时候
+我们想一想
+oh why she use this word
+so why I cannot use that word
+so if I see the sentence
+maybe I like that
+就是如果我说话的话
+我可能会讲成那样子
+我们要分析分析
+好那我们最七点
+最重要的一点呢
+我们就要有good self-image
+就是要对自己
+要有就是说比较自信
+叫build up your confidence
+我们就是说中国同学
+中国孩子
+常常就很humble
+就是非常谦虚
+哎呀我不行
+oh my english is so bad
+my english is so poor
+他们可能经常会说bad
+但是还是要自信
+就是因为你们还是可以说得出来
+我就是那次跟大家聊了一下子
+我觉得同学还是有词汇的
+就是说基本的句子
+主位兵这些都会的
+然后脑子里头也是会有一些单词的
+只是说这些单词没有active
+就像我们的database一样的
+你们这些里头的一些数据
+没有激活没有active
+好那我们上课的目的呢
+就是一方面我们学一些新的单词
+学一些sap的用语
+第二方面呢
+我是想激活大家就是说
+没有很久没有用的单词
+然后我们慢慢一步步走
+然后通过这个阅读
+通过阅读和我的系统演示
+和我就是说课堂上的那个讲解
+那我希望大家就是能形成一个英语的环境
+然后就是我们可以通过一些词
+然后我们再扩
+扩成词主
+重点吧
+从点到线再到面
+扩成词主
+扩成词主以后呢
+然后我们扩成自己的句子
+我们在这里不是说要应试的
+我们在这里是让同学有这个机会能说
+然后把这个句子带到自己的工作环境中去
+把这个句子带到自己的项目里面去
+好
+so far so good
+好
+那我们先来问一下子
+我刚刚讲解的这个七个点
+哪个同学会觉得就是有一些感想
+或者你觉得这一点特别好
+Kathy
+Hello,Kathy, are you there?
+Yeah
+Yeah, I'm here
+So which one impress you?
+I think
+The three points
+is prepare to make mistake
+我需要英文吗?
+我认为我们认识英文是很短的
+所以我们认识我们必须要改变
+Main mistake when we talk English, some sentence is for
+OK,我想問田田的言,你進來了嗎?
+如果是在啦
+哦 你在是吧?
+OK, sorry, just now.
+I forgot to forward the conference number to you, OK?
+好的,那田田的眼,你刚刚听到这些我们讲的这些,
+你对哪一点比较就是impressive,就是比较印象深刻?
+That's right.
+It's fair to make a mistake.
+啊哈。
+So, are you shy to make a mistake?
+是一種的
+是一種的
+是一種的
+我會失去
+是一種的
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+是
+我们从小时的身份
+我们
+我们
+我们从小时的身份
+我们从小时的身份
+我们从小时的身份
+我们从小时的身份
+我们从小时的身份
+我们从小时的身份
+我们从小时的身份
+小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小小
+看回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回回
+我会选择三和七
+我认为一个好英国人
+我们不怕失去
+我们必须保持着
+保持着保持着
+and don't be shy and I think that is very important to improve my spoken English
+okay that's good
+okay great okay so let's move on so before
+so just now I mentioned the SAP so who can tell me what is SAP stands for
+I think I have an answer already
+so what is SAP stands for
+我每天都用SAP的
+那我们知道SAP是哪几个单子吗
+这个我们能说出来哦
+我希望试试
+OK
+蒙蒙给它试试
+好 做得好
+System application
+and product in process
+可以可以
+Product
+但是又有人讲
+这个Presentation
+他就是说那个展示
+演示或者一个Product
+都可以
+好的
+那我们大家都知道
+这个好的
+那我们现在看这个层面
+对
+我们有这个User
+Interface Layer
+Interface
+OK
+那我们讲到这个接口
+那常常我们来讲
+接口接口对吧
+好
+那我们接口的话
+我们是有什么
+有什么方向?
+Inbound and outbound.
+Output.
+Okay, so let me give an example.
+Okay, so you just let me know
+is that an inbound interface
+or outbound interface? Okay, for example
+Golden Text System.
+SAP send out
+invoice number,
+invoice amount,
+vendor information
+to GTS system.
+是那是英镑的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的 应邦的
+outbound
+对 是有个原则
+OK 那是以什么为中心
+如果是从SAP
+有点小字
+那我放大一点
+heading OK
+那如果是从SAP送出去的
+outbound
+OK Very good
+好 那如果是GTS
+GTS送给SAP
+送了一些什么东西呢
+他送了这个
+Return Invoice Number
+OK
+Return
+就是返传
+Return Invoice Number
+这是什么
+英镑
+好的
+那我们要搞清楚
+就是说一个方向
+要搞清楚
+英镑的还是
+outbound的
+OK
+好
+那我们再看
+这个层面
+Layer
+就是3 layer
+或者什么
+对
+Application
+Application
+是什么意思
+运用
+对吧
+那我们说
+SAP是运用软件
+怎么说
+Application System
+把前面讲全
+SAP is Application System
+OK
+very good
+好
+那我们再看一下
+这个有Database
+和Integration
+好
+那Integration呢
+我们天天在讲
+那个集成测试
+集成测试
+对吧
+好
+那我们想想
+这个集成测试
+怎么说
+Integration test
+Pay user test 怎么说啊?
+UAT test
+Unit test, food test
+Gestion test,集成测试
+集成测试,FIT,对不对?
+Functional integration test
+那你们还有没听过这个?
+Function test
+功能测试
+这个测试知道吗
+回归测试知道吗
+Pressure
+No
+Pressure test
+好的
+Integrate
+好
+那我们
+还有什么
+Pressure
+压力测试
+Pressure
+Pressure test
+还有呢
+那还有是
+Performance test
+对吧
+Yes
+对吧
+对
+对
+我们测试有各种各样的
+我们就是说我想
+大家都已经清楚
+那我就不需要再解释了
+好
+那我们database
+其实HANA是一个database
+OK
+Analystic
+就是一个分析
+然后再到这个reporting的层面
+好
+那我们下面呢
+可能听的这个比较boring
+那我们下面呢
+我们来考一考大家
+发音好吧
+就是how to pronounce these words
+and fill in the blank line
+ok
+好 那我们请一个同学来读一下
+然后把这个题目做一下
+我看谁
+谁在线
+Sarena
+Cao君
+Cao君
+好
+Cao君 are you there
+你读一下
+然后在这个
+在这第四题我们来扩一下句子
+ok
+好 那我们这种扩句子呢
+是在我们整个的这个课程里面
+都会要去运用的
+OK 我先给你们一个例子
+好 赵俊你来读一下好吗
+好 看试一下
+How to pronounce these words
+and fill in the blank line
+1. Configuration
+2. Implementation
+3. Authority
+4
+sorry
+I'm busy now
+why not
+wait
+the minutes
+wait minutes
+5
+I'm new to the project
+I have to
+I have to
+I have to
+赶上这个项目怎么说 赶上
+赶上巴士
+其他同学有没有可以帮忙
+how about
+I have to
+improve
+I have to
+know the
+the other
+catch it up
+catch it up as soon as possible
+catch up this project
+可以吧
+开去 job
+as soon as possible
+那同学还有什么别的答案
+我们这里没有标准的答案
+就是说我们可以发挥你的想象力
+think about it
+sorry I'm busy now
+why not wait for another minute
+okay that's good
+sorry I'm busy now
+why not schedule a meeting
+to discuss it later
+为什么不设定一个会议
+就是说迟一点讨论呢
+对吧
+好 那我们想想还可以说什么
+sorry I'm busy now
+why not put this meeting
+after
+after 20 hours
+okay
+push up
+okay
+或者就是你要就是
+push your job to others
+assign your job
+assign your job to others
+so sorry I'm busy now
+Why not
+你甩锅甩到蒙蒙身上吧
+好 谁来甩一下锅
+为什么不从蒙蒙那里得到帮助呢
+可以吧
+Why not get help from
+得 help from
+蒙蒙
+蒙蒙
+OK
+Yeah very good
+好
+Now I'm new to this
+I'm new to the project
+I have to
+还可以干什么
+我对这个新的项目
+我是对这个项目是新的
+这个项目对我来说是新的
+我 have to
+I have to know the current
+know the project
+current situation about this project
+I have to be familiar with this project
+as soon as possible,可以吧?
+就是说尽快熟悉起来,对吧?
+好,那这个就是,这个就给大家一个例子,
+OK,就是我们没有标准答案,
+然后如果我们在招句子的时候呢,
+我们尽量发挥自己的想象,
+就是think about a scenario first,
+scenario就是情景,
+那我们心想啊,我是新来的这个,
+好,那我们下面呢就是,
+给大家一个business scenario,OK?
+所以我新的这个项目,我需要在这里
+在这里,你叫什么意思吗?
+在这里,我们要在这里,我们要在这里
+在这里,我们要在这里,我们要在这里
+在这里,我们要在这里,我们要在这里
+OK, 归椅
+那我们可以读得重一点
+还可以,还不错
+那有的同学的话
+他就会读
+In-Store SAP GUI
+对,我们要知道就是
+归椅,OK
+好,那我们知道这个
+SAP 归椅
+那我们来练习一下
+Let me give you a scenario,OK
+好
+For example,
+王磊,
+你是IT的,
+OK,
+好,那今天凯提是第一天上班,
+然后凯提你,
+你请求就是王磊,
+你说我是新的这个项目,
+So I'm new to this project,
+然后你这个没有这个最新版的这个
+SAP归椅,
+能不能请他帮你安装,
+然后我往来就说
+可以
+就是我
+你的那个
+你可以说你的位置在哪里
+然后我会
+来到你这个位置上面去
+或者就说你把你的电脑
+带到我的这个办公室
+然后你可以告诉他
+我的办公室在什么什么地方
+好
+那这个是比较常见的scenario
+对不对
+好
+那我们第一天上班的时候
+我们请
+请两位同学
+make a conversation
+那在你的这个过程中呢
+你要会用到这个install
+你会用到这个updated version
+就是说最新版的
+最更新的这个归椅的
+好吗
+好
+然后你会讲一讲你的这个office的位置
+location
+OK
+好
+两位同学
+请你们稍微做一下准备
+然后我想应该是
+我想你们两个应该是能形成一个很流利的这个对话
+好 开始吧
+OK let's begin
+Let's start
+好 萌萌你先就是说hello
+稍微做一下自我介绍
+然后你请求这个王雷同学的帮助
+me
+是萌萌不是开心吗
+开启
+快点
+-SAP?
+-Yes, okay, no problem.
+-你可以說是可以裝最新的版本?
+-Okay, you can tell me your office location.
+I will go to your seat.
+-I'm in the 19th...
+19th floor
+and near
+19th floor
+3th floor
+and near the
+near the
+near the room
+okay
+I will be
+I will be
+I will go to
+I will go to your seat
+I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+install the most updated version SAP-3 in your computer.
+然后你说非常感谢。
+Oh, thank you very much.
+OK, so that's good.
+OK,好,那我们就是看了这个SAP-3以后呢,
+我不知道你们就是SAP-3的话,
+这些client use their password
+好 这些我们都会对吧
+好 那就是说
+那我们如果要登录这个的时候
+你想想如果你给这个用户做
+training的时候
+你会怎么说
+那我们在安装的时候
+如果你自己有
+if you have a grade
+installed already
+so you will ask some information
+okay so what's the information you are
+going to ask
+王磊
+OK
+So think about that
+OK
+So if you already
+installed the grid
+in your laptop
+OK
+So you will ask
+the property
+Property
+Service
+Service
+服务器
+那个叫什么
+Service
+Country
+Service
+好
+那我们到了这一面的时候
+那我们到这一面的时候
+我们要去做一个配置
+对吧
+要去做一些这个config
+OK
+So you will ask
+Wangley
+就说你可不可以给我结个图
+结个图怎么说
+Screenshot
+Yeah
+OK
+OK
+Very good
+Screenshot
+好
+其他同学知道吗
+是
+好
+我这个字就有点大
+OK
+OK
+OK
+好
+OK
+OK
+OK
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+那可不可以给我一个视频
+好的
+然后我们参数怎么说
+Parameters
+OK,非常好
+OK,关系统
+可不可以给我一个关系统
+什么
+Parameters
+Parameters
+OK,所以
+我认为最好的方法是
+提供给你一个
+screen
+screenshot
+好
+那我们现在就是说
+要登录了
+那我们看一看这个
+这个叫
+connection property
+好
+那我们cancel
+cancel it
+OK
+so if you want to log in
+SAP
+so you just double click
+双击
+双击怎么说
+double click
+double click
+OK
+OK
+very good
+好的 你们说
+然后我在前台操作
+然后你们来讲
+so here for the client
+I will put 400
+okay
+so
+use the username
+the password is
+okay
+how about the log on language
+so if I want to log in Chinese
+so
+what's it
+ZH
+ZH
+Yeah
+Good
+OK
+OK
+OK
+Enter
+OK
+So who knows
+What's the field
+How do we call this field
+The blank field
+Transaction code
+No
+No
+No
+No
+什么?没听懂。
+就是,
+how do you call this a blank field?
+这个,这个,
+so usually we put the transaction code here.
+我们会放这个交易,
+交易的,
+transaction code.
+好,那我们要记住这个 field
+叫command field,命令,命令一顿,
+command field,
+ok?
+好,那我们这个旁边呢,
+我们叫screen header,
+ok?
+就是頭部分, screen header
+那這個身體部分呢,我們叫 screen body
+Screen body
+好,那我們就看上面什麼vendor,什麼
+edit,go to,這些叫manual bar
+OK,manual bar
+OK,那我們平時的時候,我們training的時候,我們不知道怎麼說
+我們就是點點這裡,click here,click there
+現在我們學過通過SAP英語的話,我們知道
+Oh,這個叫manual bar
+OK,这个下面的叫standard toolbar
+standard toolbar,OK
+好,那你有一些运用的这个toolbar
+那在这边
+那title,比如说这里display vendor
+so we call it the title bar,OK
+好,那我们再到这个最右下角
+我们会有一些状态
+这个就是system状态
+那比如说我们有userid
+然后你这个系统是什么200还是300
+那个这个叫什么
+statters bar
+OK
+那我们要放上输入什么东西
+我们可以说type
+OK
+那如果是这种下拉菜单呢
+我们叫input
+input field
+OK
+input field
+OK
+好
+那我们
+那我们还有很多
+就是说那些
+就是说
+是一个界面的话
+我们还是比较容易
+因为它这个有一些标识的话呢
+我们这个如果一纸向那里的时候
+它其实就会给我们显示出英文
+那如果我们不记得的话呢
+那我们还好
+我们有什么enter啊什么的
+好command field的这个主要是输入tcode的对吧
+好那我们这个有save
+这些东西就不是很难
+好那我们在这里挑一两个词来讲
+好吗
+好那我们挑一下cancel
+好那我们一讲到cancel的时候
+我们可以想想系统里头什么情况下会用到cancel
+close the page
+close什么
+close the screen
+so we cancel the screen
+cancel it
+cancel the transaction
+cancel什么
+cancel the
+程序
+Process
+Cancel program
+Program, right?
+Program
+可不可以cancel invoice
+Cancel invoice
+Invoice
+Invoice
+OK
+还可以cancel什么
+Cancel
+Order
+Delivery
+还可以cancel什么
+Delivery
+Delivery
+Delivery
+Delivery
+好,那我們還可以cancel什麼
+Good Receiver
+Good Receipt, OK
+Good Receiver
+Good Receiver
+OK,那我們比如說我們的老闆出差了,然後不在,我們要把這個會議要什麼
+cancel
+cancel
+cancel
+那如果是你要
+安排一个会议的话
+那我们是可以说
+schedule a meeting
+对吧
+schedule a meeting
+那我们先schedule
+OK
+schedule a meeting
+然后接下来呢
+就是说老板不在了
+我们就要cancel
+对吧
+schedule a meeting
+或者set up a meeting
+OK
+那我们要学会这几个词
+set up
+这是最基本的
+好
+预定
+都可以
+就是预定会议或者schedule a meeting
+好的
+那我们来说一下子
+就是说
+我们要预定一个会议去讨论这个
+业务流程
+这个经常用吧
+Yes
+那你们跟MM的FICO的话
+我们要开个integration的这个
+meeting对吧
+然后讨论一下这个业务流程
+好
+那这种情况之下你们来选
+选用setup meeting或者schedule meeting
+然后迟一点的时候呢
+你再说这个
+因为这个项目经理不在
+然后我们要取消会议
+好我们可以用把这两个词连在一起用
+谁愿意来尝试一下
+来组成两个句子
+不忘try
+我们班上同学的水平都还不错的
+所以呢就说
+好的
+月月今天也没有说话是吧
+还有夏至幽梦
+好
+你们两位同学谁愿意说一下
+月月
+你方便说话吗
+可以了老师
+好的你来说一下
+维维
+我们会设计会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会议会
+好
+那我们继续来学习
+就是我们还有呢
+就是一个比较重要的一个单词呢
+就是
+我想你们可能应该还是都是
+最主要的时候还是会认识的
+那我们这里有一个这个session
+那我们可以用这个create a new session
+对吧
+create a window
+我们经常会说create a window
+create a new session
+那就是另外开一个窗口的意思
+好
+那我们还有一个叫layout
+Layout这个词
+我们可以重点上来讲一下
+Layout
+Layout可以说什么
+什么Layout
+Layout
+SAP application
+还有呢
+Layout我们可不可以
+ReportLayout
+RefreshLayout
+还有什么
+ChangeLayout
+OK
+那我们可以说一个plan的一个layout
+对吧
+一个计划的一个形式
+格式
+那我们知道这个save the layout
+So when we run a report
+OK
+So we can save the
+layout
+And later we can use the same layout
+就是它的格式
+layout
+OK
+好 那这里
+还有什么
+Layout is mean
+格式
+Layout
+
+
+Layout
+Layout
+Layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Layout
+Layout
+
+
+
+
+Layout
+
+那比如说你要问那个用户
+用户要开发一个
+定制化的一个报表
+对吧
+好那我们可以说什么定制化怎么说
+Customize
+Customization
+No no no
+Customize
+就是Custom
+Custom report
+Not Mize
+那是你想的
+那是你想象的Custom report
+就是Customer report
+客户
+对就是定制化的一个报表
+OK
+好
+那layout
+那我们
+我给你们选一个
+那我现在做了一个
+做一个动作
+那我做的这个动作叫什么
+我就点这个
+点那个
+点它下面的这个
+click
+那我还有一个什么意思呢
+我开始放到这里
+叫navigation
+navigation
+就是寻找
+Navigation, okay,Navigate,Navigate, means just navigate,okay,
+so I tried to find a report for you,okay,so let me click the general ledger,
+and under information system,so we can find a bunch of,just a bunch of reports,okay,
+所以我按一下, 找到基本的交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交易交
+variant
+get the variant
+variant就是你的表样
+就是你开始存起来了
+存起来了
+variant
+那这样的话呢你在执行的时候呢
+它这些字段呢就是
+或者parameters
+you don't have to input the value
+就是价值
+或者value again
+ok
+so you just execute it
+and then you will get the report
+ok no list
+什么
+generated
+generated
+就是产生
+产生
+OK
+好
+那就是说
+我这个报表
+它的这个
+variant
+没有
+没有报表产生
+好
+那
+我在看一看
+有别的
+所以
+let me check
+another
+variant
+OK
+SAP
+minimal
+variant
+so
+let me see
+这个可能也没有
+Let me check
+No list generated
+Okay
+So anyways
+So when you run the reports
+They will give you the layout
+Okay
+The layout of the report
+Include
+Zi段怎么说
+Field
+Okay
+Field
+Field
+Field
+Field,对
+就是一个字段
+那我们讲到字段的时候呢
+我们讲到字段的时候
+我们又会联想到什么东西
+Description
+Field description
+那跟这个字段相关的话
+有什么长度,对不对
+Yes
+那我用
+我现在在干嘛
+我display一个什么
+Action
+Table
+Table
+好 那我Display 一个这个Table
+好 那我们来看看
+这个是不是叫Field
+Field
+Field的话 那它有个叫Technical Name
+Technical Name
+OK Technical Name
+好 那如果我想知道这个长度
+我怎么弄
+So for example
+If you write the functional specs
+Or if you are very interested in this field
+OK
+So you try to double click
+Double click the field
+Technical name
+Double click
+Technical name
+And then
+You can find
+The data type
+And the length
+Okay very good
+Okay
+好,那再考一考你们一个小问题
+那我现在是用的这个
+这个叫什么吧
+刚刚学过
+State
+State
+State
+State
+那这里呢,我放这个T code
+这个叫什么吧
+Command field
+Command field, very good
+好,那这个叫什么
+Manual Bar
+OK, Manual Bar
+这个呢
+Standard
+No,这个是Standard
+Screen Bar
+OK
+好的
+好,那我Exit
+就是退出来了
+那我刚刚是找这些东西
+这个我们叫什么
+早来早去 早来早去
+这叫什么
+Navigation
+Navigation
+Navigation
+Navigation
+Navigate
+OK
+Navigate
+OK
+
+好
+那我们就是
+那如果我们要就是
+如果就是
+我要退出来怎么说
+我要退出这个界面
+看这个
+Exit
+Exit
+或者 log off.
+Log off.
+Log off.
+Okay.
+So if I want change the size of the layout,
+which bar, which icon,
+这个就是一个标识吧, icon,
+which icon I should check.
+So we can click this column.
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+
+
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+好,那我们下面呢就是来会有一个这个conversation。
+我们请一个同学来读一下。
+好的,谁今天没有发言的话,我就请你来读一下。
+夏日游梦。
+啊
+Please login using language code
+EAN
+Set your language
+Set your login language to English for training purpose
+Check if the language pack is installed for your
+Region
+Region
+Region
+Region
+OK
+Instored
+Instored
+Check the language pack is installed for your region
+For example, we have done a lot of global projects
+OK
+也許人家就要裝一個西班牙語或什麼的
+那我們就可以去問問他
+Check if the language pack is installed for your region
+就是你的這個
+你的地区
+它有没有装这个语言包
+好的
+那我们再继续
+好
+那我们要学会说
+OK
+Set
+Set your language
+好
+那我们这些补充的
+补充的这个
+我也会发给大家
+然后大家也要去
+这些单词呢
+我们也要去学会去说
+好的
+那inbound outbound
+这些我们都讲完了
+好
+那今天就是
+我们先下课休息十分钟
+然后我们在十点十分的时候再过来
+好吗
+OK
+好
+See you soon
+See you soon
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+谢谢大家
+同学们都回来了吗
+回来了
+好 那我刚刚有让一个这个report
+OK
+好 那我们这些report的话
+它们有不同的这个fields
+对吧
+然后 we call it output
+What's the output
+或者what's the layout of your report
+好的 这样一个就是可以说是一个这个layout of a report
+这个layout report include一些次段
+你可以告诉别人
+就是what's the layout of a report
+You can tell them
+So the first one
+You can just give them the structure
+就是结构吧
+就是那个report的结构
+或者就是说
+We call it the structure of the report
+Or the layout of the report
+The outcome of the report
+都可以
+好
+那我们第一堂课呢
+我们刚刚讲完了
+第一堂课的呢
+现在第一堂课呢
+我们的这个homework呢
+就是我们要去这个登录到SAP
+用英语去登录SAP
+然后我们要去练习一下子
+就是跟登录相关的这个英语
+那比如说我就自己来
+就是你要跟你家人说好
+你说我现在是在练习英语
+就是你不要让人家觉得你嘀嘀咕咕你在干嘛
+你先跟他要说清楚
+那比如说你可以就是五一种
+Right now I click the S4 Hanan
+And then this is the login screen
+So on the client I put to 400
+And I put my user word and the password
+And then enter
+And then I will log in SAP system
+好,那你就可以讲
+然后你到SAP以后
+你就说
+I exit
+and then I navigate
+a report
+a financial statement report
+and then I double click
+你要自己去练习,好吗
+这个就是要同学自己去练习
+如果有同学有时间的话呢
+你可以去给我录一个音
+好吗
+录个音,我们来看看你
+怎么去做那个login
+好,那我们现在就是欢迎同学又回到了这个课堂,我们要进行第二部分,就是课可能是会稍微一点点,也不是很快哦,这个速度你们还可以接受吧。
+就是说,give me some feedback。
+OK。
+好没有问题
+那我们就是进行第二部分
+那进行第二部分的话呢
+我们刚刚因为这个Unit 1和这个English Conversation呢
+我们就是刚刚才做完
+所以我们就不用这个去review了
+好那我们来进一下这个系统的这些一些英语
+好吗
+那就是说我们再扩展一下子
+在跟这个用户的User ID相关的一些事情
+那这个business scenario呢
+就是说我们经常顾问也是会
+sometimes we forget the password
+ok so in such case your ID is locked
+so here we have a scenario
+Amy and David
+ok so they talk about
+how to unlock their user ID
+好 那我们请两个同学
+一个扮演这个Amy
+一个扮演David
+谁愿意当这个Amy
+他王川
+OK
+好
+那萌萌你是Amy
+OK
+好
+那找一个男生
+王磊你做David
+OK
+OK
+好
+好
+那个Amy可能是需要帮助的
+就是那个David呢 是可以帮助他的
+David, I can login to SAP
+The service my user ID is logged
+Hey Amy, that's usually happens after several fields logging attempts
+Did you find the wrong passport?
+Yes, I say that
+Password, no passport, passport
+Password
+OK 没关系
+OK
+Yes
+I think I tried the wrong password a few times
+No problem
+I will check your user status
+in SU01
+Oh no no no
+OK
+你是中西结合
+专制宜南杂政中西结合
+我想问一下
+像这种在英语里面是怎么读
+就是读SU01
+还是怎么读
+对
+对就是SU01
+I will check your user status
+in SU01
+OK
+好的
+那继续
+Thank you
+I really need to process a sales order
+是的,你的 ID是鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿鑿�
+多次
+OK
+OK
+OK
+OK
+OK
+OK
+
+OK
+
+
+OK
+
+OK
+
+
+
+OK
+
+OK
+
+
+OK
+OK
+
+OK
+OK
+
+OK
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+OK
+OK
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+Thank you so much
+作为一个这个
+Functional Consultant
+好 那我们来讲讲这个顾问吧
+顾问的角色
+那我们可以怎么分
+如果我们讲到顾问的时候
+我们怎么分
+So when we talk about the consultant
+So what's the key word
+What's the key word in your head
+Function
+Developer
+Fitness
+很好
+OK
+When we talk about consultant
+我们会有什么 consultant
+从功能上来说
+有什么 consultant
+MIMO
+SDPP
+FICO
+OK
+这是module
+OK
+这是module上面来讲的话
+MMPP
+FICO
+他们这些都叫什么
+Functional Consultant
+OK
+好
+那如果是那个Basis呢
+Basis或者Developer
+我们叫什么
+Technical Consultant
+这个FDA要我选
+它不能自己自动吗
+OK
+Functional Consultant
+还有什么
+还有这个basis
+或者developer
+aboper
+一个technical consultant
+嗯哼
+嗯哼
+嗯哼
+consultant
+OK
+那这
+还有呢
+还有叫什么
+Presales Consultant
+Presales Consultant
+Presales Consultant
+他们要支持面很广的
+对吧
+要打单对吧
+Yes
+Presales Consultant
+还有什么
+想想我们有叫
+Free什么
+Freelancer
+对
+Freelancer
+还有Employee
+对吧
+是属于公司内部的员工对吧
+雇员
+雇员
+那我们这样子就是说
+我们边学的时候
+我们就边把这个以前的这些东西给带出来
+好
+就consultant他也分很多
+那有的呢是
+公司里头的员工还分什么
+听语者
+嗯
+嗯
+嗯
+好
+那我们作为这个功能顾问的话呢
+呃
+我们要
+学会这个实时方法论
+OK
+好
+那这实时方法论你们以前听说过没有
+有的
+有的对吧
+好
+那我们这个新学一个词
+那我们可能以前就是方法
+方法我们可能就是approach
+或者method
+对吧
+好
+那methodolage
+这个原理
+accelerated
+accelerated是加速
+it's one of SAP
+就是很早的这个结构
+这个方法是做什么呢
+implementing
+就是实施
+implement
+这个实施
+然后developed
+it was developed
+就是
+开发吧
+在1990年
+to help company
+help
+我们没有加图
+帮助公司去干什么
+speed up
+speed up
+那如果超速怎么说
+那我们在美国的时候
+开车的时候
+开车总是被警察抓住
+over
+又很简单的一个词
+out
+over
+Speedy ticket
+Speedy ticket
+Speedy ticket
+So they will give
+So policemen will give you a speed ticket
+Speedy ticket
+Speedy ticket
+
+Speedy ticket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+好 那就是我们这个SAP英语
+不仅仅是就是说用到SAP上面
+我们自己的这个平时的生活中也是可以用得到的
+好 那speed up
+那就是说那个加速SAP Implementation Process
+Project
+这个就是说实施的这个Project
+好 那我们关于这个project
+那我们可以想象有这个实施的project
+我们再扩展一下子还有什么project
+这个project的type有哪些
+rollout
+rollout
+rollout大家知道什么意思吗
+可以过
+operationproject
+operationproject
+什么意思
+我们是不是可以
+还有说这个
+Migration Project
+或者Upgrade
+Upgrade
+Upgrade Project
+对吧
+好
+那关于这个项目的话
+我们可以想到这个type
+那这个我们都可以去问
+对吧
+在interview的时候
+最后的时候
+人家会问你
+Do you any question for me
+那你就可以问
+你说what's the stage
+在哪个阶段
+What's the phase of your project
+那它可以说
+它这个是可以回答你的
+好
+那我们就说这个
+ASAP的这个方法论是什么呢
+就是我们提供这个
+step-by-step road map
+road map就是路演
+for SAP implementation
+然后呢
+它可以minimize
+minimize
+什么意思
+最小化
+最小化
+对
+我们家的狗狗就叫mini
+OK
+minimize就是使它小变小
+减少
+reduce
+OK
+我们可以用一个词什么
+reduce来
+来解释对吧
+reduce the project risk and the costs
+ensure a structured repeatable approach
+repeatable是什么
+重复的
+用英文翻译
+用英文翻译怎么说
+able,able
+是不是我们就直接就说able to
+able to be done again
+就是可以重复的用
+可以重复的去说
+OK
+minimize
+OK
+好,那我们来随便挑一个词
+来请大家去组一个句子
+好吗
+好
+那这里有个这个purpose
+好,那今天会议的
+Let me give you a scenario, okay?
+好,那今天會的目的呢就是讓大家熟悉這個項目的
+讓大家熟悉項目
+好,誰來說?誰來說這個句子?
+Yuanuan
+老師
+今天事務的目的是介紹這個項目
+The purpose of today's meeting is introducing this project to everybody
+and enables everybody to make use of the SAP language
+OK
+The purpose of today's meeting
+is to introduce
+SAP methodology
+OK
+OK
+OK
+OK
+OK
+OK
+OK
+Provide
+Provide
+然后请一个同学
+叫个句子
+那你自己来想
+这个
+提供这个服务
+或者就是最佳的解决方案
+你能提供一个最佳的解决方案给我吗
+这是一个一个问题
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+那就进入到了这个实施方法论
+那大家猜一下有几个阶段
+5
+5
+OK 5
+哪五个
+你用证文讲也可以
+用英文讲也可以
+所以愿意来讲一下
+分享一下子
+你的项目经验里面的这个五个阶段
+是哪五个阶段
+So could you please share experience
+about ASAP
+Methodolage
+我来说吧
+好
+你用中文说还是
+某某你用中文还是英文
+中文说
+对吧
+好
+first is project preparation
+项目准备
+okay project preparation
+okay very good
+猜中了
+yeah the second is
+blueprint
+Blueprint, Business Blueprint, okay, very good.
+Yeah, second is System Realization.
+Third, third, not second.
+Third,第三个,第三个才是那个 Realization, okay, third不是 second, okay?
+Third,第三个,上线。
+Go Live
+Go Live
+Go Live
+Online
+No
+Go Live
+You不做Cutover吗
+You不做Cutover
+You不要做准备吗
+Oh
+Oh
+Oh
+Final Preparation
+Oh
+Final Preparation
+Yeah
+Yeah
+Yeah
+那最后一个阶段
+就是一个Go Live
+和这个Support
+对吧
+Go Live and Support
+好
+那我们在这个
+第一个准备阶段里面
+有一个很重要的会议
+叫什么会议啊
+Week Off Meeting
+OK,Kick off a meeting.
+OK,在第二个阶段的话,我们要画流程图。
+想一下,我们怎么画流程图怎么说?
+我们要做这个business什么?
+的业务分析,对吧?
+那叫什么?
+S is.
+S.
+Future,Future,Durant,对吧?
+Assist
+那就是限狀,對吧?
+Yes
+好,那限狀,那我們這裡有一個很重要的概念叫什麼?
+Taiye分析
+Taiye分析怎麼說?
+GAP analysis
+GAP Analyze
+或者Difference
+我们可能中国同学就喜欢用Difference Analyze
+对吧
+但是我们其实这个是比较专业
+也比较简单
+对吧
+GAP
+我们就是要有这个GAP Analyze
+OK
+就是差异分析
+这个是很考验人的
+好
+那我们第一个阶段的时候呢
+第一个阶段的话
+除了Kickoff Media 外
+我们还要有一个什么
+有个很重要的
+还有一个很重要的
+很重要的事情要做
+我们要做什么
+SURRY
+对吧
+SURRY
+SURRY
+对吧
+好
+那有的同学
+在这个第一个阶段
+他就开完会以后
+做SURRY的时候
+跟这个就要有很
+You must have very strong communication skills
+在这第一阶段
+你要必须有很强的这个
+沟通能力
+然后你跟客户要搞好关系
+如果客户一旦不认可你的时候
+你这个阶段你就去领盒饭了
+我们最近就有个同学
+他从来没有做过从零到一搭建项目
+他对这个实施方法论不熟
+他也不知道该问什么问题
+结果他到了项目上就慌了手脚了
+就完成不了
+不知道该做什么事情
+也不知道项目的这个plan是什么
+deadline是什么
+然后他就做这个survey的时候
+就弄得那个用户非常烦
+因为它反反复不确认
+它因为之前没有经验
+那我们在问用户问题的时候
+我们尽量 try to make it simple
+And also when you conduct a survey
+Try to provide your previous experience
+就是你之前的
+之前的一些 experience
+OK
+好 你可以因为有的问题
+那个用户可能也不知道怎么回答
+你可以讲在我之前的那个项目呢
+我们有这样的一个解决方案
+或者这个A解决方案是这样的
+B解决方案是这样子
+然后你可以去think about it
+你这样的话就显得你是比较有经验的人
+那如果你不停地问问题
+然后你也提供不了这个solution
+so you cannot
+if you cannot provide the solution
+business will be disappointed about you
+so maybe you will kick off
+就真的就是会被踢走
+好
+那这个就是一个一点小经验的一个分享
+好
+那我们到第三阶段的话
+那我们是就是要去在系统里头做这个configuration
+and the confirmation
+OK
+We will conduct the integration test
+好
+那到第四阶段的话呢
+我们有一个很重要的一个概念叫cutover
+好
+那我们现在呢
+有专门的这个cutover的manager
+就是要招这个专门
+只是做cut over的manager
+这是非常考验人的
+这是非常考验项目经历的
+如果就是你一旦这个cut over的
+这个计划做得不好的话
+那有可能就会导致你的这个项目什么
+failed
+就是会失败
+好那我们如果成功上线的话呢
+go live以后呢
+我们会provide
+provide
+刚刚是高频词啊
+就是提供
+ongoing support
+ongoing
+就是继续持续的这种支持
+或者continuous support
+看到这里吗
+continuous support
+OK
+好
+那我们来一个阶段
+一个阶段的来学习
+就是我先生讲的可能比较快
+那我们一个阶段
+一个阶段的学习
+那我们学习里面
+比较重要的一些词
+和一些重要的activity
+一些活动
+好
+那我们请一个同学来读一下
+那其他同学
+在读的过程中呢
+我们来看一看这个单词
+你们认不认识
+好的
+那我们请
+下日幽梦
+你来读一下
+1
+project
+preparation
+face
+this is
+unit
+show
+face
+of
+the
+SAP
+使用的行動方式
+使用的行動方式
+使用行動方式
+使用行動方式
+specific project goals that align with business objectives
+and create a well-structured project plan.
+during this field users are also able to identify stakeholders and project team members
+and determine the location of critical business resources across the organization
+ensuring all employees systems and the process involved in the project
+are prepared for the next steps
+OK
+非常好
+好
+那想请大家花一分钟的时间
+你来看一看
+哪个单词就是对你来说比较深
+就是说除了我
+就是我等会会跟你讲
+highlight这个黄色的
+解释
+稍微解释一下意义
+然后稍微讲一下
+然后你们看其他还有什么
+嗯
+不太懂的
+好
+align with
+align
+align
+align
+align
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+对齐吧
+就是跟用户的这个目标是一致的
+align with
+OK
+DEC holders
+What's it mean?
+这个对
+stakeholders
+是利益相关者
+那这个呢
+就是包括很多人
+比如说我们这个项目里头
+所有的人
+比如说有这个
+project manager
+end user
+functional consultant
+technical consultant
+we all call them
+stakeholders
+利益相关者
+stakeholders
+这是一个非常棒的词
+就是说
+我经常听video的时候
+我也经常听到stakeholder
+就是相关人吧
+比如说用户开了一个这个ticket
+就是说那个工单对吧
+就是处理这个有问题
+那我们可以说
+I will inform all of the stakeholders
+就是我要通知所有的这个利益相关者
+那比如说可能是开发啦
+或者相关的人开发这个
+这个跟这个相关对吧
+那可能有这个
+Functional Consultant
+他要去做测试
+或者就是去
+修这个bug
+bug
+bug
+这个词简单
+那我们要知道什么意思
+那修bug怎么说呀
+Fix the bug
+Fix
+Fix
+OK very good
+Fix the bug
+好的
+那就是我来翻译一下子
+Project Preparation Phase
+就是阶段
+那我们也可以用别的
+另外一个词
+我们可以用什么词
+来替代一下子
+Stage
+Stage可以
+或者
+或者这个
+preparation steps
+就是第一阶段
+step
+也可以
+this is the initial
+initial
+phase
+我们可以说
+the beginning
+或者the first
+the first phase
+好
+那我们在国外的话
+有initial这个
+签名
+initial的签名
+什么意思啊
+原始签名
+第一首呢?
+原始
+那好,比如说那个
+不是的阶段
+不是
+那比如说
+王磊吧
+那你的那个英文名
+我就假设你的英文名字叫王磊,好吧
+OK
+OK, so
+initial就是
+WL
+Got it?
+就是你的首个字母
+OK
+OK
+implementation
+Allowing
+就是
+营讯
+这个project management
+Teams
+to
+Define
+Define
+Define
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+这个词是很高级的哦
+那我们想想
+想想我们这个做
+后台配置的时候有没有
+我们可以去
+定一个工厂怎么说
+Define plant
+对
+Define plant
+那定一个公司呢
+Define company
+Company
+Company
+Company
+Company
+Company
+Company
+看到了吗
+看到了吗
+这里一大堆的define 对吧
+看到了吗
+就是或者就是你们这个logistic的话
+define这个location啊
+define这个plant啊
+我们都可以用define
+OK
+好 那我们下次要知道了
+就是你要去定一个工厂的时候
+我们可以用define 对吧
+好 那我们项目经理要define the scope
+范围
+对
+对,我们的范围,对吧,就比如说包括哪些模块要实施哪些模块
+那在我们这个范围之内,就是the scope of the project, in the scope of the project
+那如果不在我们的范围之内呢?
+out of
+对了,out of the scope,ok,in the scope
+out of the scope
+那我们常常更新的时候,就是有些人提出来一些不合理的要求的时候,我们可以说,
+Oh, I'm sorry, the requirement is out of our scope.
+Space speak,特定的这个项目的这个目标,align with,对齐。
+好,那我们这个词我们要重点讲,OK。
+那我们没有学过的人,我们之前可能是会用这个词来替代一下。
+我们可能会用这个。
+满足。
+satisfied
+satisfied
+satisfied
+
+
+
+
+
+
+
+
+
+
+
+
+
+satisfied
+
+
+
+satisfied
+
+
+satisfied
+
+
+
+
+
+
+
+
+
+
+satisfied
+
+satisfied
+
+
+
+satisfied
+
+
+satisfied
+
+
+
+satisfied
+!
+satisfied
+
+
+
+
+
+satisfied
+!
+我会什么说
+我们现在学会了这个
+align with
+align with business
+align with business
+align with business
+align with business
+align with business
+align with business
+align with business
+align with business
+align with business
+align with business
+对吧,刚刚我说那个调查
+对
+好,那谁来说一下我这个句子
+In order to align with user fairness requirement
+I have completed a lot of surveys
+OK,好,那我们有另外一个词
+一个动词叫conduct
+conduct,我们等会就要学到的
+好,第二个阶段我们就要去conduct
+好
+OK
+好
+那如果我来说一下
+这个
+业务提出来的一个需求
+然后这个
+然后我
+然后就说
+对不起
+我不能满足你的需求
+因为这个是在我们的这个
+项目的范围之外
+好
+谁来连起来说一下
+嗯
+萌萌
+OK
+我抱歉,我可以不停留下你的
+因為這
+這
+這
+這
+這
+這
+這
+這
+這
+這
+out of our
+out of the scope
+out of the scope
+because your requirement
+is out of our scope
+ok
+ok that's good
+so 我们记住
+align with
+你下次用align with
+你下次学会用align with
+的时候
+你的那个
+你们的team的人
+会对你高看一点的
+好吗
+因为确实很多人
+不会这个词
+好
+那我们来继续
+那可以是align with business requirements
+也可以说是align with business objects
+OK
+and create a well-structured
+well-structured
+那我们知道这个就是说
+结构很好的这个一个项目的这个计划
+那我们还可以well-structured
+还可以带到我们什么里面去
+那比如说同学写功能报告
+那我们可不可以表扬它一下子
+Oh, I like your functional specs
+It's really well-structured
+这个确实结构做得很好
+OK
+During this phase
+users are also enabled to identify
+这个词是很好的一个词
+很棒
+OK
+那我特别拿出来来讲
+identify
+还可以做什么
+identify什么
+Please
+identify
+project by work
+发现
+就是
+发现
+OK
+我们可以发现什么
+identify什么
+risk
+OK
+very good
+还有呢
+我们可以发现这个
+发掘出用户的什么
+require
+OK
+还有呢
+identify
+这个系统
+如果有什么错误的话
+我们系统的错误怎么说
+system
+log
+OK
+Arolog
+OK
+还可以呢发现系统的什么
+Bug
+或者问题
+或者bug
+或者program的bug都可以
+好再想想我们还可以发掘什么
+想一想
+那我给你个
+表现吧
+就是发现这个系统的管理
+发现这个系统的表现很慢
+怎么说
+performance
+performance
+performance is very slow
+那我们还可以
+identify什么
+那我们那些都是
+差的东西
+我们还可以发现什么
+identify the best solution
+business solution
+how about that
+可以吗
+就是发觉到了这个用户的这个解决方案
+可以吧
+好
+对
+就是我们可以就是说慢慢的扩
+然后我们像今天其实我们学真的学的内容还是蛮多的
+就是我们在慢慢的扩我们的指挥量
+OK
+好那这里有个词key stakeholders
+那我刚刚讲过了
+这是关于一个人的对吧
+好那我们再来想这个key stakeholders
+可能包括些什么
+我可可以放到这个人的这个上面
+那也包括这个功能报告啊
+这些人对吧
+我们的这个用户
+或者我们的这个
+我们的顾问对吧
+Functional Consultant
+Employee啊
+这些我们都可以放到一起
+好吧
+我们就可以把它放到这个
+他们都是属于人的一部分
+OK
+那我们就把它放大放在一起
+Stakeholder
+我们要学会用Stakeholder
+OK
+好
+那
+那如果就是我在给你一个问题
+就比如说
+客户开了一个这个
+开了一个用这个issue的这个工单
+那我就问一下
+我是项目经理
+我不知道谁是这个
+工单的那个相关者
+那我該怎麼說
+Who is
+Who is the
+Stakeholders
+Who are the
+Stakeholders of the ticket
+OK
+Who are the stakeholders
+of the ticket
+OK
+好的
+然後
+王磊
+你就說
+你挑人
+你就說
+是誰
+比如說
+月圓
+你說這個
+MM consultant
+然後
+Tatty是
+我们的阿巴佩尔
+王磊 你来回答一下这个问题
+刚刚他问的问题是
+谁是
+stakeholders
+I'm a faculty consultant
+还有呢
+I'm the other
+module consultant
+for example
+MM consultant
+那你也要安排一個會議
+Katy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Katy
+
+
+
+
+
+
+
+
+
+
+
+Katy
+
+
+
+
+
+
+
+Katy
+
+
+
+Katy
+
+
+
+
+
+
+
+
+
+
+
+我会设计所有的职位
+我会设计所有的职位
+或者我会邀请所有的职位
+去训练这职位
+好
+那我们就说这个词也是非常棒的
+stakeholders
+好的那我们下面一个词呢
+就是我们来解释一下
+determine
+determine就是决定
+或者make a decision
+那比如说
+用户没有决定
+是选哪个方案
+怎么说
+好
+赵军
+the user doesn't determine
+the
+which solution
+the user doesn't determine
+the best solution
+最佳的解决方案
+The best solution
+OK
+好
+好 那我们到这个allocation
+allocation 那我们是不是才卧的有一个allocation
+cost allocation 对吧 那我们知道就行了
+就是说成本的这个分配
+好 那我们再来进一个词
+critical
+critical very important
+重要
+OK
+重要的
+非常非常关键的
+非常关键点
+我们怎么说
+Critical point
+Critical point
+好
+那我们非常重要的阶段
+怎么说
+Critical face
+Critical face
+好的
+那我们可以来
+组一个句子
+Critical
+就是满足用户的需求
+是非常重要的
+It's a critical user requirement
+To align with business requirement
+OK
+So it's very critical to fulfill
+Or it's very critical to align with business requirements
+OK
+好的
+那我们 ensure our employees
+就是员工
+Systems and processes
+involved in the project plan
+involved
+好
+那我们就是包含包括对吧
+那名词呢
+involvement
+involvement
+好那我们来用这个involve来组个句子好吧
+好那就是说我们这个团队里头包括了
+功能顧问
+MMSD
+FICU
+还有这个技术顧问
+好
+那我们请一个同学来组一个句子
+Involve our team
+包括三个功能顧问
+两个技术顧问
+好
+Kathy
+你来说
+我们学过了这个功能顧问和技术顧问
+OK
+好
+那我们再把Involve放进去就行了
+你方便说话吗
+KD
+功能顾问和这个
+技术顾问我们刚刚都学过了
+我这里再给你们演示一下
+你来主句子吧
+包括三个功能顾问
+两个技术顾问
+Teams involve three function consultants and two technical consultants
+OK,very good
+OK
+好,那我们今天呢我们学了好多这个新的一些单词
+应该还可以把第二个地方可以学一下
+Business Blueprint Phase
+OK
+好 那这个话也是有很多新的单词
+那我们是可以请一个同学来读一下
+谁愿意来读一下
+然后别的同学来听一听
+然后想一想
+好
+你来读吧
+第二, 专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业的专业业的专业业的专业业专业业业业业业�
+会被影响的影响
+统签计划作为行动的行动
+创作为行动作为行动作
+SAP implementation process by leveraging the SAP
+strategies to outline business requirements
+and assess specific business impacts
+specific business impacts
+specific就是特定的 business impacts
+好 那我们来看一下这个
+这个 blueprint 那就是蓝图阶段
+图那我们没想到就是我们可能会要
+Draft the business process
+就是要画这个流程图对吧
+In the business blueprint base
+Project team
+Collaborate
+Collaborate with someone else
+OK
+那就是合作对吧
+或者协调
+Collaborate
+好
+那在我们的简历上呢
+我们要
+Excuse me
+要放上很重的
+很重的一些词
+就是会非常非常positive的一些词
+那比如说你要强调你的这个
+communication skills
+强调你的这个沟通的能力的话
+你可以说
+I collaborate with others
+to finish the project successfully
+就是我 collaborate with my team works
+team members
+to finish the project successfully
+就是我协调对吧
+other key stakeholders
+那我们刚刚又来了
+key stakeholders
+关键的这个立项观者
+to document
+document
+那我们一般document的话
+我们就是说名词
+对吧
+好
+那我们在这个加2
+后面那明显的
+这是一个什么词
+动词
+动词
+对吧
+那document就是记录
+记录他们目前有的existing
+或者
+就是现状
+现状的business process
+existing
+business process
+OK
+那我们再用这个document
+我们要注意一下子
+就是说
+等会我们请同学来造句子
+我等会给你们一个scenario
+好的我们继续
+Gather
+Gather
+就是
+收集
+对吧
+收集
+我们以前可能就喜欢用collect
+对吧
+好
+那比较正确的话
+我们就是比较专业的话
+我们用Gather
+Gather Critical Business Requirement
+Gather Business Requirement
+Identify
+刚刚我们说过了
+对吧
+Identify
+发现
+which areas of the organization will be affected by the implementation
+就是在这个实施中
+就是哪一块会
+就是组织的哪一块会被影响到
+organization create
+在系统里头我们有很多create
+对吧
+那比如说刚刚我们说
+创建一个公司代码
+我们怎么说
+buy a company
+create a company
+OK 都可以
+那
+比如说创建一个这个
+科目
+Create an account
+可以
+好 那我们创建这个business
+蓝图
+这是一个定语
+这个什么样的蓝图呢
+That provides
+那就是刚刚也是提供
+A detailed design document for project teams throughout the SAP
+它整个这个SAP的实施的过程中呢
+那就是说提供这个很详细的这个设计的文档
+然后通过就是Leveraging
+Leveraging利用
+Leveraging就是利用这个SAP的这个实施方法论
+To outline
+Outline这个
+我们可以把它当做一个名
+当做一个动词的话
+我们可以说
+可不可以说是list
+outline
+这个词也很棒
+就是列出来
+那比如说列出来你的这个计划
+对吧
+比如说我们还可以列出来你的这个需求
+对吧
+好那然后我们再有一个动词呢
+assizes
+assizes就是评估
+evaluate
+可以吗
+evaluate
+specific business impacts
+就是会去评估这个特定的业务的影响
+好
+这一段话大家有没有什么问题
+Do you have any questions about this paragraph?
+OK
+So if you don't have any questions
+So I will pick up the keywords
+OK
+So try your best to make sentence
+好
+那我就用document来
+动词来组一个句子
+你可以去拍拍你们的那个
+功能顾问的这个码屁
+你可以说
+你的这个演讲太好了
+你这个系统的这个演示太好了
+方案太好了
+我准备把它记录下来
+好
+那我们请一个同学来说一下
+就是
+好
+Luna你请你说一下
+就说你的这个解决方案太好了
+我要把它记录下来
+Hi Luna
+你方便说话吗
+OK 如果Luna你不方便说话的话
+我们就叫另外一个同学
+Sarina
+Luna你可以说话对吧
+对对对
+刚刚Mute了一下
+好 没关系
+你用这个Document
+这里是一个动词
+然后你就说你的这个解决方案太好了
+我要记录下来
+OK
+So your solution is super amazing
+So I want to document it
+OK
+OK
+OK
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+please use the leverage
+to make a sentence.
+利用
+我们可以说是利用现有的这个
+existing的这个 resource
+资源
+利用现有的这个资源
+我们会
+就是说实施这个
+实施这个项目
+很成功的能实施好这个项目
+嗯
+嗯
+你把他臉書一下
+你
+你把他臉書一下
+你
+你把他臉書一下
+你
+你把他臉書一下
+你
+你把他臉書一下
+你把他臉書一下
+你把他臉書一下
+你把他臉書一下
+the existing resource to implement the project
+成功的
+to make the project successful
+successfully
+OK 副詞 OK
+successfully
+好 那我们在用outline
+这个比较简单
+好 那我们请一个同学
+就是说列出你的这个
+你对你的用户说
+就是说
+你能不能把你的这个所有的需求列出来
+好 蒙蒙
+你暗示了所有你的需求
+我们需要讨论它
+OK
+I will try my best to
+满足你的需求
+怎么说
+I will try my best to
+align with
+your business requirement
+OK
+your business
+一般的话
+他们的需求比较多
+所以我们要用服数
+OK
+I will try my best
+to align with
+your business requirements
+OK
+please outline
+all of your requirements
+OK
+好
+那我们可以就是继续
+我们是要到11点10分
+好
+那第三阶段的话呢
+也是有一些非常棒的词
+那我刚刚跟你们说了
+是conduct
+这个conduct是非常
+非常就是说
+就是比较popular的这个词
+那我们要学会去
+我们要学会去主持组
+好
+那我们就是时间关系
+我们就不读了
+那又是这个
+This space involves
+那我们刚刚主持招具的话
+我们用了这个involves
+真正的这个development
+就是开发和这个configuration
+configuration
+那就是配置
+那我们就是我们后台的这个什么
+SPRO对吧
+based on the predefined
+刚刚我们学过defined
+就是定义的
+那predefined呢
+pre is这个前缀
+那就是之前定义好的
+预知力好的
+Business Blueprint, 只可以说是Business Blueprint, 我们有一些这个Document, 对吧?
+会去Predefine our structure, 或者 our business process, OK?
+According to the business process, we will configure them in the system,
+Include Configuring,那就是配置
+To Align with,又来了
+To Align with the Business or the Organization's
+Specific Business Requirements
+就是满足,对吧
+其实越到后面越重复的东西多
+Building Customization
+那我们就是说建立这个配置
+定义化
+And Integrating,又来了
+Critical SAP and Non-SAP System
+好 那我们讲到
+non-SAP system的时候呢
+我们也可以叫什么
+Ford Party System
+对吧
+第三方系统
+好 那如果我们讲
+那个旧的系统怎么说
+比如说我们现在是
+ECC系统
+然后我们要升级到
+新的系统对吧
+升级到S400
+好
+那我们旧系统怎么说
+Otherness
+Otherness
+No
+Legacy
+Legacy
+Legacy
+
+
+
+
+
+
+Legacy
+Legacy
+就是旧了
+就是比如说out of date
+就是过时的系统
+Legacy system
+OK
+好
+那我们知道
+New system
+或者Legacy system
+我们就是一对相对的
+Legacy system
+以前我也不知道
+他们总是那个说
+Legacy system
+Legacy system
+我都不知道什么意思
+好
+那我们学了以后呢
+我们就知道就是说是旧系统
+那如果就比如说是
+R3系统和这个ECC
+哪个是Legacy System
+R3
+ECC
+No R3是Legacy System
+OK
+好那我们就是集成和这个系统集成
+Project team will also conduct
+这个词非常棒
+那我们就以前就说做测试的时候
+我们就说do the test对吧
+好那我们现在有一个新的词了
+我们这个新的词就是conduct
+conduct survey
+可以conduct什么
+我们还可以conduct什么
+还有conduct什么
+System Configuration
+可以
+我们还可以conduct
+interview
+对吧
+还有自行这个
+interview
+conduct
+好
+那我们
+学会这个词的话
+我们就不要老是用度了
+对吧
+好
+conduct system testing
+and the quality assurance
+checks to ensure
+the new system
+is configured
+correctly
+好
+那我们看看有点语感
+那我们就说
+我们看看这个
+它的副词基本上就放后面
+然后我们开始的时候
+可能是造句简单
+但是慢慢的随着这个
+我们的课程越来越深入的话
+我是希望大家能用一些
+比较漂亮的副词
+然后来修饰你的句子
+And the system implementation method
+Meet又来了对吧
+再来转去就这些
+SAP的这个术语
+其实真的不难
+对吧
+你看我们这个
+几个meets critical business requirement
+然后align with business requirement
+fulfill business requirement
+随口就说出来好几句
+对吧
+好
+那这个我们就看这些东西
+如果熟记的话呢
+我们自己就可以慢慢地
+就把自己的这个单词量给扩充
+好
+那我们今天的课呢
+so let's wrap up today's class
+so what we learned today
+那我们来总结一下
+我们今天学了什么
+在第一堂课的时候我们学了什么
+Zao君
+So could you please tell us what you learned
+in our first class
+Jek
+Login
+Class
+Login
+SAP
+OK
+好的
+Yuye, 那我们第二节课有什么?
+我们学了什么?
+The process of SAP methodology
+SAP methodology, right?
+OK,好,那我们就是有5 phases, OK?
+好,那我们今天的那个homework呢
+就是第一堂课的homework呢
+就是大家要用这个英语登录进去
+然后你边登录的时候边practice
+OK
+就来念
+然后最好是大家有一个录音
+OK
+好录音完以后你们发给我
+好那就是第二堂课的这个
+第二堂课呢
+就是大家准备一个这个
+这个Excel
+或者就是准备一个小本本
+然后呢
+你们可以把单词像我这样子的
+因为有别的同学
+他是会用这个deep seek
+就把单词给罗列出来
+然后有些pronunciation
+然后简单的那个英语的解释
+然后你来
+如果能造一些句子的话
+你就把句子放在这里
+然后如果你不记得
+最好不写中文
+如果写中文的话
+你可能还会脑袋里的话
+还会去翻译中文
+英文这样子
+那就影响速度了
+好那就是
+Try your best to make sentence
+OK
+So if you read your sentence
+and then you can guess
+what's the meaning of the word
+你可以猜得出来
+这个单词的意思
+好吗
+然后大家准备一个这样子
+然后还有一个additional work
+就是另外一个作业呢就是
+so could you please draft your learning plan
+your English study plan
+就是你写一下子你的那个英语的计划
+比如说我每天
+我计划是每天读
+读这个
+阅读我这个材料
+或者我计划就是两天读
+或者我计划就是说被
+就是熟看这些单词
+你们写一个记话给我
+好吗
+好那就是
+今天是第一次上课
+大家有没有什么疑问
+或者有没有什么suggestion
+然后do you like my class
+so could you please give me some comments
+你们喜不喜欢我的课
+然后给我提点意见
+然后我这个速度还可以吗
+因为这些教材的话
+都是我们之前
+其他的班我们也用的
+然后我这个速度就尽量
+就是我们那个完成
+还是就是课堂的那个时间管理还是不错的
+然后课堂的气氛也非常好
+那我想这个配置还可以吗
+就是说这个速度大家能跟得上吗
+可以吧
+也不是很快也不是很慢
+我们也是算是比较好的这个时间管理
+好那你们还有什么意见吗
+还有什么问题
+do you have any question
+你们有没有什么问题
+或者你们有没有什么
+更好的建议
+因为我们这个也算是一个定制化的
+一个课程
+Customize
+那如果没有什么问题的话
+那我们今天就下课
+See you next time
+OK
+OK
+拜拜
+OK
+拜拜

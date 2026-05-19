@@ -1,0 +1,694 @@
+大家好,我们继续这个OTC的步骤。上一节课我们已经讲了三个步骤。同学们想一想是哪三个步骤。
+好的,我们看一看有pre-sale的一些activity,我们会有客户他们会做inquiry。
+然后呢就是我们这边呢就是
+我们公司呢会去做一个这个quotation
+那就是一个是询价一个是报价
+然后到第三步的时候呢是就是
+我们就是要去建这个sales order
+sales order呢是比较重要的
+那是一个介于客户和这个销售
+我们这个销售组织之间的一个合同
+好 那我们继续到我们的step 4
+好 step 4呢就是我们准备好了
+我们就要去发货了
+好 那我把这一节呢读一下
+来看看这里面有什么重点的词
+step 4 delivery or shipping
+the first step in SAP SD floor
+你用APSystems to produce and process delivery orders
+based on information from the customer's pickup sheet processing floor.
+There is an outlier agreement between you and the customer.
+In this case, a separate scheduling agreement for delivery order processing.
+好,我们到这里看一下
+Delivery
+Shipping
+那就是
+第四步呢
+就是SAP的这个
+第四步就是
+我们可以用这个SAP的系统呢
+去产生或者去处理的这个
+发运
+发运单
+这个呢
+发运单的这个信息呢
+就是
+根据这个客户的这个
+Pickup sheet
+就是
+减选单
+那就是
+我们来看一看
+这里头的一些词
+Produce
+那就生产
+那我们produce the product
+或者就是produce deliver order
+好那process
+process就是处理
+那我们处理这个词也是高频词
+那我们可以有很多
+就是处理
+不仅是处理deliver order
+我们可以处理purchase order
+对吧
+我们可以去处理这个batch job
+processed batch job
+好那我们想一想
+在我们的工作情景之中呢
+这个process
+那我们是可以经常用到的
+好那pick up sheet呢
+就是拣选单pick up
+那还可以就是
+那这个就是比如说我去接人的话
+我也可以用这个pick up
+好我们来看一下
+pick up
+那比如说接人
+那我pick up my daughter
+at school
+就是接我的女儿
+在学校接我的女儿
+就pick up
+那就是还有一个poa
+那可能你们听说过
+有一些很多男生
+渣男很会poa
+pua
+那这个也就是
+也就叫pick up artist
+就是搭讪艺术
+搭讪艺术
+好那我们再看看
+另外一个词叫outline
+outline这个呢
+我们之前就是这个是属于框架协议
+Outline呢这里是作为一个动词的话呢
+我们想一想我们之前学过一些outline
+就是列出来对吧
+List
+那我们可以outline the details of our cutover plan
+那我们就是把这个cutover plan的那个具体的细节我们列出来
+那我们想一想我们还可以outline什么东西
+Outline your study plan
+可以吗
+就是把你的学习计划给列出来
+好
+下面我们有个schedule
+scheduling agreement
+scheduling agreement
+那就是计划协议
+那我们想想这是
+我们可以做名词
+schedule
+也可以做名词
+也可以做动词
+当做名词的时候
+就是我们可以说
+What's your schedule
+this afternoon
+We want to discuss the GTS system
+Do you have time?
+Are you available?
+schedule
+那我们就说
+你下午的计划是什么
+对
+So let's schedule a meeting
+那这里就是作为一个动词
+让我们去schedule
+或者set up meeting
+去讨论什么
+to do something
+OK
+好
+那就是
+我们这里头几个比较关键的词
+process
+pick up
+outline
+schedule
+好
+那同学如果有时间的话
+我们就把这些词
+想一想
+可以用到什么样的业务情景
+好吗
+好
+好,那我们到第五步的话,那就是第五步跟我们的,在这一步的话呢,那我们应该也知道在这一步的话,我们会产生相关的财务凭证。
+那你去想一想,这边的话会产生什么样的财务凭证。
+好,那我们再继续。
+Then the customer prepares data for delivery and sends it to you on a pickup sheet based
+on this scheduling arrangement and the forwarding agent.
+EDI, electronic data interchange subsystem receives an inbound pickup sheet which is
+converted into an intermediate document
+IDOC
+subsequently saved in your SAP system
+好 那我们就是客户呢
+会准备一些就是
+运输发货的一些数据
+然后会发给你
+比如说他会发
+通知你他的那个
+收货地址啊
+然后收货人啊
+收货仓库啊等等这些信息
+就是
+就是根据它的这个检选单
+on this scheduling arrangement
+就是这个发货的一些安排
+那arrangement呢
+那就是这里是一个名字
+那动词呢就是arrange
+那如果说要我来处理
+那让我来处理或者安排一个会语
+Let me arrange a meeting
+OK
+那我可以说是
+我可以说是一个
+安排
+安排一个会议
+Arrange
+Arrangement
+是说明词
+那如果是印度人
+他们的婚姻就是
+Marriage arrangement
+他们的婚姻就是一个是
+安排的一个婚姻
+那这里我们看看
+Forwarding agent
+Forward agent呢
+就是
+货代
+货代呢
+就是
+基于这个客户
+和这个船运公司
+之间的一个代理
+叫货代
+他们可以负责
+提供比较好的服务
+就是帮我们安排那个船运啊
+货柜码头啊等等
+他所以叫forwarding agent
+那forward
+这是一个动词
+那这个动词的话呢
+我们在经常在email里头
+对吧
+我们在email里头
+经常会用到这个forward
+please forward email to me
+就是把那个邮箱
+邮件转发给我
+好的
+那EDI呢
+这个是一个技术
+就是
+电子数据的交换
+那就是
+我不知道同学们在你们的SAP
+你们有没有什么业务情景
+用到了EDI
+Subsystem
+就是子系统
+那我们模块就叫
+Submodule
+Sub
+Sub 什么之下的
+Sub system receive an inbound
+Inbound 就是内向
+那外向的话就是outbound
+外向减选单
+Which is converted into convert
+Convert 这个词之前学过
+那比如说我们转换数据
+Convert data 对吧
+那我们PR 转换成PO
+是不是也是convert
+PR
+是
+so
+we can convert PR to PO
+we can convert data format
+we can also
+convert report layout
+好 那它名字呢
+就是conversion
+那記得嗎 我們有
+Rexive
+Rexive
+那我們
+开发的里面就有一个
+workflow, report, enhancement, conversion, interface, format.
+这就是conversion.
+那有很多公司上传数据的时候呢,
+它要开发一些program去把这个数据进行转换或者上载.
+所以我们叫我们这也属于一类的开发conversion.
+OK.
+好的,这个大家呢,
+就是可以在课后呢,
+看一看什么叫 EDI和这个 IDOC,
+这个 IDOC这些知识的话呢,
+是我们在level 2的课程,
+我们才会讲,
+subsequently就是结果,
+subsequently saved in your SAP system,
+好,这个就是,
+那之前的课,
+之前呢,我们学过 preceding,
+preceding就是之前的,
+那之后呢,就subsequent,
+好,那就是这些比较关键的词,我们就先学到这里
+那我们到下一个步骤
+那就是到我们的这个
+这边还没讲完
+那我们继续
+同学可能这里会读出
+Determine the corresponding scheduling agreement
+and the generates schedule lines in the deliver order
+that meets the customer's need
+The deliver order is handled
+Similarly to a standard order
+To prepare the things for pickup
+you create a regular delivery.
+For each unloading point,
+delivery is made.
+The invoice for the delivery
+has been generated.
+The consumer refers to
+the billing's pickup sheet number to pay.
+好,那我们来看一下子。
+这个系统就会用这些信息
+去决定相关的,
+决定就是decide,
+Determine
+那这个词呢我们之前学过
+就是business haven't determined their solution yet
+就是用户还没有决定他们的解决方案
+Determine their corresponding
+就是related
+就是相关的
+那这个cresponding呢
+那就是相关
+那如果它作为一个名词呢
+作为一个名词呢
+就是correspondence
+correspondence是什么意思呢
+就是你们之间的
+就是exchanged communication
+like email or letters
+or some other message
+就是你们之间交换的一些信息
+那比如说email啊
+或者就是信函啊
+往来的信函啊
+或者其他的一些信息
+OK,correspondence
+好,那在SAP呢
+有时候我们是要去
+创建一些correspondence
+比如说一些downing letter
+downing letter就是一些警告信
+那比如说
+用户不给你交钱
+就是他的那个
+就是发票已经是
+已经丢了
+就是like 10天了
+然后用户没给你付钱
+然后你可以去
+send them a correspondence
+就是可以给他们一封信
+Corespondence
+那我们叫这种信呢
+我们叫Dumbling Later
+就是警告信
+那它会分不同的层级
+那可能一般都是会一到三级吧
+一到三级
+如果这个
+就是比如说十天内没付款
+你可能还比较温和
+就列出来就是希望付款
+好第二封信的时候
+就是说已经十天到了
+然后希望你尽快付款
+然后第三封信的时候
+他还不付款
+那可能就是措辞就比较严厉
+就会告诉他们
+可能会采取法律措施什么的
+好
+那我们再来看看这边
+Generate
+Generate我们学过很多次了
+这里
+那在这个
+在做这个deliver的时候
+会generate financial document
+generate
+好那就是会产生
+meet the customer's needs
+这个我们也反复说
+就是满足谁谁谁的需求
+满足客户的需求
+满足用户的需求
+那我们怎么说
+meet the business needs
+meet the business requirement
+align with the business requirement
+好
+那我们还有fulfill the customer's needs
+Let's fulfill business requirements.
+好,那我们就是要学会
+就是满足用户的需求
+比如说, in order to align with business needs,
+we work really hard
+try to find the best solution for them.
+就是我们工作很努力
+然后尽量想选到最好的解决方案给他们.
+好,那我们再来看看这个
+The deliver order is handled.
+Handled, similarly, handle,
+这个是我们上节课应该也学过。
+Handle就是处理。
+那比如说我们可以handle batch job,
+我们还可以handle这个report,
+或者我们可以handle这个task,
+就是一些任务。
+Handle,就是会有不同的这个,
+跟后面可以,我们还可以跟这个problem,
+或者ticket
+或者tax-related matters
+就是一些税务相关的事务
+so I cannot handle my homework
+so I'm too busy
+to handle my homework
+就是我太忙了
+以至于我不能处理我的这个
+homework
+好
+我们可以handle这个
+requirement
+或者handle什么task
+好的
+那我们这里再到这里来呢
+就是to proprietor the things to pick up
+you create
+creator也是我们的老朋友了
+经常见
+那我们可以create什么
+think about it
+我们可以create a PO
+可以create a financial document
+可以create a batch job
+create a sales order
+好 那我们可以create
+这个词是比较简单的
+a regular delivery for each unloading point
+Loading Point
+Loading呢
+那我在PO那边呢
+我们有个Uploading
+Uploading呢就是上载
+那Unloading呢
+那可能就是卸货
+卸货点
+好那这是一对的
+就是Unloading和Uploading
+好那我们可以就是
+查一下这些关键字段
+那我最近的一个project呢
+我们就用到了这个uploading point
+那这个字段呢
+就是在EKKN里面的一个字段
+你们可以去查一下的这个uploading point
+就是用户觉得这个很重要
+所以他们希望在这个接口的时候
+要把这个字段给表现出来
+好 那我们看看refer to
+refer to 那就是参考
+refer to the PR
+the related PO
+is converted
+or is created
+就是参考了
+就是采购申请
+然后
+PO is generated
+就是PO能产生
+能产生一个PO
+好
+那就是我们来看一下
+这个
+refer to
+ok
+好那到下一个步骤呢
+我们就到了这个OTC的最后一个步骤
+OTC最后一个步骤呢
+就是要去确认它的这个收入了
+那也就是要
+这个也会触发一个这个
+Financial Document
+那是一个Billing或者Invoice
+那我们来花一分钟时间看一下
+然后再简单读一下
+!
+billing is the stage of the SAP Sales and Distribution Models Business Transaction Execution.
+Billing information is available at each step of the order processing process,
+including when the order is completed and delivered.
+Billing是这个SD这个模块的业务的交易的
+交易执行的一个阶段
+那Billing的这个信息呢
+就是在每一个阶段呢
+它其实都会有available
+然后就是在处理这个订单的这个流程里面呢
+包括当这个订单已经完成
+或者就是说已经发货
+Return goods, credit and debit memo
+Return goods is a special case
+When customer finds the goods, quality or quantity has a problem
+So they will contact us
+当货物质量不好或者有数量短缺的时候
+或者有问题的时候
+我们就要issue credit and debit memo to your customer
+我们就要就是发出一个
+代向评证或者借向
+代向的这个代向memo
+或者借向的memo
+然后会产生相关的发票
+为这个发货或者这个service
+consolation of billing transaction
+functions of pricing
+就是价格的功能
+或者就是discount and rebate
+好那就是
+有可能就会要
+就是取消掉你这个
+Billing的这个交易
+好
+那我们再看看
+有这个discount
+就是折扣和这个rebit
+rebit就是
+怎么说
+一个是discount
+一个是折扣
+Transforming billing data
+to financial accounting
+FI are some
+component make-up billing
+那就是这个
+也会把这个billing的这个信息呢
+转换成这个财务凭证的信息
+然后这个也是一个
+这个billing的这个过程中的
+一个重要的一些组成部分
+好那我们来看一下
+这个cancel
+OK
+那如果我们做错了事情的话
+我们财务凭证这里叫cancel
+cancel的financial document
+那我們cancel的話呢 也是可以說是reverbal financial document
+或者是reverbal
+那我們可以去cancel各種各樣的document
+Document, for example, we can cancel PR, we can cancel sales order, we can cancel billing, we can cancel financial document or reverse, reverse financial document.
+好,那我们来看看什么叫做discount和rebate.
+OK,好,那我们for example, full price,就是原价或者original price,比如是100块钱CNY.
+好,那如果是我们是discount呢
+我们就是personage,20%的discount
+那它的金额就是80
+那如果是给20块年的rebit呢
+那我们就是负还是负100
+但是它会给你200块钱的这个优惠券
+OK,这叫rebit
+So, yeah, so I think you'll understand
+what is the rebate and what is the discount
+OK
+好
+那transfer
+那这个词呢
+我们是经常用
+对吧
+好
+那就是transfer
+那我们刚刚也学过一个新的一个单词
+transfer
+我们也可以跟
+convert
+来做一个替换
+对吧
+那我们可以transfer什么data
+对吧
+transfer information
+好
+那我们当然什么information
+那我们都可以加进去
+比如说
+Transfer billing information
+Transfer customer information
+对吧
+转换客户的信息
+转换这个
+Billing information
+然后可以转换这个payment information
+对吧
+好
+那我们学到这个词transfer
+好
+那我们今天学到的这些词呢
+那我希望大家就是有时间的话呢
+你们可以去造句子
+因为我现在只是括一下子这个词主
+然后给你们一点点scenario
+so basically on my scenario
+so you can make up your own sentence
+OK
+好
+那我们下面呢
+请同学就是准备一下笔和纸
+那我们要进来听一段这个OTC的一个流程
+好,order to cash,OTC.
+这里是一个processed overview
+同时这里面也会讲一些accounting的 entries
+我们记住这个结合有两个点
+两个点会产生这个accounting document
+好,那我们开始
+In the video today, I will explain the overview of the order to cash or the sales process
+with the related accounting entries
+for the procure to pay or purchasing process i have already explained the most important parts
+in accounts payable and in integration between financial accounting and materials management
+in seps for hana and i have organized all the videos in the right sequence in a playlist for
+accounts payable i will leave you a link here you can watch it if you are interested now i will
+start doing the same for the order to cash or the sales process so today i will start with the
+overview and in the future videos i will go into the details of the process with demonstration on
+saps for hana so if you have any topic or any point you want me to cover in this new playlist
+especially if this point is related to integration between sales and distribution and finance
+or anything related to accounting in the order to cash process leave me a comment below also
+don't forget to subscribe to the channel so you can see the future videos let's go
+我们回到我们的例子
+我们有一个公司
+那些商品是否购买的商品
+而我们的商品或是商品的商品
+开始时我们收到一个商品的商品
+所以,商品问一下一个商品的商品
+要求一样的商品
+要求一样的商品
+要求一样的商品
+要求一样的商品
+要求一样的商品
+要求一样的商品
+然后,商品的商品
+我们回答这个商品
+所以,这个课题
+提供了所有的问题
+我们接受的项目
+如果我们的课题
+他会送我们一个课题
+然后我们的项目
+我们将来一个课题
+提供的课题
+这个课题会有关于
+所有的课题
+这是最重要的
+它们的课题
+什么课题
+什么课题
+when is the shipping date and all the other details then before the shipping date we are going to
+create an outbound delivery this is a note to the warehouse team telling them that we are going to
+sell a certain product at a certain date then the warehouse team based on this note they will start
+picking the products and packaging them for shipping this is called picking and packing
+and then on the shipping date we come to the actual goods issue this is when we actually
+我們會提供貨品從我們的貨物
+也許到商品或客戶
+這是我們最初的影響
+第一次的影響
+所有的步驟前提供貨品
+沒有影響全全全全全全
+我們提供貨品
+是一額的供购物收入
+和一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+可以不同的公司
+但我们将来讲更多的事情
+后面的供购物收入
+这就是我们提供购物收入
+或购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+一額的供购物收入
+but generally the financial entry will be a debit to the bank account or cash for example
+and a credit to the customer account under accounts receivable
+then we do something we call clearing
+this is where we assign the payment to the customer invoice
+so we can mark this invoice as paid
+this is the generic overview of the order to cash process
+you can find it in the different courses that cover the overview
+for example the sap business process integration
+this is also the ideal answer you can give
+你会问到你的课程中的课程中的课程中的课程中
+但是当然,在 real life,
+这些课程中的课程中的课程中
+可以完全不同的课程中
+例如,我們可以有賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣�
+好 下面呢
+就是我们有一段
+有一些
+quase我们在课堂上
+做过的
+我就把这个word文档发给大家
+因为有的同学
+没有来的话
+我们可能就是需要同学们
+在这个
+自己去来做一下子
+就是有关于这个
+OTC的一些master data
+的一些
+一些问题
+那就是在这边
+就是一些小的quiz
+好那我会就是把它单独拎出来
+就是发给大家
+那好今天的课呢就到这里
+因为这是一个补录的
+对然后希望大家就是能把homework好好做一下
+然后把这些题就是一些
+一些题吧
+就是好好做一下子
+那就是
+那同学们就是
+加油
+因为现在已经学了好多课了
+See you next time
+Take care

@@ -1,0 +1,695 @@
+start	end	text
+0	12800	大家好,我们继续这个OTC的步骤。上一节课我们已经讲了三个步骤。同学们想一想是哪三个步骤。
+12800	27000	好的,我们看一看有pre-sale的一些activity,我们会有客户他们会做inquiry。
+27000	31760	然后呢就是我们这边呢就是
+31760	35380	我们公司呢会去做一个这个quotation
+35380	38760	那就是一个是询价一个是报价
+38760	41640	然后到第三步的时候呢是就是
+41640	45780	我们就是要去建这个sales order
+45780	47880	sales order呢是比较重要的
+47880	52340	那是一个介于客户和这个销售
+52340	55440	我们这个销售组织之间的一个合同
+55440	59060	好 那我们继续到我们的step 4
+59060	67780	好 step 4呢就是我们准备好了
+67780	69140	我们就要去发货了
+69140	71540	好 那我把这一节呢读一下
+71540	75460	来看看这里面有什么重点的词
+75460	79260	step 4 delivery or shipping
+79260	82440	the first step in SAP SD floor
+82440	88940	你用APSystems to produce and process delivery orders
+88940	95480	based on information from the customer's pickup sheet processing floor.
+96000	100060	There is an outlier agreement between you and the customer.
+100880	105840	In this case, a separate scheduling agreement for delivery order processing.
+107020	108240	好,我们到这里看一下
+108240	109900	Delivery
+109900	111360	Shipping
+111360	112460	那就是
+112460	114100	第四步呢
+114100	115640	就是SAP的这个
+115640	116520	第四步就是
+116520	118600	我们可以用这个SAP的系统呢
+118600	121460	去产生或者去处理的这个
+121460	122980	发运
+122980	124260	发运单
+124260	125920	这个呢
+125920	127340	发运单的这个信息呢
+127340	127600	就是
+127600	129980	根据这个客户的这个
+129980	130840	Pickup sheet
+130840	131540	就是
+131540	132880	减选单
+132880	133820	那就是
+133820	135640	我们来看一看
+135640	137100	这里头的一些词
+137100	138060	Produce
+138060	140300	那就生产
+140300	143240	那我们produce the product
+143240	146860	或者就是produce deliver order
+146860	148800	好那process
+148800	150380	process就是处理
+150380	152740	那我们处理这个词也是高频词
+152740	155020	那我们可以有很多
+155020	157220	就是处理
+157220	159260	不仅是处理deliver order
+159260	161360	我们可以处理purchase order
+161360	161960	对吧
+161960	165240	我们可以去处理这个batch job
+165240	166500	processed batch job
+166500	168440	好那我们想一想
+168440	170500	在我们的工作情景之中呢
+170500	172780	这个process
+172780	174820	那我们是可以经常用到的
+174820	176580	好那pick up sheet呢
+176580	177920	就是拣选单pick up
+177920	180280	那还可以就是
+180280	184580	那这个就是比如说我去接人的话
+184580	186380	我也可以用这个pick up
+186380	188180	好我们来看一下
+188180	193100	pick up
+193100	194720	那比如说接人
+194720	196220	那我pick up my daughter
+196220	197080	at school
+197080	198380	就是接我的女儿
+198380	199780	在学校接我的女儿
+199780	201000	就pick up
+201000	203540	那就是还有一个poa
+203540	205180	那可能你们听说过
+205180	207860	有一些很多男生
+207860	209380	渣男很会poa
+209380	211380	pua
+211380	213420	那这个也就是
+213420	216420	也就叫pick up artist
+216420	219940	就是搭讪艺术
+219940	220860	搭讪艺术
+220860	222720	好那我们再看看
+222720	224460	另外一个词叫outline
+224460	226040	outline这个呢
+226040	229520	我们之前就是这个是属于框架协议
+229520	234200	Outline呢这里是作为一个动词的话呢
+234200	236740	我们想一想我们之前学过一些outline
+236740	238440	就是列出来对吧
+238440	238940	List
+238940	244020	那我们可以outline the details of our cutover plan
+244020	250920	那我们就是把这个cutover plan的那个具体的细节我们列出来
+250920	253960	那我们想一想我们还可以outline什么东西
+256040	266440	Outline your study plan
+266440	267220	可以吗
+267220	272600	就是把你的学习计划给列出来
+272600	273480	好
+273480	276960	下面我们有个schedule
+276960	278380	scheduling agreement
+278380	281360	scheduling agreement
+281360	282760	那就是计划协议
+282760	284740	那我们想想这是
+284740	288260	我们可以做名词
+288260	288920	schedule
+288920	289760	也可以做名词
+289760	290640	也可以做动词
+290640	292420	当做名词的时候
+292420	293620	就是我们可以说
+293620	295220	What's your schedule
+295220	296800	this afternoon
+296800	301020	We want to discuss the GTS system
+301020	302660	Do you have time?
+302980	303780	Are you available?
+304640	305160	schedule
+305160	305800	那我们就说
+305800	307000	你下午的计划是什么
+307000	307700	对
+307700	309580	So let's schedule a meeting
+309580	311480	那这里就是作为一个动词
+311480	313800	让我们去schedule
+313800	315060	或者set up meeting
+315060	316960	去讨论什么
+316960	320120	to do something
+320120	320540	OK
+320540	321880	好
+321880	322760	那就是
+322760	326920	我们这里头几个比较关键的词
+326920	328060	process
+328060	330240	pick up
+330240	331700	outline
+331700	333460	schedule
+333460	334300	好
+334300	336240	那同学如果有时间的话
+336240	337840	我们就把这些词
+337840	340200	想一想
+340200	342060	可以用到什么样的业务情景
+342060	342780	好吗
+342780	343660	好
+343660	354800	好,那我们到第五步的话,那就是第五步跟我们的,在这一步的话呢,那我们应该也知道在这一步的话,我们会产生相关的财务凭证。
+355840	360660	那你去想一想,这边的话会产生什么样的财务凭证。
+362980	364940	好,那我们再继续。
+364940	372000	Then the customer prepares data for delivery and sends it to you on a pickup sheet based
+372000	379060	on this scheduling arrangement and the forwarding agent.
+379060	391660	EDI, electronic data interchange subsystem receives an inbound pickup sheet which is
+391660	394880	converted into an intermediate document
+394880	395640	IDOC
+395640	399540	subsequently saved in your SAP system
+399540	402280	好 那我们就是客户呢
+402280	403700	会准备一些就是
+403700	407920	运输发货的一些数据
+407920	409480	然后会发给你
+409480	410600	比如说他会发
+410600	413420	通知你他的那个
+413420	415780	收货地址啊
+415780	417860	然后收货人啊
+417860	420060	收货仓库啊等等这些信息
+420060	421420	就是
+421420	423120	就是根据它的这个检选单
+423120	426040	on this scheduling arrangement
+426040	429700	就是这个发货的一些安排
+429700	431580	那arrangement呢
+431580	433600	那就是这里是一个名字
+433600	435880	那动词呢就是arrange
+435880	440680	那如果说要我来处理
+440680	450240	那让我来处理或者安排一个会语
+450240	451960	Let me arrange a meeting
+451960	452320	OK
+452320	453260	那我可以说是
+453260	454960	我可以说是一个
+454960	456140	安排
+456140	457440	安排一个会议
+457440	458440	Arrange
+458440	459660	Arrangement
+459660	460640	是说明词
+460640	462540	那如果是印度人
+462540	464160	他们的婚姻就是
+464160	465320	Marriage arrangement
+465320	467180	他们的婚姻就是一个是
+467180	469520	安排的一个婚姻
+469520	471200	那这里我们看看
+471200	472460	Forwarding agent
+472460	473640	Forward agent呢
+473640	474020	就是
+474020	475080	货代
+475080	476220	货代呢
+476220	476540	就是
+476540	479360	基于这个客户
+479360	481440	和这个船运公司
+481440	482740	之间的一个代理
+482740	483620	叫货代
+483620	484500	他们可以负责
+484500	486640	提供比较好的服务
+486640	488880	就是帮我们安排那个船运啊
+488880	491020	货柜码头啊等等
+491020	493740	他所以叫forwarding agent
+493740	495360	那forward
+495360	497160	这是一个动词
+497160	498580	那这个动词的话呢
+498580	501220	我们在经常在email里头
+501220	501540	对吧
+501540	502540	我们在email里头
+502540	504060	经常会用到这个forward
+504060	506300	please forward email to me
+506300	508420	就是把那个邮箱
+508420	509920	邮件转发给我
+509920	515080	好的
+515080	516180	那EDI呢
+516180	518260	这个是一个技术
+518260	519680	就是
+519680	522060	电子数据的交换
+522060	523200	那就是
+523200	525980	我不知道同学们在你们的SAP
+525980	528560	你们有没有什么业务情景
+528560	529500	用到了EDI
+529500	531480	Subsystem
+531480	533660	就是子系统
+533660	535780	那我们模块就叫
+535780	536700	Submodule
+536700	537300	Sub
+537300	539420	Sub 什么之下的
+539420	543000	Sub system receive an inbound
+543000	546080	Inbound 就是内向
+546080	548520	那外向的话就是outbound
+548520	552820	外向减选单
+552820	556320	Which is converted into convert
+556320	558540	Convert 这个词之前学过
+558540	562480	那比如说我们转换数据
+562480	564060	Convert data 对吧
+564060	566800	那我们PR 转换成PO
+566800	568800	是不是也是convert
+568800	569800	PR
+569800	570800	是
+570800	572800	so
+572800	574800	we can convert PR to PO
+574800	576800	we can convert data format
+576800	578800	we can also
+578800	580800	convert report layout
+580800	582800	好 那它名字呢
+582800	584800	就是conversion
+584800	586800	那記得嗎 我們有
+586800	588800	Rexive
+588800	590800	Rexive
+592800	594800	那我們
+594800	596280	开发的里面就有一个
+596280	606420	workflow, report, enhancement, conversion, interface, format.
+607260	608560	这就是conversion.
+609140	611280	那有很多公司上传数据的时候呢,
+611320	616200	它要开发一些program去把这个数据进行转换或者上载.
+616780	620160	所以我们叫我们这也属于一类的开发conversion.
+621380	621900	OK.
+622620	624300	好的,这个大家呢,
+624300	626100	就是可以在课后呢,
+626100	628980	看一看什么叫 EDI和这个 IDOC,
+629520	631120	这个 IDOC这些知识的话呢,
+631160	633660	是我们在level 2的课程,
+633780	634480	我们才会讲,
+635920	637680	subsequently就是结果,
+638520	641080	subsequently saved in your SAP system,
+641500	642820	好,这个就是,
+643660	646200	那之前的课,
+646360	648280	之前呢,我们学过 preceding,
+648580	649940	preceding就是之前的,
+650560	652240	那之后呢,就subsequent,
+652240	658760	好,那就是这些比较关键的词,我们就先学到这里
+658760	661340	那我们到下一个步骤
+661340	663360	那就是到我们的这个
+663360	666340	这边还没讲完
+666340	668080	那我们继续
+668080	679920	同学可能这里会读出
+679920	683560	Determine the corresponding scheduling agreement
+683560	687180	and the generates schedule lines in the deliver order
+687180	689240	that meets the customer's need
+689240	692020	The deliver order is handled
+692020	694840	Similarly to a standard order
+694840	697600	To prepare the things for pickup
+697600	699780	you create a regular delivery.
+700640	703380	For each unloading point,
+703980	705120	delivery is made.
+706040	707860	The invoice for the delivery
+707860	709380	has been generated.
+710520	714000	The consumer refers to
+714000	717220	the billing's pickup sheet number to pay.
+718340	719840	好,那我们来看一下子。
+719840	721720	这个系统就会用这些信息
+721720	723800	去决定相关的,
+724240	725920	决定就是decide,
+725920	728120	Determine
+728120	730420	那这个词呢我们之前学过
+730420	735120	就是business haven't determined their solution yet
+735120	741240	就是用户还没有决定他们的解决方案
+741240	743940	Determine their corresponding
+743940	744940	就是related
+744940	747180	就是相关的
+747180	749120	那这个cresponding呢
+749120	750300	那就是相关
+750300	752600	那如果它作为一个名词呢
+752600	754840	作为一个名词呢
+754840	756120	就是correspondence
+756120	758440	correspondence是什么意思呢
+758440	759880	就是你们之间的
+759880	761700	就是exchanged communication
+761700	765080	like email or letters
+765080	767000	or some other message
+767000	770180	就是你们之间交换的一些信息
+770180	772240	那比如说email啊
+772240	774660	或者就是信函啊
+774660	775840	往来的信函啊
+775840	777940	或者其他的一些信息
+777940	779180	OK,correspondence
+779180	781380	好,那在SAP呢
+781380	783680	有时候我们是要去
+783680	785960	创建一些correspondence
+785960	787440	比如说一些downing letter
+787440	790560	downing letter就是一些警告信
+790560	791940	那比如说
+791940	794860	用户不给你交钱
+794860	797440	就是他的那个
+797440	800160	就是发票已经是
+800160	801740	已经丢了
+801740	803560	就是like 10天了
+803560	806200	然后用户没给你付钱
+806200	807280	然后你可以去
+807280	810400	send them a correspondence
+810400	813680	就是可以给他们一封信
+813680	814840	Corespondence
+814840	816940	那我们叫这种信呢
+816940	817780	我们叫Dumbling Later
+817780	818680	就是警告信
+818680	821480	那它会分不同的层级
+821480	824700	那可能一般都是会一到三级吧
+824700	826760	一到三级
+826760	827960	如果这个
+827960	830660	就是比如说十天内没付款
+830660	831800	你可能还比较温和
+831800	833860	就列出来就是希望付款
+833860	835300	好第二封信的时候
+835300	836700	就是说已经十天到了
+836700	839280	然后希望你尽快付款
+839280	841560	然后第三封信的时候
+841560	842460	他还不付款
+842460	845400	那可能就是措辞就比较严厉
+845400	846360	就会告诉他们
+846360	848620	可能会采取法律措施什么的
+848620	849620	好
+849620	851080	那我们再来看看这边
+851080	854880	Generate
+854880	858020	Generate我们学过很多次了
+858020	858540	这里
+858540	860460	那在这个
+860460	863280	在做这个deliver的时候
+863280	865680	会generate financial document
+865680	866560	generate
+866560	868340	好那就是会产生
+868340	872580	meet the customer's needs
+872580	874000	这个我们也反复说
+874000	877380	就是满足谁谁谁的需求
+877380	878740	满足客户的需求
+878740	880140	满足用户的需求
+880140	880940	那我们怎么说
+880940	883380	meet the business needs
+883380	885900	meet the business requirement
+885900	890180	align with the business requirement
+890180	893660	好
+893660	896480	那我们还有fulfill the customer's needs
+896480	899260	Let's fulfill business requirements.
+901880	903300	好,那我们就是要学会
+903300	905200	就是满足用户的需求
+905200	909440	比如说, in order to align with business needs,
+910320	912480	we work really hard
+912480	915700	try to find the best solution for them.
+916360	918360	就是我们工作很努力
+918360	921140	然后尽量想选到最好的解决方案给他们.
+922140	924320	好,那我们再来看看这个
+924320	927440	The deliver order is handled.
+927800	929440	Handled, similarly, handle,
+929540	932200	这个是我们上节课应该也学过。
+932760	933820	Handle就是处理。
+934660	937500	那比如说我们可以handle batch job,
+938140	940000	我们还可以handle这个report,
+940640	942880	或者我们可以handle这个task,
+943200	944140	就是一些任务。
+945000	947560	Handle,就是会有不同的这个,
+949560	952460	跟后面可以,我们还可以跟这个problem,
+952460	953480	或者ticket
+953480	956740	或者tax-related matters
+956740	960100	就是一些税务相关的事务
+960100	962880	so I cannot handle my homework
+962880	964380	so I'm too busy
+964380	966680	to handle my homework
+966680	969320	就是我太忙了
+969320	971340	以至于我不能处理我的这个
+971340	972560	homework
+972560	973320	好
+973320	974840	我们可以handle这个
+974840	976080	requirement
+976080	977780	或者handle什么task
+977780	981900	好的
+981900	984240	那我们这里再到这里来呢
+984240	987260	就是to proprietor the things to pick up
+987260	988120	you create
+988120	990120	creator也是我们的老朋友了
+990120	990780	经常见
+990780	992580	那我们可以create什么
+992580	993600	think about it
+993600	995580	我们可以create a PO
+995580	997540	可以create a financial document
+997540	999220	可以create a batch job
+999220	1002440	create a sales order
+1002440	1004720	好 那我们可以create
+1004720	1006400	这个词是比较简单的
+1006400	1011060	a regular delivery for each unloading point
+1011060	1012080	Loading Point
+1012080	1014940	Loading呢
+1014940	1017280	那我在PO那边呢
+1017280	1018440	我们有个Uploading
+1018440	1022060	Uploading呢就是上载
+1022060	1024400	那Unloading呢
+1024400	1025760	那可能就是卸货
+1025760	1026660	卸货点
+1026660	1031100	好那这是一对的
+1031100	1036500	就是Unloading和Uploading
+1036500	1038360	好那我们可以就是
+1038360	1040760	查一下这些关键字段
+1040760	1043180	那我最近的一个project呢
+1043180	1046760	我们就用到了这个uploading point
+1046760	1048620	那这个字段呢
+1048620	1052560	就是在EKKN里面的一个字段
+1052560	1058700	你们可以去查一下的这个uploading point
+1058700	1060580	就是用户觉得这个很重要
+1060580	1063380	所以他们希望在这个接口的时候
+1063380	1065220	要把这个字段给表现出来
+1065220	1067380	好 那我们看看refer to
+1067380	1069760	refer to 那就是参考
+1069760	1072900	refer to the PR
+1072900	1074500	the related PO
+1074500	1076280	is converted
+1076280	1078240	or is created
+1078240	1079560	就是参考了
+1079560	1083220	就是采购申请
+1083220	1083640	然后
+1083640	1085620	PO is generated
+1085620	1088120	就是PO能产生
+1088120	1089500	能产生一个PO
+1089500	1090800	好
+1090800	1092540	那就是我们来看一下
+1092540	1093180	这个
+1093180	1097260	refer to
+1097260	1098200	ok
+1098200	1100160	好那到下一个步骤呢
+1100160	1103240	我们就到了这个OTC的最后一个步骤
+1103240	1105420	OTC最后一个步骤呢
+1105420	1109720	就是要去确认它的这个收入了
+1109720	1111580	那也就是要
+1111580	1114300	这个也会触发一个这个
+1114300	1116540	Financial Document
+1116540	1118600	那是一个Billing或者Invoice
+1118600	1121880	那我们来花一分钟时间看一下
+1121880	1123860	然后再简单读一下
+1123860	1135860	!
+1135860	1143860	billing is the stage of the SAP Sales and Distribution Models Business Transaction Execution.
+1143860	1148860	Billing information is available at each step of the order processing process,
+1148860	1152860	including when the order is completed and delivered.
+1152860	1158260	Billing是这个SD这个模块的业务的交易的
+1158260	1161420	交易执行的一个阶段
+1161420	1164100	那Billing的这个信息呢
+1164100	1166860	就是在每一个阶段呢
+1166860	1171300	它其实都会有available
+1171300	1175480	然后就是在处理这个订单的这个流程里面呢
+1175480	1178640	包括当这个订单已经完成
+1178640	1181760	或者就是说已经发货
+1181760	1185300	Return goods, credit and debit memo
+1185300	1189720	Return goods is a special case
+1189720	1197000	When customer finds the goods, quality or quantity has a problem
+1197000	1199120	So they will contact us
+1199120	1203780	当货物质量不好或者有数量短缺的时候
+1203780	1204760	或者有问题的时候
+1204760	1208840	我们就要issue credit and debit memo to your customer
+1208840	1211880	我们就要就是发出一个
+1211880	1215060	代向评证或者借向
+1215060	1218100	代向的这个代向memo
+1218100	1221020	或者借向的memo
+1221020	1223180	然后会产生相关的发票
+1223180	1226440	为这个发货或者这个service
+1226440	1228900	consolation of billing transaction
+1228900	1230740	functions of pricing
+1230740	1232900	就是价格的功能
+1232900	1235080	或者就是discount and rebate
+1235080	1236940	好那就是
+1236940	1238880	有可能就会要
+1238880	1242200	就是取消掉你这个
+1242200	1247240	Billing的这个交易
+1247240	1248060	好
+1248060	1248840	那我们再看看
+1248840	1249960	有这个discount
+1249960	1251800	就是折扣和这个rebit
+1251800	1253640	rebit就是
+1253640	1255900	怎么说
+1255900	1257400	一个是discount
+1257400	1260020	一个是折扣
+1260020	1262900	Transforming billing data
+1262900	1264400	to financial accounting
+1264400	1265440	FI are some
+1265440	1268140	component make-up billing
+1268140	1269560	那就是这个
+1269560	1272960	也会把这个billing的这个信息呢
+1272960	1274860	转换成这个财务凭证的信息
+1274860	1276740	然后这个也是一个
+1276740	1279400	这个billing的这个过程中的
+1279400	1281700	一个重要的一些组成部分
+1281700	1283620	好那我们来看一下
+1283620	1286340	这个cancel
+1286340	1286960	OK
+1286960	1290120	那如果我们做错了事情的话
+1290120	1292040	我们财务凭证这里叫cancel
+1292040	1294340	cancel的financial document
+1294340	1301340	那我們cancel的話呢 也是可以說是reverbal financial document
+1301340	1302340	或者是reverbal
+1310340	1315340	那我們可以去cancel各種各樣的document
+1315340	1326680	Document, for example, we can cancel PR, we can cancel sales order, we can cancel billing, we can cancel financial document or reverse, reverse financial document.
+1327460	1330860	好,那我们来看看什么叫做discount和rebate.
+1331420	1339620	OK,好,那我们for example, full price,就是原价或者original price,比如是100块钱CNY.
+1339620	1343520	好,那如果是我们是discount呢
+1343520	1346100	我们就是personage,20%的discount
+1346100	1348040	那它的金额就是80
+1348040	1351380	那如果是给20块年的rebit呢
+1351380	1354240	那我们就是负还是负100
+1354240	1357520	但是它会给你200块钱的这个优惠券
+1357520	1359760	OK,这叫rebit
+1359760	1363360	So, yeah, so I think you'll understand
+1363360	1367400	what is the rebate and what is the discount
+1367400	1368840	OK
+1368840	1370220	好
+1370220	1371160	那transfer
+1371160	1371960	那这个词呢
+1371960	1373220	我们是经常用
+1373220	1373900	对吧
+1373900	1374580	好
+1374580	1375400	那就是transfer
+1375400	1378120	那我们刚刚也学过一个新的一个单词
+1378120	1378660	transfer
+1378660	1379400	我们也可以跟
+1379400	1386620	convert
+1386620	1387980	来做一个替换
+1387980	1388340	对吧
+1388340	1390760	那我们可以transfer什么data
+1390760	1391160	对吧
+1391160	1394440	transfer information
+1394440	1404800	好
+1404800	1409020	那我们当然什么information
+1409020	1411160	那我们都可以加进去
+1411160	1411560	比如说
+1411560	1413660	Transfer billing information
+1413660	1416700	Transfer customer information
+1416700	1417080	对吧
+1417080	1418920	转换客户的信息
+1418920	1419920	转换这个
+1419920	1423180	Billing information
+1423180	1426180	然后可以转换这个payment information
+1426180	1426600	对吧
+1426600	1427360	好
+1427360	1429680	那我们学到这个词transfer
+1429680	1430840	好
+1430840	1433160	那我们今天学到的这些词呢
+1433160	1435560	那我希望大家就是有时间的话呢
+1435560	1437680	你们可以去造句子
+1437680	1440340	因为我现在只是括一下子这个词主
+1440340	1442440	然后给你们一点点scenario
+1442440	1443800	so basically on my scenario
+1443800	1446260	so you can make up your own sentence
+1446260	1447320	OK
+1447320	1448180	好
+1448180	1449120	那我们下面呢
+1449120	1453120	请同学就是准备一下笔和纸
+1453120	1457740	那我们要进来听一段这个OTC的一个流程
+1457740	1485340	好,order to cash,OTC.
+1485340	1489360	这里是一个processed overview
+1489360	1493260	同时这里面也会讲一些accounting的 entries
+1493260	1496360	我们记住这个结合有两个点
+1496360	1498980	两个点会产生这个accounting document
+1498980	1500640	好,那我们开始
+1500640	1508080	In the video today, I will explain the overview of the order to cash or the sales process
+1508080	1510100	with the related accounting entries
+1510100	1518020	for the procure to pay or purchasing process i have already explained the most important parts
+1518020	1522620	in accounts payable and in integration between financial accounting and materials management
+1522620	1527440	in seps for hana and i have organized all the videos in the right sequence in a playlist for
+1527440	1531600	accounts payable i will leave you a link here you can watch it if you are interested now i will
+1531600	1535660	start doing the same for the order to cash or the sales process so today i will start with the
+1535660	1541000	overview and in the future videos i will go into the details of the process with demonstration on
+1541000	1545860	saps for hana so if you have any topic or any point you want me to cover in this new playlist
+1545860	1550820	especially if this point is related to integration between sales and distribution and finance
+1550820	1555980	or anything related to accounting in the order to cash process leave me a comment below also
+1555980	1559700	don't forget to subscribe to the channel so you can see the future videos let's go
+1565660	1567460	我们回到我们的例子
+1567460	1568500	我们有一个公司
+1568500	1570500	那些商品是否购买的商品
+1570500	1574500	而我们的商品或是商品的商品
+1574500	1577500	开始时我们收到一个商品的商品
+1577500	1580500	所以,商品问一下一个商品的商品
+1580500	1582500	要求一样的商品
+1582500	1583500	要求一样的商品
+1583500	1585500	要求一样的商品
+1585500	1587500	要求一样的商品
+1587500	1589500	要求一样的商品
+1589500	1591500	要求一样的商品
+1591500	1592500	然后,商品的商品
+1592500	1594500	我们回答这个商品
+1594500	1596500	所以,这个课题
+1596500	1598500	提供了所有的问题
+1598500	1600500	我们接受的项目
+1600500	1602500	如果我们的课题
+1602500	1604500	他会送我们一个课题
+1604500	1606500	然后我们的项目
+1606500	1608500	我们将来一个课题
+1608500	1610500	提供的课题
+1610500	1612500	这个课题会有关于
+1612500	1614500	所有的课题
+1614500	1616500	这是最重要的
+1616500	1618500	它们的课题
+1618500	1620500	什么课题
+1620500	1622500	什么课题
+1622500	1627500	when is the shipping date and all the other details then before the shipping date we are going to
+1627500	1632580	create an outbound delivery this is a note to the warehouse team telling them that we are going to
+1632580	1638000	sell a certain product at a certain date then the warehouse team based on this note they will start
+1638000	1642940	picking the products and packaging them for shipping this is called picking and packing
+1642940	1648100	and then on the shipping date we come to the actual goods issue this is when we actually
+1648100	1650100	我們會提供貨品從我們的貨物
+1650100	1652700	也許到商品或客戶
+1652700	1655780	這是我們最初的影響
+1655780	1657580	第一次的影響
+1657580	1659620	所有的步驟前提供貨品
+1659620	1661860	沒有影響全全全全全全
+1661860	1664060	我們提供貨品
+1664060	1666060	是一額的供购物收入
+1666060	1668060	和一額的供购物收入
+1668060	1669060	一額的供购物收入
+1669060	1670060	一額的供购物收入
+1670060	1672060	可以不同的公司
+1672060	1674060	但我们将来讲更多的事情
+1674060	1676060	后面的供购物收入
+1676060	1678060	这就是我们提供购物收入
+1678060	1679060	或购物收入
+1679060	1681060	一額的供购物收入
+1681060	1683060	一額的供购物收入
+1683060	1684060	一額的供购物收入
+1684060	1686060	一額的供购物收入
+1686060	1688060	一額的供购物收入
+1688060	1690060	一額的供购物收入
+1690060	1692060	一額的供购物收入
+1692060	1693060	一額的供购物收入
+1693060	1697920	but generally the financial entry will be a debit to the bank account or cash for example
+1697920	1701340	and a credit to the customer account under accounts receivable
+1701340	1703440	then we do something we call clearing
+1703440	1707400	this is where we assign the payment to the customer invoice
+1707400	1709320	so we can mark this invoice as paid
+1709320	1712360	this is the generic overview of the order to cash process
+1712360	1715680	you can find it in the different courses that cover the overview
+1715680	1718500	for example the sap business process integration
+1718500	1721000	this is also the ideal answer you can give
+1721000	1724000	你会问到你的课程中的课程中的课程中的课程中
+1724000	1725360	但是当然,在 real life,
+1725360	1726240	这些课程中的课程中的课程中
+1726240	1728460	可以完全不同的课程中
+1728460	1758460	例如,我們可以有賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣賣�
+1758460	1763960	好 下面呢
+1763960	1765500	就是我们有一段
+1765500	1767120	有一些
+1767120	1769880	quase我们在课堂上
+1769880	1770580	做过的
+1770580	1773600	我就把这个word文档发给大家
+1773600	1775740	因为有的同学
+1775740	1776620	没有来的话
+1776620	1779640	我们可能就是需要同学们
+1779640	1780440	在这个
+1780440	1782760	自己去来做一下子
+1782760	1784140	就是有关于这个
+1784140	1786840	OTC的一些master data
+1786840	1787840	的一些
+1787840	1789760	一些问题
+1789760	1791280	那就是在这边
+1791280	1793400	就是一些小的quiz
+1793400	1796480	好那我会就是把它单独拎出来
+1796480	1798500	就是发给大家
+1798500	1802680	那好今天的课呢就到这里
+1802680	1806080	因为这是一个补录的
+1806080	1809940	对然后希望大家就是能把homework好好做一下
+1809940	1813640	然后把这些题就是一些
+1813640	1818460	一些题吧
+1818460	1820100	就是好好做一下子
+1820100	1821120	那就是
+1821120	1823200	那同学们就是
+1823200	1824300	加油
+1824300	1827880	因为现在已经学了好多课了
+1827880	1834920	See you next time
+1834920	1835540	Take care

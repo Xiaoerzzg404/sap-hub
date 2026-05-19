@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "lesson_01_02_20250913_20250913085833-H班第1-2节课-视频-1",
+    "source_file": "第1-2节20250913/20250913085833-H班第1-2节课-视频-1.mp4",
+    "duration_seconds": 8018,
+    "segment_count": 3707,
+    "transcript_json": "_outputs/transcripts_raw/lesson_01_02_20250913_20250913085833-H班第1-2节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_01_02_20250913_20250913085833-H班第1-2节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_01_02_20250913_20250913085833-H班第1-2节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_01_02_20250913_20250913085833-H班第1-2节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_03_04_20250920_20250920085824-H班第3-4节课-视频-1",
+    "source_file": "第3-4节20250920/20250920085824-H班第3-4节课-视频-1.mp4",
+    "duration_seconds": 8420,
+    "segment_count": 3059,
+    "transcript_json": "_outputs/transcripts_raw/lesson_03_04_20250920_20250920085824-H班第3-4节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_03_04_20250920_20250920085824-H班第3-4节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_03_04_20250920_20250920085824-H班第3-4节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_03_04_20250920_20250920085824-H班第3-4节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_05_06_20250927_20250927085713-H班第5-6节课-视频-1",
+    "source_file": "第5-6节20250927/20250927085713-H班第5-6节课-视频-1.mp4",
+    "duration_seconds": 8843,
+    "segment_count": 3459,
+    "transcript_json": "_outputs/transcripts_raw/lesson_05_06_20250927_20250927085713-H班第5-6节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_05_06_20250927_20250927085713-H班第5-6节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_05_06_20250927_20250927085713-H班第5-6节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_05_06_20250927_20250927085713-H班第5-6节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_07_20251012_20251012195721-H班第7节课-视频-1",
+    "source_file": "第7节20251012/20251012195721-H班第7节课-视频-1.mp4",
+    "duration_seconds": 4535,
+    "segment_count": 1418,
+    "transcript_json": "_outputs/transcripts_raw/lesson_07_20251012_20251012195721-H班第7节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_07_20251012_20251012195721-H班第7节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_07_20251012_20251012195721-H班第7节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_07_20251012_20251012195721-H班第7节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_08_09_20251017_20251018085759-H班第8-9课-视频-1",
+    "source_file": "第8-9节20251017/20251018085759-H班第8-9课-视频-1.mp4",
+    "duration_seconds": 3044,
+    "segment_count": 1231,
+    "transcript_json": "_outputs/transcripts_raw/lesson_08_09_20251017_20251018085759-H班第8-9课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_08_09_20251017_20251018085759-H班第8-9课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_08_09_20251017_20251018085759-H班第8-9课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_08_09_20251017_20251018085759-H班第8-9课-视频-1.json"
+  },
+  {
+    "slug": "lesson_08_09_20251017_20251019_194259",
+    "source_file": "第8-9节20251017/20251019_194259.mp4",
+    "duration_seconds": 1836,
+    "segment_count": 694,
+    "transcript_json": "_outputs/transcripts_raw/lesson_08_09_20251017_20251019_194259.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_08_09_20251017_20251019_194259_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_08_09_20251017_20251019_194259_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_08_09_20251017_20251019_194259.json"
+  },
+  {
+    "slug": "lesson_10_11_20251025_20251025085847-H班第10-11课-视频-1",
+    "source_file": "第10-11节20251025/20251025085847-H班第10-11课-视频-1.mp4",
+    "duration_seconds": 3365,
+    "segment_count": 1437,
+    "transcript_json": "_outputs/transcripts_raw/lesson_10_11_20251025_20251025085847-H班第10-11课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_10_11_20251025_20251025085847-H班第10-11课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_10_11_20251025_20251025085847-H班第10-11课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_10_11_20251025_20251025085847-H班第10-11课-视频-1.json"
+  },
+  {
+    "slug": "lesson_12_13_20251101_20251101085707-H班第12-13课-视频-1",
+    "source_file": "第12-13节20251101/20251101085707-H班第12-13课-视频-1.mp4",
+    "duration_seconds": 7777,
+    "segment_count": 3276,
+    "transcript_json": "_outputs/transcripts_raw/lesson_12_13_20251101_20251101085707-H班第12-13课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_12_13_20251101_20251101085707-H班第12-13课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_12_13_20251101_20251101085707-H班第12-13课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_12_13_20251101_20251101085707-H班第12-13课-视频-1.json"
+  },
+  {
+    "slug": "lesson_14_15_20251115_20251115085902-H班第14-15节课-视频-1",
+    "source_file": "第14-15节20251115/20251115085902-H班第14-15节课-视频-1.mp4",
+    "duration_seconds": 8248,
+    "segment_count": 3950,
+    "transcript_json": "_outputs/transcripts_raw/lesson_14_15_20251115_20251115085902-H班第14-15节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_14_15_20251115_20251115085902-H班第14-15节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_14_15_20251115_20251115085902-H班第14-15节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_14_15_20251115_20251115085902-H班第14-15节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_16_20251122_20251122090031-H班第16节课-视频-1",
+    "source_file": "第16节20251122/20251122090031-H班第16节课-视频-1.mp4",
+    "duration_seconds": 4221,
+    "segment_count": 1712,
+    "transcript_json": "_outputs/transcripts_raw/lesson_16_20251122_20251122090031-H班第16节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_16_20251122_20251122090031-H班第16节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_16_20251122_20251122090031-H班第16节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_16_20251122_20251122090031-H班第16节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_17_20251129_20251129092727-H班第17节课-视频-1",
+    "source_file": "第17节20251129/20251129092727-H班第17节课-视频-1.mp4",
+    "duration_seconds": 4492,
+    "segment_count": 1855,
+    "transcript_json": "_outputs/transcripts_raw/lesson_17_20251129_20251129092727-H班第17节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_17_20251129_20251129092727-H班第17节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_17_20251129_20251129092727-H班第17节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_17_20251129_20251129092727-H班第17节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_18_20251214_20251214202905-H班第18节-视频-1",
+    "source_file": "第18节20251214/20251214202905-H班第18节-视频-1.mp4",
+    "duration_seconds": 3901,
+    "segment_count": 1448,
+    "transcript_json": "_outputs/transcripts_raw/lesson_18_20251214_20251214202905-H班第18节-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_18_20251214_20251214202905-H班第18节-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_18_20251214_20251214202905-H班第18节-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1.json"
+  },
+  {
+    "slug": "lesson_19_20251220_20251220093035-H班第19节课-视频-1",
+    "source_file": "第19节20251220/20251220093035-H班第19节课-视频-1.mp4",
+    "duration_seconds": 3856,
+    "segment_count": 1863,
+    "transcript_json": "_outputs/transcripts_raw/lesson_19_20251220_20251220093035-H班第19节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_19_20251220_20251220093035-H班第19节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_19_20251220_20251220093035-H班第19节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_19_20251220_20251220093035-H班第19节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_20_20251227_20251227092947-H班第20节课-视频-1",
+    "source_file": "第20节20251227/20251227092947-H班第20节课-视频-1.mp4",
+    "duration_seconds": 4217,
+    "segment_count": 1512,
+    "transcript_json": "_outputs/transcripts_raw/lesson_20_20251227_20251227092947-H班第20节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_20_20251227_20251227092947-H班第20节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_20_20251227_20251227092947-H班第20节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_20_20251227_20251227092947-H班第20节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_21_20260103_20260103092825-H班第21节课-视频-1",
+    "source_file": "第21节20260103/20260103092825-H班第21节课-视频-1.mp4",
+    "duration_seconds": 3969,
+    "segment_count": 1381,
+    "transcript_json": "_outputs/transcripts_raw/lesson_21_20260103_20260103092825-H班第21节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_21_20260103_20260103092825-H班第21节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_21_20260103_20260103092825-H班第21节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_22_20260110_20260110092834-H班第22节课-视频-1",
+    "source_file": "第22节20260110/20260110092834-H班第22节课-视频-1.mp4",
+    "duration_seconds": 3905,
+    "segment_count": 1691,
+    "transcript_json": "_outputs/transcripts_raw/lesson_22_20260110_20260110092834-H班第22节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_22_20260110_20260110092834-H班第22节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_22_20260110_20260110092834-H班第22节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_22_20260110_20260110092834-H班第22节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_23_20260117_20260117093013-H班第23节课-视频-1",
+    "source_file": "第23节20260117/20260117093013-H班第23节课-视频-1.mp4",
+    "duration_seconds": 3947,
+    "segment_count": 1733,
+    "transcript_json": "_outputs/transcripts_raw/lesson_23_20260117_20260117093013-H班第23节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_23_20260117_20260117093013-H班第23节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_23_20260117_20260117093013-H班第23节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_23_20260117_20260117093013-H班第23节课-视频-1.json"
+  },
+  {
+    "slug": "lesson_24_20260124_20260124093002-H班第24节课-视频-1",
+    "source_file": "第24节20260124/20260124093002-H班第24节课-视频-1.mp4",
+    "duration_seconds": 2011,
+    "segment_count": 681,
+    "transcript_json": "_outputs/transcripts_raw/lesson_24_20260124_20260124093002-H班第24节课-视频-1.json",
+    "transcript_md": "_outputs/transcripts_md/lesson_24_20260124_20260124093002-H班第24节课-视频-1_逐字稿.md",
+    "course_guide": "_outputs/course_guides/lesson_24_20260124_20260124093002-H班第24节课-视频-1_时间线培训教程.md",
+    "visual_ocr_json": "_outputs/visual_ocr/lesson_24_20260124_20260124093002-H班第24节课-视频-1.json"
+  }
+]

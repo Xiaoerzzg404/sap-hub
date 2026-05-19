@@ -1,0 +1,1512 @@
+请不吝点赞 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅
+是
+是
+是
+好, good
+嗨,Good morning,Taylor,萌萌,Dong老師,YueYue
+Good morning,Annie
+Happy holidays
+Hello,Can you hear me?
+I can hear you
+Hello, I can hear you
+Hello
+Hello, can you hear me
+OK, great
+我可以不听你
+对
+我可以听到呀
+听到
+你听不到我们
+现在可以了
+我现在可以听到你的声音
+刚才就你听不到我们
+好的
+Happy Holidays
+Merry Christmas
+How about your Holidays
+So how did you
+你也要先上班了
+你也要先上班了
+你也要先上班了
+我現在要上班了
+但我還要跟你們
+所以我們先看
+我們昨天學習了什麼
+還記得我們上課學了什麼嗎
+Active method
+Active method
+Active method
+所以
+How many phases
+for active method
+6
+6
+6
+6
+6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+
+
+
+Discover
+Discover
+Prepare
+It's wrong
+It's wrong
+It's wrong
+Wrong
+Wrong
+OK
+The last phase is wrong
+OK
+那我先来考你们一下子
+那我说几个句子
+然后你们觉得这个是在哪个阶段发生的
+好吧
+或者就是说
+或者相反的
+就是说
+你们给我一个例子
+就是说在哪个阶段
+这个是在哪个阶段
+或者你们给我一个例子
+我就说discover阶段
+你会用到什么样的句子
+好吗
+好
+那我们来看图说话
+那上次我们就是有图
+那现在可以
+你们听到
+因为楼下我女儿在弹钢琴
+所以我就不能到楼下去了
+好
+我们
+这个是
+Angel Method
+OK
+Angel Method的话
+我们这里有两个重点词
+第一个重点词是什么
+Sprint
+一个
+你们现在能看到屏幕对吧
+对
+OK
+好
+那一个重点词就是Sprint
+Sprint
+我们一般是什么概念
+一个冲刺
+一个小阶段
+一个 time frame
+一个阶段
+对
+so if I want to talk about
+the stakeholders
+functional consultant
+or technical consultant
+what's the words I will describe
+across functional team
+如果我们想来
+概括一下子这个
+我们这个 team
+就是close functional team
+就是跨模块的这个team
+我用一个什么词来替代
+这题
+dele
+dele
+scrum
+不用dele
+对就scrum
+OK
+好
+那如果说
+a list of business requirements
+就是
+backlog
+OK
+backlog
+OK
+好 那我们先到这个阶段
+我来看看
+我们那个图的阶段
+好 我们到了这个图的阶段
+我们刚刚同学都已经知道了这个六个阶段
+Discover 对吧
+然后Prepare
+Explore
+Realize
+Deplore
+Run
+OK
+so if I want to ask you so forgive them for example your business okay so I'm a functional
+consultant I ask you uh what's the gap between existing business process and future design
+!
+repair
+ah
+discover
+uh
+okay
+explore
+explore
+okay so today's meeting let's discuss
+um
+cut over plan
+deploy
+deploy
+OK,very good. So who can handle this ticket?
+RUN.
+你可以RUN.
+User,who can handle this ticket?
+Who can handle this ticket?
+就是谁能处理这个工单?
+对。
+OK,你可以说是,so I'm going to assign this ticket to CCC,对吧?
+好 那我用文具的形式 你们来接下面的话也可以 好吧
+Can we use the standard function?
+Yes, we can use the standard function to realize this requirement
+Okay, to fulfill, to meet, to align with
+OK,to align with,或者to meet business requirements
+OK,that's good
+好,那我再来给你讲一下
+在哪个阶段我们跟用户讨论UAT上
+Alt
+Realize
+Majority
+UAT
+UAT User Acceptance Test
+Deployed
+Deployed
+OK
+好
+那在哪個階段
+那好啊
+那我就說Realize階段嘛
+我不提供什麼了
+我就說在Realize階段
+我們要做什麼事情
+Taylor,可 you please list one or two tasks during realized phase?
+We should develop the new functions in SIP system
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+我们要做计算的
+OK,非常好
+好,那
+YuYu
+可以请你
+at least one or three cut over steps or cut over activities
+cut over activities
+就是 cut over
+cut over 什麼意思
+過度 切換
+我需要换
+我需要换
+我需要换
+嗯
+你就换
+你就换出两三个吧
+两三个这个
+Cutover的一些Activity
+包括什么
+嗯
+首先我们要把
+你在Deploy
+阶段做的那个
+做的这个Configuration
+要什么
+传输请求吗
+传输请求这么说
+Transmit the requirement
+Transport the request
+to the protection system
+OK, very good
+OK
+好,这是一条
+你在讲第二条或第三条
+传输的
+然后顾问要到系统里头
+我给你
+所以 let me give you some hints
+提示
+那这样传输以后
+然后谁要去到系统里头干嘛
+用你的话来说
+嗯
+嗯
+Functional Consultant should validate
+Node Transport
+OK, validation, right?
+You can just use one word
+OK, validation
+The configuration in the system, right?
+Validates the configuration in the production system
+好,那是第二条
+第三条再想想
+如果有一些开发
+或者如果有一些interface的话
+我们要去创建什么
+创建什么
+如果是有interface的话
+我们要自动
+要它automatic
+今天42月26号
+automatic test
+automatic
+自动
+automatic test,或者我们可以test这个batch什么
+batch job
+run batch job,OK
+we can test the batch job
+还可以做什么
+好,那其他同学可以补充一下
+如果月月就是已经讲了三条的话
+那在最后的时候cutover
+so I always mention that cutover is very important,OK
+so everyone should be familiar with the cutover plan
+OK,Just give me some steps.
+OK,Taylor,你来说一下,你有什么样的东西,你可以募什么东西,或者我们要做一个data什么,或者我们要去做一些data migration,这个都可以把它用上,就来说吧。
+I think we should,the most important is the master data and the business data migration.
+OK.
+should be moved to the production system okay very good
+uh we can
+to do the
+Create new account for the user.
+New user ID, right?
+Okay, account.
+那你也说对了,就是 account.
+你是说 account的,就是 user ID吗?
+Yes, yes.
+或者 user ID.
+Okay, very good.
+We can use user's ID to do some system.
+是 试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试�
+好,那我再来点一个阶段,你们再列出来。
+在Explore阶段,我们要做什么?
+So what are activities for Explorer phase?
+No, no class of the business.
+Design, design to be business operant.
+我们会去行动什么?
+行动的
+行动的
+行动的
+行动的
+行动的
+行动的
+我们会去行动的
+行动的
+行动的
+行动的
+行动的
+行动的
+行动的
+OK,and try to provide the solution.
+Solution,OK,very good.
+So you use the new words we have learned before,OK,that's good.
+好,那我们这几个阶段的话我们要看,就是要熟悉,好,那有一些什么样的activity,我们要清楚,OK.
+好,那就是RUN在做这个hypercare的阶段,这个RUN就是已经到了上线了,上线以后我们应该有一个月的这个叫hypercare,好,这个明白吗?
+一个月的这个就是超级的据护理这个阶段。
+好,so if business issue
+user story or bugs
+we should try our best
+to
+fix it
+to fix it
+okay,fix the bug
+我们就是最简单的词
+就来描述这个什么样的状况
+对吧,fix the bug
+好的,这是以前都学过的
+我们就在这里就是
+稍微回顾一下子
+好,那今天呢
+我们已经到了20课
+在这个阶段的话呢
+我们想给大家呢
+就是先听一段听力
+那请大家就是准备好你的笔盒子
+我们听的话呢
+我可能就是会
+OK
+好听的话呢
+我可能会中途停一下子
+然后看要同学要repeat
+就是这个就是听力的方法呢
+叫影子学习法
+就是你要copy
+就是你要copy
+他说了什么东西
+然后你听到了什么
+好吗
+Are you ready?
+我看看我这个
+这个好像不太明淡了
+我这个鼠标
+好 我先到楼下去
+我先到楼下去
+这个好像鼠标
+在我这个桌上不太work
+嗯
+好
+我们再想想那个active method
+因为你今天不能弹琴吗
+这个书表不好用
+好 那你们听到刚听声吗
+就是会不会很大声
+没有听到
+好 那准备好
+现在我们来进一段
+这个 YouTube
+去进一下
+好
+好,準備好了嗎?
+好 听到了那句什么
+这个男的说什么
+那是好好的問題
+那是好好的問題
+我們要怎麼回答
+所以在最終的
+好 這最後一句什麼?
+因什麼?
+In terms of
+In terms of
+Process
+這個我們可以聽了
+因為很短
+在中文端的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程度上的程
+然后呢,之后,设计,设计,设计,设计,设计,设计,设计,设计,设计。
+你明白什么?
+听出来一个词秒,scope,对,还有呢?
+这个人他是德国人。
+明白什么?
+明白什么?
+what needs to be configured, what needs to be extended,
+what needs to be configured, what needs to be extended,
+extend, extend,就是扩展,扩充。
+你 iterate on extending it.
+In ASAP, we had this approach of blueprinting
+and then fairly heavily focusing on as is to be analysis.
+听出来没有?我们平时三个学过的?
+As is and to be.
+Okay, very good.
+因为我们平时学过了,所以你们可能听得出来一点.
+...and then detailed blueprints.
+DETAIL什麼?
+Blueprint
+Progress
+DETAIL BLUEPRINT吧?
+Blueprint
+DETAIL BLUEPRINT
+Blueprint
+And then once you fix them, you implemented them
+Once you什麼?
+動詞剛剛我們學習
+FIX IT
+FIX IT
+FIX IT
+MULTIPLE LONG CYCLES
+LONG CYCLES
+LONG CYCLES
+不过的课程, 然后你也有过程度的课程,
+然后你也有过程度的课程, 当然是过程度的课程。
+我过程度的课程, 我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+我过程度的课程。
+在 Activate, we follow the same process,
+only the focus is on surfacing the Delta requirements
+based on pre-delivered ready-to-run business processes
+that we bring to the table.
+So we are starting with a foundation of best practices
+or enterprise management layer in our S4 private or on-prem.
+And then based on-
+On-prem,听起来了吗?
+本地就是一个是在云,一个是在
+on cloud,或者on promise,就是本地
+
+
+一个是在云,一个是在on cloud,或者on promise,就是本地
+一个是在云,一个是在on cloud,或者on promise,就是本地
+一个是在云,一个是在on cloud,或者on promise,就是本地
+一个是在云,一个是在云,一个是在on cloud,或者on promise,就是本地
+一个是在云,一个是在云,一个是在云,一个是在云,一个是在云
+一个是在云,一个是在云,一个是在云,一个是在云,一个是在云
+那是真的要的 focus
+我们开始在这一步
+我们开始在这一步
+我们可以重新的利用
+而建立了一个新的利用
+或者建立了一个新的利用
+那些人已经用了
+最好的利用
+我们知道每个客户有
+一些不同的不同的 processes
+他们需要
+你听到吗?
+有什么?
+
+有什么?
+有什么?
+-  reflecting the solution, and they do that through-
+- Reflecting the solution.
+- Reflecting the solution.
+That may then result in configuration, extensibility, integration, or-
+Configuration?
+Configuration.
+後面是什麼?
+延長怎麼說?
+Extension, extension.
+Extension.
+嗯,還有什麼?
+你需要的信息, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能, 性能,
+基于商业的需要,功能,整体性的重点,
+整体性的重点,然后你进入你的实现场,
+然后发现这些背景的背景,
+在其他设计的公司,这些传统一至二周长。
+一至二周长。
+我不是说了,这是实现。
+我不是说了,知道什么意思吗?
+我没有开玩笑。
+对,我不是说了。
+一期的,在一期或二期的,
+teams are building features,
+configuring the solution,
+building features,
+configuring the solution,
+showing it to the customer, business users,
+showing it to business customers, users,
+and promoting it into either staging or production.
+Promote,就是推廣道,Promote,或者就是升職,你们升职就Promotion,OK,Promote,Directly,OK,好,那我们这个比较短,所以我们再重新来听一遍,我就不打扰了你们就是开始听,看会不会好一点,嗯。
+How does SAP Activate compare to ASAP methodology?
+So that's a great question.
+Let me think about how to best answer it.
+So in terms of the process flow, the implementation process flow,
+it has resemblance because you always need to initiate, set up, launch your project,
+設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定,設定.
+在ASAP,我们有这个方法的推广,
+然后,我们的主要是,
+和,在这些,和,在这些组织的推广。
+他们是在解决的,
+然后,你解决了它,
+在数个月的组织。
+订阅的组织,
+不过过过的组织。
+然后,你会在这些组织的组织。
+所以我会在优优独播剧场上,我们在优优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们在优独播剧场上,我们
+and based on analysis that you do through fit to standard you start surfacing the fit of the solution that that's really the focus let's start with the fit let's start where we can reuse and maximize the reuse instead of building something new or rebuilding something that somebody already is using as a best practice
+但是我们知道每个项目有不同的项目,
+他们需要在解决的解决方式,
+他们做的通知识的统签,
+那些统签,
+统签,
+统签,
+或者,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你认为,
+你把那些返回合,你把那些返回合,
+你把那些返回合,
+那些返回合,
+那些返回合,
+那些返回合,
+然后你走到你的返回合
+然后你把返回合合在一系列的返回合。
+在很多返回合在公共的返回合,
+那些返回合是一期的返回合。
+我不会在买,
+这是一个返回合。
+所以在一期的返回合,
+好 那同學就是你們看的這個時間大概是9點
+大概9點鐘不到就是你們大概就往前面推一推看一看
+好 那我們下面呢就是剛剛講的一些詞
+那些词同学们有听到一些什么可以分享一下
+Backlog
+Backlog 对
+Realization 听到没有
+Realization phrase
+Prob is all
+还有什么
+Resembolize
+这个词比较难
+有人可以打出来吗
+re-symbolize
+相似的,類似的
+R-E-S-E-M-B-L-E
+R-E-S-E-M-B-L-E
+re-symbol
+我應該沒有答錯
+看到了嗎?
+我打在這個
+哦 看到
+整話里面
+Resembolize
+啊哈
+还有Extension
+Extension
+啊哈
+就是扩充
+扩充扩研
+嗯
+听到了
+Configuration
+啊Configuration
+对
+这个是
+这个是我们
+就经常说的
+我们可以知道
+还有
+还听到什么
+Identify the requirement.
+嗯,聽到了,對,Identify.
+OK,還有什麼?
+To be,聽到了吧?
+To be.
+Big, big word.
+還有分析聽到了沒有?
+Analysis.
+Analysis.
+OK, OK,好,那我們就說用這種方法的話,我們就是影子跟讀,
+他就说你在下头要听的时候就像我这样子
+你要是听一句然后你再重复一句
+听一句重复一句
+这样可能就是能达到清听
+因为我们课堂的时间有限
+我们不可能就是说一遍一遍反复听
+好那这个就是你们客户作业
+你们要去听
+好那我们今天呢
+我们新学的一个内容
+那我想问一下你们都是在ECC
+还是在S4HANA
+S4HANA
+ECC
+OK那很好
+那Taylor可能你也经历过这个ECC
+对吧
+好那你也是经历过
+你现在也正在使用这个S4HANA
+OK那我想问一个大家
+问的问题
+这个也是一个
+面试的问题其实
+So what's the difference
+What are the differences
+between SAP HANA and ECC
+我们先不看他这篇文章
+我们自己能不能说出来一点
+Taylor, could you please tell me what are the differences between S4HANA and ECC?
+I think the first is that S4HANA is more faster than ECC because they use the
+HANA
+Memory
+and
+and there are a lot of the table
+it's simple
+and they are simplified a lot of the tables
+es especially in the financial module
+and the MM module
+and in PPA module
+and there
+MRIP是錯的
+OK
+OK
+I think the best
+The material number and the description
+The length of the material number and description
+是extended
+extended
+ok very good
+好很accurate
+你现在用词越来越棒了
+就是可以用的词还是比较精准的
+
+那我们下面呢
+我们请一个同学来读一下子这个
+这些词都是蛮好的
+streamline
+这个词其实以前可能学过
+好
+那月月你来读一下
+How is SAP S4HANA different from SAP ECC?
+SAP S4HANA streamlines futures and processes from SAP ECC
+to reduce costs and boost business efficiency.
+This means some futures have changed,
+while others have been replaced or compared into new features.
+一些的 Key Changes
+在 SAP S4HANA
+在下方的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+以下的
+Essence is the default option, but in SAP S4HANA, the default option is account-based CO2PA, though you can run both options together.
+OK, very good.
+好,那我们这里就直接就简化去COPA就行了。
+好,那我们来看看这个词 Streamline。
+OK,这个 Streamline后面它跟的是 Feature and Process。
+OK,那我们还可以看一下这feature
+Streamline,我们还可以Streamline什么
+好,那我如果说是简化用户的流程,我怎么说
+Streamline process
+用户的流程
+Streamline business process
+或者feature
+那我简化系统的功能呢?
+System Function
+OK
+Streamly Function
+Streamly Function
+OK
+Streamly Functionality, right?
+Functionality
+功能,对吧?
+好 那我们这Streamline 我们要学会就是用
+就是说或者我们简化你的这个
+比如说我们要简化他们的这个业务的流程
+那我们来就是给一个情景
+So let me give you a scenario
+OK
+就是我在做完这个用户的调研之后
+我简化了他们的这个业务流程
+關鍵字,keywords是什麼?
+Streamlight,after I developed the new function,I streamlined their business process.
+Okay,after I conducted什麼?
+Conduct development new function.
+Sorry,sorry你知道嗎?就是調研,調查.
+sorry
+I'm the servant
+好
+那我們再第二個詞就是
+boost
+business efficiency
+boost
+我們猜猜什麼意思
+促進提高
+那如果我們用這個
+音翻音呢
+我們什麼意思
+increase
+improve
+嗯哼,improve,ok,very good
+好,那我们想想我们请
+我给你一个scenario
+就是我的那个方案A
+是可以有效地提高业务的流程
+业务的效率
+I solution can burst business process efficiently
+我们在国外有一个这个
+Boost
+就是一个
+一个
+就是一个手机的一个公司
+就是一个服务商吧
+Service Provider
+就是
+就像国内的什么
+腾讯
+不是腾讯
+国内的叫什么
+这两
+三大公司
+什么联想
+不是
+联想
+那个
+不是不是联想
+那个
+电信
+对
+电信移动
+还有一个联通
+对吧
+好
+他们就是其中的一个叫他们的名字叫boost
+increase or succeed right increase increase for the improve
+increase improve好那我们提高它的效率我们可以说boost the efficiency right
+so let's post it so let's streamline the solution and
+我们可不可以联系用?
+so let's streamline the business process and boost their efficiency
+对 我们这样子联系用就特别棒
+好 那我们第三个词呢
+this means some features have changed where others have been replaced
+替代
+替代 我们这个词我们平时怎么用的?替代
+replace
+我想用这个Solution B去替代掉这个Solution A
+因为我觉得这个能提高
+简化他们流程
+三个句子一起好吗
+简化流程然后能提高他们的效率
+I want to use Solution B
+to apply
+OK,非常好。
+好,那你们现在越来越棒了,就是可以拿多个单词来主句子了。
+好。
+一些的硬件在SAP
+HANA 上的硬件
+我们学过多次
+关键
+关键用户怎么说
+Key user
+然后关键通点呢
+Key point
+Key point
+关键需求呢
+Key requirements
+嗯嗯
+你覺得有一個問題
+關鍵流程呢
+KBUS needs process
+嗯
+OK,非常好
+好,那我們Default
+Default我們知道什麼意思嗎
+缺少之
+默认,默认比较精准,默认它的这个就是COPH,这个account based,OK,好,那我们再看default value,好,那我们如果说这个default,那我们可以,就是我们在写functional specs的时候,对吧,
+我的公司的公司是1000
+我怎么说
+我的公司的公司是1000
+Default company code value equals to 1000
+Default
+Default
+
+
+
+
+
+
+
+
+
+Default
+
+Default
+
+
+Default
+
+
+
+Default
+
+
+
+
+Default
+
+
+
+
+
+
+
+
+Default
+
+Default
+
+
+
+
+
+很簡單的。
+那讓我們知道對吧?
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+讓我們隨口說。
+好,那就是說我現在這個,那我來給你一個scenario,OK?
+這個batch job不行,然後這個program,就是我跑不出來報表。
+The batch job is in there.
+If it's not work, I can't run the reports.
+OK,我們用簡單點,就說doesn't work,OK?
+doesn't work
+so I cannot run the report
+I cannot run
+the MRP program
+report
+好
+那我们继续说
+跟developer说
+你可不可以去
+去检查下你的这个
+code
+就是你的这个
+code
+这是我想听到的词。
+OK, very good.
+Could you please debug the code?
+The code, OK.
+好。
+And fix the error.
+And fix the error as soon as possible.
+OK, fix.
+OK, very good.
+好,你们很棒,慢慢就是能扩展了。
+好 我们再到这个第二个阶段
+so let's move the topic to
+if I and CO merge
+ok 好 那就是在这个
+S4 HANA以后有一个很重要的一个表
+它会被merge
+ok 那这个表呢就叫
+ACDOCA table
+ok 好 那我们请你们看
+刚刚这个extension 我们刚刚在学
+好 那请你们来阅读一下
+自己来阅读一下这里面
+然后我会调一些关键词来讲一下
+比如说这个词你们可能就不知道
+bare in mind
+有不懂的你们可以来
+就是直接就说
+哎呀这个什么意思
+那我是suppose你们是了解这个意思的
+那这里面有哪个不太明白吗
+哪一句话或者哪个意思不太明白
+我就稍微讲一下吧
+就是merge就是合并
+OK
+好,那有人专门做这个资本的这个合并
+FundMorage,OK
+好,那Business Manager
+Their Financial Data Manager
+那我们知道就是
+Manage
+管理,对
+管理他们的那个财务数据呢
+在SAP财务的数据呢
+就是在这个FI或者这个CO里面
+然后在SAP HANA里面的FICO呢
+就是part of single
+就是是这个
+一个这个table
+就是表单的一部分
+那这个表单叫ACDOCA
+这个主要是这个table
+主要是存储什么呢
+存储这个universal journal
+就是通用的这些凭证
+OK
+You no longer have to reconcile
+你不再需要这个去对账
+就是跟这个总账去对账
+就是在这个月末的时候
+ACDOCA呢
+它自己会自动的在这个及时的去更新对账
+所以在月末的closing呢
+阶段呢就是比这个SAP
+在这个S400的话会稍微更简单一点
+Simpler
+OK
+刚刚你们听到的一个单词是什么
+Simplify
+Over Simplify
+OK
+那它也属于变形吧
+嗯
+OK
+好
+那我们这个可以做动词
+OK
+Simple
+那我们这里是形容词
+Simplify是做动词
+OK
+好
+那我们可以相当于这个Streamlike
+可不可以
+Streamlike
+OK
+也是简化的意思
+Simplify the process
+OK
+好
+那我们再到这里
+Material number
+以前的Material number是几
+是长度是多少
+18
+18
+correct
+18
+就是18位数字
+然后现在呢
+40
+40
+好
+对这个属于叫什么
+extension
+ok
+extend and extension
+ok这是两个词我们可以结合一起来记一下
+好那我现在问一下就是说
+物料的號碼從14位擴展到了40倍
+怎麼說
+OK
+就可以直接這樣說
+the mature number is extended from the data from
+okay very good
+好, bear in mind
+这是一个礼语吧
+就相当一个礼语
+你们会怎么想
+根据上下文
+你们会怎么想
+尽管如此
+记住吧
+对对对
+牢记
+牢记
+啊, bear in mind
+对,牢记
+记住, bear in mind
+okay, so this step is very important to go live
+OK
+Bare in meant
+OK
+OK
+
+
+
+
+
+
+
+
+主數據的長度不夠
+然後我們需要把它的擴展
+擴展它的位數
+擴展它的長度到40
+怎麼說
+好的
+所以我们移动到接下来
+这是一个table的不同
+然后下面我们要看一看它还有什么其他的不同
+好
+那这个呢是business partner
+OK
+BP
+好那我们来看一看这一段里头会说到什么
+好你们先看一下子
+然后我登下
+我登系统可能也会影响你们
+我等会会登下系统
+我们先看一下这一段嘛
+然后我等会的时候再给你们看一看系统
+我们来可以看一看
+这个叫BP
+OK
+好在ECC呢
+在客户和这个供应商呢
+是分开的
+是separate data objects
+就是数据的一个目标
+SAP HANA呢
+它会就是集成
+客户和供应商
+到一个这个统一的这个
+master data objects
+so we call it business partner
+用户和供应商呢
+他们就是集成呢
+就是会有一些
+有一些好处
+比如
+然后一个供应商呢
+可以有多个角色
+and addresses
+就是地址
+然后general data呢
+就是总的这个数据呢
+或者overview的这个data呢
+是各个的角色都一起可以分享的
+那这样呢
+就会减少到你的这个
+数据库的什么
+脚本
+中期吧
+中期
+那这里呢就会有比较少的这个
+想想这什么词
+什么意思
+重量
+repeat可以吗
+less repeat
+redundancy
+redundancy
+repeat redundancy
+since unused data is deleted after a certain time period
+那就减少了你的中绩
+然后减少了这个重复
+然后因为就是没有使用过的这个数据呢
+就会在一定的时间
+a certain period
+a certain time period
+就是一定的时间呢
+我们就会删除掉
+OK
+好那我们现在来看看这个business partner
+OK
+so we call it the BP
+所以谁能告诉我
+你之前有关系的业务业业业吗?
+是
+你要扩展来说
+请你将你的内容积极了
+你要扩展一下你的说话的内容
+你不能说是或是不
+不是只是是或是不的问题
+所以你应该说
+你怎么能够扩展一下
+你的业务业业业业
+在S4HANA,我们只用BPTransactionCode
+去拨拨的购买和它的
+Windows的购买购
+我还有一个问题
+about the material number, okay?
+So this is an interview question, okay?
+So their legacy system is the Yung-Yu.
+我不知道英文怎么说,
+okay, their legacy system is Yung-Yu.
+How do you design the material number in SAP
+according to Yung-Yu's material number?
+你怎么去做这个设计,
+设计它的这个物料号?
+或者就是你讲一下子
+你们在新的这个系统里面
+你们是有什么方法去设计这个无聊号
+然后同时也保持他们的一些旧的系统号
+这个谁可以回答一下
+嗯
+可以用中文嗎 說不好
+也可以 你用中文說
+就是會按照一定的 就會區分它的
+Distinguish different numbers
+to distinguish the raw material of the半成品
+and the production material
+对 半成品
+半成品三名 production
+yes OK
+and 给他们一定的规则
+比方说10的是原材料
+原材料怎么说
+Row material
+你是可以说的
+Don't give up, OK?
+你是可以說的, OK?
+好,你大部分人用英文說,然後一兩個你不會說的話,你說
+I don't know how to say 原材料,
+Just let me know, OK?
+还要说什么
+你刚刚说到了这个原材料
+我看
+for example
+我看有些
+the number of
+10
+10
+kate to
+to
+to
+to
+to
+to
+to
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+用的材料
+製品
+製品
+製品
+製品
+製品
+製品
+製品
+製品
+製品
+製品
+对于是
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+刘营
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你需要不同的项目,
+你能買成了什麼工具, 用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用工具,用
+如果你想要把老大大企業的老大企業
+我們可以做了一些調整的老大企業
+我们可以设置了老数字号,我们可以找到一个标志号,
+我们可以找到一个标志号,
+好,我们再来看这一篇,这个可能跟PP相关一点。
+优优独播剧场——
+Demand Planning and Supply Network Planning are now integrated
+in the new SAP Integrated Business Planning, so we call it IPP model.
+Production Planning and Detail Scheduling and Global ATP
+have partly merged in the SAP HANA Digital Core.
+Those changes means you can't automatically migrate from SAP APO to the new configuration.
+那这个就是可能跟PP相关
+Helen 你明白这个意思吗
+明白
+然后你可以稍微解释一下吗
+不大名
+Before S4HANA
+in ECC
+ECC SAP and IPO
+is two different
+product
+but right now
+在SPAHANA,2 product merge 1 product,
+你可以用IPO的功能在SPAHANA。
+好,OK,thanks for your sharing.
+So,let's move to the new world,OK?
+So,integrated business planning,
+我们也知道。那这 global ATP, so can you explain what is a global ATP?
+我对不完全不知道的 global ATP,因为我对不用这个功能,
+但是,在我的看法,我觉得,你可以用这个 ATP
+function to check the client stock availability yeah so you can check the available stock and the future
+ATP呢就是在主要是跟SD那边可能会做一些ATP check
+就是check他们这个order
+SD那边的order
+他们的order数量或者deliver data
+他会做一个这个check
+他就是说叫available to promise
+available to promise
+就是他是否这个数量
+或者就是说的订单的数量
+或者订单的这个交货器
+是否是available
+OK
+好那这个digital
+digital我们这个知道对吧
+数字的
+数字化的
+我们现在就是要提供我们的这个数字化的能力
+对吧
+好那这个了解一下就行了吧
+嗯
+好今天可能要脱糖个
+脱糖个两分钟
+那等会儿我课就
+等会儿就过了
+好那我们在下面呢
+我们是讲我们这个财务的
+那财务的话
+我不知道你们有没有
+就是用过material ledger
+OK
+有就是物料分类这样对吧
+好那我们来再看这个词
+manitary
+manitary
+在哪个地方是我们学过
+functional specs的时候是讲过这个词没有
+optional metadata
+对manitary
+就是必须的
+是选择的
+OK
+OK,非常好
+好,那这是一个必须的
+一个是选择的
+The material ledger is another feature
+that's optional
+那刚刚你说对了
+一个选择
+OK
+好,在SAP ECC
+But mandatory
+就是必须的
+在S4HANA
+大部分公司都不会去
+Activate
+激活
+对
+那我要
+我们在创建这个成本中心以后
+我们要去做一个什么动作啊
+创建创建中心
+对 我们创建利润中心
+创建利润中心的时候
+Active it
+Active the profit center
+他们有一个小
+就有一个小箭头
+就是你要去点那个键
+然后它就会去
+Active your profit center
+OK
+Active
+好 那我就说
+如果系统报错的话
+我们可以跟他讲
+就是因为你这个
+你这个利润中心还没有被激活
+OK
+这句话我们来请Taylor翻译一下
+系统跑出来错误
+报错
+The system
+The system
+The system
+跑出来是
+記得這個什麼呀?
+pop up
+啊,泡出來
+pop up error because the benefit center is not activated
+profit center
+利人中心,profit center
+profit center is not activated
+It's not activated yet, OK
+好,那我們知道這個active
+那这个SAPECC
+Due to frustration with the many aggregate
+Frustration 我们看看什么意思
+Frustration
+就是很讨厌的 很繁琐的
+With the many aggregate
+Aggregate是累加
+我们在做Excel的时候
+是不是我们要把那些数字相加起来的话
+我们是不是叫Aggregate
+Aggregate all of the numbers
+OK
+对吧
+或者Aggregate all of the amount
+可以吗
+OK
+好
+Index呢
+Index我们知道什么意思吗
+所以
+对对对
+Index
+我们也可以说stock index
+你说那个指数也可以
+Index
+Index table
+好
+那我们说这个table的话
+有指引的这个table
+还有什么table
+transparent table
+transparent
+破名表
+OK
+struggle table
+Standard table
+Standard table
+开发
+outro custom
+outro custom table
+好 那这个index table呢
+是可以提高它的这个performance
+所以就是有时候有performance issue的时候
+我们就要去check它的这个logic
+system logic or index table
+OK
+so this frustration
+frustration那就是
+讨厌的或者就是
+我们这个词就是了解一下就行了吧
+就是厌倦的厌恶的讨厌的
+我们只是作为一下了解
+好
+那今天呢
+我们就先学到这里
+那我们来看一看
+这今天我们学到的一些词
+今天学的词还是挺多的
+那就是大家下去以后呢
+就是根据这些学的一些新词呢
+你们尽量来就是说造句子
+就是像我们上课一样的这个模拟的
+我们就能挑一些词的话
+我们就可以挑一些词来造句子
+比如说
+bear in mind
+这个
+semi-finished products
+number
+the number of
+semi-finished products
+is extended to
+40 characters
+就是我们要用这些词
+来尽量就是说
+能挑两个三个
+然后我们来组成自己的句子
+来做一个练习
+好吗
+或者就是说你们自己
+因为对你们没有什么要求
+但是我现在对新课的同学
+都是有要求的
+他们都是要有录音啊
+然后就是说要交作业的
+虽然我没对你们
+有什么要求的话
+但是我还是希望你们
+就是能课后呢
+能还是把这些单词呢
+就是能组下句子
+或者能录下音就最好了
+好吗
+so far so good
+any question
+好那我们下次的时候
+我们会继续讲
+就是我们会有一些
+conversation去讨论一下
+这个ECC
+what's the difference between
+ECCNS as for HANA
+好 那今天的课就先到这里
+没有问题的话 那我们就是下次课再见
+有没有问题你们
+两分钟时间 没有问题 对吧
+好 OK see you next time
+See you
+Bye
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目

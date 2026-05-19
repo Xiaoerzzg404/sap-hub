@@ -1,0 +1,1863 @@
+Hi, hello. Good morning, everyone. Good morning, teacher. Good evening. Good evening. Okay. So, how is your day so far? Oh,
+我工作不太忙,但是我一直在学英语。
+好的,那是好。
+谢谢你加入今天的课程。
+所以我们开始新课程,我们先试试什么我们学了。
+让我们一起试试一下,上次我们学了什么。
+OK
+So do you still remember we have learned active method
+Active method
+Yeah
+So do you know what's the phases of active method
+So how many phases do they have
+我可以分享我的影片
+我可以分享我的影片
+我可以分享我的影片
+我可以分享我的影片
+我可以分享我的影片
+如果我给你这个影片
+可能是更容易给你
+OK
+我们有6个发行的方式的方式
+我们调了时间怎么大家好像还是参与的比较少
+我不知道什么原因
+还是比较忙吗
+这个之前不是很了解
+不会说
+好的
+那我们先就是把这六个这个步骤
+我们先讲一下好吧
+好那对比ECC的话
+我们是有五个步骤对吧
+ECC的这个ASAP Methodology
+是有五个步骤
+那我们先来看一下这个
+对我们上次是没有讲
+我们就直接先来讲这个阶段了
+好那discover这个阶段呢
+那就是第一个阶段就是发现阶段
+看看这个公司一些资源
+或者他们有没有这种就是需求
+或者可能性啊
+他们需要去做sap的
+然后准备阶段呢
+那准备阶段的话呢
+我们就准备这个business process
+或business case
+那去做这个支持
+那第三个阶段呢
+就是explore探索阶段
+探索阶段的那就是
+我们就是相当于我们的
+blueprint就是我们要看看
+他们就是有什么需求
+或者就是说跟未来有什么
+就比对一下吧
+未来有什么不同什么的
+那就是说是用标准的
+是系统里头他们的需求
+是我们可以用这个
+fit to standard
+就是fit to standard
+就是适不适合
+就是标准的就行
+还是就是说要创建一些这个
+Customize
+Custom Report或Customization
+好那到这个Realization阶段呢
+Realize
+那就是实现阶段
+那时间阶段的话呢
+那它也是分不同的这个阶段
+Sprint
+就是分成小的这个Sprint
+就是Sprint的话呢
+一般是一到四周
+然后就会去做一些Configuration
+也会去做一些这个Testing
+好那我们到这个deploy阶段呢
+那基本上就是属于go live了
+OK那我们以前的
+叫go live或者就是
+或者就是说在上期之前
+要准备他就把它和平起来了
+go live了
+那这个go live阶段呢
+哦我这个我要
+冲一下电影等会啊
+Hello
+Can you hear me?
+Yeah
+OK
+好
+那我们再到这个
+Deploy
+Deploy
+就是部署的意思
+记得吧
+那我们上次的名词
+是Deployment
+你都猜对了
+好
+那这部署阶段
+我们就是属于
+要就是准备啊
+就是要cut over
+对吧
+还有就是要进行
+一个production transport
+Right
+就是一些生产机的这个传输
+然后在执行的阶段呢
+就相当于我们已经上线了
+那就是 the business job
+use the system, right?
+and optimize the system
+so during this phase
+so we will provide support
+or some enhancement
+okay, are you clear?
+I have a question
+what's the difference between
+SIP-Active method with SAP Implement method.
+I think it's only how to define the different,
+but the do the same thing to do.
+So why we have a different method, right?
+Yeah, yeah.
+这个阶段,Active method,就是用于这个S4HANA.
+我不知道你们现在用的那个系统是什么系统
+那就是说我们这是一个是Advanced
+加强了
+就是之前的是ECC的
+然后这个呢就是属于S4HANA的一个
+这个S4HANA上线的话
+他们就基本上是采用这个
+Active Method
+就是属于这个
+对这个What's the difference
+就是这个
+好那阶段当然也是不一样的
+好那我这里准
+对那我这里准备了一点
+就是一点小材料
+可能对你来说
+可能是稍微容易理解一下子
+好
+那我们再看一些
+Active的Phase呢
+他们是有这些阶段
+那在这个阶段呢
+Discover阶段呢
+就是发现阶段
+那我们就是会要准备一些
+这个业务的
+要准备一些业务的这情景啊
+或者就是要系统里头
+Demo一下
+或者就是说看看
+SAP是不是这个
+Readness就是
+就是可以Ready
+可以使用
+那我们在Prepay阶段呢
+那我们就是最主要的
+那个目的呢
+就是属于这个
+属于要计划了
+然后就是要行动起来
+那可能会把这个
+Project Setup起来
+然后Team啊
+还有这个路演啊
+Roadmap啊
+都要做起来
+然后在这个Explore阶段呢
+那我们就是要去分析探索
+那看看它这个SAP的
+Feed to Standard
+就是SAP Standard
+它可不可以用
+那我们以后
+要学会用这个词
+Oh, it's feature standard
+好,那在这个阶段呢
+我们会prepare some workshop
+workshop,知道吗?
+工坊
+那我们就是说把这个
+未来的流程我们会演示给
+或者就是做一些那个系统的一些演示
+或者说一些
+一些基本的概念的一些
+overview的一些那个传输
+training啊什么的
+Backlog creation
+Backlog
+就是用户的需求
+那因为上了这个
+S4 HANA以后呢
+我们就不叫这个Ticket了
+我们叫user story
+user story
+那就是backlog
+就是list of user story
+就是一系列的这个
+用户的需求
+他们都会写在这个user story上面
+好
+那再到这个realize阶段呢
+那我们就是要分成不同的去
+sprint
+那一至四个周
+就是典型的一个这个Springs
+那我们在这个阶段呢
+也会要去做一些Configuration
+OK
+Config
+Configuration
+那Abop呢
+它也要是做一些开发
+然后我们要去做一些Testing
+那在Deployer阶段呢
+其实就是相当于
+就是要上线准备和上线
+那我们就是要准备一些
+Cutover的一些Activity啊
+或者我们要去进行
+这个生产的传输
+那在最后的阶段就是RUN
+就是已经执行了
+那就要做operate and optimize the project
+or business process
+就是要优化一下子
+看看有没有什么地方需要优化的
+那我们就会要做一些support
+还有如果要做一些增强的话
+那我们在这个阶段也是做增强
+那我们来就是说
+上次看那个可能比较boring
+那我们来就是有一个这个小小的对话
+那在这些不同的对话中呢
+我们来学习下着
+在不同的阶段有什么样的任务
+或者有什么样的事情
+好那我们在
+我们请
+请萌萌你来读前面三个
+然后后面那位同
+我们又有更多同学来了
+那我就不要你读那么多了
+好那萌萌你先
+就是你先读这个Discover阶段
+好吗
+好Taylor你读Prepare阶段
+然后Kathy你读这个Realize
+好吗
+你们现在能看到我这个屏幕对吧
+yes
+好
+好吧
+好在discover阶段的话
+我们请某某你来读
+As for Hanna support our process
+What's the business values
+Prepare which development model
+What's our sprint lens
+Lens
+Lens
+What hours to do in Lens
+对 我们以前的时候都说周期
+我们现在用这个Spring
+来替代这个周期
+这个TypicalLay
+一般的话就是1 to 4 weeks
+OK
+OK
+好 再Explore这段
+下面是KT
+你现在是
+Explorer这段
+对啊
+Explorer is a critical phase
+好 你很重要
+是在政治上的
+政治上的
+打standard
+这还挡
+还挡得这么棒
+不挡着
+是这个
+的gip
+or a change
+request
+can we
+accept
+standard
+OK
+Can we
+accept
+standard
+OK
+好
+那我们再请
+月月
+好
+请月月
+你来
+读一下
+这个
+在这Explore这个阶段呢
+我们会有一些
+product backlog
+backlog
+刚刚说过
+就是说
+我们比如说
+SAP的一些这个
+user storage
+就是他们开的公单要求
+叫backlog
+一系列的
+那我们也有些
+solution的scope
+那我们也有些
+process design
+好
+那我们到了这个
+realize阶段的话
+realize也很重要的
+好
+那月月请你读
+TypicalSpring activities
+Configuration about development integration testing
+Common conversation
+Configuration
+Configuration about the development
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+好 那我们再转回来再忙忙
+好 那最后一个阶段我们就请Taylor你来说最后run的阶段了
+What enhancement is next?
+What can we automate?
+Automate
+好那就是说哪个可以去自动化
+可能我们就有可能需要去design这个bad job
+或者什么样子
+好那我现在就是说这个这个不同的捐赠
+大家没有问题了吧
+好那我想问一下就是说
+我给你design一个情景就是
+嗯月月
+嗯
+嗯我们现在做这个部署的会议
+我们在做这个部署阶段
+好那你就是
+你问一下这个项目经理
+你说这个
+有没有这个
+有没有这个
+上线切换的这个计划
+或者连接
+对吧
+一般这个计划的话
+会作为一个document
+或者作为一个link
+发给我们大家
+但是你没有
+然后你就问别人
+你会问一下子
+Taylor或者
+他是项目经理
+然后你就问一下子
+你就说我没有看到这个
+比如说你没有看到这个切换的计划
+你跟他要一下
+你会怎么问
+嗨 Taylor
+I don't say the plan about the conversation
+Conversation?
+Cut over
+Cut over
+Cut over
+Cut over check list
+Do you say it to me?
+Hi, Vivi.
+I'm writing the cutover scheduling,
+and I will send it tomorrow.
+Okay, thank you.
+You're welcome.
+好的,嗯,好的,
+我们忙忙
+你想去到系统里头
+去做这个演示
+OK
+那你跟
+Kathy说
+你有时间吗
+我今天想
+在系统里头给你演示一下
+OK
+OK
+Are you available
+this afternoon
+I want to
+I want to show the demo in the system
+你用一个词就行了
+I want demo什么 solution
+I want to demo the solution
+the test system this afternoon
+Okay
+你说可不可以设到三点钟
+Can you schedule the meeting at
+Meeting at 3 o'clock
+Sure
+OK
+Sure
+或者OK都行
+OK, sure
+OK, thank you
+Thank you
+I prepare a meeting
+所以我会送你
+我会送你
+the meeting invitation
+I will send you
+the meeting invitation to you
+OK, great
+OK, I will be waiting for you
+OK, thank you
+好,那我们看到这些
+它的用词其实非常简单
+其实这些对话都非常简单
+我们要学会把它变成我们自己的东西
+好那我再想请一个同学
+再来做一下这个
+在这个Explore阶段
+这是一个非常重要的阶段
+好那我们在讨论这个
+我们在讨论精髓系统的时候
+我们可以问一下
+经税系统一些报表
+然后
+就有人
+有用户就问了
+你这个是有没有一个
+标准的报表
+然后你怎么去解决掉
+这个标准的报表
+好
+Katy
+你来问一下
+嗯
+你问一下子就是有没有一个标准的报表
+去适合这个经税系统的那个report
+想想
+standard
+或者meet什么requirement
+或者这个SAP能不能提供这个标准的这个报表啊
+提供
+记得吗
+我们学过很多次提供
+月月
+要不然月月你来说
+Hello
+Are you there
+Hello
+好
+或者就是说
+好的
+那我们换一个同学
+Taylor
+你用这个gap来
+组一个句子
+那就是说
+我做了一些这个
+差异分析
+我们还是需要一些
+就是开发,这个可以吧。
+OK, I conduct a GAP analysis list,
+analyze, analyze, analyze, I conduct a GAP analysis,
+and I found that we need to,
+we also need some development
+OK, we also need
+to meet your business
+to meet your什么
+to meet your business environment
+OK,OK,very good
+好,那我们就是这种简单的句子
+我们要学会说
+然后就随口就可以把它变成自己了
+只有变成你们自己的话
+才是就是进入到你们大脑
+才是最好的
+好,那我们上一个阶段的话
+我们学到了这里,对吧
+好
+那我们再继续学习一些新的一些词
+standard和global
+好
+那我这边也是学完了的
+好
+那我们到这边来的话呢
+我们想请一个同学来读一下子
+好
+茫茫你来读一下子
+这个
+OK
+这个阶段
+然后我们来看看里面有一些标准的词
+我们很棒的一些词
+我们可以把它继续用起来
+SIP Activa的Methodology
+once the appropriate roadmap has been identified, SAP teams and consultants will work through
+the six phases of the SAP Activate methodology to solve the business pay point.
+Each of those touchpoints provides a clear step in the process of guiding customers through the SAP implementation lifecycle
+and identify the right solution for specific business needs.
+OK,非常好
+好,那我们来看一看这个
+What is the appropriate road map
+就是路眼
+has been identified
+这个词是不是经常出现
+我可能那个
+identify
+对,identify
+什么什么东西,identify
+Solution, a problem
+好,对
+一下子一串就说出来了
+好 那我们这个
+好 那就是说我们现在学到的词越来越多
+当然就是我们也是有一些词是重复以前的
+好 那我觉得这些词都是很棒的一些词
+我们值得我们再就是再重复的说
+那我希望大家以后说
+比如说
+Oh I'm very glad to identify the issue
+就是我很高兴我发现了这个问题
+SAP Teams and Consultants will work through
+这个也是一个非常棒的词
+我这个可能有点
+有一些那个什么
+不能highlight了
+那我可能要在中国买一个这个软件了
+好
+那我们想想workthrough
+那我们想想workthrough
+我们用过没有
+在什么地方使用过
+Work through with ABAPA
+Work through functional specs
+对吧
+Work through
+你还可以跟用户去
+Work through什么
+你的解决什么
+Solution
+Solution
+Work through
+users
+Bluetrains
+UserStory
+Bluetrains
+Work through
+Blueprint.
+Blueprint Document, right?
+Yeah, Blueprint Document.
+好,我们可以很多
+workthrough,这个词是还是比较
+common的,对。
+The sixth phase of SAP
+这个activate
+methodolage to solve their business
+hempoint.
+hempoint,我们每天是讲痛点,痛点,
+对吧?
+好,那我们
+在做调研的时候是不是可以用这个
+那比如说那个用户
+他用的是拥有软件
+然后你可以问问他
+So what are your pinpoints
+to use
+拥有
+我不知道怎么说
+software
+OK
+好
+那他可能就会给你
+tut
+那个
+束缚
+对吧
+好
+那pinpoints
+这个就是直译
+跟中文一样的
+pinpoints
+痛点
+好
+Each of these touch points
+provided
+那就是痛点
+它就是接触点
+provide又来了
+对吧
+provide高频词
+高频词
+好
+那我们再用这个
+值得去造个句子
+好
+那我不说
+然后你们自己来说
+月月你来提供一个例句
+你看我现在其实跟你讲的时候
+也说提供一个例句
+对吧
+提供
+The ticket is very difficult to sell
+Teller, can you provide some assistance with me?
+Yes, sure
+Can you provide some example, right?
+Example with me
+然后你们两个还可以
+然后你们还可以把这个词用下
+Yeah, we can work through this demo
+我们可以通过的机器
+或我们可以通过的问题
+在系统的问题
+对吗
+对
+我们就慢慢把它用起来
+我们再来看后面的
+Provide a clear step
+就是一个很清楚的步骤
+In the processing of guiding customers
+through the SAP implementation
+life cycle
+And又来了
+Identify the right solution
+for specific business needs.
+好,那就是特定的这个
+特定的这个用户的这个
+业务需求,对吧?
+好,那关于这个业务需求的话,
+我们还可以有几种表达方式呢?
+Business Requirements
+嗯哼,Requirements
+可能它多啊,还有呢?
+It's need business requirement.
+啊哼,demands, right?
+啊,demands.
+啊哼,好,那关于这些呢,
+我们可以把它扩一扩
+那关于这个词组的话呢
+我们如果是
+我们想一想
+我们用户的满足用户的需求
+我们知道怎么说吗
+meet the user's business requirement
+align with
+很好
+meet
+align with
+还有呢
+satisfied
+那关于这个用户的需求
+那我们还可以什么
+就是
+它的这个需求是在
+业务范围之内怎么说
+In the range of
+In the scope
+In the scope
+对对更推了更准确
+不在我们的业务范围之内呢
+out of scope
+out of our business scope
+OK
+好
+那关于他们的需求
+如果我们可以用那个标准的话
+怎么标准的话就可以满足呢
+We can use a standard
+Use a standard function
+OK
+SAP
+SAP standard function
+to meet the
+business requirement
+business requirement
+OK
+OK
+D
+D
+A-R-D
+OK
+Standard
+好
+那我们还有就是说
+他还有
+如果是用一些这个开发的
+怎么说
+Development
+Development
+Development
+
+Development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+你比较加强
+好
+好interface
+对你可以也可以用interface或者用
+好那我们慢慢就括啊
+好那我们下面呢就是我们来看看这第一个阶段的是发现阶段
+刚刚也跟你说过发现阶段的话
+那就是比较high level的话
+这个发现阶段呢
+就是主要呢
+就是意识到他们是否有这个需求
+就是能提供这个需求
+就是能去有提供这个需求
+去解决的一个方案
+SAP的客户呢
+他们就会去search
+这个SAP Landscape
+Landscape什么
+那又来了一个
+Fulfill
+Fulfill the needs
+Fulfill
+Fulfill all
+满足
+development system, then the box and the box system.
+還有Q,Q system, right?
+還有RE system, right?
+還有PRD system, right?
+這個我們叫Landscape.
+這個我們可以去問的,比如說我們第一天來的時候我們說你有沒有這個
+Do you have the landscape of the system?
+你有沒有這個景觀?
+那它可以告訴你,比如說第一位客戶200,然後PRD是什麼800,什麼之類的。
+这个可以叫景观,OK,understand?
+System landscape,OK,to fulfill the needs of the enterprise,这个企业,
+During this phase,customers are able to discover the solution capability,capable,就是说有这个能力,capability,那就是一个名词,understand the business value,他们理解的这个业务的需求,业务的价值,and determine,
+第二名是不是也出现过很多次
+对
+这个词那我们想想在用什么情景之内
+可以把它用起来
+比如说客户的需求还没有决定
+或者他们还没有决定需求
+或者客户的我们的那个解决方案
+还没有决定
+还没有就是找到那个解决的方案
+It's not determined yet, right?
+Determine.
+就相当于
+Determine的意思就是
+Make a decision.
+好,这个词也是高频词。
+Which roadmap?
+那路眼,
+那我们这也是高频词。
+Roadmap is in align with
+the solution capability.
+那我们 in align with,
+那它就是一个
+一个词主。
+那我们也可以
+用来这个就是align with
+用动词
+align with
+OK
+好
+那么outcome就是你产出
+这个目的是什么呢
+这个第一阶段的这个目的
+然后产出什么样的那个结果呢
+有什么样的结果呢
+这个结果呢
+就是说他们就是go ahead
+go ahead
+这个词也很棒
+就比如说
+你继续吧
+就是比如说我打断了你
+然后sorry
+so I have some suggestion
+然后你讲完了
+讲完了以后
+然后你说
+Go ahead, please continue your speech, okay?
+就是你自己Go ahead,就是继续的意思
+Go ahead with the required SAP solution
+and moving to the next phase of the implementation life cycle
+那这个就是你会注目到了那个
+实施的一个生命周期,life cycle
+那这个我们也说过,对吧?
+那我们有什么asset life cycle
+或者project life cycle
+对吧
+项目的周期
+如果从0到1
+from 0 to 1
+life cycle
+或者就是在国外的话
+我们叫full life cycle
+记得吗
+学过吗
+就是如果是那个
+你完成的是全阶段的
+不是做运维的
+那你是从0到1搭建的
+那我们叫full life cycle
+所以如果有full life cycle的经验
+是很吃香的
+就是说你不要
+只是去做一个运维项目
+但是如果你有这个full cycle的这个
+full life cycle的这个experience的话
+那就是你在找工作的过程中
+你会更加有竞争力
+OK
+好那在国外我们知道中高级的这个顾问的话
+我们都会说at least three full life cycle project experience
+就是最少要三个这个生命周期的这个项目经验
+好
+那今天因为一开始的时候
+我们就是讲了那个conversation,
+所以我们就可能就不用去再讲这个small talk了。
+好,那我们在第二个阶段是prepared这个阶段的话呢,
+我们请月月你来读一下,
+然后我们看看这里面的词。
+好。
+2. Prepare phase.
+Purpose. Once the discover phase is complete,
+SAP customers can move into the prepare phase.
+这一步的SAP的行动方法会提供进行的预计
+将预计和预计的预计
+which ensures the clean activities account for in the project timeline.
+In the project timeline,
+就是在那个项目的这个时间段,
+截止或者 deadline或者时间段.
+Once the discover phase is complete,
+SAP customers can move into.
+Move into,想想我们怎么用这个词。
+好,Taylor,你用这个move into,你来组个句子。
+你给我想一个 scenario
+OK
+Next week
+we will move into the
+cutover phrase
+OK
+OK
+OK
+OK
+OK
+OK
+
+OK
+OK
+OK
+
+
+
+OK
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+
+
+
+OK
+
+
+
+
+
+OK
+
+
+
+
+
+
+
+
+
+initial project planning
+就是提出的这个
+好
+这个initial
+这个我们也讲过了
+这个
+好
+那我们请provide
+我们来请一个同学
+又来了
+我们这个provide
+刚刚已经讲过了
+好
+那我们再请
+萌萌
+你来组一个句子
+provide
+真是高评词
+可以
+你提供
+你的
+FS
+我想
+跟你
+非常好
+你用了
+两个语言
+好
+好
+好
+关键点
+怎么说
+Keypoint
+好,那我們就是
+關鍵階段呢
+Paypoint
+Face
+好,那我們還想想
+我們還有什麼關鍵
+關鍵痛點呢
+Keypoint
+Keypoint
+Keypoint
+痛點那我們有可能是
+服務,那我就先放一個單數吧
+关键用户呢
+stakeholder
+key user
+key user
+对你讲多了
+不过那个也很好
+你会用那个stakeholder
+key point
+key issue
+key
+key methods
+key failed
+key
+非常好
+关键之段
+对吧
+对吧
+对吧
+对吧
+对吧
+
+
+
+
+对吧
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+对吧
+对吧
+
+
+
+
+
+
+
+
+对吧
+
+这个project timeline
+我觉得这个timeline的话
+那我们大家可能都知道
+那我们再到这个阶段呢
+再还有这个继续
+它的这个output是什么
+好我们先不读
+我们自己来看一下吧
+看一下子
+然后把这些关键词
+来给你讲一下
+毫无疑问的
+这个我们就作为一个
+这个知道这个意思就行了
+这个不是很关键词
+好
+好我们来看一下这个这几个关键词
+OK好那我们就是regarding
+还有regarding的sap
+regarding的话是关于
+好那我们在有时候讲话的时候呢
+我们说regarding什么什么对吧
+那我们还有一个词组叫什么
+regarding to对吧
+OK好
+那我们请Payla 你来用regarding
+就是说关于这个业务的流程
+我们可能还要去优化一下
+Regarding to this business process
+I think we need to optimize it
+it also need to be optimized
+in this project
+we'd better to optimize it
+so regarding to the business
+regarding to some business case
+OK,or business process.
+So it's better to be optimized.
+So we're better to optimize it.
+好,那我们再来看看这个就是outline,
+migration,那我们都知道,好,migration.
+outline,这算也是高频词,那属于这个列出来。
+好,那我们关于这个列出来的话呢,蒙蒙你有没有什么词主可以好照句的或者scenario,
+so which scenarios can use this new word,outline?
+可你可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可可
+10 points
+OK
+OK
+OK
+very good
+好
+那我们就尽量就是把那些
+学到的词
+那我们尽量把它用到自己的这个句子里面
+好
+那第三阶段呢
+那是比较重要的
+那第三阶段的话是
+explore phase
+好
+那在这个阶段的话呢
+单词也比较多
+那我们请
+请一位同学
+谁愿意volunteer来念一下
+这个
+这一段
+I'll try
+explore first
+OK
+可以了
+在研究中, 企業的措施的措施
+提供的措施的措施
+在研究中, 企業的措施
+在研究中, 企業的措施
+公司會提供的 企業的措施
+在新的措施 系統中, 企業的措施
+Feed to Stand Analysis Assessions
+where the ACPP best practice business process follows
+are the showcased to the business process owner.
+The Fit to Stand Analysis is conducted through a series of workshops
+那是否, 如果有的 validation
+的 几天的 新的新的
+Predict teams should be familiar with the SAP best practice contact available in SAP best practice
+Content, content, is the content.
+The best practice contact available in SAP best practice explore before launching fit to standard workshops.
+OK
+好
+那这里面
+非常棒
+这里面有些词
+Explore
+Explore phase
+那就是探索阶段
+Active method
+Lays the foundation
+Foundation
+那就是基础
+对吧
+这个
+这个大家都认识
+好
+在这个阶段呢
+SAP的这个
+Explore
+这个阶段呢
+客户呢
+会
+Finalize
+Finalize
+我们看到
+Finalize的话
+我们想到
+有个反应词
+是什么
+initial
+finalize
+最初的initial
+好
+那我就是说我的那个解决方案
+我还没有
+最后定稿
+我们想想怎么说
+the solution is
+the solution is
+it isn't finalized
+it's not finalized yet
+yeah yeah yeah
+好
+对
+那我们如果是最后的版本怎么说
+This is a finalized session
+我们就可以说
+Final version
+OK
+So this is a
+This is a final version
+OK
+那我们会
+我不知道你们会不会做一些文档的那个
+号的管理
+我们会有
+在这个里面会说
+比如说这个文档是0.1
+或者0.2
+或者到最后的时候
+finalize
+so once it's finalized
+we will put 1.0
+我们可能会有这样的文档的管理
+好那finalize
+我们会用了
+a series of
+就是一系列的
+feated to standard analyst session
+session就是一个
+一个周期吧
+Where is the SAP best practice?
+那我们如果是做那个
+做培训的周期怎么说?
+培训的那个周期
+Train session
+对
+或者就是说这个阶段
+或者这个Train session
+那我昨天我帮一个
+我昨天跟一个这个外教
+我跟他说那个
+我们的朋友要找这个
+福岛老师
+那我就跟他说
+我就说这个
+每一个阶段呢
+就是1.5个小时
+OK
+1.5个小时
+好
+那这边的那个外交是很贵的
+他charge
+100 per hour
+100块钱一个小时
+Dollar
+100块钱
+我开始提
+我开始提供
+我们可以说是diamon或display
+showcase
+show就是演示
+showcase正式常用词
+showcase它是一个动词
+ok
+那我就说我可以说我在系统里头演示
+我怎么说
+我會示範這個
+這個動作
+我會示範這個動作
+我會示範這個動作
+我示範這個動作
+OK, 表達的解決方法。
+OK, 表達的解決方法。
+OK, 表達的解決方法。
+OK。
+OK。
+好,我們再來。
+V2Standard的Analyze是Conduct。
+好,那這個Conduct我們做過很多次,對吧?
+我們做分析,我剛剛也聽到Paylor用了這個詞。
+其他兩位同學,你們用這個Conduct來組個句子。
+我會選你們用這個conduct來組個句子
+萌萌
+萌萌
+萌萌
+我們可以conduct什麼
+這個講過很多次
+對吧
+conduct什麼
+I
+I
+I
+I
+I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+他会继续行动的
+的
+configuration
+GAP
+analyze可以吧
+GAP
+我怎么写不下来呢
+GAP Analyze 对吧
+还有 conduct
+meeting 对吧
+Cut over meeting 对吧
+Cut over meeting
+Conduct system go live
+System go live
+这样不太好说吧
+Conduct这个interview
+Conduct training
+Conduct demo
+Conduct system demo
+也可以
+对
+你那个
+你用这个showcase
+就可以说Demon directly
+更好一点
+对
+好
+那我们再来看一看这个
+conduct
+through a series of workshops
+Workshop
+你们说过没有
+shop
+说过
+that allows for the validation of the
+好
+那我们这个词我们来看一下
+validation
+它是一个名词
+那动词呢
+validate
+validate
+OK
+validate
+valid
+valid
+是使用词
+好
+那我们用validate
+或者valid
+或者validation
+我们请你们三位
+请三位女生
+不同的
+来
+来造个句子
+好
+那我们第一位
+Katty
+你来用这个validation
+来造一个句子
+Katy, are you there?
+小Katy
+你喜欢骑马吗?
+Katy
+Katy, are you there?
+It's Fiona
+Yeah, I am
+Yeah, I'm here
+OK
+好
+那你用这个validation
+做个句子好吗
+就是想一想什么情景
+或者就是说
+你在做这个系统validation的时候
+你identify some issue
+或者什么的
+你就把它这个词
+这些词把它串起来用
+或者请你提供什么
+这个系统的这个测试的
+这个验证什么的
+你可以把provide用起来
+对吧
+或者测试的这个 validation
+或者怎么样
+或者测试的这个 validation
+或者怎么样
+或者测试的这个 validation
+或者怎么样
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+或者测试的这个 validation
+Could you please provide me the test validation steps?
+就是測試的這個驗證的這個步驟,對吧?
+好,那萌萌,你用validate,叫一個句子。
+I think it is very necessary to validate the balance
+between the balance sheet report and the profit sheet report.
+嗯,OK,very good.
+好,那我们再请
+越远,你用Valid
+造个句子,形容词,Valid.
+It's valid.
+或者这个日期,或者这个成本中心
+成本中心还是有效的
+the cost center is valid
+is still valid
+the cost center is still valid
+you know
+sometimes when you use the unvalid cost center system
+will pop up the error message
+有时候我们使用这个
+没有
+无效的
+unvalid
+对吧
+无效的
+无效的这个成本中心
+就等于是过期了
+一个成本中心的话呢
+系统它会跑出来这个错误提示
+对吧
+Iron message
+OK
+Will be
+Pop up
+Right
+OK
+好的
+那我们继续
+那我们来看看这个
+predefined 那这个我们前面学过
+define 对吧 定义的 那predefined呢就是提前
+define 的 提前预定的这个scenarios
+so scenario 那就是情景 我们每天都是讲
+so let me give you a scenario
+ok so could you please provide me a business scenario
+ok 你能不能给我提供一个scenario 对吧
+好 各种各样的情景
+那我们这个是高频词
+非常高频词
+我们要知道
+Project team should be familiar with
+be familiar with
+就是熟悉
+熟练
+那我们通常
+我们在我们的这个简历上面
+我们会说
+I'm familiar with
+
+I'm familiar with
+I'm familiar with
+
+
+
+I'm familiar with
+
+I'm familiar with
+I'm familiar with
+I'm familiar with
+
+I'm familiar with
+OK
+那我们要学会
+用这个词来造句子
+那如果说我很熟悉
+这个精髓系统的
+这个接口
+怎么说
+精髓系统的这个
+可以
+I'm familiar with the golden tech system interface
+The interface between SAP and the GTS system
+OK
+那contents那就是一个内容
+那我们在写这个function specs也好
+或者写这个blueprint
+我们的片头就是我们是不是要写个content
+这个内容是什么
+比如内容content
+第一呢就是比如说
+introduction of the business requirements
+然后第二步呢
+the logic between the
+of the program
+对吧
+the logic of the program
+就是contents available
+before launching
+就是发布
+发布的这个
+workshop
+release
+那我们再看
+下个阶段这个
+有什么样的一个这个结果
+impact analyze
+所以我们可以就是说
+可以去分析它的这个
+它的产生什么样的影响
+什么样的结果
+We'll be completed to understand
+how the new system will benefit
+这个仿佛说对吧
+Benefit学过吧
+好
+那我们学过
+我们想想怎么用
+可以你给我一些功能的效果
+可以给你给我一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+可以给你一些功能的效果
+to this project
+if you're very confident
+about this project
+你可以把这个话放到前面来说
+I'm very confident
+Taylor,你说一下
+I believe that we will have
+a lot of benefits
+in this project
+OK,那你从这个project的
+你为这个project的做贡献怎么说呢?
+I can
+I can
+I can
+sure, I can support my
+benefit
+for this project
+在想想怎么说
+I will benefit
+this program
+this project
+I will benefit this program
+I will benefit
+to this project
+OK
+好
+那我们再来看
+就是
+This outcome of
+Explorface
+is to enable
+a smooth
+Smooth
+好
+那这个就是
+平稳的
+OK
+那我们如果把它
+做成一个
+副词的话呢
+我们来说说
+这个项目
+又很成功
+又很
+又很
+湿滑吧
+你们说
+湿滑对吧
+This project
+is very
+sexful
+and smoothly
+Go live
+Go live
+对
+我们把这个状态放到后头
+复制作为一个状态放到后面
+对
+很好
+那你们
+喜不喜欢吃那个什么
+吃
+smoothie
+奶昔
+奶昔
+对对对
+好那你们知道奶昔就是很丝滑的
+所以你们如果记不住这个词的话
+你们就想到哪一戏就行了
+OK
+好
+那translation
+那我们这个词
+我们就了解一下就行了
+就是转移
+转化
+好
+那我们来到了这个
+我们快时间快到了
+我们快速地把这个realization
+realized phase来学一下子
+好
+那在这个阶段呢
+我们就开始要去做什么
+configuration
+start configuration system
+OK
+the SAP system
+according to the backlog document
+刚刚说了backlog什么意思
+backlog
+是不是可以说是用户的这个需求
+用户的这个
+a list of business requirements
+OK
+需求或者a list
+a list of business requirements
+of needs
+OK
+大量不同的这个planded springs。
+好,那我刚刚说过这个springs
+是一个时间概念,
+是一个timeline,
+一般是多长?
+1 to 4th weeks.
+对,好,那我们就是会把我们的这个
+一个项目呢,
+就会把它区分成不同的这个springs,
+那这个就是把它分解成一个小的,
+就是更小的一个deliverables,
+OK
+好
+那比如说我们这个阶段呢
+我们这一周
+我们可能就是做这个
+standard的这个configuration
+好
+那我们下一周
+那我们可能就是要做这个custom report
+对吧
+那我们会把它区分成一个不同的这个
+deliverable呢
+就是一个交付物
+这些交付物呢
+will be showcased
+又来了
+展示 to the business process owner
+好
+那你如果说我要去展示这个
+interface
+那我也可以用 showcase
+对吧
+好
+那就是说
+要展示给用户
+那用户呢
+要有去
+sign off
+对吧
+once they match the agreed
+upon completion
+criterias
+这个就是一个标准
+对吧
+完成的标准
+那我们在开
+user story的时候呢
+我们会给你一个
+这个完成的这个标准
+如果你达到这个标准的话呢
+那用户就要去什么
+sign off
+OK
+好
+那这个要知道
+这个criteria
+就是一个标准
+OK
+这个词是非常棒的一个词
+或者要求
+或者标准
+OK
+那我们可以问
+比如说那个
+我们在做设计的时候
+我们可以
+比如说他那个user story
+不是很清楚
+那我们可以
+去问一下子
+你的这个acceptance criteria
+就是你接收的标准是什么
+对吧
+嗯
+好 这个词我们要学会用
+好 那我们今天呢
+我们就时间关系呢
+我们就讲到了这个第四个阶段
+来 让我马克服掉
+第四个阶段
+好
+so let's wrap up today's class
+so what you'll learn today
+你学到了什么
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+SAP 应该是什么程度
+Explode
+Explode
+Realize
+Realize
+OK
+好
+那我们下次就把这两个这个学完
+然后我们再学一些新的东西
+好
+那今天呢
+我们来看看我们这个学的这些词
+其实这些词的话
+其实我们之前也学过
+基本上没什么很新的词
+然后这些词呢
+我们希望大家就是
+课后呢
+就是你可以就是
+对着这些词
+如果你有时间的话
+你就用这些词来
+就是说
+make statements
+or make a
+make sentence by yourself
+OK
+So far so good
+Do you have any questions?
+哦
+老师
+咱们不是要和
+那个
+H班
+不和了
+不和了
+你们两个人的时间
+你们两个班的时间
+就是
+扯不到一起
+后来所以
+还是
+还是就是说
+他们
+你们这个班呢
+就很特
+就选A
+然后他们班
+他们班就选C
+就好像商量好了
+没有什么
+就是口径都比较一致
+然后那就没办法
+那就合不了一起了
+好那没关系
+我们自己就
+自己玩自己的
+好的
+那如果还有什么问题吗
+这个我会发给你们
+Merry Christmas
+OK
+Thank you so much
+OK
+Happy Holiday
+那有的人可能不过那个Christmas
+可能
+那这种情况之下呢我们就换一个词
+有些人比如说穆斯林啊什么的
+或者就他们不过这种节
+或者有的人不信教的不过这种节的话
+我们就同意说
+Happy Holidays
+Holiday Amacation
+OK
+好
+那我们下次再见
+Thank you
+See you
+Thank you
+See you next time
+Bye
+See you. Take care. Bye.

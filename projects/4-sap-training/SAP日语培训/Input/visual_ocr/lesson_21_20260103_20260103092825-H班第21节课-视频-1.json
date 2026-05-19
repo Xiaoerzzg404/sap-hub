@@ -1,0 +1,49 @@
+{
+  "source_file": "第21节20260103/20260103092825-H班第21节课-视频-1.mp4",
+  "interval_seconds": 600,
+  "review_state": "ocr_needs_human_review",
+  "items": [
+    {
+      "time_seconds": 0,
+      "time": "00:00:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00001.jpg",
+      "text": "wi z a a 5 c . sa pai fe 日 - +J 可 TSH ee 证们全车 ma [ ~@ e M ge"
+    },
+    {
+      "time_seconds": 600,
+      "time": "00:10:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00002.jpg",
+      "text": "Saar 8 . o- 8 18. number Fagaleatigay row raserial scrap es mo LHescevoes ne oe ig"
+    },
+    {
+      "time_seconds": 1200,
+      "time": "00:20:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00003.jpg",
+      "text": "二 En = ="
+    },
+    {
+      "time_seconds": 1800,
+      "time": "00:30:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00004.jpg",
+      "text": "Traditional SAP ECC vs. The Modern S/4HANA: A Detailed Comparison 人 SAP S/4HANA CLOUD ‘uoototoi99oi019o101s09o100x0x0s10r0111001:0110101x0x0L0N011101000010111010100 SAP S/4HANA Business oreas ond processes aa Reable processes, llindustri z ; Annualy by SAP, min every 5 years Annualy by SAP, but (riggs SRE ee by customers no obligation for customers Costs Lowest Lower thon OP Highest Ucense model Flexible subscription model Subscription made! Product icense System ond Tinfastucture a Saphnfuenced by customer, customer le pase SAP led, mutt-tenont paren Customer, local Customization options Within the standard Open for adjustments Implementation Greenfield approach Brownfield and greenfield approach seonsans® © of &"
+    },
+    {
+      "time_seconds": 2400,
+      "time": "00:40:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00005.jpg",
+      "text": "Q5. Why is New Asset Accounting mandatory in S/4HANA? A. ECC Asset Accounting is incompatible with HANA B) Parallel ledgers are mandatory C. Asset postings must integrate with Universal Journal D. SAP discontinued depreciation : aaa Q6. In S/4HANA, how is Material L — it J A. Optional and client-specific B. Mandatory and always active C. Replaced by CO-PA D. Used only for actual costing ei 9 mo EGEVBPGS BS +93 08 et"
+    },
+    {
+      "time_seconds": 3000,
+      "time": "00:50:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00006.jpg",
+      "text": "When 加 Ba sort ou + =p - - B. Landscape transformation F C. System conversion D. Central finance Q13, What is a key risk during ECC > S/4HANA system conversion? A. Fiori license cost B. Custom code adaptation C. User training only B D. Network bandwidth Q14. Why is CVIs (Customer-Vendor Integration) mandatory in S/4HANA? ' © a @ = + cons ee m= 2 bGevcevoria A @ 9 om SAM g"
+    },
+    {
+      "time_seconds": 3600,
+      "time": "01:00:00",
+      "frame": "_outputs/visual_ocr/lesson_21_20260103_20260103092825-H班第21节课-视频-1_frames/frame_00007.jpg",
+      "text": "7 Hom o speak op cst + ==> 上 . ‘What can we automate?” 01/02/2026 H listening skills hapsJwoutu belzRExyHaskwl — 7 Section 1: Architecture & Data Model Qt What isthe main technical reason SAP removed tables like BSIS / BSAS / BSIK/ BSAK in S/AHANA? A. Performance optimization only 8. Simplifation of Fl reporting . Replacement by ACDOCA (Universal Journal D. Migration tool limitation Ps a ° Se snonoha ll 0 EGOSBO RSH +30 c0e mre"
+    }
+  ]
+}

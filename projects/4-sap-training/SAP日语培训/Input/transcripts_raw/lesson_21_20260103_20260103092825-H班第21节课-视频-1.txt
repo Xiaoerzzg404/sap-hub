@@ -1,0 +1,1381 @@
+订阅订阅计划。
+订阅订阅订阅订阅。
+订阅订阅订阅订阅订阅订阅订阅。
+所以我先分享我的视频
+所以我们来谈谈今天题
+大家可以看到我的视频吗?
+是的
+首先我们来谈讨
+什么我们学到昨年
+其实什么我们学到昨年
+中文字幕志愿者 中文字幕志愿者 中文字幕志愿者
+中文字幕志愿者 中文字幕志愿者
+中文字幕志愿者 中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+中文字幕志愿者
+我们先回顾一下我们所学的上周学的东西,
+然后这周呢,就是把那个剩下的讲完,
+讲完以后呢,我们马上就进入到一个听力,
+这个听力呢,也是会讨论这个ECC和S4HANA,
+然后听力完以后呢,我们再来一起做一个quiz。
+好
+好
+好
+Meng Meng
+could you please tell me
+the details
+about the difference
+between ECC and S4HANA
+I can
+the S4HANA
+increase
+increase
+a new type of
+SADOCI
+它一切了所有的枠模式
+在这些核档上的核档
+然后第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点呢,第二点
+质量的数据是数据的,但是它是40据的,在SIP-S4HANA的系统。
+好,那我们请月月,你来说一下子,what's the difference?
+所以
+第三點是
+在生意的事丁
+在生意的事丁
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+我們應該要
+Custom data using SD ,
+but in the S4HANA integrated
+the integrated
+the material data objects called business partners.
+They call the business partner.
+Partner。
+Partners, OK.
+好,那還有什麼嗎?
+這個上次沒有講,對吧?
+在ECC中,我們需要在網路上的網路上
+在S4HANA中,我们可以用RMRP在空间的空间
+对你记得什么是贸易卖?
+非常慢
+老季吗
+老季
+remember
+非常慢
+OK
+所以
+what is
+frustration
+frustration
+frustration
+这个是伤的
+这个是伤的
+这个是伤的
+disappointment
+就是失望的
+或者就是烦人的
+this frustration is now a thing of the past
+ok
+上次我们学到了这里
+我们讲过了这个
+Mature Ledger is a required
+is a mandatory
+activity
+it's a mandatory sub-module in SAP
+ok
+所以很多公司不使用权材料,但在S400,他们还需要
+to activate the material ledger in CC, okay?
+Yeah, the material ledger in SIP is mandatory,
+and in S4 is necessary.
+It's optional.
+In ECC is optional.
+No, ECC is optional.
+S4 is mandatory.
+Yeah, it's mandatory.
+Oh, mandatory is...
+Oh, yeah, yeah.
+这个要想清楚
+OK 别想法了
+这个我开始也是
+就是我看到我们
+其实我们的公司
+是不需要去做这个materializer
+但是我们的经理呢
+他就激活了
+所以后来我就问他
+我说看到有materializer
+我说我们用不用
+不用的话
+但是这是一个mandatory steps
+就是一个必须的一个过程
+一个步骤
+mandatory
+mandatory
+still remember
+sorry
+这是H的
+好那我们来看看
+mandatory H
+这个
+OK这是我们的
+好那我们今天呢
+我们今天要继续讲
+就是
+ECC HANA和
+ECC和HANA的区别
+今天是我们26年的第一堂课
+OK
+那我们再来看一看
+上次我们学了这些
+就是一些的词组
+一些词语
+那我们要学会
+这new feature啊
+什么aggregate啊
+就是累积index
+索引table
+就不需要了
+OK
+好
+那我们今天呢
+我们要学到这个MM的
+那个有个
+对
+跟FICO
+就是也是可以
+可以说是相提评论
+可以相提评论吧
+那SAP呢
+它是有一个这个
+BKBF
+BSEG
+然后都
+都统一到了这个
+ACDOC table
+那么BKBF
+BSEG呢
+那都统一到了什么
+MATDOC
+Inventory Management Table
+OK
+好
+那我们再请一个同学来读一下子
+然后这里面的单词倒不是很难
+好 萌萌你来读一下
+MIT Inventory Management
+SIP S4HANA
+introduce MIT DOC
+a new inventory management system
+that elements over 26 tables
+present in SIP
+Now material document
+as stored in MIT DOC
+instead of MKPF or MSCG-table.
+This removes the renders and improves stock reporting efficiency.
+The SAP HANA database.
+As we discussed earlier,
+SAP S-HANA can only run on the SAP HANA database,
+but thanks to the SAP HANA cloud database,
+SAPS for HANA is faster and more efficient than SAP ECC.
+Why? There are several reasons.
+Okay, very good.
+好,那我们来看看这个table呢,
+就是引入这个table以后呢,
+我们就不需要 replace the BKPF and MS-EG table.
+Okay, so this removes redundancy.
+Redundancy, repeat.
+Redundancy,就是重复的.
+Redundancy,冗长的.
+多余的
+对 多余的
+或者就是说
+冗长的吧
+and improve
+improves
+那我们上次学了一个什么
+B开头的
+记得吗
+我们可以提的
+对
+Boost
+Boost the efficiency
+对
+Boost the efficiency
+对
+Boost the efficiency
+对
+Boost the efficiency
+对
+Boost the efficiency
+对
+Boost the efficiency
+
+
+Boost the efficiency
+Boost the efficiency
+Boost the efficiency
+
+
+
+
+Boost the efficiency
+
+
+Boost the efficiency
+
+
+
+
+我們可以更加的效果,更加的效果。
+我們還可以更加的效果。
+我們還可以更加的聽力。
+也可以更加的團隊精神。
+Team Spirit
+Team Worker
+OK,所以我听到男生
+Taylor过来了
+好,那我们刚刚开始
+我们看今天讲这个
+上次没讲完的
+我们刚刚讲到Material这边的话
+有一个统一的table
+MathDoc
+OK
+好,那这个呢就是
+早前讨论了一下子
+这个S4HANA
+会在这个
+在那个HANA
+Database基础上呢
+它执行的会更快
+或者它会更加有效
+那我们想想
+谁能给我
+一个原因
+记得吧我们前面说过
+Remove了什么
+Remove了什么table啊
+Index and
+Aggregate table
+记得吗
+aggregate
+aggregate under index table
+好那这是一个理由
+那我们下面再来看一下
+还有什么理由
+这个意思是
+benefit for me
+to develop
+to have function develop
+那我们来先看一下这里
+首先呢
+SAP HANA 它讀的数据是从主要的这个记忆体里
+Memory 里头讀
+而不是说是从硬件里面读
+然后这里就是数据的那个移动会比较少
+好 那再第二个呢
+Next
+The tables in SAP HANA 是column-based instead of row-based
+OK
+So let me open
+什么叫column
+练
+练
+练
+练
+练
+练
+这是column
+还是row
+column
+OK
+column
+OK
+好
+那我这样子
+第二
+就是row
+好
+那以前是row
+based
+OK
+那就一行一行
+那肯定很多
+column based
+可能就数据少
+所以它只能读到 relevant column in a query
+就是相关的这个
+relevant
+就是相关的
+column in a query
+It can also process different columns
+in parallel
+平行
+平行记账怎么说
+Parel account
+Parel accounting
+Parel account
+There are no
+There are no aggregate index
+就是累积啊或者这种
+所以你的这个table
+or history table
+since the application can access
+access the data
+学过了吧 access
+学过没有
+进入
+好
+那我就说进入到什么权限呢
+进入到
+access authority
+yes
+I don't have access authority
+OK 可以
+I don't have access
+I don't have access to the PRD system
+可以可以
+好 那我们就随意就可以说
+Access the original data
+Lastly
+Firstly next
+而 lastly SAP HANA
+combines the
+online transaction processing
+and online
+analytical processing
+tables
+you no longer need to
+reconcile them
+这个是
+reconciliation
+对账
+对账
+对
+reconcile statement
+就是对银行的对象男
+bank statement, right?
+bank card
+好,那如果我说
+这个统育科目呢,记不记得统育科目?
+so what is
+reconciliation account?
+so
+so my interview question is
+what is a reconciliation account?
+It's a bridge between
+JAL account and WIS
+Okay, okay, that's good
+Let me log in
+Let me see
+他都过期了
+看看大家刚开了没有
+嗯
+哦 还没有开
+好 那我们现在看到你这个
+这个错误提示是什么意思
+哦
+所以我正在嘗試的
+我正在嘗試的
+SAP系統
+所以系統
+跳出來
+POPUP
+Usa
+Usa
+Usa
+Usa
+Usa
+Usa
+Usa
+Usa
+Usa
+OK,validate your user ID,OK
+好,那下面呢,现在我们就总结一下子
+就是说,那在ECC的时候
+在S4HANA的时候,我们跑数据的话
+我们跑的数据会更加什么
+Move,什么
+Move fast, right
+And more efficient
+Move efficient, more fast
+然后,ECC,Do you know why?
+我们刚刚就讲了这个原因,讲了这个原因,一二三,好,谁能就是用自己的语言来简换一下,
+首先,第二,第三,第一步是S400 read data
+from the memory instead of the hard disk.
+Fill data moment.
+第二,SAP reads the data by column based instead of row based,
+and there is no aggregate index or history tables.
+OK,然后呢,
+第三,
+第三,
+第三,
+是,
+combine the online,
+online transactional process,
+and online analytical process type,
+so you don't need to,
+to reconsulate them,
+OK,好,
+那我们这个就是通过这几节短文章吧,
+或者就是分析出来了,
+ECC和S4HANA的
+好
+那我们下面呢
+就是准备一个
+一段小听力
+好
+请你把你的字和笔拿出来
+这个听力不是很长
+但是这些词绝对都是
+我们这里面学到过的
+没有什么新词
+好吗
+Are you ready?
+你们下课以后有没有去做听听啊
+我听到一些游客的提示
+对方的提示
+这一天
+听得到吗
+听得到吗
+还没开始啊
+我们提供自由电脑的电脑
+当你选择四个电脑线到Spectrum
+没有电脑费
+没有电脑费
+听了
+刚刚能听到吧
+可以
+可以
+好
+现在开始
+你们把那个笔
+等会我会问一些单词的
+然后你们尽量的是
+能把一些单词能复书出来的话
+我可能会中途停一下
+然后要你们复书一下
+这个方法
+这个听力的学习方法叫影子学习法
+就是我们要repeat他说的东西
+听得到吗
+不是能听到吗
+你们刚刚有别人的声音
+我不知道你们什么意思
+听不了了
+为什么听不了
+他卡住了
+我刚没播
+我还没播呢
+好 开始了
+你们那边好像背景音乐
+Could you please mute your voice
+把你们的音乐
+把你们的声音关掉
+都mute掉
+好 那我们现在开始
+所以,我們開始,SAP ECC是一個長的版本的SAP R3 開發,
+在191919年,ECC 代表的公司,
+ECC 代表公司,
+聽不見嗎?
+我沒看過了,
+後面還教物理的呢?
+不是,大聖尼把你的聲音 mute掉。
+朵北,安吉老師跟你說話了呢?大聖。
+我 mute掉你的聲音,
+對,對, mute掉你的聲音,對。
+你把你的背景关掉一下子因为我们现在要听一下听力啊你在那里讲话我们就听不清楚了好 thank you
+我们会看到差别的差别和SAPS4HANA
+所以我们开始
+SAP ECC是一个老式的SAP R3 开发过去年轻的
+R3什么
+R3 launch, 登陆, launch, L-A-U-N-C-H, launch,
+这个是, 最后一个, SAP launched, L-A-U-N-C-H, 看到了吗,最后一个。
+ECC stands for Enterprise Resource Planning Central Component
+R3 stands for Real-Time Data Processing for Three-Tier Architecture
+whereas SAP S4HANA is launched in February 2015
+S4 stands for Simple and Fourth Generation of the SAP Business Software Suite
+S refers to S4
+Simplify First Generation第四代
+HANA stands for In-memory Database Platform for SAP
+In-memory
+In-memory
+In-memory 其一体的什么
+SAP Business Software Suite
+Business Software Swift
+HANA 以典的在Memory Database Platform 使用了
+你聽出來了嗎
+嗯
+嗯
+!
+That enables real time processing
+Real time processing
+Real time processing
+Analysis of the vast amount of data
+Combining transactional analytics workload
+In the single system
+That is OLTP and OLAP
+Let's understand the major differences in SAP ECC
+and SAP S4 HANA
+First database and performances
+最重要的
+最重要的
+最重要的
+非常重要的
+最重要的
+好,再听一下这个词
+有点点来
+第一,Database and Performance
+最重要的
+最重要的
+最重要的
+最重要的
+听起区别, 听出来了吧?
+Database they run on. SAP ECC can run on various third-party databases such as
+各种不同的
+和 Microsoft SQL Server
+This traditional disk based database structure
+can lead to slower data processing
+and reporting, especially
+for large volume of data
+Whereas SAP S4HANA
+runs exclusively on SAP HANA
+database, which is in-memory
+database. This means
+that data is stored in main
+memory instead of on hard disk
+This in-memory technology
+allows for significantly faster
+data processing real-time analytics and much smaller data footprint you could get a compression
+and elixir component much smaller什么
+moment and the footprint footprint the sound sound checker she will
+他刚刚的那一句话就直接就是我们刚刚那个PPT里面的那句话
+就是第一句话我们今天学的
+好 我们来继续听一下
+R3 stands for simple and fourth generation of the SAP business software suite
+whereas HANA is stand for in-memory database platform for SAP
+Data base platform
+ECC can run on various third party databases such as Oracle, IBM DB2 and Microsoft
+和Microsoft SQL Server
+这些传统的 disk-based database structure
+可以带到更多的 data processing和 reporting
+尤其是大量的 data
+而SAP S4HANA
+设计SAPHANA
+DATABASE
+是在MemoryDATABASE
+在MemoryDATABASE
+在MemoryDATABASE
+刚刚我们学过
+在MemoryDATABASE
+这个我们刚刚那个PowerPoint里头有对吧
+Faster data footprint
+Due to data comparison
+那就是名词对吧
+对比
+第二,user interface
+The user interface is another major point of differentiation
+impacting the user experience
+SAP ECC primarily uses this SAP graphical user interface
+which is classic functional
+就是傳統的
+它是 complex to navigate and is not always intuitive for new users.
+SAP S4HANA introduces SAP Fiori
+介紹
+介紹
+介紹
+Fiori provides a more intuitive and simplified user experience
+with title-based apps that can access on various devices
+including desktop, tablet and smartphones.
+3. database modeling and table structure
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+更加密切的
+这 simplification eliminates the need for many aggregates
+simplification simplification
+讲话 simplification
+reducing data redundancy and improving the data consistency
+for example in S4HANA, the material document table
+MKPF and MSEG are consolidated into new table code
+consolidated are consolidated
+什么意思
+我们可可以用Combine,Consolidated,合并,我们出合并报表,Consolidated report,Consolidate,MetDoc.
+四,Deployment Options,The available deployment options are also differ between two systems.
+SAP ECC is traditionally deployed on-premise,meaning the software is installed on company's own server.
+whereas SAP S&P has to handle small flexibility with multiple deployment options, including on-premise, public cloud, private cloud, and hybrid approach.
+This allows organizations to…
+Hybrid.
+Remember that?
+The hybrid.
+Hybrid.
+For example, our office is in a home, and we go to office two days.
+What is this?
+或者有会开车的同学
+那有的车有部分是可以去加油的
+有的可以去加油的
+可以是电车和油车
+油电混合车
+叫Hybrid
+听传了哈
+and to choose the best model for the business needs
+and IT strategy
+for the best needs
+in essence, SAP S4HANA is a more modern, faster
+and simpler ERP system
+而是
+好那我刚刚可能中读
+就是老师会给你们打断
+但是我可能有些比较重要的
+我就会给你们点出来
+significent
+那你们这个听出来了
+in memory
+hard desk
+这些听出来了
+好那我们重新来听一遍
+同学你们自己再写出来
+看看能听到多少
+或者就是说
+那就没听清楚
+老师重复一下
+或者就是说
+你要我再回过头来再听一下都OK 因为这个不是很长
+好  are you ready?
+Go
+Hello, good morning friends. Welcome back to your favorite channel CodeOne Digest
+Today in this video, we will see the difference between SAP ECC and SAP S4 HANA
+So let's start. SAP ECC is the older version of SAP R3 launch
+Older version
+ECC stands for Enterprise Resource Planning Central Component
+R3 stands for real-time data processing for 3-tier architecture
+whereas SAP S4HANA is launched in February 2015
+S4 stands for simple and fourth generation of the SAP Business Software Suite
+whereas HANA is stand for in-memory database platform for SAP
+that enables real-time processing and analysis of the vast amount of data
+combining transactional and analytics workload in the single system
+i.e OLTP and OLAP
+Let's understand the major differences in SAP ECC and SAP S4HANA
+First, Database and Performances
+The most significant distinction between two systems is the database they run on.
+SAP ECC can run on various third-party databases such as Oracle, IBM DB2 and Microsoft SQL Server.
+這個平台的Disk-basedDatabase structure
+可以導致更加速度的資料
+和通常的報告
+尤其是大量的大量的資料
+而為SAP S4HANA
+是在HANA的Database
+是在-MemoryDatabase
+這代表是在MemoryDatabase
+這個代表是在Memory
+而在Hardisk的Disk
+這代表的In-Memory技術
+使用更加速度的資料
+實際上的資料
+實際上的資料
+Footprint due to data compression and elimination of data redundancy.
+Second,User Interface
+The user interface is another major point of differentiation impacting the user experience.
+SAP ECC primarily uses this SAP Graphical User Interface which is classic, functional-oriented
+interface.
+It is complex to navigate and is not always intuitive for new users.
+SAP S4HANA introduces SAP Fiori, a modern role-based and responsive user interface.
+Fiori provides a more intuitive and simplified user experience with title based apps that can access on various devices including desktop, tablet and smartphones.
+Third, Database Modeling and Table Structure
+SAP S4HANA features a simplified and more efficient data model compared to SAP ECC.
+SAP ECC has a complex data model with numerous aggregate tables and indices.
+这就是需要增加性能的效果
+在传统的数据
+而在SPS4HANA
+介绍了纪念纪念纪念
+介绍
+从各种贷款和控制模式
+像FINCO
+进入一个单线的标题
+singles
+for hana the material document table mkpf and mseg are consolidated into new table called
+matdoc fourth deployment options the available deployment options are also differ
+between two systems sap ecc is traditionally deployed on-premise meaning the software is
+installed on company's own server whereas sap s4 hana offers more flexibility with multiple
+deployment option including offer more什么 offer multi-travel
+yeah flexibility very good mama
+你自己读 你可以说 它是一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个
+在这一段时间我们下来的话呢我们自己注意更多的经济
+听听
+好,那我们现在抽一个同学来回答一下子
+你听到了什么,月月
+你听到哪些我们学过的单词
+其实这些单词基本上我们学过的
+什么conversion,data migration
+unpromise,本地
+好,那谁来分享一下子
+就是说你刚刚学到了什么
+你刚刚听到了什么
+哦
+嗯
+哦
+哦
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+然后
+Dip
+Dip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dip
+Redundancy
+Redundancy
+Redundancy
+还有什么
+Main memory
+他就直接讲了这句话
+对吧
+The main memory
+Instead of the hard disk
+Hard disk
+他就没有发音
+就是Hard disk
+就吞进去了
+然后第二个发音
+还说了什么
+他也讲了这个词对吧
+AnalyTable
+Processing
+他也讲了这个
+他也讲了这个table的那个
+Consolidate two tables
+Consolidate
+BKPF and BSU table
+ToMyDoc
+MyDoc
+Right
+这个redundancy
+也讲了
+the faster efficient
+都讲了
+基本上就是我们在这里
+讲这个课的话呢
+就是你们再去听的话的
+可能一笔开始要好多了
+因为这些词
+你们自己下课也要去俗读
+其实你自己要会读了
+会讲了
+会讲的话
+你再去听的话
+你可能那个词
+就对你来说就比较容易了
+如果就是说你对这个词
+还不是很熟
+没有
+就是自己都不熟
+自己不知道什么意思
+那你在比如说
+刚刚他说了
+redundancy
+但是我们今天学了这个的话
+你这个脑子里头就跳出来了
+redundancy
+OK
+所以下去的时候呢
+同学还是要去那个熟读
+熟读这些啊
+就是我这里头
+其实都算是挺精选的
+就是摘要
+从各个地方摘要出来的话
+我都是比较精选出来的
+就是对大家肯定来说
+是比较有用的
+好
+那我们今天的ECCS400呢
+就是我们来总结一下子
+就是学的不是
+今天没有学多少
+但是我们等会儿要通过一个 quiz
+通过一个小测验来能了解一下大家
+就是对这个所学的这个
+ECC和S4HANA的这个区别
+刚刚用到
+刚刚那个月月你没有提到那个FURI
+他讲到FURI的时候
+他用到一个什么词
+Institute
+Institute
+就是那个没有直观
+就是没有那么直
+就是Fure的话是比较直观的
+对吧
+好
+那我们下面就是时间的关系呢
+我们就是下面的话
+我们自己去下课以后去反复
+萌萌你也有进步
+你们下了课以后
+就自己去盯听一下子
+然后能把他
+他讲一句
+你就来停一下子
+要他停一下子
+然后你来重复
+重复一下子
+看看你能写出
+就是他说的意思吗
+就是讲一句
+你重复一句
+讲一句你重复一句
+这样的话呢
+可能对大家的听力
+可能会比较快一点
+好
+那时间关系呢
+我们就不要你们来说
+你们听到什么了
+好
+那我们来下面做一个quiz
+OK
+好
+那这里有一些题目 你们三个人就是按照Taylor 萌萌 月月
+这个顺序一二三一组
+Taylor请你念一下第一题 然后直接给答案
+What's the main technical reason SAP remove table link base?
+Not a link, like, check.
+Like or remove table like BSS, BSS, BSS, BSIK, BSIK in S4HANA.
+A, performance of optimizes only to B, simplified of IFR reporting, C, replaced by ACDUC
+是 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的 宇宙的
+ECC are no longer required due to HANA compatibility
+ABSCGBMKPFCVBRKD aggregate and index table.
+Okay, so what's your answer?
+I choose D.
+Aggregate and index tables, your answer is correct.
+OK,Yu-Yu.
+I'm sorry, which statement about ACDOCA is correct?
+A, it stones only FI data.
+B, it replaces CO tables only.
+C, it compares FI.
+OK,非常好
+好,那就在下一个循环了
+嗯?
+嗯?
+这是?
+哦哦哦
+好,第四题
+What happens to CO tables
+Total tables
+COSP, COSS in HespaHana
+They are optimized but still used
+They are accepted
+archived
+archived
+archived
+Pierry decalor
+They are replaced by
+AD-OC-LC-VR
+被控制了2VIRUS
+我觉得答案是C
+对 正确
+Optimized和Archived
+是什么意思吗?
+优化和全档
+规档
+Archived
+好,那你来就在第五题
+基本上是C。
+OK,是正確。
+好,那我們來看看這裡有幾個新的詞,好吧?
+ECC asset accounting is incompatible with HANA Smith.
+incompatible
+这个词
+好的第二个词
+那我们刚刚说了平行机障
+parallager
+好
+好的
+universal
+我们知道这个就是普遍机障
+discontinue
+discontinue
+discontinue
+不连续的
+那我们经常在国外的时候
+我们就说这个part is discontinued
+这个零件
+比如说我们去买一个汽车的什么零件
+我的车子很老了
+好那我就跟他说
+我需要这个零件
+我的那个车
+可能要换一个零件什么的
+换一个part
+然后那个老板就说
+oh sorry this part is discontinued
+什么意思
+没货了
+对停产了
+对
+discontinued
+停止了
+这个depression area
+好
+第六
+月月吧
+as for hana how is materialized compared to ecc a optional and the client specific
+b mandatory and always active c replaced by copa d used only for actual costing the answer is b
+OK,非常好。
+Mandatory, mandatory, and always active.
+OK,它就是必须的,就是必须要这个激活的。
+在ECC是激活的,在S4哈南是激活的,如果是ECC呢?
+Optional and Client Specific。
+OK,非常好。
+好,那我们再到了第三个Session,那主要是这个Interface,
+是一種類似的, 特別是關於 它們的解決方式。
+好,現在, Taylor。
+什麼是最大的改變的 公開的改變 程度的?
+A, 解決方式的解決方式。
+B, replacement of MKPFC, introduction of MATDUC, D, removal of batch management.
+I think the answer is C.
+OK, great.
+OK.
+刚刚我们也听到了吧,introduce,对吧?
+我们刚刚其实在里面也听到introduce,这里是introduction,那是名词。
+那这个呢就是它的这个最大的变化呢就是MSEG和BKPF is combined to MatDoc
+MatDoc或者MATDoc
+好 那下面一题
+Winxi ECC transaction is replaced by Fioria plus MRPLAB in S4HANA
+A ME21NB VL01NC MD01D FB60
+我们可以用排除法
+如果你们考过
+中国人考试最后用排除法了
+我们看看用排除法好吗
+C
+C
+C是用语什么的
+RamaP的
+RamaP
+OK
+Very good
+好
+Taylor你回答出来了
+好
+那我们下面一题
+what happens to ATP available to promise in S4HANA?
+A. no change
+B. replaced following by SD schedule
+C. enhanced with AATP
+D. removed due to HANA
+the answer is D
+D,D,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A,D,A
+承诺性检查
+好,那下一题
+Customer code and reporting
+Question 10
+Why do many ECC customer reports fail after
+Aceana conversation
+A, above
+C, the text change only
+Syntax
+就是语句的意思
+Be Authorization
+Concept Change
+C
+Remove Table
+And Simplify
+The Data Model
+D
+Unicode Issues
+The Answer is C
+OK
+所以就是我们在做
+Data Migration的时候
+我们要注意
+就是不是说你的这个code就是
+shift and
+shift and shift
+不是说就是说转换过来了
+那我们要做好多检查的
+好
+下面一题
+which tool is
+primarily used to
+identify S4HANA
+in
+in
+compatible customer
+custom
+Customer Code
+STAMBST05
+CSimplificationItemCategory
+CustomerCodeInspector
+D
+SE30Enter
+C
+OK 你知道长的就是对的是吧
+短一长 嫌一长
+好 下面一个
+Sectify Migration and Project Strategy
+Question Tell
+Strategy
+Strategy
+Strategy
+那刚刚听到的时候
+听课的时候
+那个听力的时候也是讲到这个,对吧?
+Strategy.
+Yeah.
+Question 12.
+Which convention approach keeps existing business process
+mostly unchanged?
+A. Greenfield.
+B. Lightscape transformation.
+C. System convention.
+D. Central finance.
+The answer is B
+Landscape transformation
+好,这个我现在有点不确定了
+我觉得好像是C吧
+System conversion
+反正第一个不是
+第一个是Greenfield
+肯定是新的
+相当于新的
+Landscape Transformation
+这个应该也不是
+好 那我这来再查一下吧
+我现在查一下
+好 那你们念第十三题
+What is a key
+risk key during
+ECC to S4HANA
+System conversation
+A,非常 lasting cost
+B, customer code adaption
+C, user training only
+D, network bandwrench
+B
+C吗?
+B
+B, yeah
+Okay, B are stock
+哦,BSBOY
+BBSBOY,是
+好,那Bound-wise
+這個叫什麼意思嗎
+過寬吧,應該是
+網絡的一個
+就是網絡的寬度,網絡的速度
+對對對
+好
+第
+第十四題
+Why is CVI as a customer to window integration mandatory in S4HANA?
+A BP replace FI customers only.
+B business partner is a single master.
+C windows are merged with material.
+D,ST no longer用 customers
+Customer Vendor Integration mandatory in SAP
+BP replace FI customers only
+所以答案是B
+B吧,B,B,B,B,B
+好,在下面一个
+好,下面就是
+for or choose
+我们想一想,这有的很tricky
+As for HANA
+you request
+aggregate tables for
+performance
+the answer is false
+still request
+OK
+OK。
+What's the meaning of Griget? I forgot the meaning.
+累積,累加。
+累加的標準。
+我覺得這個應該是對的。
+剛剛那道題,我的答案是對的, System Conversion。
+OK。
+System Conversion。
+System Conversion,相當於一個Bron,
+相當於一個Bron的方法。
+這是第二期的同學,他們會學,
+什么叫Greenfield的方法
+还是
+还是Brownfield
+System Conversion
+其实就是Brownfield
+OK
+Brownfield的就是说已经成熟了
+就是从现有的
+现有的这个流程
+然后转换一下子
+所以这种变化是最小的
+然后Greenfield的就是
+相当于是个新的新手
+然后Land呢
+是它会有一些
+就是和平Land的
+Scape会有一些合并的一些变化
+然后Centure呢
+它是有一些
+它是局部的
+它只是一个财务方面的内容转化
+所以最接近答案是
+System Conversion
+OK
+OK
+我标注一下吧
+免得到时候忘了
+就是Bronfield吧
+那个谁应该知道
+Taylor应该知道Bronfield
+对吧
+对吧
+我们有两种方法,一是Greenfield,还是Bronfield,
+我不知道你学了没有,
+一个是Greenfield,一个是Bronfield,
+OK,
+好,那S4HANA还需要这个Aggregate Tables
+for performance,不能说一点都不需要吧?
+移除了一些
+然后保留了一些
+那你的答案到底是什么呢
+除除除
+好 下面
+你直接用这个Fairy,所以是False。
+哦,错的,对。好,第一题的话,那个谁也是对的。你就是错的,我给你答案查。好,第十七题。
+S4HANA allows real-time MRP and financial reporting without a best job.
+S4 now allows real-time NRP and financial reporting without bad jobs.
+你的答案是什么?
+这都是比较advanced的一些quiz,就是比较高级的测试。
+可能是稍微动下脑筋的样子。
+你的答案是什么?
+The answer is true.
+OK,correct.
+OK,好,那我们答案都出来了,我就写个yes吧。
+好
+那我们今天
+我们来再回顾一下
+今天我们学了什么
+so let's wrap up today's class
+so what's the new vocabularies
+you've learned today
+Redundancy
+还有呢
+我们开始说的是这个
+开始说的
+我们这个是储存在
+the table is stored in memory, right?
+Main memory instead of the hard disk.
+好,那我们学了 column-based.
+So what is column-based and a row-based?
+Aggregate, index, history table,
+History table
+Access
+还有平行分裂帐
+Parallel
+Ledger
+Ledgers
+OK
+好
+那我们还学了这个
+来看看
+还学了些什么新的单词
+还学了什么单词
+开发报表
+就是定制化报表
+我们怎么说
+这个比较容易出错
+Customer reports
+好
+好
+好,那就是網絡的寬度,網絡的寬度,這個也是要經常說的, bandwaves.
+Bandwaves.
+Bandwaves.
+好,那我們有conversion,這學了approach方法。
+那strategy, what's the strategy of your cut-over plan?
+你的那個cut-over的計劃是怎麼樣的那個方案?
+好,那我们学了incompatible,就是适用不适用,OK,还有unicode,unicode就是unicode issue,就是你的这个编码,编码的问题,simplify,sintax,这个我们要知道,sintax就是语句,就是我们开发人士,他们要写一些code,对吧,写code的话,那你的语句,语法语句结构,就是syntax,语句错误,syntax,
+如果出现这个ABAPA
+一句错误的话
+我们要report给这个ABAPA
+要他们去fix the problem
+OK
+好
+那我们学了这个
+conversion
+这些都是以前学过的
+好
+ATP
+我们知道这个SD里面的
+就是承诺的这个
+承诺
+它的这个
+叫供货吧
+ATP
+ATP承诺检查
+对吧
+好
+那我们看看还有这个
+就是我们学了这个
+MyDoc
+就是会把这个
+之前的这个
+MSEG和MKPF
+这个table
+就是合并了
+好的
+那我们还学了这个
+Discontinue
+Discontinue
+然后Continue
+就是继续的
+Discontinue
+那就不生产了
+或者断了
+断
+切断
+断了的意思
+Universal
+我们学过
+Incompatible
+好
+那我们今天学到
+这个Optimized
+都我们学过了对吧
+就是优化
+archive
+就是我们也是的
+就是
+归档
+归类
+好那combine
+好
+这些的其实我们都
+就是基本的知识
+我们都是有的
+好
+那我们就是
+要学会
+稍微总结一下子
+如果下次问你这个
+面试的问题
+就是
+What's the difference
+Between ECC
+And S4HANA
+那你至少能说
+出个几点出来
+比如说他的这个S400
+Runs faster and more efficient
+就可以讲出几句
+或者讲这个人家用了这个Fural啊
+什么那个他的这个界面
+更加就是直观啊
+更加友好啊
+稍微带着讲一下子
+或者就是我们这边
+从财务这边的话
+我们是BKPF and BSEEG table
+combined to universal table
+ACTOC table
+就随便讲一下子就行了
+好
+那今天的课就到这里
+那下面同学呢
+就是把这个九点钟左右的这个
+就是那个video听一下子
+然后做下笔记
+看看就是说用影子跟读法
+你先去先他讲一句读一句
+然后你再来写下来
+好那就是如果能有能力交作业的话
+你们就尽量把作业交出来
+好吗
+就是这个听力把那个听力的
+你听到的东西来写一件
+好
+so do you have any questions
+so far so good
+好 如果没有问题的话
+那我们今天就下课了
+我们 我等会会把作业
+再重复在那个微信里面
+好 那先这样
+好 那如果没有问题的话
+Happy New Year
+Take care
+Happy New Year
+Bye
+OK Bye
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目

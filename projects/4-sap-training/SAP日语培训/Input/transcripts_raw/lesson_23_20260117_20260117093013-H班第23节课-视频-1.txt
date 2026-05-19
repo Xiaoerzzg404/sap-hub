@@ -1,0 +1,1733 @@
+Oh, wait hand. Oh, so? How about Yueyue? Oh, just rest. Okay. So did you guys prepare your ...
+所以,let's review what we learned last time
+我们来想一想我们上次课学了什么
+我可以提一些keywords,关键词
+Direction
+Data exchange
+好
+萌萌月月,Daisy
+你们谁来先说一下
+上节课我们学了什么
+非常重要的
+内容是非常重要的
+因为最近有同学反馈过来说
+那也是一个面试的问题
+interface
+我们学了 the interface
+OK
+and learn how to design
+interface
+in the project
+OK
+it divided
+sever steps
+and the
+第一步是要去找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找找
+好的,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好,好
+OK,非常好。好,那我们再换一个人。
+Daisy,你来说一下。
+Could you please describe an interface you have done before?
+Could you please describe an interface you have done before?
+I had done the interface
+example for the post document
+it's from the OA to SAP system
+it can post the document
+for expense
+and employer
+借款
+loan?
+或者borrow?
+borrow
+好
+好
+好
+好
+好
+好
+好
+好
+好
+
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+
+好
+users write the information in the OA system
+such as the posting date
+and the department for the expense
+在设计中,如果是设计或计划的,
+在设计中,
+对于设计中,
+对于设计中,
+对于设计中,
+对于设计中,
+对于设计中,
+所以如果你有新的面對面,你從來沒有觸碰到,
+所以,你會做到新的面對面?
+想想這些步驟,OK?
+請自身體驟,
+例如,我問你,有你做過的CM面對面嗎?
+你確實沒做過嗎?
+然後你就來 你就跟我來講 就是你要比較有信心 你說所有的interface的話 你說都差不多
+就是你有過去的這個 其他的這個interface的experience
+你可以把過去的這個interface的這個experience apply to the new system,to the new interface
+你來就是大概講一下這個話 就是我在你interview的時候 我可能講了一個別的系統 你不知道這個系統
+但是呢 你不能说
+I don't know
+I'm not very familiar with the interface
+你要给一点点解释
+就是让别人觉得你有这个能力去做
+这件事情
+那你该怎么说
+怎么样去说服我
+因为我们在interview的时候
+不可能说就是很多东西都知道
+或者就是说确实是有不知道的情况
+在这种情况之下我们该怎么去回答
+怎么样去玩自己
+就是有利于自己的这个方面来回答
+我想要去找
+OK, go ahead
+我需要
+我需要
+搜尋
+搜尋
+搜尋
+搜尋
+搜尋
+我需要
+我需要
+把
+把
+把
+把
+把
+把
+把
+把
+把
+就是
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+你
+CM is the source system and we need to create the BP master data in CM system and transport
+it to SAP system.
+Yeah, and the second step we should do the data mapping.
+for example, the customer in CM
+should mapping SAP's BP master data.
+We should do the mapping.
+We should use one way to transport it.
+我們需要的FS
+和設定的
+和設定的
+和設定的
+和設定的
+和設定的
+我們用了
+BAPI,RFC
+和其他方式
+多在Infes
+That's all
+OK
+Thank you
+Thanks for sharing
+OK
+那我们的课就是
+后面就是最后两节了
+那我们可能就是
+同学如果做好准备的话呢
+你们可以把你的
+那个英文的Resume
+这个还非常重要的
+因为
+因为我辅导了一对一的同学
+我上次给大家看到
+那个Resume
+就是
+效果还是挺好的
+就是有的做一对一的话
+他
+就是结果那个
+印度人看到那个resume以后
+觉得他那个结构写得非常好
+还把他那个
+就是他没有在项目的时候呢
+还把我们这个模板
+拿去就是给他那个同事去修改
+好上次我们也看到过
+这样的resume
+可能Catty可能没有在
+好那我们就是
+如果就是你们觉得自己准备好的话
+你们可以把这个
+我会把这个resume
+课后以后会发给你们
+你们就是作为一个homework吧
+你们把你的那个resume写一下子
+好那我们今天呢就是我们会
+我想问一下这个resume只能写一页吗
+可以写一页多
+但是最好就是我们的原则是就是说
+如果你做项目比较多的话
+你能写一页半也可以
+但是呢我就给大家强调一下子
+就是说HR他们要看什么东西的时候
+他们前面是最重要的东西放最前面
+OK明白吗
+有时候同学可能会把那些技巧什么的
+都放在最后最后才能找到
+对就比如说你有什么技巧
+或者就是你有些比较就是 summarize
+这些的话你放在前头
+就是说基本上就是说
+人家看你的resume两三分钟就知道
+就决定要不要你了
+明白吗
+就是看合不合你的这个要求
+然后我们就是也有针对性的
+就是说如果你对哪一个职位你比较感兴趣
+你可以把那个job description发给我
+就是JD你发给我
+然后我可以根据那个JD的话
+我可以猜得出来
+我根据你JD的要求的话
+我可以猜得出来他会问一些什么样的问题
+对好
+所以就是这个我会发给同学
+你们看到我会发给同学
+然后就是我们就是想
+就是刚刚开春嘛
+可能也要就是春节以后
+可能就要上新项目的话
+机会也还是多
+我们可以慢慢的就去来试一下
+好吗
+Be confident about yourself
+OK
+好
+那我们再来学一下子
+就是说我们在面试的过程中
+就是我们要怎么样去
+能让我们的interviewers
+就是面试观
+能对我们就是
+比较有深刻的印象
+你们有没有经历过一些面试
+就是你觉得面得很糟
+或者面得很好
+好
+紧张吗
+就是你面试的时候紧张吗
+刚开始会有点紧张
+然后稍微过一会儿就不紧张了
+有没有碰到比较
+挑戰問題你不能回答
+会好也是
+对
+国内的项目会
+技术会很难
+就是就是有些
+有些高级部
+它技术非常难
+然后
+就是一些CO的这种东西
+OK
+那如果就是那个
+英文项目呢
+会有那么难吗
+因为我觉得还好
+就是
+听懂
+我能听懂
+我就能输出
+对
+就是这样子
+好
+那我们来看一下子
+就是说
+不管同学就是
+你的那个resume准备好
+还是没有准备好
+第一个呢
+我们要把自己的这个
+self introduction要说好
+这个就是
+你如果一旦有这个面试机会
+或者就是说
+人家在什么地方看到你的resume
+他打电话过来
+HR的话
+他有可能就
+不会数个应约时间
+他可能直接就在电话里面
+就直接说了
+直接就问你了
+你是什么样的状况
+或者怎么样子
+你这个时候
+你就要准备大概一分钟左右的这个
+60秒钟
+就是一分钟左右的自我介绍
+那我们介绍谁呢
+介绍最主要是
+Who you are
+你是谁
+那我们可能会说
+Oh I'm a FICO consultant
+OK with 20 years experience
+或者你们with 10 years experience
+OK
+好那我们要突出你的这个
+SAP的那个经历
+然后呢你的强项是在哪里
+Oh, I'm very good at communication.
+I'm very familiar with SDMM integration.
+好,那你的value?
+So, I look forward to join your company.
+I believe I will benefit to your project.
+就是你的价值在哪里?
+好,那我们来看一看这个。
+好,那我们请一个同学来念的时候,
+然后把这个变成自己的东西,好吗?
+好我们请来一个同学来
+Kathy
+你来自我介绍一下
+你这个样板
+然后你可以就是
+你是什么模块
+你是什么模块
+好吗
+你是比如说五年经验的
+你就是五年
+好吗
+来套一下子
+嗯
+凯婷
+你叫Hello, Good Morning
+这样打招呼就行了
+to full cycle
+full cycle就是从零到一搭建的
+implementation
+这个实施的项目
+你做了什么样的项目
+你就可以说一下
+你说 I have done
+I have worked on upgrade
+or roll out project before
+你做过什么项目
+你就说什么项目
+I have done
+I have worked on the
+operation
+Maintenance
+Maintenance
+OK
+What is the support
+Support project
+I have worked on the
+Operation and
+Maintenance project
+My strength
+is translating business requirements
+into system design
+and working closely with technical teams
+to deliver stable solutions.
+Okay, very good.
+好,那我们第二个呢就是说
+我们就是self introduction
+我们要自己先准备好
+要把它念熟
+这个就是也是一个
+作为你们一个课后的练习
+你们就是下去要练习一下子
+第二个呢
+我们就是要就是在interview的
+怎么样子能让他们就是对你有深刻的印象呢
+就是面试官呢
+他们喜欢比较有逻辑性的回答
+那我们比如说就要有步骤
+first, second, finally
+或者third, before or after
+好
+那我们就说first
+比如说你怎么去处理一个ticket
+first I analyze the business issue
+OK,第二,我查看SAP系统设计和维持统统
+最后,我提供了解决筹
+和证据与企业
+他们很高兴
+我的解决筹
+OK,好,那我们就可以看到
+就是说我们在讲话的时候
+要有一个顺序
+东一下子西一下子的话
+可能就闹得别人搞不清楚
+你到底现在在什么情况
+还有就是在面试的时候
+那在最后的时候
+别人会问你一个问题
+就是说你对我们有没有什么问题
+你们通常会怎么回答
+目前下面的情况
+What's the condition of this project?
+What's the condition?
+或者what's the status?
+What's the status of the project?
+OK, so that's good
+那你很好
+就是说你会问问题
+那Daisy,你会问问题吗?
+不会问是吧
+No questions
+Yes
+你如果说没有问题的话
+他们会有点点失望
+你知道吗
+你知道为什么
+他们就是
+他们会觉得你对这个
+You're not very interested in my project at all
+你对我的
+对我的这个项目
+好像一点都不感兴趣
+No
+这样就不太好了
+那我们其实要准备一个问题
+你可以问说
+What's the stage of the project?
+How many people involved in the project?
+我们就是以前学过的就是
+就是有多少项目啊
+或者在什么阶段啊
+我们都可以问一问
+好吧
+OK
+好
+那我们还有呢
+就是在叙事的时候
+我们都是要变成一个
+Good story tailor
+就是变成一个会讲故事的人
+好那不管是面试也好
+还是你们就是
+还是会去找投资商也好
+那马云他创业的时候
+他很会讲故事
+就邀请了18个
+18个罗汉来就是参加他这个
+参加这个新项目对吧
+好所以都是
+都是这个会讲这个未来
+未来
+未来吧
+未来汽车
+也是就是去找投资商的时候
+他可能就是找刘强东
+做投资的时候说
+可能讲了十分钟
+然后刘强东说
+用了三秒钟说yes
+对所以就是说
+我们要学会讲故事
+然后你讲故事讲得好
+然后让人印象深刻
+其实他们在心里头
+就非常会认可你
+好那我们怎么样
+去讲一个故事呢
+好那我们请一个同学
+来读一下的
+其他同学听一听
+好吗
+等于你来读一下
+I want to try
+OK go ahead
+The star method
+The star method of interviewing
+stands for situation, task, action and result
+and is a structured approach
+to answering behavior interview questions
+by providing a clear contact
+for our past experience
+outline the specific task involved,
+telling the action tag,
+and finally explaining the positive outcome achieved.
+Essentially, it helps you tell a story about a relevant experience
+to showcase your skills and abilities,
+Break down the of the star method
+OK 好
+刚刚看了这篇文章的话
+OK 看了这个介绍的话
+好 那我迅速问一下问题
+OK
+Kathy 不方便说话
+好 那我问一下萌萌
+Yue
+Yue
+Yue
+Yue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yue
+
+
+
+
+
+
+
+Yue
+Yue
+OK
+So it means situation, task, action and the result
+OK
+OK
+OK
+OK
+
+OK
+
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+那你就描述一下
+在项目中什么阶段
+这个阶段呢
+比如说蓝图阶段
+或者在项目
+像我们Go Live阶段
+然后有什么样的Task呢
+就是说或者我在
+Clean up the muscle data
+在就是清理出数据的时候
+好然后我发现了很多
+这个bad data
+the quality is so bad
+OK
+好然后就是这种情况之下呢
+那你可能要去
+花很多时间去做这个
+做这个清理对吧
+然后就是你可以
+可以说是那个
+跟用户一起采取行动
+什么行动呢
+就是说就是加班啊
+或者就是说
+就是或者跟developer
+要developer开发一个小程序
+把这个
+那些就是by the data
+去clean up啊
+等等
+然后result就是说
+这个你这个其实
+就解决了这个
+data的问题
+然后你的那个
+goal life successfully
+什么
+something like that
+就是有什么样的结果
+好的
+这是一个
+structured approach
+那我们先来描述
+情况
+然后再提供了
+什么样的这个
+任务
+就是比如说很紧急
+然后你采取了
+什么样的行动
+然后得到了
+一个什么样的结果
+OK
+好
+那我们要就是说
+讲故事的时候
+我们就要用这种
+方式去讲
+好
+那我们来看一个图
+OK
+好的
+situation包括一些什么呢
+include time
+place
+background
+OK
+T是什么Task
+So what's the target
+What's the requirement
+就是需要什么
+比如说我们那个项目经理就
+需要我们在两天之内
+要解决掉这个Data的问题
+对吧
+好那你采取了什么样的行动
+那具体执行了什么呢
+你就是可能把Data
+可能就是分组
+然后就是有些Data呢
+比如说是
+静态数据的MASData
+有些是教育数据的Data
+Balanced Data
+那你就分一分
+然后你克服了这些困难
+就是说把它那个对战或者对评
+什么的
+就是说你看看你自己怎么讲
+好那得到量化一下子
+就具体得到了什么样的结果
+就是说那比如说三天之后要go live
+然后你这个master data
+就是得到了这个UAT
+get the UAT approved
+OK得到了UAT approved
+然后这个上线的就是没有受到影响
+或者就是上线成功
+好吗
+这个就是一个HTA的一个法则
+好
+那这里呢就是刚刚进一步的就是在讲了
+就是你碰到什么样的问题
+然后就是你讲的精彩一点
+就是让别人来了解当下的
+就是有什么样的一个scenario
+有什么样的一个情景
+好
+那这个关键的这个SAT的这个法则呢
+这是在很多地方是应用的
+就是这个呢
+就是可以告诉我们
+就是你是怎么样子
+就是去克服困难的
+就是通过这个
+别人问你
+你讲这个故事
+然后HR看看你的这个能力
+就是可以分析出你的这个
+解决问题的能力
+然后你的思路是怎么样的
+然后你在讲故事的时候
+最好就是细节化
+就是就不要讲太泛太宽泛
+那这个我们是
+那我们现在来就是来练习一下子
+就是会把这个situation
+task action和result来讲一下子
+好那我们就举一个最常见的一个问题吧
+就是你在项目中碰到最困难的问题
+是什么
+然后你怎么去解决的
+What's the challenge problem you faced before
+and how did you solve the problem
+好
+那我们请月月同学
+你来讲一个story
+虽然你的那个经验不是很足
+但是我想你可能
+进到项目里面
+你可能也是很慌的
+也是会碰到很多问题的
+对吧
+嗯
+嗯
+其他同学的话
+你要准备
+也要准备同样的问题的话
+你就把你的关键点来写出来
+你就是拿一个小本本
+或者就是指我们都养成好的习惯
+就是在别的同学在讲的时候呢
+你们就把你自己的situation
+什么situation
+快速脑子里头快速想
+快速想
+然后就是关键字是什么
+在
+在
+在
+有一個商品要求
+about the
+um
+um
+um
+什么东西
+就是
+是结成本的时候
+哦
+the cost settlement
+right
+cost settlement
+when the cost settlement
+the price
+settlement
+settlement
+the price of the material
+is zero
+so the
+settlement
+the settlement
+在零,
+他們不懂
+他們不懂
+這問題是
+這是我的第一次
+在這問題
+所以
+首先
+MB51T code
+MB51T code
+MB51T code
+to track
+to track
+the
+嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯
+他在SD module
+他在SD module
+所以他
+他
+他
+他不给
+他给了
+他给了
+他给了
+settlement to solve it.
+Lastly, I ask
+I call phone
+for my
+training teacher
+he, she is
+she is familiar with
+MMSD and FI
+Integration
+You ask help from the senior consultant, right?
+Yes
+So this is your action, what's the result?
+所以我们回到我们的文件 关于这个材料
+所以 这个事件 结束了吗?
+她发了一些咖啡的官网
+Official SAP Notes
+The Notes
+Provide
+Provide a solution
+is to reverse
+all the documents about the material
+and to do
+Controlling document
+Controlling document
+OK, that's good
+好,那谁还愿意来分享一下子
+就是说你怎么碰到什么样的困难
+然后你怎么解决的
+So who want to try?
+Next is
+I want to try
+Okay,萌萌, okay
+I want to share my recent work
+I have worked for a report
+for a report development for a war
+一月,所以我非常在忙
+它是在製作的
+製作的製作
+我们要提供这製作
+製作的製作
+instead of manual.
+Yeah, it is very difficult.
+This is very difficult.
+What is the start?
+I want to say the start.
+Oh, what is the start?
+Okay, target.
+Oh, yeah, the target.
+OK,the target is to provide the course rollup report
+report useSIP instead of a manual.
+for in order to design this report,
+I arrange a lot of investigation with our users
+and to know what is the and to chat with them
+and to understand how our users
+to complete their work, this work,
+use Excel.
+Yeah, and there are some more special business
+像是
+运行的
+和一些
+和一些
+和一些
+和一些
+和一些
+和一些
+the calculators are cursed yeah and after i uh invested or investigate her the business
+i started to write the functions specification okay and uh and i communicate and i
+我和我设计和发展的
+我设计和发展的
+因为这个发展是很大的
+所以我设计
+我们发展的发展
+step by step.
+custom report.
+yeah
+for example
+we completed
+the whole
+structure first
+and added the function
+in this
+after we completed
+one test and
+we start the next
+function test
+在最終的,在這月,這個報告是
+是上來的
+我們用了
+Go Live
+Go Live
+我們的用途
+用這個報告
+他們確實是
+他們確實是
+他們確實是
+OK
+Introduction要熟
+就能要说一分钟
+就是能熟练的说
+好吗
+好
+这个是要靠大家去练习
+好
+那我们今天这个课呢
+就是基本上就是
+我们要来总结一下子
+我们这个初级班的SAP
+我们学了一些什么东西
+然后我现在是把我的这个
+现在是把我的这个SAP的这个界面打开了
+好
+那我们来看一下子
+就是我们学过的一些东西
+我们来看一下子
+那如果我要在这个地方
+这个地方叫什么
+Do you still remember
+Commonfeld
+Okay very good
+Okay
+这样子呢
+这些是什么
+Icon
+就是一些那个图标
+Okay
+好那我们这边有
+Favorite right
+Folder
+Favorite folder
+那我们还有一些
+就是说
+在这个 这下面的话是什么
+什么吧
+还记得吗 我们第一节课
+学的
+Status
+Status
+Status
+好
+那我们就是
+如果是这边的话 叫什么
+Status
+Manual
+Yeah, you can see this is manual
+Okay
+Screen
+Screen bar
+Screen bar
+Okay
+Okay
+Okay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+如果我乱填填的数据不对
+然后这里会跳出一个错误的信息
+错误信息我们怎么说
+Do you still remember?
+Aral message
+OK, pop up error message
+OK, right
+Pop up error message
+OK
+If I want to go back
+Just click back
+Click the green icon
+OK
+So if I want to go to the table
+I want to see the field name
+So do you know how
+how do you check the field name for example okay so if I go here
+oh sorry so if you don't if you get this error message you don't have authorization
+in such case how can you apply your access or your authority
+我会进入数53
+N
+SUS53
+Capture
+Screenshot
+toBasis
+And send it to
+Basis
+Basis team
+OK
+OK
+OK
+
+
+OK
+OK
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+OK
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+so for example if I want to see the field length how can I check the field length so if I do the
+inbound interface okay so I I'm writing a functional specs right now so I want to find some
+像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用的,像是用
+所以你看到的距離,距離的距離,而且它有距離的名字,它有距離的距離
+OK,so do you know how can we find the primary key?
+the primary key is back
+Uh-huh,company code or document number,physical year or something like that,right?
+如果我们想看,如果我们再次几个点,
+你也可以看到的辨语的辨语。
+好,这是一个很基本的功能。
+我还有一个问题给你们,
+你们都知道SAP version吗?
+最近有个学员,
+SAP自己做了项目里头
+S4HANA哪个版本说不出来
+然后人家就怀疑他没有做过SAP了
+你知道
+Do you know how can you find the version of SAP?
+In the environment
+Environment?
+Here?
+System
+Try to system
+Button
+!
+OK, status, very good.
+Allow.
+Oh, what's going on?
+Not here.
+System status.
+我需要拒絕。
+我需要拒絕。
+我需要拒絕。
+我不是很熟悉的。
+你只要拒絕。
+為什麼會一直在拒絕?
+SAP support website。
+OK,so if you already know how to check the version of the SAP,so that's fine,OK?
+So I have another question,so last time I told you,
+last time I told you how can you find,how can you create the distribution list?
+我给你们演示了吗?
+我给你们演示了吗?是O23?
+有,有的演示
+OK,so here,so I have asked one student to introduce how can you create the distribution list,OK
+好,我就在这前台操作,然后你们来讲,怎么去创建一个这个,就是互相配合,我在做这个的,在做SO23的时候,你们要来说就是这是干嘛的,然后要输入什么内容
+OK,互相全
+It is used to create an email
+Email distribution list
+Email notification
+就是通知
+Especially it's used for interface
+OK
+So for example
+You run the batch job
+The file is failed
+OK
+这个文件就是失败了
+失败的这种情况下的话
+我们就要用SOT
+创建一个这个
+email的notification list
+email distribution list
+就是会分发给这个
+各个邮箱的人
+然后如果你这个文件有失败的话
+他就会发一个email给你说
+这个文件失败了
+什么什么什么文件
+然后失败了
+然后你这话
+你就要take action去处理
+就是你要去采取行动去处理
+好
+那SOST
+那我还说了一个SOST
+对不对
+记得吗
+就是你的文件
+如果是就是说通过这个SOST
+如果它没有送出去
+没有直接送出去的话
+你可以在这里run一下
+你可以在这里执行
+click a run button
+啊哈
+send process for selection
+and then you will get email
+OK
+so recently we use a lot of the
+we use this function
+you know to check the file
+we didn't get an email
+during a specific time
+然后
+business doesn't know
+whether the file is passed
+successfully or not
+so
+actually
+so have you ever
+used the ALF
+就是
+那个
+如果就是那个文件有错过的话
+要去一个ALF
+那里头去处理
+你们没有用过对吧
+用过没有
+没有
+那是英镑的
+就是说你有些files
+比如说有些信息不对的话
+它就会丢到那个ALF里面去处理
+OK
+那你们有用到这个Fury
+有用到Fury没有
+OK
+OK
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!
+OK
+
+让我按一下
+OK
+So what's the function did you use two years ago?
+So this is also interview question,
+OK,have you used the SAP Fiora before?
+I have no idea so I don't think they have authority.
+We can click on manuals.
+We can click on manual select.
+你用過什麼功能?你可以說是
+Oh, I use 什麼什麼什麼 report也行
+或者我用了什麼什麼去創建這個PO也行
+你就說你用過
+就...
+I just say
+You see
+OK,那是好
+登陆的界面我们自家能说出来
+OK
+然后再到这个我们怎么去
+log in log out
+这些基本的要会说
+in store
+你第一天到公司的时候就要in store
+gray right install
+OK
+好那我们呢就是还会有
+讲就是
+ECC的
+ASAP
+Methodology
+OK
+ASAP Methods
+好 那我们知道这有
+5 Steps
+有5个阶段
+那我们这5个阶段
+我们要熟悉
+Project Preparation
+Business Blueprint
+Realization
+Final Preparation
+Go Live and Support
+OK
+好 这个我们要熟
+这个也是面试的问题
+OK
+那下次有可能我就会问这个问题
+OK
+好 那我们知道每个阶段具体做什么事情
+然后这里面的一些比较常用的词
+我们要学会
+比如说identify
+那我们同学也刚刚用上
+identify business requirements
+identify issue
+OK
+好那determine
+determine the solution
+或者critical
+critical business process
+对吧
+关键的用户的这个信息
+好这些词都是非常棒的
+align with
+align
+这也是常用的
+stakeholders
+OK
+Initial
+好
+那我们来看这个
+Customization
+Deployment
+然后
+Configuration
+Conduct
+Conduct
+Different test
+UAT test
+Food test
+SAT test
+对我们有各种各样的测试
+那我们
+我们知道测试有包括哪些
+好
+那在这个go life的话
+我们有adjust an issue
+这是超级会用到的词
+conduct又来了
+ongoing
+就是持续的
+issues
+assessment
+你们会做yearlyassessment吗
+就是年中的这个assessment
+我们都每年要会去做这个assessment
+这个assessment的话
+会给你的这个bonus挂钩
+就是你的奖金挂钩
+好
+那我们也学了一些这个会议
+对吧
+那我们知道在会议的时候呢
+我们要去
+开会的时候
+我们要怎么去起头
+起头
+这个跟那个面是一样的
+要先去grating
+就是跟面打招呼
+那就是
+要先做一下自己介绍
+然后就是说
+要谢谢大家去
+I appreciate your time
+to join the meeting
+so today we are going to talk about
+the interface
+between SAP and Golden Tech System
+我们叫属
+这个开会的一个过程
+在外界的话是开会天天开的
+对就是你不管你是一个
+Functional Consultant
+还是一个Project Manager
+就是我们在会上
+都是会有一些问题的
+那就经常我们要去
+经常问题就是说
+any road block
+就是你会有road
+就是路
+blocker就是障碍
+你没有什么障碍
+那比如说
+你们要分享一下
+平时你们
+遇到什么样的问题
+那你需要项目经理
+去给你找什么样的resource
+他们可能就会去帮助你
+好吗
+我们开会的用语
+我也发过给你们
+就是那个90句还是多少句
+你们那个要看熟
+OK
+好
+那我们要学会说background
+会说这个dive into details
+那我们要经常就是开会的话
+我们也要去train你的用户
+那train用户的话
+我们要去present your solution
+好 那我们也会有一些互动环节
+就是说
+Do you have any questions
+Or do you have good ideas
+So far so good
+Do you have any other perspectives
+OK
+好 那我们就可以
+然后结束的话
+wrap up
+OK
+好 那closing的话
+就是再谢谢大家
+好 那我们还学了一些这个
+核心模块的这个
+end-to-end cycle, right?
+Procurement cycle.
+Procurement cycle.
+Procurement cycle.
+Procurement cycle.
+Procurement cycle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+虽然我们是FICO
+但是我们也要了解
+他们的这个流程
+他们这些流程的话呢
+我们要脑子里头有图
+要能说得出来
+好吗
+然后关键点
+integration的部分
+产生什么样的
+accounting document
+这个也非常重要
+这个也是经常面试
+会问到的问题
+然后配置就是接口配置
+这个比如说就是OBYC
+这个你要能说得出来
+好
+那整个的过程呢
+就是有些关键字呢
+我们就是要能说得出来
+Submit啊
+Submit whole work啊
+Evaluate啊
+这些词都很好
+很棒的
+好
+那我们也简单介绍了一下
+这个Golden Text的这个
+Inbound Outbound Direction
+对吧
+也讲了这个PI
+也讲了这个Data Exchange
+OK
+好
+那我们也要知道
+这个设计一个好的一个
+interface 的话也是非常重要的
+那就是也刚刚
+包括了这个功能
+就是email的一个功能
+或者 badge job
+好 那我们
+还学了这个 OTC
+在国外的话
+我们一般不会说 SD
+我们就是 OTC
+明白吗
+对 如果是那个
+财务呢我们就叫 RTR
+OTC
+RTR
+Request to report
+Request to report
+OTC呢
+Order to cash
+OK
+就是SD
+那在国内的话
+可能是SD
+但是我们也要有这个概念
+就是人家说OTC的时候
+你就马上想到
+这个是
+这个是SD的
+好
+那我们SD呢
+也是要知道
+它的一个大概的流程
+然后关键点呢
+就是产生什么样的
+accounting document
+我们这样能说出来
+OK
+OTC和这个FICO的
+结合点的配置
+叫什么
+VKOA
+非常好
+好
+好
+那我们也这里
+有一些那个
+比较好的单词
+比如说
+Keep track of
+或者Track of
+Track
+就是追踪
+这些都挺棒的
+好那我们也学了这个interview的一些技巧
+那我们要认识我们自己
+我们的强项在哪里
+然后我的弱点在哪里
+然后我的机会在哪里
+对威胁在哪里
+我们这个也是一个比较流行的一个工具
+SWOT你如果就是跟这个做销售啊
+或者跟这个做市场marketing的人
+也可以聊得来
+就是说你们用SWOT去分析这个市场
+对吧
+好 那我们这里主要是用于分析我们的个人
+那这个问题呢也会经常有
+就是为什么我雇佣你啊
+So why you think you are the best candidate
+OK
+你为什么觉得你自己就是最好的那个候选人呢
+你就要把你自己的这个优点夸一夸
+好吗
+好 那我们就是OTC完了之后呢
+我们还有这个MM和SD integration
+那我们就讲了一个比较重要的概念STO
+OK
+好那就是STO的话
+我们就是能说得出来这个它几种方式
+然后还有就是MTO和MTC的区别
+这个其实也是
+STMM他们的面试的时候
+可能会问到的问题
+FICO这边的话了解清楚就行了
+那么还就是讲了这个FICO的这一个模块
+然后overview什么
+你要能说出来
+what's the difference between FICO and CO
+当然这是很简单的
+对然后里面的字模块
+你也要能说出来
+比如说你熟悉哪些模块
+哪些模块你要能说得出来
+好那有PP
+PP的话呢我们要了解PP是主要是做什么的
+然后PP和这边的三大这个工厂的这个方式
+好那我们也可以看到这个PP module的话
+它也是它的大概流程是什么样子的
+然后它的主数据一些包括跟我们这个CEO的话
+比较相关的主数据
+那因为我们这个FICO是末端
+我们要追远追上去的话
+比如说Work Center这里面就有Cast Center对吧
+好那我们也了解了就是一些
+SAP的一些基本的一些术语
+然后什么BTP啊
+这个都是现在比较流行的
+就是未来以后就是开发会比较少
+都是用这个我们尝试去用BTP去开发
+然后一些技术术语
+这个作为了解就行了
+对
+然后PP和FICO的这个integration
+然后会产生什么样的凭证
+这个也是要基本能说出来
+MM和PP的这个integration又是什么样的
+好那我们也学会了要怎么写功能报告
+这个在国外的话
+在global项目里面是对文档是要求挺高的
+所以就是我们要有能力写功能
+写好的那个功能报告
+特别是逻辑要清楚
+然后呢我们要知道这个W
+Rexive
+我们知道Rexive代表什么
+今天可能脱谈五分钟吧
+Rexive你还记得吗
+Workflow
+Report
+Infice
+Conversion
+Enhancement
+Forms
+OK,非常好。
+我认为了认识。
+OK,nice。
+OK,那我们还是学了一些这个SAP的就是升级到S4HANA以后有一个叫ANGEL Method,敏捷法。
+好,那我们还有就是,敏捷法里面呢就是我们有个重要的两个概念,一个SPRINT就是时间概念,还有一个叫
+人的概念叫 Scrum
+以前叫 Product Backlog
+然后现在就 Spring Backlog
+它就会细分
+然后一般这个是一到四周 Sprints
+OK Sprint
+好 那我们也学了这个 Active Method
+OK 什么叫
+以前是 Active Method
+然后有六个步骤
+那跟 ECC 来比的话是稍微有不太一样
+这个敏捷法呢,里面它是用了,
+Active Method里面其实用了Angel Method,
+又引用了那个Angel Method,OK。
+好,那这六个阶段的话我们要大概清楚,
+然后我们,
+我们也比较了ECC和S4HANA的区别,
+对吧,那有Table的区别,
+那比如说FICO这边的那个
+ACDoc和MM那边的一个总表
+对吧
+好那我们也知道这个RUN MRP
+是要实时的
+还是在工厂级别还是怎么样
+还有它的那个Lens
+对吧
+还有它的Performance
+RUNS FASTER THAN BEFORE
+因为它已经不用这个
+它用的
+它读数据的时候
+就是有一些RUN的数据
+它是不读的
+对吧
+嗯
+FollowMove instead ofLowLive
+我们要去做一个source field和target field
+去做这个mapping
+OK
+好 然后就是我们要学会去讲故事
+今天呢我们就要学会讲故事
+OK
+就是今天讲的这个重要的方法叫什么
+STAR
+OK, situation, task, action, result
+OK, very good
+好,那我们在回答问题的时候呢
+我们要有这个逻辑性
+first, second, third, finally
+OK, before, after, during, something like that
+OK,好,那我们就多做一点练习
+好,so far so good
+好,你们的homework呢
+就是要准备一下你们的resume
+还有就是我会发一些interview question
+你们下次来就是要练习一下
+好吗
+老师我有个问题
+如果说假如说我把上面的面试的问题都背下来
+通过面试可能性大吗
+大啊
+如果你把那个面试的主要的问题的话
+至少就是你可以很多这个behavioral question的话
+我们其实可以是可以
+就是说至少就是说
+我不管你技术问题OK
+就是behavioral question的话
+你能答出来的话就很棒啊
+那会不会就是说
+他们会问一些就是
+就是很难的那种问题啊
+就是可能不是一些常规的
+非技术是吧
+就是不是常规的
+就是
+没有
+基本上这个behavior question的话
+就那些
+因为我也做过好多一对一的辅导
+然后问他们
+他们也给我反馈
+就是有人去面试这个
+其实应该也算是外企吧
+就是联想的
+联想外企它是要用英语的
+然后我就问他
+我说问了是什么问题
+然后他就说
+就是你说的那些
+那我不知道他是真的
+还是就是敷衍我呢
+还是真的
+但是现在发展的挺好的
+他现在又进了别的外企了
+又不停的换外企
+知道
+好 还是对自己要有点信心
+对
+Be confident about yourself
+OK
+好 就即使
+即使不会回答的问题的话
+你也可以就是说
+绕一下子
+就是说我有类似的这个经验
+对吧
+就像刚刚interview
+你没有做过那新的
+就是我有类似的经验
+你说你这个
+可以把你过去的这个经验
+可以去apply到那个new interface
+就是往自己的方向走
+或者就是说
+你还有一种方法呢
+就是clarify
+就是说那个问题
+oh I'm not very clear about this question
+so are you talking about something
+就是你要去挖掘
+要他来说
+再来说
+他在说的过程中
+其实你就要飞快地讲
+对
+好吗
+你就往自己说
+他们要看你的学习能力的
+就是说
+我就像我们老顾问
+很多事情可能也没有做过
+对吧
+但是你可以说
+你用resource
+或者什么样的方法
+或者什么样
+你是可以去解决掉
+这些问题的
+好
+那时间的关系呢
+我们就先结束
+今天
+so let's wrap up
+today's class
+ok
+so see you next time
+see you next time
+see you
+ok
+have a good day
+bye
+bye
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目

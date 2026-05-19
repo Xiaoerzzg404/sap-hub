@@ -1,0 +1,3950 @@
+请不吝点赞 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅
+I'm going to turn it over to you.
+
+我的学生是一个学生的学生吗
+我的学生是一个学生的学生
+学生的学生
+学生的学生
+学生的学生
+学生
+学生
+学生
+学生
+学生
+学生
+学生
+学生
+学生
+OK, great
+Long time no see, how is everything going on?
+Everything is OK
+How about you?
+How about your project?
+So last Saturday our project went live successfully
+But we really worked hard
+我们工作到一半夜,一项在早上
+它是很暗
+是的
+所以 Meng Meng,你怎么办?
+我在厕所
+我做什么?
+我做了我的工作
+做了什么?
+我的工作
+牙齒
+oh okay oh you see the dentist so let me tell you doctor will be different okay so dentist okay
+you can see my screen rightoh i can't say okay okay dentist okay continue so do you have any
+所以,你工作了?
+你工作了?
+你工作了?
+我工作了很忙,我準備了一份工作
+我需要做了一份工作的工作
+我需要寫了一些文化
+to interact with the development functions.
+Yeah, last week our companies have heard several surveys
+我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选与我们的用选�
+I began to write the function,FS.
+Yes.
+Okay, what's the development?
+Do you still remember?
+RASIF, so someone asked me,
+so I should pronounce it as RASIF,
+or I should read each letter.
+RASIF.
+Okay.
+我聽到英文的
+英文的英文文字幕
+轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻轻�
+So just tell me some ideas. How do you design your test script?
+So give me an example. How do you design your test script?
+测试的时候
+你的头脑里头会想一些什么样的
+这个词
+就是你会想到一些
+什么样的测试情景
+so
+I think
+I will
+I will think about the test
+the scenario
+the business
+function
+and
+business
+stream
+的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商量的 商
+Langacy system?
+Langacy system, yeah.
+啊哈
+And we will write the test screen,
+such as the unit screen,
+unit test screen.
+And the
+基層的是怎么说来的?
+基層的测试是
+Integration test.
+Oh,Integration test.
+Integration test.
+And the functional
+development tester
+so any other
+i think we should prepare for the tester data first
+tester data okay mock data right
+just the money money the suji data test or mock data
+yeah that's a good point
+Katy
+Ketty, do you have any idea about test script?
+So how do you prepare your test script?
+So for the test scenarios, we will test the regular or standard business process, right?
+Standard?
+Yeah.
+所以,how about some special?
+Can I say some special test scenario?
+一些特殊的,我们还要做一些什么
+我们要跟去
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+是在试图中的试图中
+嗯嗯
+OK
+如果试图中的试图中
+如果试图中的试图中
+如果试图中的试图中
+试图中的试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+试图中
+它是通過的,我會送一個信號給
+去用者,讓他們確實是測試,
+讓他們確實是測試的,
+然後我們可以確實是測試的,
+OK
+For their review, right?
+Review
+就是要他们去看一看
+Review
+好
+那我们这里面还有一个就是
+我不知道你们会不会做一个
+Negative test
+Yes
+We will
+就反向测试嘛
+Negative test
+对,负面测试
+那比如说
+I will do the pressure test
+我们的公司是非常大
+所以一些专业的专业
+有很多材料
+所以我会用这专业的专业
+如果专业是非常大
+也许是很大,
+and the system can't bear this pressure,
+就是直接崩掉,dump,
+this system is dump,yeah.
+OK,OK,I see.
+OK,so那我讲一下,
+我讲一下是, I give you an example about negative test, okay?
+好, for example, so if you run the report,
+maybe some document is deleted,
+就是也许有些文件都已经是,就是删除掉的,
+deleted document, okay?
+好,那在我们的functional specs,
+可能我们没有想到会去exclude the deleted document,
+就是排除掉这些已经删除掉的文件,对吧?
+那我们可能就是有意思地去create
+deleted document and test and run the report
+and see whether the document or the amount
+is included in the report or not
+明白吗
+就是比如说有的那个delete掉的科目余额
+就不应该再包括进去对吧
+我们就可以创建一个这样子的一个这个凭证
+或者就是我们会找到一个这样的凭证
+把它delete掉
+然后我们在执行这个report的时候呢
+看看这个金额在里面还是不在里面
+这个就是属于这个
+比较特殊的这个negative test
+好
+那就是最近我来再分享一下我们的一些工作吧
+就是最近的我有一些
+有一些那个开发的那个custom program
+好
+那就是我们的
+其实我们都已经project已经go live了
+但Business has some new features, okay?
+So they ask us to add the new features.
+So what's the new features?
+So they request us to,
+they have the new function, excuse me.
+Hello, what's up?
+I can't hear.
+Okay, sorry.
+So someone called me.
+那就是他们要增加一个新的功能
+they added new features
+new features
+have you heard about the test run
+I will ask why
+the need to add
+these new features
+why they didn't
+why they didn't provide
+these requirement
+在最初的工作
+我明白
+我明白
+你知不知道
+在一家的工作
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+我知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+你知不知道
+另外一個bug又跑出來了
+就是
+就是很容易去把那个逻辑就是把它打断了
+所以
+所以
+所以,so my leader told me,so that's why they keep you work here.
+So that's why you have a job here.
+因为这个最近裁员也很多,但是我觉得SAP组还很好。
+对,像我们那个企业里面才300个人,才1000个人,
+所以我觉得我们IT,SAP的话还挺幸运的。
+OK,so far so good。
+好,那我刚刚讲了一个TESA RUN,你们知道TESA RUN什么意思吗?
+有没有人执行过这个折旧?
+对
+对
+对
+对
+
+对吧
+
+对
+
+对
+对
+
+对
+对
+对
+对
+
+
+对
+
+
+对
+
+对
+
+对
+对
+
+对
+
+对
+
+对
+
+对
+
+对
+对
+对
+
+对
+
+对
+
+对
+
+
+
+
+
+
+
+officially post
+former
+postered document
+we can't choose one document
+or one assets
+Tesla run
+Tesla run的意思就是说
+模拟
+它不是正式的一个执行
+那比如说我们在
+在做这个
+我们在做这个
+折旧的时候
+那我们就看看这个
+先要模拟一下
+看看这个折旧的这个金额
+对不对
+对吧
+这叫Tesla run
+模拟
+那就是今后
+同学呢
+你们在做一些开发的时候,
+你们可以就是,
+因为你们从我这里得到一些经验,
+就是有一些test run,
+客户有一些新的要求,
+但你们可以记着,
+就可以提前跟用户问一问,
+因为有的时候用户想不到这个东西,
+然后你就可以帮他们想一想,
+你说你们需不要这个test run,
+那你就可以跟他解释一下,
+what is test run?
+OK,
+so if they uncheck,
+so it's officially run,
+所以,FIR  document, depreciation,
+或一些 report 會 officially run.
+你明白我的意思嗎?
+我明白,所有我的功能,
+我設定是模特兒的課程。
+我認為這是非常用的功能。
+好,Taylor,你在你的实际工作中你有用到一些
+negative tests吗?
+So have you ever conducted a negative test before?
+In the development test, I will use the negative test,
+and I will make a lot of the data
+and
+data, yeah
+a lot of data
+and
+it's very
+unusual
+data
+to test the
+signal
+test the
+function
+Okay
+that's good
+好
+那我们在开题
+你听天好像说的比较少
+好
+那我们今天呢
+我们要学一些这个新的一些
+SAP的glossary of term
+glossary它就是
+意思就是按照你这个排序来学一些
+按照ABC这个排序
+我们来学一些
+就是SAP terms
+OK
+好
+那我们先看一看这个
+ABAP test
+cockpit
+是舱
+就是测试舱
+那就是这个测试仓
+那我们请一个同学来读一下
+Katy
+Could you please read this paragraph?
+OK
+你能看到吧?
+可以
+A bad step
+COPKI is a framework built upon
+Pool Inspector Chest
+Pool Inspector SCI
+Which introduces the possibility of
+Strike's blocking behavior in case of high priority
+SEI 以为 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的 核心的核心的核心的核心的核心的核心的核心的核心的核心的核心的核心的核心的核心核心的核心核心的核心核心核心核心核心核心核心核心�
+我需要订阅一下
+我需要订阅一下
+你可以订阅一下
+你可以订阅一下
+你可以订阅一下
+好的
+好的
+好的
+Document Services
+ADS
+是一种
+可以订阅
+是在
+Generative
+adopt
+Lycer Code Designers and Business Days
+Information were
+provided by
+applications about
+REP
+DinePro
+OK
+好 没关系 我们就学一下它的单词吧
+ABAP呢 它是有个测试仓的
+那在这边
+我们FICO这边呢
+也有一个在月节的时候
+我们有一个月节仓
+对吧
+Clothing Cockpit
+那这是长的
+我们大家明白什么意思
+ABAP呢
+Test Cockpit is a Framework
+它就是一个平台
+那可能我们中间没有人是
+Developer
+那可能对这个就不是很理解
+这是一个这个ABAP
+他们常用的一个工具
+Brainwork
+就平台对吧
+Build upon code inspector checks
+他们就用于这个去检查他的这个code
+The code inspector,SAI
+which introduced the possibility of strict blocking behavior
+in case of high priority
+就是说如果有一个超高级的这种错误的出现的时候呢
+他就有可能就会限制这种
+就是去block他的这种行为
+然后会去建立一个这个比较复杂的这个流程
+工作流
+然后就可能会就是
+如果这有意外的时候
+如果有意外的话呢
+那就是
+就是quality manager
+就是指检的那个经理呢
+他就会可以去
+有这种工作流
+可以去检查这种意外
+然后这个ATC check的
+那个结果呢
+就是说他在这个
+CHARM的这种
+我也不知道CHARM什么意思
+CHARM的这个
+指定的这种工作里面呢
+他去可以block的
+可以就是说可以屏蔽掉这个相关的一些那个传输的一些检查
+好 那我们来这个可能有点绕啊
+那我们来学一下子这里头的一些比较常用的一些单词
+好 那framework 那我们知道对吧
+好 那我们就是建平台的时候
+那如果我们是GTS的话
+我们也可以说这是一个framework 对吧
+好  possibility 那就是可能性
+那这个形容词呢
+adjective
+是什么
+怎么说
+行容词
+possible
+possible
+possible
+possible
+那前面加im呢
+相反的意思
+impossible
+OK
+behavior
+behavior就是行为的意思
+那我们在面试的时候
+我们会分一些
+会不会有一些behavioral question
+就是一些行为的
+比如说你是不是一个good team player
+你是不是一个很好的团队的合作伙伴
+或者就是说你是怎么去抗压等等
+这都叫behavioral
+就是行为的这些面试的问题
+In case of high priority
+那如果是
+那这就是说是紧急
+就是分级
+那我们做任何事情的话
+我们也最好是来分优先级
+那如果是低级的呢
+Law priority
+中级呢
+Semi
+不是Semi
+Semi
+Middle
+Middle
+Middle
+Middle
+Middle
+Middle
+M-E-T-I-U-M
+M-E-T-I-U-M
+Proverty
+Karty,你收到了一个
+Ticket
+OK
+你问你的用户
+M-M-M
+你说你这个是
+优先级是什么样的
+或者就是高級呢
+還是中級呢
+還是低級
+中級
+OK
+這個是不是經常用到
+What's your priority?
+你要講一點前景
+說我得到了一個什麼樣的
+那個Ticket
+I receive
+Tickets
+我可以说一个
+ticket
+转给你了
+你说
+a ticket
+a ticket assigned to me
+so i'm not sure
+this ticket is
+low priority
+or high priority.
+So they will ask you what's the ticket.
+So you describe what's the ticket.
+但是就是拿你工作中
+實際上碰到的情形
+你收到了什麼樣的Ticket
+你來描述一下
+OK
+I
+I received a Ticket
+of
+of
+righton
+of
+
+
+
+
+
+
+
+I want to know the ticket is the high priority, low priority or medium priority?
+Mama,你来回答
+Okay, the ticket is the high priority. It is mainly used for final monthly ending clause.
+so can you help me to deal with it immediately?
+Of course, sir.
+好的,我要什么?
+I will.
+I will take care of it.
+我要我来处理,或者我来弄,或者我来什么?
+我来什么
+yeah I will
+handle it
+可以吧
+我们之前学过对不对
+之前学过东西我们都拿来用好不好
+好的
+establish
+establish
+那我们还可以用什么别的词来替代一下
+taylor
+build
+或者什么
+Create
+Create
+Create a workflow
+for possible
+Exceptions
+Exceptions
+Exceptions
+The reason
+Assignment
+Assignment
+Assignment
+Assignment
+assignment
+好
+那他当作动词的时候
+assign 就是分配
+对吧
+好
+那我们想想
+这个assignment
+assign
+在我们的SAP里头
+有没有这个词
+用到这个词
+有
+在哪儿
+Case V5
+Case V5
+Case V5
+一个assignment
+一个
+另一是在导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+导致
+我们需要的制作
+我们需要的制作
+我们需要的制作
+我们需要的制作
+我们需要制作
+去的制作
+然后
+然后
+OK
+所以
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+所以
+
+
+所以
+所以
+
+所以
+所以
+所以
+所以
+所以
+我们可能不是这个模块
+
+
+
+
+
+
+
+
+
+我们
+after
+!
+然后
+!
+后
+
+后
+
+后
+
+后
+后
+
+后
+
+后
+
+
+Transport
+Transport
+Yes
+Transport
+Transport the requirement
+No
+Request
+Request
+Request
+那如果我说
+我把这个请求
+传到Q系统
+我会用哪个动词
+Transport
+Yeah,可以
+Could you please transport
+Request to
+To the queue system
+Queue system
+OK
+好,那我們 request
+那我们这个传输的话
+我们是不是有一个这个
+顺序
+对吧
+Yes sequence
+Yeah very good
+Sequence
+那我们要知道这些
+就是相关的这个词
+那有时候
+Sometimes
+If you mess up
+就是搞混乱了
+搞混乱了这个 sequence
+Mess up
+Mess up
+这个词听过没有
+Yeah
+听过
+就是搞混了搞乱了
+mess up
+OK
+don't mess up my stuff
+OK
+so
+I will take off it
+I always ask
+Basis to transfer my request
+by follow orders
+OK
+by sequence
+OK
+Transfer related checks
+好
+ADS是一个文件的一个服务的
+Adobe
+一个系统
+ADS是extension
+Extension
+这什么意思?
+Extension
+Extension
+Extension
+扩展吗?
+扩展
+Document extension
+好,那我们如果做动词呢?
+Extend
+Extend
+Extend
+好
+那for example
+在这个
+Mustle Data Number
+Material Number
+在ECC的时候Material Number是18位数字对吧
+Yeah
+Material Number is 18
+Correct
+So in ECC
+Material number is 80
+It's 18
+Caracteristic
+Correct
+Correct
+And now it is extended
+And now it's extended to 40
+Okay
+Correct
+Correct
+Okay that's good
+So we can use this extend
+对吧
+Okay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+怎么说
+比如说我说这个字段
+字段对吧
+好
+这个字段那个长度不够
+怎么说
+The length
+The length
+L E N G T H
+The length
+The length of the field
+is
+is
+is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+is
+
+
+It's not long enough, okay.
+It's not long enough.
+It's not long enough.
+We want to extend to...
+Can we?
+Extend it.
+Can we extend it?
+To 50?
+To 50, correct.
+OK.
+Correct.
+好,那我们要学会这个Extend,OK?
+Extend,这个是经常用的,
+超常用
+extend
+which can be in-store
+in-store
+
+in-store
+in-store
+in-store
+in-store
+
+
+
+
+
+
+
+
+
+
+in-store
+in-store
+
+
+
+in-store
+
+in-store
+in-store
+
+
+in-store
+
+in-store
+
+
+in-store
+
+in-store
+
+in-store
+in-store
+
+in-store
+in-store
+你没有这个SAP最新版的这个轨椅
+然后请他帮你装上你的laptop上面
+怎么说
+好 你跟这个
+你跟Taylor有一些对话
+Taylor是你的project manager
+好 你去问他
+I didn't have the new SAP GUI, can you tell me to install it?
+我会 copy
+the progress
+I will copy
+the news
+the
+sabgree
+to you
+and you can install it by yourself
+Thank you
+Okay
+Okay
+Okay
+It's generate
+Generate
+Generate
+Generate
+生成吗
+经常说
+那我们可以用到什么情景
+想一想
+财务凭正的产生可不可以
+Generate
+Generate
+Generate什么
+Finance
+Finance
+Finance
+Finance
+Finance
+Finance
+Finance
+
+Finance
+Finance
+Finance
+
+
+Finance
+Generate
+Generate production order, generate a sales order
+Generate finance account number
+Generate
+Generate
+Generate
+Generate a system error log
+Ear log
+哦,弄 log吧
+log,log
+System log
+那我们还可以generate a batch job,right?
+yeah
+Batch job,yes
+OK
+好,那我们在这个执行这个batch job的时候
+那如果这个batch job有问题的话
+我们可以去什么
+去看它的log,对吧
+yeah
+OK
+那
+Generate Forms
+这个表单
+that are based on
+Adobe
+Life Cycle Designer
+and the Business Data
+Information
+which is
+Provide
+Provide
+是不是
+经常
+又来了
+我们转来转去
+就是这些词
+那可以
+Provide
+Provide
+Provide
+Help
+Can you provide
+Some help to me
+OK
+Provide
+读文字幕提供
+Provider the system error screenshot
+Yeah, error, system error screenshot
+System error screenshot
+Okay,就是系統錯誤的
+Dui,对
+So for example, give you an example
+So business has no authority to log in ME20N
+你可以问他们,
+可你可不可以给他们的视频
+视频视频?
+或你只能去SU53
+去抓住这个视频?
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+
+夺的,
+夺的,
+夺的,
+
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+夺的,
+
+夺的,
+夺的,
+夺的,
+好
+好
+好
+好
+好
+好
+
+那我们都有做过这个自动的测试对不对
+谁来读一下这两段
+OK
+OK
+OK 自行的測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測
+the development processthrough automationandthus also to increasethe qualityof the software
+test automation is often combined with the agile methods methods methods aboutshodownshodownshodown
+Runtime error that occurs when SAP system is no longer able to execute giving program.
+This may be caused by results of system program error including unhandled or unhandleable exception.
+Unhandleable exception.
+Unhandleable exception.
+ST22
+ST22是一个T-code
+可以去看一看这个
+当你这个有RBAPA
+ShotDump的时候
+我们就可以去看一看什么原因
+或者在哪一个代码有问题
+OK
+好那我想问一下你们有没有做过
+automated testing
+没有
+你们都没有做过自动的是吧
+没有什么tool
+没有什么工具去做这个自动的这个testing
+对吧
+我们都有
+就是然后每个月
+我们都要去做这个testing
+当然这个他是提前就会把这个脚本
+就像刚刚我说的那个test script
+他就提前就编好
+提前编好以后
+然后你就把那个数据放进去就行了
+就放进去以后
+然后他就自动
+你就丢进去
+然后他就执行你这个脚本
+然后系统里头
+他就自动就帮你去做测试了
+比如说你要建一些这个生产定的
+你要建一些这个PO对吧
+好那你等于就是
+提前呢
+就是把M1
+RCN
+然后里面的一些字段
+然后它的脚本
+模板
+你给它写好
+写好以后你就
+就上传进去
+上传这个脚本进去以后
+然后点执行
+它就会自动就帮你产生很多
+这个PO凭证
+PO的这个Document
+脚本的话是SAP标准的是吗
+不是
+这个测试
+测试的工具都是外面开发的
+但是会跟SAP去做接口
+外面开发的
+是的
+就是你是在哪个外面
+就是比如在XR表格里面
+还是在什么地方
+什么工具里面
+它有自己的一个测试工具
+然后我们这边的话
+就有叫
+Have you heard about the wind shuttle
+Wing shuttle
+就是
+它也是一个测试的一个工具
+OK
+I hear about SAP have their
+Ultrume test too
+But I never use it
+OK,Windshadow
+OK,so we use aWindshadow
+Captured the fields
+就是抓住了那些字段
+然后就再整理一下这个模板
+整理模板以后
+然后你就按照那个顺序里头填
+比如说我要再建一个这个vendor号是什么
+然后那个产品代码是什么
+然后产品的这个描述可能它自动就会跑出来了
+从系统里头
+然后这个金额是多少
+然后unit price是多少等等
+你就假如我给你
+I give you an example
+然后你就可以就是
+像Excel的表格一样的
+你就可以把很多放进去
+放进去以后呢
+然后你就点这个test
+就点这个run
+就是执行
+然后它就自动帮你就产生了
+你就不用手工这个一个个书
+所以它就有很好的这个
+就是可以shorten
+shorten the development process
+然后会就是
+好那我们自动测试呢
+我们可以理解为
+是一个procedure
+procedure的意思
+就是一个流程
+based on analyze software tools
+with the support
+which software tests
+are performed
+automatically
+自动的
+好
+那如果我们说是
+这个自动的
+这个执行
+这个观障
+怎么说
+automatically
+conduct
+closed
+顺序
+顺序讲错了
+Automatically perform
+Accounting Clothes
+Monthly
+Ok
+Monthly conducts
+Monthly closing
+Automatically
+Automatically
+所以我们不妨
+Declare growth
+就是说这个宣称的这个目标呢
+是shorting
+shorting就是减少
+减少这个开发的这个流程
+然后通过这个自动化呢
+可以去减少开发的流程
+然后这样子呢
+就能增加到这个软件的质量
+然后Test Automation is often combined with Angel Methods
+Angel Methods是敏捷法
+那我们之后的话
+我们要学一下这个Angel Method
+好
+那在Ababa Shut Dump的时候呢
+我们是有时候做测试的时候
+会出现这个红色的那种
+ABAPA shut down,对吧?
+然后这个Runtime Arrow
+就是在执行的时候会有错误
+That occurs
+就是发生,对吧?
+When SAP System
+is no longer able to
+execute Gaving Program
+执行
+这个执行我们是经常用的,对吧?
+好,那我们这号标怎么说?
+Execute a report
+嗯
+如果是跑一个定制化的
+定制化的这个program
+怎么说
+Escrew the customers program
+Custom program
+好很好
+那你们有进步
+那之前的时候我们都会说
+Customize program
+Customize
+Custom report
+Custom program
+那执行这个
+执行这个后台作业怎么说
+Bangard job
+Bangard job
+Bangard job
+Bangard job
+Execute
+Execute
+Automatically
+Automatically test
+Test it
+OK
+Very good
+XQ的
+Transaction Code
+Zixing
+Transportation
+Transportation
+Transportation
+干什么
+OK
+好 那我们这两个词呢
+就是 caused by resource
+这个
+this may be caused by resource
+or system problem
+arrows in coding
+unhandled
+就是不能处理的
+或者不可处理的
+exceptions
+好 那如果我们出现这个ABAPA dump的时候呢
+我们一般会去用这个TCODE ST22
+ST22
+to check the reason,
+find the root reason.
+OK,发现这个问题,
+root reason.
+根本原因,
+root reason.
+OK,好,那我们这里
+在讲一个这个ACDOC
+Table呢,这个是
+FI就是到
+这个S4HANA以后,一个
+就是FI这边的一个新的Table.
+它那是储存了
+就是Universal Journal Entry
+就是全部的这个记账
+然后这个记账呢
+都是行项目都是
+关于这个财务这边的
+那个行项目的这个总记账
+它包括呢
+就是说这个Prosperity
+Prosperity Matrix
+就是一个组合
+然后这边呢
+比如说有一些
+就是经济的那个贡献
+或者最后的财务的投资的贡献
+然后research and development expense
+就是R&D
+研究发展的费用
+对研发费用
+或者一些所需总付的税等等
+这个ACDOC table
+能够使我们就是保持这个报表或者table
+就是在一个数据库里面
+然后它就不需要再分别保存
+之前的话我们在ECC里头
+我们都是有不同的table去保存它的余额
+或者它的那个
+如果这个行项没有被清账的话
+它还是有clean或者open的这个行项目的table
+有专门的table对吧
+好那现在这个就是合二为一
+只是一个大的一个table了
+好那我们来看一看这里头的一些
+比较常用的一些词
+好那我们看看
+general entry
+general entry我们就知道这个accounting的这个
+做记账的这个entry
+contributing呢
+我们想想contributing可以用在哪里
+contributing
+I want to
+when I join a
+team I want to
+make a contribution
+for the project
+to the project
+OK
+很好
+好 那我们再来看看这个
+database
+好 那我们可以
+如果说这个数据库的那个结构太复杂了
+然后我们怎么说
+可以吧
+the database is very complex
+嗯哼
+好 然后我不能处理它
+I can't handle it
+I can't handle it
+OK 对
+I can't handle it
+好 那我们下面看看这个就是数据
+这条数据没有储存在这个数据库里
+或者miss掉了
+The data didn't start in the database
+It was missed
+OK
+好
+那我们再来看看这个BSM
+Business Service Management
+这个应用的一个软件呢
+这个云端的ALM呢
+就是去处理这个
+就是商业的这个服务啦
+或者就是说
+可以
+可以就是把这个任务
+可以指定给这个云端
+云端的服务
+或者一些相关的一些事例
+好
+那我们又看看
+这个又是assign
+application
+好
+那我们可不可以说
+SAP是一个应用软件
+怎么说
+SAP is an application system
+Yeah
+OK
+very good
+BTP
+BTP
+
+
+
+
+
+
+
+
+
+BTP
+
+BTP
+
+BTP
+BTP
+
+
+
+
+BTP
+BTP
+
+
+
+
+BTP
+
+
+
+
+
+
+
+
+
+
+
+
+Custom Program
+现在呢
+如果我们都使用了
+这个BTP的这个平台呢
+这个号称是
+Low Code
+就是写 Code的
+写 Code会比较少
+就是一般的话
+它会有这个SAP的一些
+提供的一些标准的一些流程
+那包括以后的AI呢
+都会用到这个BTP的这个技术
+所以这个BTP是比较先进的
+现在比较先进的一个这个热门的技术
+有可能人家会问你
+你熟悉这个BTP吗
+如果你是开发的话
+人家会问你
+你熟不熟悉BTP
+现在我们很多的这个
+标准的
+我们很多那个报表都是在这个BTP的技术上去开发的
+所以跟大家简单说一下子
+好那我们来看看这个
+主要是理解一下BTP
+好那
+我们来看看里头的一些关键字
+layer
+layer就是层面
+然后它是有
+intelligent
+就是智能化
+sustainable
+什么意思
+可持续的
+可持续的
+it provide
+它提供
+又来了
+提供
+提供 functions
+就是这个APP的一个
+是一个开发的一个APP
+然后它能够自动化
+它能够提供集成
+它能够提供这数据分析和AI
+那在之前呢
+SAP BTP呢
+就是被称为SAP的这个云端的一个平台
+早段时间呢
+就是会称为这个HANA的这个云端平台
+就是在BTP上面
+这里很有
+很有著名的
+很出名的这个云端
+Foundry Service
+就是
+很出名的云端的
+这个服务器叫
+服务叫SAPALM Running
+那大家作为一个知识
+去了解一下就行了
+一个BTP
+好 那我们来看看
+里头的一些单词
+Platform知道了对吧
+平台
+对
+然后再想想我们什么东西是一个平台
+Tabau is a platform
+那怎么介绍Tabau呢
+for shopping right
+Tabau is a company
+and he has a lot of ADP
+and the website
+你可以用Tobot去買
+買到每一項你願意買
+你可以買到每一項
+對,對嗎?
+對,對
+好,那我們再看看有個詞
+叫BAT
+BAT其實就是
+Business Acceptance Test
+我們常用的就叫UAT
+對吧?
+好,那我們看看
+BAT呢
+它其實就是叫UAT
+然后6-2就是目的是什么
+就是meet business requirement
+又来了吧
+meet
+那我们再想想还可以用什么词
+align with business requirement
+还有呢
+fulfilling
+fulfilling
+fulfill business requirement
+在特殊的一个业务情景
+然后against
+就是在这个
+在业务的这个
+情况之下的一个
+特殊的业务情景
+然后它呢
+就是起到了一个
+非常去做这个
+验证的
+起了一个
+非常重要的一个作用
+UAT起了一个
+非常重要的作用
+去教验
+那你
+那我想问下
+你们的这个 process
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+所以你
+所以你
+你的 business
+conducts
+UAT test
+谁要写这个
+试试文档
+User
+User
+User
+
+OK
+所以
+before they write
+the
+Test script
+Do you
+conduct
+any
+User
+Training
+是的,我們會訓練用人員
+嗯嗯,然後他們完成了試試的試本
+所以他們會回到你,他們會輸給你
+so you will review their test script
+你要去看他们的那个写的这个
+测试脚本吗
+yes
+okay
+okay that's good
+好那requirements are fulfilled
+刚刚同学也用了
+fulfill okay
+好那在这个
+把这个产品
+在release到这个
+发布到这个市场之中
+好那我们来看
+看一下这validate
+那你们的这个有没有用到这个SAP的这个validate功能
+有用到
+嗯嗯
+给给给个例子
+validate
+if we parse
+if we parse the final document
+we show the validator
+the
+我们需要把判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判判
+procedure
+好 那我们还可以validate
+system 什么
+教验系统
+教验系统的这个稳定性
+对吧 可以吧
+stability 还可以validate
+什么
+KT
+Business logic
+Business logic
+Legal requirement
+怎么说
+OK
+OK
+We can validate the value
+Validate field value
+Right
+还可以validate什么
+Result
+OK
+结果对不对
+是吧
+好
+这是高频词
+我们记住要用这个
+validate
+OK
+OK
+好
+那我给你一个情景
+好吧
+那如果就是说
+你系统已经配置完了
+然后就是在这个上线之前
+我们要做系统的什么
+validate
+这也是我们一个很重要的
+在我们的cut over plan里头
+我们要写上
+就是all functional consultant
+validate system
+validate customer program
+validate你的这个什么
+transport
+对吧
+transporter request
+可以吧
+OK
+OK
+好
+那我们还可以validate什么
+batch什么
+batch job
+我们设定了
+batch job
+我们要看看
+还有我们要validate
+variant
+对吧
+你batch job的时候
+你要设定这个
+variant
+中文怎么说
+variant
+便是
+便是
+对吧
+那我们还要去validate这个layout,对吧?
+看看这个格式,格式对不对,对吧?
+validate的东西很多,对吧?
+We should validate the balance of balance sheet report
+with profit and loss report.
+OK
+Balanced report
+P-R report
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+那如果是無效呢
+Invalidate
+Invalidate
+好那就無效
+那就說日期是
+Invalidate
+So let me tell you a small story okay
+Today
+A ticket
+我提供了我
+我提供了
+我提供了
+我们有两个人的记录
+我们有两个人的记录
+在这个 table
+一个人的记录
+一个人的记录
+一个人的记录
+例如
+0101
+2003
+and
+experate
+is
+01-01
+2012
+2020
+experate
+this is
+your
+dare
+record
+it's
+valid
+date
+from
+01022020
+OK
+And the expiry date is
+For example 0101999
+OK
+So do you know what's the program's performance?
+OK
+So my program pick up the first record
+and the pop up arrow message they said the record is expired in valid data
+invalid datainvalid datain
+yeah okay so they tell me the error message pop up okayin invalid data error
+嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯嗯
+OK
+So it's an urgent issue
+You know
+I spent one day
+The whole day
+To test
+So finally
+The developer
+Fix the bug
+And then
+I submitted
+To
+Business
+For some tester
+For any dead tester
+For you
+You 80
+For your 80 test
+OK
+所以,用者需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把目的效果 需要去把
+就是失败了这个data
+7000多条数据
+所以这是一个很大的一个
+so it's urgent
+就是很紧
+it's a high priority
+okay
+urgent issue
+okay
+so
+但是这不是我犯的错误
+是我的leader
+但是在这种情况之下
+你也应该去
+you take the lead
+OK,to handle the ticket
+就是你要去带头去处理这个ticket
+你不能说,哦,这是你翻车车,那你去弄,我不管
+这个在global的这个项目里头呢
+我们要发挥我们的teamwork
+team player,you are a good team player
+就是你要是团队里头很好的一个合作伙伴
+你不能就是说,哦,别人的事情你就不管
+所以就是说,你平时的表现其实别人就看得出来
+你积不积极去处理
+去帮助别人
+所以我们现在
+我们现在都怕被裁员
+你知道吗
+都怕被fail掉
+所以都是抢活干的
+就是很积极
+所以这个大家的观念
+就是那个在local
+可能你就是
+你的事情就你做
+我的事情就我做
+但是我们在global的话
+我们就是还是挺团队
+还是一个很好的团队
+互相配合的
+好
+那我们看到了这个
+我们下面再学一点
+我们可以休息一下了
+好 那我们就现在时间到了
+我们休息一下
+我们等会儿
+9点18分的时候再回来好吗
+9点18分
+我们现在
+10点 你们10点
+你们是10点18分对吗
+对 我们10点08分
+OK 好
+对 好的
+那我们等会儿回来
+OK
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+请不吝点赞 订阅 转发 打赏支持明镜与点点栏目
+谢谢大家
+回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+我們回來了嗎?
+就是business process management
+那就是业务流程的一个管理
+那在大公司里头呢
+它是比较注重这个各种各样的管理
+什么流程管理啊
+procedure management
+risk management
+风险管理
+还有change management
+就是如果你这个流程有改变的话
+你还有这个变更的这个管理等等
+好
+那我们来看看这里面的新单词比较多
+我们请Katy
+萌萌你来读一下
+然后其他两位同学
+我们随时要挑几个单词
+要照句
+OK
+Process Management deals with
+the identification
+design, documentation
+implementation
+control and optimization
+of business process
+business process
+就是它
+那是公司的
+是
+要做
+行動
+行動
+行動
+行動
+行動
+行動
+行動
+行動
+行動
+行動
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+是在河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的河南的�
+我先看看
+好 先看看
+Business Process Management
+Business Process Management
+OK
+Business Process Management
+Business Process Management
+Business Management
+slaver
+刚刚学的
+马上去用了
+take care of
+ok
+好
+如果你是项目经理
+然后就是
+客户很难搞定
+他们就很
+很tough
+就是很难
+很难搞定
+就是比较
+给你
+give you a hard time
+就是给你
+给你很难的时间
+很困难的时间
+好
+那你说
+作为项目经理
+你说
+I will
+I will deal with it
+I will deal with them
+I will deal with them
+Deal
+这感觉什么
+我要去处理
+OK
+不是这个意思
+好
+Deal with
+OK
+Deal with
+它处理什么呢
+Identification
+确认
+对吧
+或者你的那个身份证
+ID 那怎么说
+就是
+identification
+就是personal identification
+OK
+design and documentation
+Documentation
+这里是什么词
+名词对吧
+那就做好记录
+或者就是说归档啊什么的
+那如果
+名词呢
+还有一个名词
+Document
+
+Document
+Document
+Document.com
+好
+然后这个
+implementation
+动质是什么
+implement
+OK
+好那
+我们说这个
+这个
+这个实施非常成功
+怎么说
+The implementation is very
+successful
+It's very successful
+是非常成功的
+是非常成功的
+好,OK
+OK
+是
+是
+是
+是
+是
+是
+
+OK
+好,那我们想想
+动词怎么说
+好,那我们autimize是一个比较高级的词。
+那我们可以后面跟一些什么情形?
+优化business scenarios。
+optimize the problem,
+optimize the function,
+process,
+procedure,
+optimize the report,
+可以optimize吗
+optimize the function
+Custom program
+Custom program
+可以optimize
+我们学会的单词我们要把它用起来
+好吗
+我们再来看看
+这个business process能驱使IT
+that means for companies
+a key goal
+就是一个关键的
+这个目标是什么呢
+就是能使这个
+业务的这个运营
+能更
+更加的这个有效率
+and travel free
+好那我们来看看
+efficient
+好那副词是什么
+efficiently
+efficiently
+好那给我一个
+scenario
+给我一个句子
+来造一下句子
+嗯
+嗯
+The function is very efficient, honey
+We will develop our customer program
+And it will make the customer
+It will make the business conduct efficiently
+它会更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更加更
+免税
+Parking free
+Parking free
+好吧
+看看
+还有什么
+Eyro free
+Eyro free
+应该有吧
+手续费
+什么意思
+Eyro free
+就是零错误
+没错误
+Eyro free
+还有想想有什么free
+手续费
+那个手续费怎么说
+surchage吧
+surchage
+OK
+美国有很多零元购
+零元购怎么说
+等会儿啊
+surchage
+surchage
+surchage
+Zero buy
+Zero buy
+Zero buy
+我看不清楚,所以我看清楚
+Shop free
+Shopping free
+Free shopping
+Shopping free
+好,那我们来看看这个Aerofree
+在想想
+在想想有什么样的情景
+给我一个情景
+这个developer是很棒的
+他开发的东西几乎是没有错误的
+OK
+The developer is very
+very good
+and
+his
+他发展
+他的货带
+他的货带
+他的货带
+是
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+几乎
+好
+那我们这个free
+什么什么free
+那就是说我们可以
+用到很多的情形里面
+那我们再想一想
+你们还有什么
+trouble free
+我做这个
+自动的这个
+自动测试
+可以让我们
+没有麻烦的去
+做各种各样的
+测试情景
+所以我需要不太多的測試
+好 那我们还有一个岁呢 就是Duty Free 对吧
+海关的这个
+那个
+Duty free
+那比如说那个海南岛是自贸岛
+是吧
+现在要建自贸岛然后他那里买的
+买的那个进口的东西叫Duty free
+OK
+你们去过吗海南
+没
+Yes
+好那我们来看看
+achieve the this
+achieve
+OK
+那我们可能平时的时候
+我们是名词看的比较多
+对吧
+名词是怎么说
+achievement
+OK very good
+You make a very good achievement
+a big achievement
+OK congratulations on you
+OK我们就随口就把它说出来了
+achieve
+OK
+好那我们说要达到这个满足
+达到用户的需求
+我们可不可以用achieve
+to achieve this goal
+to achieve your
+users requirement
+to achieve users requirement
+好
+focus on business process is crucial
+关键
+is key
+对吧
+非常重要或者very important
+好
+那就是说
+测试这个情景是很重要的
+那我们要去验证这种各种各样的测试
+验证各种各样的业务流程
+怎么说
+it is very crucial
+to test this scenario
+when you validate
+all the business process
+in the system
+okay very good
+okay
+我们把前后把它连接起来了
+很好
+manage business process
+across the entire
+刚刚就是说全部的
+Life cycle
+Life cycle
+那我们想想这个词是不是
+那如果我们说这个
+从零到一的这个项目呢
+我们怎么说
+From there to
+To when
+The life cycle system
+Full cycle
+Full cycle
+Full cycle program
+Full cycle program
+OK 在国外的话
+你要是做资深顾问的话
+至少要有三个以上的这个Full Cycle的这个Project
+至少要有三个以上的这个Project
+很多人没有机会拿到这种Full Cycle的Project
+很多人只是去做运维
+所以如果你有这个Full Cycle的Project的机会
+大家都希望能抓住
+Full Cycle
+那Life Cycle
+那我们在系统里头
+我们是不是有这个Product Life Cycle
+我们还有什么
+Isset
+Isset
+资产生命周期
+资产生命周期对吧
+那从开始
+它从开始采购开始
+或者就是说你通过其他什么渠道你获得
+然后你再进行折旧对吧
+然后折旧完以后
+就是那个折旧完了以后就要
+disposal
+或者scratch
+或者是sale
+这个就是
+就是一个whole
+iset life cycle
+就是整个的他的生命周期
+或者entire
+life cycle
+I said core
+核心
+五大核心模块还记得吗
+怎么说
+5 core
+manual
+好,merge
+merge,business with IT
+merge,什么意思
+合并,融合
+好,那我们把这个
+PKPF
+and BSEG
+Tables
+Tables
+什么
+merge
+2
+2
+2
+2
+2
+2
+2
+2
+2
+
+
+2
+2
+
+
+
+
+
+
+
+
+
+
+
+2
+
+2
+
+
+2
+2
+
+
+
+
+
+
+
+2
+
+
+2
+
+
+2
+
+2
+
+
+
+
+
+2
+
+
+
+
+2
+
+
+2
+
+
+2
+2
+
+2
+
+
+2
+2
+
+那我们有说
+Sometimes we merge two lines into one line
+Right
+Sometimes we split one line into two lines
+OK
+Split
+通过merge的话
+我们又记到一个相反的词
+那这个话我们业务场景有什么业务场景呢
+比如说我们在做这个GTS的时候
+对吧
+GTS
+那我们说有invoice会被merge
+对吧
+merge
+还有invoice
+比如说两个系统
+两个invoice会merge into one
+official invoice
+right
+好那也有可能是一个这个invoice呢
+会split
+拆分
+拆分成two lines
+那比如说你
+比如说你他的发票可能是有
+90万对吧
+比如说一件东西
+一件很贵的这个机器设备
+它可能是有90
+可能是
+OK
+60万吧
+60W
+那我们的那个
+我们的Invoice的话呢
+可能只能有这个
+最高限额就是20个W
+那在这种情景之下呢
+我们要什么
+对这个Invoice做什么
+Split
+OK
+Split invoice
+可能每个就拆成三分之一
+对吧
+每个拆成三分之一
+每个三分之一
+
+然后每个
+每个大概就是20万
+对吧
+拆三次
+understand
+好
+这个Split和Murge
+我们要学会说
+OK
+这也是常用
+应该是也会用到吧
+好
+那我们再看一个词
+这个Round business
+弄
+弄
+弄
+弄
+弄
+
+弄
+弄
+弄
+
+弄
+弄
+弄
+
+弄
+弄
+弄
+弄
+
+弄
+弄
+弄
+弄
+弄
+弄
+弄
+弄
+
+弄
+弄
+
+弄
+弄
+弄
+
+
+弄
+弄
+
+
+弄
+
+弄
+弄
+
+
+
+弄
+
+
+弄
+
+
+弄
+
+
+还是Customer
+Customer's report
+Customer's report
+又来了
+又来了
+刚刚表演完
+你们说那个
+Customer's report
+Customer's report
+还有什么
+Customer's report
+Customer's report
+Customer's report
+Program
+
+
+Program
+
+Program
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program
+
+
+
+
+
+
+Program
+
+
+
+Program
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+Altomatic test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MRP
+OK
+对
+所以这个run是非常简单的
+但是run呢
+run有太多东西可以run了
+对吧
+执行
+那它就是一个执行
+等于是跟刚刚那个execute
+也是很像的
+好那最简单的词
+我们就是表达的意思很丰富
+survive
+survive
+就是生存
+就是I cannot survive without SAP
+我没有SAP
+我们就不能生存了
+OK
+In the digital economy
+Proper Planning就是非常有准备的这个计划
+或者正确的一个计划
+Refage
+这个我也不知道
+这个Refage的话
+它就是做一个这个实施
+Of new business process and change controls
+Are equally important
+好 那我们来看到它这个
+是一个形容词
+Equally
+Important是一个形容词
+然后Equally是个副词
+同样重要
+Equally important
+OK
+Equally
+ARM also lets you create that business need
+就是产生
+那我们又看到了产生了这个用户的需求
+Business needs
+OK
+Business requirements
+Business demands
+When it needed
+当客户需要这个时候呢
+It drives both continuous
+继续的这个提升
+和这个业务的这个innovation
+innovation这个词是一个很棒的词
+那我们公司是有innovation center
+就是创新
+所以大家对这个创新是很看重的
+business innovation
+那我觉得在中国创新方面现在越来越好了
+机器人啊
+然后无人驾驶啊等等
+我们都有非常多的这个innovation创新
+OK
+好
+那我们刚刚讲了这么多
+然后我们现在就是来回过头来一下
+我们看看我们来在讨论这个实际的例子中
+我们看看我们是不是可以用到一些词
+那这里有一些短的这个对话
+我们找同学来扮演不同的角色来说一下
+好
+这是一个关于一个BTP的一个discussion
+好 那我们请
+Catty 你做这个PM
+Catty
+好 然后这个
+Consultant呢 我们请
+Taylor 你来做 你们两个配合一下
+完成第一部分
+一个是Project Manager
+一个是ACP Consultant
+OK Katie are you ready?
+Yeah
+OK
+We need to
+如果您想要求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求求
+OK,and will it integrate smoothly with S4HANA?
+Yes,the BTP integration should
+Through,through
+Through,through
+Through BTP integration should
+Odata APIs from S4HANA
+OK
+那我们先看一下这个
+那我们去建一个这个工作流
+我们用什么动词
+Build
+Build a customer
+好
+好
+那我们再来想
+这个定制化的这个
+工作流
+需要一些修改
+the customer workflow
+need some more
+modify
+你用动词用的名词
+到底用什么词
+modify是对的
+但是你是用了动词
+need
+need be modified
+ok可以
+或者是need some modifications
+need some modifications
+好,那我们再来看看这个smoothly
+那在国内你们吃那种吗
+smoothly
+就是奶昔
+你们用奶昔吗
+就是那个水果打出来的那种一杯一杯的那种
+有,国内很多
+很多吧,对吧
+你们是叫奶昔,对吧
+对
+那这个词就是在国外的话叫做smoothly
+smoothly
+smoothly
+smoothly
+smoothly
+smoothly
+smoothly
+这个词也很高级
+就是说
+那我想请同学用这个
+smoothly
+就是说我们的那个上线是很平和
+或者很顺利
+怎么说
+我们的那个上线是很平和
+或者很顺利
+怎么说
+我们的那个上线是很平和
+或者很顺利
+怎么说
+我们的那个上线是很平和
+怎么说
+我们的那个上线是很平和
+我们的那个上线是很平和
+我们的那个上线是很平和
+我们的那个上线是很平和
+
+我们的那个上线是很平和
+我们的那个上线是很平和
+我们的那个上线是很平和
+我们的那个上线是很平和
+高纳上线
+高纳上线
+
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+
+高纳上线
+高纳上线
+高纳上线
+高纳上线
+Taylor
+OK
+那我们在这个
+Integration Consultant
+你做Integration Consultant
+然后
+Mong Mong
+你做Business User
+Business User
+先发起文化
+OK
+How will BTP help us connect our system and our system?
+We can use the integration suite, especially if flows from the pre-built SAP contact library
+Do we need to code everything?
+No, SAP Proofs standard packages
+We adapt only the parts you need customized
+OK,结束了, way over
+You need customized, OK
+好,那么来看看这个
+How will BTP help us connect
+Connect一个系统和另外一个系统
+那我们就是
+就是我给你个情景
+就是说我们怎样让这个
+Ariba
+你们知道Ariba吗
+知道
+就是SIM嘛
+采购嘛
+对 采购的一个这个软件
+那怎样这个SAP的Ariba
+和这个S4
+怎么连接起来呢
+怎么样的一个过程
+OK
+好 那Integration Consultants
+that we can use
+Integration Shield
+especially i've lost from the pre-built
+pre-built就是提前预定好的
+sap的这个内容的这个
+图书馆吧
+content library
+do we need to code everything
+code
+这里是作为名字还是动词
+动词
+to code it
+document
+code
+好,那我们再来看下面,no,SAP provides,就是SAP就提供了这个standard package
+OK,so how about that?so I will ask you a question,so
+so do you know how can I see the balance of each
+the balance of each account?
+然后我们请Katy你说SAP提供了标准的报表
+Katy?
+SAP provides
+SAP standards package
+SAP provides standard report
+to check the balance of each account
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK,that's good.
+好,那我们再来萌萌和Katy,
+你们两个,一个是developer,
+然后一个是architecture,
+就是架构师,
+架构师在国外的话工资也是很高的,
+这也是你们顾问完以后走的话,
+你可以往架构师方面走。
+好,萌萌,你先你是developer,
+然后Katy,你是architecture。
+OK,for the mobile app
+BTP requirement, should we build it using SAP Fiori or BTP mobile services?
+Fiori is good for simple apps.
+但如果需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要需要
+stay in BTP.
+OK,
+that's it.
+OK,
+that's it.
+好,
+那我们这里挑几个重点词来说,
+那就是说,
+它现在是讨论的这个
+mobile app,
+OK,
+mobile app requirements,
+should we build it,
+build,
+build it,
+用这个什么东西来去建这个
+mobile app requirement,
+OK,
+Fiori is good for simple
+大家登陆过这个Fiori没有
+登陆过
+好那你登陆过Fiori的话
+那可就 please tell me
+what's the good features of aFiori
+就是登陆过Fiori的话
+能不能告诉我这个Fiori的话
+有什么好处呢
+是beautiful
+是userfriendly right
+是usersfriendly
+你说好用还是不好用
+他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看,他在看
+remember the T code,
+okay,
+so you just click the tie,
+so it's very user-friendly
+to use a firewall,
+okay?
+好,
+offline,
+offline,
+need offline capability,
+就是脱线的能力,
+或者 scanning future,
+scanning,
+scan,
+我们这个词学过吧?
+知道吧?
+scan,
+scan,
+scan,
+我可以 scan,
+这个 document,
+对吧?
+我可以 scan什么
+scan picture, right?
+QR code
+QR code
+scan contact
+QR code
+QR code
+code, right?
+好的
+好的
+那我们再来看看这个Store
+StoreData
+然后我们再来看看Stays
+MasterDataStays
+就是跟着这个S4HANA
+然后Temporary
+AppDataCanStay
+可以呆在BTP里面
+StoreData
+
+Store data, okay?
+那我们来再看看这个Store
+我们想想什么业务情境
+我们可以用到这个Store data
+那我们在开发的时候
+我们可以跟
+跟Developer说
+我们可以用这个
+一个内表
+Yeah
+Internet
+Internet
+Internetable
+to什么
+to store
+the stats
+to store data
+yeah to store data
+to store master data
+to store the data
+to store the template data
+temporary data
+you can use the z table to store the data
+okay temporary
+temporary data
+OK
+I think it's OK
+OK
+
+OK
+OK
+
+OK
+OK
+OK
+
+
+OK
+OK
+
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+Creator transparency
+Enable
+Transparency
+是透明
+Repeatability
+And
+Transable
+能夠
+Repeatability
+Repeat
+可以重複
+重複使用
+And it's traceable
+可以追踪
+那我們再看看
+那我們那個透明表
+怎麼說
+transparen
+transparen
+transparent
+transparent
+好那谁能解释一下什么叫透明表
+the transparent table is
+sap
+stall the data table
+是真的
+我认为
+OK
+OK
+OK
+好
+
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+我就是扣子可以吧,就是
+握了
+握了
+握了
+那我们有另外一个词,我们常常用什么
+第一什么
+你把
+你把
+他
+你把这个的 program, right?
+就是
+你把这个
+我把这个
+我把这个
+我把这个
+我把这个
+我把这个
+我把这个
+我把这个
+我把这个
+你把这个
+我把这个
+你把这个
+你把这个
+我把这个
+OK
+Competitive advantage
+Create competitive advantage
+那又来了
+Process create competitive advantage
+OK
+那我们可以说
+对 很激烈的
+会很有竞争性的这个优势
+很有 competitive advantage
+Process are elementary
+Elementary是什么
+元素
+基本元素对吧
+No matter what industry or business you are in
+不管你是在哪一个行业
+或者是在哪个领域里面
+It should always be about the business process
+总是关于你业务的流程
+IT和商业用户
+都应该是在这个
+都同意这个
+business process
+是他们共同的语言
+所以我们要了解
+用户的这个business process
+is very important
+as an IT
+or as a
+functional consultant
+so you should
+understand business
+什么
+processes very well
+ok 作为一个IT
+或者作为一个functional consultant
+就是功能顾问
+我们要能很好的理解
+用户的流程
+OK
+所以在做调研的时候
+如果你不理解
+用户的流程的话
+你很容易就被
+什么
+fire
+就很容易就被
+开除
+或者就是
+炒鱿鱼
+好
+那我们来看一看
+这里面
+就是到这个下面
+这个business transformation center
+就是
+用户的这个信息
+OK
+OK
+
+
+
+
+
+
+
+
+
+OK
+OK
+
+
+
+
+
+
+
+
+OK
+
+OK
+
+
+
+OK
+
+OK
+
+
+OK
+OK
+
+OK
+OK
+
+OK
+OK
+
+
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+
+OK
+
+
+OK
+
+OK
+
+OK
+
+
+
+
+
+OK
+如果是ECC和这个S4HANA
+Which one is the legacy system?
+ECC is the legacy system
+OK
+OK
+Tooling
+Tooling的一个系统吧
+System
+OK
+So they will migrate
+Migrate
+Migrate
+Tooling它说为一个asset
+然后Tool
+S4HANA
+OK
+So这个Tooling system
+We call it
+是吗
+Megacy
+System
+OK
+Very good
+Megacy system
+OK
+能使得这个ECC的客户呢
+能很容易地去
+就是转换到
+Transition
+Transition
+Transition
+To S400
+Key features
+关键的什么
+作用
+关键的功能
+Include
+Uploading
+Uploading
+Analysis
+Uploading
+是什么
+上载
+下转呢
+下载呢
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+下载呢
+忘记了
+ZG3Z
+ZG3Y
+对不对
+好
+好
+那我们下了课以后可以去看一看
+这个download和upload file
+我们这个经常是用在
+用在这个
+integration
+就是
+integration third party system
+然后你要去看folder
+就要到AL11去看你的这个上传的这个上传或者下载的这个file
+OK
+好那如果是inbound的话呢
+我们一般什么
+inbound的话我们就会download的或者download的file
+对吧
+upload file就是我们准备送出去的话
+我们一般会upload
+其实download或upload file是这个是都经常用的
+因为你要去做什么
+MOOC data
+就是模拟数据
+好
+analyze existing
+就是目前有的
+existing
+那我们目前有的这个业务流程
+怎么说
+这个
+这个
+这个
+这个
+这个
+这个
+这个
+这个
+
+
+这个
+这个
+这个
+这个
+这个
+这个
+这个
+
+这个
+
+这个
+这个
+这个
+这个
+
+
+这个
+这个
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+那在我们在蓝图的时候是不是经常会去
+compare
+Yes compare dating business process to
+the future
+the future business process
+to be吧
+Yeah
+to be
+to be process
+and we have gap
+we conduct
+Gap
+compense with GAP
+GAP
+GAP
+
+GAP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+现有的业务跟SAP的解决方案中间有 gap?
+怎么说?
+There is a little gap between the existing business process
+with the two-bis process.
+Between business and between-and?
+Between existing business process and 2B system process
+for the system solution
+OK
+GAP
+我们学会了
+The scope of the transition project
+BTC is part of SAP Cloud ALM
+那就是说这个项目的转换转移
+BTP是其中的云端的一部分
+好,那这里头关键词呢,我们叫features
+features,这个SAP的
+main features include什么什么什么
+我们要学会说features
+upload, download
+好,那我们下面呢,学一点点新的内容
+OK,做一下预讲吧
+好,那我们下一周的话呢
+我们会讲到这个PP和FICO的一个
+这个integration
+好,那PP和FICO的
+那个集成呢
+集成的话呢
+我们会讲一下子
+他们之间的这个
+一些凭证
+就是一些接触
+就是集成点
+然后他们会
+对
+PP科FICO是什么
+OBYC
+Oh
+是传版Costa
+Costa
+这是FI
+那是CO
+Oh
+CO
+CO and PP
+是
+more the
+integration
+OK
+好
+这个我们下次去讲
+如果就是你们有经历的话
+你们也可以去看一看
+这个PP跟CO之间
+它是怎么去做一些接口的
+因为现在的我们
+PP的话
+他们也要了解到CO的东西
+然后CO的人呢
+consultant
+也要去了解一些PP的一些业务流程
+所以我们就是说
+现在面试啊什么越来越
+公司为了省钱吧
+就可能是PP的人
+可能也要懂一些CEO
+CEO的人也要懂一些PP
+所以跨模块是
+跨模块的这个
+integration的这个知识
+是非常重要的
+对
+好
+那我们今天去 wrap up today
+so let's wrap up today's class
+what we learned today
+so do you still remember
+any new words or
+expression you remember?
+好 我们今天学了不少的
+那个单词
+好 我们来回顾一下子
+你们不用看我的这个
+notes
+ok
+我们学了
+如果是两条信息
+我们去合并
+想一想,我们有什么词。
+Merge and split.
+Split.
+OK, merge and split.
+OK,那我有一些文件
+要去Moke data.
+OK, I need
+Moke
+Moke data.
+CG3C或CG3Y是什么?
+Apple the file
+and download file.
+OK,very good.
+好,那我的那个
+old system,we call it?
+Legacy system.
+Legacy system.
+Legacy system,yes.
+好,那我的数据储存,我有哪个动词?
+Store.
+Store data.
+Store data.
+Store data,OK.
+好,yeah,so
+我在比对
+existing
+business process
+to
+compare
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+compare
+我的五大核心模块
+核心
+Core
+Core modules
+我们来想想
+直行
+报表
+定制化报表
+Rung
+Rung
+Customize
+Rung custom
+Customize
+我们刚刚学了
+去纠正一下这Custom
+OK
+好
+那我们要做这个Custom Report
+OK
+好
+那我们想一想
+我们的这个
+资产
+它有一个什么
+周期什么
+生命周期
+Life cycle
+Life cycle
+好的
+那我们全套的这个项目
+0到1
+我们叫全套的项目
+我们叫什么
+Zero
+Full cycle
+Full cycle
+Full cycle
+Full cycle
+Full cycle
+Smoothly
+Smoothly
+Smoothly
+Smoothly
+Smoothly
+OK, very good
+好,那我如果我的那个项目
+我的那个开发的这个program
+有点问题,我需要我的这个developer去
+什么?
+debug
+debug,或者还有另外一个词
+trust the program
+debug the program and trust the error
+and fix the error
+好的
+那我们如果就是说
+我们做的这个项目非常棒
+然后是没有错误的
+They are error free
+Problem free
+OK
+The program is mostly
+And they are error free
+好
+那我们这个现有的这个
+现有的这个业务流程太复杂了
+然后我们要去优化一下子
+这个业务流程
+优化
+We should optimize the business process.
+OK, very good.
+好,那这个优化这个业务流程的话,这个也是非常重要的。
+我们要把它记录下来,文档的形式记录下来。
+We will document the business.
+OK, document the business.
+OK, very good.
+好,那我们今天上课,我们觉得挺有效率的,怎么说?
+The class is efficient
+OK
+好 那我们就是在做完配置以后
+我们要到系统里头去检查一下子怎么说
+Validate the implementation
+Configuration
+Validate the configuration
+Validate the configuration
+我要执行这个报表去确定这个配置是很好
+是完整的
+执行怎么说
+Excute
+Excute
+Excute
+OK
+好
+那你
+对
+对
+对
+对
+对
+对
+对
+对
+对
+对
+对
+对
+对
+OK
+那我要提供这个测试文档
+让用户做测试
+我会提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+提供
+
+
+
+
+
+
+
+
+
+
+
+
+OK
+好
+那我们
+那就是说
+我发现这个
+这个长度不够
+然后我需要扩展
+扩展
+I found that
+the length of the field
+is not enough
+We should extend
+extend the
+the field length
+OK
+the field length
+OK
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+非常好。
+好,那就是这个,这个
+Ticket很难,然后
+让这个
+让Taylor去处理吧。
+Oh, the ticket is so difficult
+to,
+we can let the Taylor to
+We can transport Taylor to take care
+of it.
+Okay, handle it, okay.
+好,这个Ticket
+是一个很紧急
+最高级
+Ticket is high priority.
+We can transfer
+Ticket has high priority.
+OK
+The user add new functions.
+I did a new feature.
+New feature.
+Add a new feature.
+Yes.
+然后开发修理了一个
+修好了一个
+这个
+bug
+然后就是
+我要再做一个
+再做一个这个
+负面的测试
+然后
+debuffer
+the debuffer fix a bug
+and I will conduct
+a negative test
+ok very good
+好 那就是这个测试的业务情景很多
+然后就是你们标记一下子
+哪个是通过了
+哪个是失败的
+他们有很多的试图
+我们需要的试图
+我们需要的试图
+然后我们需要的试图
+我们需要的试图
+我们需要的试图
+你知道,the error message here.
+OK,the error message,not error,the error message.
+The error message,yeah.
+OK,so that's good.
+好,那我觉得你们也掌握得差不多了,然后我会把这个发给大家,然后你们有时间的话,你们也就是play the game,就是看到这些keywords,你们就来主句子,好吗?
+比如说你说个standard,oh,so let me run the standard report,OK?
+所以,for example,so the result,so just mark down the result,parsed or failed,okay,so the developer fixed one issue,but they broken another logic
+你们就自己拿着这些那个keywords就当那个练习,好吗?你们自己就是在下面多加练习,就我觉得你们越来越棒了
+好
+那今天
+so do you have any questions?
+No
+没有问题
+没有问题的话
+你们就
+已经11点钟了
+你们可能要吃一个
+早午饭了
+早午饭
+你知道在美国怎么说吗?
+Breakfast and lunch
+那简写什么?
+Brain lunch
+Brain lunch
+Brain
+就是介于早饭和午饭之间的这种brunch
+然后会有专门的这种
+那个餐馆
+就是它就是提供这brunch
+然后他们可能brunch的时间
+可能是从早上9点钟到下午2点钟
+就brunch
+然后他们的分量还是比较大
+还是比较合适的
+就是二十几块钱
+你可以吃很多
+就是很大一份的这个brunch
+OK
+brunch
+对
+你们觉得很贵是吧
+很贵啊
+Dollars
+Dollars
+Very expensive
+还好
+好的
+那我们下次
+下周再见
+我先把这个内容
+传给你们
+OK
+OK
+See you next time
+Take care
+Bye
+See you next time
+Bye
+Bye
+好

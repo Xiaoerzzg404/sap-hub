@@ -1,0 +1,1855 @@
+请不吝点赞 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅 订阅
+OK
+OK
+Hi, good morning everyone
+Happy holiday
+Anybody know what's a holiday in American?
+Hello,Aintita,Happy Thanksgiving Day
+Yeah,Yeah,Yeah,Thanksgiving Day
+I just come back from party
+I,It's very happy
+是的,它是大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大
+你不太容易得到中国食物
+就是真正的中国食物很难得到
+所以
+所以我们可以叫它
+portluck
+portluck
+Potluck是我们在国外的POT
+Potluck
+Potluck
+OK
+那Potluck呢
+就是我们的一个这个traditional的一个这个文化
+就是每个人呢
+就是可以准备一样自己拿手的菜
+然后 you can bring the dishes to the party, okay?
+就是你会把这个菜带到party里面去
+然后比如说十个人
+你就大概准备你自己的
+自己的一两个人的那一份
+然后每个人准备的话
+那你肯定就是很够吃了
+每个人都可以吃到
+可以尝到不同的这个口味
+so这个就是主人的话
+这样的话也减少了主人的这个工作量
+对吧?
+因为大家都就是会有的带水果呀
+有的就是任务就分担出去了
+有的人带水果啊
+有的人带 cake啊
+有的人会带这个 dishes啊
+所以不同的那个
+可以尝到不同的人做的东西
+好
+so we call it a potluck
+好那今天呢我们
+上一次呢我们讲了这个
+functional specs对吧
+想一想这个functional specs
+有哪些点
+如果就是帮着回忆一下
+如果回忆不清楚的话
+我们等会会有一个conversation
+就是一个functional specs
+就是functional consultant和developer
+他们之间会进行一个讨论
+go over
+so they will go over functional specs together
+ok
+好那董老师呢
+如果今天只有两个学生的话
+那我们只上一节课好吗
+可以了,你放一天就了
+好,那我们来看一下
+就是
+so just now I told you the background
+about this conversation
+好,那我刚刚讲了一下
+就是
+这个的背景是什么
+就是这个背景的话呢
+就是我们基于我们上次的这个
+Functional Specs
+好那我们第一个学到的词呢
+是Works Through
+就是Review
+Go Over
+就是过一遍
+过一遍Functional Specs
+那就是跟这个Developer
+是过一遍
+好那FC呢
+Refers to Functional Consultant
+第一位 refers to developer
+那如果我们想不起来
+Functional Specs
+有一些什么样的内容
+或者就是一些细节的话
+我们可以通过这个conversation
+我们可以就是能
+record what we learned last time
+好
+那我们有两个角色
+那我想请
+就是刚好我们两个同学
+你们来就是扮演一下这个角色
+月月你想是当
+Functional Specs
+你想当functional consultant还是developer
+functional consultant
+好那萌萌你就自然就是developer
+OK
+好那我们就是我们可以读得慢一点
+然后这个是在一个一个meeting上面
+好那我们请就是请你们两位开始
+直接读吗还是上面的也要meeting
+我可以看到
+我可以看到
+我可以看到
+所以我们的
+我们的
+Functional Consultant
+和
+Developer
+在这里
+有一个
+访问
+所以
+这里是
+他们的
+conversation
+好
+好
+谢谢
+今天
+我会你通过
+Functional
+Specification
+的
+Custom Sales
+的
+Status
+Report
+好
+我会
+通过
+FS
+briefly
+OK,let's go over the details.
+OK,first,你可以添一点点,你可以定书说,
+alright,so let's tell you the purpose of the report.
+你可以这样稍微根据这个题点,你来讲一下这个background,好吧?
+好的,alright,let's tell the purpose of the report.
+the purpose of this report is to give the sales team a quick view of open sales orders
+then delivery status and billing status
+understood
+所以它拔了数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数�
+对,对,对,对
+对,对
+对,对
+然后下面的话你说说
+Let's go over selection screen
+就是自己来添加一个话来讲,好吧
+好,Let's go over the selection screen
+The selection screen includes
+Sales organization
+Metitory
+Custom number
+Sales order number
+Date range
+Auto creation date
+Date status for later, open, partially delivered, completed.
+For data range, is it a single field with from and to?
+Yes, standard SAP select options.
+OK
+然后再说我们要谈
+Let's talk about the report output
+The output columns are sales order
+order date
+customer material
+order quantity
+Delivered quantity
+Deliver the quantity, building quantity, overall status, delivery status, building status.
+Do you need the ALV output with your sorting, filtering and export to Excel?
+Yes, please use ALV grid with our standard toolbar functions.
+我们谈谈的 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个 这个
+如果能源的估值,
+如果能源的估值,
+如果能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+能源的估值,
+VBRK,VBRP,Join?
+Join?
+Join
+Join
+Join就是链接
+Join
+Join就是链接
+Join
+Join
+Join
+Join
+Join
+Join
+Join
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VBRK,VBRP
+我的修的還拍一部
+你要講這個
+你自己要來提
+要有一個句子來過渡一下子
+你不要突然怕
+突然就到了這個
+No data is found
+OK, so let's cover
+So let's discuss error handling
+OK, OK
+So let us discuss the error handling
+what should happen if not data is found?
+Display a message.
+No records found for the select criteria.
+Okay, do you want to add some restrictions or authorizations?
+Yes, track sales organization authorization will object VBAKO.
+OK,然后再谈到这个 performance requirements.
+Then we can talk about performance requirements.
+the maximum runtime should be under five seconds for one
+10,000 records
+That's fine, I will optimize the circle and avoid the listed loops
+好
+那我们可以
+过过
+过过的
+upput
+format
+requirements
+please
+implement
+colorcoding
+red
+open
+yellow
+partition
+delivered
+green
+delivered
+totals
+and
+thebottom
+for
+quotities
+好
+那你们两个
+就是
+通过
+还没讲完
+接下来应该是萌萌
+不是吗
+Do you want
+support by customers?
+Yes
+support by customers
+and by material
+Let's talk about
+the technical
+assumptions
+for this function, any customer tables involved?
+No, all standard tables.
+Should I create a customer program or use an enhancement?
+Create a new custom report Z-S-D-O-R-D-P-D-R-S-T-A-T-O-S
+ATS
+OK, so let's talk about the delivery bar and the timeline.
+When do you need the technical TS and the first draft?
+Initial draft or self-straft?
+OK
+TS by Friday, first version in DEV by Next Western.
+用于user testing rights after that
+哦, sounds good
+我会开始用于TS
+TS就是technical specs
+好,那在国内的话
+我不知道你们这个functional specs里面
+包括不包括
+我们以前是分开的
+现在呢,就是有很多那个functional specs里头
+其实也包括了那个technical specs
+就是不仅是functional写完以后
+就丢给这个技术
+丢给ABAPER
+ABAPER他也写code的时候
+他也要写他的这个技术文档
+我不知道你们是在一个里面
+还是分开的
+不在一个里面
+是分开的是吧
+分开
+或者有的都不写
+对吧
+我们是分开的
+OK
+那我们有的是
+之前是分开的
+然后现在是合并了
+当然这个合并可能也是
+还是有好处的
+好,那我们刚刚通过就是来就是讲这个
+通过这段对话的话
+我们大概清楚了
+就是我们做一个这个walkthrough
+If you walkthrough with your developer
+What are key contents should be included in your conversation?
+好,那我们来一个个看,好吧
+好,那我们起头的话呢
+当然就是说就比较客气
+就是thanks for joining
+所以我会通过你通过的功能
+或者我会通过的功能
+跟你通过的功能
+好, great, go over
+那我们就是刚过
+刚过, went through
+I have gone through
+I have gone through
+the功能细节
+briefly, briefly是
+简单的,简要的
+简单的,简要的
+Let's go over
+那这个也是一个常用的词
+对吧
+Let's go over the details
+就是我们来一起来再看看这个 detail
+好 那我们也要事先要说明
+what's the purpose of a report
+我们就可以说这个reporter的功能是干嘛的
+对吧
+so可以provide
+我们可以用别的词
+so give or provide the sales team a quick review
+对吧
+open sales
+so it combines data from
+这些T-code
+那你再看它就是同意的话
+那同意的话我们一般说yes
+或者
+exactly
+或者absolutely
+definitely
+对吧
+就是绝对的
+absolutely
+absolutely
+绝对的
+对
+好
+那我们再到了
+我们再讨论这个selection screen
+好
+那选择屏幕的时候
+那我们要涉及到
+上次我们是
+讲到什么single
+对吧
+single value
+single orange
+single还是range
+range的话就是有一个区间
+一个范围
+那我们上次也讲到了这个
+一个
+mandatory
+就是或者 required
+哦,optional
+OK,对
+好,那如果是这个的话
+我是说optional,对吧
+yeah
+好
+那我们这个讲了一个
+partial deliver for
+single或者range
+这个selection screen讲完了
+那我们也要有一些output,对吧
+output就是你的那个产出
+你的这个出来的界面是什么样子的
+好那column
+那column我们知道是竖行还是横格
+还是竖格
+列
+列
+那如果是竖着的对吧
+好那如果横行呢
+一行一行的
+一行
+再想一想
+肉
+肉
+对吧
+像Excel里头
+比如说那个Excel里头
+我们知道一个横格就是肉
+然后竖的就是column
+OK
+好
+这两个学会了吗
+嗯
+放在一起的话
+你们可能会比较容易学
+那我们讲完了
+这个report output以后呢
+我们又讲了这个alv report
+那我们很多标准的报表
+都是alv report
+是吧
+好,那这个report你要需要有一些功能,对不对?
+那需要什么样的功能?
+比如说sorting,知道什么意思吗?
+塞一下
+排序
+排序
+比如说从A,B,C,正排序,还是从Z
+什么这个到的,从大字母开始排
+还是从这个后面倒着排
+对,好
+filtering,filtering什么意思?
+对 刚刚说的赛选 对
+and the export to excel 就是
+导出一个试试
+导出一个试试
+对
+yes please ul v grid
+它是一个格式
+with all standard tool functional bars
+好 到这里呢
+就是 so this part is very important
+ok so you have to
+detail the business logic
+ok so if something and then something
+ok so here
+We learn a new vocabulary.
+OK, join.
+So do you know how to join
+or how to link these two tables?
+Join,就是连接, join.
+Join these two tables.
+我们可以经常会说
+So let me join.
+So do you know how to join
+EKKO andEKPO table?
+就是join,把它们连接起来.
+Understand?
+Use the primary key.
+Yes, you can use the primary key.
+所以你能看到,我会用公司的数字, 年代, 年代, 这两个标志, 得了。
+应该用的单独或是项目的项目, 项目的项目。
+记住是项目的项目, 是定制的,不要说项目。
+项目的项目。
+说错,对吧?
+好,那项目的项目是项目的项目。
+就是準確的或者正確的
+indexes,就是索引。
+準確的索引。
+對,然後我們會講一些
+error handling, so here we have a little bit of
+story to tell you, so maybe that's my
+bad experience.
+Okay, so recently our project to go live,
+OK,so one of my batch jobs always failed,就是其中的一個 batch job總是會失敗
+So and then I log in the system and check the batch job log,
+Log,知道吧?Batch job log,就是
+就是日志,Batch Job Log,
+so when I read the batch job log,
+I found out there is no data,
+okay, so,
+but our system will automatically generate,
+我们的系统就是自动会 generate a ticket
+once the batch job failed,
+就是如果一旦这个 batch job failed的话呢,
+系统就会自动产生一个ticket,
+so we get a lot of tickets in one week,
+就是我们得到了很多,
+几乎每天都有这个ticket,
+okay,
+好,
+那在这种情况之下呢,
+所以我工作了一位我的作者
+我求他们解决这个问题
+我告诉他们
+即使我们没有数据 data
+所以你不能让这个数据的工作失去
+你不能让这个数据的工作失去
+你需要的工作
+但没有数据 data
+没有数据可以生产
+没有数据的数据可以生产
+所以他们在C system的工程中
+所以我们移动到的程序
+就是我们要很快就要移到这个生产机里面去了,对。
+所以这是我的一个教训。
+So maybe in the future, so you will think about how do you handle the file with no data, okay?
+就是你要去想一想你怎么去 handle这个 file,就是没有 data的 file。
+然后你要去 check, so you should conduct at least one test.
+你要去做一个测试。
+so if there is no data, what's the behavior or what's the bad job looks like?
+It's failed, it's passed or something else, okay?
+你可以去测试一下你的 bad job是怎么样子的表现的
+好,这是, that's my story, okay?
+And for the selected criteria,这是个标准,就是选择的标准
+然后按钮Restriction on Authorization
+就是权限会不会有一些限制
+对,restriction on authorization
+yes,然后它会有一些那个authorization object
+那这个developer他们是知道的
+就是说你比如说你的这个batch job
+可能是初级的用户
+他不能去执行
+就是你肯定会有一些这个限制
+那我们还会有一些performance requirement
+OK,so we will conduct performance test
+我们会做这个performance的去测试
+然后你要给他提
+就是要求比如说他五秒钟
+就是要有一万个这个records
+OK
+That's fine
+I will optimize优化
+Maximum
+是最多最大的对吧
+最多run time should be under
+5 seconds
+那他要求挺高的
+那最小呢
+Mean name
+Mean name
+MIMUM
+MIMUM
+Minimum
+Minimum
+就把前面改成
+MIMUM
+OK
+好
+那这个下面就是会有一些
+这个format的一些需求
+deliver的这些灯笼
+就是它会有一些颜色
+code的一些颜色
+好那到这里呢
+它就是create a custom report
+我们不要念成的customize report
+OK
+我们常常会翻错误
+就是那enhancement
+然后这个时间就是
+technical by Friday
+first version
+OK first version
+我们也可以用什么别的词
+来替代什么
+Initial force
+Yeah yeah yeah
+Great great
+或者是draft
+First draft
+也可以
+First draft
+或者是initial draft
+Initial draft
+OK
+好
+Sounds good
+I will start with
+我将会开始这个技术报告
+好
+那我们看看这里
+一些比较有用的一些词
+好
+那FS呢
+我们知道是functional specs,TS那就是developer,
+那一般是会由这个developer去expand technical design,
+好,selection screen我们知道了,ALV report我们也知道了,
+好,那我们是join table,我们有authorization objects,
+OK,so they control what's the level of the user permission,OK,
+好,那我们看看这些关键词
+这些关键字呢
+我们黄色标记的这些
+我们来随便挑几个
+我们来请同学来组一下句子
+好,那我们就
+萌萌,你用Join吧
+Join,我们刚刚学过的Join
+你知道是Join Table
+什么的
+关联
+翻译成中文可以说是关联
+对吧
+嗯
+好
+我們可以加入
+BSEG
+BKPF
+在主要的公司
+和的零
+和的零
+嗯
+好
+是有点吵对吧
+没有
+我说完了
+好
+我听到你们后面有点吵
+OK
+好
+那我们来再看看version
+OK
+好
+那我们另外一个同学就是
+我看看
+哦 月月
+我忘记你名字了
+好 月月你用这个version来造个句子
+version
+I have completed the initial version of the functional specification
+Can you check
+可以帮我查看FS
+可以帮我查看FS
+如果有些问题
+我会改变
+OK
+OK, sounds good
+好 那我们再请
+茫茫
+我再挑一个词
+optimize
+这个见过对吧
+我们学过对吧
+我们学过
+optimize可以做什么
+optimize the business process
+对吧
+我们可以optimize the performance
+我们可以优化
+很多东西啊 那我们想想你来怎么优化
+嗯
+嗯
+啊 为为啊 自然的 反而是
+我们收到我们的账用者
+我们收到我们的账用者
+我们收到我们的账用者
+我们收到我们的账用者
+我们收到我们的账用者
+我们收到我们的账用者
+我们收到账用者的账用者
+我们收到账用者的账用者
+好的,非常好
+我给他们两个问题
+我给他们两个问题
+我们用一个问题
+第一个是我们用的
+我们用的
+第一个是我们用的
+新的项目
+我们用的项目
+第二个是
+我们用的项目
+我们改变的标志
+更多的
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+你想说什么?
+第二个解析是我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+然后我们制作新报告
+我会把他第一个解释的解释
+OK,我会把他解释的解释
+OK,那是好
+那我们再来一个这个
+我看好,这个后面都说挺
+说挺,你们这个知道就行了
+好,我们来用output来造个句子
+约约
+output
+你可以跟用户说
+你说我在写这个功能报告
+你能不能提供一下你的这个
+报表的这个格式
+我会发现了一种新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的新的
+let's move on the selection screen so for the selection screen you must remember
+some fields are mandatory some fields are required some fields are mandatory some fields
+are optional okay and for the date or for some fields so maybe it is a single value
+maybe it is a range okay it is a range value okay so for example for date it's they they
+可以由 date to date, OK?
+好,那 selection screen 我们要知道一些关键。
+So when I talk about the selection screen,
+you must think about the fields, selection fields, OK?
+So for those fields, are they required mandatory or optional, OK?
+And also for these fields, for the value of those fields,
+are they single or range?
+Single or Ranger.
+OK,好,那我们就是要有某块性的这个思维,一提到什么东西的时候,你脑子头要跑出一些词出来,好不好?
+The purpose of the report,我们也会说,好。
+那现在我们这个conversation大概结束了,我们应该知道我们如果去跟这个developer去work through the functional specs,
+so what's the conversation
+or what's the content
+should be included
+in your conversation
+ok
+这个我们学过他们这个对话以后
+我们大概知道我们
+我们要说什么了
+问什么了
+好吗
+ok吗你们
+so far so good
+oh yeah
+yes
+那下次的话
+你可能就是
+the selection screen
+你就照讲就行了
+oh the selection screen include
+那可能不是这个
+可能你是财务的一些之段
+对吧
+你就换一换就行了
+OK吗
+然后在这个selection screen的时候
+你就可以跟他再问一下子
+比如说这个是manitry啊
+required还是optional啊
+然后这个是一个single value啊
+还是一个range啊
+好那你就看到selection screen的时候
+你就打这儿有画面感
+那如果是outputs report
+你说the output report are include
+or什么什么之段
+对吧
+好那我们讲到arrows的时候
+那我们可能会讲
+如果这个data
+so if the program has no data
+so how do you handle the
+the issue
+how do you handle the error
+ok
+那你这个要问一下
+你这个
+如果你这些熟了
+你这些
+问这些事情很熟练的
+就去问别人的话
+别人就觉得你是一个
+就是比较高手
+对
+在国内的话
+不是很重视这个
+Functional Specs
+我听说很多人
+做运维的
+可能一辈子没写过
+没写过Functional Specs
+就是直接说
+然后那个developer就直接开发了
+就很不太注重这个文档的管理
+但是在国外
+在global的项目里头
+是很注重文档的管理的
+所以就是我们要写好
+我们自己的functional specs
+OK
+好
+so far so good
+有没有什么问题
+两位同学
+你们有没有什么问题
+关于这个功能报告的这一旁
+没有问题
+没有问题
+好那我发给你们的功能报告
+你们有没有去练习一下
+稍微练习一点
+但是说的不好
+好的没关系
+那就是
+好那我们今天我们要学一点新的内容
+好
+我们今天呢就是要学一下子
+就是
+Local ERP和这个
+SAP
+Global
+No, SAP
+Local ERP
+So right now everybody knows
+Chinese government support local ERP
+So a lot of consultants
+are really worried about local ERP
+will replace SAP
+很多就是很担心
+就是当地的这个 ERP
+会取代这个 SAP
+So what's your opinion about it?
+所以你觉得…
+我认为是不可能
+为什么?
+因为 SAP很长的历史
+它有很多公司
+它有很多公司
+它有很长的经验
+是的
+是的
+所以
+我認為最重要的是
+有一個強制的行為
+我們的 localERP
+沒有
+這個
+這個
+didn't have this
+healger function
+okay strong function
+yeah okay
+好 那
+那玉玉呢
+oh
+yes I agree
+I agree the
+萌萌's opinion
+你可以用刚刚学过的一句话
+那个一个单词就行了
+一个什么
+absolutely
+oh
+exactly
+我认为了一个公司的公司是关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关于 关
+the local ERP only generates the financial
+评证怎么说
+financial document
+document
+but the SAP can
+in SAP
+the
+the
+那个
+从评证
+SAP can generate the
+从业务产生到财务的这个
+这个怎么说
+so can create the full cycle
+Full cycle
+Full cycle
+OK
+OK
+Create the full cycle document
+OK
+Include the purchase order
+Goods received
+Invoice
+Financial document
+and so on, right?
+Yes, yes.
+艾利斯先说 月云先说
+好了
+阿文 您的公司最近执行了SAP
+我们还在使用我们的 local ERP system
+如何是SAP不同的?
+艾利斯 您是在新闻的SAPS4HANA
+在最后的季节
+比较到一个 local ERP
+SAP是更加进行和稍稍的
+What system are you using now?
+We have a customized local AIP built 10 years ago.
+It covers finance, inventory and basic sales processes.
+But integration is a challenge.
+That's coming.We say SAP, all models like SDMM, FISU and PPU work together in real time.
+So there is no need for batch uploads or separate databases.
+sounds efficient but local ARP is cheaper and easier to customize isn't SAP too rigid and expensive
+it can be expensive and expensive it can be costly up front but it reduces long-term
+更加企業的效果,
+更加企業的效果,
+更加企業的效果,
+更加企業的效果。
+和FioriApp,
+使用的經驗是更加更好的比方。
+很明顯,
+我們的報告是很難的,
+我們在Excel和Manyureconciliation。
+用manual reconstruction
+you can use embedded
+and
+t
+and
+curse or integrate
+to with tools like ss
+sip uh and
+takers cloud reports are more
+accurate
+accurate accurate
+这个被动
+oh sorry
+我们将在转换的转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换 转换
+我们在这一段时间的变化,我们来看一下里面的一些基本的句型。
+OK,I heard your company recently implemented SAP
+就是正在什么?
+直施
+那我们知道,我们可以作为一个动词
+implemented
+So recently my company is implementing SAP
+我们公司最近正在实施这个SAP
+对吧
+We are still using our local ERP system
+How is SAP different?
+OK,what's the difference?
+我们可以说
+what's the difference
+between SAP
+and local ERP
+OK
+OK
+Hi Alice
+Yes
+We
+什么
+We went live
+We go live
+Go live
+We went live
+那是过去
+SAP
+HANA
+Last quarter
+那我们看到这个
+就是跟中文不一样
+我们会先把主要的说完
+We went live
+然后再把那个时间
+放到后面
+Compared to a local ERP
+我们要学会用这个
+Compared to
+就是对比
+相比于
+相比于
+那你说相比于这个
+你比如说提供两个
+那个
+Solution
+对吧
+Compared to the first solution
+The second solution is better
+It's better
+对可以
+很好
+very good
+I say this is much
+是吗
+intergrated
+好的
+刚刚月月也在说
+就是说那个
+local ERP
+so they are not
+integrated
+right
+so they are separate
+they have a separate module
+so they just
+they can just create
+financial document
+okay
+so local ERP
+is not
+integrated very well
+然后是可什么?
+对,scalable.
+What system are you using now?
+你在用什么系统呢?
+We have a customized local ERP built
+10 years ago,
+那就是built或者
+或者用10年了,
+它是掩饰的,
+刚刚我们讲过了,对吧?
+好,我们经常用这个,
+它是掩饰的,
+今天,我会讲到GTS的系统,
+它是掩饰的,
+它是掩饰的,
+它是掩饰的,
+它是掩饰的,
+它是掩饰的,
+对吧?
+是很普通的
+We say CPO modules
+like SD
+什么什么什么
+work together
+in real time
+so they can work together
+in什么
+real time
+real time
+什么意思
+实时
+so there is no need
+for batch upload
+就是大量的
+大量的去
+在上载
+然后
+需要大量的
+去上载
+也不需要把这个table
+database去分开
+因为它是有integration的话
+它是有个整体
+好的
+那我们再到下一趴
+sounds什么
+sounds
+efficient
+sounds efficient
+那就是很有效率
+sounds efficient
+ok
+那我们经常见到会efficient
+比如说I have finished my
+I have finished my task efficiently
+I have finished configuration efficiently
+我们就可以把那个
+副词放在后面去修饰你的句子
+OK
+好
+那就是我很有效率
+那中文就是
+我很有效率地完成了我的那个任务
+但是在美语
+在那个英语的环境呢
+就是说我先把主流放出来
+然后我们再用一个状语
+efficiently再做状语
+才修饰你的这个
+修饰你这个句子
+对吧
+好
+那我们要注意顺序
+But local ERP is cheaper and easy to customize
+Isn't SAP too rigid or expensive?
+好 那这里一个黄色标示
+这个什么意思?
+拆一拆
+Rigid或者rigid
+拆一拆是哪个
+哪个发音
+然后他拆一拆什么意思?
+两格的
+rigid
+就是 not flexible
+不灵活的
+不是很灵活
+对
+and expensive
+it can only cost the upfront cost
+upfront cost
+什么意思
+costly up front
+up front
+前期的费用
+up front cost
+前期费用
+but it reduces
+long term operation
+long term
+对那相对来说
+是短期的呢
+short term
+short term
+好那SAP呢
+就是也会提供这个offer
+Now offers
+那我们想想还可以用什么别的词
+provider
+对
+offers
+OK
+云端的这个开发
+然后它会降低这个
+这什么意思
+infrastructure
+infrastructure costs
+那我们系统是不是要去构建一个系统啊
+然后又要有硬件又软件对吧
+硬件
+硬件
+好
+Infrastructurecast
+And with Fioral apps
+The user experience is much better than before
+So have you used the Fioral app before?
+No.
+Fural rate.
+No?
+No.
+对 就比如说这个块是这个Display
+比如说DisplayPurchase Order OK
+好 那你就这一块就是DisplayPurchase Order
+然后就double click
+然后它就给你自动就到了M1 23N
+对
+所以你就不用GT code了
+你要做什么你就点这里就行了
+好 这个是Fural的 我们多说一句
+下次的时候 我们给你们演示FURO的时候
+你们在你的简历上 你就可以说你有这个FURO的experience
+OK
+I implement a FURO function 三十年之后
+Oh 三十年之后
+OK 所以 三十年之后
+So right now you're using S4 HANA 现在我用SF ECC
+ECC
+ECC
+still ECC
+OK
+but you also use
+Fural right
+Yeah
+I
+OK
+I have imprimed
+ECC
+ECC
+ECC
+ECC
+都有
+都有
+好
+那挺棒的
+好
+Interesting
+就是很有趣
+Our report
+is also
+Headic
+We rely on
+Excel
+and manual
+Reconciliation
+Reconciliation
+是什么意思
+统育
+还统一还有呢?如果我们要做bank reconciliation呢?
+要叫对账,银行对账,对吧?
+哦,bank reconciliation
+统一科目是那个reconciliation account,然后我们要做这个bank reconciliation的话呢,我们就是银行对账
+OK,那这是它要自动的这种对账,核对,对吧?
+好,SAP, you can embed it, embedded, bed是床, embedded是什么,植入,对吧,植入的分析,
+或者呢,它会有一些这个集成的一些工具,比如说SAC,SAP云端分析的一些工具,
+然后呢,这样的话呢,它的那个report会更加的什么,
+自动化
+对
+more accurate or
+automated
+ok
+好 那我们再看下一趴
+We are worried about change management
+so everybody wants
+stay in the comfort room
+就是每个人都想
+生活在什么里面
+住室去
+对  comfort room
+ok
+好,那就是
+We don't want change, okay?
+We just want to stay at the comfort zone
+So,他们user呢
+I use the tool
+Be used the tool,是吗?
+习惯于
+习惯于本地系统
+对,然后我可不可以说
+我们的用户习惯于这个
+拥有软件
+然后我们正在实施
+我们会给他们一个
+SAP的一个
+使用培训
+怎么说?
+Our users are used to use your system, and we are trying to provide them a SAP system training.
+Okay, very good, very good.
+好,萌萌,你现在是可以把很多那个以前学的单词把它用起来,这是一个很大的进步, okay?
+但是还是要注意一下子就是发音,但是我觉得你现在是越来越好,就是用句子更加的这个自由。
+好, that's valid,就是 understand,
+确实是这样的,我们可以说 exactly,
+SAP project requires strong challenge,
+Change management and training,
+but once the user gets used to it,
+I used to it, get used to it,
+get used to it,
+就是习惯,习惯于它,
+I'm not getting used to it yet,
+but I believe I will pick up the song
+就是我对这个还不熟
+不是很习惯
+但是我觉得我会很快地
+就会把它撕起来
+OK
+They appreciate the efficiency
+好
+那我们请月月
+你用这个appreciate
+appreciate来组个句子
+尽量把它用
+感谢对吧
+或者欣赏,感谢。
+You have completed the test efficiently,
+so I appreciate your competitive能力,
+competence,
+competence.
+你或者你的 effort,
+就是你的努力。
+efforts
+OK
+OK
+So that's good
+Let me know
+Let me know
+就是让我知道
+好
+这个也是经常说的
+So if you need any help
+Let me know
+OK
+如果你需要一些帮助
+请让我知道
+Let me know
+If you have any concern
+就是你还有什么问题
+If you have any question
+Let me know if you have any question
+我们都可以把它用在email里面
+对吧
+就是客氣的結尾的時候客氣說你解釋的一些solution
+你可以說
+Oh, please feel free
+feel free
+就是感覺到自由
+看我的那個
+feel free
+我看我这
+feel free
+feel free
+let me know
+feel free
+feel free
+feel free
+
+feel free
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+feel free
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+contact me
+contact me
+if you
+需要
+你
+feel free
+to contact me
+concern
+ok feel free to contact me
+if you have any concern
+ok
+好
+那我们也经常用
+appreciate
+对吧
+I appreciate your help
+好好
+OK
+那这个也是经常要用到的
+Appreciate
+好好
+OK
+Let me know if you have any concern
+也可以
+就是这口语比较容易
+Let me know
+OK
+If you have any concern
+OK
+好
+其实他们用语还是蛮简单的
+因为你看到这些conversation
+其实
+其实没有用到多少高深的词吧
+对吧
+稍微难一点的话
+我们都用黄色的把它highlight出来了
+但是大部分的内容呢
+我们都可以全部可以拿来自己用
+对吧
+好
+那我们就是讲到local的话
+那我们再看看这个
+那是valid
+就是你说的这个有道理
+OK
+好
+那我们讲完这个ECC和这个
+local的一个对话以后
+我们就是
+来做一个这个case study
+OK
+上次我们讲过了functional specs
+OK
+那我们要在我们经常
+在我们的job description里头说
+你要熟悉这个RASIF
+上次同学问过怎么去读
+那你也可以WRICEF
+你可以分开读也可以
+或者就是说你读个RASIF也可以
+好
+那RASIF
+stands for什么
+代表什么
+Workflow Report
+Interface Conversation
+Enhancement
+Conversion
+Conversion
+Enhancement and forms
+好那
+月月你对这里面哪个不熟
+Interface
+Interface
+Conversion
+Interface是用的最多的
+好那我们也会讲
+Interface
+记得我们讲过GTS没有
+Golden Tax System
+是不是属于一个
+interface
+conversion
+就是data conversion
+enhancement
+就是加强
+form就是表单
+最简单的就是表单
+conversion
+conversion就是
+数据转换
+那比如说你要上载
+比如说你有些客户
+大量的客户的数据
+很大量
+然后你不可能用
+比较复杂
+你不可能用那个
+LSMW
+就是你国内叫老师蒙我
+对吧
+用老师蒙我转换不了
+然后他可能就是要
+开发一个这个conversion
+然后就是来帮你导数据
+转数据
+数据转换
+OK
+好
+那这个请萌萌你来读一下
+编号 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合 组合
+revelped and documented.
+RASIFs can be managed in the configuration library
+by setting the RASIF as the configuration type.
+When documented as configuration units,
+those can efficiently be reused and assigned
+to other solution documentation elements.
+好 那RESAVE
+我们就要知道这个RESAVE是干嘛的
+OK 那如果下次的话
+我们就可以直接就答出来
+It refers to workflow reporting
+interface conversion
+enhousement
+enhousement and forms
+好 那我们下面学两个这个
+就是
+两个概念
+OK change management
+好 change management
+这个没有学过对吧
+Change management
+那刚刚我们也涉及到了
+就是说
+So everybody wants to stay in the confident room
+So it's really hard
+Or it's very challenged to change
+OK
+So if there is something change
+So they must have the procedure
+他们必须有一些流程
+去做这个
+For the change management
+OK
+好
+那就是他会 define一个 process
+It is describe
+Define a process
+Define
+我们定义
+对吧
+Process
+这个Process
+干嘛呢
+Introduce
+会引入这个
+啊
+Nothing
+会引入这个
+加强
+调整
+Adjustment
+或者刚刚月月说的
+Modification
+对吧
+或者创新
+Innovation
+In the company's IT
+是Optimally
+那Optical
+我不知道
+对吧
+Optimize
+那就是
+优化
+对吧
+可以优化的
+这个尽可能的优化
+现有的这个risks
+the existing risks
+就是现有的
+目前有的存在的
+r to be
+什么
+minimize
+minimize
+对了
+minimize
+对
+and interruptions
+就是打断
+of the functions
+are to be awarded
+就是要避免
+从一个这个
+strategic point of view
+从一个什么什么的角度
+好那这个词呢
+我们经常
+之前学过
+从顾问的角度
+我们来怎么说
+从顾问的角度
+从 functional
+从 functional
+functional
+functional
+point of view
+好那我们就说
+比如说
+从顾问的角度来讲
+我觉得那个第一个方案比较好
+对我们可以
+I optimize the first solution
+或者I prefer
+I prefer the first solution
+OK
+好那existing
+so我们要知道existing
+目前有的这个情景
+好那这个词我们也经常用
+好existing issue
+或者目前有的
+或者existing
+生产机里的错误怎么说
+现有的生产机的错误
+Existing Error in Production System
+Production Error, okay
+Existing Production Error
+Error
+Error
+OK, or Error
+好,那我们又回到这个Defect Management
+Defect Management是什么呢?
+就是说如果有不完美或者有错误
+或者就是说我们怎么去纠正,对吧?
+好,那我们看看
+Defect management
+Describe the creation
+and the management of defects
+那我们经常会要
+open defects的话
+我们就要open a ticket
+对吧
+open a user story
+or ticket to track the defects
+to fix the defects
+在测试期间呢
+或者在这个运行期间
+if a test run fails
+就是说测试的时候
+如果是失败的话呢
+那就是因为一个错误
+或者这个 defect
+is discovered,
+就是发现了,
+I discovered a defect in the system,
+我在系统里头发现一个错误,
+so I discovered a bug in the customer program,
+so我发现了有个 bug,
+就是有个错误,对吧,
+During the use of an application,
+就是在使用这个系统的时候呢,
+我们可能会发现一些 defects,
+The defect app can be used to correct
+and handle the defect,
+那它有专门的这个Defact的App
+可以去处理或者用于纠正
+或者处理这个Defact
+好那这些词呢都是非常
+非常棒的一些词
+好那我们来看一看Defact
+那我们知道就是错误
+我们要开这个OpenTicket
+对吧
+好那SAP是不是一个Application System
+是不是一个应用的软件
+对吧
+好那我们来再看看Run
+TestRun
+这里是个名词
+就是说测试
+跑测试的时候失败
+那我们run也可以说动词
+对吧
+好 那我们run
+我们之前学了好多run
+run什么
+run report
+run by job
+还可以run什么
+mrp
+对吧
+好 那我们再来看一看这个
+好,那我們看看Handle,再想一想Handle
+Handle the ticket
+Handle the issue
+Handle the solution
+Handle the requirement
+Handle the problem
+OK, very good
+好,那我们思维越来越顺畅了
+OK,handle
+好,那我们不能handle这个ticket呢
+怎么说
+I can't handle with the tickets
+Can you help me?
+为什么
+I can't handle the tickets
+不要用with了
+I can't handle the tickets
+請你幫我幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+請你幫助我
+所以我们来讲一下今天我们学了什么
+首先我们学了
+的关系的
+的关系和发展的
+其实我们有很多的关系
+就是了解的功能
+尤其是
+功能尤其是
+功能尤其是
+功能尤其是
+我们工作了
+我们工作了
+有很多的
+所以
+关于你的眼睛
+所以我说
+关于你的
+视频的
+所以
+什么语言
+会
+会
+会
+在
+视频
+在
+the requirement the first we should discuss the requirement of
+selection screen
+selection screen
+我们会想到这个这个fields对吧
+single orange
+okay very good
+option
+option or
+什么
+mandatory
+mandatory
+mandatory or required
+不记得啦
+就是必输的
+就是 mandatory
+然后选择
+选择
+optional
+对
+optional
+闭上眼睛想一想
+OK
+好
+那我们还有
+single value
+还是
+range
+对吧
+嗯
+好
+那我们还会
+涉及到一些
+这个 arrow handling
+又是handling
+对吧
+handle
+handle the arrow
+right
+how do you handle the arrow
+OK
+我们就有这个IRO了
+对吧
+好
+那我们在这个PPT上面
+我们又
+你们两个又进行了一个
+这个local ERP和
+SAP的
+的这个讨论
+对
+好的
+然后我们又学了两个
+这个学了这个RASIF
+So what is RASIF
+好
+你们俩睁开眼睛
+然后你也看不到
+这个我的这个PPT
+所以,what are
+reactive
+workflow
+report
+conversion
+interface
+interface,conversion
+for
+OK,OK,very good
+好,那我们也学了这个
+defect management和change management
+好,那我们今天的课就到这里
+然后等会会把这个
+conversation发给大家
+你们两个也可以
+下课以后
+你们两个可以再进行对话
+你们喜欢这种方式吗
+Exactly
+Exactly
+OK
+不是我们现在就是
+刚好那节课不上了
+那你们有没有什么feedback
+你们对这个形式
+觉得好吗
+So how do you feel about the new
+the conversation
+So do you like those conversation
+可以啊
+我觉得一周一次课挺好接受的
+一周两次课
+天天累
+每天最大中午都在复习
+现在我每天只需要三天复习
+难怪
+对
+Yuye现在有没有拿出时间来复习
+但是我可以
+对我看到你们两个是有进步的
+对
+I think the learning English
+is not
+the learning English
+need afterport
+not only the input
+the output is very important
+because
+with the only input
+I think must the language
+but the expression is poor
+with more output
+the expression skills can be better
+OK, 完全是你,我完全合同。
+谢谢你,谢谢你来我的课程,谢谢你来我的课程,谢谢你来我的课程,OK?
+那老师,那以后每周都上几节课还是根据人数决定?
+根据人数决定吧,一般是一节,如果人多一点的话我们就上多一点。
+你们是prefer是一节还是两节?
+我perform一节。
+好那我们跟大圣老师商量一下
+行
+我们接下来是不是还有一半
+我们是不是已经进行了一半
+对啊你们已经
+16 17课了吧
+16了还有8节课
+还有8节课对我们还要
+还有很多东西学
+你们现在跟得上吧
+可以
+可以哈
+我们还是学到了很多专业的词
+行
+好那先下课了
+希望你一好好的
+OK
+OK
+
+OK
+OK
+OK
+OK
+
+OK
+OK
+
+OK
+OK
+
+
+OK
+OK
+
+OK
+OK
+
+
+OK
+OK
+
+
+
+OK
+OK
+
+
+
+
+
+

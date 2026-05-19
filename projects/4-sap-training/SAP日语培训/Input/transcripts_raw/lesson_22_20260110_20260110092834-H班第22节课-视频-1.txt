@@ -1,0 +1,1691 @@
+好。
+好。
+好。
+好。
+好。
+好。
+好。
+好。
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How are you doing today?
+YuueYue,Mengmeng,Daisy
+Good morning
+Good morning
+So let me share my screen
+So do you still remember what we learned last time?
+I learned the differences between SAP ECC
+SIP for HANA
+OK, that's great
+So who can tell me the difference from your modules
+OK, YueYue, so you can introduce
+YueYue, you can see
+Oh, I'm a FICU consultant
+So for my FICU module
+So there is some difference between
+Yeah, something like that, OK
+首先
+所以,
+是指,
+是说的是不同之处还是更好的地方?
+没关系,就是 the difference.
+比如說你FICO module,你可以看到FICO的系統
+一些址是一種址,我們有BKPF和BSEGNCC,
+但現在我們用ACDOC table,
+可以設置了一個文字的文字,對嗎?
+哦,對,對,你也可以說是
+simplify 他們的流程都可以說
+嗯
+Whatever
+Yeah
+Yeah
+Oh
+Oh
+Firstly
+In ECC
+We
+We create the material
+Material data
+Firstly
+In ECC
+The material
+Number is
+18
+但是在S4,它将在40个角色。
+在ECC,我們在
+我們在
+我們在
+我們
+我們
+我們
+我們
+我們
+我們
+哦,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1T code,1
+但在SFARHANA,它是免得更多。
+OK, great.
+首先,在ECC,
+在S4HANA中, 它是在
+在S4HANA中, 但是在S4HANA中, 它是在
+在S4HANA,我们可以用MIP在短暂的时间。
+短暂的时间,非常好。
+Lastly, in ECC,
+in the financial accounting of FI,
+we use the
+we create
+In financial accounting and controlling,
+Business for HANA,
+We integrate one table,ACDOCA.
+AgDoc, yeah.
+AgDoc.
+AgDoc.
+Yeah, very good.
+Yeah.
+So that's all?
+还有一个是
+Fahana
+We integrated
+MSEJ MKPF
+Into a table
+MATDOC
+Okay
+MagDoc
+MagDoc
+That's good
+I can give you like 100%
+100 points
+100 points
+
+How about Desi
+Desi from your modules
+OK
+Can you tell us
+What's the differences
+between your module
+In ECC
+And S4HANA
+Hello Desi
+Yeah I'm here
+OK
+The difference
+such as the material ledger, the processes, the steps is less than ECC.
+Let me think of other differences.
+我可以想想的
+有些不同的
+它會被
+是 提供的白月月。
+OK。
+嗯-hmm。
+So, 蒙蒙。
+So, do you have any implementation about the differences?
+OK。
+So, for example, you can see the table,
+table that removes a lot of aggregate and index table and the performance is faster.
+Okay.
+The SAP ECC is an older version of SAP system.
+The database in SAP ECC is run on a variety of databases such as the DB2, the Erker, and
+and Microsoft, I forgot, but the SAP is for HANA,
+HANA database is run in memory database,
+instead of harder disk.
+I run that more significantly and efficiently.
+OK,非常好,非常好,非常好,你用了一些副詞非常棒,然后Yuyuy刚刚也非常不错,她用了一些结构,就是第一,第二,第三,什么样的,我可以感觉你更增加你的英语,OK,过来
+OK,OK,the type in SAP S for HANA is column line instead of row line.
+Yeah.
+Instead of,OK, row.
+OK,column based.
+Column based instead of row based.
+Yes, very good.
+它可以
+它可以
+它可以
+它的重量
+哦,非常好
+重量
+OK,
+Data Redundancy
+OK
+OK
+所以,
+那是
+它是
+它是
+它是
+
+
+它是
+它是
+它是
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+每次的新型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型型
+OK,那我们有real time
+还有就是接近
+接近real time
+我们也可以说
+near real time,OK
+OK,near real time
+好
+那我们就是现在已经到了23课了
+就是我觉得大家的那个
+说英语就是越来越好
+然后你们越来越有逻辑性
+刚刚我讲了就是说你们在interview的时候
+如果能把这个
+structure用起来的话
+别人对你们的印象
+就会非常深
+好
+那就是
+How about the job market right now?
+So we come to a free talk
+So anyone is looking for a job right now?
+你们正在找工作吗?
+Anyone is looking for a new project?
+Oh
+And we end up
+In
+In
+不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是,不是
+我想看海外的
+海外的
+我想找到
+global
+project
+project
+what's your level
+are you a junior
+or are you a senior
+what are your levels
+你可以说我可以在中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中文中
+在Uni 23和Uni 24,
+我们会谈论和议题,
+然后请你
+at least prepare
+the introduction
+of yourself.
+所以我
+am confident about you.
+OK,no worry about that.
+Thank you.
+其实大家不用那个
+太nervous了,其实这个英语的话
+有时候临时也可以抱抱佛奖
+我也会做那个
+我因为也有别的那个学员
+他们不是我们的学员
+他们就是来找我做这个面试辅导的
+他们也是可以临时抱佛脚的
+所以不要太担心
+而且我觉得你们的英语还是有进步的吧
+你自己觉得有进步吗
+我觉得他需要一直练习
+对
+对,就是如果给你一个statement,就是给一个paragraph,你要把它背下来,你可以吧?
+就,for example,so I gave you a structure, okay, so first you have to introduce your,
+first you introduce your name, and second you can introduce, I'm a senior SAP consultant
+with 10 years experience,something,就张口来,因为我,对,可以背,可以背,
+可以背
+我觉得可以是临时突破一下子的
+然后如果是
+就是
+try your best
+you know
+to answer all of the questions
+so if you don't
+don't know the answer
+maybe you can just ask them
+are you talking about something
+什么什么
+你就可以要他来解释一下子
+你说你这个
+I'm not very clear about your question
+你可不可以
+so could you please explain
+more details
+can you
+explain a little bit more
+Yeah something like that
+你可以把话题转给他们
+把球丢给他们
+让他们去稍微解释一下子
+他们在解释的过程中
+其实就是你在思考的过程
+然后你能插到一点边
+打到一点点边的话
+也OK也没有问题
+所以就是说还是有一些技巧的
+如果就是不会回答的时候
+你要怎么说
+这个我们之后都会教你的
+好
+那我们今天呢
+就是进入到了一个新的一个topic
+也不算是新 topic吧
+我们就是
+之前你也讲过这个
+interface
+对吧
+好
+那今天我们是做一个专题讲
+我们来讲一下子
+怎么样去设计一个
+How do you design an interface
+那我们再去
+你们有没有设计过这个 interface
+So have you designed an interface before
+比特上SAM,CAM
+SAM and C-R-M
+那是自动系统是standard吧
+那是standard的 function, right?
+Transport to some field
+about a final document
+OK
+Yeah
+So that's good
+You have experience
+如果有人问你这个问题
+你有没有进行的interface之前
+你可以给他们例子
+那么你也可以练习一下子
+好
+那另外两位同学
+你们做过这个interface的design吗
+是
+所以你之前做过很多interfaces
+没有
+No
+你没做过
+Daisy你没做过
+Download
+Download
+不是Download的
+就是Design
+Design
+Yes
+I have
+Done
+OK
+你刚刚可能听错了
+就说Done
+就是做
+做的意思
+Done
+就是Do
+我听了Download
+我以为是下载
+下载这些接口的代码
+不是不是
+Done
+就是
+Well done
+就是做得好
+Dunk
+就是说做完了
+那有时候我们WeChat的时候
+就是说
+你能不能帮我做一个什么事情
+然后我就做好了
+我说Dunk
+就这样子
+就比较 easy
+就很简单的
+好 月月你出过吗
+I have
+I haven't done it
+You haven't done it before
+OK
+So
+好
+那我们没有关系
+就是 let's summarize
+So if you have done this interface before
+so that's fine
+so we can just
+work through those
+key points
+ok
+我们再过一下
+这些key points
+这样的话呢
+我们可能更有结构一下子
+那如果要你
+回答一个说
+你做一个什么样的
+interface的话
+那你要学会讲
+就是比如说那个
+so first we should understand
+the business requirements
+right
+那我们首先呢
+我们要去理解
+这个用户的需求
+那我们也要去
+identify the interface type
+那你这个interface的是什么样的
+是IDOC还是API还是什么
+然后我们在做这个接口的时候呢
+我们要去会
+两边的这个系统的这个数据
+Data fields
+要做一个什么
+Mapping
+Mapping就是匹配
+OK Mapping
+好那我们也要去做design
+the interface architecture
+那我们
+我等会会给你显示
+from SAP to middleware
+中间键
+然后再到这个target system
+第三方
+nong system
+ok
+好
+那我们在做这个interface design的时候呢
+我们要考虑
+so you should consider about
+the error message
+how do you handle the error message
+ok
+how do you handle the error
+ok
+and also how do you monitor the error
+ok
+那第六个呢
+就是说我们要考虑到
+你这个数据的data的这个volume
+数据量有多大
+或者这个performance
+有没有performance issue
+就是
+或者执行的时候
+这个
+it's very slow
+ok
+好
+那我们也要考虑到这个testing strategy
+testing strategy的包括你这个
+那个做测试的时候
+要考虑一些因素
+好
+那我们先逐条逐条的过一下
+好
+那我们在就是在问这个business的requirements的时候呢
+我们会有一些东西要来问一下子
+好
+那
+萌萌和
+萌萌和月月
+你们一个是问问题
+一个是回答问题
+请蒙蒙你来回答
+你来
+请蒙蒙你来回答问题
+月月你来提问
+然后蒙蒙回答问题
+因为你可能没做过
+但是你根据我
+根据我这个列出来的那个
+给你一些hint
+你来问一下问题
+好的
+蒙蒙
+which systems are involved
+你要讲完讲全
+which systems are involved
+in this
+interface
+interface
+好吧
+好的
+好
+好
+好
+好
+好
+好
+好
+好
+好
+
+好
+好
+好
+好
+好
+好
+好
+好
+好
+好
+
+好
+好
+好
+好
+好
+好
+好
+
+好
+
+好
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oh yeah um um what's the direction uh in the interface oh firstly we should the creators of
+fabpial in srips system oh we firstly we should apply for uh the the papill in srips system
+and after the founders approve the FAPIAL we should transport the FAPIAL field into Golden Tech System
+and the Golden Tech System will return us some field about the official FAPIAL number
+Official FAPIAL number into SAP system
+and the SAP system should save the data in the table
+哦,yeah
+所以那就是,
+那是,
+那是,
+那是,
+那是,那是,
+那是,那是,那是,那是,
+那是,那是,那是,那是,那是,
+OK
+OK
+OK
+OK
+OK
+OK
+So
+Go ahead
+OK
+OK
+So the interface is
+Is the interface is real-time or batch job?
+I think we should choose the real-time way
+因為我需要發票的發票
+然後接受公司的發票號
+在時刻
+OK
+OK,那是好
+好,那剛剛那個Business Process的話
+那個蒙蒙其實已經解釋過了
+好,那我們就先到這裡
+好,那我們問問題的話呢
+我們會問一些SAP System嗎
+還是 non-SAP System嗎
+还是说SAP之间的那个interface
+那比如说刚刚你们说了一个SRM和CRM的对吧
+好 那我们在第二个
+the second one
+So do you still remember what's the second one?
+What is the interface type?
+OK identify
+So we still remember identify interface type
+OK
+好 那这个稍微有点点技术含量在里面了
+我们请Daisy
+Daisy 你来
+你来回答问题
+然后忙忙你来问问题
+可以吗
+Daisy
+OK
+OK
+Which integration technology
+if we need to
+assize the interface
+OK
+我們可以用了AdHoc,我們可以用了RFC的類型
+如果是配合的螢幕與其他兩種系統在現場?
+我們會用 SAP-to-SAP的交易,我們會用了BAPI,
+或我們可以叫它,
+什麼是RFC?
+RFC也是很常用的。
+遠程什麼?
+RFC是Remote Function Call.
+很棒。
+好,那你還可以問這個,
+什麼是個 format的這個文件?
+是CVS還是XML?
+XML。
+嗯哼
+我們可以用
+我們可以用XML
+File
+File OK
+我們可以用的
+Data in batch process
+嗯
+我們可以
+我們可以
+Batch process
+好 某某你记得吗
+就还可以问就是关于BedgeJob的话
+我们可以再拓展一下子
+比如说这BedgeJob是这个
+How often啊什么的
+或者是It's weekly什么什么
+就想想
+我们一讲到这些东西的时候
+我们慢慢去扩我们以前学的东西
+好吗
+OK
+How do you define your message
+Oh no no this is not the defines
+哦,how do you design the error message?
+So what's the error message?
+Oh,it's not here,so that's the event.
+Okay,so that's fine.
+So we will talk about the event driving architecture.
+Architecture就是结构。
+那包括什么样子?
+什么叫做event driving architecture?
+So can you give me an example?
+那比如说
+Event Driving
+那比如说我们用了这个Ariba
+我们Ariba是创建这个
+PR和PO的
+对吧
+So once Ariba created the PO
+So it will automatically
+update PO
+in ECC
+or S4HANA
+就是说Ariba那个系统它产生了PO
+它就自动会到这个SAP
+这边自动更新
+So we call it Event Driving Architecture
+我刚刚给你一个
+对
+一旦那边做了什么事情
+然后我们这边就会
+就是有什么样的事情发生
+event
+然后我们这边就会
+激发我们这边
+那比如说
+我刚刚举的例子
+那边产生PO
+我们这边也是自动的
+就能 update the PO
+in ESAP or S4 and that
+好
+So let's move to the
+third part
+OK
+所以我们要去定习的数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数据数�
+It includes the field name, data type,
+and the data length,
+meditary option,
+value mapping,
+conversion logic.
+Logic.
+Logic.
+Logic.
+Conversion logic.
+OK.
+好
+那我们做一个
+Define Data Mapping的时候
+那这个我们一般会写在
+写在我们的什么上面
+Functional Specs
+Right
+就是在我们的Function Specs
+里头我们会做一些Data Mapping
+OK
+好
+那就是
+这里面呢
+就是有一个字的话
+Manitary
+那这我们学过对吧
+Manitary什么意思
+必须的
+必须的
+OK
+Required
+OK
+Optional
+那就是选择
+性能就是可用可不用
+那我们还可以做这些
+valued mapping
+好那这些的话
+我们都要自己会说
+so when you write
+functional specs
+you can see
+oh right now
+I'm writing the data mapping
+I do some data mapping
+ok
+好那我们source fields
+那我们source fields
+那source system呢
+那我们还要就是
+我们做 data mapping的时候
+我们也要设计
+也要告诉别人
+so what's your source system what's your target system so like today i'm collecting uh the
+interface okay so i ask them and so for this uh for this interface what's their source system
+what's their target system so i will ask them question so for example um outbound uh interface
+I'm not very clear about so of course outbound is they send the data from
+ECC for SAP to third party to non-SAP system so I'm not very clear about the name of the non-SAP
+system so I will ask my functional consultant I said oh since you you are working on this
+interface, can you tell me
+what is the
+target
+什么
+target什么
+system
+对,我们就要问他
+你的那个
+我现在是SAP,送东西出去
+那我要送给谁呢?
+送给 third party,送给 non-SAP
+system, so I can see
+so what is the target system, okay
+好
+那如果是英镑的呢?
+我問問音棒的話,我怎麼問問題?
+我知道音棒的,那肯定是從外面到SAP,對吧?
+到SAP系統,這個叫音棒的。
+所以那個系統叫什麼系統?
+Source system.
+OK,OK,非常好。
+好,我們要清楚關於Source system,
+什麼是Target system,OK?
+所以如果問問問,
+the first time market system are involved,
+and also you can see,
+you can ask them,
+what is the sender system,
+what is the target system,
+what is the source system,
+这个都可以,
+就是可以用不同的方式表达,
+那刚刚他说有什么system involved,
+那这可以,
+那如果你在回答的时候呢,
+你可以说,
+SAP,
+so you can tell them,
+so this is the inbound and outbound system,
+所以,它是用 SAP和GTS的系統,
+所以你可以看到,
+但如果是在寬的系統,
+然後,你知道,
+是GTS的系統,
+如果是在寬的系統,
+SAP是寬的系統系統,
+你明白嗎?
+寬的系統系統,
+好,
+那就是
+那我们在
+so let's move to next topic
+ok
+so 那我们要去做这个
+这里就稍微有点点技术含量了
+就是我们要去做这个
+interface的这个architecture
+那我们要去设计
+define the technical floor
+就是你的技术
+这个不是我们去做
+这个主要是那个
+ARBARP会去做
+那我们要知道的那个系统呢
+就是我刚刚给你们讲过
+Source System是什么
+然后我们再通过
+我是往这个方向走的话
+那我就是说是属于奥邦的
+我是说systems
+通过sap
+然后再通过这个键
+哦 no no no
+说system可能是第三方系统
+然后再通过这个cpi
+cpi知道什么意思吗
+cloud
+process
+integrator
+就是
+衔接
+就是
+CPI
+那我们要cloud的
+去云端这个处理器
+那之前的时候呢
+Middleware呢
+中间键呢
+它就叫PI
+OK
+好那现在我们是上来
+S4HANA以后呢
+很多公司就采用CPI
+CPI的意思就是
+cloud
+process
+integration
+integrator
+就是集成的
+对
+然后我们再通过这个
+再进到S4HANA
+如果就是说
+如果你是以
+IDOC的形式
+那你就是IDOC
+那我们就要考虑到这个中间键呢
+然后它的一些协议啊什么的
+这个就是我们常用的这些协议
+我们可以列出来
+然后就是那我们也好考虑到
+它的这个安全性啊什么的
+是否就是系统之间是需要certificate啊
+还有用户的
+当然不是用户的
+就是那个密码和账号吧
+security我们要考虑这些
+这个也算是一个interview question
+OK 我记得有一个MM的consultant
+他在interview的时候
+人家就问了他
+你的中间建议包括一些什么东西
+OK 那我们要知道什么PIPO啊
+我们大部分的时间我们都是用
+所以你可以就举出一个例子说
+Oh so I use a PI
+That is SAP standard
+OK
+Process Integrator
+或者你采用了什么协议啊
+那我们很多时候我们是采取SFTP
+OK这是有一点点技术
+但是就是说如果你是一个资深顾问的话
+你要知道一些这个东西
+知道一点点这个技术的东西
+至少就是说在谈的时候呢
+你能谈出来的话
+人家会对你高看一眼
+OK
+如果你是第一级的话呢
+你听着就行了
+如果你是那个中高级的话
+我们还是要有一点点技术含量
+好
+so let's move to the next topic
+okay
+so how do you handle error
+and how do you monitor the error
+那我们要去design
+这个就是这个错误呢
+就是问题呢
+是怎么样去detect it
+怎么发现的
+然后是怎么去log
+那会有一些customer table啊
+或者什么
+就是用SAP的log也可以
+就是它会有一些记录
+然后你怎么样去 fix,就是怎么去修理,OK?
+好,那我们也包括一些这个validation error,
+比如说这个,so for example,
+the file is empty,
+if the file is empty,
+so what's the error message you should give the system?
+or what's the mechanism you will,
+reprocessing mechanism you will adopt
+就是要采取什么样的方式
+然后如果有一些技术的错误
+八匹或者什么
+有一些技术的错误
+然后你又怎么去处理
+好
+那我们还有
+reprocessing mechanism
+mechanism
+就是机制
+那我刚刚用了这个
+我还没看到这个
+我就自己用了这个机制
+OK
+好
+你的这个
+在处理的这个机制是什么
+那
+你就可以列出来
+比如说是
+比如说有这个邮件通知
+这个是会有邮件通知的
+然后这个邮箱
+这个邮件呢
+你还记得那个邮件通知怎么说吗
+E-mail什么
+Notification
+No
+Notification可以E-mail的通知
+或者这个
+我们要在系统里头去做这个E-mail的
+Distribution List
+SO23
+记得吗
+好在这个
+SO23里面呢
+我们就是可以去创建
+你的那个一个组
+就是比如说萌萌啊
+月圆啊
+Daisy啊
+你的email
+就可以放你去
+然后你通过这个
+distribution list呢
+如果就是有错误啊
+或者就是有这个batch job 你就会得到一封email
+understand
+ok 如果等会有时间的话 我就会在系统里面给你们演示一下
+我想以前那不知道可能是你们没有演示
+那我们还有呢 就是我们可以去查一下的这个table 对吧
+TPTCO table
+if the ad-doc error we can use this tickle to check your
+to check
+就是追踪 to check your error
+好 那我们有些CPI的message
+或者有一些这个application log
+我们都可以查
+这是我们掌握一下就好了
+好 那第六点
+第六点 然后我们再来看一下
+就是如果这个你的volume很大
+那我们一般就是用idoc或者batch
+APIS
+那如果就是说你的这个数据还可以
+然后你可能是一些关键数据
+real-time critical data
+你就直接用API
+好
+那我们还可以问一些问题
+就是how many records
+so what's the volume of your batch job
+OK
+what's the volume of the interface
+pick load
+还是
+还是同
+并行的处理
+那如果我们要再retry的话呢
+的逻辑是什么
+对
+这个是稍微有点点技术问题的话
+但是我们也可以去问
+这个at least is the first question
+we can ask you the first question.
+So how many records per day?
+How many records your process?
+Okay,好.
+那到第七的话就是有这个Testing Strategy.
+好,那我们想想有什么样的一个Testing Strategy.
+Testing Strategy.
+好,那我们, so when we,
+so we will design the test scenario.
+Okay, so when you do the test scenario,
+所以你需要加上了一種的測試。
+positive test, positive 知道什麼意思嗎?
+正效測試。
+好,那 negative呢?
+反向。
+好,那我等會兒 讓你們給我一個例子。
+所以, 人們可以給我一個例子嗎?
+OK,Daisy,你来说一下什么是
+你给我举一个例子,什么叫
+negative test
+We can prepare the
+error data
+to test the interface
+to validate
+if the interface
+can trigger the
+error message
+嗯嗯
+OK
+那是好
+好
+好
+好
+好
+
+好
+好
+
+好
+
+那
+好
+好
+
+
+
+好
+
+好
+
+
+
+好
+
+好
+
+好
+
+好
+
+好
+好
+
+好
+好
+
+
+好
+
+
+
+
+
+
+
+
+设定了这个一些数据,比如说, so for example,
+so the amount, okay, so I gave them really big amount,
+okay, so let me see, so for example,
+so the amount equals to, so for example,
+I gave a very big amount and see why the system is okay
+to process this big amount, okay?
+And also maybe I gave a small amount,
+like I put 0.0 and see what's the result.
+So I made them, so one of my projects,
+oh I remember, let me think about that.
+So one of my program has amount issue before.
+So we have a posting like 0.06, okay?
+然后他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+他们认为,他们认为,他们认为,
+so this is a boundary value
+OK
+这个叫
+Boundary Value
+OK
+好
+那Arrow Reprocessing
+那有什么样的
+这个错误的
+这个
+这个错误的去处理呢
+再处理呢
+So once you encounter
+the error
+so how do you reprocess this arrow?
+用这个时间的话你们想一想
+你怎么去?首先要去干什么?
+identify什么?
+identify the error
+if the system is dump
+I will send the screenshot to ABAR
+if there is some data error
+I will check the data
+and the same data yeah say is the logical error or any other file issue okay yeah okay so that's good
+好 那你就是你可以就是處理问题的时候呢 你是会想到一些就是说不同的方向
+OK that's good
+好
+So when we talk about the testing level
+So the test includes unit test, integration test and UAT test
+You all know those different types
+OK
+So I just have one question for you
+所以,你完成了你的顧客
+你被决定了你的顧客
+和让你的顧客达成功了
+如果你的顧客达成功了
+如果你的顧客达成功了
+或是放在一段时间里
+so how do you follow it up
+你怎么去跟进
+嗯
+月月
+没说名字
+你们都没有人
+愿意来回答
+嗯
+老师问题是
+问题是
+我的问题
+我的问题是
+如果你做完了
+你的这个测试
+然后你去找这个用户
+让他去签
+这个confirm
+这个UAT test
+或者conduct
+UAT test
+但是这个
+business is not very
+is not willing to do that
+就是不是很愿意
+去做这个
+这时候你怎么办?
+我会订阅一个议会
+然后请她和她的主持人
+然后我会给他们的试试
+然后做一些训练
+给她
+OK
+我请她去做试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试试
+我认为他会做的问题
+他会做的问题
+那是一个问题我现在在香港
+我认为我的工作没有做任何的工作
+但是它是差不多的事
+所以我会有点点疼的
+我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天,我先去做了一天
+to create the distribution list.
+Okay, so I think that's a very important features for interface.
+Okay, so this interface is used to notify the log,
+a batch log or batch result.
+Okay, to your email, to your email ID.
+Okay, so let me go here and check one.
+So23.
+OK, so here you can create a new one. OK, so name for example, SAP English. OK, so SAP English list. OK, or something. OK, so we can have folder. Let me see if they have any folder here.
+OK, they have PPFOLT.
+OK, so I just use them.
+So if you don't, if you want to create your own ID, that's fine.
+So I can put SAP ENG.
+OK, I click here.
+I just create folder okay create folder okay so that's fine so let me check and so the photo
+is saved okay and I can use the folder my folder so click here and my let me find out my
+ACP English folder, okay?
+So here, so I continue, save.
+Let me see, I can create the...
+Okay, so see, on the left side,
+you can see the bottom left side distribution list was created, okay?
+And then I come out.
+So if you click here,
+so here you can put your email address okay so for example i put my
+atgmail.com so automatically it will say internet address
+这些人称的这些人称的
+OK 让我分享
+所以这里没有这些人称的
+让我看看什么
+OK 把电话
+OK 它称到把电话
+那是好的
+OK
+so if you put so in the future
+so if you put the name SAP English
+in your distribution list
+so you can put a you can tell your developer
+so distribution list is here
+and I put the name here
+so automatically if anything happens
+for this batch job for this interface
+it was sent to my email
+OK
+so in the email
+It will include the name of the batch job, what time it created, so run time, something like that, okay?
+So you can go to another T-code, okay? S-O-S-T, to check.
+这因为我们没有BestJob
+我只能是用这个SOST告诉你
+你还可以去在这里trigger一下
+好
+那如果就是在这边的话
+你可以放上时间
+那你可以放上这个shender或者attribute
+去查一下shender是哪个组
+或者是你的那个username
+好那你可能会发现你下面有一条这个记录
+但是这个记录没有送出去
+然后你highlight他这个技术
+highlight it
+然后你这里的话
+你在用start send
+send process for selection
+就是你选中了以后
+然后你就把它送出去
+然后这样的话呢
+你的那个
+你的那个email
+可能就会被trigger
+就是他就会把这个message
+或者就是notification
+刚刚那个同学说notification
+就送到你的email
+所以这是一套
+如果你做测试的时候呢
+这个distribution list
+也是属于你的这个
+你的这个一部分的测试
+understand
+SO23创建
+SOST
+你可以去看看你这个message
+是不是有收到
+我想国内很多人没有用过这个功能
+你们三个都没用过吧
+好
+那就是说
+那你现在已经比很多人要强了
+你现在知道这个
+做BatchJob的时候
+或者说这个interface的时候
+我们是会有这个
+可以有这个功能
+就是它是一个email的
+一个这个notification的一个功能
+好
+那我们再来继续讲
+好
+那我们这个测试这部分就讲完了
+那就是我们在这个interface的时候呢
+我们要去想一想
+就是说你做过什么样的interface
+然后你要能把它describe the interface
+那就像我刚刚说的
+有一些什么方向啊
+然后这个你说这个interface
+involved的哪个系统啊
+什么然后他是哪个是
+sore system哪个是targeted system
+你这样一讲话人家就知道你做过了
+ok 好吗
+就是如果是没有做过的
+你去
+你去make up
+就是编制一个interface的时候
+你也要去编一个
+那市面上的比较
+普遍的就有我们的
+这个golden tech system
+对吧还有一个这个
+oa office application system
+就是办公软件
+就是报销用的
+对吧
+好
+那就是说你要有这个能力
+你去描述一下你这个interface
+然后你怎么去产生这个interface的
+好
+那下面一个
+下面一个topic就是
+我们现在同学如果在找工作
+或者在找格罗布项目的话
+那我们都会有一个这个resume的问题
+对吧
+我现在来给大家显示一下
+就是国外的resume是什么样子的
+我可能会给一个sample
+OK
+Resume English sample
+OK
+我们那个简历呢
+最好就是写一页子
+不要写太长
+OK
+好
+那我们就是要
+这个要清楚
+就是说你的职位要求是什么
+那最好是不要用QQ邮箱
+就是你这里呢
+可以放上你的这个名字
+你自己的名字
+对吧
+然后你的联系方式
+然后你的email
+反正中国人就喜欢用那个QQ
+然后用一大堆数据
+一大堆数字
+那如果我们是专业人士
+那我们最好是有一个这个什么MSN
+或者什么
+当然现在没有雅虎了
+Gmail这种邮箱
+但是邮箱你不要就是用太多数字
+好
+好那我们再来看一看这一趴
+我们这一趴呢
+就是会有一个这个education background
+好那如果就是你的education不是很强的话呢
+你可以把这个这部分挪下去
+好那如果你是工作多年啊
+那我们可以把我们的professional summary
+可以放在这里来
+这里呢最主要是能介绍一下你自己
+在global的这个项目呢
+或者global的那个团队里面呢
+就说人家不仅是要了解你的这个技术能力
+人家最主要是你要有这个团队精神
+你要有这个
+Team Leader
+就是团队的这个领导能力
+看中的是你的沟通能力
+对
+所以就模块了
+那这是那个面试的话
+Global的面试题是会比这个
+Local项目要容易一些的
+嗯
+所以呢就是说我们
+可以准备一下
+但是他们会问一些软实力的问题
+就是说你有没有这个Team Leader的这个经验
+那比如说你很自身了
+都做了十年了
+你有没有做过
+那个团队的这个小组长啊
+或者什么
+或者你这个模块的leader啊
+那他可能会问一些这个问题
+好那我们在下面一趴呢
+我们是我们有的这个项目经验
+那项目经验呢
+你就可以按照
+最先的这个跟我们中国的不一样啊
+中国的话可能从最古老的开始写
+那我们在国外呢
+是把最先的
+最近的写上来
+哦,sorry
+我刚刚的word
+我刚跑那去了那个resume
+好,那我们是把最近的这个写上来
+对
+诶,它可以
+OK要 reload
+OK
+那就是这个是跟他不太一样
+然后最好这一边呢
+就是能排在一行这里
+然后你的这个title是什么
+然后你这个什么什么项目
+你可以稍微写一下子
+好那在国内的话
+都是一般喜欢把公司放在前面
+但是我们最好是先项目
+就是不同的项目
+或者你是什么什么项目
+然后这个项目是什么rollout
+项目类型你写一下
+还是这个upgrade项目
+稍微写一下子
+然后呢你再把你自己的公司写进去
+这个呢模板我等会会发给大家
+你们如果是有在找工作的话呢
+你可以就开始可以准备了
+so far so good
+有没有什么问题对这个模板
+好
+没有的话呢
+我们今天来review
+so before we wrap our class
+在我们结束这个课程之前
+so let's review what we learn today
+好 谁来说几个点就可以了
+每个人来说两个点吧
+好 Dacy
+Dacy
+I learned the difference between ECC and S4HANA
+OK
+And the interface
+How to design the interface
+And reveal the resume
+OK
+OK
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+先某某你说两点这个 key points to design.
+So could you please tell us key points to design a good interface?
+怎么去设计?
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+嗯
+outbound between the two systems
+also
+okay let me go here okay so okay that's fine
+okay so here okay
+好 某某你出完了吗 好 月月 你来 summarize what you learned today
+首先,我们试图的不同的ECC和SFHANA
+第二,我们试图的方式设计
+一个应用的
+for example the golden text system and the
+office application interface
+we learned some kind parts about
+about how to design an interface
+in the last way
+we learn how to write a rhythm to apply for your job
+a global job right
+a global job
+okay
+okay that's good
+好
+那今天就先下课了
+然后下个星期的话呢
+我们会讲这个
+怎么去做自我介绍
+然后怎么样子才能让你的这个interviewer
+就是面试官去比较
+对你比较印象深刻
+好
+那我现在已经发现同学
+就是已经改了很多了
+那就是说
+刚刚
+其实这个也是我们下次课要讲的
+就是说
+我们讲话要有structure
+就是要有这个
+要有逻辑
+要有层次
+对
+first
+second
+third
+finally
+什么
+那我就是要有层次
+这样的话
+他们也会对你比较印象深刻
+然后我们要学会讲故事
+那我们下个星期呢
+就教你们怎么样的去讲故事
+我们不能就是很干扁
+就是啊
+几几年几几年
+我这是什么
+我叫什么名字
+然后几几年几几年
+我做了什么项目
+我们不能这么干扁
+好吗
+然后我们要学会讲故事
+那包括现在做外贸都是
+他们卖茶
+然后都会讲一些古老的中国故事
+在里面
+然后卖一个中药
+然后这个中药又在什么山上
+然后几百米几千米的山上
+然后多难得多难得
+所以会讲故事
+会讲故事的能力
+其实是一种很好的能力
+也就是一种销售啊
+或者就是说你做自我推荐啊
+然后你在interview啊
+都是要要听故事
+就是每个人都喜欢听故事
+OK
+好那那给你讲个小故事吧
+就是最近我有个学员呢
+他们去去做那个签证
+去签证的时候
+他就是属于那种条件特别不好的那种
+就是大龄单身
+然后也没有出过国
+这种呢
+其实是比较容易拒签的
+但是呢
+他也是确实也没有签过
+然后问了他的原因
+他原因就是说他太紧张了
+然后讲话就速度特别快
+所以我们要注意一下子
+就是我们就是有一个误区
+就是老师就会觉得讲
+我讲的英文讲的慢
+我好像就显得我不流利
+不是这样子的非野
+如果你讲话讲得太快的话呢
+其实别人听不懂
+讲话快不是代表你流利
+讲话快有可能代表你太紧张了
+对我最近也听了很多
+美国的那个一些video啊什么的
+他们其实讲话也没有那么快
+就是说在讲故事的时候啊什么的
+他们讲话其实速度还是OK的
+没有就是很快
+然后我之前有个学员也是讲话速度特别快
+我就说你讲话这么快什么意思呢
+我说你讲话
+我们最主要是要跟别人是一个沟通对吧
+要让别人能understand you
+If you speak too fast
+So they don't understand you
+So what's the purpose to communicate with each other
+就是目的是什么呢
+所以我们还是要讲话要清楚
+然后慢一点都ok
+然后他们是理解的
+但是如果你讲太快的话真的听不懂
+就像那印度人他去那个
+上次那个川普
+就是有一个印度记者就提问
+然后川普都听不懂他讲的印度英语
+还要去用英语去翻译英语
+要别人来给他翻译一下
+所以就是说一个小故事吧
+就是提醒我们同学
+就是在面试的时候
+我们要保持一个比较清楚
+就是保持一个比较
+就是一个适合的一个速度
+不能讲太快
+OK
+好
+那还有没什么问题
+没有什么问题的话
+那我们下课了
+Have a good day
+Happy weekend
+See you next time
+See you
+See you next time
+See you
+Bye
+Bye

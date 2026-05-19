@@ -1,0 +1,43 @@
+{
+  "source_file": "第18节20251214/20251214202905-H班第18节-视频-1.mp4",
+  "interval_seconds": 600,
+  "review_state": "ocr_needs_human_review",
+  "items": [
+    {
+      "time_seconds": 0,
+      "time": "00:00:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00001.jpg",
+      "text": "axons a LeoeGgerus AB 0 eam ag"
+    },
+    {
+      "time_seconds": 600,
+      "time": "00:10:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00002.jpg",
+      "text": "11/28/2025 Hi topic: Walk thrOligh Fs with developer 1. Meeting Kickoff FC: Thanks for joining. Today I'l walk you through the Functional Specification for the Custom Sales Order Status Report DEV: Great. I've gone through the FS briefly. Let's go oveltthe details. 2. Purpose of the Report FC: The plirpose of this report is to give the Sales team a quick view of open sales orders, their delivery status, and billing status. DEV: Understood. So it Combines data from VA03, VLO3N, and VF03 sources, correct? FC: Exactly, 3. Selection Screen nee Qa ee °TEBECeWwss 780 0m ln e"
+    },
+    {
+      "time_seconds": 1200,
+      "time": "00:20:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00003.jpg",
+      "text": "12.hand over-assign-ticket to XX ness zo BOESBGOPSEBR -so eon ie"
+    },
+    {
+      "time_seconds": 1800,
+      "time": "00:30:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00004.jpg",
+      "text": "mus a bs AP Project at abu + EN Englah(Unted States ; ; Bay | *占 wens 请 Q Le°oSeGRHs2 =r SeTasy"
+    },
+    {
+      "time_seconds": 2400,
+      "time": "00:40:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00005.jpg",
+      "text": "ms a 了 AP Project abu + EN Englah(Unted States : 2 ni * \\ . 8, y fa] 5 o£ 本 Q Le oBeGBHas ESC"
+    },
+    {
+      "time_seconds": 3000,
+      "time": "00:50:00",
+      "frame": "_outputs/visual_ocr/lesson_18_20251214_20251214202905-H班第18节-视频-1_frames/frame_00006.jpg",
+      "text": "4. benefit: eration 10.Configurations/Configurate/ 工 Oe 5 ) 省 “4 24AM ets. mo bEev,euerv se & A 88 Om iis #"
+    }
+  ]
+}
