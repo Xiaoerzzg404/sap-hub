@@ -10,6 +10,7 @@ import { LessonAssetsTabs } from "@/components/lesson/LessonAssetsTabs";
 import { LessonAssetBadge } from "@/components/lesson/LessonAssetBadge";
 import { LessonAssignment } from "@/components/lesson/LessonAssignment";
 import { SelfAssessmentRubric } from "@/components/lesson/SelfAssessmentRubric";
+import { LessonStepShell } from "@/components/lesson/LessonStepShell";
 import { ShadowingCard } from "@/components/speaking/ShadowingCard";
 import { MicroTrainingTimer } from "@/components/speaking/MicroTrainingTimer";
 import { ConsultantOutputRecorder } from "@/components/speaking/ConsultantOutputRecorder";
@@ -32,79 +33,94 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
       <LessonAssetBadge assets={(lesson.assets ?? []).filter((a) => a.visibility !== "teacher")} />
       <LessonObjective lesson={lesson} />
       <ScenarioMap items={lesson.scenarioMap} />
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">术语卡</h2>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {lesson.terms.slice(0, 6).map((term) => (
-            <TermCard key={term.id} term={term} />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">句型卡</h2>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {lesson.phrases.slice(0, 6).map((phrase) => (
-            <PhraseCard key={phrase.id} phrase={phrase} />
-          ))}
-        </div>
-      </section>
-
       <LessonAssetsTabs lesson={lesson} viewerRole="student" />
 
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">Shadowing</h2>
-        <div className="grid gap-4">
-          {lesson.shadowingItems.slice(0, 3).map((item) => (
-            <ShadowingCard key={item.id} item={item} />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">Substitution Drill</h2>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {lesson.substitutionDrills.slice(0, 4).map((drill) => (
-            <SubstitutionDrillCard key={drill.id} drill={drill} />
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">30 秒 Micro Training</h2>
-        {lesson.microTrainings.map((task) => (
-          <MicroTrainingTimer key={task.id} task={task} />
-        ))}
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">60 秒 Consultant Output</h2>
-        {lesson.consultantOutputs.map((task) => (
-          <ConsultantOutputRecorder key={task.id} task={task} />
-        ))}
-      </section>
-
-      <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">Role Play</h2>
-        {lesson.rolePlays.map((rolePlay) => (
-          <RolePlayRecorder key={rolePlay.id} rolePlay={rolePlay} />
-        ))}
-      </section>
-
-      <LessonAssignment assignments={lesson.assignments} />
-      <SelfAssessmentRubric />
-      <div className="flex justify-end">
-        {next ? (
-          <Link className="btn-primary" href={`/courses/lessons/${next.id}`}>
-            下一课：{next.title}
-          </Link>
-        ) : (
-          <Link className="btn-primary" href="/review">
-            进入复盘中心
-          </Link>
-        )}
-      </div>
+      <LessonStepShell
+        lesson={lesson}
+        warmup={
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-ink">术语卡</h2>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {lesson.terms.slice(0, 6).map((term) => (
+                <TermCard key={term.id} term={term} />
+              ))}
+            </div>
+          </section>
+        }
+        phrases={
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-ink">句型卡</h2>
+            <div className="grid gap-4 lg:grid-cols-2">
+              {lesson.phrases.slice(0, 6).map((phrase) => (
+                <PhraseCard key={phrase.id} phrase={phrase} />
+              ))}
+            </div>
+          </section>
+        }
+        shadowing={
+          <div className="space-y-6">
+            <section className="space-y-3">
+              <h2 className="text-lg font-semibold text-ink">Shadowing</h2>
+              <div className="grid gap-4">
+                {lesson.shadowingItems.slice(0, 3).map((item) => (
+                  <ShadowingCard key={item.id} item={item} />
+                ))}
+              </div>
+            </section>
+            <section className="space-y-3">
+              <h2 className="text-lg font-semibold text-ink">Substitution Drill</h2>
+              {lesson.substitutionDrills.length ? (
+                <div className="grid gap-4 lg:grid-cols-2">
+                  {lesson.substitutionDrills.slice(0, 4).map((drill) => (
+                    <SubstitutionDrillCard key={drill.id} drill={drill} />
+                  ))}
+                </div>
+              ) : (
+                <div className="panel p-4 text-sm text-slate-500">替换训练素材暂未接入，先完成 Shadowing。</div>
+              )}
+            </section>
+          </div>
+        }
+        micro={
+          <section className="space-y-3">
+            <h2 className="text-lg font-semibold text-ink">30 秒 Micro Training</h2>
+            {lesson.microTrainings.map((task) => (
+              <MicroTrainingTimer key={task.id} task={task} />
+            ))}
+          </section>
+        }
+        consultant={
+          <div className="space-y-6">
+            <section className="space-y-3">
+              <h2 className="text-lg font-semibold text-ink">60 秒 Consultant Output</h2>
+              {lesson.consultantOutputs.map((task) => (
+                <ConsultantOutputRecorder key={task.id} task={task} />
+              ))}
+            </section>
+            <section className="space-y-3">
+              <h2 className="text-lg font-semibold text-ink">Role Play</h2>
+              {lesson.rolePlays.length ? (
+                lesson.rolePlays.map((rolePlay) => <RolePlayRecorder key={rolePlay.id} rolePlay={rolePlay} />)
+              ) : (
+                <div className="panel p-4 text-sm text-slate-500">Role Play 素材暂未抽取到合格真实日语句，等待内容修复。</div>
+              )}
+            </section>
+            <LessonAssignment assignments={lesson.assignments} />
+            <SelfAssessmentRubric />
+            <div className="flex justify-end">
+              {next ? (
+                <Link className="btn-primary" href={`/courses/lessons/${next.id}`}>
+                  下一课：{next.title}
+                </Link>
+              ) : (
+                <Link className="btn-primary" href="/review">
+                  进入复盘中心
+                </Link>
+              )}
+            </div>
+          </div>
+        }
+      />
     </div>
   );
 }
