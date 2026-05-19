@@ -14,9 +14,9 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
   const [favorite, setFavorite] = useState(false);
   const [lastRecordingId, setLastRecordingId] = useState<string | undefined>();
 
-  function markDone() {
+  async function markDone() {
     setCompleted(true);
-    markProgress("completedShadowing", item.id);
+    await markProgress("completedShadowing", item.id);
   }
 
   return (
@@ -32,7 +32,7 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
           className={favorite ? "btn-primary" : "btn-secondary"}
           onClick={() => {
             setFavorite((value) => !value);
-            toggleProgressList("favoriteShadowing", item.id);
+            void toggleProgressList("favoriteShadowing", item.id);
           }}
         >
           <Star className="h-4 w-4" />
@@ -60,7 +60,7 @@ export function ShadowingCard({ item }: { item: ShadowingItem }) {
           onClick={() => {
             const next = Math.min(item.requiredRepeats, repeatDone + 1);
             setRepeatDone(next);
-            if (next >= item.requiredRepeats) markDone();
+            if (next >= item.requiredRepeats) void markDone();
           }}
         >
           <Repeat2 className="h-4 w-4" />

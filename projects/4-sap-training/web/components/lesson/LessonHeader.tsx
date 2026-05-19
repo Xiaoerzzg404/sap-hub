@@ -10,20 +10,21 @@ export function LessonHeader({ lesson }: { lesson: Lesson }) {
   const [progressPct, setProgressPct] = useState(0);
 
   useEffect(() => {
-    const progress = loadProgress();
-    const total =
-      lesson.shadowingItems.length +
-      lesson.microTrainings.length +
-      lesson.consultantOutputs.length +
-      lesson.rolePlays.length;
-    if (total === 0) {
-      setProgressPct(0);
-      return;
-    }
-    const done =
-      progress.completedShadowing.filter((id) => id.startsWith(lesson.id)).length +
-      progress.completedRecordings.filter((id) => id.startsWith(lesson.id)).length;
-    setProgressPct(Math.min(100, Math.round((done / total) * 100)));
+    void loadProgress().then((progress) => {
+      const total =
+        lesson.shadowingItems.length +
+        lesson.microTrainings.length +
+        lesson.consultantOutputs.length +
+        lesson.rolePlays.length;
+      if (total === 0) {
+        setProgressPct(0);
+        return;
+      }
+      const done =
+        progress.completedShadowing.filter((id) => id.startsWith(lesson.id)).length +
+        progress.completedRecordings.filter((id) => id.startsWith(lesson.id)).length;
+      setProgressPct(Math.min(100, Math.round((done / total) * 100)));
+    });
   }, [lesson]);
 
   return (

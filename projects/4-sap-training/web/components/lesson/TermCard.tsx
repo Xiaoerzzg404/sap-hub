@@ -36,7 +36,7 @@ export function TermCard({ term }: { term: GlossaryTerm }) {
           ]}
         />
       </div>
-      <button type="button" className="btn-secondary mt-3" onClick={() => toggleProgressList("favoriteTerms", term.id)}>
+      <button type="button" className="btn-secondary mt-3" onClick={() => void toggleProgressList("favoriteTerms", term.id)}>
         <PlusCircle className="h-4 w-4" />
         加入复盘
       </button>

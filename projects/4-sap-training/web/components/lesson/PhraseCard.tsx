@@ -15,7 +15,7 @@ export function PhraseCard({ phrase }: { phrase: Phrase }) {
           <h3 lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">{phrase.japanese}</h3>
           <p className="mt-1 text-sm text-slate-600">{phrase.chinese}</p>
         </div>
-        <button type="button" className="btn-secondary" onClick={() => toggleProgressList("favoritePhrases", phrase.id)}>
+        <button type="button" className="btn-secondary" onClick={() => void toggleProgressList("favoritePhrases", phrase.id)}>
           <Star className="h-4 w-4" />
           收藏
         </button>

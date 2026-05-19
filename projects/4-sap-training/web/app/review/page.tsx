@@ -9,7 +9,7 @@ import type { ProgressState } from "@/types/progress";
 export default function ReviewPage() {
   const [progress, setProgress] = useState<ProgressState | null>(null);
   useEffect(() => {
-    setProgress(loadProgress());
+    void loadProgress().then(setProgress);
   }, []);
 
   const favoriteTerms = useMemo(() => allGlossary.filter((term) => progress?.favoriteTerms.includes(term.id)).slice(0, 12), [progress]);

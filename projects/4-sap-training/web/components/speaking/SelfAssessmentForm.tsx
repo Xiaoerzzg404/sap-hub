@@ -34,7 +34,7 @@ export function SelfAssessmentForm({
 
   function update(next: SelfAssessment) {
     setForm(next);
-    if (recordingId) setSelfAssessment(recordingId, next);
+    if (recordingId) void setSelfAssessment(recordingId, next);
     onChange?.(next);
   }
 

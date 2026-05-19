@@ -12,7 +12,7 @@ export default function DashboardPage() {
   const [progress, setProgress] = useState<ProgressState | null>(null);
 
   useEffect(() => {
-    setProgress(loadProgress());
+    void loadProgress().then(setProgress);
   }, []);
 
   const todayLesson = useMemo(() => {

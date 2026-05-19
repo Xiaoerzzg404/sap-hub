@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
-import { loadProgress, saveProgress } from "@/lib/progress-storage";
+import { loadProgress, setLessonStep } from "@/lib/progress-storage";
 
 export type LessonStep = {
   id: string;
@@ -30,18 +30,17 @@ export function LessonStepper({
   const [stepIndex, setStepIndex] = useState(0);
 
   useEffect(() => {
-    const progress = loadProgress();
-    const stored = progress.lessonStep?.[lessonId] ?? 0;
-    setStepIndex(stored);
-    onStepChange?.(stored);
+    void loadProgress().then((progress) => {
+      const stored = progress.lessonStep?.[lessonId] ?? 0;
+      setStepIndex(stored);
+      onStepChange?.(stored);
+    });
   }, [lessonId, onStepChange]);
 
-  function go(next: number) {
+  async function go(next: number) {
     const safe = Math.max(0, Math.min(LESSON_STEPS.length - 1, next));
     setStepIndex(safe);
-    const progress = loadProgress();
-    const lessonStep = { ...(progress.lessonStep ?? {}), [lessonId]: safe };
-    saveProgress({ ...progress, lessonStep });
+    await setLessonStep(lessonId, safe);
     onStepChange?.(safe);
   }
 
@@ -52,7 +51,7 @@ export function LessonStepper({
           <button
             type="button"
             key={step.id}
-            onClick={() => go(step.index)}
+            onClick={() => void go(step.index)}
             className={
               step.index === stepIndex
                 ? "rounded-md bg-sap p-3 text-left text-white"
@@ -73,7 +72,7 @@ export function LessonStepper({
         ))}
       </div>
       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-sm">
-        <button type="button" className="btn-secondary" onClick={() => go(stepIndex - 1)} disabled={stepIndex === 0}>
+        <button type="button" className="btn-secondary" onClick={() => void go(stepIndex - 1)} disabled={stepIndex === 0}>
           ← 上一步
         </button>
         <span className="text-xs text-slate-500">
@@ -82,7 +81,7 @@ export function LessonStepper({
         <button
           type="button"
           className="btn-primary"
-          onClick={() => go(stepIndex + 1)}
+          onClick={() => void go(stepIndex + 1)}
           disabled={stepIndex === LESSON_STEPS.length - 1}
         >
           下一步 →

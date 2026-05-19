@@ -186,8 +186,8 @@ export function RecordingPanel({
       selfAssessment: fallbackAssessment
     };
     await saveRecording(recording);
-    markProgress("completedRecordings", recording.id);
-    if (markAsAssignment) markProgress("completedAssignments", `${lessonId}-${practiceType}`);
+    await markProgress("completedRecordings", recording.id);
+    if (markAsAssignment) await markProgress("completedAssignments", `${lessonId}-${practiceType}`);
     onSaved?.(recording);
   }
 
