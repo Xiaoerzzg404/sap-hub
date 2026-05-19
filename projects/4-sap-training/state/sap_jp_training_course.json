@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-19T10:05:04+09:00",
+  "updated_at": "2026-05-19T10:34:26+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -235,7 +235,14 @@
     "../web/types/track.ts",
     "../web/data/tracks.json",
     "../web/data/README.md",
-    "../web/scripts/convert-content.mjs"
+    "../web/scripts/convert-content.mjs",
+    "../web/components/lesson/MarkdownView.tsx",
+    "../web/components/lesson/LessonAssetsTabs.tsx",
+    "../web/components/lesson/LessonAssetBadge.tsx",
+    "../web/components/teacher/TeacherLessonAssetsBrowser.tsx",
+    "../web/app/library/page.tsx",
+    "../web/data/library.json",
+    "../web/types/library.ts"
   ],
   "current_round": "SAP Japanese speaking training platform MVP",
   "completed": [
@@ -272,9 +279,10 @@
     "Implemented native audio playback, repeat playback, AB Repeat, MediaRecorder recording, IndexedDB recording history, Shadowing, 30-second micro training, 60-second consultant output, Role Play, assignment, review, glossary, phrasebook, and teacher review pages.",
     "Verified with npm run typecheck, npm run build, and browser smoke checks for home, lesson_01, shadowing, glossary, and teacher/review-terms.",
     "Phase 0: migrated Next.js web app from sap-hub root to projects/4-sap-training/web/, preserved git history via git mv, typecheck and build green.",
-    "Phase 1: added Track/Level/Lesson asset data model, generated tracks.json and Lesson.assets from 11-directory and v4 markdown sources, typecheck and build green."
+    "Phase 1: added Track/Level/Lesson asset data model, generated tracks.json and Lesson.assets from 11-directory and v4 markdown sources, typecheck and build green.",
+    "Phase 2: bound Lesson.assets and cross-course library markdown into student lesson, teacher, and /library UI with role-aware Markdown rendering; typecheck, build, and browser smoke checks green."
   ],
   "blocked": [],
-  "next_action": "After Claude validates Phase 1, proceed to Phase 2: bind each lesson asset into the UI with role-aware rendering.",
+  "next_action": "After Claude validates Phase 2, proceed to Phase 3: restore local training MVP with real audio assets, de-generated content cleanup, dashboard fixes, self-assessment persistence, text homework persistence, and teacher placeholder clarity.",
   "notes": "Per user instruction, this round upgraded the generated SAP Japanese training corpus into an online language training MVP rather than a Markdown display site. Data conversion produced 24 lessons, 528 terms, 576 phrases, 792 Shadowing items, 120 recording tasks, 48 Role Plays, and 127 review terms. Standard audio is currently placeholder paths; student recordings are local-only in browser IndexedDB."
 }
