@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Headphones, Mic2, PlayCircle, Repeat2, RotateCcw } from "lucide-react";
+import { BookOpen, GraduationCap, Headphones, Mic2, PlayCircle, Repeat2, RotateCcw } from "lucide-react";
 import { allLessons } from "@/lib/content-loader";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 
@@ -13,6 +13,27 @@ const loop = [
 
 export default function HomePage() {
   const firstLesson = allLessons[0];
+  const entries = [
+    {
+      href: `/courses/lessons/${firstLesson?.id ?? "lesson_01"}`,
+      title: "试听 lesson_01",
+      desc: "从术语预热开始走一遍 5 步训练。",
+      icon: PlayCircle
+    },
+    {
+      href: "/teacher",
+      title: "我是讲师",
+      desc: "查看课程资料、待复核术语和质量检查。",
+      icon: GraduationCap
+    },
+    {
+      href: "/courses",
+      title: "24 课大纲",
+      desc: "浏览基础线 jp-foundation 全部课次。",
+      icon: BookOpen
+    }
+  ];
+
   return (
     <div className="page-shell space-y-6">
       <section className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
@@ -39,6 +60,15 @@ export default function HomePage() {
           <p className="text-xs text-slate-500">进度保存在 LocalStorage，录音保存在 IndexedDB。</p>
         </div>
       </section>
+      <section className="grid gap-4 md:grid-cols-3">
+        {entries.map((entry) => (
+          <Link key={entry.href} href={entry.href} className="panel block p-4 hover:border-sap">
+            <entry.icon className="h-6 w-6 text-sap" />
+            <h3 className="mt-3 text-lg font-bold text-ink">{entry.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-600">{entry.desc}</p>
+          </Link>
+        ))}
+      </section>
       <section className="grid gap-4 md:grid-cols-5">
         {loop.map((item) => (
           <div key={item.label} className="panel p-4">
@@ -48,6 +78,15 @@ export default function HomePage() {
           </div>
         ))}
       </section>
+      <div className="panel border-amber-300 bg-amber-50 p-4 text-sm">
+        <p className="font-semibold text-amber-900">当前版本说明 · v0.x alpha</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-amber-800">
+          <li>录音和进度只保存在你当前的浏览器里，清除浏览数据 / 换设备 / 换浏览器都会丢</li>
+          <li>讲师暂时无法直接查看你的录音，请把要点评的录音单独发给讲师</li>
+          <li>本平台目前不支持多账号；同一台电脑多个学员请不要交叉使用</li>
+          <li>我们正在接入用户系统、云端录音、讲师反馈，预计 v1 上线</li>
+        </ul>
+      </div>
     </div>
   );
 }
