@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { allLessons } from "@/lib/content-loader";
 import { estimatedLessonMinutes, oralTaskCount } from "@/lib/lesson-utils";
 import { loadProgress } from "@/lib/progress-storage";
@@ -9,11 +9,28 @@ import type { ProgressState } from "@/types/progress";
 
 export default function DashboardPage() {
   const [progress, setProgress] = useState<ProgressState | null>(null);
-  const todayLesson = allLessons.find((lesson) => !progress?.completedLessons.includes(lesson.id)) ?? allLessons[0];
 
   useEffect(() => {
     setProgress(loadProgress());
   }, []);
+
+  const todayLesson = useMemo(() => {
+    if (!progress) return null;
+    return (
+      allLessons.find((lesson) => !progress.completedLessons.includes(lesson.id)) ??
+      allLessons[allLessons.length - 1]
+    );
+  }, [progress]);
+
+  if (!progress || !todayLesson) {
+    return (
+      <div className="page-shell">
+        <div className="panel p-6">
+          <p className="text-sm text-slate-500">加载学习进度中...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="page-shell space-y-6">
@@ -43,11 +60,11 @@ export default function DashboardPage() {
         <div className="panel p-5">
           <h2 className="font-semibold text-ink">本地进度</h2>
           <div className="mt-3 space-y-2 text-sm text-slate-600">
-            <p>已完成课次：{progress?.completedLessons.length ?? 0}</p>
-            <p>已完成跟读：{progress?.completedShadowing.length ?? 0}</p>
-            <p>已完成录音：{progress?.completedRecordings.length ?? 0}</p>
-            <p>收藏难句：{progress?.favoriteSentences.length ?? 0}</p>
-            <p>最近学习：{progress?.recentStudyAt ? new Date(progress.recentStudyAt).toLocaleString() : "暂无"}</p>
+            <p>已完成课次：{progress.completedLessons.length}</p>
+            <p>已完成跟读：{progress.completedShadowing.length}</p>
+            <p>已完成录音：{progress.completedRecordings.length}</p>
+            <p>收藏难句：{progress.favoriteSentences.length}</p>
+            <p>最近学习：{progress.recentStudyAt ? new Date(progress.recentStudyAt).toLocaleString() : "暂无"}</p>
           </div>
         </div>
       </section>

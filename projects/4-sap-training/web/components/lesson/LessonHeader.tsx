@@ -1,8 +1,31 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import type { Lesson } from "@/types/lesson";
 import { estimatedLessonMinutes, lessonNumberLabel, oralTaskCount } from "@/lib/lesson-utils";
+import { loadProgress } from "@/lib/progress-storage";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 
 export function LessonHeader({ lesson }: { lesson: Lesson }) {
+  const [progressPct, setProgressPct] = useState(0);
+
+  useEffect(() => {
+    const progress = loadProgress();
+    const total =
+      lesson.shadowingItems.length +
+      lesson.microTrainings.length +
+      lesson.consultantOutputs.length +
+      lesson.rolePlays.length;
+    if (total === 0) {
+      setProgressPct(0);
+      return;
+    }
+    const done =
+      progress.completedShadowing.filter((id) => id.startsWith(lesson.id)).length +
+      progress.completedRecordings.filter((id) => id.startsWith(lesson.id)).length;
+    setProgressPct(Math.min(100, Math.round((done / total) * 100)));
+  }, [lesson]);
+
   return (
     <div className="panel space-y-4 p-5">
       <div>
@@ -15,7 +38,7 @@ export function LessonHeader({ lesson }: { lesson: Lesson }) {
         <Metric label="口语任务数量" value={`${oralTaskCount(lesson)} 个`} />
         <Metric label="录音作业" value={`${lesson.assignments.filter((item) => item.type === "recording" || item.type === "consultant-output").length} 个`} />
         <div className="rounded-lg border border-line bg-mist p-3">
-          <ProgressBar value={0} label="本地完成进度" />
+          <ProgressBar value={progressPct} label="本地完成进度" />
         </div>
       </div>
     </div>
