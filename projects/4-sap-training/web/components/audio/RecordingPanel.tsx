@@ -172,9 +172,35 @@ export function RecordingPanel({
       setError("还没有可保存的录音。");
       return;
     }
+    let recordingId = `local-${lessonId}-${practiceType}-${Date.now()}`;
+    try {
+      const response = await fetch("/api/recordings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lessonId,
+          practiceType,
+          promptText,
+          targetJapanese,
+          mimeType: activeBlob.type || "audio/webm",
+          durationSec,
+          sizeBytes: activeBlob.size,
+          selfAssessment: fallbackAssessment
+        })
+      });
+      if (response.ok) {
+        const data = await response.json();
+        recordingId = data.recording?.id ?? recordingId;
+      } else {
+        setError("录音保存到服务器失败。本地仍有备份。");
+      }
+    } catch {
+      setError("录音保存到服务器失败。本地仍有备份。");
+    }
+
     const recording: RecordingAttempt = {
-      id: `${lessonId}-${practiceType}-${Date.now()}`,
-      userId: "local-student",
+      id: recordingId,
+      userId: "current-student",
       lessonId,
       practiceType,
       promptText,
