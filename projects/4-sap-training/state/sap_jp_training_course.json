@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-20T08:07:02+09:00",
+  "updated_at": "2026-05-20T10:04:59+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -257,7 +257,7 @@
     "../web/data/roleplays.json",
     "../web/data/lessons.json"
   ],
-  "current_round": "SAP Japanese speaking training platform Phase 5 Auth + Postgres backend MVP",
+  "current_round": "SAP Japanese speaking training platform Phase 6 R2 storage + teacher feedback MVP",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -301,9 +301,10 @@
     "Phase 5: created and migrated 19 Postgres tables for users, classes/enrollments, seeded lesson content, progress events, recordings, favorites, library items, and review terms.",
     "Phase 5: seeded 24 lessons, 480 phrases, 480 shadowing items, 48 roleplays, 240 lesson assets, 528 glossary terms, 6 library items, 96 assignments, and 127 review terms into Postgres.",
     "Phase 5: replaced local-only progress and recording metadata writes with authenticated APIs that isolate rows by session.user.id while keeping localStorage/IndexedDB offline cache.",
-    "Phase 5: switched server pages to DB-backed content loading and lazy-loaded lesson/library markdown, reducing all First Load JS pages below 500 KB."
+    "Phase 5: switched server pages to DB-backed content loading and lazy-loaded lesson/library markdown, reducing all First Load JS pages below 500 KB.",
+    "Phase 6: added Cloudflare R2 direct recording uploads, presigned student playback, enrollment-scoped teacher recording review, teacher_feedback scoring, Resend feedback notification, and student /review feedback display."
   ],
   "blocked": [],
-  "next_action": "Stop and wait for Ryan / Claude to validate Phase 5 handoff before starting Phase 6 storage and teacher feedback workflows.",
-  "notes": "Phase 5 backend MVP completed by Codex on branch codex/phase-5-backend: Auth.js v5 magic-link login uses Resend, Neon Postgres holds 19 migrated tables, seed-db loaded the 24-lesson jp-foundation content, progress and recording metadata APIs enforce session.user.id isolation, and data-heavy pages were slimmed below 500 KB First Load JS. Recording blobs remain local IndexedDB until Phase 6 storage is explicitly approved."
+  "next_action": "Stop and wait for Ryan / Claude to validate Phase 6 handoff before starting Phase 7 compliance and operations hardening.",
+  "notes": "Phase 6 storage and teacher feedback MVP completed by Codex on branch codex/phase-6-storage: recording blobs upload to private Cloudflare R2 through server-generated presigned PUT URLs, student/teacher playback uses presigned GET URLs, all student recording APIs remain scoped by session.user.id, teacher APIs enforce teacher/admin role and active enrollment scope, teacher_feedback stores one feedback row per recording, and /review displays feedback to the owning student only. Do not start Phase 7 until Ryan / Claude validates the Phase 6 handoff."
 }

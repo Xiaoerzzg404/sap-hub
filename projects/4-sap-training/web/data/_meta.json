@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.2.0",
-  "generatedAt": "2026-05-19T23:07:10Z",
-  "sourceCommit": "6fa8fbf0db1ad41ffadf771e47f4f59c4eaa8964",
+  "schemaVersion": "1.3.0",
+  "generatedAt": "2026-05-20T10:04:59+09:00",
+  "sourceCommit": "65c3e14ce40f485cb1e69310f990039b256edcc3",
   "stats": {
     "tracks": 1,
     "lessons": 24,
@@ -21,7 +21,8 @@
     "auth": "next-auth@5",
     "database": "neon postgres",
     "email": "resend",
-    "tables": 19
+    "storage": "cloudflare r2",
+    "tables": 20
   },
   "notes": [
     "Chinese translation fields for phrases/shadowing are intentionally empty.",
@@ -29,6 +30,6 @@
     "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
     "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
     "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
-    "Recording blobs still stay in IndexedDB until Phase 6 storage is approved."
+    "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display."
   ]
 }

@@ -12,7 +12,7 @@ export async function PATCH(_req: Request, { params }: { params: Promise<{ id: s
   const body = await _req.json();
   const storageKey = typeof body.storageKey === "string" ? body.storageKey : "";
 
-  if (!storageKey.includes(`audio/${session.user.id}/`) || !storageKey.includes(`/${id}.`)) {
+  if (/[\r\n]/.test(storageKey) || !storageKey.startsWith(`audio/${session.user.id}/`) || !storageKey.includes(`/${id}.`)) {
     return NextResponse.json({ error: "invalid storage key" }, { status: 400 });
   }
 
