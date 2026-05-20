@@ -1,29 +1,35 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-const PUBLIC_PATHS = ["/", "/login", "/login/verify", "/api/auth"];
+const PUBLIC_PATHS = new Set(["/", "/login", "/login/verify"]);
+const PUBLIC_PREFIXES = ["/login/", "/api/auth/", "/_next/", "/audio/"];
 
-function hasSessionCookie(req: NextRequest) {
+function hasSessionCookie(req: NextRequest): boolean {
+  const c = req.cookies;
   return Boolean(
-    req.cookies.get("authjs.session-token")?.value ??
-      req.cookies.get("__Secure-authjs.session-token")?.value ??
-      req.cookies.get("next-auth.session-token")?.value ??
-      req.cookies.get("__Secure-next-auth.session-token")?.value
+    c.get("authjs.session-token")?.value ||
+    c.get("__Secure-authjs.session-token")?.value ||
+    c.get("next-auth.session-token")?.value ||
+    c.get("__Secure-next-auth.session-token")?.value
   );
 }
 
-export default function middleware(req: NextRequest) {
+export default function middleware(req: NextRequest): NextResponse {
   const { pathname } = req.nextUrl;
 
-  if (PUBLIC_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`))) {
-    return NextResponse.next();
+  if (PUBLIC_PATHS.has(pathname)) return NextResponse.next();
+  for (const prefix of PUBLIC_PREFIXES) {
+    if (pathname.startsWith(prefix)) return NextResponse.next();
   }
 
   if (!hasSessionCookie(req)) {
     if (pathname.startsWith("/api/")) {
-      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+      return new NextResponse(JSON.stringify({ error: "unauthorized" }), {
+        status: 401,
+        headers: { "content-type": "application/json" }
+      });
     }
-
-    const url = new URL("/login", req.url);
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
     url.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(url);
   }
@@ -32,5 +38,17 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|audio).*)"]
+  matcher: [
+    "/dashboard/:path*",
+    "/courses/:path*",
+    "/speaking/:path*",
+    "/roleplay/:path*",
+    "/glossary/:path*",
+    "/phrasebook/:path*",
+    "/library/:path*",
+    "/assignments/:path*",
+    "/review/:path*",
+    "/teacher/:path*",
+    "/api/((?!auth/).*)"
+  ]
 };
