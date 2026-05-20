@@ -15,6 +15,8 @@ const fallbackAssessment: SelfAssessment = {
   consultantLike: 3
 };
 
+const MAX_RECORDING_BYTES = 10 * 1024 * 1024;
+
 export function RecordingPanel({
   lessonId,
   practiceType,
@@ -166,38 +168,7 @@ export function RecordingPanel({
     analyserRef.current = null;
   }
 
-  async function saveCurrentRecording(blobOverride?: Blob) {
-    const activeBlob = blobOverride ?? blob;
-    if (!activeBlob) {
-      setError("还没有可保存的录音。");
-      return;
-    }
-    let recordingId = `local-${lessonId}-${practiceType}-${Date.now()}`;
-    try {
-      const response = await fetch("/api/recordings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          lessonId,
-          practiceType,
-          promptText,
-          targetJapanese,
-          mimeType: activeBlob.type || "audio/webm",
-          durationSec,
-          sizeBytes: activeBlob.size,
-          selfAssessment: fallbackAssessment
-        })
-      });
-      if (response.ok) {
-        const data = await response.json();
-        recordingId = data.recording?.id ?? recordingId;
-      } else {
-        setError("录音保存到服务器失败。本地仍有备份。");
-      }
-    } catch {
-      setError("录音保存到服务器失败。本地仍有备份。");
-    }
-
+  async function saveLocalOnly(activeBlob: Blob, recordingId = `local-${lessonId}-${practiceType}-${Date.now()}`) {
     const recording: RecordingAttempt = {
       id: recordingId,
       userId: "current-student",
@@ -215,6 +186,73 @@ export function RecordingPanel({
     await markProgress("completedRecordings", recording.id);
     if (markAsAssignment) await markProgress("completedAssignments", `${lessonId}-${practiceType}`);
     onSaved?.(recording);
+  }
+
+  async function saveCurrentRecording(blobOverride?: Blob) {
+    const activeBlob = blobOverride ?? blob;
+    if (!activeBlob) {
+      setError("还没有可保存的录音。");
+      return;
+    }
+    if (activeBlob.size > MAX_RECORDING_BYTES) {
+      setError("录音超过 10 MB，请缩短后重新录制。");
+      return;
+    }
+
+    const mimeType = activeBlob.type || "audio/webm";
+    try {
+      const signResponse = await fetch("/api/recordings/sign", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lessonId,
+          practiceType,
+          promptText,
+          targetJapanese,
+          mimeType,
+          durationSec,
+          sizeBytes: activeBlob.size,
+          selfAssessment: fallbackAssessment
+        })
+      });
+
+      if (!signResponse.ok) {
+        setError("准备上传失败，录音已保存在本地。");
+        await saveLocalOnly(activeBlob);
+        return;
+      }
+
+      const { recordingId, storageKey, uploadUrl } = await signResponse.json();
+      const putResponse = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": mimeType },
+        body: activeBlob
+      });
+
+      if (!putResponse.ok) {
+        setError("上传到云端失败，录音已保存在本地。");
+        await saveLocalOnly(activeBlob, recordingId);
+        return;
+      }
+
+      const patchResponse = await fetch(`/api/recordings/${recordingId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ storageKey, status: "ready" })
+      });
+
+      if (!patchResponse.ok) {
+        setError("云端上传完成，但服务器写回失败，录音已保存在本地。");
+        await saveLocalOnly(activeBlob, recordingId);
+        return;
+      }
+
+      setError("");
+      await saveLocalOnly(activeBlob, recordingId);
+    } catch {
+      setError("录音上传失败，录音已保存在本地。");
+      await saveLocalOnly(activeBlob);
+    }
   }
 
   function deleteDraft() {

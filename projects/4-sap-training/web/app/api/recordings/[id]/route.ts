@@ -1,0 +1,30 @@
+import { and, eq } from "drizzle-orm";
+import { NextResponse } from "next/server";
+import { auth } from "@/lib/auth/options";
+import { db } from "@/lib/db";
+import { recordings } from "@/lib/db/schema";
+
+export async function PATCH(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
+  if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const { id } = await params;
+  const body = await _req.json();
+  const storageKey = typeof body.storageKey === "string" ? body.storageKey : "";
+
+  if (!storageKey.includes(`audio/${session.user.id}/`) || !storageKey.includes(`/${id}.`)) {
+    return NextResponse.json({ error: "invalid storage key" }, { status: 400 });
+  }
+
+  const [recording] = await db
+    .update(recordings)
+    .set({
+      storageKey,
+      status: body.status === "ready" ? "ready" : "uploading"
+    })
+    .where(and(eq(recordings.id, id), eq(recordings.studentId, session.user.id)))
+    .returning();
+
+  if (!recording) return NextResponse.json({ error: "not found or forbidden" }, { status: 404 });
+  return NextResponse.json({ recording });
+}

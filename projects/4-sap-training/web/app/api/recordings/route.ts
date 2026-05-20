@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
 import { recordings } from "@/lib/db/schema";
+import { MAX_RECORDING_BYTES } from "@/lib/storage/r2";
 
 export async function GET() {
   const session = await auth();
@@ -23,6 +24,11 @@ export async function POST(req: Request) {
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 
   const body = await req.json();
+  const sizeBytes = Number(body.sizeBytes) || 0;
+  if (sizeBytes < 0 || sizeBytes > MAX_RECORDING_BYTES) {
+    return NextResponse.json({ error: "size out of range (max 10MB)" }, { status: 400 });
+  }
+
   const [recording] = await db
     .insert(recordings)
     .values({
@@ -33,7 +39,7 @@ export async function POST(req: Request) {
       targetJapanese: body.targetJapanese ?? null,
       mimeType: body.mimeType ?? "audio/webm",
       durationSec: body.durationSec ?? 0,
-      sizeBytes: body.sizeBytes ?? 0,
+      sizeBytes,
       selfAssessment: body.selfAssessment ?? null,
       status: "ready"
     })
