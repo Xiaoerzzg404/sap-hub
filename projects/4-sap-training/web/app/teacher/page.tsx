@@ -1,9 +1,9 @@
 import Link from "next/link";
+import { Mic, ScrollText } from "lucide-react";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth/options";
 import { getAllLessonsWithContent, getReviewTerms } from "@/lib/content/lessons";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
-import { StudentRecordingReview } from "@/components/teacher/StudentRecordingReview";
 import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
 export default async function TeacherPage() {
@@ -28,33 +28,41 @@ export default async function TeacherPage() {
           <p className="text-sm font-semibold text-sap">Teacher</p>
           <h1 className="text-2xl font-bold text-ink">讲师专区</h1>
         </div>
-        <Link href="/teacher/review-terms" className="btn-primary">
-          待复核术语
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/teacher/recordings" className="btn-primary">
+            <Mic className="h-4 w-4" />
+            学生录音作业
+          </Link>
+          <Link href="/teacher/review-terms" className="btn-secondary">
+            <ScrollText className="h-4 w-4" />
+            待复核术语
+          </Link>
+        </div>
       </div>
-      <div className="panel border-amber-300 bg-amber-50 p-4">
-        <p className="text-sm font-semibold text-amber-900">讲师专区 · 当前是教学内容预览站（v0.x alpha）</p>
-        <div className="mt-2 grid gap-3 text-xs text-amber-800 sm:grid-cols-3">
+      <div className="panel border-green-200 bg-green-50 p-4">
+        <p className="text-sm font-semibold text-green-900">讲师专区 · Phase 6 录音点评闭环可用</p>
+        <div className="mt-2 grid gap-3 text-xs text-green-800 sm:grid-cols-3">
           <div>
             <p className="font-semibold">可用</p>
             <ul className="mt-1 list-disc pl-4">
               <li>浏览全部课程内容</li>
               <li>查看待复核术语</li>
-              <li>抽样课程质量</li>
+              <li>看学生录音作业</li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold">暂不可用</p>
+            <p className="font-semibold">讲师操作</p>
             <ul className="mt-1 list-disc pl-4">
-              <li>看学生录音作业</li>
               <li>给学生打分</li>
               <li>给学生反馈</li>
+              <li>邮件通知学生</li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold">预计 v1.0</p>
+            <p className="font-semibold">安全边界</p>
             <ul className="mt-1 list-disc pl-4">
-              <li>真讲师后台（Phase 5/6）</li>
+              <li>讲师只看自己班学生</li>
+              <li>admin 可看全部</li>
             </ul>
           </div>
         </div>
@@ -71,8 +79,11 @@ export default async function TeacherPage() {
         <ReviewTermsTable items={allReviewTerms.slice(0, 20)} />
       </section>
       <section className="space-y-3">
-        <h2 className="text-lg font-semibold text-ink">学生录音作业占位列表</h2>
-        <StudentRecordingReview />
+        <h2 className="text-lg font-semibold text-ink">学生录音作业</h2>
+        <Link href="/teacher/recordings" className="panel flex items-center justify-between gap-3 p-4 hover:bg-mist">
+          <span className="text-sm text-slate-600">进入讲师录音列表，听学生录音并提交评分反馈。</span>
+          <Mic className="h-5 w-5 text-sap" />
+        </Link>
       </section>
       <section className="panel p-4">
         <h2 className="font-semibold text-ink">课程质量检查表</h2>

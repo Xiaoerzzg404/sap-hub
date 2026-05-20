@@ -30,6 +30,7 @@ export async function GET(req: Request) {
 
   const url = new URL(req.url);
   const studentId = url.searchParams.get("studentId");
+  const recordingId = url.searchParams.get("recordingId");
   const lessonId = url.searchParams.get("lessonId");
   const status = url.searchParams.get("status");
   const hasFeedback = url.searchParams.get("hasFeedback");
@@ -40,6 +41,7 @@ export async function GET(req: Request) {
     if (studentIds.length === 0) return NextResponse.json({ recordings: [] });
     conditions.push(inArray(recordings.studentId, studentIds));
   }
+  if (recordingId) conditions.push(eq(recordings.id, recordingId));
   if (studentId) conditions.push(eq(recordings.studentId, studentId));
   if (lessonId) conditions.push(eq(recordings.lessonId, lessonId));
   if (status && RECORDING_STATUSES.includes(status as RecordingStatus)) {
