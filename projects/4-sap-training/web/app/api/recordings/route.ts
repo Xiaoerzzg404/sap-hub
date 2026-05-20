@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
 import { recordings } from "@/lib/db/schema";
-import { MAX_RECORDING_BYTES } from "@/lib/storage/r2";
+import { getPresignedGetUrl, MAX_RECORDING_BYTES } from "@/lib/storage/r2";
 
 export async function GET() {
   const session = await auth();
@@ -16,7 +16,14 @@ export async function GET() {
     .orderBy(desc(recordings.createdAt))
     .limit(200);
 
-  return NextResponse.json({ recordings: recs });
+  const enriched = await Promise.all(
+    recs.map(async (recording) => ({
+      ...recording,
+      audioGetUrl: recording.storageKey ? await getPresignedGetUrl(recording.storageKey) : null
+    }))
+  );
+
+  return NextResponse.json({ recordings: enriched });
 }
 
 export async function POST(req: Request) {

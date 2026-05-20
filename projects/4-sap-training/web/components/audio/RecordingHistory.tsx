@@ -5,6 +5,25 @@ import { Trash2 } from "lucide-react";
 import type { RecordingAttempt } from "@/types/audio";
 import { deleteRecording, listRecordings, recordingToObjectUrl } from "@/lib/audio-storage";
 
+type RecordingHistoryItem = RecordingAttempt & {
+  audioGetUrl?: string | null;
+  status?: string;
+};
+
+type ServerRecording = {
+  id: string;
+  studentId: string;
+  lessonId: string;
+  practiceType: RecordingAttempt["practiceType"];
+  promptText: string | null;
+  targetJapanese: string | null;
+  audioGetUrl: string | null;
+  durationSec: number | null;
+  createdAt: string | Date;
+  selfAssessment: RecordingAttempt["selfAssessment"] | null;
+  status: string;
+};
+
 const typeLabels: Record<RecordingAttempt["practiceType"], string> = {
   shadowing: "Shadowing",
   "micro-training": "30 秒训练",
@@ -13,13 +32,44 @@ const typeLabels: Record<RecordingAttempt["practiceType"], string> = {
 };
 
 export function RecordingHistory({ lessonId }: { lessonId?: string }) {
-  const [items, setItems] = useState<RecordingAttempt[]>([]);
+  const [items, setItems] = useState<RecordingHistoryItem[]>([]);
   const [error, setError] = useState("");
 
   async function refresh() {
     try {
-      const recordings = await listRecordings();
-      setItems(lessonId ? recordings.filter((item) => item.lessonId === lessonId) : recordings);
+      setError("");
+      const localRecordings = await listRecordings();
+      let serverRecordings: RecordingHistoryItem[] = [];
+
+      const response = await fetch("/api/recordings");
+      if (response.ok) {
+        const data = (await response.json()) as { recordings?: ServerRecording[] };
+        serverRecordings = (data.recordings ?? []).map((item) => ({
+          id: item.id,
+          userId: item.studentId,
+          lessonId: item.lessonId,
+          practiceType: item.practiceType,
+          promptText: item.promptText ?? "",
+          targetJapanese: item.targetJapanese ?? undefined,
+          audioUrl: "",
+          durationSec: item.durationSec ?? 0,
+          createdAt: new Date(item.createdAt).toISOString(),
+          selfAssessment: item.selfAssessment ?? {
+            pronunciation: 3,
+            fluency: 3,
+            naturalness: 3,
+            sapAccuracy: 3,
+            consultantLike: 3
+          },
+          audioGetUrl: item.audioGetUrl,
+          status: item.status
+        }));
+      }
+
+      const serverIds = new Set(serverRecordings.map((item) => item.id));
+      const merged = [...serverRecordings, ...localRecordings.filter((item) => !serverIds.has(item.id))];
+      const scoped = lessonId ? merged.filter((item) => item.lessonId === lessonId) : merged;
+      setItems(scoped.sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
     } catch (err) {
       setError(err instanceof Error ? err.message : "读取录音失败。");
     }
@@ -39,7 +89,7 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
       </div>
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
       <div className="space-y-3">
-        {items.length === 0 ? <p className="text-sm text-slate-500">暂无本地录音。</p> : null}
+        {items.length === 0 ? <p className="text-sm text-slate-500">暂无录音。</p> : null}
         {items.map((item) => (
           <div key={item.id} className="rounded-lg border border-line p-3">
             <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
@@ -72,11 +122,11 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
   );
 }
 
-function RecordingPlayback({ item }: { item: RecordingAttempt }) {
+function RecordingPlayback({ item }: { item: RecordingHistoryItem }) {
   const [src, setSrc] = useState("");
 
   useEffect(() => {
-    const next = recordingToObjectUrl(item);
+    const next = item.audioGetUrl ?? recordingToObjectUrl(item);
     setSrc(next);
     return () => {
       if (next.startsWith("blob:")) URL.revokeObjectURL(next);
