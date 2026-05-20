@@ -243,6 +243,33 @@ export const recordings = pgTable("recordings", {
   createdAt: timestamp("created_at").defaultNow().notNull()
 });
 
+export const teacherFeedback = pgTable(
+  "teacher_feedback",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    recordingId: uuid("recording_id")
+      .notNull()
+      .references(() => recordings.id, { onDelete: "cascade" }),
+    teacherId: uuid("teacher_id")
+      .notNull()
+      .references(() => users.id),
+    scoreOverall: integer("score_overall"),
+    scoreDim: jsonb("score_dim").$type<{
+      pronunciation: number;
+      fluency: number;
+      naturalness: number;
+      sapAccuracy: number;
+      consultantLike: number;
+    } | null>(),
+    comment: text("comment"),
+    correctedJapanese: text("corrected_japanese"),
+    modelRecordingId: uuid("model_recording_id").references(() => recordings.id),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().notNull()
+  },
+  (table) => [unique().on(table.recordingId)]
+);
+
 export const progressEvents = pgTable("progress_events", {
   id: uuid("id").primaryKey().defaultRandom(),
   studentId: uuid("student_id")
