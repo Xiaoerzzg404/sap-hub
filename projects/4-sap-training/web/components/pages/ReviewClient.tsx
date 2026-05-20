@@ -8,6 +8,27 @@ import type { Lesson } from "@/types/lesson";
 import type { Phrase } from "@/types/phrase";
 import type { ProgressState } from "@/types/progress";
 
+type FeedbackRecording = {
+  id: string;
+  lessonId: string;
+  practiceType: string;
+  promptText: string | null;
+  audioGetUrl: string | null;
+  feedback: {
+    scoreOverall: number | null;
+    scoreDim: {
+      pronunciation?: number;
+      fluency?: number;
+      naturalness?: number;
+      sapAccuracy?: number;
+      consultantLike?: number;
+    } | null;
+    comment: string | null;
+    correctedJapanese: string | null;
+    updatedAt: string | Date;
+  } | null;
+};
+
 export function ReviewClient({
   glossary,
   lessons,
@@ -18,8 +39,18 @@ export function ReviewClient({
   phrases: Phrase[];
 }) {
   const [progress, setProgress] = useState<ProgressState | null>(null);
+  const [recordings, setRecordings] = useState<FeedbackRecording[]>([]);
   useEffect(() => {
     void loadProgress().then(setProgress);
+  }, []);
+  useEffect(() => {
+    async function loadFeedback() {
+      const response = await fetch("/api/recordings");
+      if (!response.ok) return;
+      const data = (await response.json()) as { recordings?: FeedbackRecording[] };
+      setRecordings(data.recordings ?? []);
+    }
+    void loadFeedback();
   }, []);
 
   const favoriteTerms = useMemo(() => glossary.filter((term) => progress?.favoriteTerms.includes(term.id)).slice(0, 12), [glossary, progress]);
@@ -35,6 +66,7 @@ export function ReviewClient({
   const lowScores = Object.entries(progress?.selfAssessments ?? {}).filter(([, value]) =>
     [value.pronunciation, value.fluency, value.naturalness, value.sapAccuracy, value.consultantLike].some((score) => score <= 2)
   );
+  const recordingsWithFeedback = recordings.filter((recording) => recording.feedback);
 
   return (
     <div className="page-shell space-y-6">
@@ -82,6 +114,33 @@ export function ReviewClient({
             lowScores.map(([id]) => <p key={id} className="rounded-md bg-amber-50 p-2 text-sm text-amber-900">{id} 建议重新练习</p>)
           ) : (
             <p className="text-sm text-slate-500">暂无低分自评。</p>
+          )}
+        </div>
+      </section>
+      <section className="panel p-4">
+        <h2 className="font-semibold text-ink">讲师反馈</h2>
+        <div className="mt-3 space-y-3">
+          {recordingsWithFeedback.length ? (
+            recordingsWithFeedback.map((recording) => (
+              <div key={recording.id} className="rounded-lg border border-line p-3">
+                <p className="text-sm font-semibold text-ink">
+                  {recording.lessonId} · {recording.practiceType} · 总分 {recording.feedback?.scoreOverall ?? "-"}/5
+                </p>
+                {recording.promptText ? <p className="mt-1 text-sm text-slate-600">{recording.promptText}</p> : null}
+                {recording.feedback?.comment ? <p className="mt-2 text-sm text-slate-700">{recording.feedback.comment}</p> : null}
+                {recording.feedback?.correctedJapanese ? (
+                  <p className="mt-2 text-sm">
+                    <span className="text-xs font-semibold text-slate-500">纠正：</span>
+                    <span lang="ja" className="ml-2 text-ink">
+                      {recording.feedback.correctedJapanese}
+                    </span>
+                  </p>
+                ) : null}
+                {recording.audioGetUrl ? <audio controls src={recording.audioGetUrl} className="mt-3 w-full" /> : null}
+              </div>
+            ))
+          ) : (
+            <p className="text-sm text-slate-500">还没有讲师反馈。</p>
           )}
         </div>
       </section>

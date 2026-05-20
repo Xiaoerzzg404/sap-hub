@@ -2,23 +2,25 @@ import { desc, eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
-import { recordings } from "@/lib/db/schema";
+import { recordings, teacherFeedback } from "@/lib/db/schema";
 import { getPresignedGetUrl, MAX_RECORDING_BYTES } from "@/lib/storage/r2";
 
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ recordings: [] }, { status: 401 });
 
-  const recs = await db
-    .select()
+  const rows = await db
+    .select({ recording: recordings, feedback: teacherFeedback })
     .from(recordings)
+    .leftJoin(teacherFeedback, eq(teacherFeedback.recordingId, recordings.id))
     .where(eq(recordings.studentId, session.user.id))
     .orderBy(desc(recordings.createdAt))
     .limit(200);
 
   const enriched = await Promise.all(
-    recs.map(async (recording) => ({
+    rows.map(async ({ recording, feedback }) => ({
       ...recording,
+      feedback,
       audioGetUrl: recording.storageKey ? await getPresignedGetUrl(recording.storageKey) : null
     }))
   );
