@@ -493,6 +493,11 @@ function getEnvStatuses(): AdminEnvStatus[] {
       purpose: "Recording storage",
     },
     {
+      label: "NEXT_PUBLIC_COURSE_AUDIO_BASE_URL",
+      present: Boolean(process.env.NEXT_PUBLIC_COURSE_AUDIO_BASE_URL),
+      purpose: "Course TTS public CDN base URL",
+    },
+    {
       label: "CRON_SECRET",
       present: Boolean(process.env.CRON_SECRET),
       purpose: "Cleanup cron auth",

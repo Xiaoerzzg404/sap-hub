@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { resolveCourseAudioSrc } from "@/lib/course-audio";
 import { Pause, Play } from "lucide-react";
 
 export function ABRepeatPlayer({ src, label }: { src?: string; label?: string }) {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const resolvedSrc = resolveCourseAudioSrc(src);
   const [pointA, setPointA] = useState<number | null>(null);
   const [pointB, setPointB] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,7 +41,12 @@ export function ABRepeatPlayer({ src, label }: { src?: string; label?: string })
 
   return (
     <div className="panel space-y-3 p-4">
-      <audio ref={audioRef} src={src} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} />
+      <audio
+        ref={audioRef}
+        src={resolvedSrc}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-ink">AB Repeat</p>

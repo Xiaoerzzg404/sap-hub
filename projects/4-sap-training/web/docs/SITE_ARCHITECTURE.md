@@ -22,16 +22,17 @@ Phase 1 是 24 课 SAP 项目日语口语训练课。网站应该像一个训练
 
 课程内容和学员数据不能混在一起。
 
-| 领域             | 真相源                                     | 运行时形态                                         |
-| ---------------- | ------------------------------------------ | -------------------------------------------------- |
-| 课程内容         | Project 4 课程目录下的本地 Markdown 资产   | 生成后的 JSON 和已 seed 的 Postgres content tables |
-| 站点导航与 label | Next.js 源码                               | 随 Vercel build 部署                               |
-| 学员进度         | `progress_events` 加 localStorage fallback | `/api/progress/events` 与 client cache             |
-| 学员录音         | R2 object storage 加 `recordings` metadata | `/api/recordings`、软删除、signed playback         |
-| 讲师反馈         | `teacher_feedback`                         | 学员 `/review` 与 `/me`、讲师复核页                |
-| 学员笔记         | beta 阶段使用浏览器 localStorage           | 若需要跨设备笔记，再升级 DB table                  |
-| 登录凭据         | `users.username`、`users.password_hash`    | 邮箱/用户名 + 密码登录；生产注册受邀请码保护       |
-| 角色与权限       | `user_roles` 加 legacy `users.role`        | 多角色 session claims `roles[]`                    |
+| 领域             | 真相源                                     | 运行时形态                                                                |
+| ---------------- | ------------------------------------------ | ------------------------------------------------------------------------- |
+| 课程内容         | Project 4 课程目录下的本地 Markdown 资产   | 生成后的 JSON 和已 seed 的 Postgres content tables                        |
+| 站点导航与 label | Next.js 源码                               | 随 Vercel build 部署                                                      |
+| 学员进度         | `progress_events` 加 localStorage fallback | `/api/progress/events` 与 client cache                                    |
+| 学员录音         | R2 object storage 加 `recordings` metadata | `/api/recordings`、软删除、signed playback                                |
+| 讲师反馈         | `teacher_feedback`                         | 学员 `/review` 与 `/me`、讲师复核页                                       |
+| 学员笔记         | beta 阶段使用浏览器 localStorage           | 若需要跨设备笔记，再升级 DB table                                         |
+| 登录凭据         | `users.username`、`users.password_hash`    | 邮箱/用户名 + 密码登录；生产注册受邀请码保护                              |
+| 角色与权限       | `user_roles` 加 legacy `users.role`        | 多角色 session claims `roles[]`                                           |
+| 课程 TTS 音频    | R2 `course-audio/20260521/` + CDN base URL | mp3 被 gitignore，前端用 `NEXT_PUBLIC_COURSE_AUDIO_BASE_URL` 切换公网路径 |
 
 稳定课次 id（例如 `lesson_01`）必须在内容重写后继续保持。改写会改变 lesson revision，不改变学生进度 row 的身份。
 
@@ -73,5 +74,5 @@ Phase 1 是 24 课 SAP 项目日语口语训练课。网站应该像一个训练
 - 保持 `/review` 用于更深入的复盘和反馈历史。
 - beta 阶段笔记先保留本地；如果学员需要跨设备，再做云同步。
 - 生产环境不开放无门槛注册：`REGISTRATION_INVITE_CODE` 控制学生注册，历史无密码账号认领需要 `ACCOUNT_CLAIM_TOKEN`，owner 初始化需要 `OWNER_BOOTSTRAP_TOKEN`。
-- TTS 音频视为生成资产：本地用 `AZURE_SPEECH_KEY` 生成，检查路径后再部署。
+- TTS 音频视为生成资产：本地用 `AZURE_SPEECH_KEY` 生成，mp3 不进 Git；公网用 R2/CDN，配置 `NEXT_PUBLIC_COURSE_AUDIO_BASE_URL` 后前端会把 `/audio/...` 切到 CDN 路径。
 - Sentry、Safe Browsing 和 beta 学员反馈都作为运营信号，先反馈到本地修复，再做下一次部署。

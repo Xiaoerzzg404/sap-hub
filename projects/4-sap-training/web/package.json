@@ -13,6 +13,7 @@
     "ledger:check": "node scripts/site-ledger.mjs check",
     "ledger:rebuild-plan": "node scripts/site-ledger.mjs rebuild-plan",
     "tts": "node scripts/generate-tts.mjs",
+    "audio:r2:upload": "node scripts/upload-course-audio-r2.mjs",
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate": "drizzle-kit migrate",
     "drizzle:push": "drizzle-kit push",

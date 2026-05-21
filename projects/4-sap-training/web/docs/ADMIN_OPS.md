@@ -56,6 +56,13 @@ Owner 初始化：
 - 环境变量检查：只显示是否配置，不显示值。
 - 本地改订发布流：本地修改 -> typecheck/lint/build/browser check -> commit -> deploy -> 线上复查。
 
+课程 TTS 音频部署：
+
+- mp3 文件保持 gitignored，不 force-add 到 Git。
+- 课程音频上传到 R2 的 `course-audio/20260521/` 前缀；该前缀不要和学员录音 `audio/` 生命周期规则混用。
+- Vercel Production/Preview 需要配置 `NEXT_PUBLIC_COURSE_AUDIO_BASE_URL`，值应指向公开 CDN base URL，例如 CDN 域名下的 `course-audio/20260521`。
+- 未配置该 env 时，前端保留本地 `/audio/...` 路径；Preview/Production 因 mp3 不进 Git 会无法播放课程 TTS。
+
 可选外部监控数据：
 
 | 平台   | 可选 env                                                           | 用途                                   |

@@ -15439,5 +15439,13 @@
       "ttsText": "再発防止策について、対象範囲と影響範囲を確認いたします。",
       "status": "generated"
     }
-  ]
+  ],
+  "delivery": {
+    "strategy": "cloudflare-r2-cdn",
+    "basePathEnv": "NEXT_PUBLIC_COURSE_AUDIO_BASE_URL",
+    "fallbackBasePath": "/audio",
+    "r2KeyPrefix": "course-audio/20260521",
+    "uploadedAt": "2026-05-21T23:51:09.509Z",
+    "mp3GitPolicy": "mp3 files stay gitignored; do not force-add course audio"
+  }
 }
