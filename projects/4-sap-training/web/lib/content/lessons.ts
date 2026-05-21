@@ -1,7 +1,13 @@
 import "server-only";
 
 import { and, asc, eq } from "drizzle-orm";
+import fallbackAssignments from "@/data/assignments.json";
+import fallbackGlossary from "@/data/glossary.json";
+import fallbackLibrary from "@/data/library.json";
 import fallbackLessons from "@/data/lessons.json";
+import fallbackPhrases from "@/data/phrases.json";
+import fallbackReviewTerms from "@/data/review-terms.json";
+import fallbackRoleplays from "@/data/roleplays.json";
 import { db } from "@/lib/db";
 import {
   assignments,
@@ -21,6 +27,8 @@ import type { Lesson, LessonAsset, ReviewItem, RolePlay, ShadowingItem } from "@
 import type { Phrase } from "@/types/phrase";
 
 const fallbackById = new Map((fallbackLessons as Lesson[]).map((lesson) => [lesson.id, lesson]));
+const useStaticFallback =
+  process.env.CI === "true" || process.env.DATABASE_URL?.includes("mock@localhost") === true;
 
 type LessonRow = typeof lessons.$inferSelect;
 type LessonAssetRow = typeof lessonAssets.$inferSelect;
@@ -166,6 +174,7 @@ function toLibraryItem(row: LibraryItemRow): LibraryItem {
 }
 
 export async function getAllLessons() {
+  if (useStaticFallback) return fallbackLessons as Lesson[];
   const rows = await db.select().from(lessons).orderBy(asc(lessons.order));
   return rows.map(baseLesson);
 }
@@ -177,6 +186,7 @@ export async function getNextLesson(id: string) {
 }
 
 export async function getLessonById(id: string) {
+  if (useStaticFallback) return fallbackById.get(id) ?? null;
   const [row] = await db.select().from(lessons).where(eq(lessons.id, id));
   if (!row) return null;
 
@@ -201,27 +211,37 @@ export async function getLessonById(id: string) {
 }
 
 export async function getAllLessonsWithContent() {
+  if (useStaticFallback) return fallbackLessons as Lesson[];
   const summaries = await getAllLessons();
   const fullLessons = await Promise.all(summaries.map((lesson) => getLessonById(lesson.id)));
   return fullLessons.filter((lesson): lesson is Lesson => Boolean(lesson));
 }
 
 export async function getReviewTerms() {
+  if (useStaticFallback) return fallbackReviewTerms as ReviewItem[];
   const rows = await db.select().from(reviewTerms);
   return rows.map(toReviewTerm);
 }
 
 export async function getLibraryItems() {
+  if (useStaticFallback) return fallbackLibrary as LibraryItem[];
   const rows = await db.select().from(libraryItems);
   return rows.map(toLibraryItem);
 }
 
 export async function getLibraryItemByKind(kind: string) {
+  if (useStaticFallback) {
+    return (fallbackLibrary as LibraryItem[]).find((item) => item.kind === kind) ?? null;
+  }
   const [row] = await db.select().from(libraryItems).where(eq(libraryItems.kind, kind));
   return row ? { ...toLibraryItem(row), markdown: row.markdown } : null;
 }
 
 export async function getLessonAssetByKind(lessonId: string, kind: string) {
+  if (useStaticFallback) {
+    const lesson = fallbackById.get(lessonId);
+    return lesson?.assets?.find((asset) => asset.kind === kind) ?? null;
+  }
   const [row] = await db
     .select()
     .from(lessonAssets)
@@ -230,21 +250,25 @@ export async function getLessonAssetByKind(lessonId: string, kind: string) {
 }
 
 export async function getGlossaryTerms() {
+  if (useStaticFallback) return fallbackGlossary as GlossaryTerm[];
   const rows = await db.select().from(glossaryTerms);
   return rows.map(toGlossaryTerm);
 }
 
 export async function getPhrases() {
+  if (useStaticFallback) return fallbackPhrases as Phrase[];
   const rows = await db.select().from(phrases);
   return rows.map(toPhrase);
 }
 
 export async function getRoleplays() {
+  if (useStaticFallback) return fallbackRoleplays as RolePlay[];
   const rows = await db.select().from(roleplays);
   return rows.map(toRoleplay);
 }
 
 export async function getAssignments() {
+  if (useStaticFallback) return fallbackAssignments as Assignment[];
   const rows = await db.select().from(assignments);
   return rows.map(toAssignment);
 }

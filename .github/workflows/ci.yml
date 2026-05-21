@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: projects/4-sap-training/web/package-lock.json
+
+      - name: Install dependencies
+        working-directory: projects/4-sap-training/web
+        run: npm ci
+
+      - name: Typecheck
+        working-directory: projects/4-sap-training/web
+        run: npm run typecheck
+
+      - name: Lint
+        working-directory: projects/4-sap-training/web
+        run: npm run lint
+
+      - name: Build
+        working-directory: projects/4-sap-training/web
+        run: npm run build
+        env:
+          DATABASE_URL: postgres://mock:mock@localhost:5432/mock
+          AUTH_SECRET: ci-mock-secret-32-chars-long-pad-pad
+          NEXTAUTH_URL: http://localhost:3000

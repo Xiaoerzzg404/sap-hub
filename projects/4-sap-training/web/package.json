@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "convert:content": "node scripts/convert-content.mjs",
     "tts": "node scripts/generate-tts.mjs",
