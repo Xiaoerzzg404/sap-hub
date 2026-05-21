@@ -258,3 +258,32 @@ Vercel env 检查：
 | Recording upload sign | user id         | 10 / minute |
 | Teacher feedback      | teacher user id | 30 / minute |
 | General helper        | user id         |  5 / second |
+
+临时调整位置：`lib/rate-limit.ts`。
+
+## 备份 Runbook
+
+每周备份：
+
+1. 在本地 shell 设置 `DATABASE_URL`。
+2. 执行 `pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql`。
+3. 确认文件大小非 0。
+4. 加密保存到私有位置。
+5. 不提交到 git。
+
+恢复前必须先在 inbox 写提案并得到 Ryan 明确确认。恢复数据库属于破坏性操作。
+
+## 用户注销请求
+
+用户要求注销账号时：
+
+1. 记录收到时间和登录邮箱。
+2. 用 SQL 查 user id。
+3. 导出必要审计信息。
+4. 删除或匿名化该用户的 recordings、progress_events、favorites、assignment_submissions、sessions。
+5. 删除 R2 中 `audio/<user-id>/` 前缀下对象。
+6. 最后删除或匿名化 users row。
+
+处理时限：14 天内。
+
+不要通过聊天窗口索要用户密码。管理员不需要知道用户密码。

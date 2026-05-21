@@ -39,3 +39,13 @@
 - routes: 40
 - health: warning:protected_route_not_in_middleware, error:cron_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:working_tree_dirty
 - delta: +11 / -0 / changed 51
+
+## 2026-05-22T08:19:39+09:00 · after-public-sync
+
+- commit: 7aafb74
+- branch: codex/sap-jp-content-audit-20260521
+- restore_safe: false
+- files: 796
+- routes: 40
+- health: warning:working_tree_dirty
+- delta: +0 / -0 / changed 4

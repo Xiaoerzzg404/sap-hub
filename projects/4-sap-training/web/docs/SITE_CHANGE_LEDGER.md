@@ -1,7 +1,7 @@
 # SITE_CHANGE_LEDGER · sap-jp.training
 
 - updated_by: codex
-- updated_at: 2026-05-22T08:04:26+09:00
+- updated_at: 2026-05-22T08:20:13+09:00
 - scope: 人类和 AI 工具如何记录本地站点变更、版本历史和重建证据
 
 ## 用什么
@@ -71,6 +71,29 @@ npm run ledger:rebuild-plan
 - `ops/site-ledger/REBUILD_PLAN.md`：给人看的重建步骤。
 - `ops/site-ledger/latest.json`：机器可读的文件、路由、数据和 Git 证据。
 - Git history：真正恢复代码/内容。
+
+## 2026-05-22 公网同步前版本顺序
+
+本轮以 `main` 的 `3bcc778` 为公开同步前基线，当前整理分支是
+`codex/sap-jp-content-audit-20260521`。昨晚更新已经能按真实执行顺序拆成以下版本：
+
+| 顺序 | commit / 状态           | 目的                     | 文件范围                                                   | 公网前状态                     |
+| ---: | ----------------------- | ------------------------ | ---------------------------------------------------------- | ------------------------------ |
+|    0 | `576cd4e`               | 变更前 checkpoint        | 内容审查前恢复点                                           | 已提交                         |
+|    1 | `eeae1fc`               | SAP 项目日语内容审校     | 课程 Markdown、生成 JSON、内容报告                         | 已提交                         |
+|    2 | `03fa6cc`               | 本地站点审计和 lint 清理 | 录音 refresh hooks、审计报告、need-input                   | 已提交                         |
+|    3 | `9526a82`               | 讲师教练台               | `/teacher`、coach data、teacher guide、convert metadata    | 已提交                         |
+|    4 | `bdc7264`               | 学员日语自训             | lesson coach panel、`/speaking/self-training`、nav         | 已提交                         |
+|    5 | `925edbf`               | Project 4 护栏           | `AGENT_GUARDRAILS.md` 与 guardrail handoff                 | 已提交                         |
+|    6 | `2ac1869`               | `/me` 学员首页和架构文档 | `/me`、notes、Sentry build gating、SITE_ARCHITECTURE       | 已提交                         |
+|    7 | `1759ad2`               | 站点 ledger              | `scripts/site-ledger.mjs`、snapshot/diff/rebuild plan      | 已提交                         |
+|    8 | `d3ba920`               | admin 运维监控台         | `/admin`、ops dashboard、ADMIN_OPS                         | 已提交                         |
+|    9 | `d0440b1`               | 密码登录与多角色 RBAC    | credentials auth、`user_roles`、middleware、migration 0003 | 已提交                         |
+|   10 | `7aafb74`               | 中文文档规则和交接归档   | AGENTS、guardrails、handoff、site-ledger 文档中文化        | 已提交                         |
+|   11 | `3cc1305`               | TTS/audio metadata       | TTS 脚本、TermCard、manifest、内容修正、生成 JSON          | 已提交；mp3 本体仍被 gitignore |
+|   12 | 本轮 public sync commit | 公网同步前台账和停手确认 | state、handoff、need-input、ledger before/after reports    | 待提交                         |
+
+恢复顺序：先恢复到目标 commit，再按对应 handoff 的验证命令重跑；音频若要公网可播放，必须先确认媒体策略，因为 `**/*.mp3` 当前不会随 GitHub/Vercel Git 部署进入生产。
 
 ## 必需交接记录
 

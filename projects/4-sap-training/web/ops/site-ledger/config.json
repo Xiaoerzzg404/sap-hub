@@ -65,7 +65,7 @@
     "data/roleplays.json": 48,
     "data/assignments.json": 96
   },
-  "publicRoutes": ["/", "/login", "/login/verify", "/login/confirm", "/privacy"],
+  "publicRoutes": ["/login"],
   "protectedPrefixes": [
     "/dashboard",
     "/courses",

@@ -2,17 +2,17 @@
   "schemaVersion": "1.0.0",
   "siteId": "sap-jp.training-local",
   "siteName": "sap-jp.training local training site",
-  "label": "after-public-sync",
+  "label": "before-task",
   "note": "",
-  "generatedAt": "2026-05-21T23:19:39.882Z",
-  "generatedAtTokyo": "2026-05-22T08:19:39+09:00",
+  "generatedAt": "2026-05-21T15:17:58.323Z",
+  "generatedAtTokyo": "2026-05-22T00:17:58+09:00",
   "repoRoot": "~/sap-hub",
   "webRoot": "~/sap-hub/projects/4-sap-training/web",
   "projectRoot": "~/sap-hub/projects/4-sap-training",
   "git": {
     "branch": "codex/sap-jp-content-audit-20260521",
-    "head": "7aafb7431a474936a8870616f5c28073fc2edc32",
-    "headShort": "7aafb74",
+    "head": "d3ba920609adeb2cb87b980ef74f5fc608af310a",
+    "headShort": "d3ba920",
     "isDirty": true,
     "statusLines": [
       "M logs/content-source-report.md",
@@ -24,21 +24,17 @@
       " M projects/4-sap-training/web/data/_meta.json",
       " M projects/4-sap-training/web/data/lessons.json",
       " M projects/4-sap-training/web/data/phrases.json",
-      " M projects/4-sap-training/web/docs/ADMIN_OPS.md",
-      " M projects/4-sap-training/web/ops/site-ledger/config.json",
-      " M projects/4-sap-training/web/ops/site-ledger/latest.json",
       " M projects/4-sap-training/web/scripts/convert-content.mjs",
       " M projects/4-sap-training/web/scripts/generate-tts.mjs",
-      " M projects/4-sap-training/web/scripts/site-ledger.mjs",
-      "?? projects/4-sap-training/web/ops/site-ledger/reports/2026-05-21T23-16-33-263Z__before-public-sync.md",
-      "?? projects/4-sap-training/web/ops/site-ledger/snapshots/2026-05-21T15-17-58-323Z__before-task.json",
-      "?? projects/4-sap-training/web/ops/site-ledger/snapshots/2026-05-21T23-16-33-263Z__before-public-sync.json",
+      "?? projects/4-sap-training/inbox/handoff-tts-audio-recordings-20260521.md",
+      "?? projects/4-sap-training/inbox/need-input-tts-public-deploy-20260521.md",
+      "?? projects/4-sap-training/logs/tts-recording-report-20260521.md",
       "?? projects/4-sap-training/web/public/audio/audio-manifest.json"
     ]
   },
   "restoreSafety": {
     "restoreSafe": false,
-    "reason": "工作区存在未提交改动；作为恢复点使用前请先 commit 或 stash。"
+    "reason": "Working tree has uncommitted changes; commit or stash them before treating this snapshot as a restore point."
   },
   "package": {
     "name": "@sap-jp/speaking-platform",
@@ -106,8 +102,8 @@
     "data/_meta.json": {
       "type": "object",
       "schemaVersion": "1.4.0",
-      "generatedAt": "2026-05-21T23:17:35.074Z",
-      "sourceCommit": "7aafb7431a474936a8870616f5c28073fc2edc32",
+      "generatedAt": "2026-05-21T14:56:39.888Z",
+      "sourceCommit": "2ac18696e0cd89259a89e690f98d84bdb19bfeff",
       "stats": {
         "tracks": 1,
         "lessons": 24,
@@ -120,9 +116,17 @@
         "japaneseCoachEntries": 24
       },
       "audio": {
-        "provider": "azure",
-        "voice": "ja-JP-NanamiNeural",
-        "generated": false
+        "provider": "macos",
+        "voice": "Kyoko",
+        "generated": true,
+        "generatedAt": "2026-05-21T14:49:07.933Z",
+        "manifest": "/audio/audio-manifest.json",
+        "counts": {
+          "total": 1543,
+          "phrase": 480,
+          "shadowing": 480,
+          "term": 583
+        }
       },
       "backend": {
         "auth": "next-auth@5",
@@ -225,24 +229,24 @@
       "course-output": 358,
       "course-prompt": 30,
       "course-source": 227,
-      "page": 28,
-      "api-route": 11,
-      "app-support": 3,
+      "page": 27,
+      "api-route": 10,
+      "app-support": 2,
       "layout": 1,
-      "component": 60,
+      "component": 59,
       "runtime-data": 11,
       "docs": 5,
       "config": 14,
-      "library-code": 19,
-      "db-migration": 9,
+      "library-code": 15,
+      "db-migration": 7,
       "public-asset": 5,
       "script": 4,
-      "type": 11
+      "type": 10
     },
     "routeCounts": {
       "layout": 1,
-      "page": 28,
-      "api": 11
+      "page": 27,
+      "api": 10
     },
     "trackedRoots": [
       "app",
@@ -281,19 +285,19 @@
       "type": "layout",
       "expectedAccess": "not_applicable",
       "effectiveAccess": "not_applicable",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["auth"],
-      "sha256": "316b1566d727350e90ad5ba7ca6c088385ed8c3226507ae9df55d5f41238721f"
+      "middlewareCovered": false,
+      "serverGuardMarkers": [],
+      "sha256": "a45eac0b063c4b5233bd3eae2cd42cc2d836fc1e8ad4808a2f2de12a46d0b3b7"
     },
     {
       "route": "/",
       "file": "projects/4-sap-training/web/app/page.tsx",
       "type": "page",
-      "expectedAccess": "public_or_review",
-      "effectiveAccess": "middleware_session",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["auth"],
-      "sha256": "931fb5e476be38a853896ce05a9dbc3626fdc3785268583fcfcdd2fedee6e374"
+      "expectedAccess": "public",
+      "effectiveAccess": "public",
+      "middlewareCovered": false,
+      "serverGuardMarkers": [],
+      "sha256": "f6d2b0de1c754ab2b059c2d27980e84d01c088f61340ceedb1e11343569d4f95"
     },
     {
       "route": "/admin",
@@ -302,8 +306,8 @@
       "expectedAccess": "public_or_review",
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "c4004e38b0247dd0f74f15e517f875293f5e145bc000d95285fd3e71125288d2"
+      "serverGuardMarkers": ["auth", "login_redirect"],
+      "sha256": "47c060b4f1af6f49bb56b9c0f0e3dad7df6afba1c75826b615cad106eb3243f8"
     },
     {
       "route": "/api/auth/[...nextauth]",
@@ -311,19 +315,9 @@
       "type": "api",
       "expectedAccess": "public_auth",
       "effectiveAccess": "public_auth",
-      "middlewareCovered": true,
+      "middlewareCovered": false,
       "serverGuardMarkers": [],
       "sha256": "504276d8ac9ce30513913df5daef63e303fca4884d54d68f20766ba0b3c635f2"
-    },
-    {
-      "route": "/api/auth/register",
-      "file": "projects/4-sap-training/web/app/api/auth/register/route.ts",
-      "type": "api",
-      "expectedAccess": "public_auth",
-      "effectiveAccess": "public_auth",
-      "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "71932222e2869448bb3bf157c3d92f71fbd8d4e26b3a5405f923ee2313bdc75e"
     },
     {
       "route": "/api/cron/cleanup-recordings",
@@ -343,7 +337,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "49ba97d89261e01cc2b88c444db89413bf0647e690bced35c98a85f6c92ad90c"
+      "sha256": "ec176d1ba0552266682bf068940698503115c1c96e3b091c446a1c124ab8a283"
     },
     {
       "route": "/api/library/[kind]",
@@ -353,7 +347,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "ba09942af0e083652ec826b31cee65fcc46022db7d50cea9b5b5a9c649941f46"
+      "sha256": "d588c2d47580c028534f85696c5d3677fcf13d6baa7bba1be5f0719fdf7a76c3"
     },
     {
       "route": "/api/progress/events",
@@ -363,7 +357,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "b24e30e7e4e08796029ce2e4bc61c2e70d9d684cc199b4535cff9c5229bc884f"
+      "sha256": "8e8eb14d6daba880c53563afb063da9d12e1db7958bec6c614940ee25fec135c"
     },
     {
       "route": "/api/recordings",
@@ -373,7 +367,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "4f89768a296f29bb8346a207ec2dc160be0404c5f314f28b6d841c9c1c71013b"
+      "sha256": "f34bcdf981b7ab821d930c5dba5573ee264d06cddf041ae90c1dec5dc87b7948"
     },
     {
       "route": "/api/recordings/[id]",
@@ -383,7 +377,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "0e790335b01cbce8b4e9655a6283f17cdf44a322bd9cd2c9f13e26ad32f9e6e6"
+      "sha256": "aadf92dfb7665310f10de524b1e5d22b66ab804ac6c77cb13ee94b18148172b3"
     },
     {
       "route": "/api/recordings/sign",
@@ -393,7 +387,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "b7f498c639e3fc65ddcf2cc77b5574addc767cb480ab8c5a35b6db37e526ad68"
+      "sha256": "2a0accb69954116b9ab6db30e7fab59734b2bbe49da667e8369e0928c5e0625e"
     },
     {
       "route": "/api/teacher/recordings",
@@ -403,7 +397,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "650f28dba865cd0980a69b212f1618eb8d2c6d26a10a6e821b8899a6d5a7beb7"
+      "sha256": "0ca89806cd67f0d31f61c5032034486045b9b58f406a82ae9d54c0725bc9b3ad"
     },
     {
       "route": "/api/teacher/recordings/[id]/feedback",
@@ -413,7 +407,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": ["auth"],
-      "sha256": "14bceeda2b0fec0174024f8a2a374d37dc6017cafc44ad8ab6d1d71540dd1e20"
+      "sha256": "21fd01ef9ec752f8d8bc99a9b2db2355d3bdb5d550872ff91345eb8676b598de"
     },
     {
       "route": "/assignments",
@@ -423,7 +417,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "9dbc7e8398cf105294c03204152bcab663aadae54df1e3f19557bd503f1dc1e7"
+      "sha256": "8ad8cfac0adb08ee1766868a928fc26a714663d8a7cbd09041d9a05d5067ceeb"
     },
     {
       "route": "/courses",
@@ -433,7 +427,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "99b2e67a38b4c64a1439b3c02353879c7ca5ef85c29992961c4c8f1f49f848c5"
+      "sha256": "7c1c4beeb545f799acdad5789300118e9a86e4534d5438290bc443c862bf28f4"
     },
     {
       "route": "/courses/lessons/[lessonId]",
@@ -443,7 +437,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "45d4a46e88f4bd96d15c84869fa0c44a9c52ba633be16aff45e0d5296364e5dd"
+      "sha256": "9fa9a30b752c2f5502cd847ef7d8fc4b72e523596b9b1f90813d2bf3d7403d3f"
     },
     {
       "route": "/dashboard",
@@ -453,7 +447,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "3fce5823a994289abccdd1b139412f65b13e5f22bc15e0e1dbb7415932f6e466"
+      "sha256": "93cde8a79c98a5052ca1cf0dae5c1736d7a7382cdca45ed7b2a08464b3269a11"
     },
     {
       "route": "/glossary",
@@ -463,7 +457,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "2e30900b43c99ee84deed5d53e304e40eb47b2fc3ee62b87e728483340675c8e"
+      "sha256": "25169261c9988dd2b61c2fdf9c1eaaf6b2759a54963b1bfd0418a4b470296f31"
     },
     {
       "route": "/library",
@@ -473,7 +467,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "8a112f25807da2ded88df343b162ea79c47d4594cafd2896aa487503213afbbd"
+      "sha256": "0ae717f68d659cc38e6131a01fc18b32e100825daaa42645c8aa2a06c6348006"
     },
     {
       "route": "/login",
@@ -481,29 +475,29 @@
       "type": "page",
       "expectedAccess": "public",
       "effectiveAccess": "public",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["auth", "login_redirect"],
-      "sha256": "e4cd5321a16bf2fa2a1f32401473e5fcc0e3081cc8ffe1ae6d332bda8a9e6b2f"
+      "middlewareCovered": false,
+      "serverGuardMarkers": [],
+      "sha256": "a606090224b42805f2a7d714249129558a1377f93aa44b30aa3efd3960f3e63c"
     },
     {
       "route": "/login/confirm",
       "file": "projects/4-sap-training/web/app/login/confirm/page.tsx",
       "type": "page",
-      "expectedAccess": "public_or_review",
-      "effectiveAccess": "middleware_session",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["login_redirect"],
-      "sha256": "2e04bc315931e63420f785ed85f69b0040b93182161c869613bc25e1651cc111"
+      "expectedAccess": "public",
+      "effectiveAccess": "public",
+      "middlewareCovered": false,
+      "serverGuardMarkers": [],
+      "sha256": "cf3769a375fb15592660dfb6a8118d5af78be9f633a53f6101050331b07059a5"
     },
     {
       "route": "/login/verify",
       "file": "projects/4-sap-training/web/app/login/verify/page.tsx",
       "type": "page",
-      "expectedAccess": "public_or_review",
-      "effectiveAccess": "middleware_session",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["login_redirect"],
-      "sha256": "1e4e941d0708dcbe388ebe2a415141aa50ca8344b65f1baf2ff8029638064b57"
+      "expectedAccess": "public",
+      "effectiveAccess": "public",
+      "middlewareCovered": false,
+      "serverGuardMarkers": [],
+      "sha256": "4d69232df93726aa98bc11fbf73b406bbb06d0e2043695efbfdcfb6670d54667"
     },
     {
       "route": "/me",
@@ -513,7 +507,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "951b3179ee4ad6dfac43b03ace545e466679d54815768ba7eec1130f6c915331"
+      "sha256": "c9216d8a00fddef134b112df68521c0bd1b9241ffe3f04eaed5c0080d4e7a333"
     },
     {
       "route": "/phrasebook",
@@ -523,27 +517,17 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "bf4e9175e48549388702226d7ca1d673ad4a89823d22d58d7e85505551d0beb0"
-    },
-    {
-      "route": "/post-login",
-      "file": "projects/4-sap-training/web/app/post-login/page.tsx",
-      "type": "page",
-      "expectedAccess": "public_or_review",
-      "effectiveAccess": "middleware_session",
-      "middlewareCovered": true,
-      "serverGuardMarkers": ["auth", "login_redirect"],
-      "sha256": "642cd866ced14805c4d7079f9115d153cf7c2adf234c32ec2bf6c0561e672e77"
+      "sha256": "92a6996948f5b6c161159f99f0e447bd1283fd65c9b4850bd8dd7221d2c456b6"
     },
     {
       "route": "/privacy",
       "file": "projects/4-sap-training/web/app/privacy/page.tsx",
       "type": "page",
-      "expectedAccess": "public_or_review",
-      "effectiveAccess": "middleware_session",
-      "middlewareCovered": true,
+      "expectedAccess": "public",
+      "effectiveAccess": "public",
+      "middlewareCovered": false,
       "serverGuardMarkers": [],
-      "sha256": "62ff757c4c8f10f0f034f40407cbce98c952d3c3fcfa8a4b851f7d431df12d56"
+      "sha256": "c3eca5bf9a45e6c0878b0eb76474d97c684a3825f0349ff8554f7f5f55951b63"
     },
     {
       "route": "/review",
@@ -553,7 +537,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "2e18db34b4126ca3492ece6d4dd37c04febb64710396b49c932eaf06b0db32ab"
+      "sha256": "8b7262cf6eec2e77e1b1dc33028d68e3054e6a4b35cd2403c01f67763a22e44c"
     },
     {
       "route": "/roleplay",
@@ -563,7 +547,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "2d75c4cb23b59f024ad655dc0cf67a42268569c274cc29af69c0456eff411064"
+      "sha256": "5a69511203d60d65bc2c323a18abc7c40d73c8d52651be20e5ae095aef710f60"
     },
     {
       "route": "/speaking",
@@ -573,7 +557,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "66b9f52994ed641b81a7d8f9efcfc708d478788f72db5c02c0b56ade44e53ff5"
+      "sha256": "6e586ab49fa66075e7f1f0b547c49052b36f3d514e213df4c60f9cf65fdcc36a"
     },
     {
       "route": "/speaking/consultant-output",
@@ -583,7 +567,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "14a35b8c53817e8d34006f799993a6fb7dbcdcf9fd1d6c90e4772b926a273320"
+      "sha256": "1b01c54164f76b45cf63450e78f160b7e9d394722c04f0b1862f09fe086716cd"
     },
     {
       "route": "/speaking/micro-training",
@@ -593,7 +577,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "5bebcca0d176b71c3114c800e048a6e33f3b07403b0a5ac34000c9f8fb302467"
+      "sha256": "d0cf7ead72b06434a727a5e08fc66b1c8f001b326f6e88c4567aa0b3f274dacb"
     },
     {
       "route": "/speaking/recording",
@@ -603,7 +587,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "5165a84a60aa4aa0532c62cd165f5687230b146d287d424e70b3860e17cfb9b7"
+      "sha256": "413ce1e8be50e5c2d77e95508f29f04764bd4a549716e35bddf942268f16388f"
     },
     {
       "route": "/speaking/repeat-player",
@@ -613,7 +597,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "683af9f49e4072052e938ee175be19a6c6d969cb7268382d2f56ccc1950f0499"
+      "sha256": "6d76ffb2bc938df70719f1dc270030d101fd2e577742181571f92e4538a845d5"
     },
     {
       "route": "/speaking/self-training",
@@ -623,7 +607,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "2e8638a889f9906648d54b1e64d0a3ff3d569d36c2aa2ab19ba8464b06f202c3"
+      "sha256": "b1d87265cccf13ba25ac19a55e2f286b8a85a92e57367704b94d95a0e6566301"
     },
     {
       "route": "/speaking/shadowing",
@@ -633,7 +617,7 @@
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
       "serverGuardMarkers": [],
-      "sha256": "d61ec8ac465d5d957d0e03443704c40ba0cbb5aefbe1362532b6b8cf977f3914"
+      "sha256": "7012e5706a330f6f1cd109c0ee6efd87457daad93eaae7bf1f16c298c63dcc5a"
     },
     {
       "route": "/teacher",
@@ -642,8 +626,8 @@
       "expectedAccess": "session_required",
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "b102679b78d44e2df7cb546b52c4bfe3bb9ae92168ea05be80d5ee07a4c64785"
+      "serverGuardMarkers": ["auth", "login_redirect"],
+      "sha256": "dcb49dddd5571e99641814bac98b36108e07702588a900ec3539f444dcf1027f"
     },
     {
       "route": "/teacher/recordings",
@@ -652,8 +636,8 @@
       "expectedAccess": "session_required",
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "eb9a1e2f85386fd9f83c1d0615b7f603134a83d93097675929b7ef2a8936d04c"
+      "serverGuardMarkers": ["auth", "login_redirect"],
+      "sha256": "9d97c3b918dc881cc77f8709dfc16d2a1b5abbcd1f1825aabff6a4498d3e7817"
     },
     {
       "route": "/teacher/recordings/[id]",
@@ -662,8 +646,8 @@
       "expectedAccess": "session_required",
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "151254a2d266230ca16303a717fce7270c87d7c60f9a813e086bb7455297aed5"
+      "serverGuardMarkers": ["auth", "login_redirect"],
+      "sha256": "986a6fc0f1096beaddf6bd1235c6b04d1cb0af5315b2986fcef41b4cea0908bb"
     },
     {
       "route": "/teacher/review-terms",
@@ -672,8 +656,8 @@
       "expectedAccess": "session_required",
       "effectiveAccess": "middleware_session",
       "middlewareCovered": true,
-      "serverGuardMarkers": [],
-      "sha256": "0e7ea212e15e6a60f155b0438aa8f590ce278333d52d5cb3a7fdeaeb062f69b9"
+      "serverGuardMarkers": ["auth", "login_redirect"],
+      "sha256": "9ec23cdbc12a15218ecc9970e6eedc2935191fe65d7fb6024500e8248790f558"
     }
   ],
   "files": [
@@ -6829,11 +6813,11 @@
       "path": "projects/4-sap-training/web/app/admin/page.tsx",
       "webPath": "app/admin/page.tsx",
       "category": "page",
-      "bytes": 14496,
-      "mtime": "2026-05-21T15:39:37.588Z",
-      "sha256": "c4004e38b0247dd0f74f15e517f875293f5e145bc000d95285fd3e71125288d2",
+      "bytes": 14629,
+      "mtime": "2026-05-21T15:03:17.122Z",
+      "sha256": "47c060b4f1af6f49bb56b9c0f0e3dad7df6afba1c75826b615cad106eb3243f8",
       "gitStatus": "clean",
-      "lines": 440
+      "lines": 443
     },
     {
       "path": "projects/4-sap-training/web/app/api/auth/[...nextauth]/route.ts",
@@ -6844,16 +6828,6 @@
       "sha256": "504276d8ac9ce30513913df5daef63e303fca4884d54d68f20766ba0b3c635f2",
       "gitStatus": "clean",
       "lines": 4
-    },
-    {
-      "path": "projects/4-sap-training/web/app/api/auth/register/route.ts",
-      "webPath": "app/api/auth/register/route.ts",
-      "category": "api-route",
-      "bytes": 5552,
-      "mtime": "2026-05-21T15:47:13.372Z",
-      "sha256": "71932222e2869448bb3bf157c3d92f71fbd8d4e26b3a5405f923ee2313bdc75e",
-      "gitStatus": "clean",
-      "lines": 179
     },
     {
       "path": "projects/4-sap-training/web/app/api/cron/cleanup-recordings/route.ts",
@@ -6869,121 +6843,121 @@
       "path": "projects/4-sap-training/web/app/api/lessons/[lessonId]/assets/[kind]/route.ts",
       "webPath": "app/api/lessons/[lessonId]/assets/[kind]/route.ts",
       "category": "api-route",
-      "bytes": 969,
-      "mtime": "2026-05-21T15:39:25.345Z",
-      "sha256": "49ba97d89261e01cc2b88c444db89413bf0647e690bced35c98a85f6c92ad90c",
+      "bytes": 623,
+      "mtime": "2026-05-19T23:50:14.604Z",
+      "sha256": "ec176d1ba0552266682bf068940698503115c1c96e3b091c446a1c124ab8a283",
       "gitStatus": "clean",
-      "lines": 25
+      "lines": 18
     },
     {
       "path": "projects/4-sap-training/web/app/api/library/[kind]/route.ts",
       "webPath": "app/api/library/[kind]/route.ts",
       "category": "api-route",
-      "bytes": 921,
-      "mtime": "2026-05-21T15:39:17.814Z",
-      "sha256": "ba09942af0e083652ec826b31cee65fcc46022db7d50cea9b5b5a9c649941f46",
+      "bytes": 576,
+      "mtime": "2026-05-19T23:50:14.604Z",
+      "sha256": "d588c2d47580c028534f85696c5d3677fcf13d6baa7bba1be5f0719fdf7a76c3",
       "gitStatus": "clean",
-      "lines": 22
+      "lines": 15
     },
     {
       "path": "projects/4-sap-training/web/app/api/progress/events/route.ts",
       "webPath": "app/api/progress/events/route.ts",
       "category": "api-route",
-      "bytes": 1393,
-      "mtime": "2026-05-21T15:47:13.392Z",
-      "sha256": "b24e30e7e4e08796029ce2e4bc61c2e70d9d684cc199b4535cff9c5229bc884f",
+      "bytes": 1091,
+      "mtime": "2026-05-19T23:50:14.604Z",
+      "sha256": "8e8eb14d6daba880c53563afb063da9d12e1db7958bec6c614940ee25fec135c",
       "gitStatus": "clean",
-      "lines": 46
+      "lines": 39
     },
     {
       "path": "projects/4-sap-training/web/app/api/recordings/[id]/route.ts",
       "webPath": "app/api/recordings/[id]/route.ts",
       "category": "api-route",
-      "bytes": 2283,
-      "mtime": "2026-05-21T15:47:13.400Z",
-      "sha256": "0e790335b01cbce8b4e9655a6283f17cdf44a322bd9cd2c9f13e26ad32f9e6e6",
+      "bytes": 1876,
+      "mtime": "2026-05-21T03:58:45.182Z",
+      "sha256": "aadf92dfb7665310f10de524b1e5d22b66ab804ac6c77cb13ee94b18148172b3",
       "gitStatus": "clean",
-      "lines": 72
+      "lines": 49
     },
     {
       "path": "projects/4-sap-training/web/app/api/recordings/route.ts",
       "webPath": "app/api/recordings/route.ts",
       "category": "api-route",
-      "bytes": 2321,
-      "mtime": "2026-05-21T15:47:13.405Z",
-      "sha256": "4f89768a296f29bb8346a207ec2dc160be0404c5f314f28b6d841c9c1c71013b",
+      "bytes": 2018,
+      "mtime": "2026-05-21T03:58:45.182Z",
+      "sha256": "f34bcdf981b7ab821d930c5dba5573ee264d06cddf041ae90c1dec5dc87b7948",
       "gitStatus": "clean",
-      "lines": 66
+      "lines": 59
     },
     {
       "path": "projects/4-sap-training/web/app/api/recordings/sign/route.ts",
       "webPath": "app/api/recordings/sign/route.ts",
       "category": "api-route",
-      "bytes": 2406,
-      "mtime": "2026-05-21T15:47:13.411Z",
-      "sha256": "b7f498c639e3fc65ddcf2cc77b5574addc767cb480ab8c5a35b6db37e526ad68",
+      "bytes": 2203,
+      "mtime": "2026-05-21T03:58:45.182Z",
+      "sha256": "2a0accb69954116b9ab6db30e7fab59734b2bbe49da667e8369e0928c5e0625e",
       "gitStatus": "clean",
-      "lines": 69
+      "lines": 59
     },
     {
       "path": "projects/4-sap-training/web/app/api/teacher/recordings/[id]/feedback/route.ts",
       "webPath": "app/api/teacher/recordings/[id]/feedback/route.ts",
       "category": "api-route",
-      "bytes": 4549,
-      "mtime": "2026-05-21T15:47:13.427Z",
-      "sha256": "14bceeda2b0fec0174024f8a2a374d37dc6017cafc44ad8ab6d1d71540dd1e20",
+      "bytes": 4436,
+      "mtime": "2026-05-21T03:58:45.182Z",
+      "sha256": "21fd01ef9ec752f8d8bc99a9b2db2355d3bdb5d550872ff91345eb8676b598de",
       "gitStatus": "clean",
-      "lines": 133
+      "lines": 126
     },
     {
       "path": "projects/4-sap-training/web/app/api/teacher/recordings/route.ts",
       "webPath": "app/api/teacher/recordings/route.ts",
       "category": "api-route",
-      "bytes": 3375,
-      "mtime": "2026-05-21T15:47:13.438Z",
-      "sha256": "650f28dba865cd0980a69b212f1618eb8d2c6d26a10a6e821b8899a6d5a7beb7",
+      "bytes": 3279,
+      "mtime": "2026-05-21T03:58:45.182Z",
+      "sha256": "0ca89806cd67f0d31f61c5032034486045b9b58f406a82ae9d54c0725bc9b3ad",
       "gitStatus": "clean",
-      "lines": 85
+      "lines": 79
     },
     {
       "path": "projects/4-sap-training/web/app/assignments/page.tsx",
       "webPath": "app/assignments/page.tsx",
       "category": "page",
-      "bytes": 473,
-      "mtime": "2026-05-21T15:36:10.110Z",
-      "sha256": "9dbc7e8398cf105294c03204152bcab663aadae54df1e3f19557bd503f1dc1e7",
+      "bytes": 372,
+      "mtime": "2026-05-19T23:50:14.604Z",
+      "sha256": "8ad8cfac0adb08ee1766868a928fc26a714663d8a7cbd09041d9a05d5067ceeb",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/courses/lessons/[lessonId]/page.tsx",
       "webPath": "app/courses/lessons/[lessonId]/page.tsx",
       "category": "page",
-      "bytes": 6236,
-      "mtime": "2026-05-21T15:35:42.122Z",
-      "sha256": "45d4a46e88f4bd96d15c84869fa0c44a9c52ba633be16aff45e0d5296364e5dd",
+      "bytes": 6108,
+      "mtime": "2026-05-21T14:14:41.698Z",
+      "sha256": "9fa9a30b752c2f5502cd847ef7d8fc4b72e523596b9b1f90813d2bf3d7403d3f",
       "gitStatus": "clean",
-      "lines": 145
+      "lines": 143
     },
     {
       "path": "projects/4-sap-training/web/app/courses/page.tsx",
       "webPath": "app/courses/page.tsx",
       "category": "page",
-      "bytes": 847,
-      "mtime": "2026-05-21T15:35:33.981Z",
-      "sha256": "99b2e67a38b4c64a1439b3c02353879c7ca5ef85c29992961c4c8f1f49f848c5",
+      "bytes": 739,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "7c1c4beeb545f799acdad5789300118e9a86e4534d5438290bc443c862bf28f4",
       "gitStatus": "clean",
-      "lines": 25
+      "lines": 23
     },
     {
       "path": "projects/4-sap-training/web/app/dashboard/page.tsx",
       "webPath": "app/dashboard/page.tsx",
       "category": "page",
-      "bytes": 386,
-      "mtime": "2026-05-21T15:35:18.197Z",
-      "sha256": "3fce5823a994289abccdd1b139412f65b13e5f22bc15e0e1dbb7415932f6e466",
+      "bytes": 287,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "93cde8a79c98a5052ca1cf0dae5c1736d7a7382cdca45ed7b2a08464b3269a11",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/globals.css",
@@ -6999,31 +6973,31 @@
       "path": "projects/4-sap-training/web/app/glossary/page.tsx",
       "webPath": "app/glossary/page.tsx",
       "category": "page",
-      "bytes": 370,
-      "mtime": "2026-05-21T15:35:47.035Z",
-      "sha256": "2e30900b43c99ee84deed5d53e304e40eb47b2fc3ee62b87e728483340675c8e",
+      "bytes": 261,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "25169261c9988dd2b61c2fdf9c1eaaf6b2759a54963b1bfd0418a4b470296f31",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/layout.tsx",
       "webPath": "app/layout.tsx",
       "category": "layout",
-      "bytes": 1118,
-      "mtime": "2026-05-21T15:47:13.471Z",
-      "sha256": "316b1566d727350e90ad5ba7ca6c088385ed8c3226507ae9df55d5f41238721f",
+      "bytes": 679,
+      "mtime": "2026-05-19T00:57:34.045Z",
+      "sha256": "a45eac0b063c4b5233bd3eae2cd42cc2d836fc1e8ad4808a2f2de12a46d0b3b7",
       "gitStatus": "clean",
-      "lines": 36
+      "lines": 24
     },
     {
       "path": "projects/4-sap-training/web/app/library/page.tsx",
       "webPath": "app/library/page.tsx",
       "category": "page",
-      "bytes": 838,
-      "mtime": "2026-05-21T15:47:13.476Z",
-      "sha256": "8a112f25807da2ded88df343b162ea79c47d4594cafd2896aa487503213afbbd",
+      "bytes": 720,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "0ae717f68d659cc38e6131a01fc18b32e100825daaa42645c8aa2a06c6348006",
       "gitStatus": "clean",
-      "lines": 23
+      "lines": 20
     },
     {
       "path": "projects/4-sap-training/web/app/login/confirm/ConfirmLoginClient.tsx",
@@ -7039,89 +7013,69 @@
       "path": "projects/4-sap-training/web/app/login/confirm/page.tsx",
       "webPath": "app/login/confirm/page.tsx",
       "category": "page",
-      "bytes": 114,
-      "mtime": "2026-05-21T15:39:50.532Z",
-      "sha256": "2e04bc315931e63420f785ed85f69b0040b93182161c869613bc25e1651cc111",
+      "bytes": 233,
+      "mtime": "2026-05-21T03:58:45.183Z",
+      "sha256": "cf3769a375fb15592660dfb6a8118d5af78be9f633a53f6101050331b07059a5",
       "gitStatus": "clean",
-      "lines": 6
-    },
-    {
-      "path": "projects/4-sap-training/web/app/login/LoginClient.tsx",
-      "webPath": "app/login/LoginClient.tsx",
-      "category": "app-support",
-      "bytes": 13833,
-      "mtime": "2026-05-21T15:47:13.494Z",
-      "sha256": "479a999fde8dd9e528b382198950bb6082a1bd2edd2285441221f37ce90d16b0",
-      "gitStatus": "clean",
-      "lines": 374
+      "lines": 11
     },
     {
       "path": "projects/4-sap-training/web/app/login/page.tsx",
       "webPath": "app/login/page.tsx",
       "category": "page",
-      "bytes": 923,
-      "mtime": "2026-05-21T15:31:47.062Z",
-      "sha256": "e4cd5321a16bf2fa2a1f32401473e5fcc0e3081cc8ffe1ae6d332bda8a9e6b2f",
+      "bytes": 1847,
+      "mtime": "2026-05-21T03:58:45.183Z",
+      "sha256": "a606090224b42805f2a7d714249129558a1377f93aa44b30aa3efd3960f3e63c",
       "gitStatus": "clean",
-      "lines": 31
+      "lines": 56
     },
     {
       "path": "projects/4-sap-training/web/app/login/verify/page.tsx",
       "webPath": "app/login/verify/page.tsx",
       "category": "page",
-      "bytes": 108,
-      "mtime": "2026-05-21T15:39:59.086Z",
-      "sha256": "1e4e941d0708dcbe388ebe2a415141aa50ca8344b65f1baf2ff8029638064b57",
+      "bytes": 537,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "4d69232df93726aa98bc11fbf73b406bbb06d0e2043695efbfdcfb6670d54667",
       "gitStatus": "clean",
-      "lines": 6
+      "lines": 12
     },
     {
       "path": "projects/4-sap-training/web/app/me/page.tsx",
       "webPath": "app/me/page.tsx",
       "category": "page",
-      "bytes": 361,
-      "mtime": "2026-05-21T15:35:13.085Z",
-      "sha256": "951b3179ee4ad6dfac43b03ace545e466679d54815768ba7eec1130f6c915331",
+      "bytes": 269,
+      "mtime": "2026-05-21T14:08:40.299Z",
+      "sha256": "c9216d8a00fddef134b112df68521c0bd1b9241ffe3f04eaed5c0080d4e7a333",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/page.tsx",
       "webPath": "app/page.tsx",
       "category": "page",
-      "bytes": 5638,
-      "mtime": "2026-05-21T15:47:13.517Z",
-      "sha256": "931fb5e476be38a853896ce05a9dbc3626fdc3785268583fcfcdd2fedee6e374",
+      "bytes": 4767,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "f6d2b0de1c754ab2b059c2d27980e84d01c088f61340ceedb1e11343569d4f95",
       "gitStatus": "clean",
-      "lines": 140
+      "lines": 103
     },
     {
       "path": "projects/4-sap-training/web/app/phrasebook/page.tsx",
       "webPath": "app/phrasebook/page.tsx",
       "category": "page",
-      "bytes": 374,
-      "mtime": "2026-05-21T15:36:02.307Z",
-      "sha256": "bf4e9175e48549388702226d7ca1d673ad4a89823d22d58d7e85505551d0beb0",
+      "bytes": 263,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "92a6996948f5b6c161159f99f0e447bd1283fd65c9b4850bd8dd7221d2c456b6",
       "gitStatus": "clean",
-      "lines": 10
-    },
-    {
-      "path": "projects/4-sap-training/web/app/post-login/page.tsx",
-      "webPath": "app/post-login/page.tsx",
-      "category": "page",
-      "bytes": 318,
-      "mtime": "2026-05-21T15:33:06.521Z",
-      "sha256": "642cd866ced14805c4d7079f9115d153cf7c2adf234c32ec2bf6c0561e672e77",
-      "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/privacy/page.tsx",
       "webPath": "app/privacy/page.tsx",
       "category": "page",
-      "bytes": 2701,
-      "mtime": "2026-05-21T15:41:52.860Z",
-      "sha256": "62ff757c4c8f10f0f034f40407cbce98c952d3c3fcfa8a4b851f7d431df12d56",
+      "bytes": 2670,
+      "mtime": "2026-05-21T03:58:45.184Z",
+      "sha256": "c3eca5bf9a45e6c0878b0eb76474d97c684a3825f0349ff8554f7f5f55951b63",
       "gitStatus": "clean",
       "lines": 57
     },
@@ -7129,109 +7083,109 @@
       "path": "projects/4-sap-training/web/app/review/page.tsx",
       "webPath": "app/review/page.tsx",
       "category": "page",
-      "bytes": 526,
-      "mtime": "2026-05-21T15:47:13.528Z",
-      "sha256": "2e18db34b4126ca3492ece6d4dd37c04febb64710396b49c932eaf06b0db32ab",
+      "bytes": 413,
+      "mtime": "2026-05-19T23:50:14.605Z",
+      "sha256": "8b7262cf6eec2e77e1b1dc33028d68e3054e6a4b35cd2403c01f67763a22e44c",
       "gitStatus": "clean",
-      "lines": 14
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/roleplay/page.tsx",
       "webPath": "app/roleplay/page.tsx",
       "category": "page",
-      "bytes": 448,
-      "mtime": "2026-05-21T15:36:24.681Z",
-      "sha256": "2d75c4cb23b59f024ad655dc0cf67a42268569c274cc29af69c0456eff411064",
+      "bytes": 350,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "5a69511203d60d65bc2c323a18abc7c40d73c8d52651be20e5ae095aef710f60",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/consultant-output/page.tsx",
       "webPath": "app/speaking/consultant-output/page.tsx",
       "category": "page",
-      "bytes": 431,
-      "mtime": "2026-05-21T15:36:34.179Z",
-      "sha256": "14a35b8c53817e8d34006f799993a6fb7dbcdcf9fd1d6c90e4772b926a273320",
+      "bytes": 315,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "1b01c54164f76b45cf63450e78f160b7e9d394722c04f0b1862f09fe086716cd",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/micro-training/page.tsx",
       "webPath": "app/speaking/micro-training/page.tsx",
       "category": "page",
-      "bytes": 416,
-      "mtime": "2026-05-21T15:36:38.824Z",
-      "sha256": "5bebcca0d176b71c3114c800e048a6e33f3b07403b0a5ac34000c9f8fb302467",
+      "bytes": 303,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "d0cf7ead72b06434a727a5e08fc66b1c8f001b326f6e88c4567aa0b3f274dacb",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/page.tsx",
       "webPath": "app/speaking/page.tsx",
       "category": "page",
-      "bytes": 1182,
-      "mtime": "2026-05-21T15:36:28.741Z",
-      "sha256": "66b9f52994ed641b81a7d8f9efcfc708d478788f72db5c02c0b56ade44e53ff5",
+      "bytes": 1077,
+      "mtime": "2026-05-21T14:14:41.732Z",
+      "sha256": "6e586ab49fa66075e7f1f0b547c49052b36f3d514e213df4c60f9cf65fdcc36a",
       "gitStatus": "clean",
-      "lines": 35
+      "lines": 32
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/recording/page.tsx",
       "webPath": "app/speaking/recording/page.tsx",
       "category": "page",
-      "bytes": 729,
-      "mtime": "2026-05-21T15:47:13.553Z",
-      "sha256": "5165a84a60aa4aa0532c62cd165f5687230b146d287d424e70b3860e17cfb9b7",
+      "bytes": 584,
+      "mtime": "2026-05-19T00:57:34.047Z",
+      "sha256": "413ce1e8be50e5c2d77e95508f29f04764bd4a549716e35bddf942268f16388f",
       "gitStatus": "clean",
-      "lines": 23
+      "lines": 16
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/repeat-player/page.tsx",
       "webPath": "app/speaking/repeat-player/page.tsx",
       "category": "page",
-      "bytes": 411,
-      "mtime": "2026-05-21T15:36:49.914Z",
-      "sha256": "683af9f49e4072052e938ee175be19a6c6d969cb7268382d2f56ccc1950f0499",
+      "bytes": 299,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "6d76ffb2bc938df70719f1dc270030d101fd2e577742181571f92e4538a845d5",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/self-training/page.tsx",
       "webPath": "app/speaking/self-training/page.tsx",
       "category": "page",
-      "bytes": 733,
-      "mtime": "2026-05-21T15:37:12.605Z",
-      "sha256": "2e8638a889f9906648d54b1e64d0a3ff3d569d36c2aa2ab19ba8464b06f202c3",
+      "bytes": 621,
+      "mtime": "2026-05-21T14:01:08.025Z",
+      "sha256": "b1d87265cccf13ba25ac19a55e2f286b8a85a92e57367704b94d95a0e6566301",
       "gitStatus": "clean",
-      "lines": 21
+      "lines": 19
     },
     {
       "path": "projects/4-sap-training/web/app/speaking/shadowing/page.tsx",
       "webPath": "app/speaking/shadowing/page.tsx",
       "category": "page",
-      "bytes": 395,
-      "mtime": "2026-05-21T15:37:22.764Z",
-      "sha256": "d61ec8ac465d5d957d0e03443704c40ba0cbb5aefbe1362532b6b8cf977f3914",
+      "bytes": 287,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "7012e5706a330f6f1cd109c0ee6efd87457daad93eaae7bf1f16c298c63dcc5a",
       "gitStatus": "clean",
-      "lines": 10
+      "lines": 8
     },
     {
       "path": "projects/4-sap-training/web/app/teacher/page.tsx",
       "webPath": "app/teacher/page.tsx",
       "category": "page",
-      "bytes": 5131,
-      "mtime": "2026-05-21T15:37:28.848Z",
-      "sha256": "b102679b78d44e2df7cb546b52c4bfe3bb9ae92168ea05be80d5ee07a4c64785",
+      "bytes": 5307,
+      "mtime": "2026-05-21T14:04:38.320Z",
+      "sha256": "dcb49dddd5571e99641814bac98b36108e07702588a900ec3539f444dcf1027f",
       "gitStatus": "clean",
-      "lines": 133
+      "lines": 136
     },
     {
       "path": "projects/4-sap-training/web/app/teacher/recordings/[id]/page.tsx",
       "webPath": "app/teacher/recordings/[id]/page.tsx",
       "category": "page",
-      "bytes": 411,
-      "mtime": "2026-05-21T15:47:13.588Z",
-      "sha256": "151254a2d266230ca16303a717fce7270c87d7c60f9a813e086bb7455297aed5",
+      "bytes": 576,
+      "mtime": "2026-05-20T03:24:19.683Z",
+      "sha256": "986a6fc0f1096beaddf6bd1235c6b04d1cb0af5315b2986fcef41b4cea0908bb",
       "gitStatus": "clean",
       "lines": 13
     },
@@ -7239,21 +7193,21 @@
       "path": "projects/4-sap-training/web/app/teacher/recordings/page.tsx",
       "webPath": "app/teacher/recordings/page.tsx",
       "category": "page",
-      "bytes": 294,
-      "mtime": "2026-05-21T15:37:35.272Z",
-      "sha256": "eb9a1e2f85386fd9f83c1d0615b7f603134a83d93097675929b7ef2a8936d04c",
+      "bytes": 470,
+      "mtime": "2026-05-20T03:24:19.684Z",
+      "sha256": "9d97c3b918dc881cc77f8709dfc16d2a1b5abbcd1f1825aabff6a4498d3e7817",
       "gitStatus": "clean",
-      "lines": 9
+      "lines": 12
     },
     {
       "path": "projects/4-sap-training/web/app/teacher/review-terms/page.tsx",
       "webPath": "app/teacher/review-terms/page.tsx",
       "category": "page",
-      "bytes": 641,
-      "mtime": "2026-05-21T15:37:47.926Z",
-      "sha256": "0e7ea212e15e6a60f155b0438aa8f590ce278333d52d5cb3a7fdeaeb062f69b9",
+      "bytes": 817,
+      "mtime": "2026-05-19T23:50:14.606Z",
+      "sha256": "9ec23cdbc12a15218ecc9970e6eedc2935191fe65d7fb6024500e8248790f558",
       "gitStatus": "clean",
-      "lines": 20
+      "lines": 23
     },
     {
       "path": "projects/4-sap-training/web/components/audio/ABRepeatPlayer.tsx",
@@ -7326,16 +7280,6 @@
       "lines": 52
     },
     {
-      "path": "projects/4-sap-training/web/components/auth/SignOutButton.tsx",
-      "webPath": "components/auth/SignOutButton.tsx",
-      "category": "component",
-      "bytes": 407,
-      "mtime": "2026-05-21T15:47:13.603Z",
-      "sha256": "d4ff49600549656ae9d31a08283ff980af0152025edbaf39402cf2d455149d8e",
-      "gitStatus": "clean",
-      "lines": 18
-    },
-    {
       "path": "projects/4-sap-training/web/components/glossary/GlossaryCard.tsx",
       "webPath": "components/glossary/GlossaryCard.tsx",
       "category": "component",
@@ -7369,11 +7313,11 @@
       "path": "projects/4-sap-training/web/components/layout/Header.tsx",
       "webPath": "components/layout/Header.tsx",
       "category": "component",
-      "bytes": 2015,
-      "mtime": "2026-05-21T15:47:13.609Z",
-      "sha256": "98d37b6b5f5eb27c42658ef67c5089344a1e6c16103615d5f3f72e756a146928",
+      "bytes": 1490,
+      "mtime": "2026-05-21T14:14:44.026Z",
+      "sha256": "842a9ac47822f265be28278611b2e85bad6492e72cde1a81549d713d54f4d2e5",
       "gitStatus": "clean",
-      "lines": 47
+      "lines": 35
     },
     {
       "path": "projects/4-sap-training/web/components/layout/LessonNav.tsx",
@@ -7389,11 +7333,11 @@
       "path": "projects/4-sap-training/web/components/layout/MobileNav.tsx",
       "webPath": "components/layout/MobileNav.tsx",
       "category": "component",
-      "bytes": 3885,
-      "mtime": "2026-05-21T15:34:07.122Z",
-      "sha256": "ffb78f76d870bd4bcb58305c169ca5e1692659518d94ddd9e9984415c595540e",
+      "bytes": 2998,
+      "mtime": "2026-05-21T14:49:38.541Z",
+      "sha256": "0bc94f1f789adcfd112878b85a6e03d15af45880b5c9fb6cbe66cba2b990e368",
       "gitStatus": "clean",
-      "lines": 89
+      "lines": 83
     },
     {
       "path": "projects/4-sap-training/web/components/layout/ProgressBar.tsx",
@@ -7409,11 +7353,11 @@
       "path": "projects/4-sap-training/web/components/layout/Sidebar.tsx",
       "webPath": "components/layout/Sidebar.tsx",
       "category": "component",
-      "bytes": 3596,
-      "mtime": "2026-05-21T15:47:13.632Z",
-      "sha256": "15a9988f51120ef32125f9374e664c3a7660c1962796641e9cfd500029e8065a",
+      "bytes": 2576,
+      "mtime": "2026-05-21T14:49:31.833Z",
+      "sha256": "6e5ea6383690478b8766bfe0b02894111a0a53c00d065f7cb98543452ad7a11f",
       "gitStatus": "clean",
-      "lines": 110
+      "lines": 69
     },
     {
       "path": "projects/4-sap-training/web/components/lesson/AssignmentTextInput.tsx",
@@ -7859,18 +7803,18 @@
       "path": "projects/4-sap-training/web/data/_meta.json",
       "webPath": "data/_meta.json",
       "category": "runtime-data",
-      "bytes": 2527,
-      "mtime": "2026-05-21T23:17:35.090Z",
-      "sha256": "f2bdfbea8649b55e2689b732ed3ca81210879adca926a49183d2f39202a8f945",
+      "bytes": 2713,
+      "mtime": "2026-05-21T14:56:46.125Z",
+      "sha256": "25ca1f3423bb248a283348d186f86c265af6b0b8ca70431247655416a9561890",
       "gitStatus": "M",
-      "lines": 52
+      "lines": 60
     },
     {
       "path": "projects/4-sap-training/web/data/assignments.json",
       "webPath": "data/assignments.json",
       "category": "runtime-data",
       "bytes": 31123,
-      "mtime": "2026-05-21T23:17:35.072Z",
+      "mtime": "2026-05-21T14:56:39.882Z",
       "sha256": "6933f12c925406f9d34c37837384479723bd8fd26b50b90300e4d0a996b8427b",
       "gitStatus": "clean",
       "lines": 771
@@ -7880,7 +7824,7 @@
       "webPath": "data/glossary.json",
       "category": "runtime-data",
       "bytes": 290093,
-      "mtime": "2026-05-21T23:17:35.069Z",
+      "mtime": "2026-05-21T14:56:39.880Z",
       "sha256": "cc5bbb57ec886e94fe49e64d6d55fd479fc07a1cd33a1d4fa1d1bf64048f200c",
       "gitStatus": "clean",
       "lines": 8165
@@ -7900,7 +7844,7 @@
       "webPath": "data/lessons.json",
       "category": "runtime-data",
       "bytes": 6585764,
-      "mtime": "2026-05-21T23:17:35.067Z",
+      "mtime": "2026-05-21T14:56:39.877Z",
       "sha256": "17884ec8a4ad0b028c0073160e0032d8651c27e654ece977ea9b8e3602ab7c68",
       "gitStatus": "M",
       "lines": 27748
@@ -7910,7 +7854,7 @@
       "webPath": "data/library.json",
       "category": "runtime-data",
       "bytes": 208714,
-      "mtime": "2026-05-21T23:17:35.053Z",
+      "mtime": "2026-05-21T14:56:39.858Z",
       "sha256": "08fd1077528419a624f3c506dd6fff4565d1ae15430d0e546f12048e4a8b877b",
       "gitStatus": "clean",
       "lines": 51
@@ -7920,7 +7864,7 @@
       "webPath": "data/phrases.json",
       "category": "runtime-data",
       "bytes": 251968,
-      "mtime": "2026-05-21T23:17:35.070Z",
+      "mtime": "2026-05-21T14:56:39.881Z",
       "sha256": "bc6c361c0bbde8614548006bbe1b10a77549e028a7de3f327f3056ae9cc75f8c",
       "gitStatus": "M",
       "lines": 5763
@@ -7940,7 +7884,7 @@
       "webPath": "data/review-terms.json",
       "category": "runtime-data",
       "bytes": 45725,
-      "mtime": "2026-05-21T23:17:35.072Z",
+      "mtime": "2026-05-21T14:56:39.882Z",
       "sha256": "024e634b1142c27d2a6bd72a031d09a47fa77198bd28fb019fb798c4180545f8",
       "gitStatus": "clean",
       "lines": 1400
@@ -7950,7 +7894,7 @@
       "webPath": "data/roleplays.json",
       "category": "runtime-data",
       "bytes": 68351,
-      "mtime": "2026-05-21T23:17:35.071Z",
+      "mtime": "2026-05-21T14:56:39.882Z",
       "sha256": "020c51658493658b0ed4a6126e4ee209082f966896c1ebe0f7009e59d939cd83",
       "gitStatus": "clean",
       "lines": 2307
@@ -7960,7 +7904,7 @@
       "webPath": "data/tracks.json",
       "category": "runtime-data",
       "bytes": 386,
-      "mtime": "2026-05-21T23:17:35.051Z",
+      "mtime": "2026-05-21T14:56:39.855Z",
       "sha256": "99af9486cca87aba523ebf6ff1de02cc7cd2e62a99a3cc9cd0810712e330fc73",
       "gitStatus": "clean",
       "lines": 12
@@ -7969,29 +7913,29 @@
       "path": "projects/4-sap-training/web/docs/ADMIN_OPS.md",
       "webPath": "docs/ADMIN_OPS.md",
       "category": "docs",
-      "bytes": 9948,
-      "mtime": "2026-05-21T23:17:22.021Z",
-      "sha256": "efa03826af35fe1886d5104829013bc407d260b67b238f64c6a6e5f93fb206b4",
-      "gitStatus": "M",
-      "lines": 290
+      "bytes": 8340,
+      "mtime": "2026-05-21T15:03:17.252Z",
+      "sha256": "5ed0e258e6c1e8c5a5482a898085cb54bc22eb7f0f642c18a99b005974705326",
+      "gitStatus": "clean",
+      "lines": 252
     },
     {
       "path": "projects/4-sap-training/web/docs/SITE_ARCHITECTURE.md",
       "webPath": "docs/SITE_ARCHITECTURE.md",
       "category": "docs",
-      "bytes": 4918,
-      "mtime": "2026-05-21T23:17:16.754Z",
-      "sha256": "4eff20ab2135ede3cb841cbe91ff3c9e1447a938c3972cd5633abc894f66c843",
+      "bytes": 4907,
+      "mtime": "2026-05-21T14:53:30.552Z",
+      "sha256": "86f8f950887ce2f6811f56239002854ae00a482350a3bb71ae50e5912dca9d09",
       "gitStatus": "clean",
-      "lines": 77
+      "lines": 73
     },
     {
       "path": "projects/4-sap-training/web/docs/SITE_CHANGE_LEDGER.md",
       "webPath": "docs/SITE_CHANGE_LEDGER.md",
       "category": "docs",
-      "bytes": 2582,
-      "mtime": "2026-05-21T23:07:36.093Z",
-      "sha256": "8b69f1e6e2f1f205763bc349a71bff2edceff2ac5d67063ac872793324843697",
+      "bytes": 2650,
+      "mtime": "2026-05-21T14:53:13.353Z",
+      "sha256": "603f6199668fd1048f833223e9d851ce785ebb359c4ed730f1d83b3d5571ece7",
       "gitStatus": "clean",
       "lines": 84
     },
@@ -7999,21 +7943,21 @@
       "path": "projects/4-sap-training/web/docs/STUDENT_GUIDE.md",
       "webPath": "docs/STUDENT_GUIDE.md",
       "category": "docs",
-      "bytes": 3553,
-      "mtime": "2026-05-21T15:41:09.291Z",
-      "sha256": "65f6d56345a901420a1012b45ade5f9f89b6086485f4b20fa012de4d13efb2bb",
+      "bytes": 3760,
+      "mtime": "2026-05-21T14:10:09.617Z",
+      "sha256": "7797944f437ded39c59ab3e83826a56e42d8d51523c4d8417a56845bd042dead",
       "gitStatus": "clean",
-      "lines": 131
+      "lines": 134
     },
     {
       "path": "projects/4-sap-training/web/docs/TEACHER_GUIDE.md",
       "webPath": "docs/TEACHER_GUIDE.md",
       "category": "docs",
-      "bytes": 4654,
-      "mtime": "2026-05-21T15:41:20.060Z",
-      "sha256": "ce66c233070da86c7ec4f44bbb5c89bb95178dd1572234960b02c88cd2d49e50",
+      "bytes": 4302,
+      "mtime": "2026-05-21T13:56:40.392Z",
+      "sha256": "37089fb313d7d199639535147f5ae1cffab5c07291e7eb39d46734535006f0fb",
       "gitStatus": "clean",
-      "lines": 151
+      "lines": 150
     },
     {
       "path": "projects/4-sap-training/web/drizzle.config.ts",
@@ -8049,11 +7993,11 @@
       "path": "projects/4-sap-training/web/lib/admin/ops-dashboard.ts",
       "webPath": "lib/admin/ops-dashboard.ts",
       "category": "library-code",
-      "bytes": 19762,
-      "mtime": "2026-05-21T15:39:32.674Z",
-      "sha256": "5d948e475c54a875beff668e1bf07b27ee3cbce6d8d7b7e2f61099088014639a",
+      "bytes": 19725,
+      "mtime": "2026-05-21T15:03:17.159Z",
+      "sha256": "0c0b92fded46d6015b985f3c0101e05c1b5de41b56668d4dc2b0c11123e68b70",
       "gitStatus": "clean",
-      "lines": 672
+      "lines": 671
     },
     {
       "path": "projects/4-sap-training/web/lib/audio-storage.ts",
@@ -8066,54 +8010,14 @@
       "lines": 65
     },
     {
-      "path": "projects/4-sap-training/web/lib/auth/guards.ts",
-      "webPath": "lib/auth/guards.ts",
-      "category": "library-code",
-      "bytes": 552,
-      "mtime": "2026-05-21T15:35:07.090Z",
-      "sha256": "5f99473ce148e778b04c267e7acaeb5a10609d30091ef89bc8cb0216a61b02cf",
-      "gitStatus": "clean",
-      "lines": 14
-    },
-    {
-      "path": "projects/4-sap-training/web/lib/auth/identity.ts",
-      "webPath": "lib/auth/identity.ts",
-      "category": "library-code",
-      "bytes": 1309,
-      "mtime": "2026-05-21T15:29:44.589Z",
-      "sha256": "32d3e9789d863151890bdd81e476eae2ce1b619373ec8bbb7d495ffcb9fa6f8f",
-      "gitStatus": "clean",
-      "lines": 40
-    },
-    {
       "path": "projects/4-sap-training/web/lib/auth/options.ts",
       "webPath": "lib/auth/options.ts",
       "category": "library-code",
-      "bytes": 4239,
-      "mtime": "2026-05-21T15:47:13.752Z",
-      "sha256": "138fa7284abe0f2387025d9eccf5872d1b0d7247a0927567337ae135632f1c80",
+      "bytes": 2929,
+      "mtime": "2026-05-21T03:58:45.186Z",
+      "sha256": "8131d5674c06bdfe3653beeb390084575df2f31935e97ff2f4eae8375f9161e6",
       "gitStatus": "clean",
-      "lines": 129
-    },
-    {
-      "path": "projects/4-sap-training/web/lib/auth/password.ts",
-      "webPath": "lib/auth/password.ts",
-      "category": "library-code",
-      "bytes": 1054,
-      "mtime": "2026-05-21T15:47:13.755Z",
-      "sha256": "d807500b6bc192b53b807a84af56714ea3b9605d63bc26e1c7867265dfcd8ae0",
-      "gitStatus": "clean",
-      "lines": 32
-    },
-    {
-      "path": "projects/4-sap-training/web/lib/auth/roles.ts",
-      "webPath": "lib/auth/roles.ts",
-      "category": "library-code",
-      "bytes": 1457,
-      "mtime": "2026-05-21T15:47:13.759Z",
-      "sha256": "313ad1f16db0f91c93d2315759d11f4d025645654294619be5becb6558351cd6",
-      "gitStatus": "clean",
-      "lines": 51
+      "lines": 73
     },
     {
       "path": "projects/4-sap-training/web/lib/content-loader.ts",
@@ -8176,24 +8080,14 @@
       "lines": 1
     },
     {
-      "path": "projects/4-sap-training/web/lib/db/migrations/0003_auth_credentials_multi_role.sql",
-      "webPath": "lib/db/migrations/0003_auth_credentials_multi_role.sql",
-      "category": "db-migration",
-      "bytes": 1680,
-      "mtime": "2026-05-21T15:40:32.617Z",
-      "sha256": "827a72359846c858f53ba8a2eeaf134b410bc2f35b3953eb534ee41eedba6bdd",
-      "gitStatus": "clean",
-      "lines": 32
-    },
-    {
       "path": "projects/4-sap-training/web/lib/db/migrations/meta/_journal.json",
       "webPath": "lib/db/migrations/meta/_journal.json",
       "category": "db-migration",
-      "bytes": 654,
-      "mtime": "2026-05-21T15:51:45.446Z",
-      "sha256": "203115e0955f40ad8d7bf7c92b4e03bf15d1745eba06944675799b59f5730acf",
+      "bytes": 498,
+      "mtime": "2026-05-21T03:58:45.186Z",
+      "sha256": "7745e582396f3c24d62959cb88fc7c9f89ce16d7dfd49a2b275bc9d5e87b6fe4",
       "gitStatus": "clean",
-      "lines": 35
+      "lines": 27
     },
     {
       "path": "projects/4-sap-training/web/lib/db/migrations/meta/0000_snapshot.json",
@@ -8226,24 +8120,14 @@
       "lines": 1771
     },
     {
-      "path": "projects/4-sap-training/web/lib/db/migrations/meta/0003_snapshot.json",
-      "webPath": "lib/db/migrations/meta/0003_snapshot.json",
-      "category": "db-migration",
-      "bytes": 45275,
-      "mtime": "2026-05-21T15:51:45.443Z",
-      "sha256": "5b6bdeea02bce77e4115269c3a7413f083d28178e2f178c328080fd3272dfd09",
-      "gitStatus": "clean",
-      "lines": 1709
-    },
-    {
       "path": "projects/4-sap-training/web/lib/db/schema.ts",
       "webPath": "lib/db/schema.ts",
       "category": "library-code",
-      "bytes": 11972,
-      "mtime": "2026-05-21T15:47:13.787Z",
-      "sha256": "ca45c5e7f0b11d8f65063b1de1bb65b0395526680d166f70f7246e96cbdb6046",
+      "bytes": 11340,
+      "mtime": "2026-05-21T03:58:45.186Z",
+      "sha256": "7d33617734326d1e29db488d7ad1e1273587ced3a0162d4dd3c48f7f02f2b1d1",
       "gitStatus": "clean",
-      "lines": 354
+      "lines": 323
     },
     {
       "path": "projects/4-sap-training/web/lib/japanese-coach.ts",
@@ -8329,11 +8213,11 @@
       "path": "projects/4-sap-training/web/middleware.ts",
       "webPath": "middleware.ts",
       "category": "config",
-      "bytes": 2278,
-      "mtime": "2026-05-21T15:47:13.791Z",
-      "sha256": "38121d263994f8952491d818e614856cc2015046295c034d932c31a7d683512d",
+      "bytes": 2388,
+      "mtime": "2026-05-21T15:00:53.664Z",
+      "sha256": "5c80ce4fd05f0c6cd12d4c299f1429801c652535cb0ca8bc1c39fc1ba3192005",
       "gitStatus": "clean",
-      "lines": 67
+      "lines": 78
     },
     {
       "path": "projects/4-sap-training/web/next.config.ts",
@@ -8455,11 +8339,11 @@
       "path": "projects/4-sap-training/web/scripts/site-ledger.mjs",
       "webPath": "scripts/site-ledger.mjs",
       "category": "script",
-      "bytes": 32242,
-      "mtime": "2026-05-21T23:17:22.020Z",
-      "sha256": "575906b30a7bd16e429b71c677302a07d8c6889aa27743a91b90e0106da2258d",
-      "gitStatus": "M",
-      "lines": 1005
+      "bytes": 31964,
+      "mtime": "2026-05-21T14:54:56.941Z",
+      "sha256": "ab02a734a3ee5f010ce0269e76c3fed518d3afb79bfe8ce918b1722a7f1e0281",
+      "gitStatus": "clean",
+      "lines": 998
     },
     {
       "path": "projects/4-sap-training/web/sentry.client.config.ts",
@@ -8532,16 +8416,6 @@
       "lines": 43
     },
     {
-      "path": "projects/4-sap-training/web/types/auth.ts",
-      "webPath": "types/auth.ts",
-      "category": "type",
-      "bytes": 1048,
-      "mtime": "2026-05-21T15:29:21.519Z",
-      "sha256": "177c403a1a4486397c93fef2c3acab7d410d320745de39466a15da2b3307a880",
-      "gitStatus": "clean",
-      "lines": 34
-    },
-    {
       "path": "projects/4-sap-training/web/types/glossary.ts",
       "webPath": "types/glossary.ts",
       "category": "type",
@@ -8585,11 +8459,11 @@
       "path": "projects/4-sap-training/web/types/next-auth.d.ts",
       "webPath": "types/next-auth.d.ts",
       "category": "type",
-      "bytes": 618,
-      "mtime": "2026-05-21T15:30:50.368Z",
-      "sha256": "0c7311a21b72fb659d633b6adf890cbdee0206fdfe4e046b3f53e95a9fb24327",
+      "bytes": 286,
+      "mtime": "2026-05-19T23:50:14.612Z",
+      "sha256": "2d614b3c2c5f25cb31e0a939d415e40e1b582424189cb8be8b7e080673cbf358",
       "gitStatus": "clean",
-      "lines": 30
+      "lines": 17
     },
     {
       "path": "projects/4-sap-training/web/types/phrase.ts",
@@ -8636,7 +8510,7 @@
     {
       "level": "warning",
       "code": "working_tree_dirty",
-      "message": "工作区有 19 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。"
+      "message": "Working tree has 15 uncommitted path(s); snapshot is observational, not a clean restore anchor."
     }
   ]
 }

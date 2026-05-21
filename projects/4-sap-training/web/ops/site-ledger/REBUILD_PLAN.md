@@ -1,10 +1,10 @@
 # sap-jp.training 本地重建计划
 
-- updated_by: codex
-- updated_at: 2026-05-22T08:04:26+09:00
-- source_snapshot: 2026-05-21T15:17:58.323Z
+- updated_by: site-ledger
+- updated_at: 2026-05-22T08:19:44+09:00
+- source_snapshot: 2026-05-21T23:19:39.882Z
 - source_branch: codex/sap-jp-content-audit-20260521
-- source_commit: d3ba920609adeb2cb87b980ef74f5fc608af310a
+- source_commit: 7aafb7431a474936a8870616f5c28073fc2edc32
 - restore_safe: false
 
 ## 恢复原则
@@ -18,7 +18,7 @@
 
 ```bash
 git checkout codex/sap-jp-content-audit-20260521
-git checkout d3ba920609adeb2cb87b980ef74f5fc608af310a
+git checkout 7aafb7431a474936a8870616f5c28073fc2edc32
 ```
 
 3. 安装 web 依赖：
@@ -74,7 +74,7 @@ npm run dev
 
 ## 快照健康状态
 
-- WARNING working_tree_dirty: 工作区有 15 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
+- WARNING working_tree_dirty: 工作区有 19 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
 
 ## 快照时的数据数量
 
@@ -83,8 +83,8 @@ npm run dev
   "data/_meta.json": {
     "type": "object",
     "schemaVersion": "1.4.0",
-    "generatedAt": "2026-05-21T14:56:39.888Z",
-    "sourceCommit": "2ac18696e0cd89259a89e690f98d84bdb19bfeff",
+    "generatedAt": "2026-05-21T23:17:35.074Z",
+    "sourceCommit": "7aafb7431a474936a8870616f5c28073fc2edc32",
     "stats": {
       "tracks": 1,
       "lessons": 24,
@@ -97,17 +97,9 @@ npm run dev
       "japaneseCoachEntries": 24
     },
     "audio": {
-      "provider": "macos",
-      "voice": "Kyoko",
-      "generated": true,
-      "generatedAt": "2026-05-21T14:49:07.933Z",
-      "manifest": "/audio/audio-manifest.json",
-      "counts": {
-        "total": 1543,
-        "phrase": 480,
-        "shadowing": 480,
-        "term": 583
-      }
+      "provider": "azure",
+      "voice": "ja-JP-NanamiNeural",
+      "generated": false
     },
     "backend": {
       "auth": "next-auth@5",

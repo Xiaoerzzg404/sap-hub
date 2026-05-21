@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-22T00:04:00+09:00",
+  "updated_at": "2026-05-22T08:20:13+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -286,6 +286,10 @@
     "../web/middleware.ts",
     "../inbox/handoff-student-japanese-self-training-20260521.md",
     "../inbox/handoff-student-learning-home-20260521.md",
+    "../web/public/audio/audio-manifest.json",
+    "../logs/tts-recording-report-20260521.md",
+    "../inbox/handoff-tts-audio-recordings-20260521.md",
+    "../inbox/need-input-tts-public-deploy-20260521.md",
     "../inbox/handoff-admin-ops-dashboard-20260521.md",
     "../web/app/login/LoginClient.tsx",
     "../web/app/api/auth/register/route.ts",
@@ -295,9 +299,15 @@
     "../web/lib/auth/guards.ts",
     "../web/types/auth.ts",
     "../web/lib/db/migrations/0003_auth_credentials_multi_role.sql",
-    "../inbox/handoff-auth-credentials-roles-20260522.md"
+    "../inbox/handoff-auth-credentials-roles-20260522.md",
+    "../web/docs/SITE_CHANGE_LEDGER.md",
+    "../web/ops/site-ledger/reports/2026-05-21T23-16-33-263Z__before-public-sync.md",
+    "../web/ops/site-ledger/reports/2026-05-21T23-19-39-882Z__after-public-sync.md",
+    "../web/ops/site-ledger/reports/2026-05-21T23-19-39-882Z__diff.md",
+    "../inbox/handoff-public-sync-20260522.md",
+    "../inbox/need-input-public-sync-20260522.md"
   ],
-  "current_round": "Credentials login and multi-role access control for sap-jp.training",
+  "current_round": "sap-jp.training public sync version ledger and deployment precheck",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -367,12 +377,16 @@
     "Recorded the user's short/mid/long sap-jp.training roadmap in the memory extension notes.",
     "Added /admin as an admin-only operations dashboard with internal DB statistics, external console quick links, optional GitHub Actions and Vercel deployment status readers, environment presence checks, and local revision/deploy flow guidance.",
     "Updated navigation, middleware protection, and ADMIN_OPS.md for the admin monitoring page.",
-    "Added credentials registration/login, email-or-username sign-in, logged-out content wall, multi-role student/teacher/admin RBAC, and owner-role bootstrap for zzg404@gmail.com."
+    "Generated 1543 local Japanese TTS mp3 files for website audio playback: 480 phrase, 480 shadowing, 583 term; wrote numbered AUDIO-0001..AUDIO-1543 manifest and aligned term player paths to /audio/term/{id}.mp3.",
+    "Added credentials registration/login, email-or-username sign-in, logged-out content wall, multi-role student/teacher/admin RBAC, and owner-role bootstrap for zzg404@gmail.com.",
+    "Public sync precheck 20260522: organized the real version order from content checkpoint through TTS/audio metadata, fixed site-ledger catch-all middleware recognition, restored ADMIN_OPS backup/user-deletion runbooks in Chinese, ran before/after ledger snapshots, convert-content, ledger:check, typecheck, lint, build, browser smoke, and API smoke without push/deploy/upload/DB production changes."
   ],
   "blocked": [
     "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed.",
-    "Credentials login requires applying web/lib/db/migrations/0003_auth_credentials_multi_role.sql to the intended Neon database before production password registration/login is used."
+    "Public sap-jp.training audio deployment is waiting for Ryan to choose a deployment strategy because mp3 files are gitignored and deploy/publish actions require explicit confirmation.",
+    "Credentials login requires applying web/lib/db/migrations/0003_auth_credentials_multi_role.sql to the intended Neon database before production password registration/login is used.",
+    "Public sync 20260522 is blocked on Ryan confirmation for GitHub push/PR, Vercel deploy, audio publication strategy, Neon migration 0003 target, authenticated test accounts/sessions, and manual platform console checks."
   ],
-  "next_action": "Apply the 0003 credentials/multi-role migration to the intended DB, deploy auth changes, and smoke-test zzg404@gmail.com role routing.",
-  "notes": "2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and gives Ryan one place for internal Neon-backed counts, GitHub/Vercel/Cloudflare/Neon/Sentry/Resend/Upstash/Google quick links, optional GitHub Actions and Vercel deployment status readers, env presence checks without secret values, and the local revision -> validation -> commit -> deploy operating flow. Existing authenticated E2E remains blocked without test accounts. 2026-05-22T00:50:00+09:00 credentials auth by Codex: added password registration/login, email-or-username sign-in, user_roles multi-role RBAC, logged-out content wall, owner bootstrap for zzg404@gmail.com, docs, migration 0003, and handoff-auth-credentials-roles-20260522.md. Local typecheck, lint, build, and production unauthenticated smoke passed; DB migration and deploy were not run."
+  "next_action": "Wait for Ryan to answer inbox/need-input-public-sync-20260522.md before any push, PR, deploy, audio upload/path rewrite, Neon production migration, or authenticated test-session work.",
+  "notes": "2026-05-21T23:53:45+09:00 TTS audio generation by Codex: local macOS Kyoko voice generated 1543 mp3 files with numbered manifest under web/public/audio/audio-manifest.json. Conversion, counts, full ffprobe, data-to-file alignment, typecheck, and build passed. Public deployment remains blocked for explicit strategy confirmation because mp3 files are ignored by git. 2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and provides internal DB counts, external platform quick links, optional GitHub/Vercel status readers, env presence checks without secret values, and local revision/deploy guidance. Authenticated admin smoke remains blocked without a test admin account. 2026-05-22T00:50:00+09:00 credentials auth by Codex: added password registration/login, email-or-username sign-in, user_roles multi-role RBAC, logged-out content wall, owner bootstrap for zzg404@gmail.com, docs, migration 0003, and handoff-auth-credentials-roles-20260522.md. Local typecheck, lint, build, and production unauthenticated smoke passed; DB migration and deploy were not run. 2026-05-22T08:20:13+09:00 public sync precheck by Codex: current branch version order is documented through commit 3cc1305, local validation passed, browser/API smoke covered login wall and protected routes on port 3212, and need-input-public-sync-20260522.md blocks external actions until Ryan confirms."
 }

@@ -402,9 +402,16 @@ function expectedAccessForRoute(route, category) {
 }
 
 function isRouteCoveredByMiddleware(route, matchers) {
-  if (route === "/") return false;
   return matchers.some((matcher) => {
     if (matcher.includes("((?!auth/).*)")) return route.startsWith("/api/") && !route.startsWith("/api/auth/");
+    if (matcher.startsWith("/((?!") && matcher.endsWith(").*)")) {
+      const excluded = matcher
+        .slice("/((?!".length, -").*)".length)
+        .split("|")
+        .map((part) => `/${part.replace(/\\\//g, "/")}`);
+      return !excluded.some((prefix) => route === prefix || route.startsWith(`${prefix}/`));
+    }
+    if (matcher === "/:path*" || matcher === "/(.*)") return true;
     const prefix = matcher.replace("/:path*", "");
     return route === prefix || route.startsWith(`${prefix}/`);
   });
