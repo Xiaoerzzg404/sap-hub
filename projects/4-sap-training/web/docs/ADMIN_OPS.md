@@ -1,8 +1,41 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:12:00+09:00
-- scope: Phase 7 launch-readiness operations
+- updated_at: 2026-05-21T23:50:00+09:00
+- scope: Phase 7 launch-readiness operations + admin ops dashboard
+
+## Admin Dashboard
+
+Route: `/admin`
+
+访问边界：
+
+- 未登录用户：跳转 `/login?callbackUrl=/admin`。
+- 非 admin 用户：跳转首页。
+- admin 用户：可见只读管理监控页。
+
+页面内容：
+
+- Neon Postgres 只读统计：用户、学生、讲师、班级、课程、素材、录音、讲师反馈、待复核术语等。
+- 外部平台快捷入口：GitHub、Vercel、Cloudflare、Neon、Sentry、Resend、Upstash、Google Search Console、Safe Browsing 申诉。
+- 环境变量检查：只显示是否配置，不显示值。
+- 本地改订发布流：本地改 -> typecheck/lint/build/browser check -> commit -> deploy -> 线上复查。
+
+可选外部监控数据：
+
+| Platform | Optional env                                                       | 用途                                   |
+| -------- | ------------------------------------------------------------------ | -------------------------------------- |
+| GitHub   | `GITHUB_REPOSITORY`, `GITHUB_TOKEN`                                | 读取最新 GitHub Actions workflow run。 |
+| Vercel   | `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, optional `VERCEL_TEAM_ID` | 读取最新 Vercel deployment 状态。      |
+
+这些 token 不得提交到 git。只放在本地 `.env.local` 或 Vercel Project Settings -> Environment Variables。
+
+暂未直接拉取的外部数据：
+
+- Cloudflare R2 用量、lifecycle 规则：先通过 Cloudflare Dashboard 查看。
+- Neon backup/storage 细节：先通过 Neon Console 查看。
+- Sentry issue 列表：先通过 Sentry Console 查看。
+- Google Safe Browsing 申诉状态：先人工跟进。
 
 ## R2 Lifecycle
 

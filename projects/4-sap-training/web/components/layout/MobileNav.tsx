@@ -24,6 +24,7 @@ const navItems = [
   { href: "/assignments", label: "作业中心" },
   { href: "/review", label: "复盘中心" },
   { href: "/teacher", label: "讲师专区" },
+  { href: "/admin", label: "管理监控" },
 ];
 
 export function MobileNav() {

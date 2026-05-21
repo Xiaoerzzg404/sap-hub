@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T23:28:00+09:00",
+  "updated_at": "2026-05-22T00:04:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -280,10 +280,15 @@
     "../web/components/notes/LessonNotesPanel.tsx",
     "../web/lib/lesson-notes-storage.ts",
     "../web/docs/SITE_ARCHITECTURE.md",
+    "../web/app/admin/page.tsx",
+    "../web/lib/admin/ops-dashboard.ts",
+    "../web/docs/ADMIN_OPS.md",
+    "../web/middleware.ts",
     "../inbox/handoff-student-japanese-self-training-20260521.md",
-    "../inbox/handoff-student-learning-home-20260521.md"
+    "../inbox/handoff-student-learning-home-20260521.md",
+    "../inbox/handoff-admin-ops-dashboard-20260521.md"
   ],
-  "current_round": "Student learning home and sap-jp.training revision/deploy architecture",
+  "current_round": "Admin operations dashboard for sap-jp.training public launch management",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -350,11 +355,13 @@
     "Added docs/SITE_ARCHITECTURE.md to define product architecture, content/data boundaries, local revision workflow, content versioning, and local-before-deploy discipline.",
     "Updated STUDENT_GUIDE.md, ADMIN_OPS.md, and data/_meta.json for /me and the revision/deploy workflow.",
     "Changed next.config.ts so Sentry runtime DSN does not automatically enable the Sentry build plugin; withSentryConfig now requires SENTRY_BUILD_PLUGIN_ENABLED=true.",
-    "Recorded the user's short/mid/long sap-jp.training roadmap in the memory extension notes."
+    "Recorded the user's short/mid/long sap-jp.training roadmap in the memory extension notes.",
+    "Added /admin as an admin-only operations dashboard with internal DB statistics, external console quick links, optional GitHub Actions and Vercel deployment status readers, environment presence checks, and local revision/deploy flow guidance.",
+    "Updated navigation, middleware protection, and ADMIN_OPS.md for the admin monitoring page."
   ],
   "blocked": [
     "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
   ],
-  "next_action": "Review /me with one authenticated student account, then decide whether beta notes should remain browser-local or move to DB sync before inviting the first 5-10 beta students.",
-  "notes": "2026-05-21T23:28:00+09:00 student learning home by Codex: /me now gives students one place for current lesson, five-step position, 24-lesson progress, local lesson notes, recordings, teacher feedback snippets, and recording history. Added docs/SITE_ARCHITECTURE.md to make local revision -> local verification -> deploy the operating rule for content, labels, TTS, pages, and features. Sentry runtime remains DSN-driven, but withSentryConfig is gated behind SENTRY_BUILD_PLUGIN_ENABLED=true to avoid DSN-triggered build chunk path failures. Validation: npm run typecheck PASS, npm run lint PASS, npm run build PASS, browser /me smoke PASS, note save/clear PASS. Existing authenticated E2E remains blocked without test accounts."
+  "next_action": "Review /admin with one authenticated admin account, then decide whether to add read-only API tokens for GitHub Actions and Vercel deployment status in Vercel env.",
+  "notes": "2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and gives Ryan one place for internal Neon-backed counts, GitHub/Vercel/Cloudflare/Neon/Sentry/Resend/Upstash/Google quick links, optional GitHub Actions and Vercel deployment status readers, env presence checks without secret values, and the local revision -> validation -> commit -> deploy operating flow. Existing authenticated E2E remains blocked without test accounts."
 }

@@ -71,6 +71,7 @@ export const config = {
     "/assignments/:path*",
     "/review/:path*",
     "/teacher/:path*",
+    "/admin/:path*",
     "/api/((?!auth/).*)",
   ],
 };

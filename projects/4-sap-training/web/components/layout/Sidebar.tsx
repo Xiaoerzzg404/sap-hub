@@ -10,6 +10,7 @@ import {
   Mic2,
   Repeat2,
   ScrollText,
+  ShieldCheck,
   Sparkles,
   UserRound,
   Users,
@@ -35,6 +36,7 @@ const navItems = [
   { href: "/assignments", label: "作业中心", icon: ClipboardCheck },
   { href: "/review", label: "复盘中心", icon: Repeat2 },
   { href: "/teacher", label: "讲师专区", icon: GraduationCap },
+  { href: "/admin", label: "管理监控", icon: ShieldCheck },
 ];
 
 export function Sidebar() {
