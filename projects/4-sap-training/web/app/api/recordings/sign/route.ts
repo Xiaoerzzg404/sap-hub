@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
 import { recordings } from "@/lib/db/schema";
+import { checkRateLimit, limits } from "@/lib/rate-limit";
 import { getPresignedPutUrl, MAX_RECORDING_BYTES, recordingKey } from "@/lib/storage/r2";
 
 function extensionForMimeType(mimeType: string) {
@@ -14,6 +15,9 @@ function extensionForMimeType(mimeType: string) {
 export async function POST(req: Request) {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const { success } = await checkRateLimit(limits.upload, session.user.id);
+  if (!success) return NextResponse.json({ error: "rate limit exceeded" }, { status: 429 });
 
   const body = await req.json();
   const sizeBytes = Number(body.sizeBytes);

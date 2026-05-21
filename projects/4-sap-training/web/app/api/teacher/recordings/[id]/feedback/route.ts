@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
 import { classes, enrollments, recordings, teacherFeedback, users } from "@/lib/db/schema";
+import { checkRateLimit, limits } from "@/lib/rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -42,6 +43,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   if (session.user.role !== "teacher" && session.user.role !== "admin") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
+
+  const { success } = await checkRateLimit(limits.feedback, session.user.id);
+  if (!success) return NextResponse.json({ error: "rate limit exceeded" }, { status: 429 });
 
   const { id: recordingId } = await params;
   const body = await req.json();

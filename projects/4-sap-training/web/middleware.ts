@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { checkRateLimit, clientIpFromHeaders, limits } from "@/lib/rate-limit";
 
 const PUBLIC_PATHS = new Set(["/", "/login", "/login/verify"]);
 const PUBLIC_PREFIXES = ["/login/", "/api/auth/", "/_next/", "/audio/"];
@@ -13,8 +14,16 @@ function hasSessionCookie(req: NextRequest): boolean {
   );
 }
 
-export default function middleware(req: NextRequest): NextResponse {
+export default async function middleware(req: NextRequest): Promise<NextResponse> {
   const { pathname } = req.nextUrl;
+
+  if (pathname.startsWith("/api/auth/signin")) {
+    const identifier = clientIpFromHeaders(req.headers);
+    const { success } = await checkRateLimit(limits.login, identifier);
+    if (!success) {
+      return NextResponse.json({ error: "rate limit exceeded" }, { status: 429 });
+    }
+  }
 
   if (PUBLIC_PATHS.has(pathname)) return NextResponse.next();
   for (const prefix of PUBLIC_PREFIXES) {
