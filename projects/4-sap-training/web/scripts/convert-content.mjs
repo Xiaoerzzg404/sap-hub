@@ -757,11 +757,22 @@ function sourceCommit() {
 }
 
 function buildMeta(stats) {
+  let japaneseCoachEntries = 0;
+  try {
+    const coachData = JSON.parse(read(path.join(dataDir, "japanese-coach.json")) || "{}");
+    japaneseCoachEntries = Array.isArray(coachData.lessonEntries) ? coachData.lessonEntries.length : 0;
+  } catch {
+    japaneseCoachEntries = 0;
+  }
+
   writeJson("_meta.json", {
-    schemaVersion: "1.1.0",
+    schemaVersion: "1.4.0",
     generatedAt: new Date().toISOString(),
     sourceCommit: sourceCommit(),
-    stats,
+    stats: {
+      ...stats,
+      japaneseCoachEntries
+    },
     audio: {
       provider: process.env.TTS_PROVIDER ?? "azure",
       voice: process.env.AZURE_TTS_VOICE ?? "ja-JP-NanamiNeural",
@@ -771,8 +782,30 @@ function buildMeta(stats) {
       "Chinese translation fields for phrases/shadowing are intentionally empty.",
       "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
       "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
-      "Phase 3 selected TTS path C: script only, no mp3 generation in this commit."
-    ]
+      "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
+      "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
+      "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display.",
+      "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance.",
+      "2026-05-21 content audit aligns lesson titles and project-stage guidance to V4 Japanese SAP consultant review sources.",
+      "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24.",
+      "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions."
+    ],
+    backend: {
+      auth: "next-auth@5",
+      database: "neon postgres",
+      email: "resend",
+      storage: "cloudflare r2",
+      rateLimit: "upstash redis",
+      monitoring: "sentry",
+      tables: 20,
+      deployed: "vercel"
+    },
+    compliance: {
+      privacyPage: "/privacy",
+      consentRequired: true,
+      softDeleteEnabled: true,
+      hardDeleteAfterDays: 30
+    }
   });
 }
 

@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T22:43:52+09:00",
+  "updated_at": "2026-05-21T22:56:32+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -264,9 +264,15 @@
     "../sap_jp_training_course/prompts_v4/batch/sap_project_japanese_content_audit_prompt_20260521.md",
     "../logs/site-audit-20260521.md",
     "../inbox/need-input-site-audit-20260521.md",
-    "../inbox/handoff-site-audit-20260521.md"
+    "../inbox/handoff-site-audit-20260521.md",
+    "../web/data/japanese-coach.json",
+    "../web/types/japanese-coach.ts",
+    "../web/lib/japanese-coach.ts",
+    "../web/components/teacher/JapaneseTeacherCoachPanel.tsx",
+    "../web/app/teacher/page.tsx",
+    "../web/docs/TEACHER_GUIDE.md"
   ],
-  "current_round": "sap-jp.training local site audit and lint cleanup",
+  "current_round": "Teacher coach layer for SAP Japanese training: /teacher coaching rules, 24 lesson missions, classroom correction rubric",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -316,11 +322,15 @@
     "Site audit 20260521: ran baseline git status, typecheck, lint, and build for projects/4-sap-training/web.",
     "Site audit 20260521: started local dev server on 127.0.0.1:3210 and verified logged-out page/API access matrix with Node fetch.",
     "Site audit 20260521: fixed confirmed lint warnings in recording refresh hooks, teacher recording refresh hooks, lib/db/index.ts, and scripts/convert-content.mjs; lint now has 0 warnings.",
-    "Site audit 20260521: wrote logs/site-audit-20260521.md, need-input-site-audit-20260521.md, and handoff-site-audit-20260521.md."
+    "Site audit 20260521: wrote logs/site-audit-20260521.md, need-input-site-audit-20260521.md, and handoff-site-audit-20260521.md.",
+    "Added a structured Japanese teacher coach data layer with 8 teaching principles, forbidden teaching habits, 60-minute class flow, feedback rubric, global grammar/phrase anchors, and 24 lesson-specific SAP project Japanese coaching missions.",
+    "Integrated the Teacher Coach panel into /teacher so new Chinese Japanese teachers can select each lesson and follow the mission, core flow, mini dialogue, rewrite challenges, output task, and pass checklist.",
+    "Updated the teacher handbook source and generated library data so the lesson preparation checklist matches the current V4-aligned 24 lesson titles and teaching actions.",
+    "Updated convert-content metadata generation to preserve schemaVersion 1.4.0 backend/compliance notes and count japaneseCoachEntries after future conversions."
   ],
   "blocked": [
     "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
   ],
-  "next_action": "Wait for Ryan / user input in projects/4-sap-training/inbox/need-input-site-audit-20260521.md before running authenticated student/teacher recording and feedback E2E.",
-  "notes": "Site audit 20260521 completed by Codex: logged-out public/protected page matrix and unauthenticated API boundary passed locally on 127.0.0.1:3210; lint warnings were cleaned to 0 warnings; typecheck and build pass. Authenticated student/teacher E2E was not run because test accounts/session permission are required first."
+  "next_action": "Teacher/admin should review /teacher Teacher Coach with one real lesson selection, then run a live trial class and use the recording feedback loop to tune the per-lesson coach cards.",
+  "notes": "2026-05-21 teacher coach update by Codex: /teacher now includes a Teacher Coach panel backed by web/data/japanese-coach.json. It gives first-time Chinese Japanese teachers strict classroom rules, 60-minute timing, lesson-by-lesson teaching missions, NG-to-better rewrite challenges, output tasks, and feedback rubrics. TEACHER_GUIDE.md and the source SAP日语培训讲师手册 are updated to match. Existing Phase 5-7 backend/auth/storage behavior is unchanged. Validation: convert:content, typecheck, and lint pass; dev server starts on localhost:3000 and /teacher redirects to login when unauthenticated. npm run build still hits intermittent Next.js static-generation manifest/module errors after successful compile/typecheck/lint, so build remains a residual environment/tooling risk rather than a Teacher Coach type error."
 }

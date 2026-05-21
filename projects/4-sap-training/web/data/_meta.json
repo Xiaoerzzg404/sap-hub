@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
-  "generatedAt": "2026-05-21T13:39:33.255Z",
-  "sourceCommit": "576cd4ec742b124dfc4cb4ac4b2b5df70fa4586c",
+  "generatedAt": "2026-05-21T13:56:18.775Z",
+  "sourceCommit": "03fa6ccb16579819ea796af27d50557dfae624e9",
   "stats": {
     "tracks": 1,
     "lessons": 24,
@@ -10,7 +10,8 @@
     "roleplays": 48,
     "glossaryTerms": 583,
     "libraryItems": 6,
-    "totalAssets": 240
+    "totalAssets": 240,
+    "japaneseCoachEntries": 24
   },
   "audio": {
     "provider": "azure",
@@ -26,7 +27,8 @@
     "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display.",
     "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance.",
     "2026-05-21 content audit aligns lesson titles and project-stage guidance to V4 Japanese SAP consultant review sources.",
-    "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24."
+    "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24.",
+    "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions."
   ],
   "backend": {
     "auth": "next-auth@5",

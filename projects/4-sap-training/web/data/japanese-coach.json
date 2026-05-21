@@ -1,0 +1,1628 @@
+{
+  "updatedBy": "codex",
+  "updatedAt": "2026-05-21T22:56:32+09:00",
+  "teachingPrinciples": [
+    {
+      "title": "先顾问动作，后日语形式",
+      "rule": "每个句型都必须回答：谁在什么会议上，为了确认什么，说完以后下一步是什么。",
+      "teacherMustSay": "这句话不是用来显得礼貌，是用来推进项目。"
+    },
+    {
+      "title": "每课只抓一个主场景",
+      "rule": "60 分钟课不追求讲完全部知识点，只让学生在一个 SAP 场景中完成听、读、换、演、录。",
+      "teacherMustSay": "今天只练一个现场动作，能说完整比知道很多更重要。"
+    },
+    {
+      "title": "学生必须说完整句",
+      "rule": "不接受只说术语、只说中文意思、只说確認します。最低输出要包含对象、影响、期限或下一步。",
+      "teacherMustSay": "请把单词放进项目句子里，再说一遍。"
+    },
+    {
+      "title": "纠错只改最关键的一处",
+      "rule": "第一次老师不要同时纠正发音、语法、敬语、SAP 内容。先改最影响项目可信度的问题。",
+      "teacherMustSay": "你这句能听懂，我先帮你补项目推进信息。"
+    },
+    {
+      "title": "敬语服务于清楚",
+      "rule": "不用把所有句子改成厚重敬语。日本项目现场更重视清楚、礼貌、边界明确、可执行。",
+      "teacherMustSay": "这句不需要更高级，只需要更清楚。"
+    },
+    {
+      "title": "课上必须留下录音",
+      "rule": "没有录音就没有可复盘的口语证据。每节课最后必须录 30 秒或 60 秒输出。",
+      "teacherMustSay": "今天的成果不是听懂，是录下一个项目现场能用的版本。"
+    },
+    {
+      "title": "不确定的 SAP 事实要标注",
+      "rule": "事务码、配置路径、版本差异、客户制度不确定时，不用确定语气讲死，保留待复核。",
+      "teacherMustSay": "这个 SAP 事实我们课后确认，今天先练表达边界。"
+    },
+    {
+      "title": "老师本人也要试讲",
+      "rule": "上课前老师必须把核心日语示范读三遍，确认停顿、重音和中文解释能自然衔接。",
+      "teacherMustSay": "我先用慢速示范一遍，你只听节奏，不急着跟读。"
+    }
+  ],
+  "forbiddenHabits": [
+    {
+      "habit": "把课讲成文化常识或商务礼仪讲座",
+      "whyItHurts": "学生听完会点头，但进入日本 SAP 会议仍然不知道怎么开口。",
+      "replacement": "每个文化点都落到一句会议表达和一个顾问动作。"
+    },
+    {
+      "habit": "逐句翻译中文讲义",
+      "whyItHurts": "会产生中文名词硬塞进日语的句子，听起来不像日本项目现场。",
+      "replacement": "先说场景，再给日本项目常用表达，最后让学生替换自己的模块。"
+    },
+    {
+      "habit": "学生说错就立刻打断",
+      "whyItHurts": "基础学生会更不敢开口，课堂从训练课变成考试。",
+      "replacement": "先让学生说完，再用一句自然表达重述，并要求他复述一次。"
+    },
+    {
+      "habit": "只夸“很好”不指出问题",
+      "whyItHurts": "学生无法知道自己离日本项目顾问表达差在哪里。",
+      "replacement": "夸完成度，再指出一个最关键改法，并给可背诵版本。"
+    },
+    {
+      "habit": "过度追求母语者自然度",
+      "whyItHurts": "初级 SAP 顾问最需要的是稳、清楚、可交付，而不是复杂表达。",
+      "replacement": "先达到项目可用，再逐步提升自然度。"
+    },
+    {
+      "habit": "把“確認します”当万能答案",
+      "whyItHurts": "客户听不出你要确认什么、什么时候回来、会交付什么。",
+      "replacement": "补成“影響範囲を確認し、次回までに対応方針を共有いたします”。"
+    }
+  ],
+  "classFlow": [
+    {
+      "minutes": "0-5",
+      "name": "定目标",
+      "teacherAction": "用中文说清今天的项目场景、会议对象和最终录音任务。",
+      "studentOutput": "学生能用一句中文复述今天要完成的顾问动作。",
+      "passCheck": "学生知道自己不是学单词，而是要完成一个现场任务。"
+    },
+    {
+      "minutes": "5-13",
+      "name": "听场景",
+      "teacherAction": "讲一个客户发言或项目问题，带出本课核心日语。",
+      "studentOutput": "学生指出关键词、对象、影响范围或下一步。",
+      "passCheck": "学生能听出句子用在哪个项目阶段。"
+    },
+    {
+      "minutes": "13-25",
+      "name": "读标准句",
+      "teacherAction": "慢速、正常、项目速度各示范一遍，标出停顿。",
+      "studentOutput": "学生跟读三遍，句尾不吞、不乱升调。",
+      "passCheck": "学生至少能照稿稳定说完整句。"
+    },
+    {
+      "minutes": "25-37",
+      "name": "换模块",
+      "teacherAction": "把对象替换成 FI、MM、SD、Basis、ABAP-BTP 等学生背景。",
+      "studentOutput": "学生用自己的模块说出一版。",
+      "passCheck": "句子里出现具体模块、交付物或影响范围。"
+    },
+    {
+      "minutes": "37-50",
+      "name": "演现场",
+      "teacherAction": "扮演客户或 PM，只追问一个点，逼学生补边界。",
+      "studentOutput": "学生完成 2-4 轮 Role Play。",
+      "passCheck": "学生没有停在“分かりました”，而是能确认和推进。"
+    },
+    {
+      "minutes": "50-57",
+      "name": "录成果",
+      "teacherAction": "让学生录 30 秒或 60 秒最终输出，不再讲新内容。",
+      "studentOutput": "学生提交一条可复盘录音。",
+      "passCheck": "录音包含背景、确认对象、影响或下一步。"
+    },
+    {
+      "minutes": "57-60",
+      "name": "给作业",
+      "teacherAction": "只布置一个复练任务和一个替换任务。",
+      "studentOutput": "学生知道下次课前要重录哪一句。",
+      "passCheck": "作业能在 10 分钟内完成，不压垮基础学生。"
+    }
+  ],
+  "feedbackRubric": [
+    {
+      "dimension": "顾问动作",
+      "pass": "有确认、说明、请求、汇报或推进动作。",
+      "danger": "只背术语或只说分かりました。",
+      "coachLine": "动作已经有了，现在把对象和下一步补清楚。"
+    },
+    {
+      "dimension": "项目边界",
+      "pass": "说出対象範囲、影響範囲、前提条件、期限之一。",
+      "danger": "听起来像无限承诺或直接拒绝。",
+      "coachLine": "你不要马上答应，先把范围确认出来。"
+    },
+    {
+      "dimension": "日语稳定度",
+      "pass": "句尾稳定，です/ます 不乱，关键词读清楚。",
+      "danger": "句尾消失、语气像质问、片假名读不稳。",
+      "coachLine": "这句先不追求快，停顿比速度重要。"
+    },
+    {
+      "dimension": "SAP 准确性",
+      "pass": "术语没有硬翻，SAP 原词、片假名和中文含义对应。",
+      "danger": "把課題/障害、本番移行/本番稼働混用。",
+      "coachLine": "这里先保留 SAP 原词，再用日语解释动作。"
+    },
+    {
+      "dimension": "可复盘成果",
+      "pass": "有录音、有改写句、有下一次复练目标。",
+      "danger": "课上热闹，但下课后没有可练材料。",
+      "coachLine": "这条录音就是今天的成果，我们只改一处再录。"
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "という理解でよろしいでしょうか",
+      "pattern": "A という理解でよろしいでしょうか。",
+      "explanation": "用来复述和确认，不是简单问“对吗”。适合需求访谈、范围确认、测试结果确认。",
+      "commonMistake": "A ですか。说得太短，像追问或质问。",
+      "betterExpression": "対象範囲は FI 領域のみという理解でよろしいでしょうか。"
+    },
+    {
+      "title": "観点では確認が必要です",
+      "pattern": "A の観点では、B を確認する必要がございます。",
+      "explanation": "先给专业视角，再说明需要确认，适合避免直接否定客户。",
+      "commonMistake": "できません、危ないです、無理です。",
+      "betterExpression": "内部統制の観点では、付与範囲を確認する必要がございます。"
+    },
+    {
+      "title": "一度持ち帰って確認いたします",
+      "pattern": "一度持ち帰って確認のうえ、次回ご説明いたします。",
+      "explanation": "用于不确定时保留边界。必须补“何を確認するか”和“什么时候回来”。",
+      "commonMistake": "確認しますだけで结束。",
+      "betterExpression": "影響範囲を一度持ち帰って確認のうえ、明日中に対応方針を共有いたします。"
+    },
+    {
+      "title": "現時点では断定できません",
+      "pattern": "現時点では原因を断定できません。まず A を確認いたします。",
+      "explanation": "用于测试失败、障害、生产问题。先稳住事实，再做切分。",
+      "commonMistake": "たぶんシステム問題です。",
+      "betterExpression": "現時点では原因を断定できません。まず再現条件と影響範囲を確認いたします。"
+    }
+  ],
+  "routinePhrases": [
+    {
+      "japanese": "認識が合っているか確認させてください。",
+      "chinese": "请允许我确认理解是否一致。",
+      "usage": "几乎每节课都可以用，核心是复述后再推进。"
+    },
+    {
+      "japanese": "対象範囲と影響範囲を整理いたします。",
+      "chinese": "我会整理对象范围和影响范围。",
+      "usage": "范围、变更、配置、测试、障害都能用。"
+    },
+    {
+      "japanese": "一度持ち帰って、確認のうえ次回ご説明いたします。",
+      "chinese": "我先带回确认，下次说明。",
+      "usage": "不确定时的安全表达，不要硬答。"
+    },
+    {
+      "japanese": "担当者と期限を議事録に記載いたします。",
+      "chinese": "我会把负责人和期限写进会议纪要。",
+      "usage": "会议收尾和行动项控制。"
+    },
+    {
+      "japanese": "現時点では原因を断定できません。まず事象と影響範囲を確認いたします。",
+      "chinese": "现阶段还不能断定原因。先确认现象和影响范围。",
+      "usage": "测试失败、障害、上线问题。"
+    }
+  ],
+  "lessonEntries": [
+    {
+      "lessonId": "lesson_01",
+      "scenarioLabel": "Explore / Fit-Gap 前的客户理解",
+      "teacherMission": "把“和文化与礼仪”讲成顾问不直接否定客户、先接住诉求再确认差异的能力。",
+      "corePattern": {
+        "title": "认同诉求 -> 确认现状 -> 说明差异 -> 带回影响",
+        "flow": [
+          "ご意向は理解いたしました",
+          "現行業務の背景を確認させてください",
+          "標準機能との差分を整理します",
+          "影響範囲を次回ご説明します"
+        ],
+        "teacherNote": "本课不要讲成日本文化知识。每个礼仪点都要落到“如何不伤关系地说明 SAP 标准差异”。"
+      },
+      "miniDialogue": {
+        "title": "客户坚持现行业务不改",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "現行業務はできるだけ変えたくありません。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "ご意向は理解いたしました。まず現行業務の背景を確認させてください。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "今の承認フローは残したいです。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。標準機能との差分と影響範囲を整理して、次回ご説明いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "標準なのでできません。",
+          "hint": "不要先否定客户。",
+          "answer": "標準機能で対応できる範囲と、差分の影響を整理いたします。"
+        },
+        {
+          "ng": "それは違います。",
+          "hint": "先接住客户背景。",
+          "answer": "現行業務の背景を理解したうえで、標準との差分を確認させてください。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明：客户想保留现行业务时，你如何不否定对方并推进 Fit-Gap。",
+        "modelFrame": "背景 -> 认同 -> 现状确认 -> 标准差异 -> 影响范围 -> 下次说明。"
+      },
+      "checklist": [
+        "有没有先认同客户意向",
+        "有没有确认现行业务背景",
+        "有没有避免できません",
+        "有没有说出差异和影响范围"
+      ]
+    },
+    {
+      "lessonId": "lesson_02",
+      "scenarioLabel": "Testing / Issue triage",
+      "teacherMission": "训练学生在差异或错误出现时先说事实和责任边界，而不是急着解释或甩锅。",
+      "corePattern": {
+        "title": "事实 -> 影响 -> 初动 -> 反馈期限",
+        "flow": [
+          "事象を確認します",
+          "影響範囲を整理します",
+          "初動調査を進めます",
+          "本日中に一次回答します"
+        ],
+        "teacherNote": "本课重点是稳。学生越紧张越容易说多余理由，老师要逼他先讲事实。"
+      },
+      "miniDialogue": {
+        "title": "测试差异初动说明",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "昨日のテスト結果が想定と違っています。原因は何ですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現時点では原因を断定できません。まず事象と影響範囲を確認いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "いつ回答できますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "本日中に初動調査の結果と次の対応案を共有いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "たぶん設定ミスです。",
+          "hint": "不要猜原因。",
+          "answer": "現時点では原因を断定できません。まず再現条件を確認いたします。"
+        },
+        {
+          "ng": "私の担当ではありません。",
+          "hint": "不要直接切割责任。",
+          "answer": "担当範囲を確認したうえで、必要であれば関係チームへ連携いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明：测试结果异常时，你如何做初动调查和反馈期限说明。",
+        "modelFrame": "事象 -> 期待結果/实际结果 -> 影响范围 -> 初动动作 -> 反馈期限。"
+      },
+      "checklist": [
+        "有没有避免猜原因",
+        "有没有说期待结果和实际结果",
+        "有没有确认影响范围",
+        "有没有给一次反馈期限"
+      ]
+    },
+    {
+      "lessonId": "lesson_03",
+      "scenarioLabel": "Project preparation / Kickoff",
+      "teacherMission": "让基础学生学会在客户会议开场时完成自我介绍、目的确认和议题进入。",
+      "corePattern": {
+        "title": "问候 -> 角色 -> 会议目的 -> 议题确认",
+        "flow": [
+          "本日より担当いたします",
+          "FI 領域を担当します",
+          "本日の目的は認識合わせです",
+          "アジェンダを確認します"
+        ],
+        "teacherNote": "第一次做老师容易让学生背长自我介绍。这里要短，能进入会议即可。"
+      },
+      "miniDialogue": {
+        "title": "Kickoff 自我介绍",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "本日から参加される方ですね。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "はい。本日より FI 領域を担当いたします。どうぞよろしくお願いいたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "今日は何を確認しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "本日は担当範囲と今週の進め方について認識合わせをさせてください。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "私は日本語を勉強しています。",
+          "hint": "客户更关心你的项目角色。",
+          "answer": "本日より FI 領域を担当いたします。"
+        },
+        {
+          "ng": "よろしく。",
+          "hint": "客户会议要用丁寧語。",
+          "answer": "どうぞよろしくお願いいたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 45 秒完成日本项目 Kickoff 自我介绍和会议目的确认。",
+        "modelFrame": "姓名/角色 -> 负责模块 -> 今天目的 -> 希望确认的事项。"
+      },
+      "checklist": [
+        "是否说明负责模块",
+        "是否说明会议目的",
+        "是否避免只讲个人学习",
+        "是否能自然说よろしくお願いいたします"
+      ]
+    },
+    {
+      "lessonId": "lesson_04",
+      "scenarioLabel": "Scope management / Change request",
+      "teacherMission": "训练学生面对短纳期变更时不直接拒绝，也不无边界答应。",
+      "corePattern": {
+        "title": "接住需求 -> 确认期限 -> 说明影响 -> 给替代案",
+        "flow": [
+          "ご要望は承知しました",
+          "希望納期を確認します",
+          "品質とテスト範囲への影響を整理します",
+          "代替案をご提案します"
+        ],
+        "teacherNote": "本课老师要强调：会说风险不是消极，是专业。"
+      },
+      "miniDialogue": {
+        "title": "短纳期变更",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "この変更を今週中に入れてください。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "ご要望は承知しました。まず希望納期と必須範囲を確認させてください。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "全部必要です。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "品質とテスト範囲への影響を整理し、優先度を踏まえて代替案をご提示いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "今週は無理です。",
+          "hint": "不要只拒绝。",
+          "answer": "今週中に対応可能な範囲と、来週以降になる範囲を整理いたします。"
+        },
+        {
+          "ng": "はい、全部できます。",
+          "hint": "不要无边界承诺。",
+          "answer": "対応範囲とテスト工数を確認したうえで、実施可否をご回答いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒回应客户短纳期变更要求，说明风险和替代方案。",
+        "modelFrame": "承接 -> 确认范围/期限 -> 质量影响 -> 优先级 -> 替代案。"
+      },
+      "checklist": [
+        "是否避免無理です",
+        "是否确认期限和必做范围",
+        "是否说明质量/测试影响",
+        "是否提出替代方案"
+      ]
+    },
+    {
+      "lessonId": "lesson_05",
+      "scenarioLabel": "Requirements confirmation / Mail follow-up",
+      "teacherMission": "让学生学会用敬语写配置确认邮件，目标是拿到补充信息，不是写漂亮作文。",
+      "corePattern": {
+        "title": "感谢 -> 确认点 -> 需要资料 -> 期限",
+        "flow": [
+          "ご共有ありがとうございます",
+          "二点確認させてください",
+          "設定判断に必要な情報です",
+          "何日までにご共有ください"
+        ],
+        "teacherNote": "老师要带学生区分口头会议句和邮件句。邮件要短、编号、可回复。"
+      },
+      "miniDialogue": {
+        "title": "配置确认邮件前的口头确认",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "設定内容は前回の通りでお願いします。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。念のため、対象会社コードと適用開始日を確認させてください。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "メールで送ります。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "ありがとうございます。設定判断に必要な情報として確認させていただきます。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "資料をください。",
+          "hint": "邮件里要说清为什么需要。",
+          "answer": "設定判断に必要なため、対象会社コードをご共有いただけますでしょうか。"
+        },
+        {
+          "ng": "早く返信してください。",
+          "hint": "催促要礼貌且有期限。",
+          "answer": "恐れ入りますが、明日中にご確認いただけますと幸いです。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "写并读出一段 45 秒配置确认邮件：感谢、确认两点、说明所需资料和期限。",
+        "modelFrame": "感谢 -> 确认点 1/2 -> 所需原因 -> 期限 -> 结尾。"
+      },
+      "checklist": [
+        "是否用编号列确认点",
+        "是否说明所需原因",
+        "是否有期限",
+        "是否避免命令式ください"
+      ]
+    },
+    {
+      "lessonId": "lesson_06",
+      "scenarioLabel": "Architecture onboarding",
+      "teacherMission": "把企业架构讲成 1 分钟说明能力：SAP 负责什么，周边系统负责什么，接口在哪里。",
+      "corePattern": {
+        "title": "业务领域 -> SAP 核心 -> 周边系统 -> 接口/数据",
+        "flow": [
+          "SAP は基幹業務を管理します",
+          "周辺システムとはインターフェースで連携します",
+          "連携データとタイミングを確認します",
+          "影響範囲を整理します"
+        ],
+        "teacherNote": "不要让老师讲架构大课。学生要能用自己的模块说 60 秒。"
+      },
+      "miniDialogue": {
+        "title": "说明 SAP 与周边系统",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "SAP と周辺システムの関係を簡単に説明できますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "SAP は基幹業務を管理し、周辺システムとはインターフェースでデータ連携します。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "今回確認すべき点は何ですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "連携対象、連携タイミング、エラー時の対応範囲を確認する必要がございます。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "SAP は全部できます。",
+          "hint": "不要把 SAP 说成万能。",
+          "answer": "SAP が管理する範囲と、周辺システム側の範囲を分けて確認します。"
+        },
+        {
+          "ng": "インターフェースがあります。",
+          "hint": "补联动对象和时点。",
+          "answer": "対象データと連携タイミングを確認したうえで、影響範囲を整理します。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明 SAP 与周边系统架构，并指出需要确认的接口边界。",
+        "modelFrame": "业务背景 -> SAP 范围 -> 周边系统 -> 接口数据/时点 -> 错误处理范围。"
+      },
+      "checklist": [
+        "是否区分 SAP 和周边系统",
+        "是否说到接口数据",
+        "是否说到联动时点",
+        "是否避免 SAP 万能论"
+      ]
+    },
+    {
+      "lessonId": "lesson_07",
+      "scenarioLabel": "Strategy / Project entry interview",
+      "teacherMission": "让学生能说明日本企业 IT 转型背景下 SAP 顾问关注标准化、数据和业务影响。",
+      "corePattern": {
+        "title": "趋势 -> 业务影响 -> SAP 关注点 -> 顾问价值",
+        "flow": [
+          "標準化が重要になっています",
+          "データ活用の前提を整えます",
+          "業務影響を確認します",
+          "現場と IT の認識を合わせます"
+        ],
+        "teacherNote": "本课适合面试/项目进入说明，老师要防止学生泛泛谈 DX。"
+      },
+      "miniDialogue": {
+        "title": "说明 IT 转型关注点",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "最近の SAP プロジェクトでは何が重要だと思いますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "標準化とデータ活用の観点が重要だと考えております。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "顧問として何を確認しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現行業務への影響と、標準プロセスに合わせる範囲を確認いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "DX が大事です。",
+          "hint": "太空，要落到 SAP 项目。",
+          "answer": "標準化とデータ活用の前提を SAP プロセスの中で整理することが重要です。"
+        },
+        {
+          "ng": "新しい技術を使います。",
+          "hint": "别只说技术。",
+          "answer": "業務影響と運用定着まで含めて確認する必要がございます。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒回答：日本 SAP 项目中 IT 转型趋势下，顾问应关注什么。",
+        "modelFrame": "趋势 -> SAP 标准化 -> 数据前提 -> 业务影响 -> 顾问行动。"
+      },
+      "checklist": ["是否避免空泛 DX", "是否说到标准化", "是否说到数据前提", "是否落到顾问行动"]
+    },
+    {
+      "lessonId": "lesson_08",
+      "scenarioLabel": "Data migration preparation / Testing readiness",
+      "teacherMission": "训练学生说明主数据不完整会怎样影响测试，并能请求补齐数据。",
+      "corePattern": {
+        "title": "数据状态 -> 测试影响 -> 必填项 -> 补齐期限",
+        "flow": [
+          "マスタデータの必須項目を確認します",
+          "テスト開始に影響します",
+          "不足項目を一覧化します",
+          "期限までにご共有ください"
+        ],
+        "teacherNote": "基础学生容易只说データがない。老师要逼他说缺什么、影响什么、什么时候补。"
+      },
+      "miniDialogue": {
+        "title": "主数据不完整",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "テスト用のマスタはまだ一部しか準備できていません。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。必須項目が不足している場合、テスト開始に影響する可能性がございます。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "何を出せばよいですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "不足項目を一覧化し、本日中に共有いたします。期限をご確認いただけますでしょうか。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "データが足りません。",
+          "hint": "补影响和对象。",
+          "answer": "必須項目が不足しているため、結合テストの開始に影響する可能性がございます。"
+        },
+        {
+          "ng": "全部ください。",
+          "hint": "请求要具体。",
+          "answer": "まず必須項目の不足分をご共有いただけますでしょうか。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明主数据不完整导致测试受阻，并请求补齐数据。",
+        "modelFrame": "数据状态 -> 缺失项 -> 测试影响 -> 清单共享 -> 补齐期限。"
+      },
+      "checklist": ["是否说必須項目", "是否说明测试影响", "是否请求具体数据", "是否约定期限"]
+    },
+    {
+      "lessonId": "lesson_09",
+      "scenarioLabel": "Security / Controlled investigation",
+      "teacherMission": "让学生学会在生产数据受限时申请脱敏数据或受控环境，不碰安全红线。",
+      "corePattern": {
+        "title": "安全边界 -> 调查目的 -> 替代数据 -> 审批路径",
+        "flow": [
+          "本番データは直接参照できません",
+          "調査目的を明確にします",
+          "マスキング済みデータを依頼します",
+          "承認フローを確認します"
+        ],
+        "teacherNote": "本课老师必须明确：安全制度不是障碍，是项目规则。不要教学生绕权限。"
+      },
+      "miniDialogue": {
+        "title": "生产数据调查受限",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "本番データを見ればすぐ分かると思います。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "本番データは直接参照できないため、調査目的と承認フローを確認させてください。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "ではどう調査しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "マスキング済みデータまたは受控環境で確認できるかを相談いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "権限をください。",
+          "hint": "不能直接要生产权限。",
+          "answer": "調査目的を明確にしたうえで、必要な承認フローを確認いたします。"
+        },
+        {
+          "ng": "本番を見ればいいです。",
+          "hint": "安全边界不允许。",
+          "answer": "マスキング済みデータまたは受控環境で確認できるかを検討いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明：生产数据受限时如何申请安全的调查方式。",
+        "modelFrame": "限制说明 -> 调查目的 -> 数据替代方案 -> 审批路径 -> 下一步。"
+      },
+      "checklist": [
+        "是否说明不能直接看生产数据",
+        "是否说调查目的",
+        "是否提出脱敏/受控环境",
+        "是否确认审批流程"
+      ]
+    },
+    {
+      "lessonId": "lesson_10",
+      "scenarioLabel": "Market understanding / Interview",
+      "teacherMission": "让学生能用日语说明日本 SAP 客户类型和顾问关注点，服务于面试和项目寒暄。",
+      "corePattern": {
+        "title": "客户类型 -> 业务特点 -> SAP 关注点 -> 自己能贡献",
+        "flow": [
+          "製造業や商社で導入が多いです",
+          "業務標準化が課題になります",
+          "会計連携や在庫管理を確認します",
+          "自分の経験と結びつけます"
+        ],
+        "teacherNote": "不要讲市场数据细节，除非有来源。课堂目标是能说稳健的行业理解。"
+      },
+      "miniDialogue": {
+        "title": "说明日本 SAP 客户类型",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "日本の SAP 案件では、どのような顧客が多いですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "製造業、商社、サービス業などで基幹業務の標準化ニーズが多いと理解しております。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "顧問として何を見ますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "業務プロセス、会計連携、データ管理の観点で影響範囲を確認します。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "日本市場は大きいです。",
+          "hint": "太泛。",
+          "answer": "日本企業では基幹業務の標準化とデータ整備のニーズが高いと理解しております。"
+        },
+        {
+          "ng": "いろいろな会社があります。",
+          "hint": "给行业例子和关注点。",
+          "answer": "製造業や商社では、会計連携や在庫管理の影響範囲を確認する場面が多いです。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明日本 SAP 客户类型与顾问关注点。",
+        "modelFrame": "行业类型 -> 业务需求 -> SAP 关注点 -> 自己模块关联。"
+      },
+      "checklist": ["是否避免无来源数字", "是否说行业例子", "是否说 SAP 关注点", "是否联系自己模块"]
+    },
+    {
+      "lessonId": "lesson_11",
+      "scenarioLabel": "Project governance / Multi-vendor collaboration",
+      "teacherMission": "训练学生在多公司项目中说明职责、确认路径和升级路径，避免越界承诺。",
+      "corePattern": {
+        "title": "角色 -> 窗口 -> 依赖 -> 升级",
+        "flow": [
+          "担当範囲を確認します",
+          "確認窓口を明確にします",
+          "他社依存の事項を整理します",
+          "必要に応じてエスカレーションします"
+        ],
+        "teacherNote": "老师要强调“会协调”不等于“替别人承诺”。"
+      },
+      "miniDialogue": {
+        "title": "多公司确认路径",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "この件はどの会社に聞けばよいですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "担当範囲を整理したうえで、確認窓口を明確にいたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "早めに進めたいです。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "他社依存の事項は課題管理表に記載し、必要に応じてエスカレーションいたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "私が全部確認します。",
+          "hint": "不要越界承诺。",
+          "answer": "担当範囲と確認窓口を整理したうえで、関係者へ連携いたします。"
+        },
+        {
+          "ng": "それは別会社です。",
+          "hint": "不要冷切割。",
+          "answer": "他社担当の可能性があるため、確認ルートを整理いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明多公司 SAP 项目中的职责和确认路径。",
+        "modelFrame": "议题 -> 自己范围 -> 他社依赖 -> 确认窗口 -> 升级/课题管理。"
+      },
+      "checklist": ["是否说明担当範囲", "是否明确确认窗口", "是否记录他社依赖", "是否避免全部揽下"]
+    },
+    {
+      "lessonId": "lesson_12",
+      "scenarioLabel": "Interview / Module positioning",
+      "teacherMission": "让学生把模块经验讲成项目价值，而不是罗列学过 FI、CO、MM。",
+      "corePattern": {
+        "title": "模块 -> 场景 -> 贡献 -> 可确认边界",
+        "flow": [
+          "FI 領域を担当しました",
+          "月次決算や会計連携を経験しました",
+          "課題整理に貢献できます",
+          "不明点は確認して進めます"
+        ],
+        "teacherNote": "学生面试回答要短而可信。老师要删掉空话，留下项目动作。"
+      },
+      "miniDialogue": {
+        "title": "模块经验面试回答",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "これまでどの領域を担当しましたか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "主に FI 領域を担当し、月次決算と会計連携の確認を経験しました。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "この案件では何ができますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現行業務を確認しながら、課題整理とテスト観点の作成に貢献できます。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "FI を勉強しました。",
+          "hint": "要说项目动作。",
+          "answer": "FI 領域で月次決算と会計連携の確認を経験しました。"
+        },
+        {
+          "ng": "何でもできます。",
+          "hint": "可信边界更重要。",
+          "answer": "担当範囲を確認しながら、課題整理とテスト観点の作成に貢献できます。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒回答模块经验与项目价值。",
+        "modelFrame": "模块 -> 具体业务场景 -> 做过的动作 -> 本项目贡献 -> 待确认边界。"
+      },
+      "checklist": ["是否避免只说学过", "是否说具体业务场景", "是否说项目贡献", "是否有能力边界"]
+    },
+    {
+      "lessonId": "lesson_13",
+      "scenarioLabel": "Role definition / Quality assurance",
+      "teacherMission": "训练学生说明能力边界、review 请求和质量保证方式，让初级顾问显得可靠。",
+      "corePattern": {
+        "title": "可担当 -> 需 Review -> 质量动作 -> 交付标准",
+        "flow": [
+          "担当可能な範囲を説明します",
+          "レビューが必要な範囲を明確にします",
+          "確認観点を整理します",
+          "品質を担保します"
+        ],
+        "teacherNote": "不要把初级包装成全能。日本项目更信任会报边界的人。"
+      },
+      "miniDialogue": {
+        "title": "能力边界说明",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "この設計は一人で対応できますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "基本方針の整理は対応可能ですが、最終判断はリードのレビューをお願いしたいです。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "品質はどう担保しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "確認観点と未決事項を整理し、レビュー結果を反映してから共有いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "できます。",
+          "hint": "说明可做范围和 review。",
+          "answer": "方針整理は対応可能ですが、最終判断はレビューをお願いしたいです。"
+        },
+        {
+          "ng": "分からないので無理です。",
+          "hint": "不会也要提出推进动作。",
+          "answer": "不明点を整理し、確認のうえ対応範囲をご相談させてください。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明自己的能力边界、需要 review 的范围和质量保证动作。",
+        "modelFrame": "可担当范围 -> 需确认范围 -> review 请求 -> 质量动作 -> 共享时点。"
+      },
+      "checklist": ["是否避免全能承诺", "是否说 review", "是否说确认观点", "是否体现可靠"]
+    },
+    {
+      "lessonId": "lesson_14",
+      "scenarioLabel": "Project preparation / Kickoff",
+      "teacherMission": "让学生能在 Kickoff 会议中说明担当范围、客户依赖事项和本周行动项。",
+      "corePattern": {
+        "title": "担当范围 -> 客户依赖 -> 本周行动 -> 议事录",
+        "flow": [
+          "私の担当範囲は FI 領域です",
+          "お客様側でご確認いただきたい事項があります",
+          "今週のアクションを整理します",
+          "議事録に記載します"
+        ],
+        "teacherNote": "这是项目阶段课的起点。老师要强制学生说出行动项，不要停在自我介绍。"
+      },
+      "miniDialogue": {
+        "title": "Kickoff 行动项确认",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "今週は何から進めますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "まず担当範囲とお客様側の確認事項を整理いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "こちらで何を準備すればよいですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現行業務資料と担当者一覧をご共有いただき、期限を議事録に記載いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "私は FI です。",
+          "hint": "要说明负责范围，不是标签。",
+          "answer": "私の担当範囲は FI 領域の要件確認と課題整理です。"
+        },
+        {
+          "ng": "資料をください。",
+          "hint": "说具体资料和记录方式。",
+          "answer": "現行業務資料をご共有いただき、期限を議事録に記載いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒在 Kickoff 中说明担当范围、客户依赖事项和本周行动项。",
+        "modelFrame": "担当范围 -> 本周目标 -> 客户资料/负责人 -> 行动项 -> 议事录记录。"
+      },
+      "checklist": ["是否说明担当范围", "是否说客户依赖事项", "是否说本周行动项", "是否说議事録"]
+    },
+    {
+      "lessonId": "lesson_15",
+      "scenarioLabel": "Explore / 要件定義・業務ヒアリング",
+      "teacherMission": "训练学生在需求访谈中追问现状、频率、例外、影响和期待改善。",
+      "corePattern": {
+        "title": "现状 -> 频率 -> 例外 -> 影响 -> 期待改善",
+        "flow": [
+          "現行業務を確認します",
+          "発生頻度を確認します",
+          "例外条件を確認します",
+          "改善したい点を伺います"
+        ],
+        "teacherNote": "老师要阻止学生只问“要件は何ですか”。真正的访谈是把业务拆开。"
+      },
+      "miniDialogue": {
+        "title": "需求调研追问",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "今の承認処理が少し複雑です。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現行業務では、どのタイミングで承認が発生しますでしょうか。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "月末に多いです。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。発生頻度、例外条件、業務影響を順番に確認させてください。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "要件を教えてください。",
+          "hint": "太大，客户难回答。",
+          "answer": "現行業務では、どのタイミングでこの処理が発生しますでしょうか。"
+        },
+        {
+          "ng": "何が問題ですか。",
+          "hint": "换成影响和期待改善。",
+          "answer": "業務影響と改善したい点を確認させてください。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒完成一次需求访谈追问：现状、频率、影响、期待改善。",
+        "modelFrame": "现状确认 -> 频率 -> 例外 -> 影响 -> 改善目标 -> Fit-Gap 整理。"
+      },
+      "checklist": ["是否避免大而空的问题", "是否问发生频率", "是否问例外条件", "是否问期待改善"]
+    },
+    {
+      "lessonId": "lesson_16",
+      "scenarioLabel": "Realize / Configuration impact check",
+      "teacherMission": "让学生能说明配置变更的影响范围、测试观点和跨模块确认路径。",
+      "corePattern": {
+        "title": "配置对象 -> 影响范围 -> 测试观点 -> 跨模块确认",
+        "flow": [
+          "設定対象を確認します",
+          "影響範囲を整理します",
+          "テスト観点を作成します",
+          "関連モジュールと確認します"
+        ],
+        "teacherNote": "本课不要讲具体配置路径，重点是配置变更沟通。"
+      },
+      "miniDialogue": {
+        "title": "配置变更影响说明",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "この設定を変更すると何に影響しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "対象会社コードと関連プロセスへの影響範囲を確認いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "テストは必要ですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "はい。会計連携と関連モジュールの観点でテストケースを整理いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "設定を変えます。",
+          "hint": "补对象和影响。",
+          "answer": "設定対象と影響範囲を確認したうえで変更いたします。"
+        },
+        {
+          "ng": "テストします。",
+          "hint": "说测试观点。",
+          "answer": "会計連携と関連モジュールの観点でテストケースを整理いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明配置变更的影响范围、测试观点和跨模块确认路径。",
+        "modelFrame": "配置对象 -> 影响流程/模块 -> 测试观点 -> 确认路径 -> 下一步。"
+      },
+      "checklist": ["是否说配置对象", "是否说影响范围", "是否说测试观点", "是否说跨模块确认"]
+    },
+    {
+      "lessonId": "lesson_17",
+      "scenarioLabel": "Build-Test / Basis investigation request",
+      "teacherMission": "训练非 Basis 学生也能明确提出移送、权限、后台作业或环境调查请求。",
+      "corePattern": {
+        "title": "环境 -> 对象 -> 现象 -> 请求事项",
+        "flow": [
+          "対象環境を伝えます",
+          "移送番号やユーザーを伝えます",
+          "発生事象を説明します",
+          "調査依頼を明確にします"
+        ],
+        "teacherNote": "本课重点是向 Basis 说清楚请求，不是学习 Basis 配置。"
+      },
+      "miniDialogue": {
+        "title": "向 Basis 请求调查",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "Basis チームに何を依頼しますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "対象環境、ユーザーID、発生時刻を整理して、権限エラーの調査を依頼いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "移送も関係ありますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "可能性があるため、移送番号と反映状況もあわせて確認いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "Basis に聞きます。",
+          "hint": "要说明问什么。",
+          "answer": "対象環境、ユーザーID、発生時刻を整理して Basis チームへ調査依頼します。"
+        },
+        {
+          "ng": "権限がないです。",
+          "hint": "补对象用户和画面。",
+          "answer": "対象ユーザーと画面を特定したうえで、権限エラーの調査を依頼いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒向 Basis 团队提出环境、权限或移送调查请求。",
+        "modelFrame": "对象环境 -> 用户/移送号 -> 发生现象 -> 影响 -> 请求事项。"
+      },
+      "checklist": ["是否说対象環境", "是否说用户/移送号", "是否说发生时刻", "是否明确调查请求"]
+    },
+    {
+      "lessonId": "lesson_18",
+      "scenarioLabel": "Testing / Defect management",
+      "teacherMission": "让学生按期待结果、实际结果、证迹、再测试条件汇报测试失败。",
+      "corePattern": {
+        "title": "期待结果 -> 实际结果 -> 证迹 -> 再测试",
+        "flow": [
+          "期待結果を説明します",
+          "実際結果を説明します",
+          "エビデンスを共有します",
+          "再テスト条件を確認します"
+        ],
+        "teacherNote": "老师要禁止“出错了”这种模糊表达，必须用测试语言。"
+      },
+      "miniDialogue": {
+        "title": "测试失败汇报",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "テストが失敗した理由を教えてください。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "期待結果は伝票登録完了ですが、実際にはエラーメッセージが表示されました。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "証跡はありますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "はい。スクリーンショットとテストデータを共有し、再テスト条件を確認いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "テストがだめでした。",
+          "hint": "用期待/实际。",
+          "answer": "期待結果は登録完了ですが、実際にはエラーが表示されました。"
+        },
+        {
+          "ng": "もう一回やります。",
+          "hint": "补再测试条件。",
+          "answer": "修正後、同じテストデータと条件で再テストを実施します。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒汇报测试失败：期待结果、实际结果、证迹、再测试条件。",
+        "modelFrame": "测试编号 -> 期待结果 -> 实际结果 -> 证迹 -> 初步影响 -> 再测试条件。"
+      },
+      "checklist": ["是否说期待結果", "是否说実際結果", "是否说エビデンス", "是否说再テスト条件"]
+    },
+    {
+      "lessonId": "lesson_19",
+      "scenarioLabel": "Deploy / 本番移行・稼働判定",
+      "teacherMission": "训练学生上线当天用短句定时汇报进度、风险、对策和下一次更新时间。",
+      "corePattern": {
+        "title": "进度 -> 风险 -> 对策 -> 下次更新时间",
+        "flow": [
+          "現在の進捗は予定通りです",
+          "リスクは一件あります",
+          "暫定対応を実施中です",
+          "次回は 30 分後に更新します"
+        ],
+        "teacherNote": "上线汇报要短、准、稳定。老师不要让学生长篇解释背景。"
+      },
+      "miniDialogue": {
+        "title": "上线 30 分钟汇报",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "現在の移行状況を教えてください。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現在の進捗は予定通りです。データ移行は完了し、確認作業を進めています。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "リスクはありますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "一件確認中の事項があります。影響範囲を確認し、30 分後に更新いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "まだ確認中です。",
+          "hint": "补影响和更新时间。",
+          "answer": "一件確認中の事項があります。影響範囲を確認し、30 分後に更新いたします。"
+        },
+        {
+          "ng": "大丈夫だと思います。",
+          "hint": "不要模糊保证。",
+          "answer": "現時点では予定通りですが、確認結果を次回更新いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 45 秒完成上线当天定时汇报：进度、风险、对策、下次更新时间。",
+        "modelFrame": "当前进度 -> 已完成事项 -> 风险/确认中事项 -> 对策 -> 下次更新时间。"
+      },
+      "checklist": ["是否短句汇报", "是否说进度状态", "是否说风险/对策", "是否给下次更新时间"]
+    },
+    {
+      "lessonId": "lesson_20",
+      "scenarioLabel": "Run / AMS・運用保守",
+      "teacherMission": "让学生在运维障害受付时收集信息、判断影响范围并说明一次切分动作。",
+      "corePattern": {
+        "title": "受付 -> 信息收集 -> 影响切分 -> 一次回答",
+        "flow": [
+          "事象を受付いたします",
+          "発生時刻と対象ユーザーを確認します",
+          "影響範囲を切り分けます",
+          "一次回答を共有します"
+        ],
+        "teacherNote": "老师要训练“问信息”的能力，不能让学生直接开始解释原因。"
+      },
+      "miniDialogue": {
+        "title": "运维障害受付",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "一部ユーザーが伝票登録できません。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "事象を受付いたします。発生時刻、対象ユーザー、エラーメッセージを確認させてください。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "業務影響はあります。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。影響範囲を切り分け、一次回答を共有いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "原因を調べます。",
+          "hint": "先收集必要信息。",
+          "answer": "発生時刻、対象ユーザー、エラーメッセージを確認してから原因調査を進めます。"
+        },
+        {
+          "ng": "障害です。",
+          "hint": "要说明影响范围。",
+          "answer": "業務影響の有無と対象範囲を確認し、障害か課題かを切り分けます。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒完成一次运维障害受付：收集信息、影响范围、一次回答。",
+        "modelFrame": "受付 -> 发生时间/对象用户/错误信息 -> 业务影响 -> 切分动作 -> 一次回答时点。"
+      },
+      "checklist": [
+        "是否问発生時刻",
+        "是否问対象ユーザー",
+        "是否问エラーメッセージ",
+        "是否说一次回答"
+      ]
+    },
+    {
+      "lessonId": "lesson_21",
+      "scenarioLabel": "Office coordination / Attendance handover",
+      "teacherMission": "让学生能处理请假、资料代确认、迟到等办公室场景，同时保持项目交接不断线。",
+      "corePattern": {
+        "title": "情况 -> 影响 -> 代替安排 -> 感谢",
+        "flow": [
+          "本日午後休をいただきます",
+          "会議参加に影響があります",
+          "資料確認をお願いできますでしょうか",
+          "戻り次第確認します"
+        ],
+        "teacherNote": "不要讲成普通请假日语，要补项目影响和交接动作。"
+      },
+      "miniDialogue": {
+        "title": "请假与资料代确认",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "午後の会議には参加できますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "本日午後休をいただくため、会議には参加できません。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "資料確認はどうしますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "事前に確認観点を共有いたします。戻り次第、議事録と決定事項を確認いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "休みます。",
+          "hint": "说明影响和交接。",
+          "answer": "本日午後休をいただくため、会議には参加できません。事前に確認観点を共有いたします。"
+        },
+        {
+          "ng": "あとで見ます。",
+          "hint": "补对象。",
+          "answer": "戻り次第、議事録と決定事項を確認いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 45 秒说明请假、会议影响、资料代确认和回来后的动作。",
+        "modelFrame": "请假事实 -> 会议影响 -> 事前交接 -> 回来后确认 -> 感谢。"
+      },
+      "checklist": ["是否说影响", "是否有交接动作", "是否说戻り次第", "是否礼貌但不啰嗦"]
+    },
+    {
+      "lessonId": "lesson_22",
+      "scenarioLabel": "Meeting minutes / Action item control",
+      "teacherMission": "训练学生在会议纪要中明确决定事项、未决事项、行动项、期限和负责人。",
+      "corePattern": {
+        "title": "决定事项 -> 未决事项 -> 行动项 -> 负责人/期限",
+        "flow": [
+          "決定事項を整理します",
+          "未決事項を分けます",
+          "アクションアイテムを明確にします",
+          "担当者と期限を記載します"
+        ],
+        "teacherNote": "老师要把学生从“写会议记录”提升到“控制行动项”。"
+      },
+      "miniDialogue": {
+        "title": "会议纪要收尾",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "今日の決定事項をまとめてもらえますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "はい。決定事項、未決事項、アクションアイテムに分けて整理いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "担当者も入れてください。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "承知しました。担当者と期限を議事録に記載し、本日中に共有いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "議事録を送ります。",
+          "hint": "说清结构。",
+          "answer": "決定事項、未決事項、アクションアイテムに分けて議事録を共有いたします。"
+        },
+        {
+          "ng": "誰かがやります。",
+          "hint": "必须明确担当者。",
+          "answer": "担当者と期限を明確にして、議事録に記載いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒口头总结会议纪要结构和行动项控制方式。",
+        "modelFrame": "决定事项 -> 未决事项 -> 行动项 -> 负责人 -> 期限 -> 共享时间。"
+      },
+      "checklist": ["是否区分決定/未決", "是否说アクションアイテム", "是否说担当者", "是否说期限"]
+    },
+    {
+      "lessonId": "lesson_23",
+      "scenarioLabel": "Cross-functional issue alignment",
+      "teacherMission": "让学生在 FI/SD 等跨模块问题中整理论点、协调关键人员并形成方向。",
+      "corePattern": {
+        "title": "论点拆分 -> 相关模块 -> 确认会议 -> 方向整理",
+        "flow": [
+          "論点を分けて整理します",
+          "関連モジュールを確認します",
+          "関係者で認識合わせします",
+          "対応方針を整理します"
+        ],
+        "teacherNote": "跨部门协作不是多说客套话，而是把论点和人拉到同一张桌上。"
+      },
+      "miniDialogue": {
+        "title": "FI/SD 跨模块问题",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "請求後の会計連携で差異が出ています。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "FI と SD の論点を分けて整理し、関連担当者で認識合わせを行います。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "どちらの問題ですか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "現時点では断定せず、伝票フローと勘定決定の観点で確認いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "FI の問題です。",
+          "hint": "不要未确认就归因。",
+          "answer": "FI と SD の論点を分けて確認したうえで、対応方針を整理します。"
+        },
+        {
+          "ng": "会議しましょう。",
+          "hint": "说明参会者和论点。",
+          "answer": "関連モジュールの担当者を含めて、論点ベースで認識合わせを行います。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 60 秒说明跨模块问题的论点整理和协调方式。",
+        "modelFrame": "问题现象 -> 相关模块 -> 论点拆分 -> 认知对齐会议 -> 对应方向。"
+      },
+      "checklist": ["是否避免提前归因", "是否拆分论点", "是否说明相关模块", "是否形成对应方向"]
+    },
+    {
+      "lessonId": "lesson_24",
+      "scenarioLabel": "Incident report / RCA・再発防止",
+      "teacherMission": "训练学生在配置错误后说明事实、影响、暂定处理、根本原因和再发防止。",
+      "corePattern": {
+        "title": "事象 -> 影响 -> 暂定处理 -> 根本原因 -> 再发防止",
+        "flow": [
+          "事象を説明します",
+          "影響範囲を報告します",
+          "暫定対応を実施します",
+          "根本原因と再発防止策を整理します"
+        ],
+        "teacherNote": "这是 24 课收束课。老师要让学生像顾问一样负责，但不做无依据道歉。"
+      },
+      "miniDialogue": {
+        "title": "配置错误后 RCA 汇报",
+        "lines": [
+          {
+            "role": "customer",
+            "japanese": "今回の設定ミスについて説明してください。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "事象、影響範囲、暫定対応の順でご報告いたします。",
+            "chinese": ""
+          },
+          {
+            "role": "customer",
+            "japanese": "再発防止はどうしますか。",
+            "chinese": ""
+          },
+          {
+            "role": "consultant",
+            "japanese": "根本原因を整理し、レビュー手順とチェックリストを再発防止策として追加いたします。",
+            "chinese": ""
+          }
+        ]
+      },
+      "rewriteChallenges": [
+        {
+          "ng": "すみません、私のミスです。",
+          "hint": "道歉不等于报告。",
+          "answer": "ご迷惑をおかけしております。事象、影響範囲、暫定対応の順でご報告いたします。"
+        },
+        {
+          "ng": "次は気をつけます。",
+          "hint": "再发防止要制度化。",
+          "answer": "レビュー手順とチェックリストを追加し、同様の設定漏れを防止いたします。"
+        }
+      ],
+      "outputTask": {
+        "prompt": "用 90 秒完成配置错误后的 RCA 汇报：事实、影响、暂定处理、根本原因、再发防止。",
+        "modelFrame": "事象 -> 影响范围 -> 暂定处理 -> 根本原因 -> 再发防止 -> 共享方式。"
+      },
+      "checklist": ["是否按顺序汇报", "是否说暫定対応", "是否说根本原因", "是否有再発防止策"]
+    }
+  ]
+}
