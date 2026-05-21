@@ -1,4 +1,4 @@
-import { desc, eq } from "drizzle-orm";
+import { and, desc, eq, isNull } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
@@ -13,7 +13,7 @@ export async function GET() {
     .select({ recording: recordings, feedback: teacherFeedback })
     .from(recordings)
     .leftJoin(teacherFeedback, eq(teacherFeedback.recordingId, recordings.id))
-    .where(eq(recordings.studentId, session.user.id))
+    .where(and(eq(recordings.studentId, session.user.id), isNull(recordings.deletedAt)))
     .orderBy(desc(recordings.createdAt))
     .limit(200);
 

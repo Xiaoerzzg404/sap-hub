@@ -35,7 +35,7 @@ export async function GET(req: Request) {
   const status = url.searchParams.get("status");
   const hasFeedback = url.searchParams.get("hasFeedback");
 
-  const conditions: SQL[] = [];
+  const conditions: SQL[] = [isNull(recordings.deletedAt)];
   if (session.user.role === "teacher") {
     const studentIds = await getTeacherStudentIds(session.user.id);
     if (studentIds.length === 0) return NextResponse.json({ recordings: [] });

@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
 import { db } from "@/lib/db";
@@ -22,7 +22,25 @@ export async function PATCH(_req: Request, { params }: { params: Promise<{ id: s
       storageKey,
       status: body.status === "ready" ? "ready" : "uploading"
     })
-    .where(and(eq(recordings.id, id), eq(recordings.studentId, session.user.id)))
+    .where(and(eq(recordings.id, id), eq(recordings.studentId, session.user.id), isNull(recordings.deletedAt)))
+    .returning();
+
+  if (!recording) return NextResponse.json({ error: "not found or forbidden" }, { status: 404 });
+  return NextResponse.json({ recording });
+}
+
+export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const session = await auth();
+  if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+
+  const { id } = await params;
+  const [recording] = await db
+    .update(recordings)
+    .set({
+      status: "deleted",
+      deletedAt: new Date()
+    })
+    .where(and(eq(recordings.id, id), eq(recordings.studentId, session.user.id), isNull(recordings.deletedAt)))
     .returning();
 
   if (!recording) return NextResponse.json({ error: "not found or forbidden" }, { status: 404 });

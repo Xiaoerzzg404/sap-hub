@@ -79,6 +79,21 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
     refresh();
   }, [lessonId]);
 
+  async function onDelete(item: RecordingHistoryItem) {
+    if (!window.confirm("确定删除这条录音？30 天内可联系管理员恢复。")) return;
+
+    if (!item.id.startsWith("local-")) {
+      const response = await fetch(`/api/recordings/${item.id}`, { method: "DELETE" });
+      if (!response.ok && response.status !== 404) {
+        setError("删除云端录音失败，请稍后重试。");
+        return;
+      }
+    }
+
+    await deleteRecording(item.id);
+    await refresh();
+  }
+
   return (
     <div className="panel p-4">
       <div className="mb-3 flex items-center justify-between">
@@ -104,10 +119,7 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
               <button
                 type="button"
                 className="btn-secondary"
-                onClick={async () => {
-                  await deleteRecording(item.id);
-                  await refresh();
-                }}
+                onClick={() => void onDelete(item)}
               >
                 <Trash2 className="h-4 w-4" />
                 删除

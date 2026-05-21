@@ -240,6 +240,7 @@ export const recordings = pgTable("recordings", {
   sizeBytes: integer("size_bytes"),
   selfAssessment: jsonb("self_assessment"),
   status: recordingStatusEnum("status").notNull().default("ready"),
+  deletedAt: timestamp("deleted_at", { mode: "date" }),
   createdAt: timestamp("created_at").defaultNow().notNull()
 });
 

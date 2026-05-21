@@ -15,6 +15,13 @@
       "when": 1779238537929,
       "tag": "0001_aberrant_maginty",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1779332135730,
+      "tag": "0002_jittery_spiral",
+      "breakpoints": true
     }
   ]
 }

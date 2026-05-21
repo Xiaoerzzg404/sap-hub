@@ -1,4 +1,4 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, isNull } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { auth } from "@/lib/auth/options";
@@ -70,7 +70,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     })
     .from(recordings)
     .innerJoin(users, eq(users.id, recordings.studentId))
-    .where(eq(recordings.id, recordingId))
+    .where(and(eq(recordings.id, recordingId), isNull(recordings.deletedAt)))
     .limit(1);
 
   if (!recording) return NextResponse.json({ error: "not_found" }, { status: 404 });

@@ -25,6 +25,17 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
     }
   }
 
+  if (pathname.startsWith("/api/cron/")) {
+    const cronSecret = process.env.CRON_SECRET;
+    if (!cronSecret) {
+      return NextResponse.json({ error: "cron secret not configured" }, { status: 503 });
+    }
+    if (req.headers.get("authorization") !== `Bearer ${cronSecret}`) {
+      return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+    }
+    return NextResponse.next();
+  }
+
   if (PUBLIC_PATHS.has(pathname)) return NextResponse.next();
   for (const prefix of PUBLIC_PREFIXES) {
     if (pathname.startsWith(prefix)) return NextResponse.next();
