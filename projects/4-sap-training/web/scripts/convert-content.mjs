@@ -20,27 +20,6 @@ function inferLevel(order) {
 // v4 单课聚焦版素材根（与 sourceRoot 同级的兄弟目录）
 const v4Root = path.resolve(root, "../sap_jp_training_course/output");
 
-const categories = {
-  "会议开场与课堂互动": "meeting",
-  "会议开场": "meeting",
-  "画面共享": "screen-sharing",
-  "需求确认": "requirement-confirmation",
-  "复述理解": "requirement-confirmation",
-  "追问细节": "requirement-confirmation",
-  "系统操作说明": "process-explanation",
-  "配置 / 主数据 / 流程说明": "configuration",
-  "配置说明": "configuration",
-  "测试 / UAT / 问题处理": "testing",
-  "测试说明": "testing",
-  "问题处理": "issue-handling",
-  "权限问题": "issue-handling",
-  "范围确认与下一步推进": "scope-management",
-  "范围确认": "scope-management",
-  "会议纪要": "next-step",
-  "催促与推进": "next-step",
-  "面试项目经验说明": "interview"
-};
-
 const moduleCandidates = ["FI", "CO", "MM", "SD", "PP", "Basis", "ABAP", "Project", "Common", "PMO"];
 const phaseCandidates = ["project preparation", "blueprint", "realization", "testing", "go-live", "hypercare"];
 
@@ -59,7 +38,6 @@ function writeJson(file, value) {
 function buildLessonAssets(lessonId, lessonOrder) {
   // lessonId 形如 "lesson_01"；lessonOrder 1-24
   const numStr = String(lessonOrder).padStart(2, "0");
-  const lessonNum = String(lessonOrder);
   const assets = [];
 
   function tryPush(kind, absPath, title, visibility) {
@@ -281,14 +259,6 @@ function normalizeLessonId(raw) {
   return num ? `lesson_${String(num).padStart(2, "0")}` : raw;
 }
 
-function lessonOrder(lessonId) {
-  return Number(lessonId.match(/\d+/)?.[0] ?? 0);
-}
-
-function placeholderAudio(lessonId, type, index) {
-  return `/audio/${type}/${lessonId}-${type}-${String(index).padStart(3, "0")}.mp3`;
-}
-
 function phraseAudio(phraseId) {
   return `/audio/phrase/${phraseId}.mp3`;
 }
@@ -449,25 +419,6 @@ function inferPhase(text) {
   return phaseCandidates.find((item) => lower.includes(item)) || "project preparation";
 }
 
-function parsePhrasesFromGlobal(markdown) {
-  const rows = parseTable(markdown);
-  return rows.slice(1).map((row, index) => {
-    const lessonId = normalizeLessonId(row[0] ?? "");
-    const categoryLabel = row[1] ?? "";
-    return {
-      id: `${lessonId}-phrase-${String(index + 1).padStart(3, "0")}`,
-      lessonId,
-      category: categories[categoryLabel] ?? "meeting",
-      japanese: row[2] ?? "",
-      chinese: row[3] ?? "",
-      usage: row[4] ?? categoryLabel,
-      replaceableParts: splitParts(row[5] ?? ""),
-      exampleVariations: splitParts(row[5] ?? "").map((part) => `${row[2] ?? ""} / ${part}`),
-      audioSrc: placeholderAudio(lessonId, "phrase", index + 1)
-    };
-  }).filter((item) => item.lessonId && item.japanese);
-}
-
 function parseReviewTerms(markdown) {
   const rows = parseTable(markdown);
   return rows.slice(1).map((row, index) => ({
@@ -481,40 +432,6 @@ function parseReviewTerms(markdown) {
     status: "pending",
     memo: row[4] ?? ""
   })).filter((item) => item.lessonId);
-}
-
-function parseRoleplays(markdown) {
-  const lessonBlocks = markdown.split(/\n(?=##\s+第\s*\d+\s*课)/g).filter((block) => /^##\s+第\s*\d+\s*课/m.test(block));
-  const roleplays = [];
-  for (const block of lessonBlocks) {
-    const lessonMatch = block.match(/^##\s+第\s*(\d{1,2})\s*课[:：]\s*(.+)$/m);
-    if (!lessonMatch) continue;
-    const lessonId = `lesson_${String(Number(lessonMatch[1])).padStart(2, "0")}`;
-    const playBlocks = block.split(/\n(?=###\s+Role Play)/g).filter((part) => /^###\s+Role Play/m.test(part));
-    for (const [index, part] of playBlocks.entries()) {
-      const title = part.match(/^###\s+(.+)$/m)?.[1]?.trim() ?? `Role Play ${index + 1}`;
-      const scenario = part.match(/-\s*背景[:：]\s*(.+)/)?.[1]?.trim() ?? "";
-      const roleA = part.match(/-\s*A[:：]\s*(.+)/)?.[1]?.trim() ?? "SAP 顾问";
-      const roleB = part.match(/-\s*B[:：]\s*(.+)/)?.[1]?.trim() ?? "业务用户";
-      const required = splitParts(part.match(/-\s*必须使用[:：]\s*(.+)/)?.[1] ?? "");
-      const dialogue = part
-        .split(/\r?\n/)
-        .map((line) => line.match(/^(A|B)[:：]\s*(.+)$/))
-        .filter(Boolean)
-        .map((match) => ({ role: match[1], text: match[2].trim() }));
-      roleplays.push({
-        id: `${lessonId}-roleplay-${index + 1}`,
-        lessonId,
-        title,
-        scenario,
-        roleA,
-        roleB,
-        requiredPhrases: required,
-        dialogue
-      });
-    }
-  }
-  return roleplays;
 }
 
 function parseAssignmentTasks(markdown, lessonId, finalOutputTask) {

@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T22:35:44+09:00",
+  "updated_at": "2026-05-21T22:43:52+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -261,9 +261,12 @@
     "../SAP日语培训/output/07_讲师手册/SAP日语培训讲师手册.md",
     "../SAP日语培训/output/08_学生讲义/SAP日语培训学生讲义.md",
     "../SAP日语培训/output/10_质量审查/全课程质量审查报告.md",
-    "../sap_jp_training_course/prompts_v4/batch/sap_project_japanese_content_audit_prompt_20260521.md"
+    "../sap_jp_training_course/prompts_v4/batch/sap_project_japanese_content_audit_prompt_20260521.md",
+    "../logs/site-audit-20260521.md",
+    "../inbox/need-input-site-audit-20260521.md",
+    "../inbox/handoff-site-audit-20260521.md"
   ],
-  "current_round": "SAP Japanese training content audit: project stages, meetings, terminology, and V4 source alignment",
+  "current_round": "sap-jp.training local site audit and lint cleanup",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -309,9 +312,15 @@
     "Phase 5: replaced local-only progress and recording metadata writes with authenticated APIs that isolate rows by session.user.id while keeping localStorage/IndexedDB offline cache.",
     "Phase 5: switched server pages to DB-backed content loading and lazy-loaded lesson/library markdown, reducing all First Load JS pages below 500 KB.",
     "Phase 6: added Cloudflare R2 direct recording uploads, presigned student playback, enrollment-scoped teacher recording review, teacher_feedback scoring, Resend feedback notification, and student /review feedback display.",
-    "Phase 7: added magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent and /privacy, recording soft delete with 0002 migration, cleanup endpoint, CI, Prettier/husky/lint-staged, docs, and _meta schema 1.4.0."
+    "Phase 7: added magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent and /privacy, recording soft delete with 0002 migration, cleanup endpoint, CI, Prettier/husky/lint-staged, docs, and _meta schema 1.4.0.",
+    "Site audit 20260521: ran baseline git status, typecheck, lint, and build for projects/4-sap-training/web.",
+    "Site audit 20260521: started local dev server on 127.0.0.1:3210 and verified logged-out page/API access matrix with Node fetch.",
+    "Site audit 20260521: fixed confirmed lint warnings in recording refresh hooks, teacher recording refresh hooks, lib/db/index.ts, and scripts/convert-content.mjs; lint now has 0 warnings.",
+    "Site audit 20260521: wrote logs/site-audit-20260521.md, need-input-site-audit-20260521.md, and handoff-site-audit-20260521.md."
   ],
-  "blocked": [],
-  "next_action": "Stop and wait for Ryan / Claude to validate Phase 7 handoff before招生 or any later roadmap work.",
-  "notes": "Phase 7 launch-readiness work completed by Codex on branch codex/phase-7-launch: magic-link emails now route through /login/confirm before Auth.js callback, RBAC audit evidence is in logs/phase7-rbac-audit.md, Upstash/Sentry are installed as soft dependencies, /privacy and login consent are live, recordings support soft delete with 30-day cleanup endpoint and Vercel Cron schedule, CI and lint/prettier hooks are configured, and docs/STUDENT_GUIDE.md, docs/TEACHER_GUIDE.md, docs/ADMIN_OPS.md are available. CRON_SECRET, NEXT_PUBLIC_SENTRY_DSN, UPSTASH_REDIS_REST_URL, and UPSTASH_REDIS_REST_TOKEN are present locally; Ryan must confirm the same values exist in Vercel env before relying on production cron/rate-limit/monitoring."
+  "blocked": [
+    "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
+  ],
+  "next_action": "Wait for Ryan / user input in projects/4-sap-training/inbox/need-input-site-audit-20260521.md before running authenticated student/teacher recording and feedback E2E.",
+  "notes": "Site audit 20260521 completed by Codex: logged-out public/protected page matrix and unauthenticated API boundary passed locally on 127.0.0.1:3210; lint warnings were cleaned to 0 warnings; typecheck and build pass. Authenticated student/teacher E2E was not run because test accounts/session permission are required first."
 }

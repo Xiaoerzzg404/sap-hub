@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import type { RecordingAttempt } from "@/types/audio";
 import { deleteRecording, listRecordings, recordingToObjectUrl } from "@/lib/audio-storage";
@@ -28,14 +28,14 @@ const typeLabels: Record<RecordingAttempt["practiceType"], string> = {
   shadowing: "Shadowing",
   "micro-training": "30 秒训练",
   "consultant-output": "60 秒输出",
-  "role-play": "Role Play"
+  "role-play": "Role Play",
 };
 
 export function RecordingHistory({ lessonId }: { lessonId?: string }) {
   const [items, setItems] = useState<RecordingHistoryItem[]>([]);
   const [error, setError] = useState("");
 
-  async function refresh() {
+  const refresh = useCallback(async () => {
     try {
       setError("");
       const localRecordings = await listRecordings();
@@ -59,25 +59,28 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
             fluency: 3,
             naturalness: 3,
             sapAccuracy: 3,
-            consultantLike: 3
+            consultantLike: 3,
           },
           audioGetUrl: item.audioGetUrl,
-          status: item.status
+          status: item.status,
         }));
       }
 
       const serverIds = new Set(serverRecordings.map((item) => item.id));
-      const merged = [...serverRecordings, ...localRecordings.filter((item) => !serverIds.has(item.id))];
+      const merged = [
+        ...serverRecordings,
+        ...localRecordings.filter((item) => !serverIds.has(item.id)),
+      ];
       const scoped = lessonId ? merged.filter((item) => item.lessonId === lessonId) : merged;
       setItems(scoped.sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
     } catch (err) {
       setError(err instanceof Error ? err.message : "读取录音失败。");
     }
-  }
+  }, [lessonId]);
 
   useEffect(() => {
-    refresh();
-  }, [lessonId]);
+    void refresh();
+  }, [refresh]);
 
   async function onDelete(item: RecordingHistoryItem) {
     if (!window.confirm("确定删除这条录音？30 天内可联系管理员恢复。")) return;
@@ -116,11 +119,7 @@ export function RecordingHistory({ lessonId }: { lessonId?: string }) {
                   {new Date(item.createdAt).toLocaleString()} · {item.durationSec}s
                 </p>
               </div>
-              <button
-                type="button"
-                className="btn-secondary"
-                onClick={() => void onDelete(item)}
-              >
+              <button type="button" className="btn-secondary" onClick={() => void onDelete(item)}>
                 <Trash2 className="h-4 w-4" />
                 删除
               </button>

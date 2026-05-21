@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { RefreshCw, Search } from "lucide-react";
 
@@ -20,7 +20,7 @@ const practiceLabels: Record<string, string> = {
   shadowing: "Shadowing",
   "micro-training": "30 秒训练",
   "consultant-output": "60 秒输出",
-  "role-play": "Role Play"
+  "role-play": "Role Play",
 };
 
 export function TeacherRecordingsClient() {
@@ -37,7 +37,7 @@ export function TeacherRecordingsClient() {
     return params.toString();
   }, [filters]);
 
-  async function refresh() {
+  const refresh = useCallback(async () => {
     setLoading(true);
     setError("");
     const response = await fetch(`/api/teacher/recordings${query ? `?${query}` : ""}`);
@@ -49,11 +49,11 @@ export function TeacherRecordingsClient() {
       return;
     }
     setItems(data.recordings ?? []);
-  }
+  }, [query]);
 
   useEffect(() => {
     void refresh();
-  }, [query]);
+  }, [refresh]);
 
   return (
     <div className="page-shell space-y-6">
@@ -69,7 +69,13 @@ export function TeacherRecordingsClient() {
       </div>
 
       <div className="panel grid gap-3 p-4 md:grid-cols-[1fr_1fr_1fr_auto]">
-        <select className="input w-full" value={filters.lessonId} onChange={(event) => setFilters((current) => ({ ...current, lessonId: event.target.value }))}>
+        <select
+          className="input w-full"
+          value={filters.lessonId}
+          onChange={(event) =>
+            setFilters((current) => ({ ...current, lessonId: event.target.value }))
+          }
+        >
           <option value="">全部课次</option>
           {Array.from({ length: 24 }, (_, index) => index + 1).map((number) => {
             const value = `lesson_${String(number).padStart(2, "0")}`;
@@ -83,10 +89,18 @@ export function TeacherRecordingsClient() {
         <input
           className="input w-full"
           value={filters.studentId}
-          onChange={(event) => setFilters((current) => ({ ...current, studentId: event.target.value }))}
+          onChange={(event) =>
+            setFilters((current) => ({ ...current, studentId: event.target.value }))
+          }
           placeholder="studentId"
         />
-        <select className="input w-full" value={filters.hasFeedback} onChange={(event) => setFilters((current) => ({ ...current, hasFeedback: event.target.value }))}>
+        <select
+          className="input w-full"
+          value={filters.hasFeedback}
+          onChange={(event) =>
+            setFilters((current) => ({ ...current, hasFeedback: event.target.value }))
+          }
+        >
           <option value="">全部状态</option>
           <option value="no">待点评</option>
           <option value="yes">已点评</option>
@@ -97,21 +111,40 @@ export function TeacherRecordingsClient() {
         </div>
       </div>
 
-      {error ? <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div> : null}
+      {error ? (
+        <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          {error}
+        </div>
+      ) : null}
       <div className="space-y-3">
         {loading ? <p className="text-sm text-slate-500">加载中...</p> : null}
-        {!loading && items.length === 0 ? <p className="text-sm text-slate-500">暂无录音。</p> : null}
+        {!loading && items.length === 0 ? (
+          <p className="text-sm text-slate-500">暂无录音。</p>
+        ) : null}
         {items.map((recording) => (
-          <Link key={recording.id} href={`/teacher/recordings/${recording.id}`} className="panel block p-4 hover:bg-mist">
+          <Link
+            key={recording.id}
+            href={`/teacher/recordings/${recording.id}`}
+            className="panel block p-4 hover:bg-mist"
+          >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0">
                 <p className="font-semibold text-ink">
-                  {recording.studentName ?? recording.studentEmail ?? "学生"} · {recording.lessonId} · {practiceLabels[recording.practiceType] ?? recording.practiceType}
+                  {recording.studentName ?? recording.studentEmail ?? "学生"} · {recording.lessonId}{" "}
+                  · {practiceLabels[recording.practiceType] ?? recording.practiceType}
                 </p>
                 <p className="mt-1 line-clamp-2 text-sm text-slate-600">{recording.promptText}</p>
               </div>
-              <span className={recording.feedback ? "rounded-md bg-green-50 px-2 py-1 text-xs font-semibold text-green-700" : "rounded-md bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700"}>
-                {recording.feedback ? `已点评 ${recording.feedback.scoreOverall ?? "-"}/5` : "待点评"}
+              <span
+                className={
+                  recording.feedback
+                    ? "rounded-md bg-green-50 px-2 py-1 text-xs font-semibold text-green-700"
+                    : "rounded-md bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700"
+                }
+              >
+                {recording.feedback
+                  ? `已点评 ${recording.feedback.scoreOverall ?? "-"}/5`
+                  : "待点评"}
               </span>
             </div>
             <p className="mt-2 text-xs text-slate-500">
