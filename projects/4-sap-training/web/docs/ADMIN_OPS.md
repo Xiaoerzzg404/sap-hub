@@ -42,12 +42,12 @@ pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql
 
 每月第一周人工检查一次：
 
-| SaaS | 检查位置 | Phase 7 阈值 |
-|---|---|---:|
-| Neon | Dashboard -> Storage | < 0.5 GB |
-| Cloudflare R2 | R2 -> `sap-jp-recordings` -> Metrics | < 10 GB |
-| Vercel | Project -> Usage | < 100 GB bandwidth / month |
-| Resend | Dashboard -> Emails | < 100 emails / month |
+| SaaS          | 检查位置                             |               Phase 7 阈值 |
+| ------------- | ------------------------------------ | -------------------------: |
+| Neon          | Dashboard -> Storage                 |                   < 0.5 GB |
+| Cloudflare R2 | R2 -> `sap-jp-recordings` -> Metrics |                    < 10 GB |
+| Vercel        | Project -> Usage                     | < 100 GB bandwidth / month |
+| Resend        | Dashboard -> Emails                  |       < 100 emails / month |
 
 任一指标超过 80% 阈值时，先记录截图和用量，再升级对应 SaaS plan。
 
@@ -84,3 +84,119 @@ UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON
 ## Incident Notes
 
 不要在 issue、日志、截图、handoff 里写出完整 `DATABASE_URL`、R2 key secret、Resend key、Upstash token、Sentry auth token 或 `CRON_SECRET`。
+
+## Promote User Role
+
+讲师和 admin 权限只能通过 SQL 手动提升。不要实现前台自助提升接口。
+
+查看用户：
+
+```sql
+select id, email, role, created_at
+from users
+order by created_at desc
+limit 20;
+```
+
+提升为讲师：
+
+```sql
+update users
+set role = 'teacher', updated_at = now()
+where email = 'teacher@example.com';
+```
+
+提升为 admin：
+
+```sql
+update users
+set role = 'admin', updated_at = now()
+where email = 'ryan@example.com';
+```
+
+降级为学生：
+
+```sql
+update users
+set role = 'student', updated_at = now()
+where email = 'teacher@example.com';
+```
+
+## Class Enrollment Checks
+
+讲师只能看自己班级 active enrollment 的学生。
+
+排查讲师看不到学生：
+
+```sql
+select c.id as class_id, c.name, c.teacher_id, e.student_id, e.status
+from classes c
+join enrollments e on e.class_id = c.id
+where c.teacher_id = '<teacher-user-id>'
+order by c.created_at desc;
+```
+
+如果 enrollment 不是 `active`，讲师列表不会显示该学生。
+
+## Sentry
+
+Phase 7 已安装 `@sentry/nextjs`，但当前没有 `NEXT_PUBLIC_SENTRY_DSN`，所以不会上报。
+
+启用步骤：
+
+1. 在 Sentry 新建 Next.js project。
+2. 复制 DSN。
+3. 在 Vercel Project Settings -> Environment Variables 增加 `NEXT_PUBLIC_SENTRY_DSN`。
+4. 重新部署。
+5. 打开 Sentry Issues，确认有 release 或 runtime event。
+
+不要把 Sentry auth token 写入 git。当前配置没有上传 source map 的强需求。
+
+## Rate Limit
+
+Phase 7 已安装 Upstash soft dependency。当前没有 Upstash env，所以 rate limit no-op。
+
+启用步骤：
+
+1. 在 Upstash 创建 Redis REST database。
+2. 在 Vercel env 增加 `UPSTASH_REDIS_REST_URL`。
+3. 在 Vercel env 增加 `UPSTASH_REDIS_REST_TOKEN`。
+4. 重新部署。
+
+默认配额：
+
+| Flow                  | Identifier      |       Limit |
+| --------------------- | --------------- | ----------: |
+| Login                 | IP              |  5 / minute |
+| Recording upload sign | user id         | 10 / minute |
+| Teacher feedback      | teacher user id | 30 / minute |
+| General helper        | user id         |  5 / second |
+
+临时调整位置：`lib/rate-limit.ts`。
+
+## Backup Runbook
+
+每周备份：
+
+1. 在本地 shell 设置 `DATABASE_URL`。
+2. 执行 `pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql`。
+3. 确认文件大小非 0。
+4. 加密保存到私有位置。
+5. 不提交到 git。
+
+恢复前必须先在 inbox 写提案并得到 Ryan 明确确认。恢复数据库属于破坏性操作。
+
+## User Deletion Request
+
+用户要求注销账号时：
+
+1. 记录收到时间和登录邮箱。
+2. 用 SQL 查 user id。
+3. 导出必要审计信息。
+4. 删除或匿名化该用户的 recordings、progress_events、favorites、assignment_submissions、sessions。
+5. 删除 R2 中 `audio/<user-id>/` 前缀下对象。
+6. 最后删除或匿名化 users row。
+
+处理时限：14 天内。
+
+不要通过聊天窗口索要用户密码。magic link 平台不需要密码。
