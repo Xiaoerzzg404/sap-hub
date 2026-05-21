@@ -36,14 +36,16 @@ Stable lesson ids such as `lesson_01` should survive content rewrites. A rewrite
 Do not edit production directly. The safe path is:
 
 1. Create or use a local branch in `sap-hub`.
-2. Revise course Markdown, page labels, or feature code locally.
-3. Run content conversion if content changed: `npm run convert:content`.
-4. If DB seed data changed, run the seed/migration flow against the intended local or staging DB first.
-5. Run `npm run typecheck`, `npm run lint`, and `npm run build` from `projects/4-sap-training/web`.
-6. Browser-smoke the changed pages locally.
-7. Commit with the agent message format required by `AGENTS.md`.
-8. Deploy to Vercel only after local verification.
-9. After deploy, check public pages, login, Sentry, and the affected learner/teacher flow.
+2. Run `npm run ledger:snapshot -- --label before-<task>` from `projects/4-sap-training/web`.
+3. Revise course Markdown, page labels, or feature code locally.
+4. Run content conversion if content changed: `npm run convert:content`.
+5. If DB seed data changed, run the seed/migration flow against the intended local or staging DB first.
+6. Run `npm run ledger:check`, `npm run typecheck`, `npm run lint`, and `npm run build` from `projects/4-sap-training/web`.
+7. Browser-smoke the changed pages locally.
+8. Run `npm run ledger:snapshot -- --label after-<task>`, `npm run ledger:diff -- --write`, and `npm run ledger:rebuild-plan`.
+9. Commit with the agent message format required by `AGENTS.md`.
+10. Deploy to Vercel only after local verification.
+11. After deploy, check public pages, login, Sentry, and the affected learner/teacher flow.
 
 This applies to page labels, navigation, course text, audio paths, TTS assets, recording flows, privacy text, and teacher feedback UI.
 
@@ -56,6 +58,10 @@ The current site has `_meta.schemaVersion = 1.4.0`. Future revisions should add 
 - `migrationNotes`: what changed for students who already started the course.
 
 Recommended rule: never invalidate existing progress automatically. If a lesson is heavily rewritten, show the student that a new revision exists and let the teacher decide whether the class should redo it.
+
+## Site Ledger
+
+Use `docs/SITE_CHANGE_LEDGER.md` and `ops/site-ledger/` as the local history ledger for sap-jp.training changes. The ledger records route maps, content hashes, data counts, package scripts, Git dirty state, and rebuild instructions in JSON/Markdown so both the user and AI tools can identify what changed and how to recover the site.
 
 ## Near-Term Architecture Decisions
 

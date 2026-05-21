@@ -60,6 +60,7 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
 export const config = {
   matcher: [
     "/api/auth/signin/:path*",
+    "/me/:path*",
     "/dashboard/:path*",
     "/courses/:path*",
     "/speaking/:path*",
