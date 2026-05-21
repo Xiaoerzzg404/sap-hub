@@ -265,6 +265,13 @@ export function RecordingPanel({
 
   return (
     <div className="space-y-3 rounded-lg border border-line bg-white p-4">
+      <p className="rounded-md bg-amber-50 p-2 text-xs text-amber-800">
+        注意：你的录音会上传到服务器供讲师反馈。查看{" "}
+        <a href="/privacy" className="underline">
+          隐私政策
+        </a>
+        。
+      </p>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-ink">学生录音</p>
