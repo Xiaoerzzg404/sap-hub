@@ -17,7 +17,10 @@ export function DashboardClient({ lessons }: { lessons: Lesson[] }) {
 
   const todayLesson = useMemo(() => {
     if (!progress) return null;
-    return lessons.find((lesson) => !progress.completedLessons.includes(lesson.id)) ?? lessons[lessons.length - 1];
+    return (
+      lessons.find((lesson) => !progress.completedLessons.includes(lesson.id)) ??
+      lessons[lessons.length - 1]
+    );
   }, [lessons, progress]);
 
   if (!progress || !todayLesson) {
@@ -76,13 +79,18 @@ export function DashboardClient({ lessons }: { lessons: Lesson[] }) {
             <Metric
               label="录音作业"
               value={`${
-                todayLesson.assignments.filter((item) => item.type === "recording" || item.type === "consultant-output").length
+                todayLesson.assignments.filter(
+                  (item) => item.type === "recording" || item.type === "consultant-output"
+                ).length
               } 个`}
             />
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link className="btn-primary" href={`/courses/lessons/${todayLesson.id}`}>
               进入第 {todayLesson.order} 课
+            </Link>
+            <Link className="btn-secondary" href="/me">
+              我的学习
             </Link>
             <Link className="btn-secondary" href="/speaking/shadowing">
               做 Shadowing
@@ -96,14 +104,22 @@ export function DashboardClient({ lessons }: { lessons: Lesson[] }) {
             <p>已完成跟读：{progress.completedShadowing.length}</p>
             <p>已完成录音：{progress.completedRecordings.length}</p>
             <p>收藏难句：{progress.favoriteShadowing.length}</p>
-            <p>最近学习：{daysAgo === null ? "暂无" : daysAgo === 0 ? "今天" : `${daysAgo} 天前`}</p>
+            <p>
+              最近学习：{daysAgo === null ? "暂无" : daysAgo === 0 ? "今天" : `${daysAgo} 天前`}
+            </p>
           </div>
         </div>
       </section>
       <section className="grid gap-4 lg:grid-cols-3">
-        <Metric label="已完成课次" value={`${progress.completedLessons.length} / ${lessons.length}`} />
+        <Metric
+          label="已完成课次"
+          value={`${progress.completedLessons.length} / ${lessons.length}`}
+        />
         <Metric label="已完成录音" value={`${progress.completedRecordings.length}`} />
-        <Metric label="最近学习" value={daysAgo === null ? "暂无" : daysAgo === 0 ? "今天" : `${daysAgo} 天前`} />
+        <Metric
+          label="最近学习"
+          value={daysAgo === null ? "暂无" : daysAgo === 0 ? "今天" : `${daysAgo} 天前`}
+        />
       </section>
     </div>
   );

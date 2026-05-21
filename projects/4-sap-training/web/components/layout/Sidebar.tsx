@@ -11,6 +11,7 @@ import {
   Repeat2,
   ScrollText,
   Sparkles,
+  UserRound,
   Users,
 } from "lucide-react";
 import tracks from "@/data/tracks.json";
@@ -19,6 +20,7 @@ import type { Track } from "@/types/track";
 const navItems = [
   { href: "/", label: "首页", icon: Home },
   { href: "/dashboard", label: "学习面板", icon: Gauge },
+  { href: "/me", label: "我的学习", icon: UserRound },
   { href: "/courses", label: "24 课课程", icon: BookOpen },
   { href: "/speaking/self-training", label: "日语自训", icon: Sparkles },
   { href: "/speaking/shadowing", label: "Shadowing", icon: Headphones },

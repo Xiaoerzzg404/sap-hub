@@ -1,7 +1,7 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-21T12:00:00+09:00
+- updated_at: 2026-05-21T23:12:00+09:00
 - scope: Phase 7 launch-readiness operations
 
 ## R2 Lifecycle
@@ -85,6 +85,20 @@ UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON
 
 不要在 issue、日志、截图、handoff 里写出完整 `DATABASE_URL`、R2 key secret、Resend key、Upstash token、Sentry auth token 或 `CRON_SECRET`。
 
+## Local Revision And Deploy
+
+页面、label、课程内容、TTS 音频、反馈功能和老师端功能都先在本地改订，验证后再部署到 Vercel。
+
+执行顺序以 `docs/SITE_ARCHITECTURE.md` 为准：
+
+1. 本地分支修改。
+2. 必要时转换课程数据或生成 TTS。
+3. 本地 typecheck/lint/build。
+4. 本地浏览器检查改动页面。
+5. commit。
+6. 部署。
+7. 上线后检查 Sentry、登录、学生页、老师反馈流。
+
 ## Promote User Role
 
 讲师和 admin 权限只能通过 SQL 手动提升。不要实现前台自助提升接口。
@@ -141,6 +155,8 @@ order by c.created_at desc;
 ## Sentry
 
 Phase 7 已安装 `@sentry/nextjs`，且本地 `.env.local` 已存在 `NEXT_PUBLIC_SENTRY_DSN`。上线前必须确认 Vercel env 同步。
+
+Runtime 初始化由 `sentry.server.config.ts`、`sentry.edge.config.ts`、`sentry.client.config.ts` 读取 `NEXT_PUBLIC_SENTRY_DSN` 完成。`withSentryConfig` 构建插件默认关闭，只在明确设置 `SENTRY_BUILD_PLUGIN_ENABLED=true` 时启用；否则本地/生产 build 不应因为 DSN 存在而改变 Next chunk 输出。
 
 启用步骤：
 

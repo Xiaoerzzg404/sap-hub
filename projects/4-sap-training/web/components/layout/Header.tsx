@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mic2, PlayCircle } from "lucide-react";
+import { Mic2, PlayCircle, UserRound } from "lucide-react";
 import { MobileNav } from "./MobileNav";
 
 export function Header() {
@@ -18,10 +18,16 @@ export function Header() {
             </div>
           </Link>
         </div>
-        <Link href="/speaking/self-training" className="btn-primary">
-          <PlayCircle className="h-4 w-4" aria-hidden="true" />
-          <span className="hidden sm:inline">开始自训</span>
-        </Link>
+        <div className="flex shrink-0 items-center gap-2">
+          <Link href="/me" className="btn-secondary">
+            <UserRound className="h-4 w-4" aria-hidden="true" />
+            <span className="hidden sm:inline">我的学习</span>
+          </Link>
+          <Link href="/speaking/self-training" className="btn-primary">
+            <PlayCircle className="h-4 w-4" aria-hidden="true" />
+            <span className="hidden sm:inline">开始自训</span>
+          </Link>
+        </div>
       </div>
     </header>
   );

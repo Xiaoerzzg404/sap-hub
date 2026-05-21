@@ -9,6 +9,7 @@ import type { Track } from "@/types/track";
 const navItems = [
   { href: "/", label: "首页" },
   { href: "/dashboard", label: "学习面板" },
+  { href: "/me", label: "我的学习" },
   { href: "/courses", label: "24 课课程" },
   { href: "/speaking/self-training", label: "日语自训" },
   { href: "/speaking/shadowing", label: "Shadowing" },

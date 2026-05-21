@@ -2,12 +2,14 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
 };
 
-export default process.env.NEXT_PUBLIC_SENTRY_DSN
+const sentryBuildPluginEnabled = process.env.SENTRY_BUILD_PLUGIN_ENABLED === "true";
+
+export default sentryBuildPluginEnabled
   ? withSentryConfig(nextConfig, {
       silent: true,
-      disableLogger: true
+      disableLogger: true,
     })
   : nextConfig;

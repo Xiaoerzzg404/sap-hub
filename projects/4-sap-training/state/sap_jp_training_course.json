@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T23:08:03+09:00",
+  "updated_at": "2026-05-21T23:28:00+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -275,9 +275,15 @@
     "../web/components/pages/JapaneseSelfTrainingClient.tsx",
     "../web/components/lesson/JapaneseCoachPanel.tsx",
     "../web/app/courses/lessons/[lessonId]/page.tsx",
-    "../inbox/handoff-student-japanese-self-training-20260521.md"
+    "../web/app/me/page.tsx",
+    "../web/components/pages/MyLearningClient.tsx",
+    "../web/components/notes/LessonNotesPanel.tsx",
+    "../web/lib/lesson-notes-storage.ts",
+    "../web/docs/SITE_ARCHITECTURE.md",
+    "../inbox/handoff-student-japanese-self-training-20260521.md",
+    "../inbox/handoff-student-learning-home-20260521.md"
   ],
-  "current_round": "Student-facing Japanese coach panels and self-training workspace for all 24 SAP project Japanese lessons",
+  "current_round": "Student learning home and sap-jp.training revision/deploy architecture",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -337,11 +343,18 @@
     "Added local self-training lesson notes so students can keep per-lesson weak expressions, teacher reminders, and module replacement sentences in the browser.",
     "Updated header, sidebar, mobile navigation, and /speaking hub so students can enter the Japanese self-training flow directly.",
     "Kept the self-training route lightweight by loading lesson metadata with getAllLessons instead of serializing full lesson content, preventing large payload/build instability.",
-    "Verified student Japanese upgrade with typecheck, lint, CI-like build, browser redirect smoke, and cookie-scoped local render smoke for lesson_01 plus /speaking/self-training including local notes."
+    "Verified student Japanese upgrade with typecheck, lint, CI-like build, browser redirect smoke, and cookie-scoped local render smoke for lesson_01 plus /speaking/self-training including local notes.",
+    "Added /me as the student learning home for current lesson, five-step position, 24-lesson progress, notes, recording count, teacher feedback count, feedback snippets, and recording history.",
+    "Added a reusable lesson notes storage helper and LessonNotesPanel for per-lesson browser-local notes.",
+    "Updated header, sidebar, mobile navigation, and dashboard so students can reach /me directly.",
+    "Added docs/SITE_ARCHITECTURE.md to define product architecture, content/data boundaries, local revision workflow, content versioning, and local-before-deploy discipline.",
+    "Updated STUDENT_GUIDE.md, ADMIN_OPS.md, and data/_meta.json for /me and the revision/deploy workflow.",
+    "Changed next.config.ts so Sentry runtime DSN does not automatically enable the Sentry build plugin; withSentryConfig now requires SENTRY_BUILD_PLUGIN_ENABLED=true.",
+    "Recorded the user's short/mid/long sap-jp.training roadmap in the memory extension notes."
   ],
   "blocked": [
     "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
   ],
-  "next_action": "Review /speaking/self-training and one lesson page as an authenticated student, then run a live 30-60 second recording drill to tune the NG rewrite and output prompts.",
-  "notes": "2026-05-21T23:08:03+09:00 student-facing Japanese upgrade by Codex: each lesson page now exposes a Japanese Coach panel for lesson mission/core flow/global grammar and routine anchors/mini dialogue/output frame; /speaking/self-training gives students four practice modes (句型拆解, NG 改写, 对话补全, 60 秒输出), local per-lesson notes, and recording hooks. The new self-training page uses lightweight lesson metadata to avoid embedding full lesson content. Validation: npm run typecheck PASS, npm run lint PASS, CI-like npm run build PASS after clearing stale .next, browser redirect smoke PASS, cookie-scoped local render smoke PASS for lesson_01 and /speaking/self-training including notes. Existing authenticated E2E remains blocked without test accounts."
+  "next_action": "Review /me with one authenticated student account, then decide whether beta notes should remain browser-local or move to DB sync before inviting the first 5-10 beta students.",
+  "notes": "2026-05-21T23:28:00+09:00 student learning home by Codex: /me now gives students one place for current lesson, five-step position, 24-lesson progress, local lesson notes, recordings, teacher feedback snippets, and recording history. Added docs/SITE_ARCHITECTURE.md to make local revision -> local verification -> deploy the operating rule for content, labels, TTS, pages, and features. Sentry runtime remains DSN-driven, but withSentryConfig is gated behind SENTRY_BUILD_PLUGIN_ENABLED=true to avoid DSN-triggered build chunk path failures. Validation: npm run typecheck PASS, npm run lint PASS, npm run build PASS, browser /me smoke PASS, note save/clear PASS. Existing authenticated E2E remains blocked without test accounts."
 }
