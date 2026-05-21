@@ -49,3 +49,13 @@
 - routes: 40
 - health: warning:working_tree_dirty
 - delta: +0 / -0 / changed 4
+
+## 2026-05-22T08:23:31+09:00 · clean-public-sync-restore-anchor
+
+- commit: 132ab88
+- branch: codex/sap-jp-content-audit-20260521
+- restore_safe: true
+- files: 796
+- routes: 40
+- health: info:ledger_check_passed
+- delta: +0 / -0 / changed 3

@@ -1,11 +1,11 @@
 # sap-jp.training 本地重建计划
 
 - updated_by: site-ledger
-- updated_at: 2026-05-22T08:19:44+09:00
-- source_snapshot: 2026-05-21T23:19:39.882Z
+- updated_at: 2026-05-22T08:23:37+09:00
+- source_snapshot: 2026-05-21T23:23:31.453Z
 - source_branch: codex/sap-jp-content-audit-20260521
-- source_commit: 7aafb7431a474936a8870616f5c28073fc2edc32
-- restore_safe: false
+- source_commit: 132ab887d97342c4ef228349735a70dcbe11253a
+- restore_safe: true
 
 ## 恢复原则
 
@@ -18,7 +18,7 @@
 
 ```bash
 git checkout codex/sap-jp-content-audit-20260521
-git checkout 7aafb7431a474936a8870616f5c28073fc2edc32
+git checkout 132ab887d97342c4ef228349735a70dcbe11253a
 ```
 
 3. 安装 web 依赖：
@@ -74,7 +74,7 @@ npm run dev
 
 ## 快照健康状态
 
-- WARNING working_tree_dirty: 工作区有 19 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
+- INFO ledger_check_passed: 未发现 ledger 健康错误或警告。
 
 ## 快照时的数据数量
 
