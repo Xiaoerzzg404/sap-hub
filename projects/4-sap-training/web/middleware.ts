@@ -45,7 +45,7 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
     if (pathname.startsWith("/api/")) {
       return new NextResponse(JSON.stringify({ error: "unauthorized" }), {
         status: 401,
-        headers: { "content-type": "application/json" }
+        headers: { "content-type": "application/json" },
       });
     }
     const url = req.nextUrl.clone();
@@ -59,6 +59,7 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
 
 export const config = {
   matcher: [
+    "/api/auth/signin/:path*",
     "/dashboard/:path*",
     "/courses/:path*",
     "/speaking/:path*",
@@ -69,6 +70,6 @@ export const config = {
     "/assignments/:path*",
     "/review/:path*",
     "/teacher/:path*",
-    "/api/((?!auth/).*)"
-  ]
+    "/api/((?!auth/).*)",
+  ],
 };
