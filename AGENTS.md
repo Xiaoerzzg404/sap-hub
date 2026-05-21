@@ -32,6 +32,9 @@ AI/agent 的共同真相源。
 ## 协作纪律
 - 动手前：读 AGENTS.md → 读目标 Project 的 _instructions.md → 读其 state/ 现状
   → 看 inbox/ 是否有未处理交接。
+- 若任务涉及 Project 4 / SAP 日语培训 / sap-jp.training 网站，必须在目标 Project 的
+  _instructions.md 前先读 `projects/4-sap-training/AGENT_GUARDRAILS.md`，其规则
+  对所有 AI 工具和所有身份生效。
 - 动手后：更新 state/ → git commit → 在 inbox/ 留交接（见 inbox 规范）。
 - 不确定就停：路径/凭据/战略不明时，不要猜，在 inbox/ 写 need-input-<日期>.md。
 - 任何破坏性操作（删除、覆盖、改权限、对外发布、付款）必须先在 inbox/ 提案，
