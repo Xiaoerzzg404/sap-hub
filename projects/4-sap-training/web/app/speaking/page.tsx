@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { requireRoles } from "@/lib/auth/guards";
 
 const links = [
   ["/speaking/self-training", "日语自训工作台"],
@@ -9,7 +10,9 @@ const links = [
   ["/speaking/consultant-output", "60 秒顾问输出"],
 ];
 
-export default function SpeakingPage() {
+export default async function SpeakingPage() {
+  await requireRoles(["student"], "/speaking");
+
   return (
     <div className="page-shell space-y-6">
       <div>

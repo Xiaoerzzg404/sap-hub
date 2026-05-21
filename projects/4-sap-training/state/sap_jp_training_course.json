@@ -286,9 +286,18 @@
     "../web/middleware.ts",
     "../inbox/handoff-student-japanese-self-training-20260521.md",
     "../inbox/handoff-student-learning-home-20260521.md",
-    "../inbox/handoff-admin-ops-dashboard-20260521.md"
+    "../inbox/handoff-admin-ops-dashboard-20260521.md",
+    "../web/app/login/LoginClient.tsx",
+    "../web/app/api/auth/register/route.ts",
+    "../web/lib/auth/identity.ts",
+    "../web/lib/auth/password.ts",
+    "../web/lib/auth/roles.ts",
+    "../web/lib/auth/guards.ts",
+    "../web/types/auth.ts",
+    "../web/lib/db/migrations/0003_auth_credentials_multi_role.sql",
+    "../inbox/handoff-auth-credentials-roles-20260522.md"
   ],
-  "current_round": "Admin operations dashboard for sap-jp.training public launch management",
+  "current_round": "Credentials login and multi-role access control for sap-jp.training",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -357,11 +366,13 @@
     "Changed next.config.ts so Sentry runtime DSN does not automatically enable the Sentry build plugin; withSentryConfig now requires SENTRY_BUILD_PLUGIN_ENABLED=true.",
     "Recorded the user's short/mid/long sap-jp.training roadmap in the memory extension notes.",
     "Added /admin as an admin-only operations dashboard with internal DB statistics, external console quick links, optional GitHub Actions and Vercel deployment status readers, environment presence checks, and local revision/deploy flow guidance.",
-    "Updated navigation, middleware protection, and ADMIN_OPS.md for the admin monitoring page."
+    "Updated navigation, middleware protection, and ADMIN_OPS.md for the admin monitoring page.",
+    "Added credentials registration/login, email-or-username sign-in, logged-out content wall, multi-role student/teacher/admin RBAC, and owner-role bootstrap for zzg404@gmail.com."
   ],
   "blocked": [
-    "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
+    "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed.",
+    "Credentials login requires applying web/lib/db/migrations/0003_auth_credentials_multi_role.sql to the intended Neon database before production password registration/login is used."
   ],
-  "next_action": "Review /admin with one authenticated admin account, then decide whether to add read-only API tokens for GitHub Actions and Vercel deployment status in Vercel env.",
-  "notes": "2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and gives Ryan one place for internal Neon-backed counts, GitHub/Vercel/Cloudflare/Neon/Sentry/Resend/Upstash/Google quick links, optional GitHub Actions and Vercel deployment status readers, env presence checks without secret values, and the local revision -> validation -> commit -> deploy operating flow. Existing authenticated E2E remains blocked without test accounts."
+  "next_action": "Apply the 0003 credentials/multi-role migration to the intended DB, deploy auth changes, and smoke-test zzg404@gmail.com role routing.",
+  "notes": "2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and gives Ryan one place for internal Neon-backed counts, GitHub/Vercel/Cloudflare/Neon/Sentry/Resend/Upstash/Google quick links, optional GitHub Actions and Vercel deployment status readers, env presence checks without secret values, and the local revision -> validation -> commit -> deploy operating flow. Existing authenticated E2E remains blocked without test accounts. 2026-05-22T00:50:00+09:00 credentials auth by Codex: added password registration/login, email-or-username sign-in, user_roles multi-role RBAC, logged-out content wall, owner bootstrap for zzg404@gmail.com, docs, migration 0003, and handoff-auth-credentials-roles-20260522.md. Local typecheck, lint, build, and production unauthenticated smoke passed; DB migration and deploy were not run."
 }

@@ -1,72 +1,128 @@
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { or, sql } from "drizzle-orm";
 import NextAuth from "next-auth";
-import ResendProvider from "next-auth/providers/resend";
+import CredentialsProvider from "next-auth/providers/credentials";
+import { normalizeLoginIdentifier } from "@/lib/auth/identity";
+import { verifyPassword } from "@/lib/auth/password";
+import { getUserRoles } from "@/lib/auth/roles";
 import { db } from "@/lib/db";
 import * as schema from "@/lib/db/schema";
+import { normalizeRoles, primaryRoleFromRoles } from "@/types/auth";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   adapter: DrizzleAdapter(db, {
     usersTable: schema.users,
     accountsTable: schema.accounts,
     sessionsTable: schema.sessions,
-    verificationTokensTable: schema.verificationTokens
+    verificationTokensTable: schema.verificationTokens,
   }),
   providers: [
-    ResendProvider({
-      id: "email",
-      apiKey: process.env.RESEND_API_KEY,
-      from: process.env.AUTH_EMAIL_FROM ?? "no-reply@sap-jp.local",
-      maxAge: 15 * 60,
-      sendVerificationRequest: async ({ identifier, url }) => {
-        const authUrl = new URL(url);
-        const confirmUrl = new URL("/login/confirm", authUrl.origin);
-        const token = authUrl.searchParams.get("token");
-        const email = authUrl.searchParams.get("email") ?? identifier;
-        const callbackUrl = authUrl.searchParams.get("callbackUrl") ?? "/dashboard";
+    CredentialsProvider({
+      id: "credentials",
+      name: "Password",
+      credentials: {
+        identifier: { label: "邮箱或用户名", type: "text" },
+        password: { label: "密码", type: "password" },
+      },
+      authorize: async (credentials) => {
+        const identifier = normalizeLoginIdentifier(credentials?.identifier);
+        const password = typeof credentials?.password === "string" ? credentials.password : "";
+        if (!identifier || !password) return null;
 
-        if (token) confirmUrl.searchParams.set("token", token);
-        confirmUrl.searchParams.set("email", email);
-        confirmUrl.searchParams.set("callbackUrl", callbackUrl);
-
-        const response = await fetch("https://api.resend.com/emails", {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            from: process.env.AUTH_EMAIL_FROM ?? "no-reply@sap-jp.local",
-            to: identifier,
-            subject: "SAP 日语口语训练平台 · 登录链接",
-            html: `
-            <p>你好，</p>
-            <p>点击下方链接登录 SAP 日语口语训练平台（15 分钟内有效）：</p>
-            <p><a href="${confirmUrl.toString()}" style="display:inline-block;padding:12px 24px;background:#0f6fbd;color:#fff;text-decoration:none;border-radius:4px">点击登录</a></p>
-            <p style="color:#666;font-size:13px">如果按钮无法点击，请复制以下链接到浏览器：<br>${confirmUrl.toString()}</p>
-            <p style="color:#666;font-size:13px">这一步会先打开确认页，防止邮箱安全扫描误消耗登录链接。</p>
-            <p>如果你没有请求过此邮件，请直接忽略。</p>
-            <p>-- SAP 日语口语训练平台</p>
-          `
+        const [user] = await db
+          .select({
+            id: schema.users.id,
+            email: schema.users.email,
+            username: schema.users.username,
+            name: schema.users.name,
+            image: schema.users.image,
+            role: schema.users.role,
+            passwordHash: schema.users.passwordHash,
           })
-        });
-        if (!response.ok) {
-          throw new Error(`Resend email failed with status ${response.status}`);
-        }
-      }
-    })
+          .from(schema.users)
+          .where(
+            or(
+              sql`lower(${schema.users.email}) = ${identifier}`,
+              sql`lower(${schema.users.username}) = ${identifier}`
+            )
+          )
+          .limit(1);
+
+        if (!user) return null;
+        const ok = await verifyPassword(password, user.passwordHash);
+        if (!ok) return null;
+
+        const roles = await getUserRoles(user.id, user.role);
+        return {
+          id: user.id,
+          email: user.email,
+          username: user.username,
+          name: user.name,
+          image: user.image,
+          role: primaryRoleFromRoles(roles),
+          roles,
+        };
+      },
+    }),
   ],
   callbacks: {
-    session: async ({ session, user }) => {
+    jwt: async ({ token, user }) => {
+      if (user) {
+        const roles = normalizeRoles(user.roles ?? user.role ?? "student");
+        token.id = user.id;
+        token.role = primaryRoleFromRoles(roles);
+        token.roles = roles;
+        token.username = user.username ?? null;
+        return token;
+      }
+
+      const userId = typeof token.id === "string" ? token.id : token.sub;
+      if (!userId) return token;
+
+      try {
+        const [freshUser] = await db
+          .select({
+            id: schema.users.id,
+            email: schema.users.email,
+            username: schema.users.username,
+            name: schema.users.name,
+            image: schema.users.image,
+            role: schema.users.role,
+          })
+          .from(schema.users)
+          .where(sql`${schema.users.id} = ${userId}`)
+          .limit(1);
+
+        if (freshUser) {
+          const roles = await getUserRoles(freshUser.id, freshUser.role);
+          token.id = freshUser.id;
+          token.email = freshUser.email;
+          token.name = freshUser.name;
+          token.picture = freshUser.image;
+          token.username = freshUser.username;
+          token.role = primaryRoleFromRoles(roles);
+          token.roles = roles;
+        }
+      } catch {
+        // Keep the previous token claims if the DB is temporarily unavailable.
+      }
+
+      return token;
+    },
+    session: async ({ session, token }) => {
       if (session.user) {
-        session.user.id = user.id;
-        session.user.role = user.role ?? "student";
+        const roles = normalizeRoles(token.roles ?? token.role ?? "student");
+        session.user.id = String(token.id ?? token.sub ?? "");
+        session.user.role = primaryRoleFromRoles(roles);
+        session.user.roles = roles;
+        session.user.username = typeof token.username === "string" ? token.username : null;
       }
       return session;
-    }
+    },
   },
   pages: {
     signIn: "/login",
-    verifyRequest: "/login/verify"
   },
-  session: { strategy: "database" }
+  session: { strategy: "jwt" },
 });

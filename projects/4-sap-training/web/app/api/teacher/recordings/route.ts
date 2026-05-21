@@ -1,6 +1,7 @@
 import { and, desc, eq, inArray, isNotNull, isNull, type SQL } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
+import { canAccessAnyRole, hasRole } from "@/lib/auth/roles";
 import { db } from "@/lib/db";
 import { classes, enrollments, recordings, teacherFeedback, users } from "@/lib/db/schema";
 import { getPresignedGetUrl } from "@/lib/storage/r2";
@@ -9,7 +10,10 @@ type RecordingStatus = typeof recordings.$inferSelect.status;
 const RECORDING_STATUSES: RecordingStatus[] = ["uploading", "ready", "flagged", "deleted"];
 
 async function getTeacherStudentIds(teacherId: string) {
-  const myClasses = await db.select({ id: classes.id }).from(classes).where(eq(classes.teacherId, teacherId));
+  const myClasses = await db
+    .select({ id: classes.id })
+    .from(classes)
+    .where(eq(classes.teacherId, teacherId));
   const classIds = myClasses.map((item) => item.id);
   if (classIds.length === 0) return [];
 
@@ -24,7 +28,7 @@ async function getTeacherStudentIds(teacherId: string) {
 export async function GET(req: Request) {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (session.user.role !== "teacher" && session.user.role !== "admin") {
+  if (!canAccessAnyRole(session, ["teacher"])) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 
@@ -36,7 +40,7 @@ export async function GET(req: Request) {
   const hasFeedback = url.searchParams.get("hasFeedback");
 
   const conditions: SQL[] = [isNull(recordings.deletedAt)];
-  if (session.user.role === "teacher") {
+  if (hasRole(session, "teacher") && !hasRole(session, "admin")) {
     const studentIds = await getTeacherStudentIds(session.user.id);
     if (studentIds.length === 0) return NextResponse.json({ recordings: [] });
     conditions.push(inArray(recordings.studentId, studentIds));
@@ -55,7 +59,7 @@ export async function GET(req: Request) {
       recording: recordings,
       studentEmail: users.email,
       studentName: users.name,
-      feedback: teacherFeedback
+      feedback: teacherFeedback,
     })
     .from(recordings)
     .leftJoin(users, eq(users.id, recordings.studentId))
@@ -70,7 +74,9 @@ export async function GET(req: Request) {
       studentEmail: row.studentEmail,
       studentName: row.studentName,
       feedback: row.feedback,
-      audioGetUrl: row.recording.storageKey ? await getPresignedGetUrl(row.recording.storageKey) : null
+      audioGetUrl: row.recording.storageKey
+        ? await getPresignedGetUrl(row.recording.storageKey)
+        : null,
     }))
   );
 

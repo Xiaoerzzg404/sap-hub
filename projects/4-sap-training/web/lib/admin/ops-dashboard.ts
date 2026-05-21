@@ -20,6 +20,7 @@ import {
   roleplays,
   shadowingItems,
   teacherFeedback,
+  userRoles,
   users,
 } from "@/lib/db/schema";
 
@@ -160,9 +161,9 @@ async function getMetricGroups(): Promise<AdminMetricGroup[]> {
       storageBytes,
     ] = await Promise.all([
       countTable(users),
-      countTable(users, eq(users.role, "student")),
-      countTable(users, eq(users.role, "teacher")),
-      countTable(users, eq(users.role, "admin")),
+      countTable(userRoles, eq(userRoles.role, "student")),
+      countTable(userRoles, eq(userRoles.role, "teacher")),
+      countTable(userRoles, eq(userRoles.role, "admin")),
       countTable(classes),
       countTable(enrollments, eq(enrollments.status, "active")),
       countTable(lessons),

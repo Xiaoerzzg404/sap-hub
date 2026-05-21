@@ -1,0 +1,1708 @@
+{
+  "id": "be453edf-1095-43cc-9a13-8a84d1f2ead4",
+  "prevId": "d7730199-0198-4fc9-bbce-7242e4fbd7e6",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.accounts": {
+      "name": "accounts",
+      "schema": "",
+      "columns": {
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider": {
+          "name": "provider",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "provider_account_id": {
+          "name": "provider_account_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refresh_token": {
+          "name": "refresh_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "access_token": {
+          "name": "access_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "token_type": {
+          "name": "token_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "scope": {
+          "name": "scope",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "id_token": {
+          "name": "id_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session_state": {
+          "name": "session_state",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "accounts_user_id_users_id_fk": {
+          "name": "accounts_user_id_users_id_fk",
+          "tableFrom": "accounts",
+          "tableTo": "users",
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "accounts_provider_provider_account_id_pk": {
+          "name": "accounts_provider_provider_account_id_pk",
+          "columns": ["provider", "provider_account_id"]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.assignment_submissions": {
+      "name": "assignment_submissions",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "assignment_id": {
+          "name": "assignment_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "recording_id": {
+          "name": "recording_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "text_content": {
+          "name": "text_content",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "self_assessment": {
+          "name": "self_assessment",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "submission_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'draft'"
+        },
+        "submitted_at": {
+          "name": "submitted_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "assignment_submissions_assignment_id_assignments_id_fk": {
+          "name": "assignment_submissions_assignment_id_assignments_id_fk",
+          "tableFrom": "assignment_submissions",
+          "tableTo": "assignments",
+          "columnsFrom": ["assignment_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "assignment_submissions_student_id_users_id_fk": {
+          "name": "assignment_submissions_student_id_users_id_fk",
+          "tableFrom": "assignment_submissions",
+          "tableTo": "users",
+          "columnsFrom": ["student_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.assignments": {
+      "name": "assignments",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prompt": {
+          "name": "prompt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_duration_sec": {
+          "name": "target_duration_sec",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "assignments_lesson_id_lessons_id_fk": {
+          "name": "assignments_lesson_id_lessons_id_fk",
+          "tableFrom": "assignments",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.classes": {
+      "name": "classes",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "teacher_id": {
+          "name": "teacher_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "starts_at": {
+          "name": "starts_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ends_at": {
+          "name": "ends_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "classes_teacher_id_users_id_fk": {
+          "name": "classes_teacher_id_users_id_fk",
+          "tableFrom": "classes",
+          "tableTo": "users",
+          "columnsFrom": ["teacher_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.enrollments": {
+      "name": "enrollments",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "class_id": {
+          "name": "class_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "name": "status",
+          "type": "enrollment_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'active'"
+        },
+        "enrolled_at": {
+          "name": "enrolled_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "enrollments_class_id_classes_id_fk": {
+          "name": "enrollments_class_id_classes_id_fk",
+          "tableFrom": "enrollments",
+          "tableTo": "classes",
+          "columnsFrom": ["class_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "enrollments_student_id_users_id_fk": {
+          "name": "enrollments_student_id_users_id_fk",
+          "tableFrom": "enrollments",
+          "tableTo": "users",
+          "columnsFrom": ["student_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "enrollments_class_id_student_id_unique": {
+          "name": "enrollments_class_id_student_id_unique",
+          "nullsNotDistinct": false,
+          "columns": ["class_id", "student_id"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.favorites": {
+      "name": "favorites",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "favorite_kind",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ref_id": {
+          "name": "ref_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "favorites_student_id_users_id_fk": {
+          "name": "favorites_student_id_users_id_fk",
+          "tableFrom": "favorites",
+          "tableTo": "users",
+          "columnsFrom": ["student_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "favorites_student_id_kind_ref_id_unique": {
+          "name": "favorites_student_id_kind_ref_id_unique",
+          "nullsNotDistinct": false,
+          "columns": ["student_id", "kind", "ref_id"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.glossary_terms": {
+      "name": "glossary_terms",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "chinese": {
+          "name": "chinese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "english_or_sap": {
+          "name": "english_or_sap",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "japanese": {
+          "name": "japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reading": {
+          "name": "reading",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "module": {
+          "name": "module",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "project_phase": {
+          "name": "project_phase",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "scenario": {
+          "name": "scenario",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "example_sentence": {
+          "name": "example_sentence",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "note": {
+          "name": "note",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "needs_review": {
+          "name": "needs_review",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "glossary_terms_lesson_id_lessons_id_fk": {
+          "name": "glossary_terms_lesson_id_lessons_id_fk",
+          "tableFrom": "glossary_terms",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.lesson_assets": {
+      "name": "lesson_assets",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "path": {
+          "name": "path",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "markdown": {
+          "name": "markdown",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "word_count": {
+          "name": "word_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "visibility": {
+          "name": "visibility",
+          "type": "asset_visibility",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'both'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "lesson_assets_lesson_id_lessons_id_fk": {
+          "name": "lesson_assets_lesson_id_lessons_id_fk",
+          "tableFrom": "lesson_assets",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.lessons": {
+      "name": "lessons",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "track_id": {
+          "name": "track_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "level": {
+          "name": "level",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "order": {
+          "name": "order",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "summary": {
+          "name": "summary",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sap_modules": {
+          "name": "sap_modules",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "project_phase": {
+          "name": "project_phase",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "japanese_skill_targets": {
+          "name": "japanese_skill_targets",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "consultant_skill_targets": {
+          "name": "consultant_skill_targets",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "final_output_task": {
+          "name": "final_output_task",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "scenario_map": {
+          "name": "scenario_map",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "transcript_markdown": {
+          "name": "transcript_markdown",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "course_design_markdown": {
+          "name": "course_design_markdown",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.library_items": {
+      "name": "library_items",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "kind": {
+          "name": "kind",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "path": {
+          "name": "path",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "markdown": {
+          "name": "markdown",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "word_count": {
+          "name": "word_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 0
+        },
+        "visibility": {
+          "name": "visibility",
+          "type": "asset_visibility",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'both'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.phrases": {
+      "name": "phrases",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category": {
+          "name": "category",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "japanese": {
+          "name": "japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chinese": {
+          "name": "chinese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "''"
+        },
+        "usage": {
+          "name": "usage",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "replaceable_parts": {
+          "name": "replaceable_parts",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "audio_url": {
+          "name": "audio_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "phrases_lesson_id_lessons_id_fk": {
+          "name": "phrases_lesson_id_lessons_id_fk",
+          "tableFrom": "phrases",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.progress_events": {
+      "name": "progress_events",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "progress_event_type",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ref_id": {
+          "name": "ref_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "payload": {
+          "name": "payload",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "progress_events_student_id_users_id_fk": {
+          "name": "progress_events_student_id_users_id_fk",
+          "tableFrom": "progress_events",
+          "tableTo": "users",
+          "columnsFrom": ["student_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "progress_events_lesson_id_lessons_id_fk": {
+          "name": "progress_events_lesson_id_lessons_id_fk",
+          "tableFrom": "progress_events",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.recordings": {
+      "name": "recordings",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "student_id": {
+          "name": "student_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "practice_type": {
+          "name": "practice_type",
+          "type": "practice_type",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prompt_text": {
+          "name": "prompt_text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "target_japanese": {
+          "name": "target_japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "storage_key": {
+          "name": "storage_key",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mime_type": {
+          "name": "mime_type",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "duration_sec": {
+          "name": "duration_sec",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "size_bytes": {
+          "name": "size_bytes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "self_assessment": {
+          "name": "self_assessment",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "recording_status",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'ready'"
+        },
+        "deleted_at": {
+          "name": "deleted_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "recordings_student_id_users_id_fk": {
+          "name": "recordings_student_id_users_id_fk",
+          "tableFrom": "recordings",
+          "tableTo": "users",
+          "columnsFrom": ["student_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "recordings_lesson_id_lessons_id_fk": {
+          "name": "recordings_lesson_id_lessons_id_fk",
+          "tableFrom": "recordings",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.review_terms": {
+      "name": "review_terms",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "raw_text": {
+          "name": "raw_text",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "suggestion": {
+          "name": "suggestion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "adopted_japanese": {
+          "name": "adopted_japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reason": {
+          "name": "reason",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "must_review": {
+          "name": "must_review",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "status": {
+          "name": "status",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'pending'"
+        },
+        "reviewer_id": {
+          "name": "reviewer_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "review_memo": {
+          "name": "review_memo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reviewed_at": {
+          "name": "reviewed_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "review_terms_lesson_id_lessons_id_fk": {
+          "name": "review_terms_lesson_id_lessons_id_fk",
+          "tableFrom": "review_terms",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "review_terms_reviewer_id_users_id_fk": {
+          "name": "review_terms_reviewer_id_users_id_fk",
+          "tableFrom": "review_terms",
+          "tableTo": "users",
+          "columnsFrom": ["reviewer_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.roleplays": {
+      "name": "roleplays",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "scenario": {
+          "name": "scenario",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "role_a": {
+          "name": "role_a",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "role_b": {
+          "name": "role_b",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "required_phrases": {
+          "name": "required_phrases",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'[]'::jsonb"
+        },
+        "dialogue": {
+          "name": "dialogue",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "roleplays_lesson_id_lessons_id_fk": {
+          "name": "roleplays_lesson_id_lessons_id_fk",
+          "tableFrom": "roleplays",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sessions": {
+      "name": "sessions",
+      "schema": "",
+      "columns": {
+        "session_token": {
+          "name": "session_token",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "sessions_user_id_users_id_fk": {
+          "name": "sessions_user_id_users_id_fk",
+          "tableFrom": "sessions",
+          "tableTo": "users",
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.shadowing_items": {
+      "name": "shadowing_items",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "japanese": {
+          "name": "japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chinese": {
+          "name": "chinese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "''"
+        },
+        "scenario": {
+          "name": "scenario",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "audio_url": {
+          "name": "audio_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "required_repeats": {
+          "name": "required_repeats",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "default": 3
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "shadowing_items_lesson_id_lessons_id_fk": {
+          "name": "shadowing_items_lesson_id_lessons_id_fk",
+          "tableFrom": "shadowing_items",
+          "tableTo": "lessons",
+          "columnsFrom": ["lesson_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.teacher_feedback": {
+      "name": "teacher_feedback",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "recording_id": {
+          "name": "recording_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "teacher_id": {
+          "name": "teacher_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "score_overall": {
+          "name": "score_overall",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "score_dim": {
+          "name": "score_dim",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "comment": {
+          "name": "comment",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corrected_japanese": {
+          "name": "corrected_japanese",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "model_recording_id": {
+          "name": "model_recording_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "teacher_feedback_recording_id_recordings_id_fk": {
+          "name": "teacher_feedback_recording_id_recordings_id_fk",
+          "tableFrom": "teacher_feedback",
+          "tableTo": "recordings",
+          "columnsFrom": ["recording_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "teacher_feedback_teacher_id_users_id_fk": {
+          "name": "teacher_feedback_teacher_id_users_id_fk",
+          "tableFrom": "teacher_feedback",
+          "tableTo": "users",
+          "columnsFrom": ["teacher_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "teacher_feedback_model_recording_id_recordings_id_fk": {
+          "name": "teacher_feedback_model_recording_id_recordings_id_fk",
+          "tableFrom": "teacher_feedback",
+          "tableTo": "recordings",
+          "columnsFrom": ["model_recording_id"],
+          "columnsTo": ["id"],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "teacher_feedback_recording_id_unique": {
+          "name": "teacher_feedback_recording_id_unique",
+          "nullsNotDistinct": false,
+          "columns": ["recording_id"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.user_roles": {
+      "name": "user_roles",
+      "schema": "",
+      "columns": {
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "user_role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "assigned_at": {
+          "name": "assigned_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "assigned_by": {
+          "name": "assigned_by",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'system'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "user_roles_user_id_users_id_fk": {
+          "name": "user_roles_user_id_users_id_fk",
+          "tableFrom": "user_roles",
+          "tableTo": "users",
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "user_roles_user_id_role_pk": {
+          "name": "user_roles_user_id_role_pk",
+          "columns": ["user_id", "role"]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.users": {
+      "name": "users",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "username": {
+          "name": "username",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "password_hash": {
+          "name": "password_hash",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "password_updated_at": {
+          "name": "password_updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email_verified": {
+          "name": "email_verified",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "image": {
+          "name": "image",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "role": {
+          "name": "role",
+          "type": "user_role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'student'"
+        },
+        "locale": {
+          "name": "locale",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'zh-CN'"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "users_email_unique": {
+          "name": "users_email_unique",
+          "nullsNotDistinct": false,
+          "columns": ["email"]
+        },
+        "users_username_unique": {
+          "name": "users_username_unique",
+          "nullsNotDistinct": false,
+          "columns": ["username"]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.verification_tokens": {
+      "name": "verification_tokens",
+      "schema": "",
+      "columns": {
+        "identifier": {
+          "name": "identifier",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "token": {
+          "name": "token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "verification_tokens_identifier_token_pk": {
+          "name": "verification_tokens_identifier_token_pk",
+          "columns": ["identifier", "token"]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.asset_visibility": {
+      "name": "asset_visibility",
+      "schema": "public",
+      "values": ["student", "teacher", "both"]
+    },
+    "public.enrollment_status": {
+      "name": "enrollment_status",
+      "schema": "public",
+      "values": ["active", "paused", "completed", "dropped"]
+    },
+    "public.favorite_kind": {
+      "name": "favorite_kind",
+      "schema": "public",
+      "values": ["term", "phrase", "shadowing"]
+    },
+    "public.practice_type": {
+      "name": "practice_type",
+      "schema": "public",
+      "values": ["shadowing", "micro-training", "consultant-output", "role-play"]
+    },
+    "public.progress_event_type": {
+      "name": "progress_event_type",
+      "schema": "public",
+      "values": [
+        "shadowing_done",
+        "recording_saved",
+        "term_favorited",
+        "phrase_favorited",
+        "shadowing_favorited",
+        "self_assessment_saved",
+        "lesson_started",
+        "lesson_completed",
+        "assignment_submitted",
+        "lesson_step_advanced"
+      ]
+    },
+    "public.recording_status": {
+      "name": "recording_status",
+      "schema": "public",
+      "values": ["uploading", "ready", "flagged", "deleted"]
+    },
+    "public.submission_status": {
+      "name": "submission_status",
+      "schema": "public",
+      "values": ["draft", "submitted", "pending-review", "reviewed"]
+    },
+    "public.user_role": {
+      "name": "user_role",
+      "schema": "public",
+      "values": ["student", "teacher", "admin"]
+    }
+  },
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

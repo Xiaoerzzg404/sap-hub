@@ -1,6 +1,7 @@
 import { and, desc, eq, isNull } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
+import { canAccessAnyRole } from "@/lib/auth/roles";
 import { db } from "@/lib/db";
 import { recordings, teacherFeedback } from "@/lib/db/schema";
 import { getPresignedGetUrl, MAX_RECORDING_BYTES } from "@/lib/storage/r2";
@@ -8,6 +9,9 @@ import { getPresignedGetUrl, MAX_RECORDING_BYTES } from "@/lib/storage/r2";
 export async function GET() {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ recordings: [] }, { status: 401 });
+  if (!canAccessAnyRole(session, ["student"])) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
 
   const rows = await db
     .select({ recording: recordings, feedback: teacherFeedback })
@@ -21,7 +25,7 @@ export async function GET() {
     rows.map(async ({ recording, feedback }) => ({
       ...recording,
       feedback,
-      audioGetUrl: recording.storageKey ? await getPresignedGetUrl(recording.storageKey) : null
+      audioGetUrl: recording.storageKey ? await getPresignedGetUrl(recording.storageKey) : null,
     }))
   );
 
@@ -31,6 +35,9 @@ export async function GET() {
 export async function POST(req: Request) {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!canAccessAnyRole(session, ["student"])) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
 
   const body = await req.json();
   const sizeBytes = Number(body.sizeBytes) || 0;
@@ -50,7 +57,7 @@ export async function POST(req: Request) {
       durationSec: body.durationSec ?? 0,
       sizeBytes,
       selfAssessment: body.selfAssessment ?? null,
-      status: "ready"
+      status: "ready",
     })
     .returning();
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import {
   Activity,
   ArrowUpRight,
@@ -16,7 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { auth } from "@/lib/auth/options";
+import { requireRoles } from "@/lib/auth/guards";
 import {
   getAdminOpsDashboard,
   type AdminEnvStatus,
@@ -55,9 +54,7 @@ const serviceIcons: Record<string, LucideIcon> = {
 };
 
 export default async function AdminPage() {
-  const session = await auth();
-  if (!session?.user?.id) redirect("/login?callbackUrl=/admin");
-  if (session.user.role !== "admin") redirect("/");
+  await requireRoles(["admin"], "/admin");
 
   const dashboard = await getAdminOpsDashboard();
   const quickGroups = groupLinks(dashboard.quickLinks);
@@ -113,7 +110,7 @@ export default async function AdminPage() {
           icon={CheckCircle2}
           label="边界"
           value="Admin only"
-          detail="页面由 Auth role=admin 保护"
+          detail="页面由 Auth roles[] 包含 admin 保护"
         />
       </section>
 

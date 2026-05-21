@@ -1,8 +1,8 @@
 # SITE_ARCHITECTURE · sap-jp.training
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:12:00+09:00
-- scope: student product architecture, content revision workflow, and deploy discipline
+- updated_at: 2026-05-22T00:45:00+09:00
+- scope: student product architecture, auth boundaries, content revision workflow, and deploy discipline
 
 ## Product Shape
 
@@ -15,6 +15,8 @@ Phase 1 is a 24-lesson SAP project Japanese speaking course. The website should 
 - `/assignments`: task submission surface.
 - `/review`: favorites, weak points, teacher feedback, and recording history.
 - `/teacher/*`: teacher review, feedback, terms review, and classroom coaching.
+- `/admin`: admin-only operations dashboard.
+- `/login`: the only anonymous page; all training content requires login.
 
 ## Data Boundaries
 
@@ -28,6 +30,8 @@ Course content and learner data must not be mixed.
 | Student recordings         | R2 object storage plus `recordings` metadata         | `/api/recordings`, soft delete, signed playback        |
 | Teacher feedback           | `teacher_feedback`                                   | student `/review` and `/me`, teacher review pages      |
 | Student notes              | browser localStorage in current beta                 | future DB table if cross-device notes become necessary |
+| Auth credentials           | `users.username`, `users.password_hash`              | email/username password login                          |
+| Roles and permissions      | `user_roles` plus legacy `users.role`                | multi-role session claims `roles[]`                    |
 
 Stable lesson ids such as `lesson_01` should survive content rewrites. A rewrite changes the lesson revision, not the identity of the student's progress row.
 

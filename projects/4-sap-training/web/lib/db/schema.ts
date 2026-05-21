@@ -8,19 +8,34 @@ import {
   text,
   timestamp,
   unique,
-  uuid
+  uuid,
 } from "drizzle-orm/pg-core";
 
 export const userRoleEnum = pgEnum("user_role", ["student", "teacher", "admin"]);
-export const enrollmentStatusEnum = pgEnum("enrollment_status", ["active", "paused", "completed", "dropped"]);
+export const enrollmentStatusEnum = pgEnum("enrollment_status", [
+  "active",
+  "paused",
+  "completed",
+  "dropped",
+]);
 export const assetVisibilityEnum = pgEnum("asset_visibility", ["student", "teacher", "both"]);
-export const submissionStatusEnum = pgEnum("submission_status", ["draft", "submitted", "pending-review", "reviewed"]);
-export const recordingStatusEnum = pgEnum("recording_status", ["uploading", "ready", "flagged", "deleted"]);
+export const submissionStatusEnum = pgEnum("submission_status", [
+  "draft",
+  "submitted",
+  "pending-review",
+  "reviewed",
+]);
+export const recordingStatusEnum = pgEnum("recording_status", [
+  "uploading",
+  "ready",
+  "flagged",
+  "deleted",
+]);
 export const practiceTypeEnum = pgEnum("practice_type", [
   "shadowing",
   "micro-training",
   "consultant-output",
-  "role-play"
+  "role-play",
 ]);
 export const progressEventTypeEnum = pgEnum("progress_event_type", [
   "shadowing_done",
@@ -32,21 +47,37 @@ export const progressEventTypeEnum = pgEnum("progress_event_type", [
   "lesson_started",
   "lesson_completed",
   "assignment_submitted",
-  "lesson_step_advanced"
+  "lesson_step_advanced",
 ]);
 export const favoriteKindEnum = pgEnum("favorite_kind", ["term", "phrase", "shadowing"]);
 
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
   email: text("email").notNull().unique(),
+  username: text("username").unique(),
+  passwordHash: text("password_hash"),
+  passwordUpdatedAt: timestamp("password_updated_at", { mode: "date" }),
   emailVerified: timestamp("email_verified", { mode: "date" }),
   name: text("name"),
   image: text("image"),
   role: userRoleEnum("role").notNull().default("student"),
   locale: text("locale").default("zh-CN"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
+
+export const userRoles = pgTable(
+  "user_roles",
+  {
+    userId: uuid("user_id")
+      .notNull()
+      .references(() => users.id, { onDelete: "cascade" }),
+    role: userRoleEnum("role").notNull(),
+    assignedAt: timestamp("assigned_at", { mode: "date" }).defaultNow().notNull(),
+    assignedBy: text("assigned_by").notNull().default("system"),
+  },
+  (table) => [primaryKey({ columns: [table.userId, table.role] })]
+);
 
 export const accounts = pgTable(
   "accounts",
@@ -63,7 +94,7 @@ export const accounts = pgTable(
     token_type: text("token_type"),
     scope: text("scope"),
     id_token: text("id_token"),
-    session_state: text("session_state")
+    session_state: text("session_state"),
   },
   (table) => [primaryKey({ columns: [table.provider, table.providerAccountId] })]
 );
@@ -73,7 +104,7 @@ export const sessions = pgTable("sessions", {
   userId: uuid("user_id")
     .notNull()
     .references(() => users.id, { onDelete: "cascade" }),
-  expires: timestamp("expires", { mode: "date" }).notNull()
+  expires: timestamp("expires", { mode: "date" }).notNull(),
 });
 
 export const verificationTokens = pgTable(
@@ -81,7 +112,7 @@ export const verificationTokens = pgTable(
   {
     identifier: text("identifier").notNull(),
     token: text("token").notNull(),
-    expires: timestamp("expires", { mode: "date" }).notNull()
+    expires: timestamp("expires", { mode: "date" }).notNull(),
   },
   (table) => [primaryKey({ columns: [table.identifier, table.token] })]
 );
@@ -92,7 +123,7 @@ export const classes = pgTable("classes", {
   teacherId: uuid("teacher_id").references(() => users.id),
   startsAt: timestamp("starts_at", { mode: "date" }),
   endsAt: timestamp("ends_at", { mode: "date" }),
-  createdAt: timestamp("created_at").defaultNow().notNull()
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const enrollments = pgTable(
@@ -106,7 +137,7 @@ export const enrollments = pgTable(
       .notNull()
       .references(() => users.id, { onDelete: "cascade" }),
     status: enrollmentStatusEnum("status").notNull().default("active"),
-    enrolledAt: timestamp("enrolled_at").defaultNow().notNull()
+    enrolledAt: timestamp("enrolled_at").defaultNow().notNull(),
   },
   (table) => [unique().on(table.classId, table.studentId)]
 );
@@ -126,7 +157,7 @@ export const lessons = pgTable("lessons", {
   scenarioMap: jsonb("scenario_map").default([]),
   transcriptMarkdown: text("transcript_markdown"),
   courseDesignMarkdown: text("course_design_markdown"),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
 export const lessonAssets = pgTable("lesson_assets", {
@@ -139,7 +170,7 @@ export const lessonAssets = pgTable("lesson_assets", {
   path: text("path").notNull(),
   markdown: text("markdown").notNull(),
   wordCount: integer("word_count").notNull().default(0),
-  visibility: assetVisibilityEnum("visibility").notNull().default("both")
+  visibility: assetVisibilityEnum("visibility").notNull().default("both"),
 });
 
 export const phrases = pgTable("phrases", {
@@ -152,7 +183,7 @@ export const phrases = pgTable("phrases", {
   chinese: text("chinese").default(""),
   usage: text("usage"),
   replaceableParts: jsonb("replaceable_parts").$type<string[]>().default([]),
-  audioUrl: text("audio_url")
+  audioUrl: text("audio_url"),
 });
 
 export const glossaryTerms = pgTable("glossary_terms", {
@@ -167,7 +198,7 @@ export const glossaryTerms = pgTable("glossary_terms", {
   scenario: text("scenario"),
   exampleSentence: text("example_sentence"),
   note: text("note"),
-  needsReview: boolean("needs_review").default(false)
+  needsReview: boolean("needs_review").default(false),
 });
 
 export const shadowingItems = pgTable("shadowing_items", {
@@ -179,7 +210,7 @@ export const shadowingItems = pgTable("shadowing_items", {
   chinese: text("chinese").default(""),
   scenario: text("scenario"),
   audioUrl: text("audio_url"),
-  requiredRepeats: integer("required_repeats").default(3)
+  requiredRepeats: integer("required_repeats").default(3),
 });
 
 export const roleplays = pgTable("roleplays", {
@@ -192,7 +223,7 @@ export const roleplays = pgTable("roleplays", {
   roleA: text("role_a"),
   roleB: text("role_b"),
   requiredPhrases: jsonb("required_phrases").$type<string[]>().default([]),
-  dialogue: jsonb("dialogue").$type<{ role: "A" | "B"; text: string }[]>().notNull()
+  dialogue: jsonb("dialogue").$type<{ role: "A" | "B"; text: string }[]>().notNull(),
 });
 
 export const assignments = pgTable("assignments", {
@@ -203,7 +234,7 @@ export const assignments = pgTable("assignments", {
   type: text("type").notNull(),
   title: text("title").notNull(),
   prompt: text("prompt"),
-  targetDurationSec: integer("target_duration_sec")
+  targetDurationSec: integer("target_duration_sec"),
 });
 
 export const assignmentSubmissions = pgTable("assignment_submissions", {
@@ -220,7 +251,7 @@ export const assignmentSubmissions = pgTable("assignment_submissions", {
   status: submissionStatusEnum("status").notNull().default("draft"),
   submittedAt: timestamp("submitted_at", { mode: "date" }),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull()
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
 export const recordings = pgTable("recordings", {
@@ -241,7 +272,7 @@ export const recordings = pgTable("recordings", {
   selfAssessment: jsonb("self_assessment"),
   status: recordingStatusEnum("status").notNull().default("ready"),
   deletedAt: timestamp("deleted_at", { mode: "date" }),
-  createdAt: timestamp("created_at").defaultNow().notNull()
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const teacherFeedback = pgTable(
@@ -266,7 +297,7 @@ export const teacherFeedback = pgTable(
     correctedJapanese: text("corrected_japanese"),
     modelRecordingId: uuid("model_recording_id").references(() => recordings.id),
     createdAt: timestamp("created_at").defaultNow().notNull(),
-    updatedAt: timestamp("updated_at").defaultNow().notNull()
+    updatedAt: timestamp("updated_at").defaultNow().notNull(),
   },
   (table) => [unique().on(table.recordingId)]
 );
@@ -280,7 +311,7 @@ export const progressEvents = pgTable("progress_events", {
   lessonId: text("lesson_id").references(() => lessons.id),
   refId: text("ref_id"),
   payload: jsonb("payload"),
-  createdAt: timestamp("created_at").defaultNow().notNull()
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const favorites = pgTable(
@@ -292,7 +323,7 @@ export const favorites = pgTable(
       .references(() => users.id, { onDelete: "cascade" }),
     kind: favoriteKindEnum("kind").notNull(),
     refId: text("ref_id").notNull(),
-    createdAt: timestamp("created_at").defaultNow().notNull()
+    createdAt: timestamp("created_at").defaultNow().notNull(),
   },
   (table) => [unique().on(table.studentId, table.kind, table.refId)]
 );
@@ -304,7 +335,7 @@ export const libraryItems = pgTable("library_items", {
   path: text("path").notNull(),
   markdown: text("markdown").notNull(),
   wordCount: integer("word_count").default(0),
-  visibility: assetVisibilityEnum("visibility").notNull().default("both")
+  visibility: assetVisibilityEnum("visibility").notNull().default("both"),
 });
 
 export const reviewTerms = pgTable("review_terms", {
@@ -318,5 +349,5 @@ export const reviewTerms = pgTable("review_terms", {
   status: text("status").default("pending"),
   reviewerId: uuid("reviewer_id").references(() => users.id),
   reviewMemo: text("review_memo"),
-  reviewedAt: timestamp("reviewed_at", { mode: "date" })
+  reviewedAt: timestamp("reviewed_at", { mode: "date" }),
 });

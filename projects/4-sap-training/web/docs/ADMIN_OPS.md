@@ -1,8 +1,32 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:50:00+09:00
-- scope: Phase 7 launch-readiness operations + admin ops dashboard
+- updated_at: 2026-05-22T00:45:00+09:00
+- scope: Phase 7 launch-readiness operations + admin ops dashboard + credentials auth
+
+## Auth And Roles
+
+Current login mode:
+
+- Users register with email, username, and password.
+- Users log in with either email or username.
+- Passwords are stored as `scrypt` hashes in `users.password_hash`.
+- Anonymous users only see `/login`; training pages, `/audio/*`, and business APIs require a session.
+- Roles are multi-valued in `user_roles`.
+- `users.role` remains as a legacy primary-role compatibility field.
+
+Role model:
+
+| Role      | Access                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| `student` | Student learning pages, speaking tools, assignments, recordings, review.                          |
+| `teacher` | Teacher course tools, student recording review, feedback, review terms.                           |
+| `admin`   | Admin dashboard and operational oversight; admin can access teacher/student surfaces for support. |
+
+Owner bootstrap:
+
+- Migration `0003_auth_credentials_multi_role.sql` grants `student`, `teacher`, and `admin` to `zzg404@gmail.com` if the user already exists.
+- If `zzg404@gmail.com` registers after the migration, `/api/auth/register` grants the same three roles automatically.
 
 ## Admin Dashboard
 
@@ -139,29 +163,43 @@ UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON
 查看用户：
 
 ```sql
-select id, email, role, created_at
+select u.id, u.email, u.username, array_agg(ur.role order by ur.role) as roles, u.created_at
 from users
+left join user_roles ur on ur.user_id = u.id
+group by u.id
 order by created_at desc
 limit 20;
 ```
 
-提升为讲师：
+授予讲师：
 
 ```sql
-update users
-set role = 'teacher', updated_at = now()
-where email = 'teacher@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'teacher', 'admin'
+from users
+where email = 'teacher@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-提升为 admin：
+授予 admin：
 
 ```sql
-update users
-set role = 'admin', updated_at = now()
-where email = 'ryan@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'admin', 'admin'
+from users
+where email = 'ryan@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-降级为学生：
+移除讲师权限：
+
+```sql
+delete from user_roles
+where role = 'teacher'
+  and user_id = (select id from users where email = 'teacher@example.com');
+```
+
+同步 legacy 主角色：
 
 ```sql
 update users
@@ -248,4 +286,4 @@ Vercel env 检查：
 
 处理时限：14 天内。
 
-不要通过聊天窗口索要用户密码。magic link 平台不需要密码。
+不要通过聊天窗口索要用户密码。管理员不需要知道用户密码。

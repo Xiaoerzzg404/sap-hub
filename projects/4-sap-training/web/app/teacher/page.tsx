@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Mic, ScrollText } from "lucide-react";
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth/options";
+import { requireRoles } from "@/lib/auth/guards";
 import { getAllLessonsWithContent, getReviewTerms } from "@/lib/content/lessons";
 import { getJapaneseCoachData } from "@/lib/japanese-coach";
 import { JapaneseTeacherCoachPanel } from "@/components/teacher/JapaneseTeacherCoachPanel";
@@ -9,9 +8,7 @@ import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
 import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
 export default async function TeacherPage() {
-  const session = await auth();
-  if (!session?.user?.id) redirect("/login?callbackUrl=/teacher");
-  if (session.user.role !== "teacher" && session.user.role !== "admin") redirect("/");
+  await requireRoles(["teacher"], "/teacher");
 
   const [allLessons, allReviewTerms] = await Promise.all([
     getAllLessonsWithContent(),

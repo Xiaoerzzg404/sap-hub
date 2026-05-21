@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { requireRoles } from "@/lib/auth/guards";
 import { getAllLessons, getLessonById, getNextLesson } from "@/lib/content/lessons";
 import { getJapaneseCoachByLessonId, getJapaneseCoachData } from "@/lib/japanese-coach";
 import { LessonHeader } from "@/components/lesson/LessonHeader";
@@ -26,6 +27,7 @@ export async function generateStaticParams() {
 
 export default async function LessonPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
+  await requireRoles(["student", "teacher"], `/courses/lessons/${lessonId}`);
   const lesson = await getLessonById(lessonId);
   if (!lesson) notFound();
   const next = await getNextLesson(lesson.id);

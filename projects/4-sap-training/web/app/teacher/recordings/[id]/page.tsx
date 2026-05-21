@@ -1,12 +1,12 @@
-import { redirect } from "next/navigation";
 import { TeacherRecordingDetailClient } from "@/components/teacher/TeacherRecordingDetailClient";
-import { auth } from "@/lib/auth/options";
+import { requireRoles } from "@/lib/auth/guards";
 
-export default async function TeacherRecordingDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const session = await auth();
-  if (!session?.user?.id) redirect("/login?callbackUrl=/teacher/recordings");
-  if (session.user.role !== "teacher" && session.user.role !== "admin") redirect("/");
-
+export default async function TeacherRecordingDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const { id } = await params;
+  await requireRoles(["teacher"], `/teacher/recordings/${id}`);
   return <TeacherRecordingDetailClient id={id} />;
 }

@@ -6,25 +6,26 @@
 
 ## 1. 登录与权限
 
-讲师也使用 magic link 登录。
+讲师使用邮箱/用户名 + 密码登录。
 
 1. 打开 `https://sap-jp.training/login`。
-2. 输入讲师邮箱。
-3. 勾选隐私政策。
-4. 点击邮件里的确认登录链接。
-5. 进入 `/teacher`。
+2. 如果讲师账号尚未设置密码，先用邮箱注册或请 admin 帮助确认账号。
+3. 登录时输入邮箱或用户名，再输入密码。
+4. 登录成功后，拥有 `teacher` 角色的用户进入 `/teacher`。
 
-讲师权限不能自己申请，也没有前台 self-promote endpoint。
+讲师权限不能自己申请，也没有前台 self-promote endpoint。角色是多角色模型，一个用户可以同时拥有 `student`、`teacher`、`admin`。
 
-Ryan 或 admin 必须在数据库里手动把用户角色改成 `teacher`：
+Ryan 或 admin 必须在数据库里手动授予 `teacher` 角色：
 
 ```sql
-update users
-set role = 'teacher', updated_at = now()
-where email = 'teacher@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'teacher', 'admin'
+from users
+where email = 'teacher@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-admin 角色同理必须手动 SQL 设置，不允许从前台开放。
+admin 角色同理必须手动 SQL 设置，不允许从前台开放。旧的 `users.role` 只作为主角色兼容字段。
 
 ## 2. 讲师能看什么
 
@@ -134,7 +135,7 @@ Teacher Coach 是给第一次做 SAP 日语老师的人看的，不是给学生�
 
 看不到学生：
 
-- 确认讲师账号 role 是 `teacher`。
+- 确认讲师账号在 `user_roles` 里包含 `teacher`。
 - 确认班级的 `teacher_id` 是当前讲师 user id。
 - 确认学生 enrollment 状态是 `active`。
 
