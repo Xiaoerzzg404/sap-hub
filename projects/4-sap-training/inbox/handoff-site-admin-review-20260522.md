@@ -1,7 +1,7 @@
 # 交接 · 昨晚网站 handoff 管理员审查与修复 · 2026-05-22
 
 - updated_by: codex
-- updated_at: 2026-05-22T08:52:01+09:00
+- updated_at: 2026-05-22T08:53:35+09:00
 - branch: codex/sap-jp-content-audit-20260521
 - scope: 审查 2026-05-21 夜间至 2026-05-22 早间网站 handoff，修复可本地处理的 auth / 注册 / 运维文档风险。
 
@@ -24,15 +24,15 @@
 ## 仍未执行
 
 - 未 push、未创建 PR、未部署 Vercel。
-- 未上传 R2/CDN、未 force-add mp3、未执行 Vercel artifact deploy。
+- 本审查没有亲自执行 R2/CDN 上传、force-add mp3 或 Vercel artifact deploy；但提交期间当前 HEAD 前进到 `5654676 codex: sync course audio（R2 CDN 发布准备）`，其中包含 `dryRun=false` 的 R2 上传报告，需 Ryan 单独核验。
 - 未执行 Neon 生产 migration `0003_auth_credentials_multi_role.sql`。
 - 未生成、读取、打印或写入任何 secret/token。
 - 未创建或接管真实账号，未发送真实邮件。
 - 未运行 authenticated student/teacher/admin E2E，因为仍缺测试账号/session 授权。
 
-## 并行未纳入
+## 并行提交说明
 
-提交本交接前，工作区出现了非本轮 owns 的音频/R2 相关改动，包括 `web/components/audio/*`、`web/lib/course-audio.ts`、`web/scripts/upload-course-audio-r2.mjs`、`web/package.json` 以及部分音频部署文档/env 检查。本轮不 stage、不回退这些改动，避免混入 handoff 审查提交。
+提交期间出现了并行音频/R2 改动，并被提交到 `5654676`。该提交同时包含本轮审查交接文件和音频/R2 准备文件，不再是理想的“一个问题一个提交”边界。我没有回退该提交，以免破坏可能已完成的 R2 上传记录；已新增 `need-input-audio-r2-verification-20260522.md`，要求 Ryan 确认上传是否授权、CDN/env 是否配置、是否需要线上播放复查。
 
 ## 验证
 
@@ -50,4 +50,4 @@
 
 ## 下一步
 
-Ryan 先回复 `need-input-auth-hardening-20260522.md` 与 `need-input-public-sync-20260522.md`。确认前继续停在本地审查与修复完成状态，不做任何外部发布或生产数据动作。
+Ryan 先回复 `need-input-auth-hardening-20260522.md`、`need-input-audio-r2-verification-20260522.md` 与 `need-input-public-sync-20260522.md`。确认前继续停在本地审查与修复完成状态，不做 push、deploy、生产 migration、真实账号接管或进一步外部发布动作。
