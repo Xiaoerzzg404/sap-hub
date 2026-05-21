@@ -1,7 +1,7 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-22T08:04:26+09:00
+- updated_at: 2026-05-22T08:46:38+09:00
 - scope: Phase 7 上线准备、admin 运维监控台、账号密码登录
 
 ## 登录与角色
@@ -14,6 +14,8 @@
 - 未登录用户只能看到 `/login`；训练页面、`/audio/*` 和业务 API 都需要 session。
 - 角色是多值模型，存储在 `user_roles`。
 - `users.role` 保留为 legacy 主角色兼容字段。
+- 生产环境注册必须配置 `REGISTRATION_INVITE_CODE`；未配置时 `/api/auth/register` 会拒绝公开注册。
+- 历史无密码账号不能被公开注册直接认领；必须使用一次性 `ACCOUNT_CLAIM_TOKEN`。
 
 角色模型：
 
@@ -26,7 +28,16 @@
 Owner 初始化：
 
 - migration `0003_auth_credentials_multi_role.sql` 会在 `zzg404@gmail.com` 已存在时授予 `student`、`teacher`、`admin` 三个角色。
-- 如果 `zzg404@gmail.com` 在 migration 后注册，`/api/auth/register` 会自动授予同样三种角色。
+- 如果 owner 邮箱在 migration 后才设置密码，必须配置 `OWNER_BOOTSTRAP_TOKEN`，并在一次性初始化请求中通过 `X-Owner-Bootstrap-Token` 或 `ownerBootstrapToken` 提交；没有 token 时不会授予 admin。
+- `OWNER_EMAIL` 可选，未配置时默认使用 `zzg404@gmail.com`。
+- 初始化完成后建议轮换或移除 `OWNER_BOOTSTRAP_TOKEN` 和 `ACCOUNT_CLAIM_TOKEN`。
+
+生产注册/认领建议：
+
+1. Vercel Production env 至少配置 `REGISTRATION_INVITE_CODE`，否则生产环境关闭公开注册。
+2. 若要让既有 magic-link 历史账号设置密码，临时配置 `ACCOUNT_CLAIM_TOKEN`，只发给对应本人。
+3. 若要初始化 owner 账号，临时配置 `OWNER_BOOTSTRAP_TOKEN`，只由 Ryan 本人使用。
+4. 所有 token 只放本地 `.env.local` 或 Vercel env，不写入 handoff、issue、截图或 git。
 
 ## 管理监控台
 

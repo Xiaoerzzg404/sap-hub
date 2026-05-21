@@ -27,6 +27,7 @@ export function LoginClient({ callbackUrl, initialMode }: LoginClientProps) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
+  const [inviteCode, setInviteCode] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreed, setAgreed] = useState(false);
@@ -87,6 +88,7 @@ export function LoginClient({ callbackUrl, initialMode }: LoginClientProps) {
         email,
         username,
         name,
+        inviteCode,
         password: registerPassword,
       }),
     });
@@ -275,6 +277,16 @@ export function LoginClient({ callbackUrl, initialMode }: LoginClientProps) {
                     onChange={(event) => setName(event.target.value)}
                     className="input mt-2 w-full"
                     placeholder="可选"
+                  />
+                </label>
+                <label className="block">
+                  <span className="text-sm font-semibold text-ink">邀请码</span>
+                  <input
+                    autoComplete="off"
+                    value={inviteCode}
+                    onChange={(event) => setInviteCode(event.target.value)}
+                    className="input mt-2 w-full"
+                    placeholder="内测账号如有邀请码，请填在这里"
                   />
                 </label>
                 <PasswordField

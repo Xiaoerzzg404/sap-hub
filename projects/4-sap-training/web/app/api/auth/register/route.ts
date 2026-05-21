@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "crypto";
 import { eq, or, sql } from "drizzle-orm";
 import { NextResponse, type NextRequest } from "next/server";
 import {
@@ -12,9 +13,32 @@ import { hashPassword } from "@/lib/auth/password";
 import { db } from "@/lib/db";
 import { userRoles, users } from "@/lib/db/schema";
 import { checkRateLimit, clientIpFromHeaders, limits } from "@/lib/rate-limit";
-import { primaryRoleFromRoles, USER_ROLES, type UserRole } from "@/types/auth";
+import { normalizeRoles, primaryRoleFromRoles, USER_ROLES, type UserRole } from "@/types/auth";
 
-const OWNER_EMAIL = "zzg404@gmail.com";
+const OWNER_EMAIL = normalizeEmail(process.env.OWNER_EMAIL ?? "zzg404@gmail.com");
+
+function requestToken(
+  req: NextRequest,
+  body: Record<string, unknown>,
+  bodyKey: string,
+  headerKey: string
+) {
+  const fromBody = typeof body[bodyKey] === "string" ? body[bodyKey].trim() : "";
+  return fromBody || req.headers.get(headerKey)?.trim() || "";
+}
+
+function tokenMatches(expected: string | undefined, actual: string) {
+  if (!expected || !actual) return false;
+  const expectedBuffer = Buffer.from(expected);
+  const actualBuffer = Buffer.from(actual);
+  return (
+    expectedBuffer.length === actualBuffer.length && timingSafeEqual(expectedBuffer, actualBuffer)
+  );
+}
+
+function inviteRequired() {
+  return process.env.NODE_ENV === "production" || Boolean(process.env.REGISTRATION_INVITE_CODE);
+}
 
 export async function POST(req: NextRequest) {
   const identifier = `${clientIpFromHeaders(req.headers)}:register`;
@@ -65,7 +89,47 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const roles: UserRole[] = email === OWNER_EMAIL ? [...USER_ROLES] : ["student"];
+  const inviteCode = requestToken(req, body, "inviteCode", "x-registration-invite-code");
+  if (inviteRequired()) {
+    if (!process.env.REGISTRATION_INVITE_CODE) {
+      return NextResponse.json(
+        {
+          error: "registration_closed",
+          message: "公开注册尚未配置邀请码，请联系管理员开通账号。",
+        },
+        { status: 503 }
+      );
+    }
+    if (!tokenMatches(process.env.REGISTRATION_INVITE_CODE, inviteCode)) {
+      return NextResponse.json(
+        { error: "invite_required", message: "请填写有效的邀请码。" },
+        { status: 403 }
+      );
+    }
+  }
+
+  const isOwnerEmail = email === OWNER_EMAIL;
+  const ownerBootstrapToken = requestToken(
+    req,
+    body,
+    "ownerBootstrapToken",
+    "x-owner-bootstrap-token"
+  );
+  const ownerBootstrapOk = tokenMatches(process.env.OWNER_BOOTSTRAP_TOKEN, ownerBootstrapToken);
+  if (isOwnerEmail && !ownerBootstrapOk) {
+    return NextResponse.json(
+      {
+        error: "owner_bootstrap_required",
+        message: "Owner 账号初始化需要一次性 bootstrap token，请联系管理员。",
+      },
+      { status: 403 }
+    );
+  }
+
+  const accountClaimToken = requestToken(req, body, "accountClaimToken", "x-account-claim-token");
+  const accountClaimOk =
+    ownerBootstrapOk || tokenMatches(process.env.ACCOUNT_CLAIM_TOKEN, accountClaimToken);
+  const roles: UserRole[] = isOwnerEmail ? [...USER_ROLES] : ["student"];
   const passwordHash = await hashPassword(password);
 
   try {
@@ -94,7 +158,20 @@ export async function POST(req: NextRequest) {
           return { duplicate: "email" as const };
         }
 
-        const existingRoles = email === OWNER_EMAIL ? [...USER_ROLES] : [existingEmailUser.role];
+        if (!accountClaimOk) {
+          return { protectedClaim: "account_claim" as const };
+        }
+
+        const assignedRoles = await tx
+          .select({ role: userRoles.role })
+          .from(userRoles)
+          .where(eq(userRoles.userId, existingEmailUser.id));
+        const existingRoles = isOwnerEmail
+          ? [...USER_ROLES]
+          : normalizeRoles(
+              assignedRoles.map((item) => item.role),
+              existingEmailUser.role
+            );
         const [updatedUser] = await tx
           .update(users)
           .set({
@@ -120,13 +197,12 @@ export async function POST(req: NextRequest) {
             existingRoles.map((role) => ({
               userId: existingEmailUser.id,
               role,
-              assignedBy:
-                email === OWNER_EMAIL ? "system:owner-bootstrap" : "system:password-claim",
+              assignedBy: isOwnerEmail ? "system:owner-bootstrap" : "system:password-claim",
             }))
           )
           .onConflictDoNothing();
 
-        return { user: updatedUser };
+        return { user: updatedUser, roles: existingRoles };
       }
 
       const [user] = await tx
@@ -154,12 +230,12 @@ export async function POST(req: NextRequest) {
           roles.map((role) => ({
             userId: user.id,
             role,
-            assignedBy: email === OWNER_EMAIL ? "system:owner-bootstrap" : "system:self-register",
+            assignedBy: isOwnerEmail ? "system:owner-bootstrap" : "system:self-register",
           }))
         )
         .onConflictDoNothing();
 
-      return { user };
+      return { user, roles };
     });
 
     if ("duplicate" in created) {
@@ -168,7 +244,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "duplicate", message }, { status: 409 });
     }
 
-    return NextResponse.json({ user: created.user, roles }, { status: 201 });
+    if ("protectedClaim" in created) {
+      return NextResponse.json(
+        {
+          error: "account_claim_required",
+          message: "这个邮箱已有历史账号，设置密码需要一次性认领 token，请联系管理员。",
+        },
+        { status: 403 }
+      );
+    }
+
+    return NextResponse.json({ user: created.user, roles: created.roles }, { status: 201 });
   } catch {
     return NextResponse.json(
       { error: "register_failed", message: "注册失败，请稍后再试。" },

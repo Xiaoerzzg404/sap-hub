@@ -1,7 +1,7 @@
 # TEACHER_GUIDE · 讲师使用手册
 
 - updated_by: codex
-- updated_at: 2026-05-21T22:56:32+09:00
+- updated_at: 2026-05-22T08:46:38+09:00
 - audience: SAP 日语训练营讲师
 
 ## 1. 登录与权限
@@ -9,11 +9,17 @@
 讲师使用邮箱/用户名 + 密码登录。
 
 1. 打开 `https://sap-jp.training/login`。
-2. 如果讲师账号尚未设置密码，先用邮箱注册或请 admin 帮助确认账号。
+2. 如果讲师账号尚未设置密码，请先让 admin 确认是新账号还是历史无密码账号。
 3. 登录时输入邮箱或用户名，再输入密码。
 4. 登录成功后，拥有 `teacher` 角色的用户进入 `/teacher`。
 
 讲师权限不能自己申请，也没有前台 self-promote endpoint。角色是多角色模型，一个用户可以同时拥有 `student`、`teacher`、`admin`。
+
+账号开通边界：
+
+- 新讲师可先用管理员发放的邀请码注册为学生账号，然后由 admin 用 SQL 授予 `teacher`。
+- 既有 magic-link 历史账号如果没有密码，不能直接公开注册认领；admin 需临时发放一次性 `ACCOUNT_CLAIM_TOKEN`，认领完成后轮换或移除。
+- admin 角色只能由 Ryan/admin 手动授予，不通过前台注册获得。
 
 Ryan 或 admin 必须在数据库里手动授予 `teacher` 角色：
 

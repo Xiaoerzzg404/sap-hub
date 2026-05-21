@@ -448,6 +448,21 @@ function getEnvStatuses(): AdminEnvStatus[] {
       purpose: "Auth callback URL",
     },
     {
+      label: "REGISTRATION_INVITE_CODE",
+      present: Boolean(process.env.REGISTRATION_INVITE_CODE),
+      purpose: "Production registration gate",
+    },
+    {
+      label: "ACCOUNT_CLAIM_TOKEN",
+      present: Boolean(process.env.ACCOUNT_CLAIM_TOKEN),
+      purpose: "Legacy passwordless account claim",
+    },
+    {
+      label: "OWNER_BOOTSTRAP_TOKEN",
+      present: Boolean(process.env.OWNER_BOOTSTRAP_TOKEN),
+      purpose: "Owner account bootstrap",
+    },
+    {
       label: "NEXT_PUBLIC_SENTRY_DSN",
       present: Boolean(process.env.NEXT_PUBLIC_SENTRY_DSN),
       purpose: "Sentry runtime events",
