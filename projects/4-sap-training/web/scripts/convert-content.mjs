@@ -788,7 +788,9 @@ function buildMeta(stats) {
       "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance.",
       "2026-05-21 content audit aligns lesson titles and project-stage guidance to V4 Japanese SAP consultant review sources.",
       "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24.",
-      "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions."
+      "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions.",
+      "2026-05-21 adds /me as the student learning home for progress, notes, recordings, and teacher feedback, plus docs/SITE_ARCHITECTURE.md for local revision and deployment discipline.",
+      "2026-05-21 local TTS generation writes /audio/audio-manifest.json and 1543 phrase/shadowing/term mp3 files; public deployment needs an explicit media strategy because mp3 files are gitignored."
     ],
     backend: {
       auth: "next-auth@5",

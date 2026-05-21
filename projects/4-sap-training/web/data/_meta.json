@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.4.0",
-  "generatedAt": "2026-05-21T13:56:18.775Z",
-  "sourceCommit": "03fa6ccb16579819ea796af27d50557dfae624e9",
+  "generatedAt": "2026-05-21T23:17:35.074Z",
+  "sourceCommit": "7aafb7431a474936a8870616f5c28073fc2edc32",
   "stats": {
     "tracks": 1,
     "lessons": 24,
@@ -29,7 +29,8 @@
     "2026-05-21 content audit aligns lesson titles and project-stage guidance to V4 Japanese SAP consultant review sources.",
     "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24.",
     "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions.",
-    "2026-05-21 adds /me as the student learning home for progress, notes, recordings, and teacher feedback, plus docs/SITE_ARCHITECTURE.md for local revision and deployment discipline."
+    "2026-05-21 adds /me as the student learning home for progress, notes, recordings, and teacher feedback, plus docs/SITE_ARCHITECTURE.md for local revision and deployment discipline.",
+    "2026-05-21 local TTS generation writes /audio/audio-manifest.json and 1543 phrase/shadowing/term mp3 files; public deployment needs an explicit media strategy because mp3 files are gitignored."
   ],
   "backend": {
     "auth": "next-auth@5",
