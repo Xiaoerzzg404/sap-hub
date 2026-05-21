@@ -1,69 +1,70 @@
-# Handoff · sap-jp.training Site Ledger · 2026-05-21
+# 交接 · sap-jp.training 站点 Ledger · 2026-05-21
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:59:11+09:00
+- updated_at: 2026-05-22T08:04:26+09:00
 - branch: codex/sap-jp-content-audit-20260521
-- scope: local site history ledger, route/content inventory snapshots, and rebuild plan
+- scope: 本地站点历史台账、路由/内容 inventory snapshots、重建计划
 
-## Completed
+## 已完成
 
-- Added a zero-dependency local ledger CLI at `projects/4-sap-training/web/scripts/site-ledger.mjs`.
-- Added package commands:
+- 新增零依赖本地 ledger CLI：`projects/4-sap-training/web/scripts/site-ledger.mjs`。
+- 新增 package commands：
   - `npm run ledger:snapshot`
   - `npm run ledger:diff`
   - `npm run ledger:check`
   - `npm run ledger:rebuild-plan`
-- Added machine/human docs:
+- 新增机器/人类文档：
   - `projects/4-sap-training/web/docs/SITE_CHANGE_LEDGER.md`
   - `projects/4-sap-training/web/ops/site-ledger/README.md`
   - `projects/4-sap-training/web/ops/site-ledger/config.json`
-- Updated `SITE_ARCHITECTURE.md` so local revision workflow includes before/after ledger snapshots, diff report, and rebuild-plan refresh.
-- The ledger records route inventory, expected access boundary, middleware coverage, content/data counts, file hashes, package scripts, Git branch/commit, dirty working-tree paths, and restore safety.
-- The first ledger check found `/me` was expected to be protected but was not covered by middleware; added `/me/:path*` to the matcher.
-- Generated initial and post-verification snapshots:
+- 更新 `SITE_ARCHITECTURE.md`，让本地改订流程包含 before/after ledger snapshots、diff report 和 rebuild-plan refresh。
+- ledger 记录 route inventory、预期 access boundary、middleware 覆盖、content/data counts、file hashes、package scripts、Git branch/commit、脏工作区路径和 restore safety。
+- 第一次 ledger check 发现 `/me` 预期受保护但没有被 middleware 覆盖；已把 `/me/:path*` 加入 matcher。
+- 生成初始和验证后 snapshots：
   - `projects/4-sap-training/web/ops/site-ledger/snapshots/2026-05-21T14-54-05-690Z__initial-site-ledger.json`
   - `projects/4-sap-training/web/ops/site-ledger/snapshots/2026-05-21T14-58-19-480Z__post-verification-site-ledger.json`
-- Generated human reports:
+- 生成人类可读 reports：
   - `projects/4-sap-training/web/ops/site-ledger/reports/2026-05-21T14-54-05-690Z__initial-site-ledger.md`
   - `projects/4-sap-training/web/ops/site-ledger/reports/2026-05-21T14-58-19-480Z__post-verification-site-ledger.md`
   - `projects/4-sap-training/web/ops/site-ledger/reports/2026-05-21T14-58-19-480Z__diff.md`
-- Generated latest pointers:
+- 生成最新指针：
   - `projects/4-sap-training/web/ops/site-ledger/latest.json`
   - `projects/4-sap-training/web/ops/site-ledger/CHANGELOG.md`
   - `projects/4-sap-training/web/ops/site-ledger/REBUILD_PLAN.md`
+- 本轮已把 ledger 的 Markdown 输出模板改为中文，后续新生成报告也应保持中文说明。
 
-## Verification
+## 验证
 
-- `node --check scripts/site-ledger.mjs`: PASS.
-- `npm run ledger:check`: PASS with 0 errors and 1 warning.
-- `npm run lint`: PASS.
-- `npm run typecheck`: PASS after clearing stale `.next`.
-- `npm run ledger:snapshot -- --label post-verification-site-ledger`: PASS.
-- `npm run ledger:diff -- --write`: PASS.
-- `npm run ledger:rebuild-plan`: PASS.
+- `node --check scripts/site-ledger.mjs`：PASS。
+- `npm run ledger:check`：PASS，0 errors、1 warning。
+- `npm run lint`：PASS。
+- `npm run typecheck`：清理 stale `.next` 后 PASS。
+- `npm run ledger:snapshot -- --label post-verification-site-ledger`：PASS。
+- `npm run ledger:diff -- --write`：PASS。
+- `npm run ledger:rebuild-plan`：PASS。
 
-## Not Passed / Known Existing Issue
+## 未通过 / 已知既有问题
 
-- `npm run build`: NOT PASS.
-- Build reached compile/type validation, but failed in Next generated-artifact stages with ENOENT/module-not-found variants under `.next`, including:
+- `npm run build`：NOT PASS。
+- Build 已通过 compile/type validation，但在 Next generated-artifact 阶段因 `.next` 下 ENOENT/module-not-found 变体失败，包括：
   - `.next/server/functions-config-manifest.json`
   - `.next/server/pages-manifest.json`
   - `.next/export/500.html -> .next/server/pages/500.html`
-  - missing generated chunks during prerender.
-- This matches the previously recorded intermittent Next/Sentry/generated-manifest class in earlier handoff notes. No TypeScript or lint error was reported for the ledger code.
+  - prerender 阶段缺少 generated chunks
+- 这与此前 handoff 中记录的间歇性 Next/Sentry/generated-manifest 类型一致。ledger 代码没有 TypeScript 或 lint error。
 
 ## Restore Safety
 
-- Latest snapshot health: 0 errors, 1 warning.
-- `restoreSafety.restoreSafe = false` because the worktree already has unrelated uncommitted changes.
-- The ledger is useful for observation and future change comparison now; it becomes a clean disaster-recovery anchor only after unrelated dirty changes are committed/stashed and a fresh snapshot is generated.
+- 最新 snapshot health：0 errors、1 warning。
+- `restoreSafety.restoreSafe = false`，因为工作区已经有无关未提交改动。
+- 当前 ledger 可用于观察和后续变更对比；只有在无关脏改动被 commit/stash 后重新生成 snapshot，才可作为干净灾备锚点。
 
-## State Note
+## State 备注
 
-- `projects/4-sap-training/state/sap_jp_training_course.json` was already dirty before this handoff. I did not edit it to avoid mixing unrelated state changes into the ledger commit.
+- `projects/4-sap-training/state/sap_jp_training_course.json` 在本 handoff 前已经是 dirty。为了避免把无关 state 改动混入 ledger commit，我没有编辑它。
 
-## Next Action
+## 下一步
 
-1. Review and resolve the unrelated dirty worktree items.
-2. Run `cd projects/4-sap-training/web && npm run ledger:snapshot -- --label clean-restore-anchor` after the tree is clean.
-3. Revisit the existing Next build generated-artifact issue separately from the ledger tool.
+1. 复查并处理无关脏工作区项目。
+2. 工作区干净后运行 `cd projects/4-sap-training/web && npm run ledger:snapshot -- --label clean-restore-anchor`。
+3. 将既有 Next build generated-artifact 问题作为独立于 ledger 工具的问题处理。

@@ -1,23 +1,23 @@
-# sap-jp.training Site Ledger
+# sap-jp.training 站点 Ledger
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:45:00+09:00
-- scope: local monitoring, history ledger, and disaster-recovery index for the sap-jp.training web app
+- updated_at: 2026-05-22T08:04:26+09:00
+- scope: sap-jp.training web app 的本地监控、历史台账和灾备索引
 
-## Purpose
+## 目的
 
-This directory is the local station ledger for sap-jp.training. It records what changed in the site without changing the product itself.
+本目录是 sap-jp.training 的本地站点台账。它记录站点发生了什么变化，但不改变产品本身。
 
-It is designed for both the user and AI tools:
+它同时服务用户和 AI 工具：
 
-- Humans can read the Markdown reports and changelog.
-- AI tools can read `config.json` and `latest.json`.
-- Git remains the source of truth for restoring actual code/content.
-- Secrets, local caches, `.next`, `node_modules`, and audio binaries are excluded.
+- 人可以阅读 Markdown 报告和 changelog。
+- AI 工具可以读取 `config.json` 和 `latest.json`。
+- Git 仍然是恢复真实代码/内容的真相源。
+- Secrets、本地 cache、`.next`、`node_modules` 和音频二进制都被排除。
 
-## Commands
+## 命令
 
-Run from `projects/4-sap-training/web`:
+从 `projects/4-sap-training/web` 运行：
 
 ```bash
 npm run ledger:snapshot -- --label before-content-change
@@ -26,28 +26,28 @@ npm run ledger:check
 npm run ledger:rebuild-plan
 ```
 
-## Files
+## 文件
 
-- `config.json`: stable machine-readable scope and rules.
-- `latest.json`: latest machine-readable snapshot.
-- `snapshots/`: timestamped historical snapshots.
-- `reports/`: human-readable snapshot and diff reports.
-- `CHANGELOG.md`: append-only ledger timeline.
-- `REBUILD_PLAN.md`: current rebuild checklist generated from the latest snapshot.
+- `config.json`：稳定的机器可读范围和规则。
+- `latest.json`：最新机器可读 snapshot。
+- `snapshots/`：带时间戳的历史 snapshot。
+- `reports/`：人类可读 snapshot 和 diff 报告。
+- `CHANGELOG.md`：只追加的 ledger 时间线。
+- `REBUILD_PLAN.md`：基于最新 snapshot 生成的当前重建清单。
 
-## Restore Safety Rule
+## Restore Safety 规则
 
-A snapshot is a clean restore anchor only when `restoreSafety.restoreSafe` is `true`.
+只有 `restoreSafety.restoreSafe` 为 `true` 时，一个 snapshot 才是干净恢复锚点。
 
-If the working tree is dirty, the ledger still records the current observable state, but it is not enough by itself to recreate uncommitted file contents. Commit or stash work before using a snapshot as a disaster-recovery point.
+如果工作区是脏的，ledger 仍会记录当前可观察状态，但仅凭它不足以重建未提交文件内容。把 snapshot 当灾备点前，请先 commit 或 stash 工作区。
 
-## AI Tool Contract
+## AI 工具契约
 
-Before changing the local site, an AI tool should:
+改动本地站点前，AI 工具应：
 
-1. Read `AGENTS.md`, Project 4 guardrails, and this README.
-2. Run `npm run ledger:snapshot -- --label before-<task>`.
-3. Make the scoped change.
-4. Run `npm run ledger:check`, then the narrow required web checks.
-5. Run `npm run ledger:snapshot -- --label after-<task>`.
-6. Mention the snapshot/report paths in the Project 4 handoff.
+1. 读取 `AGENTS.md`、Project 4 护栏和本 README。
+2. 运行 `npm run ledger:snapshot -- --label before-<task>`。
+3. 进行范围内改动。
+4. 运行 `npm run ledger:check`，再跑必要的 web 检查。
+5. 运行 `npm run ledger:snapshot -- --label after-<task>`。
+6. 在 Project 4 handoff 中写明 snapshot/report 路径。

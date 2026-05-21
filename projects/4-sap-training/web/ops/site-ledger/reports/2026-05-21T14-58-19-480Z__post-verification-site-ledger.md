@@ -1,4 +1,4 @@
-# sap-jp.training Site Ledger Snapshot
+# sap-jp.training 站点 Ledger 快照
 
 - schemaVersion: 1.0.0
 - siteId: sap-jp.training-local
@@ -7,17 +7,17 @@
 - branch: codex/sap-jp-content-audit-20260521
 - commit: 2ac1869
 - restore_safe: false
-- note: after lint/typecheck verification; build blocked by existing Next generated artifact issue
+- note: lint/typecheck 验证后；build 被既有 Next generated artifact 问题阻塞
 
-## What This Captures
+## 本快照记录什么
 
-- Content data hashes and counts under `data/`.
-- Page, API, component, script, library, docs, and Project 4 course-source file hashes.
-- Route inventory with expected access and middleware coverage.
-- Package scripts and dependency names.
-- Git dirty state so restore risk is explicit.
+- `data/` 下内容数据的 hash 与数量。
+- page、API、component、script、library、docs、Project 4 course-source 的文件 hash。
+- 路由清单、预期访问边界和 middleware 覆盖情况。
+- Package scripts 和 dependency names。
+- Git 脏状态，让恢复风险保持显性。
 
-## Data Summary
+## 数据摘要
 
 - data/\_meta.json: schemaVersion=1.4.0, stats={"tracks":1,"lessons":24,"phrases":480,"shadowing":480,"roleplays":48,"glossaryTerms":583,"libraryItems":6,"totalAssets":240,"japaneseCoachEntries":24}
 - data/assignments.json: array count=96
@@ -30,7 +30,7 @@
 - data/roleplays.json: array count=48
 - data/tracks.json: array count=1
 
-## Architecture Counts
+## 架构数量
 
 ```json
 {
@@ -89,11 +89,11 @@
 }
 ```
 
-## Health
+## 健康状态
 
-- WARNING working_tree_dirty: Working tree has 32 uncommitted path(s); snapshot is observational, not a clean restore anchor.
+- WARNING working_tree_dirty: 工作区有 32 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
 
-## Dirty Working Tree
+## 脏工作区
 
 - M logs/content-source-report.md
 - M projects/4-sap-training/sap_jp_training_course/output/lesson_02_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md
@@ -128,40 +128,40 @@
 - ?? projects/4-sap-training/web/public/audio/audio-manifest.json
 - ?? projects/4-sap-training/web/scripts/site-ledger.mjs
 
-## Delta From Previous Snapshot
+## 相比上一个快照的变化
 
-## Files
+## 文件
 
 - added: 0
 - removed: 0
 - changed: 4
 
-### Added
+### 新增
 
-- None.
+- 无。
 
-### Removed
+### 移除
 
-- None.
+- 无。
 
-### Changed
+### 变更
 
 - projects/4-sap-training/web/data/\_meta.json (runtime-data)
 - projects/4-sap-training/web/lib/admin/ops-dashboard.ts (library-code)
 - projects/4-sap-training/web/scripts/convert-content.mjs (script)
 - projects/4-sap-training/web/scripts/site-ledger.mjs (script)
 
-## Routes
+## 路由
 
-- No route changes.
+- 路由无变化。
 
-## Data Counts
+## 数据数量
 
-- No data count changes.
+- 数据数量无变化。
 
-## AI Quick Context
+## AI 快速上下文
 
-- Latest machine-readable snapshot: `projects/4-sap-training/web/ops/site-ledger/latest.json`
-- Historical snapshots: `projects/4-sap-training/web/ops/site-ledger/snapshots/`
-- Human reports: `projects/4-sap-training/web/ops/site-ledger/reports/`
-- Restore guide: run `npm run ledger:rebuild-plan`
+- 最新机器可读 snapshot：`projects/4-sap-training/web/ops/site-ledger/latest.json`
+- 历史 snapshots：`projects/4-sap-training/web/ops/site-ledger/snapshots/`
+- 人类可读报告：`projects/4-sap-training/web/ops/site-ledger/reports/`
+- 恢复指南：运行 `npm run ledger:rebuild-plan`

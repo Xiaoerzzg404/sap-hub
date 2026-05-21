@@ -1,7 +1,7 @@
-# Handoff · SAP 项目日语讲师教练层 · 2026-05-21
+# 交接 · SAP 项目日语讲师教练层 · 2026-05-21
 
 - updated_by: codex
-- updated_at: 2026-05-21T22:56:32+09:00
+- updated_at: 2026-05-22T08:04:26+09:00
 - branch: codex/sap-jp-content-audit-20260521
 - scope: `/teacher` 讲师专区、讲师教练数据、讲师手册、内容转换元数据
 
@@ -10,7 +10,7 @@
 1. 新增讲师教练结构化数据：
    - `projects/4-sap-training/web/data/japanese-coach.json`
    - 覆盖 8 条教学原则、6 个讲师禁区、60 分钟课堂流程、5 维点评标准、4 个通用语法抓手、5 个固定句、24 个单课教练卡。
-2. 新增 `/teacher` 可见 Teacher Coach 面板：
+2. 新增 `/teacher` 可见的 Teacher Coach 面板：
    - `projects/4-sap-training/web/components/teacher/JapaneseTeacherCoachPanel.tsx`
    - `projects/4-sap-training/web/app/teacher/page.tsx`
    - 讲师可以按课次选择，查看本课教学使命、核心流程、mini dialogue、NG 改写、输出任务、合格检查。

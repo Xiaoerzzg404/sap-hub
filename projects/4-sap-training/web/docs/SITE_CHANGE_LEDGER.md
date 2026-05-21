@@ -1,30 +1,30 @@
 # SITE_CHANGE_LEDGER · sap-jp.training
 
 - updated_by: codex
-- updated_at: 2026-05-21T23:45:00+09:00
-- scope: how humans and AI tools record local site changes, version history, and rebuild evidence
+- updated_at: 2026-05-22T08:04:26+09:00
+- scope: 人类和 AI 工具如何记录本地站点变更、版本历史和重建证据
 
-## What To Use
+## 用什么
 
-The local site ledger lives at:
+本地站点 ledger 位于：
 
 `projects/4-sap-training/web/ops/site-ledger/`
 
-The command-line tool is:
+命令行工具是：
 
 `projects/4-sap-training/web/scripts/site-ledger.mjs`
 
-Run commands from `projects/4-sap-training/web`.
+请从 `projects/4-sap-training/web` 运行命令。
 
-## Standard Workflow
+## 标准流程
 
-Before a meaningful local-site change:
+有意义的本地站点改动前：
 
 ```bash
 npm run ledger:snapshot -- --label before-task-name
 ```
 
-After the change and validation:
+改动并验证后：
 
 ```bash
 npm run ledger:check
@@ -33,51 +33,51 @@ npm run ledger:diff -- --write
 npm run ledger:rebuild-plan
 ```
 
-## What The Ledger Records
+## Ledger 记录什么
 
-- Git branch, commit, and dirty working-tree paths.
-- Page routes and API routes.
-- Expected public/protected route status and middleware coverage.
-- Runtime data counts and hashes, including lessons, phrases, roleplays, assignments, glossary, library, and coach data.
-- Architecture file inventory: pages, components, libs, scripts, docs, DB migrations, public assets, and Project 4 course sources.
-- Package scripts and dependency names.
-- Human Markdown reports plus machine-readable JSON snapshots.
+- Git branch、commit 和脏工作区路径。
+- 页面路由和 API 路由。
+- 预期 public/protected 路由状态和 middleware 覆盖。
+- 运行时数据数量和 hash，包括 lessons、phrases、roleplays、assignments、glossary、library、coach data。
+- 架构文件清单：pages、components、libs、scripts、docs、DB migrations、public assets、Project 4 course sources。
+- Package scripts 和 dependency names。
+- 人类可读 Markdown 报告，以及机器可读 JSON snapshot。
 
-## What It Does Not Record
+## Ledger 不记录什么
 
-- Secret values from `.env.local` or deployment settings.
-- `.next`, `node_modules`, TypeScript build cache, or local audio cache.
-- Audio/video binaries such as `.mp3`, `.wav`, `.m4a`, `.mp4`.
-- Real learner data, session cookies, signed R2 URLs, magic-link tokens, or private feedback text.
+- `.env.local` 或部署设置里的 secret values。
+- `.next`、`node_modules`、TypeScript build cache 或本地 audio cache。
+- 音视频二进制，例如 `.mp3`、`.wav`、`.m4a`、`.mp4`。
+- 真实学员数据、session cookies、signed R2 URLs、magic-link tokens 或私有反馈文本。
 
-## How To Read Snapshot Health
+## 如何读取 Snapshot Health
 
-- `error`: a required route/file/security boundary is missing; stop and fix or write need-input.
-- `warning`: the site can still be observed, but restore or access-control confidence is lower.
-- `info`: no ledger-level issue detected.
+- `error`：必需 route/file/security boundary 缺失；停手修复或写 need-input。
+- `warning`：站点仍可观察，但 restore 或 access-control 可信度较低。
+- `info`：ledger 层未发现问题。
 
-`restoreSafety.restoreSafe` is only `true` when the Git working tree is clean. A dirty snapshot is useful for audit, but not sufficient as a disaster-recovery anchor unless the dirty files are committed or separately preserved.
+只有 Git 工作区干净时，`restoreSafety.restoreSafe` 才是 `true`。脏 snapshot 可用于审计，但不能单独作为灾备恢复锚点；必须先 commit 或另行保存脏文件。
 
-## Disaster-Recovery Use
+## 灾备恢复用途
 
-Generate or refresh the rebuild guide:
+生成或刷新重建指南：
 
 ```bash
 npm run ledger:rebuild-plan
 ```
 
-Then use:
+然后使用：
 
-- `ops/site-ledger/REBUILD_PLAN.md` for the human rebuild steps.
-- `ops/site-ledger/latest.json` for machine-readable file, route, data, and Git evidence.
-- Git history for actual code/content restoration.
+- `ops/site-ledger/REBUILD_PLAN.md`：给人看的重建步骤。
+- `ops/site-ledger/latest.json`：机器可读的文件、路由、数据和 Git 证据。
+- Git history：真正恢复代码/内容。
 
-## Required Handoff Note
+## 必需交接记录
 
-Any AI tool that changes sap-jp.training should include:
+任何 AI 工具改动 sap-jp.training 时，都应在 handoff 写清楚：
 
-- snapshot label before/after,
-- report path,
-- `npm run ledger:check` result,
-- whether `restoreSafety.restoreSafe` is `true`,
-- any warnings that remain.
+- before/after snapshot label；
+- report path；
+- `npm run ledger:check` 结果；
+- `restoreSafety.restoreSafe` 是否为 `true`；
+- 仍然保留的 warning。

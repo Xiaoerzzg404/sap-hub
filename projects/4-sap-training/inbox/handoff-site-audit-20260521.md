@@ -1,57 +1,57 @@
-# Handoff · sap-jp.training Local Site Audit · 2026-05-21
+# 交接 · sap-jp.training 本地站点审计 · 2026-05-21
 
 - updated_by: codex
-- updated_at: 2026-05-21T22:43:52+09:00
+- updated_at: 2026-05-22T08:04:26+09:00
 - branch: codex/sap-jp-content-audit-20260521
-- scope: local site audit + small lint/recording refresh cleanup
+- scope: 本地站点审计 + 小范围 lint/录音刷新逻辑清理
 
-## Completed
+## 已完成
 
-- Read AGENTS.md, Project 4 instructions, state, and latest handoff.
-- Ran baseline:
+- 读取 `AGENTS.md`、Project 4 instructions、state 和最新 handoff。
+- 跑 baseline：
   - `git status --short`
   - `npm run typecheck`
   - `npm run lint`
   - `npm run build`
-- Started local dev server on `http://127.0.0.1:3210`.
-- Ran logged-out smoke for all requested pages.
-- Ran logged-out API smoke for `/api/recordings`, `/api/teacher/recordings`, `/api/progress/events`.
-- Fixed confirmed lint warnings in recording refresh hooks, teacher recording refresh hooks, stale eslint-disable, and unused conversion-script helpers.
-- Re-ran `npm run typecheck`, `npm run lint`, and `npm run build`.
-- Wrote audit log: `projects/4-sap-training/logs/site-audit-20260521.md`.
-- Wrote need-input: `projects/4-sap-training/inbox/need-input-site-audit-20260521.md`.
+- 在 `http://127.0.0.1:3210` 启动本地 dev server。
+- 对所有请求页面执行未登录 smoke。
+- 对 `/api/recordings`、`/api/teacher/recordings`、`/api/progress/events` 执行未登录 API smoke。
+- 修复录音 refresh hooks、讲师录音 refresh hooks、过期 eslint-disable、未使用转换脚本 helper 中已确认的 lint warning。
+- 重新运行 `npm run typecheck`、`npm run lint`、`npm run build`。
+- 写入审计日志：`projects/4-sap-training/logs/site-audit-20260521.md`。
+- 写入 need-input：`projects/4-sap-training/inbox/need-input-site-audit-20260521.md`。
 
-## Verification Summary
+## 验证摘要
 
-- `npm run typecheck`: PASS.
-- `npm run lint`: PASS, 0 warnings.
-- `npm run build`: PASS with known Sentry/pg warnings.
-- Public logged-out pages:
-  - `/`, `/login`, `/privacy`: 200.
-- Protected logged-out pages:
-  - `/dashboard`, `/courses`, `/courses/lessons/lesson_01`, all requested `/speaking/*`, `/roleplay`, `/assignments`, `/review`, `/teacher`, `/teacher/recordings`, `/teacher/recordings/[id]`, `/teacher/review-terms`: 307 to login callback.
-- Logged-out APIs:
-  - `/api/recordings`: 401.
-  - `/api/teacher/recordings`: 401.
-  - `/api/progress/events`: 401.
+- `npm run typecheck`：PASS。
+- `npm run lint`：PASS，0 warning。
+- `npm run build`：PASS，存在已知 Sentry/pg warning。
+- 未登录公开页：
+  - `/`、`/login`、`/privacy`：200。
+- 未登录受保护页：
+  - `/dashboard`、`/courses`、`/courses/lessons/lesson_01`、所有请求的 `/speaking/*`、`/roleplay`、`/assignments`、`/review`、`/teacher`、`/teacher/recordings`、`/teacher/recordings/[id]`、`/teacher/review-terms`：307 到 login callback。
+- 未登录 API：
+  - `/api/recordings`：401。
+  - `/api/teacher/recordings`：401。
+  - `/api/progress/events`：401。
 
-## Not Run
+## 未运行
 
-Authenticated E2E was not run because no test student/teacher session was available and no permission was given to create users or read local magic-link tokens.
+Authenticated E2E 未运行，因为没有可用的测试 student/teacher session，也没有授权创建用户或读取本地 magic-link token。
 
-Blocked flows:
+阻塞流程：
 
-- Student recording lifecycle.
-- Cloud recording sign/PUT/PATCH/list.
-- Teacher recording review and feedback save.
-- Student `/review` feedback display.
-- Cross-user/class-scoped API RBAC.
+- 学员录音生命周期。
+- 云端录音 sign/PUT/PATCH/list。
+- 讲师录音复核和反馈保存。
+- 学员 `/review` 反馈展示。
+- 跨用户 / 班级范围 API RBAC。
 
-## Notes
+## 备注
 
-- A transient Next dev-server `/` 500 appeared after running `next build` while dev was active. It matched the known stale `.next`/RSC manifest class; stopping dev, clearing generated `.next`, and restarting dev restored `/` to 200.
-- The current worktree contains a separate unstaged `japanese-coach` / self-training scaffold, including `web/data/japanese-coach.json`, `web/lib/japanese-coach.ts`, `web/types/japanese-coach.ts`, `web/components/lesson/JapaneseCoachPanel.tsx`, `web/components/pages/JapaneseSelfTrainingClient.tsx`, `web/app/speaking/self-training/`, and related page/nav edits. It was treated as concurrent work outside this audit commit.
+- 在 dev 活跃时运行 `next build` 后，曾出现一次短暂的 Next dev-server `/` 500。它符合已知 stale `.next`/RSC manifest 类型；停止 dev、清理生成的 `.next`、重启 dev 后 `/` 恢复 200。
+- 当前工作区包含另一组未 staged 的 `japanese-coach` / self-training scaffold，包括 `web/data/japanese-coach.json`、`web/lib/japanese-coach.ts`、`web/types/japanese-coach.ts`、`web/components/lesson/JapaneseCoachPanel.tsx`、`web/components/pages/JapaneseSelfTrainingClient.tsx`、`web/app/speaking/self-training/` 和相关页面/nav 改动。它被视作审计 commit 之外的并行工作。
 
-## Next Action
+## 下一步
 
-Wait for user confirmation in `need-input-site-audit-20260521.md`; then run the authenticated student/teacher E2E matrix with explicitly provided test accounts and permissions.
+等待用户确认 `need-input-site-audit-20260521.md` 中的问题；随后使用明确提供的测试账号和权限运行 authenticated student/teacher E2E 矩阵。

@@ -174,8 +174,8 @@ function collectSnapshot({ label, note }) {
     restoreSafety: {
       restoreSafe: !git.isDirty,
       reason: git.isDirty
-        ? "Working tree has uncommitted changes; commit or stash them before treating this snapshot as a restore point."
-        : "Git HEAD is clean and can be used as a restore anchor.",
+        ? "工作区存在未提交改动；作为恢复点使用前请先 commit 或 stash。"
+        : "Git HEAD 干净，可作为恢复锚点。",
     },
     package: pkg,
     data,
@@ -525,7 +525,7 @@ function evaluateSnapshot(snapshot) {
       findings.push({
         level: "error",
         code: "missing_required_file",
-        message: `Required file is missing from snapshot: ${required}`,
+        message: `snapshot 缺少必需文件：${required}`,
       });
     }
   }
@@ -536,7 +536,7 @@ function evaluateSnapshot(snapshot) {
       findings.push({
         level: "warning",
         code: "content_count_changed",
-        message: `${file} count is ${actual ?? "missing"}, expected ${expected}.`,
+        message: `${file} 数量为 ${actual ?? "missing"}，预期 ${expected}。`,
       });
     }
   }
@@ -546,7 +546,7 @@ function evaluateSnapshot(snapshot) {
     findings.push({
       level: "warning",
       code: "missing_meta_schema",
-      message: "data/_meta.json has no schemaVersion.",
+      message: "data/_meta.json 缺少 schemaVersion。",
     });
   }
 
@@ -555,21 +555,21 @@ function evaluateSnapshot(snapshot) {
       findings.push({
         level: "warning",
         code: "protected_route_not_in_middleware",
-        message: `${route.route} is expected to be protected but is not covered by middleware and has no server guard marker.`,
+        message: `${route.route} 预期受保护，但未被 middleware 覆盖，也未检测到 server guard 标记。`,
       });
     }
     if (route.effectiveAccess === "api_uncovered") {
       findings.push({
         level: "error",
         code: "api_route_not_in_middleware",
-        message: `${route.route} is expected to require a session but is not covered by middleware.`,
+        message: `${route.route} 预期需要 session，但未被 middleware 覆盖。`,
       });
     }
     if (route.effectiveAccess === "cron_uncovered") {
       findings.push({
         level: "error",
         code: "cron_route_not_in_middleware",
-        message: `${route.route} is expected to require CRON_SECRET but is not covered by middleware.`,
+        message: `${route.route} 预期需要 CRON_SECRET，但未被 middleware 覆盖。`,
       });
     }
   }
@@ -578,7 +578,7 @@ function evaluateSnapshot(snapshot) {
     findings.push({
       level: "warning",
       code: "working_tree_dirty",
-      message: `Working tree has ${snapshot.git.statusLines.length} uncommitted path(s); snapshot is observational, not a clean restore anchor.`,
+      message: `工作区有 ${snapshot.git.statusLines.length} 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。`,
     });
   }
 
@@ -586,7 +586,7 @@ function evaluateSnapshot(snapshot) {
     findings.push({
       level: "info",
       code: "ledger_check_passed",
-      message: "No ledger health errors or warnings detected.",
+      message: "未发现 ledger 健康错误或警告。",
     });
   }
 
@@ -675,7 +675,7 @@ function renderSnapshotReport(snapshot, previous) {
     .map((finding) => `- ${finding.level.toUpperCase()} ${finding.code}: ${finding.message}`)
     .join("\n");
 
-  return `# sap-jp.training Site Ledger Snapshot
+  return `# sap-jp.training 站点 Ledger 快照
 
 - schemaVersion: ${snapshot.schemaVersion}
 - siteId: ${snapshot.siteId}
@@ -684,49 +684,49 @@ function renderSnapshotReport(snapshot, previous) {
 - branch: ${snapshot.git.branch}
 - commit: ${snapshot.git.headShort}
 - restore_safe: ${snapshot.restoreSafety.restoreSafe}
-- note: ${snapshot.note || "(none)"}
+- note: ${snapshot.note || "(无)"}
 
-## What This Captures
+## 本快照记录什么
 
-- Content data hashes and counts under \`data/\`.
-- Page, API, component, script, library, docs, and Project 4 course-source file hashes.
-- Route inventory with expected access and middleware coverage.
-- Package scripts and dependency names.
-- Git dirty state so restore risk is explicit.
+- \`data/\` 下内容数据的 hash 与数量。
+- page、API、component、script、library、docs、Project 4 course-source 的文件 hash。
+- 路由清单、预期访问边界和 middleware 覆盖情况。
+- Package scripts 和 dependency names。
+- Git 脏状态，让恢复风险保持显性。
 
-## Data Summary
+## 数据摘要
 
-${dataLines || "- No data files found."}
+${dataLines || "- 未发现数据文件。"}
 
-## Architecture Counts
+## 架构数量
 
 \`\`\`json
 ${JSON.stringify(snapshot.architecture, null, 2)}
 \`\`\`
 
-## Health
+## 健康状态
 
 ${findingLines}
 
-## Dirty Working Tree
+## 脏工作区
 
-${dirtyLines.length ? dirtyLines.map((line) => `- ${line}`).join("\n") : "- Clean."}
+${dirtyLines.length ? dirtyLines.map((line) => `- ${line}`).join("\n") : "- 干净。"}
 
-## Delta From Previous Snapshot
+## 相比上一个快照的变化
 
-${diff ? renderDiffBody(diff) : "- No previous snapshot found."}
+${diff ? renderDiffBody(diff) : "- 未发现上一个 snapshot。"}
 
-## AI Quick Context
+## AI 快速上下文
 
-- Latest machine-readable snapshot: \`projects/4-sap-training/web/ops/site-ledger/latest.json\`
-- Historical snapshots: \`projects/4-sap-training/web/ops/site-ledger/snapshots/\`
-- Human reports: \`projects/4-sap-training/web/ops/site-ledger/reports/\`
-- Restore guide: run \`npm run ledger:rebuild-plan\`
+- 最新机器可读 snapshot：\`projects/4-sap-training/web/ops/site-ledger/latest.json\`
+- 历史 snapshots：\`projects/4-sap-training/web/ops/site-ledger/snapshots/\`
+- 人类可读报告：\`projects/4-sap-training/web/ops/site-ledger/reports/\`
+- 恢复指南：运行 \`npm run ledger:rebuild-plan\`
 `;
 }
 
 function renderDiffReport(diff) {
-  return `# sap-jp.training Site Ledger Diff
+  return `# sap-jp.training 站点 Ledger 差异
 
 - from: ${diff.from.generatedAt} (${diff.from.git.headShort})
 - to: ${diff.to.generatedAt} (${diff.to.git.headShort})
@@ -740,39 +740,39 @@ function renderDiffBody(diff) {
   const addedLines = diff.files.added.slice(0, 80).map((file) => `- ${file.path} (${file.category})`);
   const removedLines = diff.files.removed.slice(0, 80).map((file) => `- ${file.path} (${file.category})`);
   const routeLines = [
-    ...diff.routes.added.map((route) => `- ADDED ${route.route} -> ${route.file}`),
-    ...diff.routes.removed.map((route) => `- REMOVED ${route.route} -> ${route.file}`),
-    ...diff.routes.changed.map((route) => `- CHANGED ${route.route} -> ${route.effectiveAccess}`),
+    ...diff.routes.added.map((route) => `- 新增 ${route.route} -> ${route.file}`),
+    ...diff.routes.removed.map((route) => `- 移除 ${route.route} -> ${route.file}`),
+    ...diff.routes.changed.map((route) => `- 变更 ${route.route} -> ${route.effectiveAccess}`),
   ];
   const dataLines = diff.dataCounts.map(
     (entry) => `- ${entry.file}: ${inlineJson(entry.before)} -> ${inlineJson(entry.after)}`
   );
 
-  return `## Files
+  return `## 文件
 
 - added: ${diff.files.added.length}
 - removed: ${diff.files.removed.length}
 - changed: ${diff.files.changed.length}
 
-### Added
+### 新增
 
-${addedLines.length ? addedLines.join("\n") : "- None."}
+${addedLines.length ? addedLines.join("\n") : "- 无。"}
 
-### Removed
+### 移除
 
-${removedLines.length ? removedLines.join("\n") : "- None."}
+${removedLines.length ? removedLines.join("\n") : "- 无。"}
 
-### Changed
+### 变更
 
-${changedLines.length ? changedLines.join("\n") : "- None."}
+${changedLines.length ? changedLines.join("\n") : "- 无。"}
 
-## Routes
+## 路由
 
-${routeLines.length ? routeLines.join("\n") : "- No route changes."}
+${routeLines.length ? routeLines.join("\n") : "- 路由无变化。"}
 
-## Data Counts
+## 数据数量
 
-${dataLines.length ? dataLines.join("\n") : "- No data count changes."}
+${dataLines.length ? dataLines.join("\n") : "- 数据数量无变化。"}
 `;
 }
 
@@ -782,7 +782,7 @@ function renderRebuildPlan(snapshot) {
     .map((finding) => `- ${finding.level.toUpperCase()} ${finding.code}: ${finding.message}`)
     .join("\n");
 
-  return `# sap-jp.training Local Rebuild Plan
+  return `# sap-jp.training 本地重建计划
 
 - updated_by: site-ledger
 - updated_at: ${formatTokyo(new Date().toISOString())}
@@ -791,35 +791,35 @@ function renderRebuildPlan(snapshot) {
 - source_commit: ${snapshot.git.head}
 - restore_safe: ${snapshot.restoreSafety.restoreSafe}
 
-## Recovery Principle
+## 恢复原则
 
-Use Git as the content and code source of truth. Use this ledger to identify the exact branch, commit, route map, data counts, and files that must exist after rebuild. Do not restore secrets from the ledger; recreate them in local \`.env.local\` or the deployment provider.
+以 Git 作为内容和代码真相源。使用本 ledger 确认重建后必须存在的 branch、commit、路由地图、数据数量和文件。不要从 ledger 恢复 secret；请在本地 \`.env.local\` 或部署平台重新配置。
 
-## Local Rebuild Steps
+## 本地重建步骤
 
-1. Restore or clone \`/Users/openclawxiaoer/sap-hub\`.
-2. Check out the recorded branch and commit:
+1. 恢复或 clone \`/Users/openclawxiaoer/sap-hub\`。
+2. 切到记录的 branch 和 commit：
 
 \`\`\`bash
 git checkout ${snapshot.git.branch}
 git checkout ${snapshot.git.head}
 \`\`\`
 
-3. Install the web dependencies:
+3. 安装 web 依赖：
 
 \`\`\`bash
 cd projects/4-sap-training/web
 npm install
 \`\`\`
 
-4. Recreate local-only secrets in \`.env.local\`. Do not commit this file.
-5. Rebuild generated content if source Markdown changed:
+4. 在 \`.env.local\` 重新配置只属于本地的 secret。不要 commit 这个文件。
+5. 如果源 Markdown 发生变化，重新生成内容：
 
 \`\`\`bash
 npm run convert:content
 \`\`\`
 
-6. Run the verification gate:
+6. 运行验证门：
 
 \`\`\`bash
 npm run ledger:check
@@ -828,21 +828,21 @@ npm run lint
 npm run build
 \`\`\`
 
-7. Start local review:
+7. 启动本地预览：
 
 \`\`\`bash
 npm run dev
 \`\`\`
 
-## Required Files
+## 必需文件
 
 ${requiredFiles}
 
-## Snapshot Health
+## 快照健康状态
 
 ${findings}
 
-## Data Counts At Snapshot Time
+## 快照时的数据数量
 
 \`\`\`json
 ${JSON.stringify(snapshot.data, null, 2)}
@@ -862,7 +862,7 @@ function appendChangelog(snapshot, previous) {
   const changelogPath = artifacts.changelog;
   const existing = existsSync(changelogPath)
     ? readFileSync(changelogPath, "utf8")
-    : "# sap-jp.training Site Ledger Changelog\n";
+    : "# sap-jp.training 站点 Ledger 变更记录\n";
   writeFileSync(changelogPath, `${existing.trimEnd()}\n${line}`, "utf8");
 }
 

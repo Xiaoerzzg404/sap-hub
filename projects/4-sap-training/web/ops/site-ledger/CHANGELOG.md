@@ -1,4 +1,4 @@
-# sap-jp.training Site Ledger Changelog
+# sap-jp.training 站点 Ledger 变更记录
 
 ## 2026-05-21T23:54:05+09:00 · initial-site-ledger
 
@@ -8,7 +8,7 @@
 - files: 785
 - routes: 38
 - health: warning:working_tree_dirty
-- delta: first snapshot
+- delta: 首次 snapshot
 
 ## 2026-05-21T23:58:19+09:00 · post-verification-site-ledger
 
@@ -19,3 +19,23 @@
 - routes: 38
 - health: warning:working_tree_dirty
 - delta: +0 / -0 / changed 4
+
+## 2026-05-22T00:17:58+09:00 · before-task
+
+- commit: d3ba920
+- branch: codex/sap-jp-content-audit-20260521
+- restore_safe: false
+- files: 785
+- routes: 38
+- health: warning:working_tree_dirty
+- delta: +0 / -0 / changed 3
+
+## 2026-05-22T08:16:33+09:00 · before-public-sync
+
+- commit: d0440b1
+- branch: codex/sap-jp-content-audit-20260521
+- restore_safe: false
+- files: 796
+- routes: 40
+- health: warning:protected_route_not_in_middleware, error:cron_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:protected_route_not_in_middleware, warning:working_tree_dirty
+- delta: +11 / -0 / changed 51

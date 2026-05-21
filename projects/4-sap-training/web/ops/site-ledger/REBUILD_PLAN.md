@@ -1,41 +1,41 @@
-# sap-jp.training Local Rebuild Plan
+# sap-jp.training 本地重建计划
 
-- updated_by: site-ledger
-- updated_at: 2026-05-21T23:58:20+09:00
-- source_snapshot: 2026-05-21T14:58:19.480Z
+- updated_by: codex
+- updated_at: 2026-05-22T08:04:26+09:00
+- source_snapshot: 2026-05-21T15:17:58.323Z
 - source_branch: codex/sap-jp-content-audit-20260521
-- source_commit: 2ac18696e0cd89259a89e690f98d84bdb19bfeff
+- source_commit: d3ba920609adeb2cb87b980ef74f5fc608af310a
 - restore_safe: false
 
-## Recovery Principle
+## 恢复原则
 
-Use Git as the content and code source of truth. Use this ledger to identify the exact branch, commit, route map, data counts, and files that must exist after rebuild. Do not restore secrets from the ledger; recreate them in local `.env.local` or the deployment provider.
+以 Git 作为内容和代码真相源。使用本 ledger 确认重建后必须存在的 branch、commit、路由地图、数据数量和文件。不要从 ledger 恢复 secret；请在本地 `.env.local` 或部署平台重新配置。
 
-## Local Rebuild Steps
+## 本地重建步骤
 
-1. Restore or clone `/Users/openclawxiaoer/sap-hub`.
-2. Check out the recorded branch and commit:
+1. 恢复或 clone `/Users/openclawxiaoer/sap-hub`。
+2. 切到记录的 branch 和 commit：
 
 ```bash
 git checkout codex/sap-jp-content-audit-20260521
-git checkout 2ac18696e0cd89259a89e690f98d84bdb19bfeff
+git checkout d3ba920609adeb2cb87b980ef74f5fc608af310a
 ```
 
-3. Install the web dependencies:
+3. 安装 web 依赖：
 
 ```bash
 cd projects/4-sap-training/web
 npm install
 ```
 
-4. Recreate local-only secrets in `.env.local`. Do not commit this file.
-5. Rebuild generated content if source Markdown changed:
+4. 在 `.env.local` 重新配置只属于本地的 secret。不要 commit 这个文件。
+5. 如果源 Markdown 发生变化，重新生成内容：
 
 ```bash
 npm run convert:content
 ```
 
-6. Run the verification gate:
+6. 运行验证门：
 
 ```bash
 npm run ledger:check
@@ -44,13 +44,13 @@ npm run lint
 npm run build
 ```
 
-7. Start local review:
+7. 启动本地预览：
 
 ```bash
 npm run dev
 ```
 
-## Required Files
+## 必需文件
 
 - `package.json`
 - `next.config.ts`
@@ -72,11 +72,11 @@ npm run dev
 - `docs/TEACHER_GUIDE.md`
 - `docs/ADMIN_OPS.md`
 
-## Snapshot Health
+## 快照健康状态
 
-- WARNING working_tree_dirty: Working tree has 32 uncommitted path(s); snapshot is observational, not a clean restore anchor.
+- WARNING working_tree_dirty: 工作区有 15 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
 
-## Data Counts At Snapshot Time
+## 快照时的数据数量
 
 ```json
 {

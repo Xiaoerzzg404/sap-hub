@@ -1,36 +1,36 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-22T00:45:00+09:00
-- scope: Phase 7 launch-readiness operations + admin ops dashboard + credentials auth
+- updated_at: 2026-05-22T08:04:26+09:00
+- scope: Phase 7 上线准备、admin 运维监控台、账号密码登录
 
-## Auth And Roles
+## 登录与角色
 
-Current login mode:
+当前登录方式：
 
-- Users register with email, username, and password.
-- Users log in with either email or username.
-- Passwords are stored as `scrypt` hashes in `users.password_hash`.
-- Anonymous users only see `/login`; training pages, `/audio/*`, and business APIs require a session.
-- Roles are multi-valued in `user_roles`.
-- `users.role` remains as a legacy primary-role compatibility field.
+- 用户使用邮箱、用户名和密码注册。
+- 用户可以用邮箱或用户名登录。
+- 密码以 `scrypt` hash 存在 `users.password_hash`。
+- 未登录用户只能看到 `/login`；训练页面、`/audio/*` 和业务 API 都需要 session。
+- 角色是多值模型，存储在 `user_roles`。
+- `users.role` 保留为 legacy 主角色兼容字段。
 
-Role model:
+角色模型：
 
-| Role      | Access                                                                                            |
-| --------- | ------------------------------------------------------------------------------------------------- |
-| `student` | Student learning pages, speaking tools, assignments, recordings, review.                          |
-| `teacher` | Teacher course tools, student recording review, feedback, review terms.                           |
-| `admin`   | Admin dashboard and operational oversight; admin can access teacher/student surfaces for support. |
+| 角色      | 可访问范围                                                    |
+| --------- | ------------------------------------------------------------- |
+| `student` | 学员学习页、口语工具、作业、录音、复盘。                      |
+| `teacher` | 讲师课程工具、学生录音复核、反馈、待复核术语。                |
+| `admin`   | 管理监控和运营总览；admin 为支持排障可访问讲师/学员相关页面。 |
 
-Owner bootstrap:
+Owner 初始化：
 
-- Migration `0003_auth_credentials_multi_role.sql` grants `student`, `teacher`, and `admin` to `zzg404@gmail.com` if the user already exists.
-- If `zzg404@gmail.com` registers after the migration, `/api/auth/register` grants the same three roles automatically.
+- migration `0003_auth_credentials_multi_role.sql` 会在 `zzg404@gmail.com` 已存在时授予 `student`、`teacher`、`admin` 三个角色。
+- 如果 `zzg404@gmail.com` 在 migration 后注册，`/api/auth/register` 会自动授予同样三种角色。
 
-## Admin Dashboard
+## 管理监控台
 
-Route: `/admin`
+路由：`/admin`
 
 访问边界：
 
@@ -43,14 +43,14 @@ Route: `/admin`
 - Neon Postgres 只读统计：用户、学生、讲师、班级、课程、素材、录音、讲师反馈、待复核术语等。
 - 外部平台快捷入口：GitHub、Vercel、Cloudflare、Neon、Sentry、Resend、Upstash、Google Search Console、Safe Browsing 申诉。
 - 环境变量检查：只显示是否配置，不显示值。
-- 本地改订发布流：本地改 -> typecheck/lint/build/browser check -> commit -> deploy -> 线上复查。
+- 本地改订发布流：本地修改 -> typecheck/lint/build/browser check -> commit -> deploy -> 线上复查。
 
 可选外部监控数据：
 
-| Platform | Optional env                                                       | 用途                                   |
-| -------- | ------------------------------------------------------------------ | -------------------------------------- |
-| GitHub   | `GITHUB_REPOSITORY`, `GITHUB_TOKEN`                                | 读取最新 GitHub Actions workflow run。 |
-| Vercel   | `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, optional `VERCEL_TEAM_ID` | 读取最新 Vercel deployment 状态。      |
+| 平台   | 可选 env                                                           | 用途                                   |
+| ------ | ------------------------------------------------------------------ | -------------------------------------- |
+| GitHub | `GITHUB_REPOSITORY`, `GITHUB_TOKEN`                                | 读取最新 GitHub Actions workflow run。 |
+| Vercel | `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, optional `VERCEL_TEAM_ID` | 读取最新 Vercel deployment 状态。      |
 
 这些 token 不得提交到 git。只放在本地 `.env.local` 或 Vercel Project Settings -> Environment Variables。
 
@@ -95,7 +95,7 @@ pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql
 
 备份文件不得提交到 git。建议本地加密保存，或上传到私有 R2/Drive 目录。
 
-## Capacity Monitoring
+## 容量监控
 
 每月第一周人工检查一次：
 
@@ -108,7 +108,7 @@ pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql
 
 任一指标超过 80% 阈值时，先记录截图和用量，再升级对应 SaaS plan。
 
-## Recording Hard Delete
+## 录音硬删除
 
 Phase 7 已实现：
 
@@ -138,11 +138,11 @@ Vercel Cron schedule：
 
 UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON_SECRET`；没有 secret 时端点返回 503。
 
-## Incident Notes
+## 事故记录注意事项
 
 不要在 issue、日志、截图、handoff 里写出完整 `DATABASE_URL`、R2 key secret、Resend key、Upstash token、Sentry auth token 或 `CRON_SECRET`。
 
-## Local Revision And Deploy
+## 本地改订与部署
 
 页面、label、课程内容、TTS 音频、反馈功能和老师端功能都先在本地改订，验证后再部署到 Vercel。
 
@@ -156,7 +156,7 @@ UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON
 6. 部署。
 7. 上线后检查 Sentry、登录、学生页、老师反馈流。
 
-## Promote User Role
+## 提升用户角色
 
 讲师和 admin 权限只能通过 SQL 手动提升。不要实现前台自助提升接口。
 
@@ -207,7 +207,7 @@ set role = 'student', updated_at = now()
 where email = 'teacher@example.com';
 ```
 
-## Class Enrollment Checks
+## 班级 enrollment 检查
 
 讲师只能看自己班级 active enrollment 的学生。
 
@@ -258,32 +258,3 @@ Vercel env 检查：
 | Recording upload sign | user id         | 10 / minute |
 | Teacher feedback      | teacher user id | 30 / minute |
 | General helper        | user id         |  5 / second |
-
-临时调整位置：`lib/rate-limit.ts`。
-
-## Backup Runbook
-
-每周备份：
-
-1. 在本地 shell 设置 `DATABASE_URL`。
-2. 执行 `pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql`。
-3. 确认文件大小非 0。
-4. 加密保存到私有位置。
-5. 不提交到 git。
-
-恢复前必须先在 inbox 写提案并得到 Ryan 明确确认。恢复数据库属于破坏性操作。
-
-## User Deletion Request
-
-用户要求注销账号时：
-
-1. 记录收到时间和登录邮箱。
-2. 用 SQL 查 user id。
-3. 导出必要审计信息。
-4. 删除或匿名化该用户的 recordings、progress_events、favorites、assignment_submissions、sessions。
-5. 删除 R2 中 `audio/<user-id>/` 前缀下对象。
-6. 最后删除或匿名化 users row。
-
-处理时限：14 天内。
-
-不要通过聊天窗口索要用户密码。管理员不需要知道用户密码。
