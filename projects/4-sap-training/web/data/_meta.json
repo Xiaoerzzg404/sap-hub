@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.3.0",
-  "generatedAt": "2026-05-20T10:04:59+09:00",
-  "sourceCommit": "65c3e14ce40f485cb1e69310f990039b256edcc3",
+  "schemaVersion": "1.4.0",
+  "generatedAt": "2026-05-21T12:03:12+09:00",
+  "sourceCommit": "030692f",
   "stats": {
     "tracks": 1,
     "lessons": 24,
@@ -22,7 +22,16 @@
     "database": "neon postgres",
     "email": "resend",
     "storage": "cloudflare r2",
-    "tables": 20
+    "rateLimit": "upstash redis",
+    "monitoring": "sentry",
+    "tables": 20,
+    "deployed": "vercel"
+  },
+  "compliance": {
+    "privacyPage": "/privacy",
+    "consentRequired": true,
+    "softDeleteEnabled": true,
+    "hardDeleteAfterDays": 30
   },
   "notes": [
     "Chinese translation fields for phrases/shadowing are intentionally empty.",
@@ -30,6 +39,7 @@
     "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
     "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
     "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
-    "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display."
+    "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display.",
+    "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance."
   ]
 }

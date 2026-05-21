@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-20T10:04:59+09:00",
+  "updated_at": "2026-05-21T12:03:12+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -257,7 +257,7 @@
     "../web/data/roleplays.json",
     "../web/data/lessons.json"
   ],
-  "current_round": "SAP Japanese speaking training platform Phase 6 R2 storage + teacher feedback MVP",
+  "current_round": "SAP Japanese speaking training platform Phase 7 launch compliance + beta expansion readiness",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -302,9 +302,10 @@
     "Phase 5: seeded 24 lessons, 480 phrases, 480 shadowing items, 48 roleplays, 240 lesson assets, 528 glossary terms, 6 library items, 96 assignments, and 127 review terms into Postgres.",
     "Phase 5: replaced local-only progress and recording metadata writes with authenticated APIs that isolate rows by session.user.id while keeping localStorage/IndexedDB offline cache.",
     "Phase 5: switched server pages to DB-backed content loading and lazy-loaded lesson/library markdown, reducing all First Load JS pages below 500 KB.",
-    "Phase 6: added Cloudflare R2 direct recording uploads, presigned student playback, enrollment-scoped teacher recording review, teacher_feedback scoring, Resend feedback notification, and student /review feedback display."
+    "Phase 6: added Cloudflare R2 direct recording uploads, presigned student playback, enrollment-scoped teacher recording review, teacher_feedback scoring, Resend feedback notification, and student /review feedback display.",
+    "Phase 7: added magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent and /privacy, recording soft delete with 0002 migration, cleanup endpoint, CI, Prettier/husky/lint-staged, docs, and _meta schema 1.4.0."
   ],
   "blocked": [],
-  "next_action": "Stop and wait for Ryan / Claude to validate Phase 6 handoff before starting Phase 7 compliance and operations hardening.",
-  "notes": "Phase 6 storage and teacher feedback MVP completed by Codex on branch codex/phase-6-storage: recording blobs upload to private Cloudflare R2 through server-generated presigned PUT URLs, student/teacher playback uses presigned GET URLs, all student recording APIs remain scoped by session.user.id, teacher APIs enforce teacher/admin role and active enrollment scope, teacher_feedback stores one feedback row per recording, and /review displays feedback to the owning student only. Do not start Phase 7 until Ryan / Claude validates the Phase 6 handoff."
+  "next_action": "Stop and wait for Ryan / Claude to validate Phase 7 handoff before招生 or any later roadmap work.",
+  "notes": "Phase 7 launch-readiness work completed by Codex on branch codex/phase-7-launch: magic-link emails now route through /login/confirm before Auth.js callback, RBAC audit evidence is in logs/phase7-rbac-audit.md, Upstash/Sentry are installed as soft dependencies, /privacy and login consent are live, recordings support soft delete with 30-day cleanup endpoint, CI and lint/prettier hooks are configured, and docs/STUDENT_GUIDE.md, docs/TEACHER_GUIDE.md, docs/ADMIN_OPS.md are available. CRON_SECRET, Upstash, and Sentry env vars were absent locally, so related runtime features remain soft-disabled until Ryan configures Vercel env vars."
 }
