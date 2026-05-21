@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllLessons, getLessonById, getNextLesson } from "@/lib/content/lessons";
+import { getJapaneseCoachByLessonId, getJapaneseCoachData } from "@/lib/japanese-coach";
 import { LessonHeader } from "@/components/lesson/LessonHeader";
 import { LessonObjective } from "@/components/lesson/LessonObjective";
 import { ScenarioMap } from "@/components/lesson/ScenarioMap";
 import { TermCard } from "@/components/lesson/TermCard";
 import { PhraseCard } from "@/components/lesson/PhraseCard";
+import { JapaneseCoachPanel } from "@/components/lesson/JapaneseCoachPanel";
 import { LessonAssetsTabs } from "@/components/lesson/LessonAssetsTabs";
 import { LessonAssetBadge } from "@/components/lesson/LessonAssetBadge";
 import { LessonAssignment } from "@/components/lesson/LessonAssignment";
@@ -27,6 +29,8 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
   const lesson = await getLessonById(lessonId);
   if (!lesson) notFound();
   const next = await getNextLesson(lesson.id);
+  const coach = getJapaneseCoachByLessonId(lesson.id);
+  const coachData = getJapaneseCoachData();
 
   return (
     <div className="page-shell space-y-6">
@@ -35,6 +39,11 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
       <LessonObjective lesson={lesson} />
       <ScenarioMap items={lesson.scenarioMap} />
       <LessonAssetsTabs lesson={lesson} viewerRole="student" />
+      <JapaneseCoachPanel
+        coach={coach}
+        grammarNotes={coachData.grammarNotes}
+        routinePhrases={coachData.routinePhrases}
+      />
 
       <LessonStepShell
         lesson={lesson}
@@ -77,7 +86,9 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
                   ))}
                 </div>
               ) : (
-                <div className="panel p-4 text-sm text-slate-500">替换训练素材暂未接入，先完成 Shadowing。</div>
+                <div className="panel p-4 text-sm text-slate-500">
+                  替换训练素材暂未接入，先完成 Shadowing。
+                </div>
               )}
             </section>
           </div>
@@ -101,9 +112,13 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
             <section className="space-y-3">
               <h2 className="text-lg font-semibold text-ink">Role Play</h2>
               {lesson.rolePlays.length ? (
-                lesson.rolePlays.map((rolePlay) => <RolePlayRecorder key={rolePlay.id} rolePlay={rolePlay} />)
+                lesson.rolePlays.map((rolePlay) => (
+                  <RolePlayRecorder key={rolePlay.id} rolePlay={rolePlay} />
+                ))
               ) : (
-                <div className="panel p-4 text-sm text-slate-500">Role Play 素材暂未抽取到合格真实日语句，等待内容修复。</div>
+                <div className="panel p-4 text-sm text-slate-500">
+                  Role Play 素材暂未抽取到合格真实日语句，等待内容修复。
+                </div>
               )}
             </section>
             <LessonAssignment assignments={lesson.assignments} />

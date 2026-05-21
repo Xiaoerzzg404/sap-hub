@@ -18,9 +18,9 @@ export function Header() {
             </div>
           </Link>
         </div>
-        <Link href="/speaking/shadowing" className="btn-primary">
+        <Link href="/speaking/self-training" className="btn-primary">
           <PlayCircle className="h-4 w-4" aria-hidden="true" />
-          <span className="hidden sm:inline">开始跟读</span>
+          <span className="hidden sm:inline">开始自训</span>
         </Link>
       </div>
     </header>

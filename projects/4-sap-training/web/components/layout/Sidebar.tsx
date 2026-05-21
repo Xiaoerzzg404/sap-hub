@@ -10,7 +10,8 @@ import {
   Mic2,
   Repeat2,
   ScrollText,
-  Users
+  Sparkles,
+  Users,
 } from "lucide-react";
 import tracks from "@/data/tracks.json";
 import type { Track } from "@/types/track";
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/", label: "首页", icon: Home },
   { href: "/dashboard", label: "学习面板", icon: Gauge },
   { href: "/courses", label: "24 课课程", icon: BookOpen },
+  { href: "/speaking/self-training", label: "日语自训", icon: Sparkles },
   { href: "/speaking/shadowing", label: "Shadowing", icon: Headphones },
   { href: "/speaking/repeat-player", label: "重复播放", icon: Repeat2 },
   { href: "/speaking/recording", label: "录音室", icon: Mic2 },
@@ -30,7 +32,7 @@ const navItems = [
   { href: "/phrasebook", label: "句型库", icon: GraduationCap },
   { href: "/assignments", label: "作业中心", icon: ClipboardCheck },
   { href: "/review", label: "复盘中心", icon: Repeat2 },
-  { href: "/teacher", label: "讲师专区", icon: GraduationCap }
+  { href: "/teacher", label: "讲师专区", icon: GraduationCap },
 ];
 
 export function Sidebar() {

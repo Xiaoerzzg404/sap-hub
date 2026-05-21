@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T22:56:32+09:00",
+  "updated_at": "2026-05-21T23:08:03+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -270,9 +270,14 @@
     "../web/lib/japanese-coach.ts",
     "../web/components/teacher/JapaneseTeacherCoachPanel.tsx",
     "../web/app/teacher/page.tsx",
-    "../web/docs/TEACHER_GUIDE.md"
+    "../web/docs/TEACHER_GUIDE.md",
+    "../web/app/speaking/self-training/page.tsx",
+    "../web/components/pages/JapaneseSelfTrainingClient.tsx",
+    "../web/components/lesson/JapaneseCoachPanel.tsx",
+    "../web/app/courses/lessons/[lessonId]/page.tsx",
+    "../inbox/handoff-student-japanese-self-training-20260521.md"
   ],
-  "current_round": "Teacher coach layer for SAP Japanese training: /teacher coaching rules, 24 lesson missions, classroom correction rubric",
+  "current_round": "Student-facing Japanese coach panels and self-training workspace for all 24 SAP project Japanese lessons",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -326,11 +331,17 @@
     "Added a structured Japanese teacher coach data layer with 8 teaching principles, forbidden teaching habits, 60-minute class flow, feedback rubric, global grammar/phrase anchors, and 24 lesson-specific SAP project Japanese coaching missions.",
     "Integrated the Teacher Coach panel into /teacher so new Chinese Japanese teachers can select each lesson and follow the mission, core flow, mini dialogue, rewrite challenges, output task, and pass checklist.",
     "Updated the teacher handbook source and generated library data so the lesson preparation checklist matches the current V4-aligned 24 lesson titles and teaching actions.",
-    "Updated convert-content metadata generation to preserve schemaVersion 1.4.0 backend/compliance notes and count japaneseCoachEntries after future conversions."
+    "Updated convert-content metadata generation to preserve schemaVersion 1.4.0 backend/compliance notes and count japaneseCoachEntries after future conversions.",
+    "Added a student-facing Japanese Coach panel to each lesson page, backed by web/data/japanese-coach.json and global grammar/routine anchors.",
+    "Added /speaking/self-training as a self-practice workspace with lesson selection, sentence-pattern breakdown, NG rewrite drills, dialogue completion, 60-second output, and RecordingPanel integration.",
+    "Added local self-training lesson notes so students can keep per-lesson weak expressions, teacher reminders, and module replacement sentences in the browser.",
+    "Updated header, sidebar, mobile navigation, and /speaking hub so students can enter the Japanese self-training flow directly.",
+    "Kept the self-training route lightweight by loading lesson metadata with getAllLessons instead of serializing full lesson content, preventing large payload/build instability.",
+    "Verified student Japanese upgrade with typecheck, lint, CI-like build, browser redirect smoke, and cookie-scoped local render smoke for lesson_01 plus /speaking/self-training including local notes."
   ],
   "blocked": [
     "Authenticated student/teacher E2E is blocked until the user provides test student email, test teacher email, and confirms whether local test-user creation or magic-link token read is allowed."
   ],
-  "next_action": "Teacher/admin should review /teacher Teacher Coach with one real lesson selection, then run a live trial class and use the recording feedback loop to tune the per-lesson coach cards.",
-  "notes": "2026-05-21 teacher coach update by Codex: /teacher now includes a Teacher Coach panel backed by web/data/japanese-coach.json. It gives first-time Chinese Japanese teachers strict classroom rules, 60-minute timing, lesson-by-lesson teaching missions, NG-to-better rewrite challenges, output tasks, and feedback rubrics. TEACHER_GUIDE.md and the source SAP日语培训讲师手册 are updated to match. Existing Phase 5-7 backend/auth/storage behavior is unchanged. Validation: convert:content, typecheck, and lint pass; dev server starts on localhost:3000 and /teacher redirects to login when unauthenticated. npm run build still hits intermittent Next.js static-generation manifest/module errors after successful compile/typecheck/lint, so build remains a residual environment/tooling risk rather than a Teacher Coach type error."
+  "next_action": "Review /speaking/self-training and one lesson page as an authenticated student, then run a live 30-60 second recording drill to tune the NG rewrite and output prompts.",
+  "notes": "2026-05-21T23:08:03+09:00 student-facing Japanese upgrade by Codex: each lesson page now exposes a Japanese Coach panel for lesson mission/core flow/global grammar and routine anchors/mini dialogue/output frame; /speaking/self-training gives students four practice modes (句型拆解, NG 改写, 对话补全, 60 秒输出), local per-lesson notes, and recording hooks. The new self-training page uses lightweight lesson metadata to avoid embedding full lesson content. Validation: npm run typecheck PASS, npm run lint PASS, CI-like npm run build PASS after clearing stale .next, browser redirect smoke PASS, cookie-scoped local render smoke PASS for lesson_01 and /speaking/self-training including notes. Existing authenticated E2E remains blocked without test accounts."
 }

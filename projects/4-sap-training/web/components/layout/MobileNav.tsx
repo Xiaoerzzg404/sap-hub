@@ -10,6 +10,7 @@ const navItems = [
   { href: "/", label: "首页" },
   { href: "/dashboard", label: "学习面板" },
   { href: "/courses", label: "24 课课程" },
+  { href: "/speaking/self-training", label: "日语自训" },
   { href: "/speaking/shadowing", label: "Shadowing" },
   { href: "/speaking/repeat-player", label: "重复播放" },
   { href: "/speaking/recording", label: "录音室" },
@@ -21,7 +22,7 @@ const navItems = [
   { href: "/library", label: "总表 / 手册" },
   { href: "/assignments", label: "作业中心" },
   { href: "/review", label: "复盘中心" },
-  { href: "/teacher", label: "讲师专区" }
+  { href: "/teacher", label: "讲师专区" },
 ];
 
 export function MobileNav() {
@@ -66,7 +67,12 @@ export function MobileNav() {
               ))}
             </nav>
           </div>
-          <button type="button" className="flex-1 bg-black/50" onClick={() => setOpen(false)} aria-label="关闭" />
+          <button
+            type="button"
+            className="flex-1 bg-black/50"
+            onClick={() => setOpen(false)}
+            aria-label="关闭"
+          />
         </div>
       ) : null}
     </>
