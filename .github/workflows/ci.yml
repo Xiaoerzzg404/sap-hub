@@ -37,3 +37,14 @@ jobs:
           DATABASE_URL: postgres://mock:mock@localhost:5432/mock
           AUTH_SECRET: ci-mock-secret-32-chars-long-pad-pad
           NEXTAUTH_URL: http://localhost:3000
+          # Mock external service credentials so that SDKs (Resend / R2 / Upstash)
+          # can instantiate at build time. CI never actually calls them.
+          RESEND_API_KEY: re_mock_for_ci_build_only
+          AUTH_EMAIL_FROM: no-reply@example.com
+          R2_ACCOUNT_ID: mockaccountid
+          R2_ACCESS_KEY_ID: mockaccesskey
+          R2_SECRET_ACCESS_KEY: mocksecretkey
+          R2_BUCKET_NAME: mock-bucket
+          CRON_SECRET: mock-cron-secret-32chars-padpadpad=
+          UPSTASH_REDIS_REST_URL: https://mock.upstash.io
+          UPSTASH_REDIS_REST_TOKEN: mock-upstash-token
