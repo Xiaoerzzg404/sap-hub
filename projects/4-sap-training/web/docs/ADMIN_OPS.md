@@ -60,13 +60,13 @@ Phase 7 已实现：
 - GET `/api/teacher/recordings`：不返回软删除录音。
 - GET `/api/cron/cleanup-recordings`：删除 30 天前已软删除的 DB row，并删除对应 R2 object。
 
-当前 `.env.local` 未配置 `CRON_SECRET`。因此不要创建 Vercel Cron schedule，直到 Ryan 在 Vercel Project Settings 加入：
+当前本地 `.env.local` 已配置 `CRON_SECRET`。上线前必须确认 Vercel Project Settings 也有同名 env：
 
 ```bash
 CRON_SECRET=<openssl rand -base64 32 的输出>
 ```
 
-启用后再添加 Vercel Cron：
+Vercel Cron schedule：
 
 ```json
 {
@@ -140,7 +140,7 @@ order by c.created_at desc;
 
 ## Sentry
 
-Phase 7 已安装 `@sentry/nextjs`，但当前没有 `NEXT_PUBLIC_SENTRY_DSN`，所以不会上报。
+Phase 7 已安装 `@sentry/nextjs`，且本地 `.env.local` 已存在 `NEXT_PUBLIC_SENTRY_DSN`。上线前必须确认 Vercel env 同步。
 
 启用步骤：
 
@@ -154,9 +154,9 @@ Phase 7 已安装 `@sentry/nextjs`，但当前没有 `NEXT_PUBLIC_SENTRY_DSN`，
 
 ## Rate Limit
 
-Phase 7 已安装 Upstash soft dependency。当前没有 Upstash env，所以 rate limit no-op。
+Phase 7 已安装 Upstash soft dependency，且本地 `.env.local` 已存在 Upstash REST env。上线前必须确认 Vercel env 同步。
 
-启用步骤：
+Vercel env 检查：
 
 1. 在 Upstash 创建 Redis REST database。
 2. 在 Vercel env 增加 `UPSTASH_REDIS_REST_URL`。
