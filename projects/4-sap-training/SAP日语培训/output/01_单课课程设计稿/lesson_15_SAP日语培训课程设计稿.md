@@ -1,18 +1,28 @@
-# SAP 日语培训：第 15 课《Fit-Gap、BTP/Fiori需求与方案选择》
+# SAP 日语培训：第 15 课《需求调研日语交流》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第14-15节；本课取后半段BTP、Fiori、Fit-Gap内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：需求调研日语交流
+- 真实日本 SAP 项目场景：需求访谈中，业务用户说“这个流程很麻烦”。顾问需要追问具体发生时间、对象、频率、影响、期待改善。
+- 对应项目阶段：Explore / 要件定義・業務ヒアリング
+- 初级顾问必须听懂的关键词：現行業務 / 課題 / 要望 / 業務要件 / Fit-Gap
+- 学生可交付输出：需求访谈中追问现状、频率、影响、期待改善并整理Fit-Gap
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：BTP requirement、SAP Fiori、gap between existing business and SAP solution
-- 迁移后的 SAP 日语课主题：用日语说明Fit-Gap和扩展方案判断
-- 对应 SAP 模块：BTP / Fiori / Common
-- 对应项目阶段：Fit-Gap / Solution design
-- 对应顾问能力：判断标准功能、扩展开发和BTP方案边界
-- 对应日语能力：方案比较、范围管理、下一步确认
-- 本课最终输出任务：处理一个BTP/Fiori追加需求
+- 迁移后的 SAP 日语课主题：需求调研日语交流
+- 对应 SAP 模块：FI / MM / SD / Requirements
+- 对应项目阶段：Explore / 要件定義・業務ヒアリング
+- 对应顾问能力：追问现状、频率、影响、期待改善并整理Fit-Gap
+- 对应日语能力：需求访谈、追问、Fit-Gap整理
+- 本课最终输出任务：需求访谈中追问现状、频率、影响、期待改善并整理Fit-Gap
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户现行业务与SAP标准流程有差异，顾问要说明gap和可能方案。
+- 本课重点场景：需求访谈中，业务用户说“这个流程很麻烦”。顾问需要追问具体发生时间、对象、频率、影响、期待改善。
 - 本课 input：现行业务、SAP标准流程、移动端需求
 - 本课 system action：标准/扩展/BTP方案被评估
 - 本课 output：Fit-Gap判断和方案比较表
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 需求定义 | requirements definition | 要件定義 | ようけんていぎ | 需求阶段 | 确认业务要件、系统要件、范围和未决事项。 |
+| 业务访谈 | business hearing | 業務ヒアリング | ぎょうむひありんぐ | 需求访谈 | 追问现行流程、频率、例外、影响和期待改善。 |
+| 现行业务 | As-Is business process | 現行業務 | げんこうぎょうむ | As-Is确认 | 不要只问需求，要先听懂当前怎么做。 |
+| 课题 | issue / open item | 課題 | かだい | 课题管理 | 偏管理和推进，不一定是系统故障。 |
+| Fit-Gap清单 | Fit-Gap list | Fit-Gap一覧 | ふぃっとぎゃっぷいちらん | 差异分析 | 记录标准对应、业务调整、追加开发和决策状态。 |
 
 ## 5. 顾问日语句型库
 

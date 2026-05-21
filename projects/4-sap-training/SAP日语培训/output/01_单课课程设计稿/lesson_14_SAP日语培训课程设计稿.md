@@ -1,18 +1,28 @@
-# SAP 日语培训：第 14 课《测试场景、SAP GUI安装与标准包》
+# SAP 日语培训：第 14 课《项目启动会议日语表达》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第14-15节；本课取前半段测试场景、SAP GUI、standard package内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：项目启动会议日语表达
+- 真实日本 SAP 项目场景：作为FI顾问参加Kickoff，向客户说明自己负责范围和本周需要客户提供的资料。
+- 对应项目阶段：Project preparation / Kickoff
+- 初级顾问必须听懂的关键词：キックオフ / 担当範囲 / 体制図 / 依頼事項 / 議事録
+- 学生可交付输出：Kickoff会议中说明担当范围、客户依赖事项和本周行动项
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：test scenario、SAP GUI install、standard package
-- 迁移后的 SAP 日语课主题：用日语说明测试场景和SAP GUI准备
-- 对应 SAP 模块：Common / Testing / Basis
-- 对应项目阶段：Testing preparation
-- 对应顾问能力：准备测试前提、安装环境并说明测试范围
-- 对应日语能力：测试说明、用户培训、问题接收
-- 本课最终输出任务：讲解一个测试场景的前提和步骤
+- 迁移后的 SAP 日语课主题：项目启动会议日语表达
+- 对应 SAP 模块：FI / PMO / Project kickoff
+- 对应项目阶段：Project preparation / Kickoff
+- 对应顾问能力：Kickoff会议中说明担当范围、客户依赖事项和本周行动项
+- 对应日语能力：Kickoff中说明担当、依赖事项、行动项
+- 本课最终输出任务：Kickoff会议中说明担当范围、客户依赖事项和本周行动项
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：用户没有新SAP GUI，测试无法开始，顾问要说明安装、测试场景和前提条件。
+- 本课重点场景：作为FI顾问参加Kickoff，向客户说明自己负责范围和本周需要客户提供的资料。
 - 本课 input：测试用户、SAP GUI、测试数据、测试场景
 - 本课 system action：环境准备后执行标准业务流程测试
 - 本课 output：测试证迹和问题清单
@@ -89,6 +99,11 @@
 | 采购申请 | purchase requisition / PR | 購買依頼 | こうばいいらい | P2P起点 | PR常与PO对比。 |
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
+| 项目启动会 | Kickoff | キックオフ | きっくおふ | 项目启动会议 | 确认目的、体制、担当范围和近期行动项。 |
+| 负责范围 | responsibility scope | 担当範囲 | たんとうはんい | 角色说明 | 说明自己负责到哪里，也说明不负责什么。 |
+| 项目体制图 | project organization chart | 体制図 | たいせいず | Kickoff/沟通路径 | 说明客户、PM、各模块和供应商的关系。 |
+| 客户依赖事项 | request item | 依頼事項 | いらいじこう | 会议行动项 | 要写清客户需要提供什么、期限和负责人。 |
+| 会议纪要 | meeting minutes | 議事録 | ぎじろく | 会议收尾 | 日本项目中决定事项和宿题必须落到议事录。 |
 
 ## 5. 顾问日语句型库
 

@@ -1,18 +1,28 @@
-# SAP 日语培训：第 16 课《Configuration说明、业务需求与测试步骤准备》
+# SAP 日语培训：第 16 课《系统配置沟通日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：系统配置沟通日语
+- 真实日本 SAP 项目场景：客户要求修改付款条件/科目确定/税码等配置，顾问需要说明影响范围并请相关模块确认。
+- 对应项目阶段：Realize / Configuration impact check
+- 初级顾问必须听懂的关键词：設定変更 / 影響範囲 / テスト観点 / 周辺モジュール / 承認
+- 学生可交付输出：配置变更时说明影响范围、测试观点和跨模块确认路径
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：configuration ready、business requirements、test steps
-- 迁移后的 SAP 日语课主题：用日语说明配置完成、需求依据和测试步骤
-- 对应 SAP 模块：Common / FI / MM
-- 对应项目阶段：Realization / Testing
-- 对应顾问能力：把配置说明转成可测试步骤
-- 对应日语能力：配置说明、步骤化说明、证迹要求
-- 本课最终输出任务：说明一项配置变更的测试步骤
+- 迁移后的 SAP 日语课主题：系统配置沟通日语
+- 对应 SAP 模块：FI / MM / SD / Configuration
+- 对应项目阶段：Realize / Configuration impact check
+- 对应顾问能力：说明配置变更影响范围、测试观点和跨模块确认路径
+- 对应日语能力：配置变更影响范围、测试观点、跨模块确认
+- 本课最终输出任务：配置变更时说明影响范围、测试观点和跨模块确认路径
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：配置已完成，但用户需要知道如何按步骤验证，顾问要说明业务需求、配置点和测试步骤。
+- 本课重点场景：客户要求修改付款条件/科目确定/税码等配置，顾问需要说明影响范围并请相关模块确认。
 - 本课 input：业务需求、配置项、测试数据
 - 本课 system action：系统按配置执行并产生结果
 - 本课 output：测试步骤、期待结果、证迹
@@ -89,6 +99,11 @@
 | 采购申请 | purchase requisition / PR | 購買依頼 | こうばいいらい | P2P起点 | PR常与PO对比。 |
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
+| 配置变更 | configuration change | 設定変更 | せっていへんこう | 配置说明 | 说明变更理由、对象、影响和测试观点。 |
+| 影响范围 | impact scope | 影響範囲 | えいきょうはんい | 变更评估 | 必须说清对会计、报表、接口、周边模块的影响。 |
+| 测试观点 | test viewpoint | テスト観点 | てすとかんてん | 测试准备 | 说明为什么要测、测什么、怎么判断OK。 |
+| 周边模块 | related module | 周辺モジュール | しゅうへんもじゅーる | 跨模块确认 | FI配置可能影响MM、SD、CO等周边模块。 |
+| 审批 | approval | 承認 | しょうにん | 变更管理 | 范围外或有影响的变更需要确认承认路径。 |
 
 ## 5. 顾问日语句型库
 

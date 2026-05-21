@@ -1,18 +1,28 @@
-# SAP 日语培训：第 10 课《销售订单、客户需求与定制化报表》
+# SAP 日语培训：第 10 课《日本SAP市场规模与主要客户群体》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第10-11节；本课取前半段sales order和报表需求内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本SAP市场规模与主要客户群体
+- 真实日本 SAP 项目场景：面向准备赴日的SAP顾问，说明日本市场常见客户类型与顾问需要关注的业务重点。
+- 对应项目阶段：Market understanding / Interview
+- 初级顾问必须听懂的关键词：基幹システム / 製造業 / 保守運用 / 導入支援 / 顧客業務
+- 学生可交付输出：日本SAP市场客户类型与顾问关注点说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：sales order、business requirements、customized report、customer demands
-- 迁移后的 SAP 日语课主题：用日语确认销售订单相关报表需求
-- 对应 SAP 模块：SD / Reporting
-- 对应项目阶段：Requirement / Realization
-- 对应顾问能力：把客户需求转成报表字段、筛选条件和输出格式
-- 对应日语能力：报表需求确认、范围确认、下一步推进
-- 本课最终输出任务：完成一次报表需求确认对话
+- 迁移后的 SAP 日语课主题：日本SAP市场规模与主要客户群体
+- 对应 SAP 模块：Common / SAP market / Interview
+- 对应项目阶段：Market understanding / Interview
+- 对应顾问能力：说明日本SAP市场常见客户类型和业务重点
+- 对应日语能力：市场与客户类型说明
+- 本课最终输出任务：日本SAP市场客户类型与顾问关注点说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：业务希望定制一个销售订单报表，顾问要确认字段、条件、频率和使用者。
+- 本课重点场景：面向准备赴日的SAP顾问，说明日本市场常见客户类型与顾问需要关注的业务重点。
 - 本课 input：销售订单、客户、日期、金额、状态
 - 本课 system action：系统按条件抽取并展示报表
 - 本课 output：报表需求清单和样例输出

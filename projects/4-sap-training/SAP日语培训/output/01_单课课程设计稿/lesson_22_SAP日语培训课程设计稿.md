@@ -1,18 +1,28 @@
-# SAP 日语培训：第 22 课《第三方接口、大量数据处理与Reprocess》
+# SAP 日语培训：第 22 课《邮件与会议基础日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：邮件与会议基础日语
+- 真实日本 SAP 项目场景：需求会议结束后，顾问需要发送会议纪要，明确决定事项、未决事项、行动项、期限、负责人。
+- 对应项目阶段：Meeting minutes / Action item control
+- 初级顾问必须听懂的关键词：決定事項 / 未決事項 / Action Item / 担当者 / 期限
+- 学生可交付输出：需求会议纪要中明确决定事项、未决事项、行动项、期限和负责人
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：third party/non-SAP system、fix、records、reprocess error
-- 迁移后的 SAP 日语课主题：用日语说明接口错误、大量数据处理和再处理
-- 对应 SAP 模块：Interface / Basis / ABAP
-- 对应项目阶段：Integration test / Hypercare
-- 对应顾问能力：定位错误、说明处理量和再处理步骤
-- 对应日语能力：问题汇报、原因说明、下一步推进
-- 本课最终输出任务：汇报一个接口错误和再处理计划
+- 迁移后的 SAP 日语课主题：邮件与会议基础日语
+- 对应 SAP 模块：PMO / Meeting minutes
+- 对应项目阶段：Meeting minutes / Action item control
+- 对应顾问能力：发送会议纪要并明确决定事项、未决事项、行动项、期限和负责人
+- 对应日语能力：决定事项、未决事项、Action Item整理
+- 本课最终输出任务：需求会议纪要中明确决定事项、未决事项、行动项、期限和负责人
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：SAP到第三方系统接口报错，大量记录未处理，顾问要说明数量、原因和再处理方法。
+- 本课重点场景：需求会议结束后，顾问需要发送会议纪要，明确决定事项、未决事项、行动项、期限、负责人。
 - 本课 input：接口记录、错误日志、处理数量
 - 本课 system action：系统重跑或手动reprocess
 - 本课 output：处理结果和剩余错误清单
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 决定事项 | decision item | 決定事項 | けっていじこう | 会议纪要 | 已经达成一致的内容。 |
+| 未决事项 | open item | 未決事項 | みけつじこう | 会议纪要 | 尚未决定，需要后续确认的内容。 |
+| 行动项 | action item | Action Item | あくしょんあいてむ | 会议纪要 | 要包含担当者、期限、内容。 |
+| 负责人 | owner / PIC | 担当者 | たんとうしゃ | 任务推进 | 必须写清谁负责，不能只写团队名。 |
+| 期限 | due date | 期限 | きげん | 任务推进 | 日本项目中期限不清会影响会议质量。 |
 
 ## 5. 顾问日语句型库
 

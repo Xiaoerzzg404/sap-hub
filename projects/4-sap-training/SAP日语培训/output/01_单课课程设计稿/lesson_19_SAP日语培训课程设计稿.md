@@ -1,18 +1,28 @@
-# SAP 日语培训：第 19 课《Implementation Lifecycle、Discover/Prepare与Best Practice查找》
+# SAP 日语培训：第 19 课《项目上线支持日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：项目上线支持日语
+- 真实日本 SAP 项目场景：上线当天主数据导入延迟，PM要求每30分钟汇报状态。顾问需要汇报进度、风险、对策、下一次更新时间。
+- 对应项目阶段：Deploy / 本番移行・稼働判定
+- 初级顾问必须听懂的关键词：本番移行 / 移行リハーサル / Go/No-Go / 切戻し / ステータス報告
+- 学生可交付输出：上线当天每30分钟汇报进度、风险、对策和下一次更新时间
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：implementation lifecycle、discover、prepare、SAP best practice
-- 迁移后的 SAP 日语课主题：用日语说明实施生命周期中的价值确认与准备工作
-- 对应 SAP 模块：Common / S4HANA
-- 对应项目阶段：Discover / Prepare
-- 对应顾问能力：解释阶段目标、业务价值和资料位置
-- 对应日语能力：阶段说明、资料共享、会议总结
-- 本课最终输出任务：主持一次Discover到Prepare阶段说明
+- 迁移后的 SAP 日语课主题：项目上线支持日语
+- 对应 SAP 模块：PMO / Data migration / Go-live
+- 对应项目阶段：Deploy / 本番移行・稼働判定
+- 对应顾问能力：上线当天汇报进度、风险、对策和下一次更新时间
+- 对应日语能力：上线状态汇报、风险对策、下一次更新时间
+- 本课最终输出任务：上线当天每30分钟汇报进度、风险、对策和下一次更新时间
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：项目刚启动，客户需要理解Discover和Prepare阶段要做什么。
+- 本课重点场景：上线当天主数据导入延迟，PM要求每30分钟汇报状态。顾问需要汇报进度、风险、对策、下一次更新时间。
 - 本课 input：解决方案能力、业务价值、项目团队
 - 本课 system action：团队查找Best Practice并准备后续Explore
 - 本课 output：阶段说明资料和action item
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 上线迁移 | cutover | 本番移行 | ほんばんいこう | 上线切换 | 指上线前后的切换作业，不等于本番稼働。 |
+| 移行彩排 | migration rehearsal | 移行リハーサル | いこうりはーさる | 上线准备 | 验证移行步骤、时长、错误处理和切戻し。 |
+| 上线判定 | Go/No-Go decision | Go/No-Go判定 | ごーのーごーはんてい | 移行判定会 | 确认是否可以进入本番稼働。 |
+| 回退 | rollback | 切戻し | きりもどし | 上线风险控制 | 上线失败时恢复到原状态的计划。 |
+| 状态汇报 | status report | ステータス報告 | すてーたすほうこく | 上线当天 | 按固定时间汇报进度、风险、对策和下一次更新时间。 |
 
 ## 5. 顾问日语句型库
 

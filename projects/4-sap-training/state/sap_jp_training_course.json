@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-21T12:03:12+09:00",
+  "updated_at": "2026-05-21T22:35:44+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -255,9 +255,15 @@
     "../web/components/lesson/LessonStepShell.tsx",
     "../web/components/layout/MobileNav.tsx",
     "../web/data/roleplays.json",
-    "../web/data/lessons.json"
+    "../web/data/lessons.json",
+    "../SAP日语培训/output/04_术语表/SAP日语高频术语总表.md",
+    "../SAP日语培训/output/05_句型库/SAP日语高频句型总表.md",
+    "../SAP日语培训/output/07_讲师手册/SAP日语培训讲师手册.md",
+    "../SAP日语培训/output/08_学生讲义/SAP日语培训学生讲义.md",
+    "../SAP日语培训/output/10_质量审查/全课程质量审查报告.md",
+    "../sap_jp_training_course/prompts_v4/batch/sap_project_japanese_content_audit_prompt_20260521.md"
   ],
-  "current_round": "SAP Japanese speaking training platform Phase 7 launch compliance + beta expansion readiness",
+  "current_round": "SAP Japanese training content audit: project stages, meetings, terminology, and V4 source alignment",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",

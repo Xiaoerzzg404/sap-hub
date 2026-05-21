@@ -1,18 +1,28 @@
-# SAP 日语培训：第 02 课《SAP GUI登录、基础导航与T-code说明》
+# SAP 日语培训：第 02 课《严谨细致与责任担当文化》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第1-2节；本课取后半段和基础导航内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：严谨细致与责任担当文化
+- 真实日本 SAP 项目场景：测试中发现一个差异，但原因可能来自主数据、配置、接口或用户操作。顾问需要清楚说明自己负责什么、何时反馈。
+- 对应项目阶段：Testing / Issue triage
+- 初级顾问必须听懂的关键词：原因切り分け / 責任範囲 / 主データ / 設定 / 一次調査
+- 学生可交付输出：差异发现时の责任边界、初动调查、反馈期限说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：SAP GUI、client/user/password、command field、Navigation
-- 迁移后的 SAP 日语课主题：用日语一步步指导用户登录SAP并输入T-code
-- 对应 SAP 模块：Common / Basis
-- 对应项目阶段：Training / Support
-- 对应顾问能力：拆解系统操作步骤并确认用户是否能复现
-- 对应日语能力：系统操作说明、画面共享、听不清/看不到时的调整
-- 本课最终输出任务：用日语教用户完成一次SAP登录
+- 迁移后的 SAP 日语课主题：严谨细致与责任担当文化
+- 对应 SAP 模块：Common / Testing / Issue triage
+- 对应项目阶段：Testing / Issue triage
+- 对应顾问能力：说明自己负责范围、调查路径和反馈期限
+- 对应日语能力：差异发现、责任边界、初动反馈
+- 本课最终输出任务：差异发现时の责任边界、初动调查、反馈期限说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：用户第一次进入测试环境，顾问要说明登录、T-code输入和截图反馈。
+- 本课重点场景：测试中发现一个差异，但原因可能来自主数据、配置、接口或用户操作。顾问需要清楚说明自己负责什么、何时反馈。
 - 本课 input：client、user ID、password、T-code
 - 本课 system action：SAP GUI登录并进入指定事务
 - 本课 output：用户进入正确画面并反馈截图

@@ -1,18 +1,28 @@
-# SAP 日语培训：第 04 课《实施方法论、Blueprint与配置需求》
+# SAP 日语培训：第 04 课《日本职场沟通习惯》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第3-4节；本课取后半段方法论、Blueprint、configuration内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本职场沟通习惯
+- 真实日本 SAP 项目场景：客户要求两天内完成一个跨模块变更。顾问不能直接说“无理です”，要说明风险、确认优先级、提出替代方案。
+- 对应项目阶段：Scope management / Change request
+- 初级顾问必须听懂的关键词：納期 / 優先度 / リスク / 代替案 / 変更管理
+- 学生可交付输出：短纳期变更要求への风险说明与替代方案提示
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：ASAP methodology、information gathering、Blueprint、configuration requirements
-- 迁移后的 SAP 日语课主题：用日语说明实施阶段、Blueprint和配置需求确认
-- 对应 SAP 模块：Common / FICO / MM
-- 对应项目阶段：Business blueprint / Realization
-- 对应顾问能力：说明项目阶段、收集需求并转成配置任务
-- 对应日语能力：阶段说明、需求确认、配置范围表达
-- 本课最终输出任务：用日语说明SAP implementation flow
+- 迁移后的 SAP 日语课主题：日本职场沟通习惯
+- 对应 SAP 模块：Common / Scope management
+- 对应项目阶段：Scope management / Change request
+- 对应顾问能力：处理短纳期跨模块变更要求
+- 对应日语能力：风险说明、优先级确认、替代方案提示
+- 本课最终输出任务：短纳期变更要求への风险说明与替代方案提示
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户询问从需求到配置再到上线的整体路径，顾问要用项目语言解释。
+- 本课重点场景：客户要求两天内完成一个跨模块变更。顾问不能直接说“无理です”，要说明风险、确认优先级、提出替代方案。
 - 本课 input：业务需求、现行流程、差异点
 - 本课 system action：形成Blueprint并进入配置
 - 本课 output：需求清单、配置方针、测试准备

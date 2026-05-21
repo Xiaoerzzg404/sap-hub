@@ -1,18 +1,28 @@
-# SAP 日语培训：第 01 课《SAP概览与顾问身份建立》
+# SAP 日语培训：第 01 课《和文化与礼仪至上理念解读》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第1-2节；本课取前半段和课程主线中的SAP概览、顾问身份内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：和文化与礼仪至上理念解读
+- 真实日本 SAP 项目场景：客户坚持“现行业务不能改”，顾问需要说明SAP标准流程与客户现行业务之间的差异，但不能让客户感觉被否定。
+- 对应项目阶段：Explore / Fit-Gap前の顧客理解
+- 初级顾问必须听懂的关键词：現行業務 / 標準機能 / 差異 / Fit-Gap / 否定しない説明
+- 学生可交付输出：SAP標準と現行业务差异を否定せずに説明する60秒表达
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：SAP stands for、SAP顾问角色、课堂开场和系统概念
-- 迁移后的 SAP 日语课主题：用日语建立SAP顾问身份并说明SAP项目学习目标
-- 对应 SAP 模块：Common / FI / MM
-- 对应项目阶段：Project preparation
-- 对应顾问能力：说明顾问角色、项目经验和学习目标
-- 对应日语能力：自我介绍、会议开场、确认学习目标
-- 本课最终输出任务：60秒日语顾问自我介绍
+- 迁移后的 SAP 日语课主题：和文化与礼仪至上理念解读
+- 对应 SAP 模块：Common / Fit-Gap / Project
+- 对应项目阶段：Explore / Fit-Gap前の顧客理解
+- 对应顾问能力：说明SAP标准与现行业务差异而不伤害客户关系
+- 对应日语能力：文化差异下的认同、确认和不否定表达
+- 本课最终输出任务：SAP標準と現行业务差异を否定せずに説明する60秒表达
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：第一次参加日本SAP项目会议，需要简洁说明自己负责的模块和可以贡献的内容。
+- 本课重点场景：客户坚持“现行业务不能改”，顾问需要说明SAP标准流程与客户现行业务之间的差异，但不能让客户感觉被否定。
 - 本课 input：个人项目经验、模块背景
 - 本课 system action：项目成员根据角色分工进入议题
 - 本课 output：自我介绍和担当范围说明
