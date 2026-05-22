@@ -1,11 +1,11 @@
 # sap-jp.training 本地重建计划
 
 - updated_by: site-ledger
-- updated_at: 2026-05-22T08:23:37+09:00
-- source_snapshot: 2026-05-21T23:23:31.453Z
+- updated_at: 2026-05-22T09:05:45+09:00
+- source_snapshot: 2026-05-22T00:05:38.027Z
 - source_branch: codex/sap-jp-content-audit-20260521
-- source_commit: 132ab887d97342c4ef228349735a70dcbe11253a
-- restore_safe: true
+- source_commit: 942631819e71c79c50a2d1fb6886db4570dc014e
+- restore_safe: false
 
 ## 恢复原则
 
@@ -18,7 +18,7 @@
 
 ```bash
 git checkout codex/sap-jp-content-audit-20260521
-git checkout 132ab887d97342c4ef228349735a70dcbe11253a
+git checkout 942631819e71c79c50a2d1fb6886db4570dc014e
 ```
 
 3. 安装 web 依赖：
@@ -74,7 +74,7 @@ npm run dev
 
 ## 快照健康状态
 
-- INFO ledger_check_passed: 未发现 ledger 健康错误或警告。
+- WARNING working_tree_dirty: 工作区有 6 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
 
 ## 快照时的数据数量
 
@@ -83,8 +83,8 @@ npm run dev
   "data/_meta.json": {
     "type": "object",
     "schemaVersion": "1.4.0",
-    "generatedAt": "2026-05-21T23:17:35.074Z",
-    "sourceCommit": "7aafb7431a474936a8870616f5c28073fc2edc32",
+    "generatedAt": "2026-05-21T23:52:53.180Z",
+    "sourceCommit": "5654676e7971f37cab4940d55f2b5ae79330c217",
     "stats": {
       "tracks": 1,
       "lessons": 24,

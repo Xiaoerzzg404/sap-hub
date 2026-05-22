@@ -1,10 +1,21 @@
 # Need Input · sap-jp.training 公网同步确认 · 2026-05-22
 
 - updated_by: codex
-- updated_at: 2026-05-22T08:20:13+09:00
-- status: waiting_for_user
+- updated_at: 2026-05-22T09:05:00+09:00
+- status: answered_for_current_branch
 
 ## 需要 Ryan 确认
+
+已由 Ryan 在本轮对 `codex/sap-jp-content-audit-20260521` 给出一次性确认：
+
+- 允许 push 当前分支并创建 draft PR。
+- 允许通过 GitHub 触发 Vercel Preview。
+- 音频选择 B：R2/CDN；不允许 force-add mp3，不使用 Vercel artifact deploy。
+- 允许只执行 `0003_auth_credentials_multi_role.sql`。
+- 允许创建/更新三类 smoke 测试账号并执行 authenticated smoke。
+- Sentry、Upstash、Resend、Google Search Console / Safe Browsing 由 Ryan 人工登录检查。
+
+下面是原确认清单，保留为审计记录：
 
 1. GitHub：是否允许把 `codex/sap-jp-content-audit-20260521` push 到 GitHub，并创建 PR？如果只允许本地 commit，请明确停在本地。
 2. Vercel：是否允许部署到生产 `sap-jp.training`？当前本机没有 `vercel` CLI / `.vercel` project link / Vercel API env，若要部署请提供平台方式或授权使用 GitHub 部署。
@@ -18,4 +29,12 @@
 
 ## 停手规则
 
-在 Ryan 明确确认前，不执行 push、PR、deploy、R2 上传、mp3 force-add、Vercel artifact deploy、Neon 生产 migration/seed、权限变更、真实邮件发送、真实账号接管、magic-link token 读取或任何生产数据修改。
+本轮已按确认执行 push、draft PR、Vercel Preview、R2 上传、Neon 0003 migration、smoke 测试账号和 authenticated smoke。
+
+仍然停手：
+
+- 不 merge PR、不触发生产部署，直到 `need-input-production-env-20260522.md` 中的生产 env/CDN/人工检查阻塞消除。
+- 不 force-add mp3。
+- 不执行 Vercel artifact deploy。
+- 不做 DB reset / truncate / 覆盖真实 seed。
+- 不发送真实业务邮件、不接管真实账号、不读取 magic-link token。
