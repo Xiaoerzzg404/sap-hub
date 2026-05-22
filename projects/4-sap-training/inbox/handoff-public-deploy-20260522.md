@@ -24,7 +24,9 @@
 2. `61cf0a8` 注册/账号认领/owner bootstrap 加固。
 3. `5654676` R2/CDN 课程音频切换与上传脚本；同时记录 auth hardening handoff/state。
 4. `4f19d08` 部署前 content conversion 与 ledger before snapshot。
-5. 本交接后的最终 commit：deployment handoff、manual checklist、after snapshot、remaining need-input。
+5. `9426318`：Ryan/cowork-bootstrap 补充 R2 音频公网核验 need-input 与 state。
+6. `64ce6c5`：deployment handoff、manual checklist、after snapshot、remaining need-input。
+7. 本交接后的补充 commit：将 `need-input-audio-r2-verification-20260522.md` 标记为本轮已回答，保留 CDN base URL 阻塞。
 
 ## validation
 
