@@ -18,7 +18,7 @@
 进入项目目录：
 
 ```bash
-cd /Users/openclawxiaoer/sap-hub/projects/sap-ai-mentor-os
+cd /Users/openclawxiaoer/sap-hub/apps/sap-ai-mentor-os
 ```
 
 运行结构测试：
