@@ -26,6 +26,12 @@ npm run dev
 http://localhost:3000
 ```
 
+如果页面只显示默认蓝色链接和黑字，说明 `.next` 缓存里的 CSS 产物可能不一致。停止 dev server 后运行：
+
+```bash
+npm run dev:clean
+```
+
 ## 数据库初始化
 
 SQLite 数据库使用 `.env` 中的：
