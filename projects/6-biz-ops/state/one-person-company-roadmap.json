@@ -1,0 +1,38 @@
+{
+  "id": "one-person-company-roadmap-20260523",
+  "title": "一人 SAP AI 人才公司发展路线",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
+  "links": [
+    "../knowledge/company-development-roadmap-20260523.md",
+    "../../5-sap-talent/knowledge/talent-trust-network-playbook.md",
+    "../../5-sap-talent/knowledge/cards/talent-business-cards.md"
+  ],
+  "north_star": "让中国 SAP 顾问更专业地进入日本项目现场，并在合规前提下连接企业需求。",
+  "focus_sequence": [
+    "先用自媒体和 SAP 日语训练建立信任",
+    "再用脱敏人才画像和作品集证明能力",
+    "再用企业需求访谈校准训练方向",
+    "再培养助教和外部导师减轻用户负担",
+    "最后在法律确认后评估职业介绍、派遣或企业人才服务"
+  ],
+  "next_30_days": [
+    "发布一篇对外定位文章",
+    "建立脱敏人才画像模板",
+    "建立企业需求访谈模板",
+    "完成5个顾问成长访谈",
+    "完成3个企业或PM需求访谈",
+    "列出20个潜在教练或导师",
+    "明确当前可做、需专业确认、禁止做事项"
+  ],
+  "do_not_do_now": [
+    "不无牌照做派遣",
+    "不无专业确认做收费职业介绍",
+    "不承诺给顾问安排项目",
+    "不把真实个人信息写入 git",
+    "不因副业影响 SAP 项目现金流和身体家庭状态"
+  ],
+  "notes": "该路线用于把6号经营、5号人才、4号训练、3号内容接成一个可执行闭环。"
+}

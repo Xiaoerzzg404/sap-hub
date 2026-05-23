@@ -1,0 +1,76 @@
+{
+  "id": "talent-company-decisions-20260523",
+  "title": "SAP 人才公司路线待决策事项",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
+  "links": [
+    "../knowledge/company-development-roadmap-20260523.md"
+  ],
+  "boundary": "以下事项只给选项、风险和建议顺序；涉及法律、税务、用工、收费撮合和对外承诺时必须由用户咨询专业人士后拍板。",
+  "decisions": [
+    {
+      "d_id": "TC-D1",
+      "topic": "是否立即做人企对接收费",
+      "options": [
+        "暂不收费对接，只做训练、脱敏展示和需求访谈",
+        "咨询专业人士后设计合规信息服务",
+        "取得必要许可或合作牌照方后再做职业介绍或派遣"
+      ],
+      "recommended_sequence": "先选第1项，完成合规咨询后再评估第2或第3项。",
+      "risk": "过早收费推荐特定候选人可能触及职业介绍或派遣合规边界。",
+      "status": "blocked_by_legal_review"
+    },
+    {
+      "d_id": "TC-D2",
+      "topic": "第一批人力如何获取",
+      "options": [
+        "从学员中培养助教候选人",
+        "找兼职内容/运营协作者",
+        "招全职员工"
+      ],
+      "recommended_sequence": "先助教和兼职协作者，暂不招全职。",
+      "risk": "一开始招全职会提高固定成本和管理压力。",
+      "status": "pending_user"
+    },
+    {
+      "d_id": "TC-D3",
+      "topic": "第一批教练如何配置",
+      "options": [
+        "经营教练+销售教练+合规专业人士",
+        "只找一个综合导师",
+        "完全靠自己摸索"
+      ],
+      "recommended_sequence": "分类型找教练，先做短访谈和按事项咨询。",
+      "risk": "综合导师很难同时懂 SAP、经营、销售、法律税务和人才合规。",
+      "status": "pending_user"
+    },
+    {
+      "d_id": "TC-D4",
+      "topic": "是否建立公开顾问社区",
+      "options": [
+        "先做小规模邀请制社群",
+        "直接做公开大群",
+        "暂不做社群，只做一对一"
+      ],
+      "recommended_sequence": "先小规模邀请制，便于控制质量和隐私。",
+      "risk": "公开大群容易变成广告群、求职群或无法管理的信息流。",
+      "status": "pending_user"
+    },
+    {
+      "d_id": "TC-D5",
+      "topic": "第一阶段主打主题",
+      "options": [
+        "SAP 项目日语",
+        "FICO × AI 顾问成长",
+        "日本项目求职和项目进入准备",
+        "企业 SAP 顾问能力评估"
+      ],
+      "recommended_sequence": "先 SAP 项目日语，逐步加入 FICO × AI 成长和作品集。",
+      "risk": "主题太多会稀释单人精力，也让外界不知道你到底解决什么问题。",
+      "status": "pending_user"
+    }
+  ],
+  "notes": "这些决策用于把人才公司路线拆成可拍板事项。当前最重要的是不要越过合规边界。"
+}

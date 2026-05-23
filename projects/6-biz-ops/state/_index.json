@@ -2,7 +2,18 @@
   "id": "project-6-index",
   "title": "biz-ops 状态索引",
   "status": "in_progress",
-  "updated_by": "claude-code",
-  "updated_at": "2026-05-16T00:00:00+09:00",
-  "notes": "6号v1法人经营方案已填充，含3个knowledge文件+3个state文件"
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
+  "links": [
+    "../knowledge/business-model.md",
+    "../knowledge/growth-path.md",
+    "../knowledge/ops-playbook.md",
+    "../knowledge/company-development-roadmap-20260523.md",
+    "./objectives.json",
+    "./pipeline.json",
+    "./decisions.json",
+    "./one-person-company-roadmap.json",
+    "./talent_company_decisions.json"
+  ],
+  "notes": "补充一人 SAP AI 人才公司发展路线和待决策事项，联动 5 号人才网络。"
 }
