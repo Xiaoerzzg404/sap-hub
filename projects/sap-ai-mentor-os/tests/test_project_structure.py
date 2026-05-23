@@ -17,6 +17,9 @@ class ProjectStructureTest(unittest.TestCase):
             "config/yearly_goals.yaml",
             "config/quarterly_goals.yaml",
             "config/agent_registry.yaml",
+            "config/life_coach_registry.yaml",
+            "knowledge/life_coach/coach_index.md",
+            "knowledge/life_coach/README.md",
             "templates/daily_checkin.md",
             "templates/weekly_planning.md",
             "templates/topic_deep_dive.md",
@@ -28,6 +31,7 @@ class ProjectStructureTest(unittest.TestCase):
             "scripts/build_prompt.py",
             "scripts/new_week.py",
             "scripts/review_week.py",
+            "scripts/integrate_life_coach.py",
         ]
         for relative in required_files:
             self.assertTrue((ROOT / relative).is_file(), relative)
@@ -43,6 +47,10 @@ class ProjectStructureTest(unittest.TestCase):
             "outputs/courses",
             "outputs/certifications",
             "outputs/business",
+            "knowledge/imported/life-os",
+            "knowledge/imported/life-os/人生教练",
+            "knowledge/life_coach/enhanced",
+            "knowledge/life_coach/cards",
         ]
         for relative in required_dirs:
             self.assertTrue((ROOT / relative).is_dir(), relative)
@@ -64,6 +72,17 @@ class ProjectStructureTest(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             for section in required_sections:
                 self.assertIn(section, text, f"{path.name} missing {section}")
+            self.assertIn("## 人生教练整合来源", text, f"{path.name} missing life coach link")
+
+    def test_life_coach_integration_exists(self) -> None:
+        source_files = sorted((ROOT / "knowledge" / "imported" / "life-os" / "人生教练").glob("*.md"))
+        enhanced_files = sorted((ROOT / "knowledge" / "life_coach" / "enhanced").glob("*.md"))
+        card_files = sorted((ROOT / "knowledge" / "life_coach" / "cards").glob("*.md"))
+        self.assertEqual(len(source_files), 14)
+        self.assertEqual(len(enhanced_files), 14)
+        self.assertGreaterEqual(len(card_files), 150)
+        index = (ROOT / "knowledge" / "life_coach" / "coach_index.md").read_text(encoding="utf-8")
+        self.assertIn("SAP_Finance_AI_Use_Cases_Period_End_Closing.md", index)
 
     def test_topic_route_and_prompt(self) -> None:
         sys.path.insert(0, str(ROOT / "scripts"))
@@ -76,6 +95,7 @@ class ProjectStructureTest(unittest.TestCase):
         self.assertIn("我的背景", prompt)
         self.assertIn("月结关账AI助手Demo", prompt)
         self.assertIn("S/4HANA Finance 深化导师", prompt)
+        self.assertIn("knowledge/life_coach/enhanced/02_s4hana_finance_life_coach.md", prompt)
 
 
 if __name__ == "__main__":

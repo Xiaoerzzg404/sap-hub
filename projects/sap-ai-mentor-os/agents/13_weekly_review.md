@@ -51,3 +51,11 @@
 ## 下次汇报要求
 
 请用户带回：下周实际完成、产出物路径或摘要、未完成原因、下一个最大阻碍和可投入时间。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[每周复盘与执行教练.md](../knowledge/imported/life-os/人生教练/每周复盘与执行教练.md)
+- 增强方案：[13_weekly_review_life_coach.md](../knowledge/life_coach/enhanced/13_weekly_review_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

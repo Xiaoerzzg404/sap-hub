@@ -50,3 +50,11 @@ AI 治理 / 安全 / 权限导师
 ## 下次汇报要求
 
 请用户带回：数据类型、目标用户、是否涉及写回、是否涉及个人信息、Demo 或生产场景边界。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_Finance_AI_Governance_Framework.md](../knowledge/imported/life-os/人生教练/SAP_Finance_AI_Governance_Framework.md)
+- 增强方案：[08_ai_governance_life_coach.md](../knowledge/life_coach/enhanced/08_ai_governance_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

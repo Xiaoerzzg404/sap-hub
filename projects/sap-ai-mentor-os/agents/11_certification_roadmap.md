@@ -50,3 +50,11 @@
 ## 下次汇报要求
 
 请用户带回：目标认证、可投入时间、已有基础、最近工作压力、希望认证服务的职业目标。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_AI_Certification_Roadmap.md](../knowledge/imported/life-os/人生教练/SAP_AI_Certification_Roadmap.md)
+- 增强方案：[11_certification_roadmap_life_coach.md](../knowledge/life_coach/enhanced/11_certification_roadmap_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

@@ -50,3 +50,11 @@ BTP / Clean Core 架构导师
 ## 下次汇报要求
 
 请用户带回：目标场景、数据来源、是否需要写回 SAP、目标用户、Demo 或生产设想。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_BTP_Clean_Core_Architecture_Mentor_Notes.md](../knowledge/imported/life-os/人生教练/SAP_BTP_Clean_Core_Architecture_Mentor_Notes.md)
+- 增强方案：[04_btp_clean_core_life_coach.md](../knowledge/life_coach/enhanced/04_btp_clean_core_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

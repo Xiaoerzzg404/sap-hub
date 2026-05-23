@@ -51,3 +51,11 @@
 ## 下次汇报要求
 
 请用户带回：实际完成的输出物、遇到的阻碍、下一步最想推进的一个主题，以及可投入时间。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_FICO_Business_AI_职业升级与Agent系统行动手册.md](../knowledge/imported/life-os/人生教练/SAP_FICO_Business_AI_职业升级与Agent系统行动手册.md)
+- 增强方案：[00_orchestrator_life_coach.md](../knowledge/life_coach/enhanced/00_orchestrator_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

@@ -31,6 +31,31 @@ python -m unittest discover -s tests
 
 本项目只使用 Python 标准库。配置文件以 `.yaml` 保存，主要用于人类阅读和 Prompt 背景拼接；脚本没有依赖 PyYAML。
 
+## life-os 与人生教练合并层
+
+已将 `/Users/openclawxiaoer/Documents/OpenClaw/life-os` 拷贝到：
+
+```text
+knowledge/imported/life-os/
+```
+
+为避免把 Obsidian UI 状态和 Python 缓存混入知识库，拷贝时排除了 `.obsidian/`、`.DS_Store` 和 `__pycache__/`。
+
+`life-os/人生教练` 下的 14 个 Markdown 已逐个处理，并生成：
+
+- `knowledge/life_coach/coach_index.md`：人生教练总索引。
+- `knowledge/life_coach/enhanced/`：每个源文件对应的增强方案。
+- `knowledge/life_coach/cards/`：每个步骤和具体动作对应的信息、知识、训练、行动卡片。
+- `config/life_coach_registry.yaml`：Agent 与人生教练源文件、增强方案、卡片数量的登记表。
+
+现有 `agents/*.md` 已回链到对应的人生教练增强方案；`scripts/mentor_os.py` 生成 Prompt 时，也会提醒 ChatGPT 参考相关动作卡片。
+
+如需重新生成增强层：
+
+```bash
+python scripts/integrate_life_coach.py
+```
+
 ## 每日使用方法
 
 ```bash

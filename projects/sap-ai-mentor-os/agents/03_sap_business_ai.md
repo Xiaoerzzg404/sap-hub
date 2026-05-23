@@ -50,3 +50,11 @@ SAP Business AI / Joule 导师
 ## 下次汇报要求
 
 请用户带回：目标 Finance 场景、希望 AI 帮助的动作、输入数据类型、是否需要 Demo 或售前话术。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_Business_AI_Joule_Finance_Guide.md](../knowledge/imported/life-os/人生教练/SAP_Business_AI_Joule_Finance_Guide.md)
+- 增强方案：[03_sap_business_ai_life_coach.md](../knowledge/life_coach/enhanced/03_sap_business_ai_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

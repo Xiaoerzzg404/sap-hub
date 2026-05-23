@@ -14,6 +14,23 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILE_PATH = ROOT / "config" / "profile.yaml"
 AGENTS_DIR = ROOT / "agents"
 
+LIFE_COACH_ENHANCED: dict[str, str] = {
+    "00_orchestrator": "knowledge/life_coach/enhanced/00_orchestrator_life_coach.md",
+    "01_positioning": "knowledge/life_coach/enhanced/01_positioning_life_coach.md",
+    "02_s4hana_finance": "knowledge/life_coach/enhanced/02_s4hana_finance_life_coach.md",
+    "03_sap_business_ai": "knowledge/life_coach/enhanced/03_sap_business_ai_life_coach.md",
+    "04_btp_clean_core": "knowledge/life_coach/enhanced/04_btp_clean_core_life_coach.md",
+    "05_finance_ai_usecases": "knowledge/life_coach/enhanced/05_finance_ai_usecases_life_coach.md",
+    "06_demo_poc": "knowledge/life_coach/enhanced/06_demo_poc_life_coach.md",
+    "07_data_cfo_reporting": "knowledge/life_coach/enhanced/07_data_cfo_reporting_life_coach.md",
+    "08_ai_governance": "knowledge/life_coach/enhanced/08_ai_governance_life_coach.md",
+    "09_japanese_presales": "knowledge/life_coach/enhanced/09_japanese_presales_life_coach.md",
+    "10_course_productization": "knowledge/life_coach/enhanced/10_course_productization_life_coach.md",
+    "11_certification_roadmap": "knowledge/life_coach/enhanced/11_certification_roadmap_life_coach.md",
+    "12_business_model": "knowledge/life_coach/enhanced/12_business_model_life_coach.md",
+    "13_weekly_review": "knowledge/life_coach/enhanced/13_weekly_review_life_coach.md",
+}
+
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8").strip()
@@ -37,6 +54,7 @@ def load_agent_summary(agent_id: str) -> dict[str, str]:
         "responsibility": extract_section(markdown, "负责的问题"),
         "output_format": extract_section(markdown, "输出格式"),
         "next_report": extract_section(markdown, "下次汇报要求"),
+        "life_coach": LIFE_COACH_ENHANCED.get(agent_id, ""),
     }
 
 
@@ -57,14 +75,7 @@ def build_prompt(
     warning_block = f"\n\n重要提醒：{warning}\n" if warning else ""
 
     agent_lines = "\n".join(f"- {line}" for line in describe_agents(agent_ids))
-    duty_blocks = "\n\n".join(
-        (
-            f"### {summary['id']}｜{summary['name']}\n"
-            f"角色：{summary['role']}\n\n"
-            f"本次职责：\n{summary['responsibility']}"
-        )
-        for summary in agent_summaries
-    )
+    duty_blocks = "\n\n".join(_agent_duty_block(summary) for summary in agent_summaries)
 
     return f"""请你作为我的 SAP FICO × Business AI × 日本项目实战训练导师团队，按以下要求协作输出。{warning_block}
 ## 1. 我的背景
@@ -127,6 +138,22 @@ def _current_task(mode: str, user_inputs: Mapping[str, str]) -> str:
         if value:
             lines.append(f"- {key}：{value}")
     return "\n".join(lines)
+
+
+def _agent_duty_block(summary: dict[str, str]) -> str:
+    life_coach = ""
+    if summary.get("life_coach"):
+        life_coach = (
+            "\n\n人生教练增强方案："
+            f"`{summary['life_coach']}`。请优先参考该增强方案中的动作卡片，"
+            "并在输出中点名 1-3 张最相关的卡片编号或卡片动作。"
+        )
+    return (
+        f"### {summary['id']}｜{summary['name']}\n"
+        f"角色：{summary['role']}\n\n"
+        f"本次职责：\n{summary['responsibility']}"
+        f"{life_coach}"
+    )
 
 
 def _required_outputs(mode: str) -> str:

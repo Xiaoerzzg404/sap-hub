@@ -50,3 +50,11 @@
 ## 下次汇报要求
 
 请用户带回：沟通场景、目标对象、希望表达的主题、中文要点、需要正式还是口语风格。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[日本SAP项目沟通与售前表达训练.md](../knowledge/imported/life-os/人生教练/日本SAP项目沟通与售前表达训练.md)
+- 增强方案：[09_japanese_presales_life_coach.md](../knowledge/life_coach/enhanced/09_japanese_presales_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

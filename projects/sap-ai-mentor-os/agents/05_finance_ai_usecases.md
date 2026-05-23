@@ -51,3 +51,11 @@ Finance AI 用例设计导师
 ## 下次汇报要求
 
 请用户带回：一个具体 Finance 痛点、目标用户、现有处理方式、希望改善的指标和想要的输出物类型。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_Finance_AI_Use_Cases_Period_End_Closing.md](../knowledge/imported/life-os/人生教练/SAP_Finance_AI_Use_Cases_Period_End_Closing.md)
+- 增强方案：[05_finance_ai_usecases_life_coach.md](../knowledge/life_coach/enhanced/05_finance_ai_usecases_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

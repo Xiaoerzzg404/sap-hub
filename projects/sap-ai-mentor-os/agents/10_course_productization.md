@@ -51,3 +51,11 @@
 ## 下次汇报要求
 
 请用户带回：目标学员、主题、已有素材、希望做成文章/模板/课程/训练营中的哪一种。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[SAP_FICO_AI_知识产品化与课程设计方案.md](../knowledge/imported/life-os/人生教练/SAP_FICO_AI_知识产品化与课程设计方案.md)
+- 增强方案：[10_course_productization_life_coach.md](../knowledge/life_coach/enhanced/10_course_productization_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

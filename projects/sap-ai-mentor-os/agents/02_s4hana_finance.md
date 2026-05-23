@@ -50,3 +50,11 @@ S/4HANA Finance 深化导师
 ## 下次汇报要求
 
 请用户带回：本次 Finance 主题、已知业务流程、想解决的痛点、希望产出的文章/用例/Demo 类型。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[S4HANA_Finance_深化路线_Week0.md](../knowledge/imported/life-os/人生教练/S4HANA_Finance_深化路线_Week0.md)
+- 增强方案：[02_s4hana_finance_life_coach.md](../knowledge/life_coach/enhanced/02_s4hana_finance_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。

@@ -51,3 +51,11 @@
 ## 下次汇报要求
 
 请用户带回：目标报表场景、目标读者、想分析的指标、可用的脱敏样例数据结构。
+
+## 人生教练整合来源
+
+- 原始人生教练文件：[CFO_Monthly_Finance_Analysis_Playbook.md](../knowledge/imported/life-os/人生教练/CFO_Monthly_Finance_Analysis_Playbook.md)
+- 增强方案：[07_data_cfo_reporting_life_coach.md](../knowledge/life_coach/enhanced/07_data_cfo_reporting_life_coach.md)
+- 卡片总索引：[人生教练整合索引](../knowledge/life_coach/coach_index.md)
+
+使用要求：调用本 Agent 时，优先参考增强方案中的动作卡片，把建议落实到具体输出物、训练动作和下次汇报。
