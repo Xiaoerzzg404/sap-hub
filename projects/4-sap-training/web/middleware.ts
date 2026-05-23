@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { checkRateLimit, clientIpFromHeaders, limits } from "@/lib/rate-limit";
 
 const PUBLIC_PATHS = new Set(["/login"]);
-const PUBLIC_PREFIXES = ["/api/auth/", "/_next/"];
+const PUBLIC_PREFIXES = ["/api/auth/", "/_next/", "/audio/"];
 const PUBLIC_FILES = new Set(["/favicon.ico", "/robots.txt", "/sitemap.xml"]);
 
 function hasSessionCookie(req: NextRequest): boolean {
