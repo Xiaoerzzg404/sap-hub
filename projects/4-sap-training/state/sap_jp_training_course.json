@@ -4,7 +4,7 @@
   "status": "in_progress",
   "owner": "user",
   "updated_by": "codex",
-  "updated_at": "2026-05-24T06:16:34+09:00",
+  "updated_at": "2026-05-28T22:04:44+09:00",
   "links": [
     "../sap_jp_training_course/00_课程总设计.md",
     "../sap_jp_training_course/01_24课详细纲要与Prompt.md",
@@ -322,9 +322,11 @@
     "../inbox/handoff-login-content-audit-20260522.md",
     "minimax_tts_rerun_20260524.json",
     "../inbox/need-input-minimax-tts-credit-20260524.md",
-    "../inbox/handoff-minimax-tts-rerun-20260524.md"
+    "../inbox/handoff-minimax-tts-rerun-20260524.md",
+    "../exports/20260528-sap-jp-training-outline/SAP日语培训_24课培训提纲_网站版_20260528.xlsx",
+    "../inbox/handoff-training-outline-export-20260528.md"
   ],
-  "current_round": "sap-jp.training public sync hardening and platform blocker verification",
+  "current_round": "sap-jp.training 24 lesson outline Excel export",
   "completed": [
     "Read AGENTS.md, Project 4 instructions, state, inbox, and course design input files.",
     "Committed the course specification baseline before generating new assets.",
@@ -401,7 +403,8 @@
     "Public sync execution 20260522: pushed branch codex/sap-jp-content-audit-20260521, created draft PR #1, triggered successful GitHub Actions CI and Vercel Preview, uploaded 1543 course mp3 files to R2 prefix course-audio/20260521, applied Neon migration 0003, created/updated smoke-only student/teacher/admin accounts, and passed authenticated smoke for /me, lesson audio, /review, /teacher, and /admin without printing secrets.",
     "Audio R2 verification 20260522: Ryan authorization for R2/CDN strategy was applied for this branch; R2 upload evidence shows 1543/1543 uploaded with failed 0, while public CDN base URL remains a production blocker.",
     "Login/content audit 20260522: unified /login into one coordinated panel, removed internal role/distribution language, wrote docs/user-facing-content-audit-20260522.md with fixed, needs_user_decision, keep, and pending statuses, and recorded inbox/handoff-login-content-audit-20260522.md.",
-    "Public sync hardening 20260522: applied Ryan confirmation for R2/CDN and auth hardening boundaries, pushed commit cbb7ed25024de899553d38c63ddb8635a4f8d6c5 to PR #1, Vercel Preview returned success, refreshed smoke-only student/teacher/admin accounts without exposing passwords, verified Preview authenticated /me, /review, /teacher, /admin smoke, confirmed registration fail-closed, and documented that CDN/env platform configuration remains pending."
+    "Public sync hardening 20260522: applied Ryan confirmation for R2/CDN and auth hardening boundaries, pushed commit cbb7ed25024de899553d38c63ddb8635a4f8d6c5 to PR #1, Vercel Preview returned success, refreshed smoke-only student/teacher/admin accounts without exposing passwords, verified Preview authenticated /me, /review, /teacher, /admin smoke, confirmed registration fail-closed, and documented that CDN/env platform configuration remains pending.",
+    "Training outline export 20260528: generated a three-sheet Excel workbook for the current sap-jp.training 24 lessons, using the V4 detailed outline as the main source and current web/data/lessons.json plus _meta.json for website count/title/level/asset validation."
   ],
   "blocked": [
     "Audio R2/CDN public playback 20260522 remains blocked on Ryan or console-side configuration of a public course-audio/20260521 CDN base URL and Vercel NEXT_PUBLIC_COURSE_AUDIO_BASE_URL; local authenticated audio loads, while Preview /audio fallback is 404 because mp3 files are intentionally not tracked in Git.",
@@ -410,7 +413,7 @@
     "Sentry, Upstash, Resend, Google Search Console, and Safe Browsing still require Ryan manual console checks before production deployment."
   ],
   "next_action": "Ryan should configure Cloudflare R2/CDN public access only for course-audio/20260521, set NEXT_PUBLIC_COURSE_AUDIO_BASE_URL and REGISTRATION_INVITE_CODE in Vercel Preview/Production, redeploy Preview, then ask Codex to rerun CDN audio and authenticated smoke before marking PR #1 ready or merging to production.",
-  "notes": "2026-05-21T23:53:45+09:00 TTS audio generation by Codex: local macOS Kyoko voice generated 1543 mp3 files with numbered manifest under web/public/audio/audio-manifest.json. Conversion, counts, full ffprobe, data-to-file alignment, typecheck, and build passed. Public deployment remains blocked for explicit strategy confirmation because mp3 files are ignored by git. 2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and provides internal DB counts, external platform quick links, optional GitHub/Vercel status readers, env presence checks without secret values, and local revision/deploy guidance. Authenticated admin smoke remains blocked without a test admin account. 2026-05-22T00:50:00+09:00 credentials auth by Codex: added password registration/login, email-or-username sign-in, user_roles multi-role RBAC, logged-out content wall, owner bootstrap for zzg404@gmail.com, docs, migration 0003, and handoff-auth-credentials-roles-20260522.md. Local typecheck, lint, build, and production unauthenticated smoke passed; DB migration and deploy were not run. 2026-05-22T08:20:13+09:00 public sync precheck by Codex: current branch version order is documented through commit 3cc1305, local validation passed, browser/API smoke covered login wall and protected routes on port 3212, and need-input-public-sync-20260522.md blocks external actions until Ryan confirms. 2026-05-22T08:53:35+09:00 admin handoff review by Codex: found and fixed owner public-registration bootstrap risk, historical passwordless-account claim risk, and production self-registration exposure; wrote logs/site-handoff-admin-review-20260522.md plus need-input-auth-hardening-20260522.md; typecheck, lint, build, and safe register API smoke passed; current HEAD 5654676 also contains dryRun=false R2 audio upload evidence, so need-input-audio-r2-verification-20260522.md now blocks final public audio confirmation. 2026-05-22T09:05:00+09:00 public sync execution by Codex: GitHub branch pushed, draft PR #1 created, Vercel Preview Ready, R2 course audio upload completed 1543/1543 under course-audio/20260521, Neon 0003 migration applied, smoke accounts created/updated, authenticated smoke passed, temp password file removed, and production deployment paused for CDN base URL/env/manual console checks. 2026-05-22T09:08:00+09:00 Codex marked audio R2 verification need-input as answered for this branch; CDN base URL and Vercel NEXT_PUBLIC_COURSE_AUDIO_BASE_URL remain pending. 2026-05-22T09:27:45+09:00 login/content audit by Codex: /login now uses one coordinated panel, no longer shows role isolation or post-login split wording, docs/user-facing-content-audit-20260522.md records fixed plus needs_user_decision items for the rest of the site, and inbox/handoff-login-content-audit-20260522.md records validation and stop points. 2026-05-22T10:38:40+09:00 public sync hardening by Codex: Ryan confirmed R2/CDN and auth-hardening decisions; Codex pushed local commit cbb7ed25024de899553d38c63ddb8635a4f8d6c5, verified typecheck/lint/build, Vercel Preview success, smoke account upsert, Preview RBAC smoke, local authenticated audio range loads, and updated need-input plus handoff-public-sync-hardening-20260522.md. Platform blockers remain: CDN base URL, NEXT_PUBLIC_COURSE_AUDIO_BASE_URL, REGISTRATION_INVITE_CODE, and Ryan manual console checks.",
+  "notes": "2026-05-21T23:53:45+09:00 TTS audio generation by Codex: local macOS Kyoko voice generated 1543 mp3 files with numbered manifest under web/public/audio/audio-manifest.json. Conversion, counts, full ffprobe, data-to-file alignment, typecheck, and build passed. Public deployment remains blocked for explicit strategy confirmation because mp3 files are ignored by git. 2026-05-22T00:04:00+09:00 admin ops dashboard by Codex: /admin is admin-only and provides internal DB counts, external platform quick links, optional GitHub/Vercel status readers, env presence checks without secret values, and local revision/deploy guidance. Authenticated admin smoke remains blocked without a test admin account. 2026-05-22T00:50:00+09:00 credentials auth by Codex: added password registration/login, email-or-username sign-in, user_roles multi-role RBAC, logged-out content wall, owner bootstrap for zzg404@gmail.com, docs, migration 0003, and handoff-auth-credentials-roles-20260522.md. Local typecheck, lint, build, and production unauthenticated smoke passed; DB migration and deploy were not run. 2026-05-22T08:20:13+09:00 public sync precheck by Codex: current branch version order is documented through commit 3cc1305, local validation passed, browser/API smoke covered login wall and protected routes on port 3212, and need-input-public-sync-20260522.md blocks external actions until Ryan confirms. 2026-05-22T08:53:35+09:00 admin handoff review by Codex: found and fixed owner public-registration bootstrap risk, historical passwordless-account claim risk, and production self-registration exposure; wrote logs/site-handoff-admin-review-20260522.md plus need-input-auth-hardening-20260522.md; typecheck, lint, build, and safe register API smoke passed; current HEAD 5654676 also contains dryRun=false R2 audio upload evidence, so need-input-audio-r2-verification-20260522.md now blocks final public audio confirmation. 2026-05-22T09:05:00+09:00 public sync execution by Codex: GitHub branch pushed, draft PR #1 created, Vercel Preview Ready, R2 course audio upload completed 1543/1543 under course-audio/20260521, Neon 0003 migration applied, smoke accounts created/updated, authenticated smoke passed, temp password file removed, and production deployment paused for CDN base URL/env/manual console checks. 2026-05-22T09:08:00+09:00 Codex marked audio R2 verification need-input as answered for this branch; CDN base URL and Vercel NEXT_PUBLIC_COURSE_AUDIO_BASE_URL remain pending. 2026-05-22T09:27:45+09:00 login/content audit by Codex: /login now uses one coordinated panel, no longer shows role isolation or post-login split wording, docs/user-facing-content-audit-20260522.md records fixed plus needs_user_decision items for the rest of the site, and inbox/handoff-login-content-audit-20260522.md records validation and stop points. 2026-05-22T10:38:40+09:00 public sync hardening by Codex: Ryan confirmed R2/CDN and auth-hardening decisions; Codex pushed local commit cbb7ed25024de899553d38c63ddb8635a4f8d6c5, verified typecheck/lint/build, Vercel Preview success, smoke account upsert, Preview RBAC smoke, local authenticated audio range loads, and updated need-input plus handoff-public-sync-hardening-20260522.md. Platform blockers remain: CDN base URL, NEXT_PUBLIC_COURSE_AUDIO_BASE_URL, REGISTRATION_INVITE_CODE, and Ryan manual console checks. 2026-05-28T22:04:44+09:00 training outline export by Codex: created exports/20260528-sap-jp-training-outline/SAP日语培训_24课培训提纲_网站版_20260528.xlsx with 总览, 24课培训提纲, and 来源与校验 sheets; validated 24 V4 lessons against current website lessons.json and _meta.json.",
   "latest_tts_rerun": {
     "updated_by": "codex",
     "updated_at": "2026-05-24T06:16:34+09:00",
@@ -426,5 +429,19 @@
     "handoff": "../inbox/handoff-minimax-tts-rerun-20260524.md",
     "site_audio_public_prefix": "/audio/",
     "local_audio_url_check": "PASS: 200 OK audio/mpeg for regenerated and pending sample paths"
+  },
+  "latest_training_outline_export": {
+    "updated_by": "codex",
+    "updated_at": "2026-05-28T22:04:44+09:00",
+    "status": "done",
+    "workbook": "../exports/20260528-sap-jp-training-outline/SAP日语培训_24课培训提纲_网站版_20260528.xlsx",
+    "sheets": ["总览", "24课培训提纲", "来源与校验"],
+    "source_files": [
+      "../sap_jp_training_course/01_24课详细纲要与Prompt_V4.md",
+      "../sap_jp_training_course/03_24课课程总览表_V4.md",
+      "../web/data/lessons.json",
+      "../web/data/_meta.json"
+    ],
+    "validation": "PASS: parsed 24 V4 lessons, website lessons.json has 24 lessons, xlsx archive test passed, formula error scan matched 0 entries."
   }
 }
