@@ -6,6 +6,7 @@
 - 多 agent 公约：./AGENTS.md
 - Claude 专属：./CLAUDE.md
 - 待处理交接：./inbox/
+- 知识库群：./vaults/（SAP-KnowledgeBase / SAP_TELKB / SAP_网盘资料清单 / sap-ai-learning-manager，自 ~/LocalVaults 迁入 2026-06-04）
 
 ## 六个 Project
 | 编号 | 目录 | 一句话目标 |
