@@ -10,6 +10,7 @@ export type ProgressState = {
   favoriteTerms: string[];
   favoritePhrases: string[];
   favoriteShadowing: string[];
+  completedLessonSteps: string[];
   selfAssessments: Record<string, SelfAssessment>;
   lessonStep?: Record<string, number>;
   recentStudyAt?: string;

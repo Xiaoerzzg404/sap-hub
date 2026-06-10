@@ -14,7 +14,8 @@ type ProgressListKey =
   | "completedAssignments"
   | "favoriteTerms"
   | "favoritePhrases"
-  | "favoriteShadowing";
+  | "favoriteShadowing"
+  | "completedLessonSteps";
 
 type ProgressEvent = {
   id: string;
@@ -35,8 +36,9 @@ export const defaultProgress: ProgressState = {
   favoriteTerms: [],
   favoritePhrases: [],
   favoriteShadowing: [],
+  completedLessonSteps: [],
   selfAssessments: {},
-  lessonStep: {}
+  lessonStep: {},
 };
 
 function localProgress(): ProgressState {
@@ -47,7 +49,7 @@ function localProgress(): ProgressState {
     const parsed = JSON.parse(raw);
     if (Array.isArray(parsed.favoriteSentences)) {
       parsed.favoriteShadowing = [
-        ...new Set([...(parsed.favoriteShadowing ?? []), ...parsed.favoriteSentences])
+        ...new Set([...(parsed.favoriteShadowing ?? []), ...parsed.favoriteSentences]),
       ];
       delete parsed.favoriteSentences;
     }
@@ -59,7 +61,10 @@ function localProgress(): ProgressState {
 
 export function saveProgress(progress: ProgressState) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(KEY, JSON.stringify({ ...progress, recentStudyAt: new Date().toISOString() }));
+  window.localStorage.setItem(
+    KEY,
+    JSON.stringify({ ...progress, recentStudyAt: new Date().toISOString() })
+  );
 }
 
 function addUnique(list: string[], id: string) {
@@ -80,7 +85,8 @@ function listEventType(key: ProgressListKey) {
     completedAssignments: "assignment_submitted",
     favoriteTerms: "term_favorited",
     favoritePhrases: "phrase_favorited",
-    favoriteShadowing: "shadowing_favorited"
+    favoriteShadowing: "shadowing_favorited",
+    completedLessonSteps: "lesson_step_done",
   };
   return mapping[key];
 }
@@ -100,7 +106,7 @@ async function postProgressEvent(event: {
     await fetch("/api/progress/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(event)
+      body: JSON.stringify(event),
     });
   } catch {
     // localStorage remains the offline cache if the network or session is unavailable.
@@ -116,8 +122,9 @@ function applyEvent(progress: ProgressState, event: ProgressEvent): ProgressStat
   if (key && Array.isArray(progress[key]) && refId) {
     return {
       ...progress,
-      [key]: action === "remove" ? removeItem(progress[key], refId) : addUnique(progress[key], refId),
-      recentStudyAt: event.createdAt
+      [key]:
+        action === "remove" ? removeItem(progress[key], refId) : addUnique(progress[key], refId),
+      recentStudyAt: event.createdAt,
     } as ProgressState;
   }
 
@@ -126,9 +133,9 @@ function applyEvent(progress: ProgressState, event: ProgressEvent): ProgressStat
       ...progress,
       selfAssessments: {
         ...progress.selfAssessments,
-        [refId]: payload.score as SelfAssessment
+        [refId]: payload.score as SelfAssessment,
       },
-      recentStudyAt: event.createdAt
+      recentStudyAt: event.createdAt,
     };
   }
 
@@ -137,9 +144,9 @@ function applyEvent(progress: ProgressState, event: ProgressEvent): ProgressStat
       ...progress,
       lessonStep: {
         ...(progress.lessonStep ?? {}),
-        [event.lessonId]: Number(payload.stepIndex ?? 0)
+        [event.lessonId]: Number(payload.stepIndex ?? 0),
       },
-      recentStudyAt: event.createdAt
+      recentStudyAt: event.createdAt,
     };
   }
 
@@ -172,13 +179,17 @@ export async function toggleProgressList<K extends ProgressListKey>(key: K, id: 
   const current = progress[key];
   const action = current.includes(id) ? "remove" : "add";
   const next = action === "remove" ? removeItem(current, id) : [...current, id];
-  const updated = { ...progress, [key]: next, recentStudyAt: new Date().toISOString() } as ProgressState;
+  const updated = {
+    ...progress,
+    [key]: next,
+    recentStudyAt: new Date().toISOString(),
+  } as ProgressState;
   saveProgress(updated);
   await postProgressEvent({
     type: listEventType(key),
     lessonId: lessonIdFromRef(id),
     refId: id,
-    payload: { key, action }
+    payload: { key, action },
   });
   return updated;
 }
@@ -188,13 +199,17 @@ export async function markProgress<K extends ProgressListKey>(key: K, id: string
   const current = progress[key];
   const updated = current.includes(id)
     ? progress
-    : ({ ...progress, [key]: [...current, id], recentStudyAt: new Date().toISOString() } as ProgressState);
+    : ({
+        ...progress,
+        [key]: [...current, id],
+        recentStudyAt: new Date().toISOString(),
+      } as ProgressState);
   saveProgress(updated);
   await postProgressEvent({
     type: listEventType(key),
     lessonId: lessonIdFromRef(id),
     refId: id,
-    payload: { key, action: "add" }
+    payload: { key, action: "add" },
   });
   return updated;
 }
@@ -204,14 +219,14 @@ export async function setSelfAssessment(recordingId: string, score: SelfAssessme
   const updated = {
     ...progress,
     selfAssessments: { ...progress.selfAssessments, [recordingId]: score },
-    recentStudyAt: new Date().toISOString()
+    recentStudyAt: new Date().toISOString(),
   };
   saveProgress(updated);
   await postProgressEvent({
     type: "self_assessment_saved",
     lessonId: lessonIdFromRef(recordingId),
     refId: recordingId,
-    payload: { score }
+    payload: { score },
   });
   return updated;
 }
@@ -225,7 +240,7 @@ export async function setLessonStep(lessonId: string, stepIndex: number) {
     type: "lesson_step_advanced",
     lessonId,
     refId: lessonId,
-    payload: { stepIndex }
+    payload: { stepIndex },
   });
   return updated;
 }
