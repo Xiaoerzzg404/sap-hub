@@ -23,3 +23,9 @@
 - **优先作者**（csdn_api 全量元数据 + 高优先 watch）：汪子熙(i042416,含BTP两专栏) / Henry-SAP(m0_45197968) /
   喜欢打酱油的老鸟(weixin_42137700) / SAPmatinal(sapmatinal,含SAP+ChatGPT专栏)。
 - clip 升级口径：下载某文正文 → `clip --url <已采URL> --content-file <下载文件> --license-type subscription --licensor "CSDN VIP" --evidence <VIP凭证>` → 补全文到已采元数据，不新建不重复计。
+
+## Ryan 2026-06-10 Run08（更多作者 + CSDN 标签）
+- 新增优先博主：weixin_43477555 / qq_24020515 / weixin_52203666（csdn_api 全量元数据+分类+标签）。
+- 捕获 CSDN 文章自带话题标签为 csdn_tag；re-harvest 富化已采文档。
+- **专栏归属限制**：CSDN 专栏文章无公开 API（404/521），不能自动按专栏名归类每篇；用 category+csdn_tag 替代。
+  需精确专栏名时由 Ryan 提供 category-id，手动批量打专栏标签。

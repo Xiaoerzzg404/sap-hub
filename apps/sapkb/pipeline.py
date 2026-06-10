@@ -152,7 +152,18 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                 dup_type, canonical_id = dedup.find_duplicate(con, rec)
                 if dup_type == "url":
                     stats["duplicate"] += 1
-                    continue  # 幂等：同一文章重复 harvest，不重复入库
+                    # 幂等不重复入库；但 re-harvest 时把 CSDN 自带标签补到已有文档（Run08 标签富化）
+                    added = 0
+                    for ct in (rec.get("csdn_tags") or []):
+                        cur = con.execute(
+                            "INSERT OR IGNORE INTO document_tags (id,document_id,tag_type,tag_value,confidence,generated_by,created_at) "
+                            "VALUES (?,?,?,?,?,?,?)",
+                            ("t_" + _sid(canonical_id, "csdn_tag", ct), canonical_id, "csdn_tag", ct, 1.0,
+                             "csdn:article_tags", _now()))
+                        added += cur.rowcount
+                    if added:
+                        stats["tags_enriched"] = stats.get("tags_enriched", 0) + added
+                    continue
                 # 3) 入 documents（仅元数据，不碰全文）
                 doc_id = "d_" + _sid(rec.get("source_url") or rec.get("title") or _now())
                 is_repost = dup_type == "title"
@@ -207,6 +218,10 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                 # 5) 标签 + 主分类（Run06：每篇定 category + content_type）
                 tags = classifier.classify(rec.get("title") or "", rec.get("summary"),
                                            rec.get("source_platform"))["tags"]
+                # CSDN 文章自带话题标签（Run08）：原样收为 csdn_tag
+                for ct in (rec.get("csdn_tags") or []):
+                    tags.append({"tag_type": "csdn_tag", "tag_value": ct, "confidence": 1.0,
+                                 "generated_by": "csdn:article_tags"})
                 for t in tags:
                     con.execute(
                         "INSERT OR IGNORE INTO document_tags "

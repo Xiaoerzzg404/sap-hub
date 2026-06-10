@@ -42,3 +42,9 @@
 ## Run07 双审纪要
 - FinalReview(独立子 agent)：PASS(有条件)，六硬约束逐条真成立（clip-batch无网络/批量幂等/升级重嵌正确/门户纯视图/kb-eval只读/授权口径不变）。
 - Lead 当轮修：MED-1(文件名 id 纯数字才匹配+URL末段精确匹配,防误配)、MED-2(write_inbox 补 category frontmatter+regen-inbox 全量重写 1073 篇,使分类门户可列)。LOW-1/2/3 记 backlog。回归 4 套全绿。
+| agent_output:run08_code | 2 | pass(SelfReview) | pass(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run08 双审纪要
+- FinalReview(独立子 agent)：PASS。五硬约束逐条真成立（不编造源/采集合规/幂等三处:不重复入库+不重复计数+csdn_tag OR IGNORE/分类标签/红线）。
+- 3 LOW 观察(author_name=username 诚实回落 / 富化不更 FTS 不影响 tag 检索 / tags 类型守护)，无需改。
+- 外部不变量 N1(dedup url 分支返回 documents.id) Lead 确认成立。Lead 另补 keywords frontmatter + regen 1447 篇。

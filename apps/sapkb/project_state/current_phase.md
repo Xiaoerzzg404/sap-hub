@@ -1,14 +1,16 @@
 # 当前阶段
 
-**Run 07 · 批量全文导入 + 按分类浏览 + RAG 评测 — 已完成并通过双审（2026-06-10）**
+**Run 08 · 汪子熙全量+CSDN标签富化+3新博主 — 已完成并通过双审（2026-06-10）**
 
-- clip-batch：一个文件夹（文件名=CSDN文章id）或 manifest CSV 一次批量补全文到已采元数据；
-  纯数字文件名才匹配(防误配)、精确 URL 末段匹配、幂等(已全文→duplicate)、批量套 CSDN VIP 订阅授权。
-- clip 升级重嵌修复：升级删旧分块 → embed 对 embedded_at 为 null 的块重嵌(向量 INSERT OR REPLACE 覆盖)，
-  全文真正进 RAG（独特关键词验证命中）。
-- 按分类浏览：01_by_category/ 14 个分类门户 + _INDEX（FI/CO/MM/SD/ABAP/BTP/news/技术分析…），纯 Dataview。
-  write_inbox 补 category/content_type frontmatter + category/<x> 标签；regen-inbox 全量重写 1073 篇使门户可列。
-- kb-eval：8 探针作答率 100%（0.60-0.82），证明 MIN_SCORE=0.6 校准良好。
-- 单测 4 套全绿（test_sapkb/kb/clip/batch）。
+- CSDN 文章自带话题标签(csdn_tag)捕获：harvest 取 API tags 字段；re-harvest 对已采文档补标签富化
+  (url-dup 分支 INSERT OR IGNORE，幂等不重复入库不重复计数)。
+- 汪子熙全量：re-harvest +80 未采文(318→398)，1485 条 csdn_tag 富化到已有文。
+- 3 位新博主采集(作者/分类/标签)：weixin_43477555(8) / qq_24020515(198,强FICO) / weixin_52203666(89,FI/ABAP)。
+- 全库 1457 文档，2822 csdn_tag；每篇 category+content_type+keywords；inbox frontmatter 补 keywords(CSDN标签+topic+sap_ai)。
+- 全库 embedding 1457 向量；10 作者门户 + 14 分类门户。单测 4 套全绿。
 
-下一步：Run 08（更多优先源 / 全文批量导入实战 / 选题→爆款联动）。
+**专栏(column)说明**：CSDN 专栏文章 API(column-list/category-blog-list) 全部 404/400，文章页 521 反爬，
+**无法经公开 API 自动枚举每篇的专栏归属**。已用 category(分类) + csdn_tag(作者真实标签) 管理；
+若 Ryan 提供专栏 category-id(如 BTP=13081957)，可手动给该批文章打专栏名标签。
+
+下一步：Run 09（专栏 id 手动映射打标 / 全文批量导入实战 / 选题联动）。

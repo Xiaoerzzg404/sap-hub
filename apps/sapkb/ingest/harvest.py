@@ -157,7 +157,7 @@ def harvest_csdn_api(username: str, author_name: str, import_mode: str = "metada
             if not u or u in seen_urls:
                 continue
             seen_urls.add(u)
-            yield {
+            rec = {
                 "source_platform": "CSDN",
                 "source_url": u,
                 "title": (it.get("title") or "").strip(),
@@ -167,6 +167,11 @@ def harvest_csdn_api(username: str, author_name: str, import_mode: str = "metada
                 "summary": _strip_to_summary(it.get("description")),
                 "import_mode": import_mode or "metadata_only",
             }
+            # CSDN 文章自带的话题标签（开发语言/ABAP/SAP BTP/...）——作者真实标签，原样收
+            csdn_tags = it.get("tags")
+            if isinstance(csdn_tags, list) and csdn_tags:
+                rec["csdn_tags"] = [str(x) for x in csdn_tags if x]
+            yield rec
         if len(items) < page_size:
             break
         _time.sleep(interval_sec)

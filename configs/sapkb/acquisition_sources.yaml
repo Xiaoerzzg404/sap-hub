@@ -36,7 +36,7 @@ sources:
     username: i042416            # 汪子熙(Jerry Wang) CSDN id；含《30天入门SAP BTP开发》+《SAP BTP百科全书》两专栏
     author_name: 汪子熙
     import_mode: metadata_only
-    max_pages: 8
+    max_pages: 10
     page_size: 40
     # 公开文章列表 JSON API，GET 无登录、仅元数据（标题/链接/日期/摘要）。优先采集源。
 
@@ -67,6 +67,33 @@ sources:
     max_pages: 8
     page_size: 40
     # 含 SAP 专栏(category_2805369) + ChatGPT 专栏(category_12282411)
+
+  - id: csdn_blogger_43477555
+    platform: csdn
+    type: csdn_api
+    username: weixin_43477555
+    author_name: weixin_43477555
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_blogger_24020515
+    platform: csdn
+    type: csdn_api
+    username: qq_24020515
+    author_name: qq_24020515
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_blogger_52203666
+    platform: csdn
+    type: csdn_api
+    username: weixin_52203666
+    author_name: weixin_52203666
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
 
   - id: zhihu_sap_columns
     platform: zhihu

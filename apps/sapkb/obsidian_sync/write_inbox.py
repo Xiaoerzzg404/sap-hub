@@ -44,6 +44,7 @@ def render_markdown(doc: Dict[str, Any], tags: Optional[List[Dict[str, Any]]] = 
     tables = sorted({t["tag_value"] for t in tags if t["tag_type"] == "table"})
     category = next((t["tag_value"] for t in tags if t["tag_type"] == "category"), "")
     content_type = next((t["tag_value"] for t in tags if t["tag_type"] == "content_type"), "")
+    keywords = sorted({t["tag_value"] for t in tags if t["tag_type"] in ("csdn_tag", "topic", "sap_ai")})
     obs_tags: List[str] = []
     for t in tags:
         if t["tag_type"] == "process":
@@ -89,6 +90,7 @@ def render_markdown(doc: Dict[str, Any], tags: Optional[List[Dict[str, Any]]] = 
         "confidence_tier: {}".format(doc.get("confidence_tier") or "reference"),
         "category: {}".format(category),
         "content_type: {}".format(content_type),
+        "keywords: {}".format(_yaml_list(keywords)),
         "modules: {}".format(_yaml_list(modules)),
         "tcodes: {}".format(_yaml_list(tcodes)),
         "tables: {}".format(_yaml_list(tables)),
