@@ -47,6 +47,21 @@ def _build_parser() -> argparse.ArgumentParser:
 
     pr = subparsers.add_parser("payment-reminders", help="列出待付费解锁全文的条目")
     pr.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
+    em = subparsers.add_parser("embed", help="对文档分块并用 bge-m3 建本地向量索引（幂等）")
+    em.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    em.add_argument("--limit", type=int, default=None)
+
+    ss = subparsers.add_parser("semantic-search", help="语义检索（bge-m3），带来源+置信tier")
+    ss.add_argument("query")
+    ss.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ss.add_argument("-k", type=int, default=5)
+
+    ak = subparsers.add_parser("ask", help="RAG 问答：仅据检索到的外部资料作答+引用")
+    ak.add_argument("query")
+    ak.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ak.add_argument("-k", type=int, default=5)
+    ak.add_argument("--no-generate", action="store_true", help="只检索证据不生成式作答")
     return parser
 
 
@@ -65,7 +80,14 @@ def main() -> None:
         print(json.dumps(results, ensure_ascii=False, indent=2))
         return
     if args.command == "dedup-stage2":
-        result = pipeline.run_dedup_stage2(args.db_path, args.backend, args.threshold)
+        try:
+            result = pipeline.run_dedup_stage2(args.db_path, args.backend, args.threshold)
+        except Exception as e:
+            from kb.embedder import KBEmbedError
+            if isinstance(e, KBEmbedError):
+                result = {"error": str(e)}
+            else:
+                raise
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command == "mirror":
@@ -79,6 +101,20 @@ def main() -> None:
         return
     if args.command == "payment-reminders":
         result = pipeline.payment_reminders(args.db_path)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command in ("embed", "semantic-search", "ask"):
+        from kb import rag
+        from kb.embedder import KBEmbedError
+        try:
+            if args.command == "embed":
+                result = rag.build_index(args.db_path, limit=args.limit)
+            elif args.command == "semantic-search":
+                result = rag.semantic_search(args.query, args.db_path, k=args.k)
+            else:
+                result = rag.answer(args.query, args.db_path, k=args.k, generate=not args.no_generate)
+        except KBEmbedError as e:
+            result = {"error": str(e)}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
 

@@ -126,8 +126,9 @@ class TestSapkbRun03(unittest.TestCase):
         ]
         self.assertEqual(0, len(dedup_stage2.find_near_duplicates(unrelated_docs, backend="charngram")))
 
-        with self.assertRaises(NotImplementedError):
-            dedup_stage2._vectorize("测试文本", "bge_m3")
+        # bge_m3 已实装(Run04)：未知 backend 才报错
+        with self.assertRaises(ValueError):
+            dedup_stage2._vectorize("x", "no_such_backend")
 
     def test_schema_sql_initialize_and_fts(self):
         schema_sql = SCHEMA_FILE.read_text(encoding="utf-8")

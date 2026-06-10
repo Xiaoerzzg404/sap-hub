@@ -15,3 +15,7 @@
 ## Run03-机械 结果（gpt-5.3-codex-spark, xhigh）
 - 产出：纯标准库 unittest 回归套件 tests/test_sapkb.py（6 用例：harvest/compliance/dedup复用/tag/stage2/schema）。
 - Lead 复核修正：因 Run03 改了 compliance 口径（付费墙→needs_payment 非 blocked），Codex 旧断言失败→Lead 更新该用例为新口径（硬拦 vs 付费两分）。最终 6/6 OK。
+
+## Run04-机械 结果（gpt-5.3-codex-spark）
+- 产出：tests/test_kb.py（chunker/vector_store/embedder 纯本地单测，6/6 OK）。
+- Lead 复核：Run04 实装 bge_m3 后端，旧 test_sapkb 的"bge_m3 抛 NotImplementedError"断言过时→Lead 改为未知 backend 抛 ValueError。全绿。

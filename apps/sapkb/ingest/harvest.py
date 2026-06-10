@@ -126,6 +126,52 @@ def harvest_rss(feed_url: str, source_platform: str, import_mode: str = "metadat
         }
 
 
+def harvest_csdn_api(username: str, author_name: str, import_mode: str = "metadata_only",
+                     max_pages: int = 3, page_size: int = 40,
+                     interval_sec: float = 1.0) -> Generator[Dict[str, Any], None, None]:
+    """抓 CSDN 某作者的【公开文章列表】JSON API（GET、无登录、无 cookie、仅元数据）。
+
+    用 CSDN 自家前端在用的 community/home-api business-list 公开端点，仅取标题/链接/日期/摘要，
+    绝不取全文、不登录、不绕风控；与 RSSHub 的 csdn 路由同源。低频分页、礼貌限速。
+    """
+    import time as _time
+
+    base = ("https://blog.csdn.net/community/home-api/v1/get-business-list"
+            "?businessType=blog&orderby=&noMore=false")
+    seen_urls = set()
+    for page in range(1, max_pages + 1):
+        url = "{}&page={}&size={}&username={}".format(base, page, page_size, username)
+        try:
+            req = urllib.request.Request(url, headers={
+                "User-Agent": _USER_AGENT, "Accept": "application/json",
+                "Referer": "https://blog.csdn.net/"})
+            with urllib.request.urlopen(req, timeout=20) as resp:  # nosec - 公开API，GET，无凭据
+                data = json.loads(resp.read().decode("utf-8", "ignore"))
+        except Exception:
+            break
+        items = ((data.get("data") or {}).get("list")) or []
+        if not items:
+            break
+        for it in items:
+            u = it.get("url")
+            if not u or u in seen_urls:
+                continue
+            seen_urls.add(u)
+            yield {
+                "source_platform": "CSDN",
+                "source_url": u,
+                "title": (it.get("title") or "").strip(),
+                "author": author_name,
+                "author_uid": username,
+                "published_at": it.get("postTime") or it.get("formatTime"),
+                "summary": _strip_to_summary(it.get("description")),
+                "import_mode": import_mode or "metadata_only",
+            }
+        if len(items) < page_size:
+            break
+        _time.sleep(interval_sec)
+
+
 def harvest_source(source_id: str, fixtures_dir: str = str(DEFAULT_FIXTURES_DIR),
                    config_path: Optional[str] = None) -> Generator[Dict[str, Any], None, None]:
     """按源 id 产出标准化 metadata 记录。支持 fixture / rss / rsshub。"""
@@ -144,6 +190,13 @@ def harvest_source(source_id: str, fixtures_dir: str = str(DEFAULT_FIXTURES_DIR)
         return
 
     stype = meta.get("type")
+    if stype == "csdn_api":
+        for rec in harvest_csdn_api(
+                meta.get("username"), meta.get("author_name") or meta.get("username") or "",
+                import_mode, int(meta.get("max_pages", 3)), int(meta.get("page_size", 40))):
+            yield rec
+        return
+
     if stype == "rss":
         feed_url = meta.get("feed_url")
         if not feed_url:

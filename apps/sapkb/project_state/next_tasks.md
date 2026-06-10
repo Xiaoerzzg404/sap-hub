@@ -1,5 +1,5 @@
-# 下一轮任务（Run 04 候选）
-- 本地 embedding/RAG：bge-m3 接 Ollama（需先 ollama pull bge-m3）+ chunks 分块 + 语义问答 cli。
-- stage2 切 bge_m3 语义后端（阈值 0.92），并做增量比对（新增 vs 全量，避免 O(n^2)）。
-- 启用 CSDN/汪子熙真实抓取：起本机 RSSHub(127.0.0.1:1200) 后 csdn_sap_search/汪子熙 route 即生效。
-- W-3/W-4 加固（wikilink endswith、payment join 边界）。
+# 下一轮任务（Run 05 候选）
+- 扩采更多 SAP AI / 优先作者源（更多 CSDN 大神 + SAP 官方 AI 博客），watchlist 增量追更跑起来。
+- 全文授权链路：接 document_contents，授权文档真正分全文块（提升 RAG 召回质量）。
+- 向量库规模化：暴力 cosine → Chroma/LanceDB；换模型时按 embedding_model 维度过滤（FinalReview H1/M3）。
+- 待 Ryan 批准（红线）：ask 生成门槛 MIN_SCORE 0.45→0.6（FinalReview M2）。

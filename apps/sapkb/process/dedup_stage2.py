@@ -39,28 +39,33 @@ def _char_ngrams(text: str, n: int = 3) -> Counter:
     return Counter(t[i:i + n] for i in range(len(t) - n + 1))
 
 
-def _cosine(a: Counter, b: Counter) -> float:
-    if not a or not b:
+def _cosine(a, b) -> float:
+    # 同时支持 Counter（charngram 稀疏）与 list/序列（bge_m3 稠密）
+    if isinstance(a, Counter) or isinstance(b, Counter):
+        if not a or not b:
+            return 0.0
+        common = set(a) & set(b)
+        dot = sum(a[k] * b[k] for k in common)
+        na = math.sqrt(sum(v * v for v in a.values()))
+        nb = math.sqrt(sum(v * v for v in b.values()))
+        return dot / (na * nb) if na and nb else 0.0
+    # 稠密向量
+    if not a or not b or len(a) != len(b):
         return 0.0
-    common = set(a) & set(b)
-    dot = sum(a[k] * b[k] for k in common)
-    na = math.sqrt(sum(v * v for v in a.values()))
-    nb = math.sqrt(sum(v * v for v in b.values()))
-    if na == 0 or nb == 0:
-        return 0.0
-    return dot / (na * nb)
+    dot = sum(x * y for x, y in zip(a, b))
+    na = math.sqrt(sum(x * x for x in a))
+    nb = math.sqrt(sum(y * y for y in b))
+    return dot / (na * nb) if na and nb else 0.0
 
 
-def _vectorize(text: str, backend: str) -> Counter:
-    # 目前仅实现 charngram；bge_m3 留作 Run04（需 Ollama embedding 模型）。
-    # 防误用（FinalReview W-NIT-3）：bge_m3 未实装时直接报错，杜绝用 char-trigram 相似度
-    # 套 0.92 语义阈值导致的静默假阴性。
+def _vectorize(text: str, backend: str):
+    if backend == "charngram":
+        return _char_ngrams(text, 3)
     if backend == "bge_m3":
-        raise NotImplementedError(
-            "backend=bge_m3 尚未接入（需 Ollama embedding 模型，Run04）。当前请用 charngram。")
-    if backend != "charngram":
-        raise ValueError("未知 backend: {}".format(backend))
-    return _char_ngrams(text, 3)
+        # Run04：接本机 bge-m3 语义向量（阈值用语义 0.92）
+        from kb import embedder  # 延迟导入，charngram 路径不依赖
+        return embedder.embed_text(text)
+    raise ValueError("未知 backend: {}".format(backend))
 
 
 def similarity(text_a: str, text_b: str, backend: str = "charngram") -> float:

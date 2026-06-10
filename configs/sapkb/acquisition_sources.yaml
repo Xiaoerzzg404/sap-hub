@@ -23,6 +23,16 @@ sources:
     import_mode: metadata_only
     # 公开 SAP 官方社区技术博客 RSS（真实可达）。仅 GET、无登录、metadata_only、剥正文截摘要。
 
+  - id: csdn_jerry_wang
+    platform: csdn
+    type: csdn_api
+    username: i042416            # 汪子熙(Jerry Wang) CSDN id；jerry.blog.csdn.net 的真实账号
+    author_name: 汪子熙
+    import_mode: metadata_only
+    max_pages: 3
+    page_size: 40
+    # 公开文章列表 JSON API，GET 无登录、仅元数据（标题/链接/日期/摘要）。优先采集源。
+
   - id: zhihu_sap_columns
     platform: zhihu
     type: rsshub

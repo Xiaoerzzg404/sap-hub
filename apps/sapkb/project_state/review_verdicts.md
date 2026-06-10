@@ -20,3 +20,9 @@
 - FinalReview(独立子 agent)：PASS_WITH_WARNINGS，八硬约束逐条真成立（vault隔离/门户不含正文/篇序真实还原/付费两分/不改schema/优先作者诚实）。
 - 捕获 W-1（write_inbox 算了 columns_fm 却硬编码 columns:[]→专栏门户 Dataview 空转）、W-2（author_link 未 slug→含空格名断链）、W-5（apply_priority LIKE 误命中）。
 - Lead 当轮全修：columns_fm 入 frontmatter、author_link 用 name_slug、apply_priority 改精确匹配+纳入 aka。复验门户 frontmatter 带 seq、unittest 6/6。
+| agent_output:run04_code | 2 | pass(SelfReview) | warning→部分fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run04 双审纪要
+- FinalReview(独立子 agent)：PASS_WITH_WARNINGS，六硬约束逐条真成立（不泄漏全文=code判定+schema无body列双保险；不幻觉=MIN_SCORE拒答+引用；纯本地；向量库派生幂等；stage2 bge_m3实装）。
+- Lead 当轮修：H2(embed_text 无兜底→加 KBEmbedError 友好异常,cli 捕获)、M1(生成失败 note 自相矛盾→改明确文案)。
+- 留 Ryan 决策(红线-阈值)：M2(ask 生成门槛 0.45→0.6)。留 Run05：H1(暴力cosine大库换Chroma)、M3(换模型维度过滤)、全文分块链路接 document_contents。

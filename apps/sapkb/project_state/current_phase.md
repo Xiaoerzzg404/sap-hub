@@ -1,14 +1,12 @@
 # 当前阶段
 
-**Run 03 · 作者/专栏镜像 + 追更 + 优先采集/付费提醒 — 已完成并通过双审（2026-06-10）**
+**Run 04 · 本地 embedding/RAG — 已完成并通过双审（2026-06-10）**
 
-- 列/作者关系入库：采集记录 columns[{name,seq}] → columns 表 + column_items（保 seq_in_column）。
-- 作者/专栏 Dataview 门户镜像：达阈值(作者≥5/专栏≥3)生成纯门户（不复制正文），
-  专栏门户 DB 直出篇序表(权威) + Dataview 块，标"已收 N 篇/缺失篇序"，回写 mirror_status。
-- watchlist 增量追更（R11）：达阈值自动 watch；last_new/last_seen 水位线；
-  连续 3 轮无新→间隔×2（上限14天），计数存 authors.notes JSON（不改 schema）。
-- 优先采集（Ryan 6/10 指令）：汪子熙(Jerry Wang)+SAP AI 登记为优先 watch；
-  付费墙→needs_license 不硬拦、元数据照收、产「待付费提醒」(cli payment-reminders)。
-- 单元测试 tests.test_sapkb 6/6 OK。launchd 06:30 已 load（~/Library/LaunchAgents）。
+- 真抓汪子熙：CSDN 公开文章列表 JSON API（GET 无登录、仅元数据）→ 80 篇入库，rating=5 高优先 watch。
+- embedding：本机 Ollama bge-m3（1024 维），kb/embedder + chunker（metadata 只 title+summary，授权才分全文）
+  + vector_store（sidecar data/vectors.db，numpy cosine，派生数据不入 git）。embed 110 块 9.4s 幂等。
+- RAG：cli `embed` / `semantic-search` / `ask`。ask 经 gemma4 仅据检索材料生成中文答+内联引用+"需验证"尾注，
+  低于 MIN_SCORE 拒答不脑补。stage2 接 bge_m3 语义后端（阈值 0.92）。
+- 单测 tests.test_sapkb 6/6 + tests.test_kb 6/6 全绿。
 
-下一步：Run 04（本地 embedding/RAG：bge-m3 接 Ollama + 分块 + 语义问答）。
+下一步：Run 05（扩采更多 SAP AI 源 + 全文授权链路接 document_contents + 向量库规模化/Chroma）。
