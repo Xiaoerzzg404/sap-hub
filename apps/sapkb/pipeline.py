@@ -372,6 +372,47 @@ def run_watch(db_path: str, author_threshold: int = 5, column_threshold: int = 3
         con.close()
 
 
+def regen_inbox(db_path: str, vault_root: str = _DEFAULT_VAULT) -> Dict[str, Any]:
+    """按 DB 当前标签重写所有文档的 inbox md（补齐 category/content_type frontmatter，Run07）。
+    转载行跳过（无独立 inbox）。"""
+    con = _connect(db_path)
+    con.row_factory = sqlite3.Row
+    stats = {"rewritten": 0, "skipped": 0}
+    try:
+        docs = con.execute(
+            "SELECT id,title,source_url,source_platform,summary,rights_status,import_mode,"
+            "confidence_tier,imported_at,author_id FROM documents "
+            "WHERE canonical_document_id IS NULL AND content_status!='removed'").fetchall()
+        for d in docs:
+            tags = [dict(r) for r in con.execute(
+                "SELECT tag_type,tag_value FROM document_tags WHERE document_id=?", (d["id"],)).fetchall()]
+            author = None
+            if d["author_id"]:
+                a = con.execute("SELECT name FROM authors WHERE id=?", (d["author_id"],)).fetchone()
+                author = a["name"] if a else None
+            body = None
+            if d["rights_status"] in ("user_imported", "license_purchased", "own_content", "fulltext_allowed"):
+                fc = con.execute("SELECT markdown_path FROM document_contents WHERE document_id=?", (d["id"],)).fetchone()
+                if fc and fc[0] and os.path.exists(fc[0]):
+                    try:
+                        body = open(fc[0], "r", encoding="utf-8").read()
+                    except Exception:
+                        body = None
+            doc_row = {"id": d["id"], "title": d["title"], "source_url": d["source_url"],
+                       "source_platform": d["source_platform"], "author": author, "summary": d["summary"],
+                       "rights_status": d["rights_status"], "import_mode": d["import_mode"],
+                       "confidence_tier": d["confidence_tier"], "imported_at": d["imported_at"]}
+            if body:
+                doc_row["body"] = body
+            obs = write_inbox.write(doc_row, vault_root, tags)
+            con.execute("UPDATE documents SET obsidian_path=? WHERE id=?", (obs, d["id"]))
+            stats["rewritten"] += 1
+        con.commit()
+        return stats
+    finally:
+        con.close()
+
+
 def payment_reminders(db_path: str) -> List[Dict[str, Any]]:
     """列出待付费解锁全文的条目（compliance 标 needs_payment），供提醒 Ryan 去付费。"""
     import json

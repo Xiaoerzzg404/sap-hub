@@ -78,6 +78,25 @@ def _build_parser() -> argparse.ArgumentParser:
     cp.add_argument("--scope", default="individual", choices=["individual", "derivative", "commercial"])
     cp.add_argument("--evidence", default=None, help="发票/许可截图本地路径（登记授权必填且文件须存在）")
     cp.add_argument("--purchased-at", default=None)
+
+    cb = subparsers.add_parser("clip-batch", help="批量导入一个文件夹/manifest 的下载全文（升级已采元数据）")
+    cb.add_argument("--folder", default=None, help="文件夹：文件名=CSDN文章id（如 151856954.md）")
+    cb.add_argument("--manifest", default=None, help="CSV: url,file[,title,author,author_uid]")
+    cb.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    cb.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+    cb.add_argument("--platform", default="csdn")
+    cb.add_argument("--license-type", default=None, choices=[None, "purchase", "subscription", "written_permission", "cc_license"])
+    cb.add_argument("--licensor", default="CSDN VIP")
+    cb.add_argument("--scope", default="individual", choices=["individual", "derivative", "commercial"])
+    cb.add_argument("--evidence", default=None, help="VIP 订阅凭证本地路径（登记授权必填且须存在）")
+
+    ev = subparsers.add_parser("kb-eval", help="RAG 探针评测：报告 top 命中分数/作答率，辅助调 k/MIN_SCORE")
+    ev.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ev.add_argument("-k", type=int, default=5)
+
+    ri = subparsers.add_parser("regen-inbox", help="按 DB 当前标签重写全部 inbox md（补 category frontmatter）")
+    ri.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ri.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
     return parser
 
 
@@ -138,6 +157,30 @@ def main() -> None:
                                       license_info=license_info, author_uid=args.author_uid)
         except (ValueError, FileNotFoundError) as e:
             result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "clip-batch":
+        from ingest import clip_batch
+        license_info = None
+        if args.license_type:
+            license_info = {"license_type": args.license_type, "licensor": args.licensor,
+                            "scope": args.scope, "evidence_path": args.evidence}
+        result = clip_batch.run_batch(args.db_path, args.vault_root, folder=args.folder,
+                                      manifest=args.manifest, platform=args.platform,
+                                      license_info=license_info)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "regen-inbox":
+        result = pipeline.regen_inbox(args.db_path, args.vault_root)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "kb-eval":
+        from kb import rag
+        from kb.embedder import KBEmbedError
+        try:
+            result = rag.evaluate(args.db_path, k=args.k)
+        except KBEmbedError as e:
+            result = {"error": str(e)}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command in ("embed", "semantic-search", "ask"):

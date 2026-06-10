@@ -97,6 +97,8 @@ def clip_import(url: str, title: str, author: str, content: str,
                 "UPDATE documents SET import_mode=?, rights_status=?, content_status='fulltext_saved', "
                 "author_id=COALESCE(author_id, ?), updated_at=? WHERE id=?",
                 (import_mode, rights, (author_id if author else None), _now(), doc_id))
+            # 升级后正文变了，清掉旧分块 → 下次 embed 会按全文重新分块+重嵌（Run07 修）
+            con.execute("DELETE FROM chunks WHERE document_id=?", (doc_id,))
         else:
             # author upsert（仅新建时）
             if author:

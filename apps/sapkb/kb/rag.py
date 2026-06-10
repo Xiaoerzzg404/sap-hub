@@ -67,9 +67,12 @@ def build_index(db_path: str, vectors_path: Optional[str] = None,
                      ch["token_count"], ch["source_url"], model, _now()),
                 )
                 stats["chunks_written"] += 1
+                # 跳过条件：已有向量 且 该块已标记 embedded（升级清块后 embedded_at 为 null → 重嵌）
                 if only_new and vs.has(chunk_id):
-                    stats["skipped_existing"] += 1
-                    continue
+                    emb = con.execute("SELECT embedded_at FROM chunks WHERE id=?", (chunk_id,)).fetchone()
+                    if emb and emb[0]:
+                        stats["skipped_existing"] += 1
+                        continue
                 try:
                     vec = embedder.embed_text(ch["content"], model)
                     if not vec:
@@ -121,6 +124,31 @@ def semantic_search(query: str, db_path: str, vectors_path: Optional[str] = None
     finally:
         vs.close()
         con.close()
+
+
+DEFAULT_EVAL_QUERIES = [
+    "SAP F110 自动付款怎么配置", "New GL 并行分类账月末结账", "CO-PA 获利能力分析建模",
+    "物料账 CKMLCP 实际成本", "ABAP CDS View 入门", "SAP BTP CAP 应用部署",
+    "MM 采购订单 ME21N 流程", "Joule AI Agent 是什么",
+]
+
+
+def evaluate(db_path: str, queries: Optional[List[str]] = None, k: int = 5,
+             model: str = embedder.EMBED_MODEL) -> Dict[str, Any]:
+    """跑一组探针问题，报告 top 相似度/是否达作答门槛/命中标题，辅助调 k 与 MIN_SCORE（不改阈值）。"""
+    queries = queries or DEFAULT_EVAL_QUERIES
+    rows = []
+    answerable = 0
+    for q in queries:
+        hits = semantic_search(q, db_path, k=k, model=model)
+        top = hits[0]["score"] if hits else 0.0
+        ok = top >= MIN_SCORE
+        answerable += 1 if ok else 0
+        rows.append({"query": q, "top_score": round(top, 3), "answerable": ok,
+                     "top_title": (hits[0]["title"][:40] if hits else None)})
+    return {"min_score": MIN_SCORE, "k": k, "n": len(queries),
+            "answerable": answerable, "answerable_rate": round(answerable / max(1, len(queries)), 2),
+            "results": rows}
 
 
 def _generate(prompt: str, timeout: int = 180) -> str:

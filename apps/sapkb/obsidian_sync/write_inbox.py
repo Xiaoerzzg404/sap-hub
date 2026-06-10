@@ -42,10 +42,14 @@ def render_markdown(doc: Dict[str, Any], tags: Optional[List[Dict[str, Any]]] = 
     modules = sorted({t["tag_value"] for t in tags if t["tag_type"] == "module"})
     tcodes = sorted({t["tag_value"] for t in tags if t["tag_type"] == "tcode"})
     tables = sorted({t["tag_value"] for t in tags if t["tag_type"] == "table"})
+    category = next((t["tag_value"] for t in tags if t["tag_type"] == "category"), "")
+    content_type = next((t["tag_value"] for t in tags if t["tag_type"] == "content_type"), "")
     obs_tags: List[str] = []
     for t in tags:
         if t["tag_type"] == "process":
             obs_tags.append("process/" + t["tag_value"])
+    if category:
+        obs_tags.append("category/" + category)   # 让 01_by_category 门户的 Dataview 能命中（FinalReview MED-2）
     obs_tags.append("source/" + str(doc.get("source_platform") or "unknown"))
 
     rights = doc.get("rights_status") or "metadata_only"
@@ -83,6 +87,8 @@ def render_markdown(doc: Dict[str, Any], tags: Optional[List[Dict[str, Any]]] = 
         "import_mode: {}".format(doc.get("import_mode") or "metadata_only"),
         "rights_status: {}".format(rights),
         "confidence_tier: {}".format(doc.get("confidence_tier") or "reference"),
+        "category: {}".format(category),
+        "content_type: {}".format(content_type),
         "modules: {}".format(_yaml_list(modules)),
         "tcodes: {}".format(_yaml_list(tcodes)),
         "tables: {}".format(_yaml_list(tables)),

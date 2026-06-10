@@ -22,3 +22,6 @@
 
 ## Run05-机械 结果（gpt-5.3-codex-spark）
 - 产出：tests/test_clip.py（clip 导入/必填/去重/license evidence 校验/全文落 document_contents，5/5 OK）。
+
+## Run07-机械 结果（gpt-5.3-codex-spark）
+- 产出：tests/test_batch.py（clip-batch 文件夹/manifest/去重 + category 门户，全绿）。

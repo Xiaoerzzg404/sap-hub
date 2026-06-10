@@ -37,3 +37,8 @@
 ## Run06 双审纪要
 - FinalReview(独立子 agent)：PASS_WITH_WARNINGS，六硬约束逐条真成立（分类器纯逻辑不编造/clip升级幂等不重复计/evidence校验/全文落document_contents/四作者username真实/红线不破）。
 - Lead 当轮修：LOW-1(clip 升级 author_id COALESCE 回填,不重复计)、LOW-2(_MODULE_PRIORITY 注释澄清)。回归 17/17 OK。
+| agent_output:run07_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run07 双审纪要
+- FinalReview(独立子 agent)：PASS(有条件)，六硬约束逐条真成立（clip-batch无网络/批量幂等/升级重嵌正确/门户纯视图/kb-eval只读/授权口径不变）。
+- Lead 当轮修：MED-1(文件名 id 纯数字才匹配+URL末段精确匹配,防误配)、MED-2(write_inbox 补 category frontmatter+regen-inbox 全量重写 1073 篇,使分类门户可列)。LOW-1/2/3 记 backlog。回归 4 套全绿。

@@ -126,6 +126,37 @@ def build_column_portals(con, vault_root: str, threshold: int = DEFAULT_COLUMN_T
     return results
 
 
+def build_category_portals(con, vault_root: str) -> List[Dict[str, Any]]:
+    """按 category / content_type 生成"按分类浏览"门户（01_by_category，纯 Dataview，不含正文）。"""
+    root = _guard(vault_root)
+    out_dir = root / "01_by_category"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    results: List[Dict[str, Any]] = []
+    # 总览门户
+    cats = con.execute(
+        "SELECT tag_value, COUNT(DISTINCT document_id) FROM document_tags "
+        "WHERE tag_type='category' GROUP BY tag_value ORDER BY 2 DESC").fetchall()
+    overview = ["---", "portal: category_index", "---", "# 按分类浏览（SAPKB）", "",
+                "> 全库按主分类聚合。点进各分类看文章列表（Dataview）。", "", "| 分类 | 篇数 |", "| --- | --- |"]
+    for cv, n in cats:
+        overview.append("| [[01_by_category/{}|{}]] | {} |".format(_slug(cv), cv, n))
+    (out_dir / "_INDEX.md").write_text("\n".join(overview), encoding="utf-8")
+    # 每个分类一个门户
+    for cv, n in cats:
+        body = [
+            "---", "portal: category", "category: {}".format(cv), "doc_count: {}".format(n), "---", "",
+            "# 分类 · {}".format(cv), "", "> 已收录 {} 篇。外部采集=reference，需验证。".format(n), "",
+            "```dataview",
+            "TABLE author AS 作者, content_type AS 类型, rights_status AS 授权, imported_at AS 收录",
+            'FROM "00_inbox" OR "10_articles"',
+            'WHERE contains(tags, "category/{}") OR category = "{}"'.format(cv, cv),
+            "SORT imported_at DESC", "```", "",
+        ]
+        (out_dir / (_slug(cv) + ".md")).write_text("\n".join(body), encoding="utf-8")
+        results.append({"category": cv, "doc_count": n})
+    return results
+
+
 def run_mirror(db_path: str, vault_root: str, author_threshold: int = DEFAULT_AUTHOR_THRESHOLD,
                column_threshold: int = DEFAULT_COLUMN_THRESHOLD) -> Dict[str, Any]:
     con = sqlite3.connect(db_path)
@@ -133,8 +164,10 @@ def run_mirror(db_path: str, vault_root: str, author_threshold: int = DEFAULT_AU
     try:
         authors = build_author_portals(con, vault_root, author_threshold)
         columns = build_column_portals(con, vault_root, column_threshold)
+        categories = build_category_portals(con, vault_root)
         con.commit()
         return {"author_portals": authors, "author_count": len(authors),
-                "column_portals": columns, "column_count": len(columns)}
+                "column_portals": columns, "column_count": len(columns),
+                "category_portals": len(categories), "categories": categories}
     finally:
         con.close()
