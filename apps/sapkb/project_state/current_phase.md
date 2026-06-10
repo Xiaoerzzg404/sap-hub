@@ -1,15 +1,14 @@
 # 当前阶段
 
-**Run 10 · R13 知识提炼 distill（版权角色硬隔离）— 已完成并通过双审（2026-06-10）**
+**Run 11 · insight 据证据成稿 + R15 发布台账 — 已完成并通过双审（2026-06-10）**
 
-- distill.create_insight：从源文档建 insight（5 类型），写 06_insights md + insight_sources + 源置 editorial_status=distilled。
-- **版权/真实性硬隔离（最高优先，已双审验证）**：evidence/counterpoint **只能**来自授权全文
-  (user_imported/license_purchased/own_content/fulltext_allowed/derivative/commercial)；
-  metadata_only/summary_only/unknown/blocked/takedown 源**只能 inspiration**，写库前 raise 拒绝（防引用不存在的全文事实=编造）。
-- 无 evidence 的 insight 标"选题卡/不得陈述未核实事实"；status=draft、reviewed_tier=2（Tier2双审）、不发布。
-- CLI insight-new / insights-list。单测 6 套 29 用例全绿。
+- distill.draft_insight：取 insight 的 evidence 源【授权全文】喂本机 gemma4 写带[n]引用的中文草稿（inspiration 仅供角度，
+  不可当事实）；无 evidence 全文 → 不调 LLM、只列选题角度、不产事实正文。status draft→in_review。实测模型
+  在 evidence 与标题不符时拒绝编造、只写资料实含内容（防脑补验证通过）。CLI insight-draft。
+- distill.record_publication（R15）：人工发布后登记台账 publications（平台 CHECK），幂等（同 insight+platform 不重复记），
+  insight status→published。**发布动作永远人工，本工具只登记不对外推送**。CLI publish-log。
+- 单测 6 套全绿。
 
-**完整内容生产链已通**：采集(1457篇,合规) → 去重 → 分类/标签 → 热度/趋势 → 选题 shortlist →
-**提炼 insight(版权硬隔离,Tier2)** → 草稿（发布永远人工）。
+**全链闭环完成**：采集→去重→分类/标签→热度/趋势→选题→提炼(版权硬隔离)→据证据成稿(不脑补)→人工发布→台账。
 
-下一步：Run 11（insight LLM 据 evidence 成稿 / R15 发布台账 publications / 学习路径）。
+下一步：Run 12（学习路径 learning_path R14 滚动版本化 / 与既有内容生产线深度对接 / 真实全文批量导入实战）。

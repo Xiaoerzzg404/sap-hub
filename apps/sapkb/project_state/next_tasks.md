@@ -1,5 +1,5 @@
-# 下一轮任务（Run 11 候选）
-- insight 据 evidence 源 LLM 成稿（gemma4，仅引 evidence 全文事实，inspiration 仅选题角度，带引用）。
-- R15 发布台账 publications（insight→平台发布记录，发布永远人工）+ insight 状态流转 in_review/approved。
-- 学习路径 learning_path（R14）滚动版本化。
-- 待 Ryan：专栏 category-id 打标 / 全文批量导入实战。Codex 6/11 恢复后重新分派机械活。
+# 下一轮任务（Run 12 候选）
+- 学习路径 learning_path（R14）：按 module/主题滚动版本化（supersedes_id），生成成长路线。
+- 与既有「选题→爆款文章」生产线 / Insight Desk 深度对接：SAPKB insight→爆款生产手册流程。
+- 真实全文批量导入实战（Ryan 下载一批→clip-batch→draft）。
+- Codex 6/11 token 恢复后把测试/机械活重新分派回 Codex。

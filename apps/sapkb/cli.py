@@ -120,6 +120,19 @@ def _build_parser() -> argparse.ArgumentParser:
 
     insl = subparsers.add_parser("insights-list", help="列出已提炼 insights")
     insl.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
+    idr = subparsers.add_parser("insight-draft", help="据 evidence 全文 LLM 成稿（仅引证据，不脑补）")
+    idr.add_argument("--insight-id", required=True)
+    idr.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    idr.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+
+    pl = subparsers.add_parser("publish-log", help="R15 发布台账：登记某 insight 已在某平台发布（发布动作人工）")
+    pl.add_argument("--insight-id", required=True)
+    pl.add_argument("--platform", required=True,
+                    choices=["wechat_mp", "shipinhao", "xiaohongshu", "zhihu", "course", "other"])
+    pl.add_argument("--url", default=None)
+    pl.add_argument("--notes", default=None)
+    pl.add_argument("--db-path", default=DEFAULT_DB_PATH)
     return parser
 
 
@@ -215,6 +228,22 @@ def main() -> None:
     if args.command == "insights-list":
         from process import distill
         print(json.dumps(distill.list_insights(args.db_path), ensure_ascii=False, indent=2))
+        return
+    if args.command == "insight-draft":
+        from process import distill
+        try:
+            result = distill.draft_insight(args.db_path, args.vault_root, args.insight_id)
+        except ValueError as e:
+            result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "publish-log":
+        from process import distill
+        try:
+            result = distill.record_publication(args.db_path, args.insight_id, args.platform, args.url, args.notes)
+        except ValueError as e:
+            result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command in ("recompute-popularity", "trend", "shortlist"):
         from process import analytics

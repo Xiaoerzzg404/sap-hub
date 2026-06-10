@@ -59,3 +59,8 @@
 ## Run10 双审纪要
 - FinalReview(独立子 agent)：PASS。六硬约束逐条真成立——版权硬隔离在显式/自动/CLI 三路径写库前拦截(test 覆盖)、evidence仅授权全文、无evidence不下事实结论(选题卡免责)、不发布(draft+Tier2)、SQL幂等合规、不碰FUZHKB、不编造来源。
 - Lead 当轮修：P1(角色自动判定改正向白名单,takedown/unknown 默认落 inspiration;evidence 仅 EVIDENCE_RIGHTS 才放行)、P2(FUZHKB 防呆上移函数开头 fail-fast)。复验 29 用例全绿。
+| agent_output:run11_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run11 双审纪要
+- FinalReview(独立子 agent)：PASS。三最高约束(不脑补/纯本地/不发布)扎实成立——draft 仅 evidence 全文入正文+强制引用+无evidence不调LLM；record_publication 纯台账无对外推送。
+- Lead 当轮修 4 项：BUG-1(publication 幂等去重)、BUG-2(随之消除秒级PK冲突)、BUG-3(草稿段替换不叠加+frontmatter status 同步)、BUG-4(with open+兜OSError)。新增幂等测试，6 套全绿。

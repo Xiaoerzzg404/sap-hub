@@ -134,6 +134,112 @@ def create_insight(db_path: str, vault_root: str, itype: str, title: str,
         con.close()
 
 
+def draft_insight(db_path: str, vault_root: str, insight_id: str) -> Dict[str, Any]:
+    """据该 insight 的 evidence 源【全文】用本机 gemma4 写带引用的草稿；inspiration 仅供角度。
+    无 evidence → 不生成事实，只列选题角度。写回 insight md，status draft→in_review。
+    """
+    import os
+    import pathlib
+    con = sqlite3.connect(db_path)
+    con.row_factory = sqlite3.Row
+    try:
+        ins = con.execute("SELECT * FROM insights WHERE id=?", (insight_id,)).fetchone()
+        if not ins:
+            raise ValueError("insight 不存在: {}".format(insight_id))
+        srcs = con.execute(
+            "SELECT s.role, d.title, d.source_url, d.rights_status, dc.markdown_path "
+            "FROM insight_sources s JOIN documents d ON d.id=s.document_id "
+            "LEFT JOIN document_contents dc ON dc.document_id=d.id WHERE s.insight_id=?",
+            (insight_id,)).fetchall()
+        evidence, inspiration = [], []
+        for s in srcs:
+            (evidence if s["role"] == "evidence" else inspiration).append(dict(s))
+        # 读 evidence 全文（仅授权全文有 markdown_path）
+        ev_ctx = []
+        for i, e in enumerate(evidence):
+            body = ""
+            if e["markdown_path"] and os.path.exists(e["markdown_path"]):
+                try:  # FinalReview BUG-4：with 上下文 + 兜 OSError
+                    with open(e["markdown_path"], "r", encoding="utf-8") as f:
+                        body = f.read()[:4000]
+                except OSError:
+                    body = ""
+            if body:
+                ev_ctx.append((i + 1, e["title"], e["source_url"], body))
+
+        if not ev_ctx:
+            # 无可用 evidence 全文 → 不编事实，只给选题角度
+            draft = ("（**选题角度**，无授权全文 evidence，未生成事实性正文）\n\n可切入角度（据选题启发源）：\n"
+                     + "\n".join("- " + (s["title"] or "") for s in inspiration[:8]))
+            note = "无 evidence：仅选题角度，不含未核实事实"
+        else:
+            from kb import rag, embedder
+            ctx = "\n\n".join("[{}] {}（{}）\n{}".format(n, t, u, b) for n, t, u, b in ev_ctx)
+            angle = "；".join((s["title"] or "") for s in inspiration[:5])
+            prompt = (
+                "你是 SAP 知识编辑。**只能**根据下面【授权全文资料】写一篇中文知识卡正文，"
+                "每个事实论断后用 [n] 标注来源编号；资料没讲的绝不编造。"
+                "选题角度参考（仅供切入，不可当事实）：" + angle + "。\n\n"
+                "授权全文资料：\n" + ctx + "\n\n标题：" + ins["title"] + "\n\n中文正文（结尾加『以上据授权全文整理，需在系统中复核』）：")
+            try:
+                draft = rag._generate(prompt) if embedder.available(rag.GEN_MODEL) else None
+            except Exception:
+                draft = None
+            note = "据 {} 条 evidence 全文生成，带引用".format(len(ev_ctx))
+            if not draft:
+                draft = "（生成模型不可用，未出正文；evidence 源见下方，请人工据其撰写。）"
+
+        # 重写 insight md 的正文段（简单做法：在 md 末尾追加"## 草稿正文"）
+        if ins["obsidian_path"]:
+            p = pathlib.Path(vault_root).expanduser() / ins["obsidian_path"]
+            if p.exists():
+                txt = p.read_text(encoding="utf-8")
+                # FinalReview BUG-3：替换旧草稿段(不无限叠加) + 同步 frontmatter status
+                idx = txt.find("\n## 草稿正文")
+                if idx != -1:
+                    txt = txt[:idx]
+                txt = re.sub(r"(?m)^status: .*$", "status: in_review", txt, count=1)
+                stamp = "\n\n## 草稿正文（{}）\n\n{}\n".format(note, draft)
+                p.write_text(txt + stamp, encoding="utf-8")
+        con.execute("UPDATE insights SET status='in_review', updated_at=? WHERE id=?", (_now(), insight_id))
+        con.commit()
+        return {"insight_id": insight_id, "status": "in_review", "evidence_used": len(ev_ctx),
+                "note": note, "draft_preview": (draft or "")[:200]}
+    finally:
+        con.close()
+
+
+def record_publication(db_path: str, insight_id: str, platform: str, url: Optional[str] = None,
+                       performance_notes: Optional[str] = None) -> Dict[str, Any]:
+    """R15 发布台账：记录某 insight 在某平台已发布（发布动作人工，这里只登记）。"""
+    valid = {"wechat_mp", "shipinhao", "xiaohongshu", "zhihu", "course", "other"}
+    if platform not in valid:
+        raise ValueError("platform 须为 {}".format(valid))
+    con = sqlite3.connect(db_path)
+    try:
+        if not con.execute("SELECT 1 FROM insights WHERE id=?", (insight_id,)).fetchone():
+            raise ValueError("insight 不存在: {}".format(insight_id))
+        # FinalReview BUG-1：幂等——同 insight+platform 已登记则更新不重复记账
+        existing = con.execute(
+            "SELECT id FROM publications WHERE insight_id=? AND platform=?", (insight_id, platform)).fetchone()
+        if existing:
+            con.execute("UPDATE publications SET url=COALESCE(?,url), performance_notes=COALESCE(?,performance_notes) WHERE id=?",
+                        (url, performance_notes, existing[0]))
+            con.execute("UPDATE insights SET status='published', updated_at=? WHERE id=?", (_now(), insight_id))
+            con.commit()
+            return {"publication_id": existing[0], "insight_id": insight_id, "platform": platform,
+                    "status": "published", "note": "already_logged_updated"}
+        pub_id = "pub_" + _sid(insight_id, platform)
+        con.execute(
+            "INSERT INTO publications (id,insight_id,platform,published_at,url,performance_notes,created_at) "
+            "VALUES (?,?,?,?,?,?,?)", (pub_id, insight_id, platform, _now(), url, performance_notes, _now()))
+        con.execute("UPDATE insights SET status='published', updated_at=? WHERE id=?", (_now(), insight_id))
+        con.commit()
+        return {"publication_id": pub_id, "insight_id": insight_id, "platform": platform, "status": "published"}
+    finally:
+        con.close()
+
+
 def list_insights(db_path: str) -> List[Dict[str, Any]]:
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
