@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireRoles } from "@/lib/auth/guards";
 import { getAllLessons, getLessonById, getNextLesson } from "@/lib/content/lessons";
@@ -19,6 +18,7 @@ import { MicroTrainingTimer } from "@/components/speaking/MicroTrainingTimer";
 import { ConsultantOutputRecorder } from "@/components/speaking/ConsultantOutputRecorder";
 import { RolePlayRecorder } from "@/components/speaking/RolePlayRecorder";
 import { SubstitutionDrillCard } from "@/components/speaking/SubstitutionDrillCard";
+import { LessonCompletionCard } from "@/components/lesson/LessonCompletionCard";
 
 export async function generateStaticParams() {
   const allLessons = await getAllLessons();
@@ -125,17 +125,7 @@ export default async function LessonPage({ params }: { params: Promise<{ lessonI
             </section>
             <LessonAssignment assignments={lesson.assignments} />
             <SelfAssessmentRubric />
-            <div className="flex justify-end">
-              {next ? (
-                <Link className="btn-primary" href={`/courses/lessons/${next.id}`}>
-                  下一课：{next.title}
-                </Link>
-              ) : (
-                <Link className="btn-primary" href="/review">
-                  进入复盘中心
-                </Link>
-              )}
-            </div>
+            <LessonCompletionCard lessonId={lesson.id} nextId={next?.id} nextTitle={next?.title} />
           </div>
         }
       />

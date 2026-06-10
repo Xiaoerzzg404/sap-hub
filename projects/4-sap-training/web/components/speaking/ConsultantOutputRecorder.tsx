@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { ConsultantOutput } from "@/types/lesson";
 import { RecordingPanel } from "@/components/audio/RecordingPanel";
 import { SelfAssessmentForm } from "./SelfAssessmentForm";
+import { TeacherFeedbackInline } from "./TeacherFeedbackInline";
 
 const frameworkLabels: Array<[keyof ConsultantOutput["framework"], string]> = [
   ["background", "背景"],
@@ -11,7 +12,7 @@ const frameworkLabels: Array<[keyof ConsultantOutput["framework"], string]> = [
   ["systemAction", "system action"],
   ["output", "output"],
   ["riskIssue", "risk / issue"],
-  ["nextStep", "next step"]
+  ["nextStep", "next step"],
 ];
 
 export function ConsultantOutputRecorder({ task }: { task: ConsultantOutput }) {
@@ -45,6 +46,7 @@ export function ConsultantOutputRecorder({ task }: { task: ConsultantOutput }) {
         onSaved={(recording) => setLastRecordingId(recording.id)}
       />
       <SelfAssessmentForm recordingId={lastRecordingId} />
+      <TeacherFeedbackInline recordingId={lastRecordingId} />
     </div>
   );
 }
