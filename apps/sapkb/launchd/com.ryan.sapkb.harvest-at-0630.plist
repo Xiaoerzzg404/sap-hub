@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  避让 19:00 / 20:30 / 21:30 / 22:00 晚间流水线窗口。
+  设计为睡眠唤醒后可由 launchd 按补跑逻辑触发，不做额外状态打标。
+  手动加载（由 Ryan 决策）：
+  launchctl load ~/sap-hub/apps/sapkb/launchd/com.ryan.sapkb.harvest-at-0630.plist
+-->
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.ryan.sapkb.harvest-at-0630</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/openclawxiaoer/sap-hub/apps/sapkb/scripts/harvest_runner.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <false/>
+    <key>StartCalendarInterval</key>
+    <dict>
+      <key>Hour</key>
+      <integer>6</integer>
+      <key>Minute</key>
+      <integer>30</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/openclawxiaoer/sap-hub/apps/sapkb/logs/launchd.out</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/openclawxiaoer/sap-hub/apps/sapkb/logs/launchd.err</string>
+  </dict>
+</plist>

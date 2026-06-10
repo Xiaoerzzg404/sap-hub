@@ -25,6 +25,7 @@ for _p in (str(_HERE), str(_HERE / "ingest"), str(_HERE / "process"), str(_HERE 
 from ingest import harvest  # type: ignore
 from ingest import compliance_gate  # type: ignore
 from process import dedup  # type: ignore
+from process import dedup_stage2  # type: ignore
 from process import tag_keyword  # type: ignore
 from obsidian_sync import write_inbox  # type: ignore
 
@@ -93,7 +94,18 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
              "blocked": 0, "reposts_merged": 0, "errors": 0}
     source_cfg: Dict[str, Any] = {}
     try:
-        for rec in harvest.harvest_source(source, fixtures_dir):
+        try:
+            records = list(harvest.harvest_source(source, fixtures_dir))
+        except Exception as src_exc:
+            # W-LOW-3：源级抓取失败（网络/超时/未配置）记 audit 后优雅返回，不崩整轮。
+            stats["errors"] += 1
+            stats["source_error"] = str(src_exc)
+            _log_audit(con, "source", source,
+                       {"audit_type": "harvest_source_error", "status": "error",
+                        "risk_level": "medium", "findings_json": {"error": str(src_exc)}})
+            con.commit()
+            return stats
+        for rec in records:
             stats["seen"] += 1
             try:
                 # 1) 合规门禁
@@ -241,5 +253,41 @@ def run_search(query: str, db_path: str, limit: int = 20) -> List[Dict[str, Any]
             out.append({"doc_id": r["id"], "title": r["title"], "source_url": r["source_url"],
                         "author": author, "modules": mods})
         return out
+    finally:
+        con.close()
+
+
+def run_dedup_stage2(db_path: str, backend: str = "charngram",
+                     threshold: Optional[float] = None) -> Dict[str, Any]:
+    """stage2 近重复扫描：对正主两两比相似度，疑似近重复对落 audit_logs 待人工复核。
+
+    auto_merge=false：不自动写 canonical，只产 needs_review 候选 + 标 editorial 备注。
+    幂等：同一对的候选 audit_id 由 (a,b) 决定，重复跑不重复堆。
+    """
+    import json
+    con = _connect(db_path)
+    try:
+        # W-LOW-1：只取正主进比对（转载行已归并，无需再算）。
+        docs = [dict(id=r[0], title=r[1], summary=r[2], canonical_document_id=None)
+                for r in con.execute(
+                    "SELECT id,title,summary FROM documents "
+                    "WHERE content_status != 'removed' AND canonical_document_id IS NULL").fetchall()]
+        cands = dedup_stage2.find_near_duplicates(docs, backend=backend, threshold=threshold)
+        for c in cands:
+            aid = "au_s2_" + _sid(c["a"], c["b"])
+            exists = con.execute("SELECT 1 FROM audit_logs WHERE id=?", (aid,)).fetchone()
+            if exists:
+                continue
+            con.execute(
+                "INSERT INTO audit_logs (id,target_type,target_id,audit_type,status,risk_level,findings_json,created_by,created_at) "
+                "VALUES (?,?,?,?,?,?,?,?,?)",
+                (aid, "document", c["a"], "dedup_stage2_candidate", "needs_review", "medium",
+                 json.dumps(c, ensure_ascii=False), "dedup_stage2:" + backend, _now()),
+            )
+        con.commit()
+        return {"backend": backend, "threshold": cands[0]["threshold"] if cands else
+                dedup_stage2.DEFAULT_THRESHOLDS.get(backend), "primaries": len(
+                    [d for d in docs if not d["canonical_document_id"]]),
+                "candidates": len(cands), "pairs": cands[:50]}
     finally:
         con.close()

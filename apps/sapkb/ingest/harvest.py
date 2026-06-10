@@ -1,17 +1,18 @@
-"""Harvest helpers for SAPKB ingest.
+"""SAPKB ingest 采集（Run01 fixture + Run02 真实 RSS/RSSHub）。
 
-This module keeps mechanical responsibilities only:
-- parse acquisition source config
-- read fixture source payload
-- normalize metadata records
-- avoid any persistence logic
+机械职责：读源配置 → 取元数据线索 → 标准化 → **持久化前丢弃全文 body**。
+合规关键（docs/05 v3）：RSS/RSSHub 的 summary/content 常含整篇正文 HTML，
+本模块在产出前【剥 HTML + 截断为安全摘要】，绝不把整篇正文当 summary 落库。
+入库/去重/标签不在这里（归 pipeline / Lead 模块）。
 """
-
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import pathlib
+import re
+import urllib.request
 from typing import Any, Dict, Generator, Optional
 
 import yaml
@@ -20,9 +21,14 @@ REPO_ROOT = pathlib.Path(__file__).resolve().parents[3]
 DEFAULT_CONFIG_PATH = REPO_ROOT / "configs" / "sapkb" / "acquisition_sources.yaml"
 DEFAULT_FIXTURES_DIR = pathlib.Path(__file__).resolve().parents[1] / "tests" / "fixtures"
 
+# 摘要安全长度：RSS 常把整篇正文塞进 summary，这里只留前 N 字做元数据摘要，绝不存全文。
+SUMMARY_MAX_CHARS = 280
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"\s+")
+_USER_AGENT = "OpenClawSAPKB/0.2 (metadata-only; +sap-hub)"
+
 
 def _load_sources_config(config_path: Optional[str] = None) -> Dict[str, Any]:
-    """Read acquisition source yaml config."""
     path = pathlib.Path(config_path) if config_path else DEFAULT_CONFIG_PATH
     with path.open("r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
@@ -32,17 +38,27 @@ def _load_sources_config(config_path: Optional[str] = None) -> Dict[str, Any]:
 
 
 def _find_source_meta(config: Dict[str, Any], source_id: str) -> Dict[str, Any]:
-    """Find source item by id, fallback {} when missing."""
     for source in config.get("sources", []):
-        if not isinstance(source, dict):
-            continue
-        if source.get("id") == source_id:
+        if isinstance(source, dict) and source.get("id") == source_id:
             return source
     return {}
 
 
+def _strip_to_summary(raw_text: Optional[str]) -> str:
+    """剥 HTML 标签 + 反转义 + 合并空白 + 截断——把可能的整篇正文降级为安全摘要。"""
+    if not raw_text:
+        return ""
+    text = _TAG_RE.sub(" ", str(raw_text))
+    text = html.unescape(text)
+    text = _WS_RE.sub(" ", text).strip()
+    if len(text) > SUMMARY_MAX_CHARS:
+        text = text[:SUMMARY_MAX_CHARS].rstrip() + "…"
+    return text
+
+
+# ---------------- fixture 路径（Run01） ----------------
+
 def _iter_fixture_records(fixtures_dir: str) -> Generator[Dict[str, Any], None, None]:
-    """Iterate JSONL fixture records and yield dict payloads."""
     fixture_file = pathlib.Path(fixtures_dir) / "csdn_sample.jsonl"
     with fixture_file.open("r", encoding="utf-8") as f:
         for line_no, line in enumerate(f, start=1):
@@ -52,85 +68,107 @@ def _iter_fixture_records(fixtures_dir: str) -> Generator[Dict[str, Any], None, 
             try:
                 record = json.loads(line)
             except json.JSONDecodeError as exc:
-                raise ValueError(f"Invalid JSON in {fixture_file}: line {line_no}") from exc
+                raise ValueError("Invalid JSON in {}: line {}".format(fixture_file, line_no)) from exc
             if not isinstance(record, dict):
-                raise TypeError(f"Invalid fixture record at {fixture_file}:{line_no}")
+                raise TypeError("Invalid fixture record at {}:{}".format(fixture_file, line_no))
             yield record
 
 
-def _normalize_metadata_record(
-    raw: Dict[str, Any],
-    import_mode: str,
-) -> Dict[str, Any]:
-    """Normalize one raw metadata record to the required harvest schema."""
-    normalized: Dict[str, Any] = {
-        "source_platform": raw.get("source_platform") or raw.get("platform") or "",
+def _normalize_fixture(raw: Dict[str, Any], import_mode: str) -> Dict[str, Any]:
+    for key in ("body", "content", "text", "raw_text"):
+        raw.pop(key, None)
+    platform = raw.get("source_platform") or raw.get("platform") or "CSDN"
+    return {
+        "source_platform": platform,
         "source_url": raw.get("source_url"),
         "title": raw.get("title"),
         "author": raw.get("author"),
         "author_uid": raw.get("author_uid"),
         "published_at": raw.get("published_at"),
-        "summary": raw.get("summary"),
-        "import_mode": import_mode,
+        "summary": _strip_to_summary(raw.get("summary")),
+        "import_mode": import_mode or "metadata_only",
     }
 
-    # 明确丢弃正文字段，确保仅持久化元数据。
-    for key in ("body", "content", "text", "raw_text"):
-        raw.pop(key, None)
-    normalized["source_platform"] = (
-        normalized["source_platform"].upper() if normalized["source_platform"] else "CSDN"
-    )
 
-    # source_id=fixture_csdn 时强制 metadata-only。
-    if not normalized["import_mode"]:
-        normalized["import_mode"] = "metadata_only"
+# ---------------- 真实 RSS / RSSHub 路径（Run02） ----------------
 
-    return normalized
+def _fetch(url: str, timeout: int = 20) -> bytes:
+    req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:  # nosec - 公开 RSS，仅 GET，不带凭据
+        return resp.read()
 
 
-def harvest_source(
-    source_id: str,
-    fixtures_dir: str,
-) -> Generator[Dict[str, Any], None, None]:
-    """Yield normalized metadata records for one source.
+def harvest_rss(feed_url: str, source_platform: str, import_mode: str = "metadata_only",
+                timeout: int = 20) -> Generator[Dict[str, Any], None, None]:
+    """抓一个公开 RSS/Atom 源，产出 metadata-only 记录（剥正文、截摘要）。
 
-    Args:
-        source_id: source identifier, supports ``fixture_csdn`` for local smoke flow.
-        fixtures_dir: fixture directory path.
+    只做 GET、不带 cookie/凭据、不登录；summary 经 _strip_to_summary 降级，绝不落全文。
     """
-    config = _load_sources_config()
-    source_meta = _find_source_meta(config, source_id)
+    import feedparser  # 延迟导入，fixture 路径不依赖
+
+    parsed = feedparser.parse(_fetch(feed_url, timeout))
+    for e in parsed.entries:
+        # 丢弃任何整篇正文字段，只保留链接+剥离后的短摘要
+        summary_src = e.get("summary") or e.get("description") or ""
+        yield {
+            "source_platform": source_platform,
+            "source_url": e.get("link"),
+            "title": (e.get("title") or "").strip(),
+            "author": e.get("author"),
+            "author_uid": e.get("author"),
+            "published_at": e.get("published") or e.get("updated"),
+            "summary": _strip_to_summary(summary_src),
+            "import_mode": import_mode or "metadata_only",
+        }
+
+
+def harvest_source(source_id: str, fixtures_dir: str = str(DEFAULT_FIXTURES_DIR),
+                   config_path: Optional[str] = None) -> Generator[Dict[str, Any], None, None]:
+    """按源 id 产出标准化 metadata 记录。支持 fixture / rss / rsshub。"""
+    config = _load_sources_config(config_path)
+    meta = _find_source_meta(config, source_id)
+    import_mode = meta.get("import_mode", "metadata_only")
 
     if source_id == "fixture_csdn":
-        import_mode = source_meta.get("import_mode", "metadata_only")
         for item in _iter_fixture_records(fixtures_dir):
-            normalized = _normalize_metadata_record(
-                item,
-                import_mode=import_mode,
-            )
-            yield normalized
+            yield _normalize_fixture(item, import_mode)
         return
 
-    raise NotImplementedError("Harvest source implementation is handled by Lead/Worker in this run")
+    stype = meta.get("type")
+    if stype == "rss":
+        feed_url = meta.get("feed_url")
+        if not feed_url:
+            raise ValueError("source '{}' type=rss 缺 feed_url".format(source_id))
+        platform = meta.get("platform", "rss")
+        for rec in harvest_rss(feed_url, platform, import_mode):
+            yield rec
+        return
+
+    if stype == "rsshub":
+        base = meta.get("rsshub_base") or config.get("rsshub_base")
+        route = meta.get("route")
+        if not (base and route):
+            raise NotImplementedError(
+                "source '{}' 为 rsshub 类型，但未配置可达的 rsshub_base+route"
+                "（本机 RSSHub 127.0.0.1:1200 未运行，公共实例 403）。"
+                "需 Ryan 启动本地 RSSHub 后在 yaml 配 rsshub_base 再启用。".format(source_id)
+            )
+        platform = meta.get("platform", "rsshub")
+        for rec in harvest_rss(base.rstrip("/") + "/" + route.lstrip("/"), platform, import_mode):
+            yield rec
+        return
+
+    raise NotImplementedError("source '{}' 暂不支持（type={}）".format(source_id, stype))
 
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="SAPKB harvest helper")
-    parser.add_argument(
-        "--source",
-        default="fixture_csdn",
-        help="Source id to harvest, currently fixture_csdn is supported.",
-    )
-    parser.add_argument(
-        "--fixtures-dir",
-        default=str(DEFAULT_FIXTURES_DIR),
-        help="Directory containing tests fixtures JSONL",
-    )
+    parser.add_argument("--source", default="fixture_csdn")
+    parser.add_argument("--fixtures-dir", default=str(DEFAULT_FIXTURES_DIR))
     return parser
 
 
 def main() -> None:
-    """CLI entry for local fixture smoke only."""
     args = _build_parser().parse_args()
     for record in harvest_source(args.source, args.fixtures_dir):
         print(json.dumps(record, ensure_ascii=False))

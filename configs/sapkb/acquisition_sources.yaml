@@ -1,6 +1,8 @@
 # SAPKB 采集源配置（对齐既有 ~/news/collect/sources.yaml 风格，domain=sapkb）
 domain: sapkb
 harvest_schedule: "30 6 * * *"        # 06:30 JST，避让 19:00/20:30/21:30/22:00
+# 本机 RSSHub 实例（127.0.0.1:1200）未运行时 rsshub 源不可用；启用 CSDN 需先起 RSSHub。
+rsshub_base: "http://127.0.0.1:1200"
 rate_limit:
   request_interval_sec: 5
   max_per_run: 200
@@ -12,6 +14,14 @@ sources:
     type: rsshub
     queries: ["SAP FICO", "SAP F110", "S/4HANA 财务", "SAP New GL", "SAP CO-PA", "SAP 物料账"]
     import_mode: metadata_only
+    route: "csdn/search/SAP%20FICO"   # 需本机 RSSHub 运行才生效
+
+  - id: sap_community_blogs
+    platform: sap_community
+    type: rss
+    feed_url: "https://community.sap.com/khhcw49343/rss/board?board.id=technology-blog-sap"
+    import_mode: metadata_only
+    # 公开 SAP 官方社区技术博客 RSS（真实可达）。仅 GET、无登录、metadata_only、剥正文截摘要。
 
   - id: zhihu_sap_columns
     platform: zhihu
