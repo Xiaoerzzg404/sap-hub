@@ -15,3 +15,11 @@
   已登记 config watchlist_priority（authors: 汪子熙/aka Jerry Wang；topics: SAP AI）。
   真实抓其 CSDN 博客需本机 RSSHub（127.0.0.1:1200）起来；未起则诚实 0 命中、不编造其文。
 - **付费提醒**：遇付费墙不硬拦、元数据照收，标 needs_license → `cli.py payment-reminders` 列出待 Ryan 付费解锁全文的条目。
+
+## Ryan 2026-06-10 决策（全文采集口径 + 分类 + 优先作者）
+- **每篇必分类**：category（模块 或 内容类型）+ content_type + 关键词，classifier.py 自动打。
+- **全文采集方式 = 手动下载 + clip 升级**（Ryan 选，零账号风险）。CSDN 文章页 521 反爬，自动直连抓不到正文；
+  自动登录态抓全文有 CSDN ToS/账号风控风险，**不做**。Ryan 有 CSDN VIP 阅读/下载权 → clip 走 license_purchased(subscription)。
+- **优先作者**（csdn_api 全量元数据 + 高优先 watch）：汪子熙(i042416,含BTP两专栏) / Henry-SAP(m0_45197968) /
+  喜欢打酱油的老鸟(weixin_42137700) / SAPmatinal(sapmatinal,含SAP+ChatGPT专栏)。
+- clip 升级口径：下载某文正文 → `clip --url <已采URL> --content-file <下载文件> --license-type subscription --licensor "CSDN VIP" --evidence <VIP凭证>` → 补全文到已采元数据，不新建不重复计。

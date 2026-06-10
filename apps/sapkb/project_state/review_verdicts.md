@@ -32,3 +32,8 @@
 - FinalReview(独立子 agent)：PASS_WITH_WARNINGS，七硬约束逐条真成立（剪藏器红线/evidence校验/全文落document_contents/全文不泄漏未授权/不幻觉/向量库模型过滤/不编造源）。
 - Lead 当轮修：M2/M3(clip author_id 用 author_uid 与 harvest 对齐,避免同作者拆行→加 --author-uid)、L2(clip 补 audit_logs 留痕)。并清理 pre-fix 测试遗留的 orphan 汪子熙 author 行。
 - 留 Run06(文档/低优先)：M1(docs 写明 clip 豁免 carries_fulltext 检查)、L1(云端只能 --content-file)、L3(can_republish 加列须防 individual 误解锁)。
+| agent_output:run06_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run06 双审纪要
+- FinalReview(独立子 agent)：PASS_WITH_WARNINGS，六硬约束逐条真成立（分类器纯逻辑不编造/clip升级幂等不重复计/evidence校验/全文落document_contents/四作者username真实/红线不破）。
+- Lead 当轮修：LOW-1(clip 升级 author_id COALESCE 回填,不重复计)、LOW-2(_MODULE_PRIORITY 注释澄清)。回归 17/17 OK。

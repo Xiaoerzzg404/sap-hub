@@ -33,12 +33,40 @@ sources:
   - id: csdn_jerry_wang
     platform: csdn
     type: csdn_api
-    username: i042416            # 汪子熙(Jerry Wang) CSDN id；jerry.blog.csdn.net 的真实账号
+    username: i042416            # 汪子熙(Jerry Wang) CSDN id；含《30天入门SAP BTP开发》+《SAP BTP百科全书》两专栏
     author_name: 汪子熙
     import_mode: metadata_only
-    max_pages: 3
+    max_pages: 8
     page_size: 40
     # 公开文章列表 JSON API，GET 无登录、仅元数据（标题/链接/日期/摘要）。优先采集源。
+
+  - id: csdn_henry_sap
+    platform: csdn
+    type: csdn_api
+    username: m0_45197968
+    author_name: Henry-SAP
+    import_mode: metadata_only
+    max_pages: 6
+    page_size: 40
+
+  - id: csdn_laoniao
+    platform: csdn
+    type: csdn_api
+    username: weixin_42137700
+    author_name: 喜欢打酱油的老鸟
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_sapmatinal
+    platform: csdn
+    type: csdn_api
+    username: sapmatinal
+    author_name: SAPmatinal
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+    # 含 SAP 专栏(category_2805369) + ChatGPT 专栏(category_12282411)
 
   - id: zhihu_sap_columns
     platform: zhihu
@@ -66,9 +94,24 @@ watchlist_priority:
     - name: "汪子熙"
       aka: ["Jerry Wang", "JerryWang"]
       platform: csdn
+      username: i042416
       homepage: "https://jerry.blog.csdn.net/"
-      rsshub_route: "csdn/blog/jerry"      # 需本机 RSSHub 起来才真抓；未起则如实不产数据
-      reason: "SAP 大神，优先收录"
+      reason: "SAP 大神，最高优先（含 BTP 两专栏）"
+    - name: "Henry-SAP"
+      platform: csdn
+      username: m0_45197968
+      homepage: "https://blog.csdn.net/m0_45197968"
+      reason: "优先博主"
+    - name: "喜欢打酱油的老鸟"
+      platform: csdn
+      username: weixin_42137700
+      homepage: "https://blog.csdn.net/weixin_42137700"
+      reason: "优先博主"
+    - name: "SAPmatinal"
+      platform: csdn
+      username: sapmatinal
+      homepage: "https://blog.csdn.net/SAPmatinal"
+      reason: "优先博主（SAP+ChatGPT 专栏）"
   topics:
     - name: "SAP AI"
       keywords: ["SAP Business AI", "Joule", "AI Agent", "Generative AI Hub", "SAP AI Core", "ABAP AI", "agentic"]

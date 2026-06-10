@@ -27,6 +27,7 @@ from ingest import compliance_gate  # type: ignore
 from process import dedup  # type: ignore
 from process import dedup_stage2  # type: ignore
 from process import tag_keyword  # type: ignore
+from process import classifier  # type: ignore
 from obsidian_sync import write_inbox  # type: ignore
 from obsidian_sync import mirror  # type: ignore
 from process import watchlist  # type: ignore
@@ -203,8 +204,9 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                     "INSERT INTO documents_fts (document_id,title,summary,body) VALUES (?,?,?,?)",
                     (doc_id, rec.get("title") or "", rec.get("summary") or "", ""),
                 )
-                # 5) 标签
-                tags = tag_keyword.tag(rec.get("title") or "", rec.get("summary"))
+                # 5) 标签 + 主分类（Run06：每篇定 category + content_type）
+                tags = classifier.classify(rec.get("title") or "", rec.get("summary"),
+                                           rec.get("source_platform"))["tags"]
                 for t in tags:
                     con.execute(
                         "INSERT OR IGNORE INTO document_tags "

@@ -64,10 +64,14 @@ def clip_import(url: str, title: str, author: str, content: str,
     con = sqlite3.connect(db_path)
     con.execute("PRAGMA foreign_keys = ON;")
     try:
-        # 去重：复用 collect 指纹，防你重复剪藏同一篇
+        # 去重/升级判定：已采过元数据的文章，clip 不再新建，而是【补全文升级】
         dup_type, canon = dedup.find_duplicate(con, {"source_url": url, "title": title})
+        upgrade_id = None
         if dup_type == "url":
-            return {"status": "duplicate", "reason": "url_already_imported", "canonical": canon}
+            row = con.execute("SELECT id,content_status FROM documents WHERE id=?", (canon,)).fetchone()
+            if row and row[1] == "fulltext_saved":
+                return {"status": "duplicate", "reason": "fulltext_already_present", "doc_id": canon}
+            upgrade_id = canon   # 已有元数据 → 补全文升级到这条
 
         # 授权判定：有 license 且 evidence 存在 → license_purchased；否则 user_imported（自用全文）
         rights = "user_imported"
@@ -80,28 +84,35 @@ def clip_import(url: str, title: str, author: str, content: str,
             rights = "license_purchased"
             import_mode = "license_purchased"
 
-        doc_id = "d_" + _sid(url or title)
-        # author_id 与 pipeline._upsert_author 对齐（FinalReview M2/M3）：优先 author_uid，
-        # 否则作者名——确保同一作者(如汪子熙 uid=i042416)经 harvest 与 clip 解析到同一 author_id，不拆行。
+        doc_id = upgrade_id or ("d_" + _sid(url or title))
+        # author_id 与 pipeline._upsert_author 对齐（FinalReview M2/M3）：优先 author_uid。
         uid = author_uid or author or title
         author_id = "a_" + _sid(platform.lower(), str(uid))
-        # author upsert
-        if author:
-            if con.execute("SELECT 1 FROM authors WHERE id=?", (author_id,)).fetchone():
-                con.execute("UPDATE authors SET doc_count=COALESCE(doc_count,0)+1, updated_at=? WHERE id=?",
-                            (_now(), author_id))
-            else:
-                con.execute("INSERT INTO authors (id,name,platform,platform_uid,doc_count,created_at,updated_at) "
-                            "VALUES (?,?,?,?,1,?,?)", (author_id, author, platform.lower(), str(uid), _now(), _now()))
-
         summary = content.strip().replace("\n", " ")[:280]
-        con.execute(
-            "INSERT OR IGNORE INTO documents (id,title,source_platform,source_url,author_id,imported_at,"
-            "import_mode,rights_status,content_status,confidence_tier,summary,created_at,updated_at) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            (doc_id, title, platform, url, author_id if author else None, _today(),
-             import_mode, rights, "fulltext_saved", "reference", summary, _now(), _now()),
-        )
+
+        if upgrade_id:
+            # 已有元数据 → 升级为全文、状态置 fulltext_saved；author_id 仅在原为空时回填(COALESCE)，
+            # 不重复计 doc_count（FinalReview LOW-1）。
+            con.execute(
+                "UPDATE documents SET import_mode=?, rights_status=?, content_status='fulltext_saved', "
+                "author_id=COALESCE(author_id, ?), updated_at=? WHERE id=?",
+                (import_mode, rights, (author_id if author else None), _now(), doc_id))
+        else:
+            # author upsert（仅新建时）
+            if author:
+                if con.execute("SELECT 1 FROM authors WHERE id=?", (author_id,)).fetchone():
+                    con.execute("UPDATE authors SET doc_count=COALESCE(doc_count,0)+1, updated_at=? WHERE id=?",
+                                (_now(), author_id))
+                else:
+                    con.execute("INSERT INTO authors (id,name,platform,platform_uid,doc_count,created_at,updated_at) "
+                                "VALUES (?,?,?,?,1,?,?)", (author_id, author, platform.lower(), str(uid), _now(), _now()))
+            con.execute(
+                "INSERT OR IGNORE INTO documents (id,title,source_platform,source_url,author_id,imported_at,"
+                "import_mode,rights_status,content_status,confidence_tier,summary,created_at,updated_at) "
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (doc_id, title, platform, url, author_id if author else None, _today(),
+                 import_mode, rights, "fulltext_saved", "reference", summary, _now(), _now()),
+            )
         # 全文落 document_contents（独立文件，便于 RAG 分块/重建）
         ft_dir = pathlib.Path(db_path).parent / "fulltext"
         ft_dir.mkdir(parents=True, exist_ok=True)
@@ -116,8 +127,9 @@ def clip_import(url: str, title: str, author: str, content: str,
         con.execute("INSERT OR REPLACE INTO documents_fts (document_id,title,summary,body) VALUES (?,?,?,?)",
                     (doc_id, title, summary, content))
 
-        # 标签
-        tags = tag_keyword.tag(title, summary)
+        # 标签 + 主分类（Run06）
+        from process import classifier  # noqa
+        tags = classifier.classify(title, summary, platform)["tags"]
         for t in tags:
             con.execute("INSERT OR IGNORE INTO document_tags (id,document_id,tag_type,tag_value,confidence,generated_by,created_at) "
                         "VALUES (?,?,?,?,?,?,?)",
@@ -151,8 +163,8 @@ def clip_import(url: str, title: str, author: str, content: str,
              "low", _json.dumps({"rights": rights, "license": bool(license_info),
                                  "chars": len(content)}, ensure_ascii=False), "Ryan(manual)", _now()))
         con.commit()
-        return {"status": "imported", "doc_id": doc_id, "rights_status": rights,
-                "fulltext_chars": len(content), "license": bool(license_info),
+        return {"status": "upgraded" if upgrade_id else "imported", "doc_id": doc_id,
+                "rights_status": rights, "fulltext_chars": len(content), "license": bool(license_info),
                 "obsidian_path": obs, "tags": len(tags)}
     finally:
         con.close()
