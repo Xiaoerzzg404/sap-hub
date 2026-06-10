@@ -29,3 +29,6 @@
 ## Run09（gpt-5.3-codex-spark token 用尽）
 - Codex 在 Run09 测试任务中途报 "usage limit for GPT-5.3-Codex-Spark"（恢复 6/11）。
 - 按 Codex 退出契约，test_analytics.py 由 Cowork-Lead 自写补齐（5 套 25 用例全绿）。后续机械活暂由 Cowork 接手。
+
+## Run10（Codex 仍 token 用尽）
+- test_distill 由 Cowork-Lead 自写（Codex spark 6/11 恢复前）。6 套 29 用例全绿。

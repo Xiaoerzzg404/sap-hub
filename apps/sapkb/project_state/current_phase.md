@@ -1,15 +1,15 @@
 # 当前阶段
 
-**Run 09 · 内容情报层（热度+趋势+选题）— 已完成并通过双审（2026-06-10）**
+**Run 10 · R13 知识提炼 distill（版权角色硬隔离）— 已完成并通过双审（2026-06-10）**
 
-- R12 热度 popularity_score：按 routing_policy 权重(manual_rating*3+log(1+repost)*2+platform_count+author_rating+distill_refs*2)
-  算每篇缓存回 documents。`cli.py recompute-popularity`。1457 篇已评分。
-- R14 趋势雷达：按季度聚合 category/module/sap_ai/csdn_tag → trend_snapshots(含真·上一自然季环比)；
-  taxonomy 外高频(≥5)新词 → term_candidates(已含 tcode/table/cross_topics 排除)。`cli.py trend`。
-- 选题 shortlist：按 热度+新近+SAP AI 优先 排候选，分类分组，供公众号/视频号选题。`cli.py shortlist [--category X]`。
-  实测 SAP AI(MCP/ADT/AI Core)文章置顶。
-- 单测 5 套 25 用例全绿。
+- distill.create_insight：从源文档建 insight（5 类型），写 06_insights md + insight_sources + 源置 editorial_status=distilled。
+- **版权/真实性硬隔离（最高优先，已双审验证）**：evidence/counterpoint **只能**来自授权全文
+  (user_imported/license_purchased/own_content/fulltext_allowed/derivative/commercial)；
+  metadata_only/summary_only/unknown/blocked/takedown 源**只能 inspiration**，写库前 raise 拒绝（防引用不存在的全文事实=编造）。
+- 无 evidence 的 insight 标"选题卡/不得陈述未核实事实"；status=draft、reviewed_tier=2（Tier2双审）、不发布。
+- CLI insight-new / insights-list。单测 6 套 29 用例全绿。
 
-**SAPKB → 内容生产桥已通**：1457 篇真实 SAP 文章可按热度/分类/SAP AI 优先出选题清单。
+**完整内容生产链已通**：采集(1457篇,合规) → 去重 → 分类/标签 → 热度/趋势 → 选题 shortlist →
+**提炼 insight(版权硬隔离,Tier2)** → 草稿（发布永远人工）。
 
-下一步：Run 10（选题→爆款联动 insight 提炼 R13 / 学习路径 R14 / 发布台账 R15）。
+下一步：Run 11（insight LLM 据 evidence 成稿 / R15 发布台账 publications / 学习路径）。

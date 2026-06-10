@@ -108,6 +108,18 @@ def _build_parser() -> argparse.ArgumentParser:
     sl.add_argument("--db-path", default=DEFAULT_DB_PATH)
     sl.add_argument("--category", default=None)
     sl.add_argument("--limit", type=int, default=20)
+
+    ins = subparsers.add_parser("insight-new", help="R13 提炼：从源文档建 insight（版权角色硬隔离）")
+    ins.add_argument("--type", default="knowledge_card",
+                     choices=["knowledge_card", "experience_note", "growth_article", "trend_report", "learning_path"])
+    ins.add_argument("--title", required=True)
+    ins.add_argument("--docs", required=True, help="逗号分隔 doc_id（角色按各源授权自动判定）")
+    ins.add_argument("--evidence-docs", default="", help="逗号分隔 doc_id，强制作 evidence（须授权全文，否则拒绝）")
+    ins.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    ins.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+
+    insl = subparsers.add_parser("insights-list", help="列出已提炼 insights")
+    insl.add_argument("--db-path", default=DEFAULT_DB_PATH)
     return parser
 
 
@@ -184,6 +196,25 @@ def main() -> None:
     if args.command == "regen-inbox":
         result = pipeline.regen_inbox(args.db_path, args.vault_root)
         print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "insight-new":
+        from process import distill
+        ev = set(x.strip() for x in args.evidence_docs.split(",") if x.strip())
+        srcs = []
+        for d in (x.strip() for x in args.docs.split(",") if x.strip()):
+            srcs.append({"doc_id": d, "role": "evidence" if d in ev else None})
+        for d in ev:
+            if d not in [s["doc_id"] for s in srcs]:
+                srcs.append({"doc_id": d, "role": "evidence"})
+        try:
+            result = distill.create_insight(args.db_path, args.vault_root, args.type, args.title, srcs)
+        except (ValueError, PermissionError) as e:
+            result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "insights-list":
+        from process import distill
+        print(json.dumps(distill.list_insights(args.db_path), ensure_ascii=False, indent=2))
         return
     if args.command in ("recompute-popularity", "trend", "shortlist"):
         from process import analytics
