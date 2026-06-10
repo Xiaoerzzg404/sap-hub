@@ -16,6 +16,13 @@ sources:
     import_mode: metadata_only
     route: "csdn/search/SAP%20FICO"   # 需本机 RSSHub 运行才生效
 
+  - id: sap_news_ai
+    platform: sap_news
+    type: rss
+    feed_url: "https://news.sap.com/topics/artificial-intelligence/feed/"
+    import_mode: metadata_only
+    # SAP 官方 AI 新闻 RSS（真实可达）。SAP AI 优先采集源（Ryan 6/10 指令）。剥正文截摘要。
+
   - id: sap_community_blogs
     platform: sap_community
     type: rss

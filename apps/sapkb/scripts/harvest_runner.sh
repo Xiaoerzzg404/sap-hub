@@ -12,7 +12,7 @@ CONFIG_FILE="${HUB_ROOT}/configs/sapkb/acquisition_sources.yaml"
 LOG_DIR="${REPO_ROOT}/logs"
 LOG_FILE="${LOG_DIR}/harvest_$(date +%Y%m%d).log"
 # 定时启用的真实可达源白名单（RSSHub 类源需本机 RSSHub 起来后再加入）
-SUPPORTED_SOURCES=("sap_community_blogs" "csdn_jerry_wang")
+SUPPORTED_SOURCES=("sap_community_blogs" "csdn_jerry_wang" "sap_news_ai")
 OVERALL_STATUS=0
 mkdir -p "$LOG_DIR"
 

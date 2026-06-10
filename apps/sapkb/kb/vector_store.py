@@ -47,17 +47,26 @@ class VectorStore:
     def count(self) -> int:
         return self.con.execute("SELECT COUNT(*) FROM embeddings").fetchone()[0]
 
-    def _matrix(self) -> Tuple[List[str], List[str], "np.ndarray"]:
-        rows = self.con.execute("SELECT chunk_id,document_id,vec FROM embeddings").fetchall()
+    def _matrix(self, model: Optional[str] = None) -> Tuple[List[str], List[str], "np.ndarray"]:
+        # 按 model 过滤 + 维度守护（FinalReview M3）：换模型重嵌期间避免混维度 np.stack 崩。
+        if model:
+            rows = self.con.execute(
+                "SELECT chunk_id,document_id,vec,dim FROM embeddings WHERE model=?", (model,)).fetchall()
+        else:
+            rows = self.con.execute("SELECT chunk_id,document_id,vec,dim FROM embeddings").fetchall()
         if not rows:
             return [], [], np.zeros((0, 0), dtype=np.float32)
+        # 只保留最常见维度，丢弃异维行（防 np.stack 崩）
+        from collections import Counter as _C
+        dom_dim = _C(r[3] for r in rows).most_common(1)[0][0]
+        rows = [r for r in rows if r[3] == dom_dim]
         ids = [r[0] for r in rows]
         docids = [r[1] for r in rows]
         mat = np.stack([np.frombuffer(r[2], dtype=np.float32) for r in rows])
         return ids, docids, mat
 
-    def search(self, query_vec: List[float], k: int = 5) -> List[Tuple[str, str, float]]:
-        ids, docids, mat = self._matrix()
+    def search(self, query_vec: List[float], k: int = 5, model: Optional[str] = None) -> List[Tuple[str, str, float]]:
+        ids, docids, mat = self._matrix(model)
         if mat.shape[0] == 0:
             return []
         q = np.nan_to_num(np.asarray(query_vec, dtype=np.float32))

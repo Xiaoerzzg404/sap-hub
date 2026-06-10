@@ -1,12 +1,14 @@
 # 当前阶段
 
-**Run 04 · 本地 embedding/RAG — 已完成并通过双审（2026-06-10）**
+**Run 05 · 人工全文导入 + 全文 RAG + 扩采 SAP AI — 已完成并通过双审（2026-06-10）**
 
-- 真抓汪子熙：CSDN 公开文章列表 JSON API（GET 无登录、仅元数据）→ 80 篇入库，rating=5 高优先 watch。
-- embedding：本机 Ollama bge-m3（1024 维），kb/embedder + chunker（metadata 只 title+summary，授权才分全文）
-  + vector_store（sidecar data/vectors.db，numpy cosine，派生数据不入 git）。embed 110 块 9.4s 幂等。
-- RAG：cli `embed` / `semantic-search` / `ask`。ask 经 gemma4 仅据检索材料生成中文答+内联引用+"需验证"尾注，
-  低于 MIN_SCORE 拒答不脑补。stage2 接 bge_m3 语义后端（阈值 0.92）。
-- 单测 tests.test_sapkb 6/6 + tests.test_kb 6/6 全绿。
+- 人工导入工具(docs/11 剪藏器·CLI)：`cli.py clip` 从剪贴板/文件导入你有权查看的全文 →
+  document_contents(全文文件) + rights=user_imported、可选 licenses(evidence 必须存在校验)。单条手动、不登录/不cookie/不绕墙。
+- 全文进 RAG：build_index 接 document_contents，授权全文真分块嵌入；ask 能命中导入的正文段（带引用，MIN_SCORE=0.6）。
+- 向量库加固：按 embedding_model 过滤 + 维度守护（换模型不崩）。
+- 扩采：新增 SAP 官方 AI 新闻 RSS（sap_news_ai，真抓 30 篇），加入 06:30 定时白名单。SAP AI 优先采集落地。
+- 单测 17/17 OK（test_sapkb 6 + test_kb 6 + test_clip 5）。
 
-下一步：Run 05（扩采更多 SAP AI 源 + 全文授权链路接 document_contents + 向量库规模化/Chroma）。
+DB 现状：144 文档 / 44 作者（汪子熙 82 篇·高优先）/ 1 license / 4 全文文档。
+
+下一步：Run 06（扩更多优先作者+SAP AI 源、全文授权批量、RAG 答案质量评测、可选 web 检索层）。

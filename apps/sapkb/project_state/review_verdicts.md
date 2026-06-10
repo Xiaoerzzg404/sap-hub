@@ -26,3 +26,9 @@
 - FinalReview(独立子 agent)：PASS_WITH_WARNINGS，六硬约束逐条真成立（不泄漏全文=code判定+schema无body列双保险；不幻觉=MIN_SCORE拒答+引用；纯本地；向量库派生幂等；stage2 bge_m3实装）。
 - Lead 当轮修：H2(embed_text 无兜底→加 KBEmbedError 友好异常,cli 捕获)、M1(生成失败 note 自相矛盾→改明确文案)。
 - 留 Ryan 决策(红线-阈值)：M2(ask 生成门槛 0.45→0.6)。留 Run05：H1(暴力cosine大库换Chroma)、M3(换模型维度过滤)、全文分块链路接 document_contents。
+| agent_output:run05_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run05 双审纪要
+- FinalReview(独立子 agent)：PASS_WITH_WARNINGS，七硬约束逐条真成立（剪藏器红线/evidence校验/全文落document_contents/全文不泄漏未授权/不幻觉/向量库模型过滤/不编造源）。
+- Lead 当轮修：M2/M3(clip author_id 用 author_uid 与 harvest 对齐,避免同作者拆行→加 --author-uid)、L2(clip 补 audit_logs 留痕)。并清理 pre-fix 测试遗留的 orphan 汪子熙 author 行。
+- 留 Run06(文档/低优先)：M1(docs 写明 clip 豁免 carries_fulltext 检查)、L1(云端只能 --content-file)、L3(can_republish 加列须防 individual 误解锁)。

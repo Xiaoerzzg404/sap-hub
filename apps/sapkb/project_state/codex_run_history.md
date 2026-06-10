@@ -19,3 +19,6 @@
 ## Run04-机械 结果（gpt-5.3-codex-spark）
 - 产出：tests/test_kb.py（chunker/vector_store/embedder 纯本地单测，6/6 OK）。
 - Lead 复核：Run04 实装 bge_m3 后端，旧 test_sapkb 的"bge_m3 抛 NotImplementedError"断言过时→Lead 改为未知 backend 抛 ValueError。全绿。
+
+## Run05-机械 结果（gpt-5.3-codex-spark）
+- 产出：tests/test_clip.py（clip 导入/必填/去重/license evidence 校验/全文落 document_contents，5/5 OK）。

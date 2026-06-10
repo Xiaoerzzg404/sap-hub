@@ -21,7 +21,7 @@ from .vector_store import VectorStore
 
 OLLAMA_URL = "http://localhost:11434"
 GEN_MODEL = "gemma4:e4b"
-MIN_SCORE = 0.45  # 低于此相似度视为未检索到相关材料
+MIN_SCORE = 0.6  # 作答门槛（Ryan 2026-06-10 批准 0.45→0.6）：低于此视为相关度不足、拒答不脑补
 
 
 def _now() -> str:
@@ -41,14 +41,22 @@ def build_index(db_path: str, vectors_path: Optional[str] = None,
     vs = VectorStore(vectors_path)
     stats = {"docs": 0, "chunks_written": 0, "embedded": 0, "skipped_existing": 0, "errors": 0}
     try:
-        q = ("SELECT id,title,summary,rights_status,source_url FROM documents "
-             "WHERE content_status!='removed'")
+        q = ("SELECT d.id,d.title,d.summary,d.rights_status,d.source_url,dc.markdown_path "
+             "FROM documents d LEFT JOIN document_contents dc ON dc.document_id=d.id "
+             "WHERE d.content_status!='removed'")
         if limit:
             q += " LIMIT {}".format(int(limit))
         docs = con.execute(q).fetchall()
         for d in docs:
             stats["docs"] += 1
             doc = dict(d)
+            # 授权全文文档：从 document_contents 读真正文交给 chunker 分全文块（chunker 仍按 rights 把关）
+            mp = doc.get("markdown_path")
+            if mp and doc.get("rights_status") in chunker._FULLTEXT_RIGHTS and os.path.exists(mp):
+                try:
+                    doc["body"] = open(mp, "r", encoding="utf-8").read()
+                except Exception:
+                    doc["body"] = None
             for ch in chunker.chunk_document(doc):
                 chunk_id = "ch_" + doc["id"] + "_" + str(ch["chunk_index"])
                 # 写 chunks 表（幂等 UNIQUE(document_id,chunk_index)）
@@ -90,7 +98,7 @@ def semantic_search(query: str, db_path: str, vectors_path: Optional[str] = None
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
     try:
-        hits = vs.search(qv, k)
+        hits = vs.search(qv, k, model=model)
         out = []
         for chunk_id, doc_id, score in hits:
             ch = con.execute("SELECT content,source_url FROM chunks WHERE id=?", (chunk_id,)).fetchone()

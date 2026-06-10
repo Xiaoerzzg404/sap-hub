@@ -1,5 +1,5 @@
-# 下一轮任务（Run 05 候选）
-- 扩采更多 SAP AI / 优先作者源（更多 CSDN 大神 + SAP 官方 AI 博客），watchlist 增量追更跑起来。
-- 全文授权链路：接 document_contents，授权文档真正分全文块（提升 RAG 召回质量）。
-- 向量库规模化：暴力 cosine → Chroma/LanceDB；换模型时按 embedding_model 维度过滤（FinalReview H1/M3）。
-- 待 Ryan 批准（红线）：ask 生成门槛 MIN_SCORE 0.45→0.6（FinalReview M2）。
+# 下一轮任务（Run 06 候选）
+- 扩更多优先作者（Ryan 给名单/CSDN id）+ 更多 SAP AI 官方源；watchlist 增量追更常态化。
+- 付费→人工导入闭环演练：payment-reminders 里的条目，Ryan 付费后用 clip --license 导入全文。
+- RAG 答案质量评测集 + 调 k/MIN_SCORE；可选 web 检索层（知识块过万再上）。
+- 文档收口 FinalReview M1/L1/L3；下游 verify 对新增 feed 跑 HTTP HEAD 门禁。

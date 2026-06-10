@@ -62,6 +62,22 @@ def _build_parser() -> argparse.ArgumentParser:
     ak.add_argument("--db-path", default=DEFAULT_DB_PATH)
     ak.add_argument("-k", type=int, default=5)
     ak.add_argument("--no-generate", action="store_true", help="只检索证据不生成式作答")
+
+    cp = subparsers.add_parser("clip", help="人工导入你有权查看的全文（剪贴板/文件），docs/11 剪藏器")
+    cp.add_argument("--url", required=True)
+    cp.add_argument("--title", required=True)
+    cp.add_argument("--author", default="")
+    cp.add_argument("--author-uid", default=None, help="作者平台 id（如 CSDN i042416），与 harvest 对齐去重")
+    cp.add_argument("--platform", default="manual")
+    cp.add_argument("--content-file", default=None, help="正文文件；缺省读剪贴板 pbpaste")
+    cp.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    cp.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+    # 已购授权（可选）
+    cp.add_argument("--license-type", default=None, choices=[None, "purchase", "subscription", "written_permission", "cc_license"])
+    cp.add_argument("--licensor", default=None)
+    cp.add_argument("--scope", default="individual", choices=["individual", "derivative", "commercial"])
+    cp.add_argument("--evidence", default=None, help="发票/许可截图本地路径（登记授权必填且文件须存在）")
+    cp.add_argument("--purchased-at", default=None)
     return parser
 
 
@@ -101,6 +117,27 @@ def main() -> None:
         return
     if args.command == "payment-reminders":
         result = pipeline.payment_reminders(args.db_path)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "clip":
+        from ingest import clip
+        content = ""
+        if args.content_file:
+            with open(args.content_file, "r", encoding="utf-8") as f:
+                content = f.read()
+        else:
+            content = clip.read_clipboard()
+        license_info = None
+        if args.license_type:
+            license_info = {"license_type": args.license_type, "licensor": args.licensor,
+                            "scope": args.scope, "evidence_path": args.evidence,
+                            "purchased_at": args.purchased_at}
+        try:
+            result = clip.clip_import(args.url, args.title, args.author, content,
+                                      args.db_path, args.vault_root, platform=args.platform,
+                                      license_info=license_info, author_uid=args.author_uid)
+        except (ValueError, FileNotFoundError) as e:
+            result = {"status": "rejected", "error": str(e)}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command in ("embed", "semantic-search", "ask"):
