@@ -1,0 +1,144 @@
+# SAPKB 路由 / 合规策略 v2 （继承 v1，新增 license_purchased 与置信分层）
+
+routing:
+  discovery:
+    default_import_mode: metadata_only
+    allow_fulltext_by_default: false
+    require_compliance_gate: true
+
+  csdn:
+    channel: rsshub_or_search        # 复用既有 RSSHub
+    default_import_mode: metadata_only
+    allow_login: false
+    allow_cookie_access: false
+    allow_captcha_bypass: false
+    allow_bulk_fulltext_download: false
+    fulltext_requires: [user_manual_import, license_purchased, explicit_license, own_content]
+    dedup: [url, title_simhash, body_simhash, embedding]   # 转载多，强制 embedding 去重
+
+  zhihu:
+    channel: rsshub
+    default_import_mode: metadata_only
+    allow_login: false
+    allow_cookie_access: false
+    allow_captcha_bypass: false
+    fulltext_requires: [user_manual_import, license_purchased, own_content]
+
+  wechat:
+    channel: wewe_rss                # 复用既有 WeWe RSS
+    default_import_mode: summary_only
+    allow_personal_wechat_login: false
+    allow_group_or_moments_collection: false
+    official_account_api_allowed_only_for_owned_accounts: true
+
+  shipinhao:                         # 视频号：无稳定 API
+    channel: manual
+    default_import_mode: metadata_only
+
+  sap_official:
+    default_import_mode: metadata_summary_with_links
+    prefer_links_to_full_copy: true
+
+# 已购授权（需求5）
+license:
+  scope_required: true               # 缺 scope 按最严（仅个人学习）
+  evidence_file_must_exist: true
+  scope_to_permission:
+    individual:  { fulltext_store: true,  republish: false }
+    derivative:  { fulltext_store: true,  republish: true  }   # 仍需改写、标来源
+    commercial:  { fulltext_store: true,  republish: true  }
+  expiry_reminder_days: 14
+
+# 专栏镜像触发（需求8）
+mirror:
+  author_doc_threshold: 5
+  column_item_threshold: 3
+  preserve_seq: true                 # 必须还原原专栏篇序
+  target_vault: SAP_EXTKB
+
+# 分级审核（v3，详见 docs/08）
+review:
+  tier0_rule_check: all                 # 规则审：代码校验，100% 覆盖，零 LLM
+  tier1_llm_sample_rate: 0.10           # 标签/摘要抽样单审
+  tier2_double_review_triggers:         # 双审（self+cross）触发清单
+    - rights_upgrade_to_fulltext
+    - license_registration
+    - enter_content_pipeline_pool       # 进干货/八卦选题池
+    - agent_code_output
+    - column_mirror_first_build
+    - rag_answer                        # 自用问答可降为 tier1（按需改）
+  final_review_isolation: file_handoff  # FinalReview 只见 review/inbox/，独立任务/会话
+
+# 去重（v3 两段式，见 docs/05 四b）
+dedup:
+  stage1: [url_normalize, url_unique, title_simhash]   # 入库前，复用 collect
+  stage2: embedding_on_title_plus_summary              # 摘要生成后
+  embedding_dedup_threshold: 0.92
+  auto_merge: false                     # 疑似转载进 needs_review，人工确认后归并
+
+# 置信分层（v2）
+confidence:
+  external_default: reference
+  authoritative_sources: [SAP_FUZHKB, own_content]
+  qa_must_label_tier: true
+
+# 问答
+qa:
+  require_citations: true
+  allow_uncited_answer: false
+  warn_on_conflict: true
+  warn_on_stale_content: true
+
+# inbox 治理（v3，见 docs/07 五）
+inbox:
+  stale_after_days: 7                   # 7 天未 triage 进 inbox_stale 仪表盘
+
+# 验收 fixture（v3：验收不依赖外部源可用性）
+fixtures:
+  enabled: true
+  sample_path: tests/fixtures/csdn_sample.jsonl
+
+# vault 隔离（铁律）
+vault_isolation:
+  write_allowed: [SAP_EXTKB]
+  write_forbidden: [SAP_FUZHKB]
+  cross_ref: ext_to_fuzh_readonly_only
+
+confidentiality:
+  project_docs_default_confidential: true
+  confidential_docs_allowed_for_public_content_generation: false
+
+# ==================== v3.1 (R11–R15) ====================
+
+# R11 订阅监视
+watch:
+  auto_enable_on_mirror: true          # 触发镜像阈值即自动追更
+  default_interval_days: 3
+  adaptive_backoff: { no_new_rounds: 3, multiply: 2, max_days: 14 }
+  error_rounds_to_flag: 2
+
+# R12 热度信号（popularity_score 权重，可调）
+popularity:
+  weights: { manual_rating: 3, log_repost: 2, platform_count: 1, author_rating: 1, distill_refs: 2 }
+  recalc: weekly
+
+# R13 提炼
+distill:
+  cluster_window_days: 30
+  min_evidence_sources: 2              # 关键事实须 >=2 源一致
+  inspiration_only_rights: [metadata_only, summary_only]   # 这两档只能当选题启发
+  evidence_rights: [derivative, commercial, own_content, fulltext_allowed, user_imported]
+  review_tier: 2                       # 提炼产物一律双审
+  publish_gate_check_sources: true     # 发布前校验全部 evidence 源 rights
+
+# R14 趋势
+trend:
+  snapshot_period: quarterly
+  term_candidate_min_freq_30d: 5
+  learning_path_revision: quarterly
+  signal_rules: [doc_count_delta, new_author_count, top_author_migration]
+
+# R15 编辑状态
+editorial:
+  distilled_excluded_from_clustering: true   # 已提炼源默认不再进选题聚类
+  frontmatter_sync: bidirectional_weekly     # DB为真相，冲突进 needs_review

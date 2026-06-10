@@ -1,0 +1,75 @@
+# SAP 分类法（FICO 深度扩展，供实体识别/标签/检索使用）
+modules:
+  FI:
+    names: ["FI", "Financial Accounting", "财务会计"]
+    processes:
+      AP:
+        names: ["应付", "Accounts Payable"]
+        tcodes: ["FB60", "F-43", "F110", "FBL1N", "FK01", "MIRO"]
+        tables: ["BSIK", "BSAK", "LFA1", "LFB1", "REGUH", "REGUP"]
+      AR:
+        names: ["应收", "Accounts Receivable"]
+        tcodes: ["FB70", "F-22", "F-28", "FBL5N", "FD01"]
+        tables: ["BSID", "BSAD", "KNA1", "KNB1"]
+      GL:
+        names: ["总账", "General Ledger", "New GL", "并行分类账"]
+        tcodes: ["FB50", "F-02", "FAGLL03", "FAGLB03", "FS00"]
+        tables: ["ACDOCA", "BKPF", "BSEG", "SKA1", "SKB1", "FAGLFLEXA"]
+      AA:
+        names: ["资产会计", "Asset Accounting"]
+        tcodes: ["AS01", "ABZON", "AFAB", "AW01N"]
+        tables: ["ANLA", "ANLC", "ANEK"]
+      Bank:
+        names: ["银行会计", "Bank Accounting", "电子对账"]
+        tcodes: ["FF67", "FEBA", "FF_5"]
+        tables: ["FEBKO", "FEBEP"]
+  CO:
+    names: ["CO", "Controlling", "管理会计"]
+    processes:
+      CCA:
+        names: ["成本中心", "Cost Center"]
+        tcodes: ["KS01", "KSB1", "KP06"]
+        tables: ["CSKS", "COSP"]
+      IO:
+        names: ["内部订单", "Internal Order"]
+        tcodes: ["KO01", "KOB1"]
+        tables: ["AUFK"]
+      PC:
+        names: ["产品成本", "Product Costing", "ML 物料账"]
+        tcodes: ["CK11N", "CK40N", "CKMLCP", "MR21"]
+        tables: ["KEKO", "CKMLHD", "MLIT"]
+      COPA:
+        names: ["获利能力分析", "CO-PA"]
+        tcodes: ["KE30", "KE24", "KEPM"]
+        tables: ["CE1XXXX", "CE4XXXX"]
+  MM:
+    names: ["MM", "物料管理"]
+    tcodes: ["ME21N", "MIGO", "MIRO", "MM01"]
+    tables: ["EKKO", "EKPO", "MARA", "MSEG"]
+  SD:
+    names: ["SD", "销售分销"]
+    tcodes: ["VA01", "VL01N", "VF01"]
+    tables: ["VBAK", "VBAP", "LIKP"]
+
+# v3.1：SAP AI 分支（R14 趋势雷达种子，2026-06 核实，靠 term_candidates 机制季度扩充）
+SAP_AI:
+  platform:   ["SAP Business AI", "SAP Business AI Platform", "AI Foundation", "Generative AI Hub", "SAP AI Core"]
+  joule:      ["Joule", "Joule Agents", "Joule Studio", "Joule for Consultants", "Joule for Developers", "J4D ABAP", "Deep Research"]
+  agents:     ["AI Agent Hub", "A2A", "Agent-to-Agent", "MCP", "Model Context Protocol", "agentic AI", "autonomous enterprise"]
+  fico_ai:    ["Enterprise Planning", "Autonomous Spend Management", "finance exception handling", "Joule finance agents", "cash flow forecasting"]
+  abap_ai:    ["ABAP AI", "ATC finding explain", "ABAP MCP Server"]
+  legacy_ml:  ["ISLM", "Intelligent Scenario", "embedded ML", "SAP CoPilot"]
+
+cross_topics:
+  - name: "S/4HANA 迁移"
+    aliases: ["S4 迁移", "ECC to S4", "SLT", "Migration Cockpit"]
+  - name: "Universal Journal"
+    aliases: ["ACDOCA", "总分类账合一"]
+  - name: "BP 主数据"
+    aliases: ["Business Partner", "BP", "CVI"]
+  - name: "Fiori"
+    aliases: ["Fiori App", "Launchpad"]
+
+tag_types: [module, process, tcode, table, field, config_path, type, level, source, sap_ai, new_term]
+content_types: [configuration, troubleshooting, interview, project_experience, concept, news]
+levels: [beginner, intermediate, advanced]

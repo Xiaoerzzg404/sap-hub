@@ -1,0 +1,5 @@
+sqlite_version=3.51.0
+match_query='付款'
+initial_match_count=0
+cleanup_count_for_test_row=0
+status=FAIL
