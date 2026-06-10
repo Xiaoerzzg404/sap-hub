@@ -473,10 +473,10 @@
  "latest_site_a_upgrade": {
   "updated_by": "claude (cowork)",
   "updated_at": "2026-06-10T00:00:00+09:00",
-  "status": "phase1_batch1_code_done_pending_host_verify",
+  "status": "phase1_batch2_build_verified_committed",
   "phase": "Phase1 训练闭环+UX（Ryan 2026-06-10 选定）",
   "plan_doc": "docs/A站升级_审计与分阶段计划_20260610.md",
-  "console_roadmap": "insight-desk/console/desk_state.json → roadmap → 'SAP 日语训练站 A 升级线'(30%)",
+  "console_roadmap": "insight-desk/console/desk_state.json → 'SAP 日语训练站 A 升级线'(45%)",
   "handoff": "inbox/handoff-site-a-phase1-batch1-20260610.md",
   "batch1_changes": [
    "web/components/speaking/TeacherFeedbackInline.tsx (new, G1)",
@@ -485,8 +485,21 @@
    "web/components/speaking/ConsultantOutputRecorder.tsx (add feedback)",
    "web/app/courses/lessons/[lessonId]/page.tsx (completion card)"
   ],
-  "verification": "tsc PASS; eslint PASS; route compile smoke PASS(307->login). build + authed smoke pending host.",
+  "verification": "tsc PASS; eslint PASS; production build PASS(58/58); dev routes /login 200, lessons 307. authed visual smoke pending Ryan.",
   "stop_points": "no deploy/push/db/B/systems; not committed.",
-  "next_action": "Ryan: host build + authed smoke + commit?; Claude ready for Batch2 G2 action-level step completion."
+  "next_action": "Ryan: authed visual smoke. Claude ready: Batch3 G4 /me continue + Batch4 G5/G6.",
+  "commits": [
+   "ea48490 (Batch1 G1+G3)",
+   "ce749c0 (Batch2 G2)"
+  ],
+  "batch2_changes": [
+   "web/components/lesson/LessonStepper.tsx (action-level completion)",
+   "web/lib/progress-storage.ts (completedLessonSteps + lesson_step_done)",
+   "web/types/progress.ts"
+  ],
+  "handoffs": [
+   "inbox/handoff-site-a-phase1-batch1-20260610.md",
+   "inbox/handoff-site-a-phase1-batch2-20260610.md"
+  ]
  }
 }
