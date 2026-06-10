@@ -12,13 +12,19 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-# 命中即 blocked 的合规风险特征（标题/摘要/URL 任一出现）
-BLOCK_SIGNALS = [
+# 硬拦截特征：登录/cookie/验证码——无法合规获取，直接 blocked。
+HARD_BLOCK_SIGNALS = [
     "扫码登录", "微信登录", "请登录", "登录后", "登录查看",
     "cookie", "captcha", "验证码", "滑块验证",
-    "付费阅读", "付费查看", "vip专享", "vip 专享", "会员专享", "开通会员",
-    "知识星球", "充值后", "解锁全文",
 ]
+# 付费墙特征：内容本身可买，**不硬拦**——元数据照收，标 needs_license，
+# 产“待付费提醒”让 Ryan 决定是否去付费解锁全文（用户 2026-06-10 指令）。
+PAYWALL_SIGNALS = [
+    "付费阅读", "付费查看", "vip专享", "vip 专享", "会员专享", "开通会员",
+    "知识星球", "充值后", "解锁全文", "付费专栏", "订阅专栏",
+]
+# 向后兼容旧引用
+BLOCK_SIGNALS = HARD_BLOCK_SIGNALS + PAYWALL_SIGNALS
 
 # import_mode → rights_status 映射
 _MODE_TO_RIGHTS = {
@@ -54,33 +60,44 @@ def evaluate(record: Dict[str, Any], source_cfg: Dict[str, Any]) -> Dict[str, An
     ]).lower()
 
     findings: List[str] = []
-    for sig in BLOCK_SIGNALS:
-        if sig.lower() in blob:
-            findings.append("signal:" + sig)
+    hard_hits = [s for s in HARD_BLOCK_SIGNALS if s.lower() in blob]
+    pay_hits = [s for s in PAYWALL_SIGNALS if s.lower() in blob]
+    for s in hard_hits:
+        findings.append("hardblock:" + s)
+    for s in pay_hits:
+        findings.append("paywall:" + s)
 
     # 采集层绝不应带 body；带了说明上游违规，记为高风险（但不入库正文）
     if record.get("body") or record.get("content") or record.get("text"):
         findings.append("carries_fulltext_without_license")
 
-    blocked = any(f.startswith("signal:") for f in findings)
+    blocked = bool(hard_hits)                 # 仅登录/cookie/验证码硬拦
+    needs_license = bool(pay_hits) and not blocked  # 付费墙：元数据照收，提醒付费
 
-    # 即便 import_mode 声称可全文，缺少授权凭证时也不放行（凭证校验在 license 注册环节）
-    allow_fulltext = (rights in _FULLTEXT_RIGHTS) and not blocked
+    # 全文放行需有授权 rights 且非硬拦、非待付费
+    allow_fulltext = (rights in _FULLTEXT_RIGHTS) and not blocked and not needs_license
 
     if blocked:
         rights = "blocked"
+        status, risk = "blocked", "high"
+    elif needs_license:
+        status, risk = "needs_payment", "medium"  # 待 Ryan 付费解锁全文
+    else:
+        status, risk = "pass", "low"
 
     audit = {
         "audit_type": "compliance_gate",
-        "status": "blocked" if blocked else "pass",
-        "risk_level": "high" if blocked else "low",
-        "findings_json": {"reasons": findings, "import_mode": import_mode},
+        "status": status,
+        "risk_level": risk,
+        "findings_json": {"reasons": findings, "import_mode": import_mode,
+                          "paywall_signals": pay_hits},
     }
     return {
         "import_mode": import_mode,
         "rights_status": rights,
         "confidence_tier": "reference",  # 外部采集恒为 reference
         "blocked": blocked,
+        "needs_license": needs_license,
         "allow_fulltext": allow_fulltext,
         "audit": audit,
     }

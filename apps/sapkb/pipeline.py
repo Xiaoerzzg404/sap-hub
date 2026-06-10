@@ -28,6 +28,8 @@ from process import dedup  # type: ignore
 from process import dedup_stage2  # type: ignore
 from process import tag_keyword  # type: ignore
 from obsidian_sync import write_inbox  # type: ignore
+from obsidian_sync import mirror  # type: ignore
+from process import watchlist  # type: ignore
 
 _DEFAULT_FIXTURES = str(_HERE / "tests" / "fixtures")
 _DEFAULT_VAULT = os.path.expanduser("~/sap-hub/vaults/SAP_EXTKB")
@@ -73,6 +75,33 @@ def _upsert_author(con, record: Dict[str, Any]) -> Optional[str]:
     return author_id
 
 
+def _upsert_columns(con, doc_id: str, author_id: Optional[str], platform: str,
+                    columns_meta: Any) -> None:
+    """把记录的 columns[{name,seq,source_url}] 写 columns 表 + column_items（保篇序）。"""
+    if not isinstance(columns_meta, list):
+        return
+    for cm in columns_meta:
+        if not isinstance(cm, dict) or not cm.get("name"):
+            continue
+        name = cm["name"]
+        seq = cm.get("seq")
+        col_src = cm.get("source_url")
+        col_id = "c_" + _sid(platform, col_src or name, author_id or "")
+        row = con.execute("SELECT id FROM columns WHERE id=?", (col_id,)).fetchone()
+        if not row:
+            con.execute(
+                "INSERT INTO columns (id,author_id,title,platform,source_url,item_count,mirror_status,created_at,updated_at) "
+                "VALUES (?,?,?,?,?,0,'none',?,?)",
+                (col_id, author_id, name, platform, col_src, _now(), _now()),
+            )
+        con.execute(
+            "INSERT OR IGNORE INTO column_items (column_id,document_id,seq_in_column) VALUES (?,?,?)",
+            (col_id, doc_id, seq),
+        )
+        cnt = con.execute("SELECT COUNT(*) FROM column_items WHERE column_id=?", (col_id,)).fetchone()[0]
+        con.execute("UPDATE columns SET item_count=?, updated_at=? WHERE id=?", (cnt, _now(), col_id))
+
+
 def _log_audit(con, target_type: str, target_id: str, audit: Dict[str, Any]) -> None:
     import json
     con.execute(
@@ -114,6 +143,10 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                     _log_audit(con, "document", rec.get("source_url") or "?", gate["audit"])
                     stats["blocked"] += 1
                     continue
+                if gate.get("needs_license"):
+                    # 付费墙：元数据仍入库，但记“待付费提醒”，让 Ryan 决定是否付费解锁全文
+                    _log_audit(con, "document", rec.get("source_url") or "?", gate["audit"])
+                    stats["needs_payment"] = stats.get("needs_payment", 0) + 1
                 # 2) 去重（复用 collect）
                 dup_type, canonical_id = dedup.find_duplicate(con, rec)
                 if dup_type == "url":
@@ -180,6 +213,9 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                         ("t_" + _sid(doc_id, t["tag_type"], t["tag_value"]), doc_id,
                          t["tag_type"], t["tag_value"], t.get("confidence"), t.get("generated_by"), _now()),
                     )
+                # 5b) 专栏关系（需求8）
+                if rec.get("columns"):
+                    _upsert_columns(con, doc_id, author_id, rec.get("source_platform") or "", rec["columns"])
                 # 6) 写 inbox + 回写 obsidian_path
                 doc_row = dict(rec)
                 doc_row.update({"id": doc_id, "rights_status": gate["rights_status"],
@@ -289,5 +325,70 @@ def run_dedup_stage2(db_path: str, backend: str = "charngram",
                 dedup_stage2.DEFAULT_THRESHOLDS.get(backend), "primaries": len(
                     [d for d in docs if not d["canonical_document_id"]]),
                 "candidates": len(cands), "pairs": cands[:50]}
+    finally:
+        con.close()
+
+
+def _load_config(config_path: Optional[str] = None) -> Dict[str, Any]:
+    import yaml
+    p = config_path or os.path.expanduser("~/sap-hub/configs/sapkb/acquisition_sources.yaml")
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f) or {}
+    except Exception:
+        return {}
+
+
+def run_mirror(db_path: str, vault_root: str = _DEFAULT_VAULT,
+               author_threshold: int = 5, column_threshold: int = 3) -> Dict[str, Any]:
+    return mirror.run_mirror(db_path, vault_root, author_threshold, column_threshold)
+
+
+def run_watch(db_path: str, author_threshold: int = 5, column_threshold: int = 3,
+              config_path: Optional[str] = None) -> Dict[str, Any]:
+    con = _connect(db_path)
+    try:
+        enabled = watchlist.enable_watch_on_threshold(con, author_threshold, column_threshold)
+        cfg = _load_config(config_path)
+        prio = (cfg.get("watchlist_priority") or {}).get("authors") or []
+        prio_names = []
+        for a in prio:
+            if isinstance(a, dict):
+                if a.get("name"):
+                    prio_names.append(a["name"])
+                prio_names.extend(a.get("aka") or [])  # 别名(如 Jerry Wang)也纳入匹配
+            elif a:
+                prio_names.append(a)
+        prio_hit = watchlist.apply_priority(con, [n for n in prio_names if n])
+        scan = watchlist.run_watch_scan(con)
+        con.commit()
+        scan["auto_enabled"] = enabled
+        scan["priority_authors_hit"] = prio_hit
+        scan["priority_authors_configured"] = prio_names
+        return scan
+    finally:
+        con.close()
+
+
+def payment_reminders(db_path: str) -> List[Dict[str, Any]]:
+    """列出待付费解锁全文的条目（compliance 标 needs_payment），供提醒 Ryan 去付费。"""
+    import json
+    con = _connect(db_path)
+    con.row_factory = sqlite3.Row
+    try:
+        rows = con.execute(
+            "SELECT a.target_id, a.findings_json, a.created_at, d.title, d.author_id "
+            "FROM audit_logs a LEFT JOIN documents d ON d.source_url=a.target_id "
+            "WHERE a.status='needs_payment' ORDER BY a.created_at DESC"
+        ).fetchall()
+        out = []
+        for r in rows:
+            try:
+                f = json.loads(r["findings_json"]) if r["findings_json"] else {}
+            except Exception:
+                f = {}
+            out.append({"source_url": r["target_id"], "title": r["title"],
+                        "paywall_signals": f.get("paywall_signals"), "flagged_at": r["created_at"]})
+        return out
     finally:
         con.close()

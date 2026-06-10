@@ -9,3 +9,9 @@
 - 落地路径：代码 `~/sap-hub/apps/sapkb/`；configs `~/sap-hub/configs/sapkb/`；vault `~/sap-hub/vaults/SAP_EXTKB/`。
 
 更新于 2026-06-10 · by Cowork-Lead
+
+## Ryan 2026-06-10 指令（优先采集 + 付费提醒）
+- **优先采集**：汪子熙(Jerry Wang, jerry.blog.csdn.net)的文章 + 其它 SAP AI 相关文章优先。
+  已登记 config watchlist_priority（authors: 汪子熙/aka Jerry Wang；topics: SAP AI）。
+  真实抓其 CSDN 博客需本机 RSSHub（127.0.0.1:1200）起来；未起则诚实 0 命中、不编造其文。
+- **付费提醒**：遇付费墙不硬拦、元数据照收，标 needs_license → `cli.py payment-reminders` 列出待 Ryan 付费解锁全文的条目。

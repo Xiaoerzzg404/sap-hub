@@ -34,7 +34,19 @@ def _build_parser() -> argparse.ArgumentParser:
     s2 = subparsers.add_parser("dedup-stage2", help="近重复扫描（不自动归并，产 needs_review 候选）")
     s2.add_argument("--db-path", default=DEFAULT_DB_PATH)
     s2.add_argument("--backend", default="charngram", choices=["charngram", "bge_m3"])
-    s2.add_argument("--threshold", type=float, default=None)
+    s2.add_argument("--threshold", type=float, default=None, help="仅覆盖 combined 信号阈值（不影响 title）")
+
+    mp = subparsers.add_parser("mirror", help="生成作者/专栏 Dataview 门户镜像")
+    mp.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    mp.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+    mp.add_argument("--author-threshold", type=int, default=5)
+    mp.add_argument("--column-threshold", type=int, default=3)
+
+    wp = subparsers.add_parser("watch", help="watchlist 增量追更扫描（推进水位线+自适应频率）")
+    wp.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
+    pr = subparsers.add_parser("payment-reminders", help="列出待付费解锁全文的条目")
+    pr.add_argument("--db-path", default=DEFAULT_DB_PATH)
     return parser
 
 
@@ -54,6 +66,19 @@ def main() -> None:
         return
     if args.command == "dedup-stage2":
         result = pipeline.run_dedup_stage2(args.db_path, args.backend, args.threshold)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "mirror":
+        result = pipeline.run_mirror(args.db_path, args.vault_root,
+                                     args.author_threshold, args.column_threshold)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "watch":
+        result = pipeline.run_watch(args.db_path)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "payment-reminders":
+        result = pipeline.payment_reminders(args.db_path)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
 

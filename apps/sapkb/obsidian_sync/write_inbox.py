@@ -25,6 +25,12 @@ def make_slug(doc_id: str, title: str) -> str:
     return "{}_{}.md".format(prefix, clean or "untitled")
 
 
+def name_slug(name: str, maxlen: int = 40) -> str:
+    """与 mirror._slug 一致的作者/专栏 slug，保证 wikilink 指向真实门户文件名。"""
+    clean = _SLUG_BAD.sub("", name or "untitled")
+    return _SLUG_SPACE.sub("_", clean.strip())[:maxlen] or "untitled"
+
+
 def _yaml_list(items: Optional[List[str]]) -> str:
     if not items:
         return "[]"
@@ -50,14 +56,27 @@ def render_markdown(doc: Dict[str, Any], tags: Optional[List[Dict[str, Any]]] = 
     url = doc.get("source_url") or ""
     platform = doc.get("source_platform") or ""
 
+    # 专栏 frontmatter（需求8）：渲染为 Obsidian/Dataview 可读的数组
+    cols_meta = doc.get("columns") if isinstance(doc.get("columns"), list) else []
+    if cols_meta:
+        cols_lines = ["columns:"]
+        for cm in cols_meta:
+            if isinstance(cm, dict) and cm.get("name"):
+                cols_lines.append("  - name: {}".format(cm.get("name")))
+                if cm.get("seq") is not None:
+                    cols_lines.append("    seq: {}".format(cm.get("seq")))
+        columns_fm = "\n".join(cols_lines)
+    else:
+        columns_fm = "columns: []"
+
     fm = [
         "---",
         "title: {}".format(doc.get("title") or ""),
         "doc_id: {}".format(doc.get("id") or ""),
         "source_platform: {}".format(platform),
         "author: {}".format(author),
-        'author_link: "[[03_authors/{}]]"'.format(author),
-        "columns: []",
+        'author_link: "[[03_authors/{}]]"'.format(name_slug(author)),
+        columns_fm,
         "source_url: {}".format(url),
         "published_at: {}".format(doc.get("published_at") or ""),
         "imported_at: {}".format(doc.get("imported_at") or ""),

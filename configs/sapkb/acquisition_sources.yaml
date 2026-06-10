@@ -41,3 +41,19 @@ sources:
     platform: shipinhao
     type: manual
     import_mode: metadata_only
+
+# ==================== 优先采集口径（Ryan 2026-06-10 指令）====================
+# 优先抓取 汪子熙(Jerry Wang) 的文章与其它 SAP AI 相关文章；遇付费墙 → 标 needs_license 提醒 Ryan 付费。
+watchlist_priority:
+  authors:
+    - name: "汪子熙"
+      aka: ["Jerry Wang", "JerryWang"]
+      platform: csdn
+      homepage: "https://jerry.blog.csdn.net/"
+      rsshub_route: "csdn/blog/jerry"      # 需本机 RSSHub 起来才真抓；未起则如实不产数据
+      reason: "SAP 大神，优先收录"
+  topics:
+    - name: "SAP AI"
+      keywords: ["SAP Business AI", "Joule", "AI Agent", "Generative AI Hub", "SAP AI Core", "ABAP AI", "agentic"]
+      priority: high
+  on_paywall: remind   # 命中付费墙不丢弃，元数据照收并提醒 Ryan 去付费解锁全文

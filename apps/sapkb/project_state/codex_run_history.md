@@ -11,3 +11,7 @@
 ## Run02-机械 结果（gpt-5.3-codex-spark, xhigh）
 - 产出：harvest_runner.sh + launchd plist + scripts/README + logs/.gitkeep + 报告。plist 校验 OK、未 load。
 - Lead 复核修正两处：runner CONFIG 误指 _design 旧拷贝→改实时 configs/sapkb；readarray(bash4)→while-read(兼容3.2)；白名单收敛为真实可达源。
+
+## Run03-机械 结果（gpt-5.3-codex-spark, xhigh）
+- 产出：纯标准库 unittest 回归套件 tests/test_sapkb.py（6 用例：harvest/compliance/dedup复用/tag/stage2/schema）。
+- Lead 复核修正：因 Run03 改了 compliance 口径（付费墙→needs_payment 非 blocked），Codex 旧断言失败→Lead 更新该用例为新口径（硬拦 vs 付费两分）。最终 6/6 OK。

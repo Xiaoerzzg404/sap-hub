@@ -58,8 +58,8 @@ def _strip_to_summary(raw_text: Optional[str]) -> str:
 
 # ---------------- fixture 路径（Run01） ----------------
 
-def _iter_fixture_records(fixtures_dir: str) -> Generator[Dict[str, Any], None, None]:
-    fixture_file = pathlib.Path(fixtures_dir) / "csdn_sample.jsonl"
+def _iter_fixture_records(fixtures_dir: str, filename: str = "csdn_sample.jsonl") -> Generator[Dict[str, Any], None, None]:
+    fixture_file = pathlib.Path(fixtures_dir) / filename
     with fixture_file.open("r", encoding="utf-8") as f:
         for line_no, line in enumerate(f, start=1):
             line = line.strip()
@@ -78,7 +78,7 @@ def _normalize_fixture(raw: Dict[str, Any], import_mode: str) -> Dict[str, Any]:
     for key in ("body", "content", "text", "raw_text"):
         raw.pop(key, None)
     platform = raw.get("source_platform") or raw.get("platform") or "CSDN"
-    return {
+    rec = {
         "source_platform": platform,
         "source_url": raw.get("source_url"),
         "title": raw.get("title"),
@@ -88,6 +88,10 @@ def _normalize_fixture(raw: Dict[str, Any], import_mode: str) -> Dict[str, Any]:
         "summary": _strip_to_summary(raw.get("summary")),
         "import_mode": import_mode or "metadata_only",
     }
+    # 专栏关系（需求8）：若记录带 columns[{name,seq,source_url}] 则透传给 pipeline 建 column_items。
+    if isinstance(raw.get("columns"), list) and raw["columns"]:
+        rec["columns"] = raw["columns"]
+    return rec
 
 
 # ---------------- 真实 RSS / RSSHub 路径（Run02） ----------------
@@ -132,6 +136,11 @@ def harvest_source(source_id: str, fixtures_dir: str = str(DEFAULT_FIXTURES_DIR)
     if source_id == "fixture_csdn":
         for item in _iter_fixture_records(fixtures_dir):
             yield _normalize_fixture(item, import_mode)
+        return
+
+    if source_id == "fixture_column":
+        for item in _iter_fixture_records(fixtures_dir, "csdn_column_series.jsonl"):
+            yield _normalize_fixture(item, import_mode or "metadata_only")
         return
 
     stype = meta.get("type")
