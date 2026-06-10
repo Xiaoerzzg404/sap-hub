@@ -97,6 +97,17 @@ def _build_parser() -> argparse.ArgumentParser:
     ri = subparsers.add_parser("regen-inbox", help="按 DB 当前标签重写全部 inbox md（补 category frontmatter）")
     ri.add_argument("--db-path", default=DEFAULT_DB_PATH)
     ri.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+
+    pop = subparsers.add_parser("recompute-popularity", help="按权重重算每篇 popularity_score (R12)")
+    pop.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
+    tr = subparsers.add_parser("trend", help="趋势雷达：季度标签快照 + 热点 + 新词候选 (R14)")
+    tr.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
+    sl = subparsers.add_parser("shortlist", help="选题 shortlist：按热度/新近/SAP AI 排候选 (供公众号/视频号选题)")
+    sl.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    sl.add_argument("--category", default=None)
+    sl.add_argument("--limit", type=int, default=20)
     return parser
 
 
@@ -172,6 +183,17 @@ def main() -> None:
         return
     if args.command == "regen-inbox":
         result = pipeline.regen_inbox(args.db_path, args.vault_root)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command in ("recompute-popularity", "trend", "shortlist"):
+        from process import analytics
+        if args.command == "recompute-popularity":
+            result = analytics.recompute_popularity(args.db_path)
+        elif args.command == "trend":
+            result = {"snapshot": analytics.build_trend_snapshot(args.db_path),
+                      "new_terms": analytics.detect_term_candidates(args.db_path)}
+        else:
+            result = analytics.topic_shortlist(args.db_path, args.category, args.limit)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command == "kb-eval":

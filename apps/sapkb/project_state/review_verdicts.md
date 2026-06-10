@@ -48,3 +48,9 @@
 - FinalReview(独立子 agent)：PASS。五硬约束逐条真成立（不编造源/采集合规/幂等三处:不重复入库+不重复计数+csdn_tag OR IGNORE/分类标签/红线）。
 - 3 LOW 观察(author_name=username 诚实回落 / 富化不更 FTS 不影响 tag 检索 / tags 类型守护)，无需改。
 - 外部不变量 N1(dedup url 分支返回 documents.id) Lead 确认成立。Lead 另补 keywords frontmatter + regen 1447 篇。
+| agent_output:run09_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run09 双审纪要
+- FinalReview(独立子 agent)：PASS(有条件)，五硬约束逐条真成立（只读不编造/公式对齐routing_policy/SQL幂等/不改阈值状态机/shortlist只产候选不改editorial_status）。
+- Lead 当轮修：P1(term_candidates known 集合补 tcode/table/cross_topics)、P3(trend delta 改真·上一自然季环比)。P2(tag_type 扩展)留观察。
+- Codex token 用尽，test_analytics 由 Lead 自写，5 套 25 用例全绿。

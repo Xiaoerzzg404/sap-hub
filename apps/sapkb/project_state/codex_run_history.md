@@ -25,3 +25,7 @@
 
 ## Run07-机械 结果（gpt-5.3-codex-spark）
 - 产出：tests/test_batch.py（clip-batch 文件夹/manifest/去重 + category 门户，全绿）。
+
+## Run09（gpt-5.3-codex-spark token 用尽）
+- Codex 在 Run09 测试任务中途报 "usage limit for GPT-5.3-Codex-Spark"（恢复 6/11）。
+- 按 Codex 退出契约，test_analytics.py 由 Cowork-Lead 自写补齐（5 套 25 用例全绿）。后续机械活暂由 Cowork 接手。
