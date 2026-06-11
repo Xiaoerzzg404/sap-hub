@@ -33,6 +33,14 @@ class DistillTest(unittest.TestCase):
                 (i, "标题"+i, "http://x/"+i, _now(), "metadata_only", rights, cs, "reference", _now(), _now()))
         doc("dmeta", "metadata_only", "metadata_saved")
         doc("dfull", "license_purchased", "fulltext_saved")
+        # 学习路径用数据：FI 分类 + 不同 content_type 分层
+        def tg(d, tt, tv):
+            con.execute("INSERT OR IGNORE INTO document_tags (id,document_id,tag_type,tag_value,created_at) "
+                        "VALUES (?,?,?,?,?)", (d+tt+tv, d, tt, tv, _now()))
+        for i, ct in enumerate(["教程", "配置", "技术分析", "故障排查"]):
+            did = "lp%d" % i
+            doc(did, "metadata_only", "metadata_saved")
+            tg(did, "category", "FI"); tg(did, "content_type", ct)
         con.commit(); con.close()
 
     def test_metadata_cannot_be_evidence(self):
@@ -97,6 +105,44 @@ class DistillTest(unittest.TestCase):
         con = sqlite3.connect(self.db)
         self.assertEqual(con.execute("SELECT count(*) FROM publications WHERE insight_id=?", (r["insight_id"],)).fetchone()[0], 1)
         con.close()
+
+
+    def _add_fi_doc(self, did, ctype):
+        con = sqlite3.connect(self.db)
+        con.execute(
+            "INSERT INTO documents (id,title,source_url,imported_at,import_mode,rights_status,content_status,"
+            "confidence_tier,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
+            (did, "标题"+did, "http://x/"+did, _now(), "metadata_only", "metadata_only", "metadata_saved",
+             "reference", _now(), _now()))
+        for tt, tv in (("category", "FI"), ("content_type", ctype)):
+            con.execute("INSERT OR IGNORE INTO document_tags (id,document_id,tag_type,tag_value,created_at) "
+                        "VALUES (?,?,?,?,?)", (did+tt+tv, did, tt, tv, _now()))
+        con.commit(); con.close()
+
+    def test_learning_path_stages_and_rolling_version(self):
+        r1 = distill.build_learning_path(self.db, self.vault, "FI", per_stage=6)
+        self.assertEqual(r1["version"], 1)
+        self.assertIsNone(r1["supersedes"])
+        self.assertGreaterEqual(r1["total_articles"], 4)
+        self.assertTrue(os.path.exists(os.path.join(self.vault, r1["obsidian_path"])))
+        # 选文未变再建 → 幂等不增版（FinalReview BUG-A）
+        rsame = distill.build_learning_path(self.db, self.vault, "FI", per_stage=6)
+        self.assertEqual(rsame["status"], "unchanged")
+        self.assertEqual(rsame["version"], 1)
+        # 选文变了(加一篇 FI 教程) → v2 supersedes v1，v1 archived
+        self._add_fi_doc("lpx", "教程")
+        r2 = distill.build_learning_path(self.db, self.vault, "FI", per_stage=6)
+        self.assertEqual(r2["version"], 2)
+        self.assertEqual(r2["supersedes"], r1["insight_id"])
+        con = sqlite3.connect(self.db)
+        self.assertEqual(con.execute("SELECT status FROM insights WHERE id=?", (r1["insight_id"],)).fetchone()[0], "archived")
+        roles = set(x[0] for x in con.execute("SELECT DISTINCT role FROM insight_sources WHERE insight_id=?", (r2["insight_id"],)).fetchall())
+        con.close()
+        self.assertEqual(roles, {"inspiration"})
+
+    def test_learning_path_empty_module(self):
+        with self.assertRaises(ValueError):
+            distill.build_learning_path(self.db, self.vault, "NONEXIST", per_stage=6)
 
 
 if __name__ == "__main__":

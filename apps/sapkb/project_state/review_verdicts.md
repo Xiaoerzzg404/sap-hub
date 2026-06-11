@@ -64,3 +64,8 @@
 ## Run11 双审纪要
 - FinalReview(独立子 agent)：PASS。三最高约束(不脑补/纯本地/不发布)扎实成立——draft 仅 evidence 全文入正文+强制引用+无evidence不调LLM；record_publication 纯台账无对外推送。
 - Lead 当轮修 4 项：BUG-1(publication 幂等去重)、BUG-2(随之消除秒级PK冲突)、BUG-3(草稿段替换不叠加+frontmatter status 同步)、BUG-4(with open+兜OSError)。新增幂等测试，6 套全绿。
+| agent_output:run12_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-10 |
+
+## Run12 双审纪要
+- FinalReview(独立子 agent)：PASS。五硬约束逐条真成立(源全inspiration阅读索引/滚动版本化version+supersedes+archived/不发布/SQL幂等合规/不碰FUZHKB)。
+- Lead 当轮修：BUG-A(内容指纹去重,选文未变不增版,防版本膨胀)、BUG-B(module trim)、BUG-C(IN 参数化消注入面)。新增幂等测试,33 用例全绿。

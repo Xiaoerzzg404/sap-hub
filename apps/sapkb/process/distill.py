@@ -240,6 +240,125 @@ def record_publication(db_path: str, insight_id: str, platform: str, url: Option
         con.close()
 
 
+# 学习路径阶段（beginner→advanced），每阶段对应的 content_type
+_LP_STAGES = [
+    ("入门", ["教程", "概念"]),
+    ("进阶", ["配置", "项目经验"]),
+    ("深入", ["技术分析"]),
+    ("排错", ["故障排查"]),
+]
+
+
+def build_learning_path(db_path: str, vault_root: str, module: str,
+                        per_stage: int = 6, created_by: str = "Cowork") -> Dict[str, Any]:
+    """从语料为某 module/分类组织 beginner→advanced 学习路径（learning_path insight，滚动版本化）。
+
+    路径 = 按阶段(入门/进阶/深入/排错)分组的阅读清单，每阶段按热度取 per_stage 篇。
+    源 role=inspiration（阅读索引，指向文章而非引用其事实，合规）。
+    滚动版本：同 module 已有路径 → 新版 version+1、supersedes_id 指向旧版。
+    """
+    module = (module or "").strip()  # FinalReview BUG-B：规范化，防 "FI "/"FI" 建两条链
+    if not module:
+        raise ValueError("module 不能为空")
+    con = sqlite3.connect(db_path)
+    con.row_factory = sqlite3.Row
+    try:
+        title = "SAP {} 学习路径".format(module)
+        # 取该 module/分类下的正主文档（按 category 或 module 标签）
+        docs = con.execute(
+            "SELECT DISTINCT d.id,d.title,d.source_url,COALESCE(d.popularity_score,0) ps "
+            "FROM documents d JOIN document_tags t ON t.document_id=d.id "
+            "WHERE d.content_status!='removed' AND d.canonical_document_id IS NULL "
+            "AND ((t.tag_type='category' AND t.tag_value=?) OR (t.tag_type='module' AND t.tag_value=?))",
+            (module, module)).fetchall()
+        if not docs:
+            raise ValueError("module/分类 '{}' 下无文档，无法建学习路径".format(module))
+        doc_ids = {d["id"] for d in docs}
+        # content_type 映射
+        ctype = {}
+        _ids = list(doc_ids)
+        # FinalReview BUG-C：参数化 IN，消除字符串拼 SQL 注入面
+        for r in con.execute(
+            "SELECT document_id, tag_value FROM document_tags WHERE tag_type='content_type' AND document_id IN ({})".format(
+                ",".join("?" for _ in _ids)), _ids).fetchall():
+            ctype[r["document_id"]] = r["tag_value"]
+        by_id = {d["id"]: d for d in docs}
+
+        stages = []
+        used = set()
+        for stage_name, ctypes in _LP_STAGES:
+            picks = [d for d in docs if ctype.get(d["id"]) in ctypes and d["id"] not in used]
+            picks.sort(key=lambda d: d["ps"], reverse=True)
+            picks = picks[:per_stage]
+            for d in picks:
+                used.add(d["id"])
+            if picks:
+                stages.append((stage_name, picks))
+        if not stages:  # 兜底：没有 content_type 分层就按热度取前若干
+            top = sorted(docs, key=lambda d: d["ps"], reverse=True)[:per_stage]
+            stages = [("精选", top)]
+            used = {d["id"] for d in top}
+
+        # 滚动版本化：找同标题旧版
+        prev = con.execute(
+            "SELECT id,version FROM insights WHERE type='learning_path' AND title=? AND status!='archived' "
+            "ORDER BY version DESC LIMIT 1", (title,)).fetchone()
+        # FinalReview BUG-A：内容指纹去重——选文集合与旧版完全一致则不增版，直接返回旧版
+        if prev:
+            prev_set = set(x[0] for x in con.execute(
+                "SELECT document_id FROM insight_sources WHERE insight_id=?", (prev["id"],)).fetchall())
+            if prev_set == set(used):
+                return {"status": "unchanged", "insight_id": prev["id"], "title": title,
+                        "version": prev["version"], "supersedes": None,
+                        "stages": [(s, len(p)) for s, p in stages],
+                        "total_articles": len(used), "note": "选文与旧版一致，未增版"}
+        version = (prev["version"] + 1) if prev else 1
+        supersedes = prev["id"] if prev else None
+
+        insight_id = "ins_" + _sid("learning_path", title, str(version))
+        con.execute(
+            "INSERT OR REPLACE INTO insights (id,type,title,status,modules,created_by,reviewed_tier,version,supersedes_id,created_at,updated_at) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+            (insight_id, "learning_path", title, "draft", json.dumps([module], ensure_ascii=False),
+             created_by, 2, version, supersedes, _now(), _now()))
+        # 旧版标 archived
+        if prev:
+            con.execute("UPDATE insights SET status='archived', updated_at=? WHERE id=?", (_now(), prev["id"]))
+        # 源（inspiration）+ editorial_status
+        for d in (by_id[i] for i in used):
+            con.execute("INSERT OR IGNORE INTO insight_sources (insight_id,document_id,role) VALUES (?,?,?)",
+                        (insight_id, d["id"], "inspiration"))
+
+        # 写 07_growth md
+        import pathlib
+        root = pathlib.Path(vault_root).expanduser()
+        if "SAP_FUZHKB" in str(root):
+            raise PermissionError("vault 隔离：禁止写入 SAP_FUZHKB")
+        out_dir = root / "07_growth"
+        out_dir.mkdir(parents=True, exist_ok=True)
+        lines = ["---", "insight_id: {}".format(insight_id), "type: learning_path",
+                 "title: {}".format(title), "module: {}".format(module), "version: {}".format(version),
+                 "supersedes: {}".format(supersedes or ""), "status: draft", "---", "",
+                 "# {} · v{}".format(title, version), "",
+                 "> 按阶段组织的阅读路线（外部采集 reference，需自行验证）。本路径为**阅读索引**，链接指向原文。", ""]
+        total = 0
+        for stage_name, picks in stages:
+            lines.append("## {}".format(stage_name))
+            for d in picks:
+                lines.append("- [{}]({})".format(d["title"], d["source_url"]))
+                total += 1
+            lines.append("")
+        obs = "07_growth/" + _slug(title) + "_v{}".format(version) + ".md"
+        (root / obs).write_text("\n".join(lines), encoding="utf-8")
+        con.execute("UPDATE insights SET obsidian_path=? WHERE id=?", (obs, insight_id))
+        con.commit()
+        return {"status": "created", "insight_id": insight_id, "title": title, "version": version,
+                "supersedes": supersedes, "stages": [(s, len(p)) for s, p in stages],
+                "total_articles": total, "obsidian_path": obs}
+    finally:
+        con.close()
+
+
 def list_insights(db_path: str) -> List[Dict[str, Any]]:
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row

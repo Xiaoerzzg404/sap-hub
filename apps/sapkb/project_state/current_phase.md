@@ -1,14 +1,12 @@
 # 当前阶段
 
-**Run 11 · insight 据证据成稿 + R15 发布台账 — 已完成并通过双审（2026-06-10）**
+**Run 12 · 学习路径 learning_path (R14 滚动版本化) — 已完成并通过双审（2026-06-10）**
 
-- distill.draft_insight：取 insight 的 evidence 源【授权全文】喂本机 gemma4 写带[n]引用的中文草稿（inspiration 仅供角度，
-  不可当事实）；无 evidence 全文 → 不调 LLM、只列选题角度、不产事实正文。status draft→in_review。实测模型
-  在 evidence 与标题不符时拒绝编造、只写资料实含内容（防脑补验证通过）。CLI insight-draft。
-- distill.record_publication（R15）：人工发布后登记台账 publications（平台 CHECK），幂等（同 insight+platform 不重复记），
-  insight status→published。**发布动作永远人工，本工具只登记不对外推送**。CLI publish-log。
-- 单测 6 套全绿。
+- distill.build_learning_path(module)：从分类语料按阶段(入门/进阶/深入/排错,对应教程/概念/配置/项目经验/技术分析/故障排查)
+  组织 beginner→advanced 阅读路线,每阶段按热度取若干篇,写 07_growth md。源 role=inspiration(阅读索引,不引事实,合规)。
+- 滚动版本化:同 module 选文变化→version+1+supersedes_id+旧版 archived;选文未变→幂等不增版(指纹去重)。CLI learning-path --module FI。
+- 单测 6 套 33 用例全绿。
 
-**全链闭环完成**：采集→去重→分类/标签→热度/趋势→选题→提炼(版权硬隔离)→据证据成稿(不脑补)→人工发布→台账。
+**设计包 v3.1 的 R11–R15 已全部落地**：R11 追更/R12 热度/R13 提炼/R14 趋势+学习路径/R15 状态+发布台账。
 
-下一步：Run 12（学习路径 learning_path R14 滚动版本化 / 与既有内容生产线深度对接 / 真实全文批量导入实战）。
+下一步：Run 13（与既有「选题→爆款」生产线/Insight Desk 深度对接 / 真实全文批量导入实战 / Codex 恢复后重派机械活）。

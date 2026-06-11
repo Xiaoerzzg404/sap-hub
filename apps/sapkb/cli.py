@@ -121,6 +121,12 @@ def _build_parser() -> argparse.ArgumentParser:
     insl = subparsers.add_parser("insights-list", help="列出已提炼 insights")
     insl.add_argument("--db-path", default=DEFAULT_DB_PATH)
 
+    lp = subparsers.add_parser("learning-path", help="R14 学习路径：从语料组织 beginner→advanced 阅读路线（滚动版本化）")
+    lp.add_argument("--module", required=True, help="模块/分类，如 FI / CO / ABAP / BTP")
+    lp.add_argument("--per-stage", type=int, default=6)
+    lp.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    lp.add_argument("--vault-root", default=DEFAULT_VAULT_ROOT)
+
     idr = subparsers.add_parser("insight-draft", help="据 evidence 全文 LLM 成稿（仅引证据，不脑补）")
     idr.add_argument("--insight-id", required=True)
     idr.add_argument("--db-path", default=DEFAULT_DB_PATH)
@@ -228,6 +234,14 @@ def main() -> None:
     if args.command == "insights-list":
         from process import distill
         print(json.dumps(distill.list_insights(args.db_path), ensure_ascii=False, indent=2))
+        return
+    if args.command == "learning-path":
+        from process import distill
+        try:
+            result = distill.build_learning_path(args.db_path, args.vault_root, args.module, args.per_stage)
+        except (ValueError, PermissionError) as e:
+            result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
         return
     if args.command == "insight-draft":
         from process import distill

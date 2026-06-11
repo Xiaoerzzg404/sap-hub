@@ -35,3 +35,6 @@
 
 ## Run11（Codex 仍 token 用尽）
 - test_distill 扩充(draft 无evidence/publication 幂等)由 Cowork-Lead 自写。6 套全绿。Codex 6/11 恢复后重派。
+
+## Run12（Codex 仍 token 用尽，6/11 恢复）
+- test_distill learning_path 用例由 Cowork-Lead 自写。6 套 33 用例全绿。
