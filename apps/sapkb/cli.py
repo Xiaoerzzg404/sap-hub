@@ -109,6 +109,10 @@ def _build_parser() -> argparse.ArgumentParser:
     sl.add_argument("--category", default=None)
     sl.add_argument("--limit", type=int, default=20)
 
+    eb = subparsers.add_parser("export-brief", help="导出选题简报md（选题+趋势+新词+最近提炼，供内容生产消费）")
+    eb.add_argument("--db-path", default=DEFAULT_DB_PATH)
+    eb.add_argument("--out", default=os.path.expanduser("~/sap-hub/vaults/SAP_EXTKB/_dataview/选题简报.md"))
+
     ins = subparsers.add_parser("insight-new", help="R13 提炼：从源文档建 insight（版权角色硬隔离）")
     ins.add_argument("--type", default="knowledge_card",
                      choices=["knowledge_card", "experience_note", "growth_article", "trend_report", "learning_path"])
@@ -256,6 +260,14 @@ def main() -> None:
         try:
             result = distill.record_publication(args.db_path, args.insight_id, args.platform, args.url, args.notes)
         except ValueError as e:
+            result = {"status": "rejected", "error": str(e)}
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "export-brief":
+        from process import analytics
+        try:
+            result = analytics.build_selection_brief(args.db_path, args.out)
+        except PermissionError as e:
             result = {"status": "rejected", "error": str(e)}
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return

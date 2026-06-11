@@ -158,6 +158,58 @@ def detect_term_candidates(db_path: str, taxonomy_path: Optional[str] = None,
         con.close()
 
 
+def build_selection_brief(db_path: str, out_path: str, shortlist_n: int = 12,
+                          trend_top: int = 10) -> Dict[str, Any]:
+    """汇总 SAPKB 情报为一份【选题简报】md：top 选题 + 趋势热点 + 新词候选 + 最近提炼/学习路径。
+    数据全来自本地 SAPKB 真实统计；过程会顺带刷新 SAPKB 自身的 trend/term 快照表（幂等），
+    不碰 documents 原始事实、不触碰其它系统/不发布。写一个 md 文件供你/内容生产线消费。
+    """
+    import os
+    today = datetime.date.today().isoformat()
+    shortlist = topic_shortlist(db_path, limit=shortlist_n)
+    trend = build_trend_snapshot(db_path, top=trend_top)
+    terms = detect_term_candidates(db_path)
+    con = sqlite3.connect(db_path)
+    con.row_factory = sqlite3.Row
+    try:
+        total = con.execute("SELECT COUNT(*) FROM documents WHERE content_status!='removed'").fetchone()[0]
+        recent_ins = con.execute(
+            "SELECT type,title,status FROM insights ORDER BY created_at DESC LIMIT 8").fetchall()
+    finally:
+        con.close()
+
+    L = ["# SAPKB 选题简报 · {}".format(today), "",
+         "> 自动汇总自本地 SAPKB（{} 篇真实 SAP 文章）。仅供选题，事实须在系统复核。".format(total), "",
+         "## 一、今日选题候选（按热度 / SAP AI 优先）", ""]
+    for i, x in enumerate(shortlist, 1):
+        ai = " 🔹SAP AI" if x["is_sap_ai"] else ""
+        kw = ("｜" + "、".join(x["keywords"][:4])) if x.get("keywords") else ""
+        L.append("{}. **[{}]** {}（{}）{}{}\n   {}".format(
+            i, x["category"], x["title"], x["author"] or "?", ai, kw, x["source_url"]))
+    L += ["", "## 二、本季趋势热点（{}）".format(trend["period"]), ""]
+    for h in trend["hot"]:
+        d = "" if h["delta_pct"] is None else "（环比 {}%）".format(h["delta_pct"])
+        L.append("- {}/{} · {} 篇{}".format(h["type"], h["tag"], h["count"], d))
+    L += ["", "## 三、待收编新词（taxonomy 外高频）", "",
+          "、".join("{}({})".format(c["term"], c["freq"]) for c in terms["top"][:15]) or "（无）"]
+    L += ["", "## 四、最近提炼 / 学习路径", ""]
+    for r in recent_ins:
+        L.append("- [{}] {} · {}".format(r["type"], r["title"], r["status"]))
+    L.append("")
+
+    op = os.path.expanduser(out_path)
+    if "SAP_FUZHKB" in op:
+        raise PermissionError("vault 隔离：禁止写入 SAP_FUZHKB")
+    _d = os.path.dirname(op)  # FinalReview P1：空 dirname 不调 makedirs，防裸崩
+    if _d:
+        os.makedirs(_d, exist_ok=True)
+    with open(op, "w", encoding="utf-8") as f:
+        f.write("\n".join(L))
+    return {"status": "written", "path": op, "date": today, "total_docs": total,
+            "shortlist": len(shortlist), "trend_hot": len(trend["hot"]),
+            "new_terms": len(terms["top"]), "recent_insights": len(recent_ins)}
+
+
 def topic_shortlist(db_path: str, category: Optional[str] = None, limit: int = 20,
                     ai_first: bool = True) -> List[Dict[str, Any]]:
     con = sqlite3.connect(db_path)

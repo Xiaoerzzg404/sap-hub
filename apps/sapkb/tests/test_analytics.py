@@ -78,6 +78,21 @@ class AnalyticsTest(unittest.TestCase):
         self.assertIn("新奇术语XX", terms)      # 高频新词入候选
         self.assertNotIn("Joule", terms)        # taxonomy(SAP_AI)已有 → 不入候选
 
+    def test_export_brief(self):
+        analytics.recompute_popularity(self.db)
+        out = os.path.join(self.tmp.name + "_brief.md") if hasattr(self.tmp, "name") else "/tmp/_b.md"
+        out = os.path.join("/tmp", "sapkb_brief_test.md")
+        r = analytics.build_selection_brief(self.db, out)
+        self.assertEqual(r["status"], "written")
+        self.assertTrue(os.path.exists(out))
+        txt = open(out, encoding="utf-8").read()
+        self.assertIn("选题简报", txt)
+        self.assertIn("今日选题候选", txt)
+        os.unlink(out)
+        # FUZHKB 防呆
+        with self.assertRaises(PermissionError):
+            analytics.build_selection_brief(self.db, "/x/vaults/SAP_FUZHKB/b.md")
+
     def test_shortlist_ai_first_and_filter(self):
         analytics.recompute_popularity(self.db)
         out = analytics.topic_shortlist(self.db, limit=10)
