@@ -27,6 +27,7 @@ import datetime as _dt
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -34,6 +35,8 @@ from typing import Dict, List, Optional, Tuple
 import config
 from faces import _common as common
 from faces import face1, face2, face3, face4
+
+_HERE = Path(__file__).resolve().parent
 
 FACES = [face1, face2, face3, face4]
 FACE_KEYS = ["face1", "face2", "face3", "face4"]
@@ -207,7 +210,22 @@ def _run_face(face_key: str, state: Dict, edition: str, runner: common.Runner) -
     return new_status
 
 
-def cmd_run(edition: str, start_from: Optional[str], only: Optional[str]) -> int:
+def cmd_run(
+    edition: str,
+    start_from: Optional[str],
+    only: Optional[str],
+    no_dashboard: bool = False,
+) -> int:
+    try:
+        return _cmd_run_inner(edition, start_from, only)
+    finally:
+        # HARDENING §A: refresh dashboard after every run (success, partial,
+        # or blocked) so 7788 reflects current state. Best-effort, never
+        # touches the exit code.
+        refresh_dashboard(no_dashboard=no_dashboard)
+
+
+def _cmd_run_inner(edition: str, start_from: Optional[str], only: Optional[str]) -> int:
     state = load_state(edition)
     runner = common.Runner()
 
@@ -282,14 +300,15 @@ def _osascript_notify(title: str, body: str) -> None:
     """Best-effort macOS notification. Silent on failure / non-Darwin."""
     if sys.platform != "darwin":
         return
+    # Escape double quotes so AppleScript doesn't break.
+    safe_title = title.replace('"', "'")
+    safe_body = body.replace('"', "'")
     try:
-        import subprocess
-
         subprocess.run(
             [
                 "osascript",
                 "-e",
-                f'display notification "{body}" with title "{title}"',
+                f'display notification "{safe_body}" with title "{safe_title}"',
             ],
             timeout=5,
             check=False,
@@ -298,7 +317,72 @@ def _osascript_notify(title: str, body: str) -> None:
         pass
 
 
-def cmd_finalize(edition: str) -> int:
+# --------------------------------------------------------------------------
+# Dashboard auto-refresh (HARDENING §A)
+# --------------------------------------------------------------------------
+def _refresh_dashboard_impl() -> None:
+    """Re-build the four-faces ledger + sync it to the 7788 console.
+
+    Tries import-and-call first (cheaper, same process); falls back to
+    subprocess if import fails. Both ledger_build and sync_dashboard live
+    next to this file (see _HERE).
+    """
+    # 1) Rebuild ledger over a 16-day window.
+    try:
+        import ledger_build  # type: ignore
+
+        ledger_build.main(["--window", "16"])
+    except Exception as exc:  # noqa: BLE001 - subprocess fallback
+        print(
+            f"WARN: ledger_build import call failed ({exc!r}); falling back to subprocess",
+            file=sys.stderr,
+        )
+        subprocess.run(
+            [config.PYTHON, str(_HERE / "ledger_build.py"), "--window", "16"],
+            check=False,
+            timeout=120,
+        )
+    # 2) Sync dashboard html + ledger.json to the console worktree.
+    try:
+        import sync_dashboard  # type: ignore
+
+        sync_dashboard.main()
+    except Exception as exc:  # noqa: BLE001 - subprocess fallback
+        print(
+            f"WARN: sync_dashboard import call failed ({exc!r}); falling back to subprocess",
+            file=sys.stderr,
+        )
+        subprocess.run(
+            [config.PYTHON, str(_HERE / "sync_dashboard.py")],
+            check=False,
+            timeout=60,
+        )
+
+
+def refresh_dashboard(no_dashboard: bool = False) -> None:
+    """Best-effort: rebuild ledger + push dashboard to 7788 console.
+
+    Gated by `no_dashboard` (from `--no-dashboard`) and `SAP_FF_DRYRUN=1`.
+    Any failure is swallowed with a WARN line — refresh **never** affects
+    the caller's exit code (HARDENING §A).
+    """
+    if no_dashboard or config.is_dryrun():
+        return
+    try:
+        _refresh_dashboard_impl()
+    except Exception as exc:  # noqa: BLE001 - best-effort
+        print(f"WARN: dashboard refresh failed: {exc!r}", file=sys.stderr)
+
+
+def cmd_finalize(edition: str, no_dashboard: bool = False) -> int:
+    try:
+        return _cmd_finalize_inner(edition)
+    finally:
+        # HARDENING §A: refresh dashboard regardless of partial vs full success.
+        refresh_dashboard(no_dashboard=no_dashboard)
+
+
+def _cmd_finalize_inner(edition: str) -> int:
     state = load_state(edition)
     ok, blockers = _all_done(state, edition)
 
@@ -372,20 +456,136 @@ def cmd_finalize(edition: str) -> int:
 
 
 # --------------------------------------------------------------------------
+# run-daily — launchd entry (HARDENING §B)
+# --------------------------------------------------------------------------
+def _compute_edition_from_gate() -> Optional[str]:
+    """Resolve today's edition via STUDIO/scripts/pipeline_stage_gate.py.
+
+    Returns None on any failure (logged WARN); caller decides how to react.
+    """
+    try:
+        res = subprocess.run(
+            config.cmd_pipeline_stage_gate_edition_date(),
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except Exception as exc:  # noqa: BLE001
+        print(f"WARN: pipeline_stage_gate spawn failed: {exc!r}", file=sys.stderr)
+        return None
+    if res.returncode != 0:
+        print(
+            f"WARN: pipeline_stage_gate rc={res.returncode}: {res.stderr[:200]}",
+            file=sys.stderr,
+        )
+        return None
+    edition = (res.stdout or "").strip().splitlines()[-1].strip() if (res.stdout or "").strip() else ""
+    if not _EDITION_RE.match(edition):
+        print(
+            f"WARN: pipeline_stage_gate returned non-date: {edition!r}",
+            file=sys.stderr,
+        )
+        return None
+    return edition
+
+
+def cmd_run_daily(no_dashboard: bool = False) -> int:
+    """Daily launchd entry. Compute edition → run → finalize if all done.
+
+    Strict rules (HARDENING §B):
+      - Under SAP_FF_DRYRUN=1: only print the plan, run nothing.
+      - On needs_content / blocked / partial: osascript notify, do NOT
+        fabricate content, do NOT write any marker, do NOT pass --skip-*.
+      - Idempotent: state/checkpoint files in working/{edition}/ let
+        repeated calls safely resume.
+    """
+    print("# four-faces run-daily")
+    if config.is_dryrun():
+        print("[DRYRUN] would compute edition via "
+              f"{' '.join(config.cmd_pipeline_stage_gate_edition_date())}")
+        print("[DRYRUN] would run: sap_four_faces.py run <edition>")
+        print("[DRYRUN] would finalize when all four faces are done")
+        print("[DRYRUN] would osascript-notify on needs_content / blocked / partial")
+        return 0
+
+    edition = _compute_edition_from_gate()
+    if not edition:
+        _osascript_notify(
+            "sap-four-faces run-daily",
+            "Failed to compute edition via pipeline_stage_gate.py",
+        )
+        return 5
+    print(f"edition: {edition}")
+
+    rc = cmd_run(edition, None, None, no_dashboard=no_dashboard)
+    if rc == 2:
+        _osascript_notify(
+            "sap-four-faces NEEDS CONTENT",
+            f"{edition}: see PIPE/working/{edition}/content_request_face*.md",
+        )
+        return rc
+    if rc == 3:
+        _osascript_notify(
+            "sap-four-faces BLOCKED",
+            f"{edition}: check four_faces_state.json -> notes",
+        )
+        return rc
+    if rc != 0:
+        _osascript_notify(
+            "sap-four-faces run failed",
+            f"{edition}: cmd_run rc={rc}",
+        )
+        return rc
+
+    # rc == 0: check whether all four are really done (judge from disk).
+    state = load_state(edition)
+    ok, blockers = _all_done(state, edition)
+    if not ok:
+        _osascript_notify(
+            "sap-four-faces PARTIAL",
+            f"{edition}: {','.join(blockers)}",
+        )
+        return 4
+
+    return cmd_finalize(edition, no_dashboard=no_dashboard)
+
+
+# --------------------------------------------------------------------------
 # CLI dispatch
 # --------------------------------------------------------------------------
 def _parse_args(argv: Optional[List[str]]) -> argparse.Namespace:
     p = argparse.ArgumentParser(description="SAP four-faces orchestrator")
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    for name in ("status", "plan", "finalize"):
+    for name in ("status", "plan"):
         sp = sub.add_parser(name)
         sp.add_argument("edition")
+
+    sp_finalize = sub.add_parser("finalize")
+    sp_finalize.add_argument("edition")
+    sp_finalize.add_argument(
+        "--no-dashboard", action="store_true", default=False,
+        help="skip the post-run dashboard refresh (HARDENING §A)",
+    )
 
     sp_run = sub.add_parser("run")
     sp_run.add_argument("edition")
     sp_run.add_argument("--from", dest="start_from", default=None)
     sp_run.add_argument("--only", dest="only", default=None)
+    sp_run.add_argument(
+        "--no-dashboard", action="store_true", default=False,
+        help="skip the post-run dashboard refresh (HARDENING §A)",
+    )
+
+    sp_run_daily = sub.add_parser(
+        "run-daily",
+        help="launchd entry: compute edition → run → finalize-if-all-done (HARDENING §B)",
+    )
+    sp_run_daily.add_argument(
+        "--no-dashboard", action="store_true", default=False,
+        help="skip the post-run dashboard refresh",
+    )
+    sp_run_daily.set_defaults(edition=None)
 
     sp_audit = sub.add_parser("audit-scripts")
     sp_audit.set_defaults(edition=None)
@@ -406,15 +606,20 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"  - {p}")
         return 1
 
+    if args.cmd == "run-daily":
+        return cmd_run_daily(no_dashboard=args.no_dashboard)
+
     edition = validate_edition(args.edition)
     if args.cmd == "status":
         return cmd_status(edition)
     if args.cmd == "plan":
         return cmd_plan(edition)
     if args.cmd == "run":
-        return cmd_run(edition, args.start_from, args.only)
+        return cmd_run(
+            edition, args.start_from, args.only, no_dashboard=args.no_dashboard
+        )
     if args.cmd == "finalize":
-        return cmd_finalize(edition)
+        return cmd_finalize(edition, no_dashboard=args.no_dashboard)
     return 1
 
 

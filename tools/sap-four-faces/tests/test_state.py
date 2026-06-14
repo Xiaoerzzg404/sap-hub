@@ -294,7 +294,9 @@ class TestFinalize(TempEnv):
         # face4 deliberately left pending
         sap_four_faces.save_state(state)
 
-        rc = sap_four_faces.cmd_finalize(self.edition)
+        # no_dashboard=True keeps the test from clobbering the real
+        # tools/sap-four-faces/ledger/ledger.json (HARDENING §A refresh).
+        rc = sap_four_faces.cmd_finalize(self.edition, no_dashboard=True)
         self.assertEqual(rc, 4, "finalize must refuse with rc=4")
         self.assertFalse(
             config.published_marker(self.edition).exists(),
@@ -316,7 +318,7 @@ class TestFinalize(TempEnv):
         self._seed_face4_done(state)
         sap_four_faces.save_state(state)
 
-        rc = sap_four_faces.cmd_finalize(self.edition)
+        rc = sap_four_faces.cmd_finalize(self.edition, no_dashboard=True)
         self.assertEqual(rc, 0)
         self.assertTrue(config.published_marker(self.edition).exists())
         self.assertTrue(config.channels_published_marker(self.edition).exists())
@@ -379,6 +381,166 @@ class TestDeepDedup(TempEnv):
         a = "https://news.sap.com/2026/06/X?utm_source=newsletter"
         b = "https://news.sap.com/2026/06/X"
         self.assertEqual(common.canonical_url(a), common.canonical_url(b))
+
+
+# --------------------------------------------------------------------------
+# HARDENING §C — classify_transient (pure function, no env)
+# --------------------------------------------------------------------------
+class TestClassifyTransient(unittest.TestCase):
+    """classify_transient is a pure function; no TempEnv reload needed."""
+
+    def setUp(self):
+        # Make sure faces._common is importable in this test file's order.
+        ROOT_LOCAL = Path(__file__).resolve().parents[1]
+        if str(ROOT_LOCAL) not in sys.path:
+            sys.path.insert(0, str(ROOT_LOCAL))
+
+    def test_broll_missing_classified(self):
+        from faces import _common as common
+        msg = (
+            "[face4.run_deep_shorts_all] ERROR: selected_bg.mp4 not found "
+            "in working/2026-06-14/shorts/e1/"
+        )
+        self.assertEqual(common.classify_transient(msg), "broll_missing")
+
+    def test_broll_missing_chinese_variant(self):
+        from faces import _common as common
+        msg = "selected_bg.mp4 缺 (broll 未生成)"
+        self.assertEqual(common.classify_transient(msg), "broll_missing")
+
+    def test_unsupported_tokens_classified(self):
+        from faces import _common as common
+        msg = (
+            "口播稿生成失败: unsupportedTokens=['FICO', 'GROW with SAP'] "
+            "不在 event.summary 中"
+        )
+        self.assertEqual(common.classify_transient(msg), "unsupported_tokens")
+
+    def test_unsupported_tokens_snake_case(self):
+        from faces import _common as common
+        msg = "ScriptError: unsupported_tokens: ['SuccessFactors']"
+        self.assertEqual(common.classify_transient(msg), "unsupported_tokens")
+
+    def test_cdp_300002_classified(self):
+        from faces import _common as common
+        msg = (
+            "CDP publish_cover failed: errCode=300002 (cover preview not ready)"
+        )
+        self.assertEqual(common.classify_transient(msg), "cdp_cover_300002")
+
+    def test_cdp_300002_with_spaces(self):
+        from faces import _common as common
+        msg = "cdp response: errcode = 300002"
+        self.assertEqual(common.classify_transient(msg), "cdp_cover_300002")
+
+    def test_empty_returns_none(self):
+        from faces import _common as common
+        self.assertIsNone(common.classify_transient(""))
+        self.assertIsNone(common.classify_transient(None))
+
+    def test_unknown_failure_returns_none(self):
+        from faces import _common as common
+        msg = "SyntaxError: invalid token at line 42"
+        self.assertIsNone(common.classify_transient(msg))
+
+
+# --------------------------------------------------------------------------
+# HARDENING §A — refresh_dashboard auto-refresh hook
+# --------------------------------------------------------------------------
+class TestRefreshDashboard(TempEnv):
+    def test_skipped_in_dryrun(self):
+        import sap_four_faces
+
+        os.environ["SAP_FF_DRYRUN"] = "1"
+        try:
+            with mock.patch.object(sap_four_faces, "_refresh_dashboard_impl") as m_impl:
+                sap_four_faces.refresh_dashboard(no_dashboard=False)
+                m_impl.assert_not_called()
+        finally:
+            os.environ.pop("SAP_FF_DRYRUN", None)
+
+    def test_skipped_when_flag_set(self):
+        import sap_four_faces
+
+        # Make sure SAP_FF_DRYRUN is NOT set.
+        os.environ.pop("SAP_FF_DRYRUN", None)
+        with mock.patch.object(sap_four_faces, "_refresh_dashboard_impl") as m_impl:
+            sap_four_faces.refresh_dashboard(no_dashboard=True)
+            m_impl.assert_not_called()
+
+    def test_swallows_impl_exception(self):
+        """A failing refresh must never raise / never change exit code."""
+        import sap_four_faces
+
+        os.environ.pop("SAP_FF_DRYRUN", None)
+        boom = RuntimeError("kaboom")
+        with mock.patch.object(
+            sap_four_faces, "_refresh_dashboard_impl", side_effect=boom
+        ):
+            # No exception should escape.
+            sap_four_faces.refresh_dashboard(no_dashboard=False)
+
+    def test_called_after_cmd_run(self):
+        """cmd_run must invoke refresh_dashboard exactly once on its way out."""
+        import sap_four_faces
+        from faces import face1, face2, face3, face4
+
+        # SAP_FF_DRYRUN unset so the refresh path is taken; we mock impl.
+        os.environ.pop("SAP_FF_DRYRUN", None)
+
+        state = sap_four_faces.empty_state(self.edition)
+        sap_four_faces.save_state(state)
+
+        with mock.patch.object(face1, "judge", return_value=("done", {})), \
+             mock.patch.object(face2, "judge", return_value=("done", {})), \
+             mock.patch.object(face3, "judge", return_value=("done", {})), \
+             mock.patch.object(face4, "judge", return_value=("done", {})), \
+             mock.patch.object(sap_four_faces, "_refresh_dashboard_impl") as m_impl:
+            rc = sap_four_faces.cmd_run(self.edition, None, None)
+            self.assertEqual(rc, 0)
+            m_impl.assert_called_once()
+
+    def test_not_called_when_cmd_run_passes_no_dashboard(self):
+        import sap_four_faces
+        from faces import face1, face2, face3, face4
+
+        os.environ.pop("SAP_FF_DRYRUN", None)
+        state = sap_four_faces.empty_state(self.edition)
+        sap_four_faces.save_state(state)
+
+        with mock.patch.object(face1, "judge", return_value=("done", {})), \
+             mock.patch.object(face2, "judge", return_value=("done", {})), \
+             mock.patch.object(face3, "judge", return_value=("done", {})), \
+             mock.patch.object(face4, "judge", return_value=("done", {})), \
+             mock.patch.object(sap_four_faces, "_refresh_dashboard_impl") as m_impl:
+            rc = sap_four_faces.cmd_run(
+                self.edition, None, None, no_dashboard=True
+            )
+            self.assertEqual(rc, 0)
+            m_impl.assert_not_called()
+
+
+# --------------------------------------------------------------------------
+# HARDENING §B — run-daily dry-run prints only, never subprocess
+# --------------------------------------------------------------------------
+class TestRunDailyDryrun(TempEnv):
+    def test_dryrun_prints_only(self):
+        import sap_four_faces
+
+        os.environ["SAP_FF_DRYRUN"] = "1"
+        try:
+            # Even if we accidentally tried to spawn pipeline_stage_gate or
+            # osascript, these mocks would prove it.
+            with mock.patch("subprocess.run") as m_proc, \
+                 mock.patch.object(sap_four_faces, "_osascript_notify") as m_notify, \
+                 mock.patch.object(sap_four_faces, "_refresh_dashboard_impl") as m_impl:
+                rc = sap_four_faces.cmd_run_daily()
+                self.assertEqual(rc, 0)
+                m_proc.assert_not_called()
+                m_notify.assert_not_called()
+                m_impl.assert_not_called()
+        finally:
+            os.environ.pop("SAP_FF_DRYRUN", None)
 
 
 if __name__ == "__main__":

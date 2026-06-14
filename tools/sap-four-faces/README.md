@@ -11,8 +11,9 @@ Authoritative spec: `HANDOFF.md` (this directory). Read it first.
 ```bash
 /usr/bin/python3 sap_four_faces.py status   <edition>     # print per-face + markers
 /usr/bin/python3 sap_four_faces.py plan     <edition>     # dry-run plan, no I/O
-/usr/bin/python3 sap_four_faces.py run      <edition> [--from faceN] [--only faceN]
-/usr/bin/python3 sap_four_faces.py finalize <edition>     # write .published only if all done
+/usr/bin/python3 sap_four_faces.py run      <edition> [--from faceN] [--only faceN] [--no-dashboard]
+/usr/bin/python3 sap_four_faces.py finalize <edition> [--no-dashboard]
+/usr/bin/python3 sap_four_faces.py run-daily [--no-dashboard]
 /usr/bin/python3 sap_four_faces.py audit-scripts          # verify §6 script paths
 ```
 
@@ -90,6 +91,78 @@ cd ~/sap-hub/tools/sap-four-faces
 
 Covers per-face completion judgment, `finalize` refusal, and `deep_dedup`
 duplicate hits. Stdlib `unittest` only — no external deps.
+
+## Dashboard auto-refresh (HARDENING §A)
+
+Both `run` and `finalize` call `refresh_dashboard()` after they finish
+(success, partial, or blocked) so the 7788 console (`/console/four-faces.html`)
+reflects current state without a manual refresh.
+
+The refresh runs `ledger_build.main(["--window", "16"])` then
+`sync_dashboard.main()` in-process (with a subprocess fallback). It is
+**best-effort**: any failure prints `WARN: dashboard refresh failed: ...`
+and **never** affects the orchestrator's exit code.
+
+Skip the refresh by passing `--no-dashboard` or by setting `SAP_FF_DRYRUN=1`.
+`status` and `plan` never refresh (they are read-only).
+
+## launchd entry (HARDENING §B)
+
+The single-entry-point launchd routine replaces the scattered
+`_run_XXX_only.sh` scripts:
+
+```
+launchd/daily.sh                          # bash wrapper: PATH + Playwright env
+launchd/com.ryan.sap.four-faces.plist     # launchd template (21:30 Asia/Tokyo)
+```
+
+`daily.sh` exports `PATH=/opt/homebrew/bin:/usr/local/bin:...` plus
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` (the bundled Chromium per HANDOFF §1)
+and invokes `sap_four_faces.py run-daily`. `run-daily` itself:
+
+1. Computes edition via `STUDIO/scripts/pipeline_stage_gate.py --edition-date`.
+2. Runs `cmd_run(edition)` — same logic as the manual `run` subcommand.
+3. If all four faces judge `done`, runs `cmd_finalize(edition)`.
+4. On `needs_content` / `blocked` / `partial`, fires an `osascript`
+   notification so Ryan / Cowork can fill the gap. The script **never**
+   fabricates content, **never** writes a fake marker, and **never** adds
+   `--skip-truth-gate`.
+
+### Loading the plist (Ryan-only)
+
+Claude Code does **not** `launchctl load` anything. Ryan installs it:
+
+```bash
+cp ~/sap-hub/tools/sap-four-faces/launchd/com.ryan.sap.four-faces.plist \
+   ~/Library/LaunchAgents/com.ryan.sap.four-faces.plist
+# Edit absolute paths if your $HOME differs from /Users/openclawxiaoer.
+launchctl unload ~/Library/LaunchAgents/com.ryan.sap.four-faces.plist 2>/dev/null
+launchctl load   ~/Library/LaunchAgents/com.ryan.sap.four-faces.plist
+# daily.sh is invoked via /bin/bash -lc, so the exec bit on daily.sh is
+# not required; chmod +x is recommended for manual invocation.
+chmod +x ~/sap-hub/tools/sap-four-faces/launchd/daily.sh
+```
+
+Dry-run to verify the plan without running anything:
+
+```bash
+SAP_FF_DRYRUN=1 /usr/bin/python3 sap_four_faces.py run-daily
+```
+
+## Transient failure classification (HARDENING §C)
+
+`faces._common.classify_transient(report) -> Optional[str]` is a pure
+function over the combined stdout+stderr of `run_deep_shorts_all`. It
+returns one of three labels:
+
+| label | meaning | orchestrator action |
+|---|---|---|
+| `unsupported_tokens` | 口播稿引用 token 不在 event.summary | write `content_request_face4.md` with missing tokens, return `needs_content` (no blind retry) |
+| `broll_missing` | `selected_bg.mp4` not yet generated | retry the inner script once |
+| `cdp_cover_300002` | 视频号 errCode=300002 封面预览未稳 | sleep 8s then retry once |
+| `None` | unknown failure | `blocked` immediately |
+
+Retry cap is **1** for the two retryable categories; second failure → `blocked`.
 
 ## Calling convention (for Cowork / Codex)
 

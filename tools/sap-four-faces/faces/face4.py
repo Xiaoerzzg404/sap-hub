@@ -13,6 +13,8 @@ HANDOFF §6 Face4 chain:
 from __future__ import annotations
 
 import json
+import re
+import time
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -144,6 +146,49 @@ def write_request(state: Dict, edition: str) -> str:
     return str(path)
 
 
+_UNSUPPORTED_TOKEN_RE = re.compile(
+    r"unsupported[_-]?tokens?\s*[:=\[]\s*([^\]\n]+)", re.IGNORECASE
+)
+
+
+def _write_unsupported_request(state: Dict, edition: str, report: str) -> str:
+    """Append an unsupportedTokens hint to content_request_face4.md."""
+    tokens: List[str] = []
+    if report:
+        for m in _UNSUPPORTED_TOKEN_RE.finditer(report):
+            blob = m.group(1).strip().rstrip(",.;)")
+            for tok in blob.replace("'", "").replace('"', "").split(","):
+                t = tok.strip().lstrip("[").rstrip("]")
+                if t and t not in tokens:
+                    tokens.append(t)
+    body_lines: List[str] = []
+    body_lines.append("## 缺内容：Face4 口播稿 unsupportedTokens\n")
+    body_lines.append(
+        "run_deep_shorts_all 报告口播稿引用了 event.summary 没有的 token。\n"
+        "**不要让编排器盲目重跑** —— 请按下表把缺失 token 补进对应 event 的"
+        "`summary`（或调整口播稿不再引用），再重跑：\n"
+    )
+    if tokens:
+        body_lines.append("### 缺失 token")
+        for t in tokens:
+            body_lines.append(f"- `{t}`")
+        body_lines.append("")
+    body_lines.append("### 原始报告片段（首 1.5KB）")
+    body_lines.append("```")
+    body_lines.append((report or "").strip()[:1500])
+    body_lines.append("```")
+    body_lines.append("\n### 路径")
+    body_lines.append(f"`{config.shorts_input_json(edition)}`\n")
+    body_lines.append("\n### 写完后")
+    body_lines.append("```")
+    body_lines.append(
+        f"SAP_FF_DRYRUN=1 /usr/bin/python3 sap_four_faces.py run {edition} --from face4"
+    )
+    body_lines.append("```")
+    path = common.write_content_request(edition, FACE, "\n".join(body_lines))
+    return str(path)
+
+
 def run(state: Dict, edition: str, runner: common.Runner) -> Tuple[str, Dict]:
     face = state["faces"][FACE]
 
@@ -159,25 +204,47 @@ def run(state: Dict, edition: str, runner: common.Runner) -> Tuple[str, Dict]:
         req = write_request(state, edition)
         return "needs_content", {"request": req}
 
-    # 3. run deep-shorts pipeline (push). The script itself manages broll
-    # retries inside; we add an outer retry-once for transient cdp failures.
-    run_res = runner.run_with_retry(
-        config.cmd_run_deep_shorts_all(edition),
-        "face4.run_deep_shorts_all",
-        retries=1,
-    )
+    # 3. run deep-shorts pipeline (push). HARDENING §C: explicit transient
+    # classification + at-most-one retry. The inner script handles
+    # per-event recovery; we layer on a classify_transient + retry-once.
+    cmd = config.cmd_run_deep_shorts_all(edition)
+    label = "face4.run_deep_shorts_all"
+    run_res = runner.run(cmd, label)
     if not run_res.ok:
-        return "blocked", {
-            "step": "run_deep_shorts_all",
-            "rc": run_res.rc,
-            "stderr": run_res.stderr[:500],
-            "hint": (
-                "Common transient failures (HANDOFF §6 Face4): "
-                "broll selected_bg missing -> re-run event; "
-                "口播稿 unsupportedTokens (e.g. FICO 不在 event.summary) -> "
-                "add the missing token to content_request and re-run."
-            ),
-        }
+        report = (run_res.stdout or "") + "\n" + (run_res.stderr or "")
+        category = common.classify_transient(report)
+        if category == "unsupported_tokens":
+            # § Invariant 1: needs_content, not blind retry. Surface the
+            # offending tokens to the LLM via the content_request file.
+            req = _write_unsupported_request(state, edition, report)
+            return "needs_content", {
+                "request": req,
+                "transient": category,
+            }
+        if category in ("broll_missing", "cdp_cover_300002"):
+            if category == "cdp_cover_300002" and not runner.dryrun:
+                time.sleep(8)
+            retry = runner.run(cmd, f"{label}#retry1_{category}")
+            if not retry.ok:
+                return "blocked", {
+                    "step": label,
+                    "rc": retry.rc,
+                    "category": category,
+                    "stderr": retry.stderr[:500],
+                }
+            run_res = retry
+        else:
+            return "blocked", {
+                "step": label,
+                "rc": run_res.rc,
+                "stderr": run_res.stderr[:500],
+                "hint": (
+                    "No known transient class matched. "
+                    "HARDENING §C only auto-retries broll_missing / "
+                    "cdp_cover_300002, and routes unsupported_tokens to "
+                    "needs_content."
+                ),
+            }
 
     if runner.dryrun:
         return "ready", {"dryrun": True}

@@ -327,3 +327,48 @@ def list_json_glob(pattern: str) -> List[Path]:
     from glob import glob
 
     return sorted(Path(p) for p in glob(pattern))
+
+
+# --------------------------------------------------------------------------
+# Transient failure classifier (HARDENING §C / HANDOFF §11)
+# --------------------------------------------------------------------------
+# Three known face4 transient failures. Pure function over the combined
+# stdout+stderr (or any blob) — caller decides what to do with the label.
+#   - unsupported_tokens : 口播稿 unsupportedTokens (LLM-content gap, NOT a retry)
+#   - broll_missing      : selected_bg.mp4 generated late (broll race) → retry once
+#   - cdp_cover_300002   : 视频号 errCode=300002 封面预览未稳 → wait + retry once
+_TRANSIENT_RULES = [
+    (
+        "unsupported_tokens",
+        re.compile(r"unsupported[_-]?tokens?\b", re.IGNORECASE),
+    ),
+    (
+        "broll_missing",
+        re.compile(
+            r"selected_bg(?:\.mp4)?[^\n]*?(missing|not\s*found|缺|enoent|no\s*such)"
+            r"|(missing|not\s*found|缺|enoent|no\s*such)[^\n]*?selected_bg",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "cdp_cover_300002",
+        re.compile(r"err(?:code|or)\s*[:=]\s*300002", re.IGNORECASE),
+    ),
+]
+
+
+def classify_transient(report: Optional[str]) -> Optional[str]:
+    """Classify a stage report / combined log into one of the known transient
+    failure categories (HARDENING §C). Returns None if no rule matches.
+
+    Categories:
+      - "unsupported_tokens" : 口播稿引用 token 不在素材里 → 需要 LLM 补内容（不盲 retry）
+      - "broll_missing"      : selected_bg.mp4 还没生成 → 可重跑该 event
+      - "cdp_cover_300002"   : 视频号封面预览未稳 → 等一下再重跑
+    """
+    if not report:
+        return None
+    for label, rx in _TRANSIENT_RULES:
+        if rx.search(report):
+            return label
+    return None
