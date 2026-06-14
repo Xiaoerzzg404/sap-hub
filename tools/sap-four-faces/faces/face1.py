@@ -14,6 +14,10 @@ from typing import Dict, List, Tuple
 
 import config
 from faces import _common as common
+try:
+    import insight_source
+except Exception:
+    insight_source = None
 
 FACE = "face1"
 
@@ -41,12 +45,22 @@ def plan(state: Dict, edition: str) -> List[str]:
 
 def write_request(state: Dict, edition: str) -> str:
     md = config.main_article_md(edition)
+    elig_txt = ""
+    if insight_source is not None:
+        try:
+            items = insight_source.eligible("wechat_official_account")
+            lines = ["  %d. %s  <%s>" % (i + 1, (it["title"] or it["url"])[:70], it["url"]) for i, it in enumerate(items[:30])]
+            elig_txt = ("### Insight Desk 可选条目（publishStatus=not_published，已自动去重）\n"
+                        "共 %d 条，只从这些里选、勿用其它来源：\n" % len(items) + "\n".join(lines) + "\n\n")
+        except Exception:
+            elig_txt = ""
     body = (
+        elig_txt +
         f"## 缺内容：Face1 主早报公众号\n\n"
         f"请把主文写到：`{md}`\n\n"
         f"### 字段与口径\n"
         f"- 题材：当日 SAP 早报（中国 / 欧美 / 日本 各 ≥5 条）。\n"
-        f"- 抓取后必须过 `dedupe_check.py --window 14`，只用 new 行。\n"
+        f"- 选题只从上面 Insight Desk not_published 列表里选（已自动去重）；发布后工具自动 record_publish 写回。\n"
         f"- 真实性：每条事实必须挂可点击来源 + Link 原文链接；不命中来源就不写。\n"
         f"- 风格：财经新闻体例，无 emoji / 无 AI 痕迹（见 sap-daily-brief skill）。\n\n"
         f"### 写完后\n"
@@ -95,6 +109,11 @@ def run(state: Dict, edition: str, runner: common.Runner) -> Tuple[str, Dict]:
     if media_id:
         face["mediaId"] = media_id
         info["mediaId"] = media_id
+        if insight_source is not None and not runner.dryrun:
+            try:
+                info["insightMarked"] = insight_source.mark_from_md(str(md), "wechat_official_account", "four-faces-" + edition)
+            except Exception as e:
+                info["insightMarkWarn"] = str(e)
     if runner.dryrun:
         info["dryrun"] = True
         return "ready", info

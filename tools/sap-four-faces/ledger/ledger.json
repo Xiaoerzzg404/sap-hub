@@ -1,7 +1,37 @@
 {
-  "generatedAt": "2026-06-14T17:54:26+09:00",
+  "generatedAt": "2026-06-14T19:08:28+09:00",
   "tool": "四面台 / sap-four-faces",
   "days": [
+    {
+      "date": "2026-06-15",
+      "faces": {
+        "face1": {
+          "status": "needs_content",
+          "mediaId": null,
+          "notes": "{\"request\": \"/Users/openclawxiaoer/Documents/OpenClaw/sap-news-pipeline/working/2026-06-15/content_request_face1.md\", \"draftPath\": \"/Users/openclawxiaoer/news/studio/data/drafts/2026-06-15/wechat-article.md\"}"
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "notes": ""
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "notes": ""
+        },
+        "face4": {
+          "status": "pending",
+          "shorts": [],
+          "notes": ""
+        }
+      },
+      "published": false,
+      "facesDone": 0,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": null
+    },
     {
       "date": "2026-06-14",
       "faces": {
@@ -71,7 +101,7 @@
           ]
         },
         "face4": {
-          "status": "partial",
+          "status": "done_with_skips",
           "pushed": [
             {
               "eid": "2026-06-14-sap-ai-1440",
@@ -84,21 +114,21 @@
             {
               "eid": "2026-06-14-sap-discovery-center-ai",
               "objectId": "export/UzFfBgAAxPCCcCoXMGvVjMzT4DCanGql8GZDg_vfGTHZINJtRQ"
+            },
+            {
+              "eid": "dshort_20260614_04",
+              "objectId": "export/UzFfBgAAxOSCLFsdcnHUjMzT4DCaURYW22Yl2kkf15fJh2Ze8w"
+            },
+            {
+              "eid": "dshort_20260614_05",
+              "objectId": "export/UzFfBgAAxMiCdHk3WXHUjMzT4DCaO0e82FjZI2oWKXOmaXq-6g"
             }
           ],
-          "pushedCount": 3,
+          "pushedCount": 5,
           "blocked": [
             {
               "eid": "2026-06-14-joule-sap-for-me",
               "reason": "sourceReuse 去重拦截（源已做过）"
-            },
-            {
-              "eid": "dshort_20260614_04",
-              "reason": "phase=push_failed reviewPass=True"
-            },
-            {
-              "eid": "dshort_20260614_05",
-              "reason": "phase=push_failed reviewPass=True"
             }
           ],
           "failReasons": [
@@ -106,22 +136,12 @@
               "face": "face4",
               "eid": "2026-06-14-joule-sap-for-me",
               "reason": "sourceReuse 去重拦截（源已做过）"
-            },
-            {
-              "face": "face4",
-              "eid": "dshort_20260614_04",
-              "reason": "phase=push_failed reviewPass=True"
-            },
-            {
-              "face": "face4",
-              "eid": "dshort_20260614_05",
-              "reason": "phase=push_failed reviewPass=True"
             }
           ]
         }
       },
       "published": true,
-      "facesDone": 3,
+      "facesDone": 4,
       "facesTotal": 4,
       "failReasons": [
         {
@@ -133,16 +153,6 @@
           "face": "face4",
           "eid": "2026-06-14-joule-sap-for-me",
           "reason": "sourceReuse 去重拦截（源已做过）"
-        },
-        {
-          "face": "face4",
-          "eid": "dshort_20260614_04",
-          "reason": "phase=push_failed reviewPass=True"
-        },
-        {
-          "face": "face4",
-          "eid": "dshort_20260614_05",
-          "reason": "phase=push_failed reviewPass=True"
         }
       ],
       "summaryFile": "automation_summary_20260614T002436_FOUR_FACES_DONE.json"
@@ -413,18 +423,18 @@
             {
               "eid": "dshort_20260612_05",
               "objectId": "export/UzFfBgAAxMuCMDQWVwDIjMzT4DCaw6D56RLA0CUYF3PpCX3xgg"
-            }
-          ],
-          "pushedCount": 5,
-          "blocked": [
+            },
             {
               "eid": "dshort_20260612_06",
-              "reason": "phase=push_failed reviewPass=True"
+              "objectId": "export/UzFfBgAAxMKCGHoDG3TUjMzT4DCapMfAe2kXHC5GhBGjSUtXxg"
             },
             {
               "eid": "dshort_20260612_07",
-              "reason": "phase=push_failed reviewPass=True"
-            },
+              "objectId": "export/UzFfBgAAxJaCbCYJDHTUjMzT4DCaleroWvF1kj1Cf0b76N4Kkw"
+            }
+          ],
+          "pushedCount": 7,
+          "blocked": [
             {
               "eid": "dshort_20260612_08",
               "reason": "口播稿: 口播稿事实依据不足; 街景视频: 背景视频和口播音频不等长; 最终成片"
@@ -435,16 +445,6 @@
             }
           ],
           "failReasons": [
-            {
-              "face": "face4",
-              "eid": "dshort_20260612_06",
-              "reason": "phase=push_failed reviewPass=True"
-            },
-            {
-              "face": "face4",
-              "eid": "dshort_20260612_07",
-              "reason": "phase=push_failed reviewPass=True"
-            },
             {
               "face": "face4",
               "eid": "dshort_20260612_08",
@@ -462,16 +462,6 @@
       "facesDone": 2,
       "facesTotal": 4,
       "failReasons": [
-        {
-          "face": "face4",
-          "eid": "dshort_20260612_06",
-          "reason": "phase=push_failed reviewPass=True"
-        },
-        {
-          "face": "face4",
-          "eid": "dshort_20260612_07",
-          "reason": "phase=push_failed reviewPass=True"
-        },
         {
           "face": "face4",
           "eid": "dshort_20260612_08",
@@ -999,76 +989,34 @@
           "warnings": []
         },
         "face4": {
-          "status": "failed",
-          "pushed": [],
-          "pushedCount": 0,
-          "blocked": [
+          "status": "done",
+          "pushed": [
             {
               "eid": "auto_20260605_30a18ce3d49da9",
-              "reason": "未生成 / 未推"
+              "objectId": "export/UzFfBgAAxPqCVB0DfnTUjMzT4DCaEzejqKZNt2fbujNujM96ZA"
             },
             {
               "eid": "auto_20260605_40ec7021bb60d0",
-              "reason": "未生成 / 未推"
+              "objectId": "export/UzFfBgAAxOiCHAMsQHTUjMzT4DCaSc7FYa6Gstv2MFyIC0V58g"
             },
             {
               "eid": "auto_20260605_43970d6fc9ac44",
-              "reason": "未生成 / 未推"
+              "objectId": "export/UzFfBgAAxOKCOD0cK3TUjMzT4DCakDvGanXH87t-vQ0lIRE49w"
             },
             {
               "eid": "auto_20260605_acb8d1f59d117f",
-              "reason": "未生成 / 未推"
+              "objectId": "export/UzFfBgAAxOCCSHZbG3fUjMzT4DCaVGznyuT5EvlMBERu-fJTnw"
             }
           ],
-          "failReasons": [
-            {
-              "face": "face4",
-              "eid": "auto_20260605_30a18ce3d49da9",
-              "reason": "未生成 / 未推"
-            },
-            {
-              "face": "face4",
-              "eid": "auto_20260605_40ec7021bb60d0",
-              "reason": "未生成 / 未推"
-            },
-            {
-              "face": "face4",
-              "eid": "auto_20260605_43970d6fc9ac44",
-              "reason": "未生成 / 未推"
-            },
-            {
-              "face": "face4",
-              "eid": "auto_20260605_acb8d1f59d117f",
-              "reason": "未生成 / 未推"
-            }
-          ]
+          "pushedCount": 4,
+          "blocked": [],
+          "failReasons": []
         }
       },
       "published": true,
-      "facesDone": 1,
+      "facesDone": 2,
       "facesTotal": 4,
-      "failReasons": [
-        {
-          "face": "face4",
-          "eid": "auto_20260605_30a18ce3d49da9",
-          "reason": "未生成 / 未推"
-        },
-        {
-          "face": "face4",
-          "eid": "auto_20260605_40ec7021bb60d0",
-          "reason": "未生成 / 未推"
-        },
-        {
-          "face": "face4",
-          "eid": "auto_20260605_43970d6fc9ac44",
-          "reason": "未生成 / 未推"
-        },
-        {
-          "face": "face4",
-          "eid": "auto_20260605_acb8d1f59d117f",
-          "reason": "未生成 / 未推"
-        }
-      ],
+      "failReasons": [],
       "summaryFile": "automation_summary_20260605T205820+0900_full_success_detailed.json"
     },
     {

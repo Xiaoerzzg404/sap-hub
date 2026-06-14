@@ -19,6 +19,10 @@ from typing import Dict, List, Tuple
 
 import config
 from faces import _common as common
+try:
+    import insight_source
+except Exception:
+    insight_source = None
 
 FACE = "face3"
 DEFAULT_TARGET_MIN = 4
@@ -187,6 +191,11 @@ def run(state: Dict, edition: str, runner: common.Runner) -> Tuple[str, Dict]:
         if not media_id and not runner.dryrun:
             return "blocked", {"step": f"publish.{slug}.media_id_missing", "stdout": pub.stdout[-500:]}
         tracked[slug] = {"slug": slug, "mediaId": media_id or "dryrun"}
+        if insight_source is not None and media_id and not runner.dryrun:
+            try:
+                insight_source.mark_from_md(str(out_md), "wechat_official_account", "four-faces-deep-" + edition)
+            except Exception:
+                pass
 
     face["articles"] = list(tracked.values())
     media_count = sum(1 for a in face["articles"] if a.get("mediaId") and a["mediaId"] != "dryrun")
