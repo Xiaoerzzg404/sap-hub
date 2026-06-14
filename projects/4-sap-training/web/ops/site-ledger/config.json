@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "siteId": "sap-jp.training-local",
+  "siteName": "sap-jp.training local training site",
+  "ownerProject": "projects/4-sap-training",
+  "snapshotPolicy": {
+    "defaultLabel": "manual",
+    "trackGitDirtyState": true,
+    "restoreSafeOnlyWhenGitClean": true,
+    "doNotCaptureSecrets": true
+  },
+  "trackedRoots": [
+    "app",
+    "components",
+    "data",
+    "docs",
+    "lib",
+    "public",
+    "scripts",
+    "types",
+    "../SAP日语培训/output",
+    "../sap_jp_training_course/output",
+    "../sap_jp_training_course/prompts_v4"
+  ],
+  "trackedRootFiles": [
+    "package.json",
+    "package-lock.json",
+    "next.config.ts",
+    "middleware.ts",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "postcss.config.js",
+    "eslint.config.mjs",
+    "drizzle.config.ts",
+    "vercel.json",
+    "instrumentation.ts",
+    "sentry.client.config.ts",
+    "sentry.edge.config.ts",
+    "sentry.server.config.ts"
+  ],
+  "requiredFiles": [
+    "package.json",
+    "next.config.ts",
+    "middleware.ts",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/login/page.tsx",
+    "app/privacy/page.tsx",
+    "data/_meta.json",
+    "data/lessons.json",
+    "data/phrases.json",
+    "data/glossary.json",
+    "data/roleplays.json",
+    "data/assignments.json",
+    "data/review-terms.json",
+    "docs/SITE_ARCHITECTURE.md",
+    "docs/SITE_CHANGE_LEDGER.md",
+    "docs/STUDENT_GUIDE.md",
+    "docs/TEACHER_GUIDE.md",
+    "docs/ADMIN_OPS.md"
+  ],
+  "expectedContentCounts": {
+    "data/lessons.json": 24,
+    "data/phrases.json": 480,
+    "data/roleplays.json": 48,
+    "data/assignments.json": 96
+  },
+  "publicRoutes": ["/login"],
+  "protectedPrefixes": [
+    "/dashboard",
+    "/courses",
+    "/speaking",
+    "/roleplay",
+    "/glossary",
+    "/phrasebook",
+    "/library",
+    "/assignments",
+    "/review",
+    "/teacher",
+    "/me",
+    "/api"
+  ],
+  "generatedArtifacts": {
+    "latestSnapshot": "ops/site-ledger/latest.json",
+    "snapshotDir": "ops/site-ledger/snapshots",
+    "reportDir": "ops/site-ledger/reports",
+    "changelog": "ops/site-ledger/CHANGELOG.md",
+    "rebuildPlan": "ops/site-ledger/REBUILD_PLAN.md"
+  }
+}

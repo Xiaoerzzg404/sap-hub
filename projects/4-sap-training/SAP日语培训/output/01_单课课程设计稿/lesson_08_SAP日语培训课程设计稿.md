@@ -1,18 +1,28 @@
-# SAP 日语培训：第 08 课《关键用户、数据交换与接口需求确认》
+# SAP 日语培训：第 08 课《日本企业数据管理标准》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 第8-9节第一段视频；本课聚焦关键用户、数据交换和接口需求。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本企业数据管理标准
+- 真实日本 SAP 项目场景：上线前主数据准备不完整，导致测试无法推进。顾问需要向业务说明影响和补充要求。
+- 对应项目阶段：Data migration preparation / Testing readiness
+- 初级顾问必须听懂的关键词：マスタデータ / データ品質 / テスト前提 / 移行 / 補足依頼
+- 学生可交付输出：主数据不完整导致测试受阻时的影响说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：key user、data transferred/exchanged、Golden tax system、order processing
-- 迁移后的 SAP 日语课主题：用日语向关键用户确认接口数据交换需求
-- 对应 SAP 模块：SD / FI / Interface
-- 对应项目阶段：Requirement gathering / Design
-- 对应顾问能力：确认发送方、接收方、字段、频率和错误处理
-- 对应日语能力：需求追问、复述、接口边界确认
-- 本课最终输出任务：完成一次接口需求访谈
+- 迁移后的 SAP 日语课主题：日本企业数据管理标准
+- 对应 SAP 模块：Common / Data migration / Testing
+- 对应项目阶段：Data migration preparation / Testing readiness
+- 对应顾问能力：说明主数据不完整对测试推进的影响
+- 对应日语能力：数据质量影响说明、补充请求
+- 本课最终输出任务：主数据不完整导致测试受阻时的影响说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：关键用户描述外部系统与SAP之间的数据交换，顾问需要把口头说明整理成接口需求。
+- 本课重点场景：上线前主数据准备不完整，导致测试无法推进。顾问需要向业务说明影响和补充要求。
 - 本课 input：发送数据、接收数据、字段列表、频率
 - 本课 system action：SAP与外部系统交换订单/发票信息
 - 本课 output：接口需求记录和待确认字段

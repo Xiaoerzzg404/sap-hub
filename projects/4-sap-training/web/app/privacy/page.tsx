@@ -6,7 +6,7 @@ export default function PrivacyPage() {
 
       <h2 className="mt-6 text-xl font-bold text-ink">我们收集什么</h2>
       <ul className="mt-2 list-disc space-y-1 pl-6 text-sm text-slate-700">
-        <li>注册邮箱，用于发送 magic link 登录邮件。</li>
+        <li>注册邮箱和用户名，用于账号登录和课程通知。</li>
         <li>姓名或显示名，用于讲师识别学员。</li>
         <li>学习进度，包括完成课次、跟读次数、收藏术语和句型。</li>
         <li>你主动录制并保存的录音音频。</li>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
       <ul className="mt-2 list-disc space-y-1 pl-6 text-sm text-slate-700">
         <li>账号和学习数据：Neon Postgres。</li>
         <li>录音音频：Cloudflare R2 私有 bucket，仅你本人和授权讲师可访问。</li>
-        <li>登录邮件：Resend，用于发送 magic link。</li>
+        <li>通知邮件：Resend，用于发送讲师反馈提醒等必要通知。</li>
       </ul>
 
       <h2 className="mt-6 text-xl font-bold text-ink">联系我们</h2>

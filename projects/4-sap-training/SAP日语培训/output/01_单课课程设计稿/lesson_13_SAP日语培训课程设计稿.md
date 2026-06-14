@@ -1,18 +1,28 @@
-# SAP 日语培训：第 13 课《生产流程、模块边界与客户付款》
+# SAP 日语培训：第 13 课《日本SAP顾问人才标准》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第12-13节；本课取后半段生产、模块边界、付款内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本SAP顾问人才标准
+- 真实日本 SAP 项目场景：顾问向日本PM说明自己的能力边界：哪些能独立做，哪些需要review，怎样保证质量。
+- 对应项目阶段：Role definition / Quality assurance
+- 初级顾问必须听懂的关键词：独力対応 / レビュー依頼 / 品質担保 / 報告ライン / 期待値調整
+- 学生可交付输出：能力边界、review需求、质量保证方式说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：production process、module boundary、manage customer payment
-- 迁移后的 SAP 日语课主题：用日语说明跨模块流程和模块边界
-- 对应 SAP 模块：PP / SD / FI
-- 对应项目阶段：Blueprint / Design
-- 对应顾问能力：比较PP、SD、FI等模块职责
-- 对应日语能力：模块边界说明、追问、复述
-- 本课最终输出任务：说明一个跨模块流程边界
+- 迁移后的 SAP 日语课主题：日本SAP顾问人才标准
+- 对应 SAP 模块：Common / Consultant skill / Quality assurance
+- 对应项目阶段：Role definition / Quality assurance
+- 对应顾问能力：向PM说明自己的能力边界和质量保证方式
+- 对应日语能力：能力边界、review请求、质量保证说明
+- 本课最终输出任务：能力边界、review需求、质量保证方式说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：项目讨论涉及生产、销售、收款多个模块，顾问要说明谁负责什么以及如何联动。
+- 本课重点场景：顾问向日本PM说明自己的能力边界：哪些能独立做，哪些需要review，怎样保证质量。
 - 本课 input：生产需求、销售订单、客户付款
 - 本课 system action：不同模块产生对应单据和会计影响
 - 本课 output：跨模块责任边界表

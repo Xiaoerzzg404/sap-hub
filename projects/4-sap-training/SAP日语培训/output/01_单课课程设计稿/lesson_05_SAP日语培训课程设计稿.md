@@ -1,18 +1,28 @@
-# SAP 日语培训：第 05 课《业务需求、MM模块与P2P入口》
+# SAP 日语培训：第 05 课《日本职场敬语应用》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第5-6节；本课取前半段需求、MM、Procurement内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本职场敬语应用
+- 真实日本 SAP 项目场景：顾问向客户发送配置确认邮件，需要请客户确认、请业务补充信息、说明自己已查看资料。
+- 对应项目阶段：Requirements confirmation / Mail follow-up
+- 初级顾问必须听懂的关键词：ご確認ください / 補足情報 / 設定内容 / 確認依頼 / 期限
+- 学生可交付输出：配置确认邮件的敬语表达与补充信息请求
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：Business Process Requirement、SAP MM、Procurement、PR、Payment
-- 迁移后的 SAP 日语课主题：用日语从用户需求引出P2P采购流程
-- 对应 SAP 模块：MM / FI
-- 对应项目阶段：Requirement gathering
-- 对应顾问能力：把业务需求拆成采购流程步骤
-- 对应日语能力：需求访谈、流程引导、三点照合前置说明
-- 本课最终输出任务：完成一次P2P需求访谈Role Play
+- 迁移后的 SAP 日语课主题：日本职场敬语应用
+- 对应 SAP 模块：Common / Mail / Configuration confirmation
+- 对应项目阶段：Requirements confirmation / Mail follow-up
+- 对应顾问能力：发送配置确认和补充信息请求邮件
+- 对应日语能力：商务邮件敬语、确认请求、资料补充请求
+- 本课最终输出任务：配置确认邮件的敬语表达与补充信息请求
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：用户提出采购付款相关需求，顾问需要确认业务目的、现行流程和输出单据。
+- 本课重点场景：顾问向客户发送配置确认邮件，需要请客户确认、请业务补充信息、说明自己已查看资料。
 - 本课 input：采购需求、供应商、品目、数量
 - 本课 system action：PR/PO/GR/IV/payment流程启动
 - 本课 output：需求确认记录和P2P流程草图

@@ -36,3 +36,6 @@ projects/4-sap-training/web/data/audio-cache/
 projects/4-sap-training/web/.baseline-*/
 projects/4-sap-training/web/.env.local
 projects/4-sap-training/web/.env*.local
+
+# Obsidian 知识库群（2026-06-04 自 LocalVaults 迁入；含嵌套 git 仓库，不入 sap-hub 索引）
+vaults/

@@ -1,0 +1,71 @@
+life_coach_sources:
+  - agent_id: 00_orchestrator
+    agent_file: agents/00_orchestrator.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_FICO_Business_AI_职业升级与Agent系统行动手册.md
+    enhanced_plan: knowledge/life_coach/enhanced/00_orchestrator_life_coach.md
+    card_count: 12
+  - agent_id: 01_positioning
+    agent_file: agents/01_positioning.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_FICO_Business_AI_职业定位导师.md
+    enhanced_plan: knowledge/life_coach/enhanced/01_positioning_life_coach.md
+    card_count: 11
+  - agent_id: 02_s4hana_finance
+    agent_file: agents/02_s4hana_finance.md
+    source_file: knowledge/imported/life-os/人生教练/S4HANA_Finance_深化路线_Week0.md
+    enhanced_plan: knowledge/life_coach/enhanced/02_s4hana_finance_life_coach.md
+    card_count: 15
+  - agent_id: 03_sap_business_ai
+    agent_file: agents/03_sap_business_ai.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_Business_AI_Joule_Finance_Guide.md
+    enhanced_plan: knowledge/life_coach/enhanced/03_sap_business_ai_life_coach.md
+    card_count: 9
+  - agent_id: 04_btp_clean_core
+    agent_file: agents/04_btp_clean_core.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_BTP_Clean_Core_Architecture_Mentor_Notes.md
+    enhanced_plan: knowledge/life_coach/enhanced/04_btp_clean_core_life_coach.md
+    card_count: 12
+  - agent_id: 05_finance_ai_usecases
+    agent_file: agents/05_finance_ai_usecases.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_Finance_AI_Use_Cases_Period_End_Closing.md
+    enhanced_plan: knowledge/life_coach/enhanced/05_finance_ai_usecases_life_coach.md
+    card_count: 12
+  - agent_id: 06_demo_poc
+    agent_file: agents/06_demo_poc.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_Finance_AI_Demo_01.md
+    enhanced_plan: knowledge/life_coach/enhanced/06_demo_poc_life_coach.md
+    card_count: 11
+  - agent_id: 07_data_cfo_reporting
+    agent_file: agents/07_data_cfo_reporting.md
+    source_file: knowledge/imported/life-os/人生教练/CFO_Monthly_Finance_Analysis_Playbook.md
+    enhanced_plan: knowledge/life_coach/enhanced/07_data_cfo_reporting_life_coach.md
+    card_count: 12
+  - agent_id: 08_ai_governance
+    agent_file: agents/08_ai_governance.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_Finance_AI_Governance_Framework.md
+    enhanced_plan: knowledge/life_coach/enhanced/08_ai_governance_life_coach.md
+    card_count: 13
+  - agent_id: 09_japanese_presales
+    agent_file: agents/09_japanese_presales.md
+    source_file: knowledge/imported/life-os/人生教练/日本SAP项目沟通与售前表达训练.md
+    enhanced_plan: knowledge/life_coach/enhanced/09_japanese_presales_life_coach.md
+    card_count: 10
+  - agent_id: 10_course_productization
+    agent_file: agents/10_course_productization.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_FICO_AI_知识产品化与课程设计方案.md
+    enhanced_plan: knowledge/life_coach/enhanced/10_course_productization_life_coach.md
+    card_count: 14
+  - agent_id: 11_certification_roadmap
+    agent_file: agents/11_certification_roadmap.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_AI_Certification_Roadmap.md
+    enhanced_plan: knowledge/life_coach/enhanced/11_certification_roadmap_life_coach.md
+    card_count: 13
+  - agent_id: 12_business_model
+    agent_file: agents/12_business_model.md
+    source_file: knowledge/imported/life-os/人生教练/SAP_FICO_AI_商业化服务产品菜单_V1.md
+    enhanced_plan: knowledge/life_coach/enhanced/12_business_model_life_coach.md
+    card_count: 15
+  - agent_id: 13_weekly_review
+    agent_file: agents/13_weekly_review.md
+    source_file: knowledge/imported/life-os/人生教练/每周复盘与执行教练.md
+    enhanced_plan: knowledge/life_coach/enhanced/13_weekly_review_life_coach.md
+    card_count: 11

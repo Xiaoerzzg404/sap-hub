@@ -1,0 +1,146 @@
+# SAPKB 采集源配置（对齐既有 ~/news/collect/sources.yaml 风格，domain=sapkb）
+domain: sapkb
+harvest_schedule: "30 6 * * *"        # 06:30 JST，避让 19:00/20:30/21:30/22:00
+# 本机 RSSHub 实例（127.0.0.1:1200）未运行时 rsshub 源不可用；启用 CSDN 需先起 RSSHub。
+rsshub_base: "http://127.0.0.1:1200"
+rate_limit:
+  request_interval_sec: 5
+  max_per_run: 200
+  retry_max: 2
+
+sources:
+  - id: csdn_sap_search
+    platform: csdn
+    type: rsshub
+    queries: ["SAP FICO", "SAP F110", "S/4HANA 财务", "SAP New GL", "SAP CO-PA", "SAP 物料账"]
+    import_mode: metadata_only
+    route: "csdn/search/SAP%20FICO"   # 需本机 RSSHub 运行才生效
+
+  - id: sap_news_ai
+    platform: sap_news
+    type: rss
+    feed_url: "https://news.sap.com/topics/artificial-intelligence/feed/"
+    import_mode: metadata_only
+    # SAP 官方 AI 新闻 RSS（真实可达）。SAP AI 优先采集源（Ryan 6/10 指令）。剥正文截摘要。
+
+  - id: sap_community_blogs
+    platform: sap_community
+    type: rss
+    feed_url: "https://community.sap.com/khhcw49343/rss/board?board.id=technology-blog-sap"
+    import_mode: metadata_only
+    # 公开 SAP 官方社区技术博客 RSS（真实可达）。仅 GET、无登录、metadata_only、剥正文截摘要。
+
+  - id: csdn_jerry_wang
+    platform: csdn
+    type: csdn_api
+    username: i042416            # 汪子熙(Jerry Wang) CSDN id；含《30天入门SAP BTP开发》+《SAP BTP百科全书》两专栏
+    author_name: 汪子熙
+    import_mode: metadata_only
+    max_pages: 10
+    page_size: 40
+    # 公开文章列表 JSON API，GET 无登录、仅元数据（标题/链接/日期/摘要）。优先采集源。
+
+  - id: csdn_henry_sap
+    platform: csdn
+    type: csdn_api
+    username: m0_45197968
+    author_name: Henry-SAP
+    import_mode: metadata_only
+    max_pages: 6
+    page_size: 40
+
+  - id: csdn_laoniao
+    platform: csdn
+    type: csdn_api
+    username: weixin_42137700
+    author_name: 喜欢打酱油的老鸟
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_sapmatinal
+    platform: csdn
+    type: csdn_api
+    username: sapmatinal
+    author_name: SAPmatinal
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+    # 含 SAP 专栏(category_2805369) + ChatGPT 专栏(category_12282411)
+
+  - id: csdn_blogger_43477555
+    platform: csdn
+    type: csdn_api
+    username: weixin_43477555
+    author_name: weixin_43477555
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_blogger_24020515
+    platform: csdn
+    type: csdn_api
+    username: qq_24020515
+    author_name: qq_24020515
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: csdn_blogger_52203666
+    platform: csdn
+    type: csdn_api
+    username: weixin_52203666
+    author_name: weixin_52203666
+    import_mode: metadata_only
+    max_pages: 8
+    page_size: 40
+
+  - id: zhihu_sap_columns
+    platform: zhihu
+    type: rsshub
+    # 在此登记你认可的知乎 SAP 专栏 id（示例占位）
+    column_ids: []
+    import_mode: metadata_only
+
+  - id: wechat_sap_accounts
+    platform: wechat
+    type: wewe_rss
+    # 复用你已订阅的 SAP 公众号（示例占位）
+    feed_ids: []
+    import_mode: summary_only
+
+  - id: shipinhao_manual
+    platform: shipinhao
+    type: manual
+    import_mode: metadata_only
+
+# ==================== 优先采集口径（Ryan 2026-06-10 指令）====================
+# 优先抓取 汪子熙(Jerry Wang) 的文章与其它 SAP AI 相关文章；遇付费墙 → 标 needs_license 提醒 Ryan 付费。
+watchlist_priority:
+  authors:
+    - name: "汪子熙"
+      aka: ["Jerry Wang", "JerryWang"]
+      platform: csdn
+      username: i042416
+      homepage: "https://jerry.blog.csdn.net/"
+      reason: "SAP 大神，最高优先（含 BTP 两专栏）"
+    - name: "Henry-SAP"
+      platform: csdn
+      username: m0_45197968
+      homepage: "https://blog.csdn.net/m0_45197968"
+      reason: "优先博主"
+    - name: "喜欢打酱油的老鸟"
+      platform: csdn
+      username: weixin_42137700
+      homepage: "https://blog.csdn.net/weixin_42137700"
+      reason: "优先博主"
+    - name: "SAPmatinal"
+      platform: csdn
+      username: sapmatinal
+      homepage: "https://blog.csdn.net/SAPmatinal"
+      reason: "优先博主（SAP+ChatGPT 专栏）"
+  topics:
+    - name: "SAP AI"
+      keywords: ["SAP Business AI", "Joule", "AI Agent", "Generative AI Hub", "SAP AI Core", "ABAP AI", "agentic"]
+      priority: high
+  on_paywall: remind   # 命中付费墙不丢弃，元数据照收并提醒 Ryan 去付费解锁全文

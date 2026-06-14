@@ -3,11 +3,15 @@
   "title": "sap-talent 状态索引",
   "status": "in_progress",
   "owner": "user",
-  "updated_by": "claude-code",
-  "updated_at": "2026-05-16T00:00:00+09:00",
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
   "links": [
     "../_instructions.md",
-    "../sources.yaml"
+    "../sources.yaml",
+    "./talent-network-roadmap.json",
+    "./network_pipeline.json",
+    "../knowledge/talent-trust-network-playbook.md",
+    "../knowledge/cards/talent-business-cards.md"
   ],
-  "notes": "第②轮规格已填充，等大脑分批供给内容"
+  "notes": "新增 SAP 人才信任网络路线、脱敏管线模板和小白可执行卡片；真实个人信息不得写入 git。"
 }

@@ -1,18 +1,28 @@
-# SAP 日语培训：第 03 课《会议复习、画面共享与项目经验提问》
+# SAP 日语培训：第 03 课《日本职场基础礼仪》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第3-4节；本课取前半段会议开场、复习、项目经验分享内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本职场基础礼仪
+- 真实日本 SAP 项目场景：第一次进入客户会议室/线上会议，需要自我介绍、确认会议目的、礼貌离开。
+- 对应项目阶段：Project preparation / Kickoff
+- 初级顾问必须听懂的关键词：キックオフ / 自己紹介 / 担当範囲 / 会議目的 / 退出挨拶
+- 学生可交付输出：客户会议开场、自我介绍、会议目的确认
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：recap、share my screen、学生造句和项目经历分享
-- 迁移后的 SAP 日语课主题：主持线上会议开场并引导成员复述项目经验
-- 对应 SAP 模块：Common / PMO
-- 对应项目阶段：Project meeting
-- 对应顾问能力：主持会议、点名、复述和衔接议题
-- 对应日语能力：会议开场、画面共享、听觉确认、自然追问
-- 本课最终输出任务：主持5分钟SAP项目会议开场
+- 迁移后的 SAP 日语课主题：日本职场基础礼仪
+- 对应 SAP 模块：Common / PMO / Meeting
+- 对应项目阶段：Project preparation / Kickoff
+- 对应顾问能力：完成一次客户会议入场和目的确认
+- 对应日语能力：会议开场、自我介绍、目的确认
+- 本课最终输出任务：客户会议开场、自我介绍、会议目的确认
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：线上周会开始时，顾问需要确认声音、共享画面、复习上节课并请成员说明项目经验。
+- 本课重点场景：第一次进入客户会议室/线上会议，需要自我介绍、确认会议目的、礼貌离开。
 - 本课 input：agenda、前回宿題、成员状态
 - 本课 system action：共享画面并推进复习
 - 本课 output：会议进入主议题并留下行动项

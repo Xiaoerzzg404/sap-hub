@@ -1,0 +1,167 @@
+# sap-jp.training 站点 Ledger 快照
+
+- schemaVersion: 1.0.0
+- siteId: sap-jp.training-local
+- generated_at: 2026-05-21T23:58:19+09:00
+- label: post-verification-site-ledger
+- branch: codex/sap-jp-content-audit-20260521
+- commit: 2ac1869
+- restore_safe: false
+- note: lint/typecheck 验证后；build 被既有 Next generated artifact 问题阻塞
+
+## 本快照记录什么
+
+- `data/` 下内容数据的 hash 与数量。
+- page、API、component、script、library、docs、Project 4 course-source 的文件 hash。
+- 路由清单、预期访问边界和 middleware 覆盖情况。
+- Package scripts 和 dependency names。
+- Git 脏状态，让恢复风险保持显性。
+
+## 数据摘要
+
+- data/\_meta.json: schemaVersion=1.4.0, stats={"tracks":1,"lessons":24,"phrases":480,"shadowing":480,"roleplays":48,"glossaryTerms":583,"libraryItems":6,"totalAssets":240,"japaneseCoachEntries":24}
+- data/assignments.json: array count=96
+- data/glossary.json: array count=583
+- data/japanese-coach.json: lessonEntries=24
+- data/lessons.json: array count=24
+- data/library.json: array count=6
+- data/phrases.json: array count=480
+- data/review-terms.json: array count=127
+- data/roleplays.json: array count=48
+- data/tracks.json: array count=1
+
+## 架构数量
+
+```json
+{
+  "fileCounts": {
+    "course-output": 358,
+    "course-prompt": 30,
+    "course-source": 227,
+    "page": 27,
+    "api-route": 10,
+    "app-support": 2,
+    "layout": 1,
+    "component": 59,
+    "runtime-data": 11,
+    "docs": 5,
+    "config": 14,
+    "library-code": 15,
+    "db-migration": 7,
+    "public-asset": 5,
+    "script": 4,
+    "type": 10
+  },
+  "routeCounts": {
+    "layout": 1,
+    "page": 27,
+    "api": 10
+  },
+  "trackedRoots": [
+    "app",
+    "components",
+    "data",
+    "docs",
+    "lib",
+    "public",
+    "scripts",
+    "types",
+    "../SAP日语培训/output",
+    "../sap_jp_training_course/output",
+    "../sap_jp_training_course/prompts_v4"
+  ],
+  "trackedRootFiles": [
+    "package.json",
+    "package-lock.json",
+    "next.config.ts",
+    "middleware.ts",
+    "tsconfig.json",
+    "tailwind.config.ts",
+    "postcss.config.js",
+    "eslint.config.mjs",
+    "drizzle.config.ts",
+    "vercel.json",
+    "instrumentation.ts",
+    "sentry.client.config.ts",
+    "sentry.edge.config.ts",
+    "sentry.server.config.ts"
+  ]
+}
+```
+
+## 健康状态
+
+- WARNING working_tree_dirty: 工作区有 32 个未提交路径；该 snapshot 只能用于观察，不能作为干净恢复锚点。
+
+## 脏工作区
+
+- M logs/content-source-report.md
+- M projects/4-sap-training/sap_jp_training_course/output/lesson_02_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md
+- M projects/4-sap-training/sap_jp_training_course/output/lesson_03_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md
+- M projects/4-sap-training/sap_jp_training_course/output/lesson_21_v4_teacher_focused/01_teacher_core/01_teacher_full_script_slide_by_slide.md
+- M projects/4-sap-training/state/sap_jp_training_course.json
+- M projects/4-sap-training/web/components/layout/MobileNav.tsx
+- M projects/4-sap-training/web/components/layout/Sidebar.tsx
+- M projects/4-sap-training/web/components/lesson/TermCard.tsx
+- M projects/4-sap-training/web/data/\_meta.json
+- M projects/4-sap-training/web/data/lessons.json
+- M projects/4-sap-training/web/data/phrases.json
+- M projects/4-sap-training/web/docs/ADMIN_OPS.md
+- M projects/4-sap-training/web/docs/SITE_ARCHITECTURE.md
+- M projects/4-sap-training/web/middleware.ts
+- M projects/4-sap-training/web/package.json
+- M projects/4-sap-training/web/scripts/convert-content.mjs
+- M projects/4-sap-training/web/scripts/generate-tts.mjs
+- ?? projects/4-sap-training/inbox/handoff-tts-audio-recordings-20260521.md
+- ?? projects/4-sap-training/inbox/need-input-tts-public-deploy-20260521.md
+- ?? projects/4-sap-training/logs/tts-recording-report-20260521.md
+- ?? projects/4-sap-training/web/app/admin/page.tsx
+- ?? projects/4-sap-training/web/docs/SITE_CHANGE_LEDGER.md
+- ?? projects/4-sap-training/web/lib/admin/ops-dashboard.ts
+- ?? projects/4-sap-training/web/ops/site-ledger/CHANGELOG.md
+- ?? projects/4-sap-training/web/ops/site-ledger/README.md
+- ?? projects/4-sap-training/web/ops/site-ledger/REBUILD_PLAN.md
+- ?? projects/4-sap-training/web/ops/site-ledger/config.json
+- ?? projects/4-sap-training/web/ops/site-ledger/latest.json
+- ?? projects/4-sap-training/web/ops/site-ledger/reports/2026-05-21T14-54-05-690Z\_\_initial-site-ledger.md
+- ?? projects/4-sap-training/web/ops/site-ledger/snapshots/2026-05-21T14-54-05-690Z\_\_initial-site-ledger.json
+- ?? projects/4-sap-training/web/public/audio/audio-manifest.json
+- ?? projects/4-sap-training/web/scripts/site-ledger.mjs
+
+## 相比上一个快照的变化
+
+## 文件
+
+- added: 0
+- removed: 0
+- changed: 4
+
+### 新增
+
+- 无。
+
+### 移除
+
+- 无。
+
+### 变更
+
+- projects/4-sap-training/web/data/\_meta.json (runtime-data)
+- projects/4-sap-training/web/lib/admin/ops-dashboard.ts (library-code)
+- projects/4-sap-training/web/scripts/convert-content.mjs (script)
+- projects/4-sap-training/web/scripts/site-ledger.mjs (script)
+
+## 路由
+
+- 路由无变化。
+
+## 数据数量
+
+- 数据数量无变化。
+
+## AI 快速上下文
+
+- 最新机器可读 snapshot：`projects/4-sap-training/web/ops/site-ledger/latest.json`
+- 历史 snapshots：`projects/4-sap-training/web/ops/site-ledger/snapshots/`
+- 人类可读报告：`projects/4-sap-training/web/ops/site-ledger/reports/`
+- 恢复指南：运行 `npm run ledger:rebuild-plan`

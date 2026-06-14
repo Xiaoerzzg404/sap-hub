@@ -1,0 +1,71 @@
+agents:
+  - id: 00_orchestrator
+    name: 总控战略导师
+    file: agents/00_orchestrator.md
+    type: core
+    keywords: [战略, 优先级, 聚焦, 计划, 总控, 取舍]
+  - id: 01_positioning
+    name: 职业定位与市场战略导师
+    file: agents/01_positioning.md
+    type: professional
+    keywords: [职业, 定位, 市场, 个人品牌, 差异化, 岗位, 简历]
+  - id: 02_s4hana_finance
+    name: S/4HANA Finance 深化导师
+    file: agents/02_s4hana_finance.md
+    type: professional
+    keywords: [月结, 关账, FI, CO, AP, AR, 资产, 成本, Universal Journal, 总账, 管理会计]
+  - id: 03_sap_business_ai
+    name: SAP Business AI / Joule 导师
+    file: agents/03_sap_business_ai.md
+    type: professional
+    keywords: [AI, Joule, Generative AI, Business AI, copilot, 智能助手]
+  - id: 04_btp_clean_core
+    name: BTP / Clean Core 架构导师
+    file: agents/04_btp_clean_core.md
+    type: professional
+    keywords: [BTP, Clean Core, API, Integration, extension, side-by-side, 架构]
+  - id: 05_finance_ai_usecases
+    name: Finance AI 用例设计导师
+    file: agents/05_finance_ai_usecases.md
+    type: professional
+    keywords: [用例, 场景, Finance AI, 业务价值, pain point, ROI, 自动化]
+  - id: 06_demo_poc
+    name: Demo / PoC 制作教练
+    file: agents/06_demo_poc.md
+    type: professional
+    keywords: [Demo, PoC, 原型, 演示, demo, poc, prototype, 可展示]
+  - id: 07_data_cfo_reporting
+    name: 数据分析与 CFO 报表导师
+    file: agents/07_data_cfo_reporting.md
+    type: professional
+    keywords: [数据, CFO, 报表, KPI, 分析, dashboard, SAC, 财务分析]
+  - id: 08_ai_governance
+    name: AI 治理 / 安全 / 权限导师
+    file: agents/08_ai_governance.md
+    type: professional
+    keywords: [权限, 安全, 审计, 治理, 合规, 风险, 数据保护, 访问控制]
+  - id: 09_japanese_presales
+    name: 日语商务沟通与售前导师
+    file: agents/09_japanese_presales.md
+    type: professional
+    keywords: [日语, 提案, 客户, Workshop, 面试, 售前, 商谈, 日本项目]
+  - id: 10_course_productization
+    name: 知识产品化与课程设计导师
+    file: agents/10_course_productization.md
+    type: professional
+    keywords: [课程, 训练营, 文章, 模板, 教材, 知识产品, 内容]
+  - id: 11_certification_roadmap
+    name: 认证与学习路线规划导师
+    file: agents/11_certification_roadmap.md
+    type: professional
+    keywords: [认证, 考试, 学习路线, certification, 备考, 证书]
+  - id: 12_business_model
+    name: 商业化与产品设计导师
+    file: agents/12_business_model.md
+    type: professional
+    keywords: [商业化, 收费, 咨询包, 服务产品, 定价, 产品设计, 变现]
+  - id: 13_weekly_review
+    name: 周复盘与执行教练
+    file: agents/13_weekly_review.md
+    type: core
+    keywords: [复盘, 执行, 周计划, 阻碍, 产出, 下周]

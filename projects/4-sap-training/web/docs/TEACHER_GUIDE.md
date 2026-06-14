@@ -1,36 +1,43 @@
 # TEACHER_GUIDE · 讲师使用手册
 
 - updated_by: codex
-- updated_at: 2026-05-21T12:10:00+09:00
+- updated_at: 2026-05-22T08:46:38+09:00
 - audience: SAP 日语训练营讲师
 
 ## 1. 登录与权限
 
-讲师也使用 magic link 登录。
+讲师使用邮箱/用户名 + 密码登录。
 
 1. 打开 `https://sap-jp.training/login`。
-2. 输入讲师邮箱。
-3. 勾选隐私政策。
-4. 点击邮件里的确认登录链接。
-5. 进入 `/teacher`。
+2. 如果讲师账号尚未设置密码，请先让 admin 确认是新账号还是历史无密码账号。
+3. 登录时输入邮箱或用户名，再输入密码。
+4. 登录成功后，拥有 `teacher` 角色的用户进入 `/teacher`。
 
-讲师权限不能自己申请，也没有前台 self-promote endpoint。
+讲师权限不能自己申请，也没有前台 self-promote endpoint。角色是多角色模型，一个用户可以同时拥有 `student`、`teacher`、`admin`。
 
-Ryan 或 admin 必须在数据库里手动把用户角色改成 `teacher`：
+账号开通边界：
+
+- 新讲师可先用管理员发放的邀请码注册为学生账号，然后由 admin 用 SQL 授予 `teacher`。
+- 既有 magic-link 历史账号如果没有密码，不能直接公开注册认领；admin 需临时发放一次性 `ACCOUNT_CLAIM_TOKEN`，认领完成后轮换或移除。
+- admin 角色只能由 Ryan/admin 手动授予，不通过前台注册获得。
+
+Ryan 或 admin 必须在数据库里手动授予 `teacher` 角色：
 
 ```sql
-update users
-set role = 'teacher', updated_at = now()
-where email = 'teacher@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'teacher', 'admin'
+from users
+where email = 'teacher@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-admin 角色同理必须手动 SQL 设置，不允许从前台开放。
+admin 角色同理必须手动 SQL 设置，不允许从前台开放。旧的 `users.role` 只作为主角色兼容字段。
 
 ## 2. 讲师能看什么
 
 讲师页面包括：
 
-- `/teacher`：课程资料浏览、待复核术语入口、录音作业入口。
+- `/teacher`：Teacher Coach、课程资料浏览、待复核术语入口、录音作业入口。
 - `/teacher/recordings`：学生录音列表。
 - `/teacher/recordings/:id`：单条录音详情和反馈表。
 - `/teacher/review-terms`：待复核术语表。
@@ -99,7 +106,25 @@ admin 角色同理必须手动 SQL 设置，不允许从前台开放。
 - 需要 Ryan 判断的项目，保留 `mustReview` 或在课后记录给 admin。
 - 不把课程噪音、片头片尾、广告语当成正式日语素材。
 
-## 6. 删除与隐私
+## 6. Teacher Coach 使用原则
+
+Teacher Coach 是给第一次做 SAP 日语老师的人看的，不是给学生看的讲义。讲师上课前必须先选中本课，按以下顺序备课：
+
+1. 读“本课教学使命”，确认这节课要训练的顾问动作。
+2. 读“核心流程”，把 4 个日语动作各读 3 遍。
+3. 看 mini dialogue，只保留一个主场景，不临场扩展太多。
+4. 看 rewrite challenge，准备纠正学生最常犯的中式表达。
+5. 上课最后必须让学生完成 output task 录音。
+
+讲师铁律：
+
+- 不把课程讲成普通商务日语课。
+- 不把 SAP 事实讲成未经确认的确定结论。
+- 不接受学生只说术语、中文意思或 `確認します`。
+- 每次纠错只抓一个最影响项目可信度的问题。
+- 每节课必须留下可复盘录音。
+
+## 7. 删除与隐私
 
 学生可以删除自己的录音。
 
@@ -112,11 +137,11 @@ admin 角色同理必须手动 SQL 设置，不允许从前台开放。
 
 讲师不要把学生录音下载、转发或贴到公开群。若需要教学案例，必须先征得学生明确同意并做匿名化处理。
 
-## 7. 常见问题
+## 8. 常见问题
 
 看不到学生：
 
-- 确认讲师账号 role 是 `teacher`。
+- 确认讲师账号在 `user_roles` 里包含 `teacher`。
 - 确认班级的 `teacher_id` 是当前讲师 user id。
 - 确认学生 enrollment 状态是 `active`。
 

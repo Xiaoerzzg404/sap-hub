@@ -1,0 +1,63 @@
+categories:
+  - id: sap_project
+    name: SAP项目现金流
+    daily_score_module: SAP项目
+    max_score: 25
+    purpose: 保证当前项目交付、信誉和现金流安全。
+    obsidian_tags:
+      - life-os/sap-project
+      - sap/fico
+
+  - id: sap_ai
+    name: SAP AI能力
+    daily_score_module: SAP AI
+    max_score: 20
+    purpose: 每天推进 SAP × AI 能力升级，把工具能力转成顾问效率。
+    obsidian_tags:
+      - life-os/sap-ai
+      - ai-learning
+
+  - id: knowledge
+    name: SAP知识库
+    daily_score_module: 知识库
+    max_score: 15
+    purpose: 把项目经验、学习材料和案例沉淀成可复用 Obsidian 知识资产。
+    obsidian_tags:
+      - life-os/knowledge
+      - obsidian
+
+  - id: self_media
+    name: Walldorf来信自媒体
+    daily_score_module: 自媒体
+    max_score: 15
+    purpose: 用长期可信内容建立 SAP 顾问信任资产。
+    obsidian_tags:
+      - life-os/self-media
+      - walldorf-letter
+
+  - id: speaking
+    name: 口播训练
+    daily_score_module: 口播训练
+    max_score: 10
+    purpose: 训练稳定表达、日语/中文口播和镜头感。
+    obsidian_tags:
+      - life-os/speaking
+      - voiceover
+
+  - id: second_life
+    name: 第二人生基地
+    daily_score_module: 第二人生
+    max_score: 5
+    purpose: 研究和准备承载家庭幸福、周末基地与未来资产的第二人生物件。
+    obsidian_tags:
+      - life-os/second-life
+      - family-base
+
+  - id: health_family
+    name: 家庭与健康
+    daily_score_module: 身体家庭
+    max_score: 10
+    purpose: 维持身体、睡眠、亲子陪伴和家庭情绪质量。
+    obsidian_tags:
+      - life-os/family-health
+      - health

@@ -1,18 +1,28 @@
-# SAP 日语培训：第 23 课《SAP版本确认、前台操作与Fiori经验说明》
+# SAP 日语培训：第 23 课《跨部门协作日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：跨部门协作日语
+- 真实日本 SAP 项目场景：FI和SD对同一个发票问题看法不同，PM要求今天定方向。顾问需要组织协调并争取关键人员参加。
+- 对应项目阶段：Cross-functional issue alignment
+- 初级顾问必须听懂的关键词：論点整理 / 関係者 / 優先度 / エスカレーション / 合意形成
+- 学生可交付输出：FI/SD跨模块问题中整理论点、协调关键人员并形成方向
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：SAP version、company code、document number、fiscal year、SAP Fiori
-- 迁移后的 SAP 日语课主题：用日语边操作边说明系统版本和凭证查询条件
-- 对应 SAP 模块：FI / Basis / Fiori
-- 对应项目阶段：Support / Training
-- 对应顾问能力：指导用户查询版本、输入字段并理解查询条件
-- 对应日语能力：系统操作说明、画面引导、字段解释
-- 本课最终输出任务：完成一次凭证查询操作说明
+- 迁移后的 SAP 日语课主题：跨部门协作日语
+- 对应 SAP 模块：FI / SD / PMO / Cross-functional issue
+- 对应项目阶段：Cross-functional issue alignment
+- 对应顾问能力：协调FI/SD跨模块问题并形成当天处理方向
+- 对应日语能力：跨模块论点整理、人员协调、合意形成
+- 本课最终输出任务：FI/SD跨模块问题中整理论点、协调关键人员并形成方向
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：顾问在前台操作时，需要向用户说明公司代码、凭证号、会计年度和版本/Fiori经验。
+- 本课重点场景：FI和SD对同一个发票问题看法不同，PM要求今天定方向。顾问需要组织协调并争取关键人员参加。
 - 本课 input：company code、document number、fiscal year
 - 本课 system action：系统按条件查询凭证或版本信息
 - 本课 output：查询结果、截图、操作记录
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 发票校验 | invoice verification | 請求書照合 | せいきゅうしょしょうごう | AP处理 | 与三点照合相关。 |
+| 论点整理 | issue framing | 論点整理 | ろんてんせいり | 跨模块协调 | 先把争议点、事实、影响和选择项分开。 |
+| 相关人员 | stakeholders | 関係者 | かんけいしゃ | 会议组织 | FI、SD、MM、Basis、PM、客户Key User等。 |
+| 优先级 | priority | 優先度 | ゆうせんど | 冲突处理 | 按业务影响、上线风险、期限判断。 |
+| 升级 | escalation | エスカレーション | えすかれーしょん | 阻塞处理 | 不是告状，是把决策提升到正确层级。 |
+| 达成一致 | agreement building | 合意形成 | ごういけいせい | 会议结论 | 形成方向、责任人和后续动作。 |
 
 ## 5. 顾问日语句型库
 

@@ -1,0 +1,33 @@
+daily_score:
+  SAP项目: 25
+  SAP_AI: 20
+  知识库: 15
+  自媒体: 15
+  口播训练: 10
+  第二人生: 5
+  身体家庭: 10
+
+hard_caps:
+  - condition: "SAP_AI学习不足30分钟"
+    max_score: 80
+  - condition: "SAP项目出现明显拖延或交付风险"
+    max_score: 75
+  - condition: "熬夜到1点以后"
+    max_score: 85
+  - condition: "没有任何知识沉淀"
+    max_score: 90
+  - condition: "因副业影响家庭情绪"
+    max_score: 80
+
+monthly_targets:
+  average_score: 80
+  sap_ai_days: 22
+  knowledge_cards: 20
+  videos: 8
+  speaking_practice: 8
+  course_files: 4
+  family_activities: 8
+  exercise_times: 8
+  second_life_research: 1
+  late_night_max: 6
+

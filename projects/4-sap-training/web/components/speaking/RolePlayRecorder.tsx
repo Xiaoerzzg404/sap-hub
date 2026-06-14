@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { RolePlay } from "@/types/lesson";
 import { RecordingPanel } from "@/components/audio/RecordingPanel";
 import { SelfAssessmentForm } from "./SelfAssessmentForm";
+import { TeacherFeedbackInline } from "./TeacherFeedbackInline";
 
 export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
   const [mode, setMode] = useState<"A" | "B" | "full">("full");
@@ -28,7 +29,9 @@ export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
           <p className="mt-1 text-sm">{rolePlay.roleA}</p>
         </div>
         <div className="rounded-lg border border-line bg-mist p-3">
-          <p className="text-xs font-semibold text-sap">角色 B：业务用户 / PM / Basis / ABAP / Key User</p>
+          <p className="text-xs font-semibold text-sap">
+            角色 B：业务用户 / PM / Basis / ABAP / Key User
+          </p>
           <p className="mt-1 text-sm">{rolePlay.roleB}</p>
         </div>
       </div>
@@ -44,15 +47,25 @@ export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
       </div>
       <div className="rounded-lg border border-line">
         {rolePlay.dialogue.map((line, index) => (
-          <div key={`${line.role}-${index}`} className="grid grid-cols-[72px_1fr] gap-3 border-b border-line p-3 last:border-b-0">
+          <div
+            key={`${line.role}-${index}`}
+            className="grid grid-cols-[72px_1fr] gap-3 border-b border-line p-3 last:border-b-0"
+          >
             <span className="font-semibold text-sap">角色 {line.role}</span>
-            <span lang="ja" className="text-sm leading-relaxed text-ink">{line.text}</span>
+            <span lang="ja" className="text-sm leading-relaxed text-ink">
+              {line.text}
+            </span>
           </div>
         ))}
       </div>
       <div className="flex flex-wrap gap-2">
         {(["full", "A", "B"] as const).map((nextMode) => (
-          <button key={nextMode} type="button" className={mode === nextMode ? "btn-primary" : "btn-secondary"} onClick={() => setMode(nextMode)}>
+          <button
+            key={nextMode}
+            type="button"
+            className={mode === nextMode ? "btn-primary" : "btn-secondary"}
+            onClick={() => setMode(nextMode)}
+          >
             {nextMode === "full" ? "整段录音" : `角色 ${nextMode} 录音`}
           </button>
         ))}
@@ -65,7 +78,7 @@ export function RolePlayRecorder({ rolePlay }: { rolePlay: RolePlay }) {
         onSaved={(recording) => setLastRecordingId(recording.id)}
       />
       <SelfAssessmentForm recordingId={lastRecordingId} />
-      <div className="rounded-lg border border-line bg-mist p-3 text-sm text-slate-600">讲师点评占位：可接入后端后显示评分、纠错表达和重录建议。</div>
+      <TeacherFeedbackInline recordingId={lastRecordingId} />
     </div>
   );
 }

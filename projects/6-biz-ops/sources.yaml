@@ -1,11 +1,33 @@
 meta:
   owner: user
-  updated_by: claude-code
-  note: "经营 Project 主要消费 1-5 号产出，无独立外部信源"
+  updated_by: codex
+  updated_at: "2026-05-23T23:46:43+09:00"
+  note: "经营 Project 主要消费 1-5 号产出；本轮补充 SAP AI、人才短缺和日本人材服务合规公开来源"
 upstream:
   - "projects/1-ai-intel/"
   - "projects/2-sap-intel/"
   - "projects/3-sap-content/"
   - "projects/4-sap-training/"
   - "projects/5-sap-talent/"
-sources: []
+sources:
+  - title: "SAP News Center: SAP Unveils the Autonomous Enterprise"
+    url: "https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/"
+    use: "确认 SAP 2026 Business AI、Joule agents、Business Data Cloud 等方向"
+  - title: "SAP News Center: SAP Business AI Release Highlights Q1 2026"
+    url: "https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/"
+    use: "确认 SAP Business AI 在 Finance 和 S/4HANA Cloud 场景的近期能力"
+  - title: "SAP Business AI / Joule"
+    url: "https://www.sap.com/products/artificial-intelligence.html"
+    use: "确认 Joule Agents、SAP Business AI Platform 和企业治理定位"
+  - title: "IPA: AI 時代のデジタル人材育成"
+    url: "https://www.ipa.go.jp/digital/chousa/discussion-paper/j5u9nn000000abx5-att/dx2025_digital_talent_ai_era.pdf"
+    use: "确认日本 DX/AI 人才育成和不足趋势"
+  - title: "METI: IT 人材需給に関する調査概要"
+    url: "https://www.meti.go.jp/policy/it_policy/jinzai/gaiyou.pdf"
+    use: "确认 IT 人材需給ギャップ长期背景"
+  - title: "厚生労働省: 労働者派遣事業について"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/roudoushahakennjigyou.html"
+    use: "确认派遣业务许可和报告等合规边界"
+  - title: "厚生労働省: 募集情報等提供と職業紹介の区分"
+    url: "https://www.mhlw.go.jp/stf/shoukaibosyuukubun.html"
+    use: "确认信息提供与职业介绍边界"

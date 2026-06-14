@@ -1,18 +1,28 @@
-# SAP 日语培训：第 12 课《S/4HANA成本要素、Scope与客户需求管理》
+# SAP 日语培训：第 12 课《日本SAP核心模块需求》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第12-13节；本课取前半段CO、scope和需求管理内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本SAP核心模块需求
+- 真实日本 SAP 项目场景：模拟日本SAP面试：用日语介绍自己的模块经验和项目价值。
+- 对应项目阶段：Interview / Module positioning
+- 初级顾问必须听懂的关键词：担当モジュール / 業務領域 / 成果 / 制約条件 / レビュー
+- 学生可交付输出：模块经验与项目价值的日语面试回答
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：secondary cost element、S4HANA、scope、customer requirement management
-- 迁移后的 SAP 日语课主题：用日语说明FI/CO需求、范围与成本要素问题
-- 对应 SAP 模块：FI / CO
-- 对应项目阶段：Requirement / Design
-- 对应顾问能力：区分需求、范围、配置对象和S/4变化
-- 对应日语能力：范围确认、专业解释、面试回答
-- 本课最终输出任务：说明一个CO相关需求是否在范围内
+- 迁移后的 SAP 日语课主题：日本SAP核心模块需求
+- 对应 SAP 模块：FICO / MM / SD / Common
+- 对应项目阶段：Interview / Module positioning
+- 对应顾问能力：完成日语模块经验面试回答
+- 对应日语能力：模块经验与项目价值说明
+- 本课最终输出任务：模块经验与项目价值的日语面试回答
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户提出CO相关需求，但范围和S/4HANA处理方式还未确认，顾问要稳住边界。
+- 本课重点场景：模拟日本SAP面试：用日语介绍自己的模块经验和项目价值。
 - 本课 input：成本要素、管理会计需求、实施范围
 - 本课 system action：S/4HANA中配置/主数据对象被确认
 - 本课 output：范围判断和待确认事项

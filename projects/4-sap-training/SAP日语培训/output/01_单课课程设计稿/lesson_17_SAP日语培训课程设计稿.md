@@ -1,18 +1,28 @@
-# SAP 日语培训：第 17 课《Enhancement、Customer Table与开发需求确认》
+# SAP 日语培训：第 17 课《SAP Basis模块配置日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：SAP Basis模块配置日语
+- 真实日本 SAP 项目场景：测试无法执行，可能是传输未反映、权限不足或后台作业失败。应用顾问需要向Basis提出明确调查请求。
+- 对应项目阶段：Build-Test / Basis investigation request
+- 初级顾问必须听懂的关键词：移送 / 権限 / バックグラウンドジョブ / 環境 / Basis依頼
+- 学生可交付输出：向Basis明确提出移送、权限、后台作业或环境调查请求
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：customer tables、customer program、enhancement、requirement discussion
-- 迁移后的 SAP 日语课主题：用日语确认ABAP/扩展开发需求和标准替代可能性
-- 对应 SAP 模块：ABAP / Enhancement
-- 对应项目阶段：Design / Build
-- 对应顾问能力：追问功能、表、程序、增强点和影响范围
-- 对应日语能力：技术顾问沟通、范围确认、风险说明
-- 本课最终输出任务：完成一次开发需求确认Role Play
+- 迁移后的 SAP 日语课主题：SAP Basis模块配置日语
+- 对应 SAP 模块：Basis / Application / Testing
+- 对应项目阶段：Build-Test / Basis investigation request
+- 对应顾问能力：提出移送、权限、Job、环境相关的明确调查请求
+- 对应日语能力：向Basis提出调查请求、说明现象和证迹
+- 本课最终输出任务：向Basis明确提出移送、权限、后台作业或环境调查请求
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：用户提出新功能，顾问需要判断是标准功能、enhancement还是customer program。
+- 本课重点场景：测试无法执行，可能是传输未反映、权限不足或后台作业失败。应用顾问需要向Basis提出明确调查请求。
 - 本课 input：功能需求、字段、表、画面、触发条件
 - 本课 system action：开发或增强被评估并进入设计
 - 本课 output：技术确认清单和影响范围
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 传输 | transport | 移送 | いそう | Basis/环境 | 配置或开发从开发机传到测试机/生产机。 |
+| 权限 | authorization | 権限 | けんげん | 测试无法执行 | 权限不足时要说明用户、角色、对象和错误画面。 |
+| 后台作业 | background job | バックグラウンドジョブ | ばっくぐらうんどじょぶ | 批处理/运维 | 说明Job名、执行时间、状态和日志。 |
+| 验证环境 | test environment | 検証環境 | けんしょうかんきょう | 测试准备 | 区分开发、测试、准生产、本番环境。 |
+| 调查请求 | investigation request | 調査依頼 | ちょうさいらい | 向Basis请求 | 必须带现象、时间、用户、环境、截图或日志。 |
 
 ## 5. 顾问日语句型库
 

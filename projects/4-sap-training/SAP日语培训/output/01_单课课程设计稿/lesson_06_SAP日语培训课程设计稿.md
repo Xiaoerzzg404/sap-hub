@@ -1,18 +1,28 @@
-# SAP 日语培训：第 06 课《三点照合、统制科目与会计联动》
+# SAP 日语培训：第 06 课《日本企业整体信息化架构》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第5-6节；本课取后半段三点照合、统制科目、会计联动内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本企业整体信息化架构
+- 真实日本 SAP 项目场景：向新参画成员说明客户系统架构：SAP、MES、WMS、E-commerce、会计报表系统如何连接。
+- 对应项目阶段：Architecture onboarding
+- 初级顾问必须听懂的关键词：周辺システム / インターフェース / 連携 / 会計レポート / システム構成
+- 学生可交付输出：SAP与周边系统架构的1分钟说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：three-way match、reconciliation account、invoice、debit/payment
-- 迁移后的 SAP 日语课主题：用日语说明三点照合和MM/FI会计联动
-- 对应 SAP 模块：MM / FI
-- 对应项目阶段：Design / Testing
-- 对应顾问能力：解释PO、GR、Invoice与会计凭证关系
-- 对应日语能力：流程说明、差异说明、面试回答
-- 本课最终输出任务：90秒说明三点照合与会计影响
+- 迁移后的 SAP 日语课主题：日本企业整体信息化架构
+- 对应 SAP 模块：Common / Architecture / Integration
+- 对应项目阶段：Architecture onboarding
+- 对应顾问能力：说明SAP与MES/WMS/EC/会计报表系统连接
+- 对应日语能力：系统架构说明、周边系统连接说明
+- 本课最终输出任务：SAP与周边系统架构的1分钟说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：业务用户问为什么发票不能过账，顾问要确认PO、GR、Invoice三点是否一致。
+- 本课重点场景：向新参画成员说明客户系统架构：SAP、MES、WMS、E-commerce、会计报表系统如何连接。
 - 本课 input：PO、GR、Invoice、供应商主数据
 - 本课 system action：系统执行三点照合并生成/阻止过账
 - 本课 output：差异原因和下一步确认项

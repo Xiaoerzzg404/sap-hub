@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { requireRoles } from "@/lib/auth/guards";
 import { getAllLessons } from "@/lib/content/lessons";
 import { LessonNav } from "@/components/layout/LessonNav";
 
 export default async function CoursesPage() {
+  await requireRoles(["student", "teacher"], "/courses");
   const allLessons = await getAllLessons();
 
   return (

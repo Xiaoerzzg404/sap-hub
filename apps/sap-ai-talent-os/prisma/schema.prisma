@@ -1,0 +1,225 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Consultant {
+  id                         String                  @id @default(cuid())
+  createdAt                  DateTime                @default(now())
+  updatedAt                  DateTime                @updatedAt
+  name                       String
+  location                   String
+  workCountriesTimezones     String
+  email                      String?
+  phone                      String?
+  contactNote                String?
+  status                     String
+  source                     String
+  sapModules                 String
+  yearsOfExperience          Int                     @default(0)
+  industries                 String
+  representativeProjects     String
+  processes                  String
+  hasS4Hana                  Boolean                 @default(false)
+  hasRollout                 Boolean                 @default(false)
+  hasJapanProject            Boolean                 @default(false)
+  japaneseLevel              String
+  englishLevel               String
+  chineseLevel               String
+  participationModes         String
+  expectedRate               String?
+  availableFrom              DateTime?
+  completedBootcamp          Boolean                 @default(false)
+  passedMockInterview        Boolean                 @default(false)
+  recommendable              Boolean                 @default(false)
+  notes                      String?
+  moduleScore                Int                     @default(0)
+  experienceScore            Int                     @default(0)
+  languageScore              Int                     @default(0)
+  deliveryScore              Int                     @default(0)
+  aiScore                    Int                     @default(0)
+  reliabilityScore           Int                     @default(0)
+  totalScore                 Int                     @default(0)
+  assessments                ConsultantAssessment[]
+  interactions               ConsultantInteraction[]
+  matchRecommendations       MatchRecommendation[]
+}
+
+model ConsultantAssessment {
+  id             String      @id @default(cuid())
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  consultantId   String
+  consultant     Consultant  @relation(fields: [consultantId], references: [id], onDelete: Cascade)
+  assessmentDate DateTime    @default(now())
+  type           String
+  summary        String
+  score          Int?
+  risk           String?
+  nextAction     String?
+}
+
+model ConsultantInteraction {
+  id            String      @id @default(cuid())
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  consultantId  String
+  consultant    Consultant  @relation(fields: [consultantId], references: [id], onDelete: Cascade)
+  interactionAt DateTime    @default(now())
+  channel       String
+  summary       String
+  nextAction    String?
+}
+
+model ClientDemand {
+  id                   String                @id @default(cuid())
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  clientName           String
+  industry             String
+  countryRegion        String
+  projectStage         String
+  requiredModules      String
+  headcount            Int                   @default(1)
+  languageRequirements String
+  workMode             String
+  startDate            DateTime?
+  duration             String
+  budgetRange          String?
+  workContent          String
+  keyRisks             String?
+  needsTraining        Boolean               @default(false)
+  needsPoc             Boolean               @default(false)
+  needsLongTermSupport Boolean               @default(false)
+  status               String
+  notes                String?
+  matchRecommendations MatchRecommendation[]
+}
+
+model MatchRecommendation {
+  id             String        @id @default(cuid())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  matchRunId     String
+  demandId       String
+  demand         ClientDemand  @relation(fields: [demandId], references: [id], onDelete: Cascade)
+  consultantId   String?
+  consultant     Consultant?   @relation(fields: [consultantId], references: [id], onDelete: SetNull)
+  rank           Int
+  score          Int
+  reasons        String
+  risks          String
+  action         String
+  snapshot       String?
+}
+
+model ContentItem {
+  id               String   @id @default(cuid())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  title            String
+  contentType      String
+  topicCategory    String
+  targetReader     String
+  source           String
+  status           String
+  channels         String
+  plannedPublishAt DateTime?
+  actualPublishAt  DateTime?
+  relatedProduct   String?
+  relatedEntity    String?
+  summary          String
+  cta              String
+  notes            String?
+}
+
+model ProductAsset {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  name           String
+  productType    String
+  targetCustomer String
+  stage          String
+  priceRange     String?
+  deliveryFormat String
+  deliverables   String
+  salesMessage   String
+  relatedContent String?
+  relatedDemand  String?
+  notes          String?
+}
+
+model CoachResource {
+  id                     String             @id @default(cuid())
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
+  name                   String
+  type                   String
+  specialty              String
+  contact                String?
+  cooperationMode        String
+  suggestedFrequency     String
+  lastContactDate        DateTime?
+  nextContactDate        DateTime?
+  currentQuestion        String?
+  advice                 String?
+  nextAction             String?
+  notes                  String?
+  interactions           CoachInteraction[]
+}
+
+model CoachInteraction {
+  id            String        @id @default(cuid())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  coachId       String
+  coach         CoachResource @relation(fields: [coachId], references: [id], onDelete: Cascade)
+  interactionAt DateTime      @default(now())
+  question      String
+  advice        String
+  nextAction    String?
+}
+
+model WeeklyReview {
+  id                          String   @id @default(cuid())
+  createdAt                   DateTime @default(now())
+  updatedAt                   DateTime @updatedAt
+  weekStart                   DateTime
+  weekEnd                     DateTime
+  newContentCount             Int      @default(0)
+  newLeadCount                Int      @default(0)
+  newConsultantCount          Int      @default(0)
+  newClientInterviewCount     Int      @default(0)
+  communityActiveCount        Int      @default(0)
+  courseSignupCount           Int      @default(0)
+  enterpriseOpportunityCount  Int      @default(0)
+  recommendableConsultantCount Int     @default(0)
+  weeklyRevenue               Float    @default(0)
+  founderHours                Float    @default(0)
+  completedItems              String
+  biggestProblem              String
+  learning                    String
+  nextMostImportantThing      String
+  nextTop3Todos               String
+  delegatedTasks              String?
+  peopleToAsk                 String?
+  notes                       String?
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  title       String
+  status      String
+  priority    String
+  dueDate     DateTime?
+  sourceType  String?
+  sourceId    String?
+  notes       String?
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四面台 · SAP 早报四面流水线</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#151c24; --panel-2:#1b2530; --line:#26313d;
+  --ink:#e6edf3; --ink-2:#9aa7b4; --ink-3:#5f6e7c;
+  --steel:#4da3b5; --steel-dim:#2e6470;
+  --ok:#54b988; --build:#4da3b5; --warn:#e0a23b; --danger:#d9685a; --idle:#6b7785; --review:#9b8cc4;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+  --r:10px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5}
+a{color:var(--steel);text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+.top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.top h1{font-size:21px;margin:0;letter-spacing:1px}
+.top .sub{color:var(--ink-2);font-size:12.5px}
+.top .gen{margin-left:auto;color:var(--ink-3);font-family:var(--mono);font-size:11px}
+.btn{background:var(--panel-2);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer}
+.btn:hover{border-color:var(--steel-dim)}
+.sec-t{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:1px;text-transform:uppercase;margin:24px 0 10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:880px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid4{grid-template-columns:1fr}}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;position:relative;overflow:hidden}
+.fc .bar{position:absolute;left:0;top:0;bottom:0;width:4px}
+.fc h3{margin:0 0 3px;font-size:13.5px}
+.fc .who{color:var(--ink-3);font-size:11px;font-family:var(--mono);margin-bottom:10px}
+.pill{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:2px 8px;border-radius:20px;border:1px solid;font-weight:600}
+.fc .ev{margin-top:10px;font-size:12px;color:var(--ink-2)}
+.fc .ev code{font-family:var(--mono);font-size:10.5px;color:var(--ink);background:var(--panel-2);padding:1px 5px;border-radius:4px;word-break:break-all}
+.fc .warn{margin-top:9px;font-size:11.5px;color:var(--warn);border-top:1px dashed var(--line);padding-top:8px}
+.fc ul{margin:6px 0 0;padding-left:16px;color:var(--ink-2);font-size:11.5px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--ink-3);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;font-weight:600}
+td .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+tr.day{cursor:pointer}
+tr.day:hover{background:var(--panel-2)}
+tr.det td{background:#0f151c;color:var(--ink-2);font-size:12px}
+.minib{font-family:var(--mono);font-size:10px;padding:1px 6px;border-radius:5px;border:1px solid var(--line);color:var(--ink-2)}
+.feed{display:flex;flex-direction:column;gap:8px}
+.fr{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--danger);border-radius:8px;padding:9px 11px;font-size:12.5px}
+.fr.w{border-left-color:var(--warn)}
+.fr .m{color:var(--ink-3);font-family:var(--mono);font-size:10.5px}
+pre.cmd{background:#0f151c;border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow:auto;font-family:var(--mono);font-size:12px;color:var(--ink);margin:0}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--ink-3);font-size:11px;font-family:var(--mono);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.empty{color:var(--ink-3);padding:20px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>◳ 四面台</h1>
+    <span class="sub">SAP 早报四面一体流水线 · 状态 / 内容 / 发布 / 失败留痕</span>
+    <span class="gen" id="gen">loading…</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <button class="btn" onclick="load()">↻ 刷新</button>
+    <a class="btn" href="/console/console.html">← 控制台</a>
+    <span class="legend" id="legend"></span>
+  </div>
+
+  <div class="sec-t">今日（最新一期）</div>
+  <div class="grid4" id="today"></div>
+
+  <div class="sec-t">失败 / 警告 留痕（近 16 天）</div>
+  <div class="feed" id="fails"></div>
+
+  <div class="sec-t">历史（点行展开详情）</div>
+  <div class="card" style="padding:0;overflow:auto">
+    <table id="hist"><thead><tr>
+      <th>日期</th><th>主早报·公众号</th><th>热点·视频号</th><th>深度稿·公众号</th><th>深度短视频</th><th>已发布</th><th>四面</th>
+    </tr></thead><tbody></tbody></table>
+  </div>
+
+  <div class="sec-t">命令速查（LLM-in-the-loop）</div>
+  <div class="card">
+    <pre class="cmd" id="cmd">cd ~/sap-hub/tools/sap-four-faces
+python3 sap_four_faces.py status   2026-06-15   # 看四面状态
+python3 sap_four_faces.py plan     2026-06-15   # dry-run，看每面要干啥 / 缺啥内容
+python3 sap_four_faces.py run      2026-06-15   # 按序跑；缺内容会停下写 content_request_faceN.md
+python3 sap_four_faces.py finalize 2026-06-15   # 四面全 done 才写 .published
+
+# 刷新本台 ledger（重建近 N 天记录）：
+python3 ledger_build.py --window 16 && python3 sync_dashboard.py</pre>
+  </div>
+</div>
+
+<script>
+const LABELS={face1:["主早报·公众号","Face1 · NEWS 主早报"],face2:["热点·视频号","Face2 · 热点短视频"],face3:["深度稿·公众号","Face3 · 深度稿"],face4:["深度短视频·视频号","Face4 · 深度短视频"]};
+const COLOR={done:"--ok",done_with_skips:"--ok",partial:"--warn",failed:"--danger",blocked:"--danger",content_ready:"--build",running:"--build",needs_content:"--review",pending:"--idle"};
+const CN={done:"完成",done_with_skips:"完成(含跳过)",partial:"部分",failed:"失败",blocked:"阻断",content_ready:"内容就绪",running:"运行中",needs_content:"待内容",pending:"待办"};
+function cvar(s){return getComputedStyle(document.documentElement).getPropertyValue(COLOR[s]||"--idle").trim()}
+function pill(s){const c=cvar(s);return `<span class="pill" style="color:${c};border-color:${c}33;background:${c}14">${CN[s]||s}</span>`}
+function dot(s){return `<span class="dot" style="background:${cvar(s)}"></span>`}
+function evLine(fn,fr){
+  if(fn==="face1"){let s=fr.mediaId?`media_id <code>${fr.mediaId.slice(0,14)}…</code>`:"—";if(fr.items)s+=` · ${fr.items} 条`;if(fr.distribution)s+=`<div style="margin-top:5px;color:var(--ink-3);font-size:11px">${fr.distribution}</div>`;return s;}
+  if(fn==="face2"){return fr.count?`${fr.count} 条视频 · objectId ✓`:"—";}
+  if(fn==="face3"){let n=(fr.articles||[]).length;let t=(fr.articles||[]).map(a=>"· "+(a.title||a.slug).slice(0,22)).slice(0,5).join("<br>");return `${n} 篇<div style="margin-top:5px;color:var(--ink-3);font-size:11px">${t||"—"}</div>`;}
+  if(fn==="face4"){let p=fr.pushedCount||0,b=(fr.blocked||[]).length;return `已推 ${p} 条${b?` · 未推/拦截 ${b}`:""}`;}
+  return "—";
+}
+function renderToday(day){
+  const el=document.getElementById("today");
+  if(!day){el.innerHTML='<div class="empty">暂无数据</div>';return;}
+  el.innerHTML=["face1","face2","face3","face4"].map(fn=>{
+    const fr=day.faces[fn]||{status:"pending"};const c=cvar(fr.status);
+    const warns=(fr.warnings||[]).map(w=>`<div class="warn">⚠ ${w}</div>`).join("");
+    const blocked=(fr.blocked||[]).map(b=>`<li>${b.eid.replace(/^2026-\d\d-\d\d-/,"")}: ${b.reason}</li>`).join("");
+    return `<div class="fc"><div class="bar" style="background:${c}"></div>
+      <h3>${LABELS[fn][0]}</h3><div class="who">${LABELS[fn][1]}</div>
+      ${pill(fr.status)}
+      <div class="ev">${evLine(fn,fr)}</div>
+      ${blocked?`<ul>${blocked}</ul>`:""}${warns}</div>`;
+  }).join("");
+}
+function renderFails(days){
+  const el=document.getElementById("fails");const rows=[];
+  days.forEach(d=>(d.failReasons||[]).forEach(x=>rows.push(Object.assign({date:d.date},x))));
+  if(!rows.length){el.innerHTML='<div class="empty">近 16 天无失败 / 警告记录</div>';return;}
+  el.innerHTML=rows.slice(0,40).map(x=>`<div class="fr ${x.kind==="warning"?"w":""}">
+    <span class="m">${x.date} · ${x.face||""}${x.eid?" · "+x.eid.replace(/^2026-\d\d-\d\d-/,""):""}</span><br>${x.reason||""}</div>`).join("");
+}
+function renderHist(days){
+  const tb=document.querySelector("#hist tbody");
+  tb.innerHTML=days.map((d,i)=>{
+    const cells=["face1","face2","face3","face4"].map(fn=>{const s=(d.faces[fn]||{}).status||"pending";return `<td>${dot(s)}${CN[s]||s}</td>`}).join("");
+    const pub=d.published?`<span class="minib" style="color:var(--ok);border-color:var(--ok)">已发布</span>`:`<span class="minib">未发</span>`;
+    return `<tr class="day" onclick="tog(${i})"><td><b>${d.date}</b></td>${cells}<td>${pub}</td><td>${d.facesDone}/4</td></tr>
+      <tr class="det" id="det${i}" style="display:none"><td colspan="7">${detail(d)}</td></tr>`;
+  }).join("");
+}
+function detail(d){
+  let s="";
+  const f1=d.faces.face1||{},f2=d.faces.face2||{},f3=d.faces.face3||{},f4=d.faces.face4||{};
+  if(f1.mediaId)s+=`主早报 media_id: <code style="font-family:var(--mono)">${f1.mediaId}</code><br>`;
+  if((f2.objectIds||[]).length)s+=`热点视频 objectId: ${f2.objectIds.length} 条<br>`;
+  if((f3.articles||[]).length)s+=`深度稿: `+f3.articles.map(a=>(a.title||a.slug).slice(0,24)).join(" / ")+`<br>`;
+  if((f4.pushed||[]).length)s+=`深度短视频已推: `+f4.pushed.map(p=>p.eid.replace(/^2026-\d\d-\d\d-/,"")).join(" / ")+`<br>`;
+  (d.failReasons||[]).forEach(x=>s+=`<span style="color:${x.kind==="warning"?"var(--warn)":"var(--danger)"}">✗ ${x.face||""} ${x.eid?x.eid.replace(/^2026-\d\d-\d\d-/,""):""}: ${x.reason}</span><br>`);
+  if(d.summaryFile)s+=`<span class="m" style="color:var(--ink-3);font-family:var(--mono);font-size:10.5px">summary: ${d.summaryFile}</span>`;
+  return s||"无更多详情";
+}
+function tog(i){const e=document.getElementById("det"+i);e.style.display=e.style.display==="none"?"":"none";}
+function renderLegend(){
+  document.getElementById("legend").innerHTML=Object.keys(CN).filter(k=>["done","partial","failed","content_ready","needs_content","pending"].includes(k))
+    .map(k=>`<span>${dot(k)}${CN[k]}</span>`).join("");
+}
+async function load(){
+  renderLegend();
+  try{
+    const r=await fetch("./four-faces/ledger.json?t="+Date.now());
+    const d=await r.json();
+    document.getElementById("gen").textContent="生成于 "+(d.generatedAt||"").replace("T"," ").slice(0,19);
+    const days=d.days||[];
+    renderToday(days[0]);
+    renderFails(days);
+    renderHist(days);
+    if(days[0]){document.getElementById("cmd").textContent=document.getElementById("cmd").textContent.replace(/2026-06-15/g,days[0].date);}
+  }catch(e){
+    document.getElementById("gen").textContent="ledger.json 读取失败";
+    document.getElementById("today").innerHTML='<div class="empty">无法加载 ./four-faces/ledger.json — 请先跑 ledger_build.py + sync_dashboard.py</div>';
+  }
+}
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# SAPKB 采集源配置（对齐既有 ~/news/collect/sources.yaml 风格，domain=sapkb）
+domain: sapkb
+harvest_schedule: "30 6 * * *"        # 06:30 JST，避让 19:00/20:30/21:30/22:00
+rate_limit:
+  request_interval_sec: 5
+  max_per_run: 200
+  retry_max: 2
+
+sources:
+  - id: csdn_sap_search
+    platform: csdn
+    type: rsshub
+    queries: ["SAP FICO", "SAP F110", "S/4HANA 财务", "SAP New GL", "SAP CO-PA", "SAP 物料账"]
+    import_mode: metadata_only
+
+  - id: zhihu_sap_columns
+    platform: zhihu
+    type: rsshub
+    # 在此登记你认可的知乎 SAP 专栏 id（示例占位）
+    column_ids: []
+    import_mode: metadata_only
+
+  - id: wechat_sap_accounts
+    platform: wechat
+    type: wewe_rss
+    # 复用你已订阅的 SAP 公众号（示例占位）
+    feed_ids: []
+    import_mode: summary_only
+
+  - id: shipinhao_manual
+    platform: shipinhao
+    type: manual
+    import_mode: metadata_only

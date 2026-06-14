@@ -1,18 +1,28 @@
-# SAP 日语培训：第 18 课《SAP Activate、Best Practice与标准流程角色》
+# SAP 日语培训：第 18 课《测试阶段日语交流》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：测试阶段日语交流
+- 真实日本 SAP 项目场景：Panaya/Jira/Excel中发现测试失败，需要向客户和开发说明问题，并保留Evidence。
+- 对应项目阶段：Testing / Defect management
+- 初级顾问必须听懂的关键词：テストケース / 期待結果 / 実際結果 / エビデンス / 不具合票
+- 学生可交付输出：测试失败时说明事实、期待结果、实际结果、证迹和再测试条件
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：Guided Configuration、SAP Activate、Best Practice、roles/responsibilities
-- 迁移后的 SAP 日语课主题：用日语说明SAP Activate与Best Practice使用方式
-- 对应 SAP 模块：Common / S4HANA
-- 对应项目阶段：Discover / Prepare / Explore
-- 对应顾问能力：说明方法论、标准流程和角色责任
-- 对应日语能力：方法论说明、资料请求、下一步安排
-- 本课最终输出任务：说明SAP Activate中的一个阶段
+- 迁移后的 SAP 日语课主题：测试阶段日语交流
+- 对应 SAP 模块：Testing / Application / Defect management
+- 对应项目阶段：Testing / Defect management
+- 对应顾问能力：说明测试失败事实、期待结果、实际结果、证迹和再测试条件
+- 对应日语能力：缺陷说明、证迹说明、再测试条件确认
+- 本课最终输出任务：测试失败时说明事实、期待结果、实际结果、证迹和再测试条件
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户问如何使用SAP Best Practice和Activate方法推进项目，顾问要说明资料、角色和阶段。
+- 本课重点场景：Panaya/Jira/Excel中发现测试失败，需要向客户和开发说明问题，并保留Evidence。
 - 本课 input：Best Practice内容、客户独自流程、角色职责
 - 本课 system action：标准流程被导入并结合客户流程调整
 - 本课 output：阶段任务、角色分工、确认事项
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 测试用例 | test case | テストケース | てすとけーす | 测试执行 | 包含前提、步骤、期待结果和测试数据。 |
+| 预期结果 | expected result | 期待結果 | きたいけっか | 缺陷判断 | 和实际结果对比，不能只说失败。 |
+| 实际结果 | actual result | 実際結果 | じっさいけっか | 缺陷报告 | 说明实际系统显示、输出、日志或错误。 |
+| 证迹 | evidence | エビデンス | えびでんす | 测试/审计 | 截图、日志、输出文件和执行时间都可以是证迹。 |
+| 缺陷票 | defect ticket | 不具合票 | ふぐあいひょう | 缺陷管理 | 记录现象、再现步骤、优先级、担当和状态。 |
 
 ## 5. 顾问日语句型库
 

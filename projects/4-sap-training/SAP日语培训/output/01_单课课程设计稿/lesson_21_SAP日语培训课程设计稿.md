@@ -1,18 +1,28 @@
-# SAP 日语培训：第 21 课《ECC与S/4HANA架构、Fiori与CVI》
+# SAP 日语培训：第 21 课《办公场景基础对话》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：办公场景基础对话
+- 真实日本 SAP 项目场景：早上突然孩子发烧，需要请上午假；下午参加客户会议前需要请同事代为确认资料。
+- 对应项目阶段：Office coordination / Attendance handover
+- 初级顾问必须听懂的关键词：勤怠連絡 / 代理確認 / 資料確認 / 会議参加 / 引き継ぎ
+- 学生可交付输出：请假和资料代确认的办公室日语表达
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：SAP ECC、S4HANA、SAP GUI、Fiori、simplified data model、CVI
-- 迁移后的 SAP 日语课主题：用日语说明ECC和S/4HANA的架构与体验差异
-- 对应 SAP 模块：S4HANA / Basis / Master Data
-- 对应项目阶段：Conversion / Training
-- 对应顾问能力：解释技术差异、UI差异和CVI强制性
-- 对应日语能力：技术说明、用户培训、追问
-- 本课最终输出任务：说明ECC到S/4HANA的三个主要差异
+- 迁移后的 SAP 日语课主题：办公场景基础对话
+- 对应 SAP 模块：Common / Office coordination
+- 对应项目阶段：Office coordination / Attendance handover
+- 对应顾问能力：完成请假和资料代确认的办公室日语表达
+- 对应日语能力：请假、资料代确认、会前协调
+- 本课最终输出任务：请假和资料代确认的办公室日语表达
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：用户问为什么S/4HANA要使用Fiori和CVI，顾问要用业务能懂的语言解释。
+- 本课重点场景：早上突然孩子发烧，需要请上午假；下午参加客户会议前需要请同事代为确认资料。
 - 本课 input：ECC系统、客户/供应商主数据、UI需求
 - 本课 system action：S/4HANA简化数据模型并采用Fiori
 - 本课 output：差异说明和待确认影响
@@ -89,6 +99,11 @@
 | 采购申请 | purchase requisition / PR | 購買依頼 | こうばいいらい | P2P起点 | PR常与PO对比。 |
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
+| 勤怠联络 | attendance notice | 勤怠連絡 | きんたいれんらく | 办公室沟通 | 请假、迟到、早退都要尽早说明影响。 |
+| 代为确认 | proxy confirmation | 代理確認 | だいりかくにん | 会议前协调 | 请同事代确认资料或会议事项。 |
+| 资料确认 | document check | 資料確認 | しりょうかくにん | 会前准备 | 说明资料版本、缺口和确认期限。 |
+| 会议参加 | meeting attendance | 会議参加 | かいぎさんか | 日程调整 | 说明能否参加、迟到多久、是否需要代理。 |
+| 交接 | handover | 引き継ぎ | ひきつぎ | 临时缺席 | 说明当前状态、下一步、风险和联系人。 |
 
 ## 5. 顾问日语句型库
 

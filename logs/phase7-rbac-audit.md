@@ -1,36 +1,36 @@
-# Phase 7 RBAC Audit · 2026-05-21
+# Phase 7 RBAC 审计 · 2026-05-21
 
 - updated_by: codex
-- updated_at: 2026-05-21T11:50:47+09:00
-- scope: Project 4 web API routes and teacher pages
+- updated_at: 2026-05-22T08:04:26+09:00
+- scope: Project 4 web API 路由与讲师页面
 
-## Result
+## 结论
 
-No RBAC code gaps were found in the Phase 7 audit pass.
+本轮 Phase 7 RBAC 审计没有发现代码层权限缺口。
 
-## API Routes
+## API 路由
 
-| Route | Session | Role | Student isolation / scope |
+| Route | Session | Role | 学员隔离 / 访问范围 |
 |---|---:|---:|---|
-| `app/api/auth/[...nextauth]/route.ts` | Public Auth.js handler | n/a | Auth.js-managed email callback/sign-in flow |
-| `app/api/lessons/[lessonId]/assets/[kind]/route.ts` | 401 if no session | n/a | Content read only, no student row access |
-| `app/api/library/[kind]/route.ts` | 401 if no session | n/a | Content read only, no student row access |
-| `app/api/progress/events/route.ts` | 401 if no session | n/a | GET/POST scoped to `progressEvents.studentId = session.user.id` |
-| `app/api/recordings/route.ts` | 401 if no session | n/a | GET/POST scoped to `recordings.studentId = session.user.id` |
-| `app/api/recordings/sign/route.ts` | 401 if no session | n/a | Insert uses `studentId = session.user.id`; R2 key uses session user prefix |
-| `app/api/recordings/[id]/route.ts` | 401 if no session | n/a | PATCH requires `recordings.id` and `recordings.studentId = session.user.id` |
-| `app/api/teacher/recordings/route.ts` | 401 if no session | 403 unless teacher/admin | Teacher queries are limited to active enrollments; admin can view all |
-| `app/api/teacher/recordings/[id]/feedback/route.ts` | 401 if no session | 403 unless teacher/admin | Teacher feedback requires active enrollment access to the recording's student; admin can access all |
+| `app/api/auth/[...nextauth]/route.ts` | Public Auth.js handler | n/a | Auth.js 管理的 email callback/sign-in flow |
+| `app/api/lessons/[lessonId]/assets/[kind]/route.ts` | 未登录 401 | n/a | 只读内容，不访问学员 row |
+| `app/api/library/[kind]/route.ts` | 未登录 401 | n/a | 只读内容，不访问学员 row |
+| `app/api/progress/events/route.ts` | 未登录 401 | n/a | GET/POST 都限制在 `progressEvents.studentId = session.user.id` |
+| `app/api/recordings/route.ts` | 未登录 401 | n/a | GET/POST 都限制在 `recordings.studentId = session.user.id` |
+| `app/api/recordings/sign/route.ts` | 未登录 401 | n/a | Insert 使用 `studentId = session.user.id`；R2 key 使用 session user prefix |
+| `app/api/recordings/[id]/route.ts` | 未登录 401 | n/a | PATCH 要求 `recordings.id` 且 `recordings.studentId = session.user.id` |
+| `app/api/teacher/recordings/route.ts` | 未登录 401 | 非 teacher/admin 返回 403 | 讲师查询限制在 active enrollment；admin 可查看全部 |
+| `app/api/teacher/recordings/[id]/feedback/route.ts` | 未登录 401 | 非 teacher/admin 返回 403 | 讲师反馈必须拥有该录音学生的 active enrollment 访问权；admin 可访问全部 |
 
-## Teacher Pages
+## 讲师页面
 
-All teacher pages call `auth()` before rendering and redirect non-teacher/non-admin users away from the teacher area:
+所有讲师页面渲染前都会调用 `auth()`，并把非 teacher/admin 用户导离讲师区：
 
 - `app/teacher/page.tsx`
 - `app/teacher/recordings/page.tsx`
 - `app/teacher/recordings/[id]/page.tsx`
 - `app/teacher/review-terms/page.tsx`
 
-## Follow-up Coupled To Later Phase 7 Tasks
+## 与后续 Phase 7 子任务的耦合
 
-Soft-deleted recordings will be filtered from recording list APIs in subtask 6 after the `deleted_at` column exists.
+`deleted_at` column 存在后，子任务 6 会在录音列表 API 中过滤软删除录音。

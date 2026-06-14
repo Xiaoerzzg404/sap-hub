@@ -1,0 +1,1 @@
+"""SAPKB Obsidian sync package."""

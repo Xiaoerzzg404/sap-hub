@@ -1,18 +1,28 @@
-# SAP 日语培训：第 09 课《SD订单处理、报价到开票与流程说明》
+# SAP 日语培训：第 09 课《日本企业信息安全制度》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 第8-9节第二段视频；本课聚焦order processing和billing。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本企业信息安全制度
+- 真实日本 SAP 项目场景：顾问想下载生产数据做调查，但客户安全规则不允许。需要申请脱敏数据或在受控环境中分析。
+- 对应项目阶段：Security / Controlled investigation
+- 初级顾问必须听懂的关键词：本番データ / マスキング / 権限 / 監査証跡 / 統制環境
+- 学生可交付输出：生产数据调查受限时的脱敏数据/受控环境申请
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：customer inquiry、quotation、sales order、shipping、billing
-- 迁移后的 SAP 日语课主题：用日语说明SD从询价到开票的订单处理流程
-- 对应 SAP 模块：SD / FI
-- 对应项目阶段：Design / Training
-- 对应顾问能力：按input-system action-output说明OTC流程
-- 对应日语能力：流程说明、用户培训、步骤确认
-- 本课最终输出任务：用日语讲解一个OTC流程
+- 迁移后的 SAP 日语课主题：日本企业信息安全制度
+- 对应 SAP 模块：Common / Security / Compliance
+- 对应项目阶段：Security / Controlled investigation
+- 对应顾问能力：申请脱敏数据或受控环境调查
+- 对应日语能力：安全规则说明、受控调查申请
+- 本课最终输出任务：生产数据调查受限时的脱敏数据/受控环境申请
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户想了解订单处理全流程，顾问要说明从询价、报价、销售订单、出货到Billing的步骤。
+- 本课重点场景：顾问想下载生产数据做调查，但客户安全规则不允许。需要申请脱敏数据或在受控环境中分析。
 - 本课 input：客户询价、报价、销售订单、出货信息
 - 本课 system action：SAP生成销售凭证并推进后续步骤
 - 本课 output：Billing信息、会计联动、交付状态

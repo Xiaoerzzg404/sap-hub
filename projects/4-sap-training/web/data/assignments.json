@@ -20,7 +20,7 @@
     "lessonId": "lesson_01",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "60秒日语顾问自我介绍",
+    "prompt": "SAP標準と現行业务差异を否定せずに説明する60秒表达",
     "status": "not-started"
   },
   {
@@ -52,7 +52,7 @@
     "lessonId": "lesson_02",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "用日语教用户完成一次SAP登录",
+    "prompt": "差异发现时の责任边界、初动调查、反馈期限说明",
     "status": "not-started"
   },
   {
@@ -84,7 +84,7 @@
     "lessonId": "lesson_03",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "主持5分钟SAP项目会议开场",
+    "prompt": "客户会议开场、自我介绍、会议目的确认",
     "status": "not-started"
   },
   {
@@ -116,7 +116,7 @@
     "lessonId": "lesson_04",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "用日语说明SAP implementation flow",
+    "prompt": "短纳期变更要求への风险说明与替代方案提示",
     "status": "not-started"
   },
   {
@@ -148,7 +148,7 @@
     "lessonId": "lesson_05",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "完成一次P2P需求访谈Role Play",
+    "prompt": "配置确认邮件的敬语表达与补充信息请求",
     "status": "not-started"
   },
   {
@@ -180,7 +180,7 @@
     "lessonId": "lesson_06",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "90秒说明三点照合与会计影响",
+    "prompt": "SAP与周边系统架构的1分钟说明",
     "status": "not-started"
   },
   {
@@ -212,7 +212,7 @@
     "lessonId": "lesson_07",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明一个外部系统回传流程",
+    "prompt": "日本企业IT转型与SAP顾问关注点说明",
     "status": "not-started"
   },
   {
@@ -244,7 +244,7 @@
     "lessonId": "lesson_08",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "完成一次接口需求访谈",
+    "prompt": "主数据不完整导致测试受阻时的影响说明",
     "status": "not-started"
   },
   {
@@ -276,7 +276,7 @@
     "lessonId": "lesson_09",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "用日语讲解一个OTC流程",
+    "prompt": "生产数据调查受限时的脱敏数据/受控环境申请",
     "status": "not-started"
   },
   {
@@ -308,7 +308,7 @@
     "lessonId": "lesson_10",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "完成一次报表需求确认对话",
+    "prompt": "日本SAP市场客户类型与顾问关注点说明",
     "status": "not-started"
   },
   {
@@ -340,7 +340,7 @@
     "lessonId": "lesson_11",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "90秒说明STO业务流程",
+    "prompt": "多公司项目中的职责、确认路径、升级路径说明",
     "status": "not-started"
   },
   {
@@ -372,7 +372,7 @@
     "lessonId": "lesson_12",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明一个CO相关需求是否在范围内",
+    "prompt": "模块经验与项目价值的日语面试回答",
     "status": "not-started"
   },
   {
@@ -404,7 +404,7 @@
     "lessonId": "lesson_13",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明一个跨模块流程边界",
+    "prompt": "能力边界、review需求、质量保证方式说明",
     "status": "not-started"
   },
   {
@@ -436,7 +436,7 @@
     "lessonId": "lesson_14",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "讲解一个测试场景的前提和步骤",
+    "prompt": "Kickoff会议中说明担当范围、客户依赖事项和本周行动项",
     "status": "not-started"
   },
   {
@@ -468,7 +468,7 @@
     "lessonId": "lesson_15",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "处理一个BTP/Fiori追加需求",
+    "prompt": "需求访谈中追问现状、频率、影响、期待改善并整理Fit-Gap",
     "status": "not-started"
   },
   {
@@ -500,7 +500,7 @@
     "lessonId": "lesson_16",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明一项配置变更的测试步骤",
+    "prompt": "配置变更时说明影响范围、测试观点和跨模块确认路径",
     "status": "not-started"
   },
   {
@@ -532,7 +532,7 @@
     "lessonId": "lesson_17",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "完成一次开发需求确认Role Play",
+    "prompt": "向Basis明确提出移送、权限、后台作业或环境调查请求",
     "status": "not-started"
   },
   {
@@ -564,7 +564,7 @@
     "lessonId": "lesson_18",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明SAP Activate中的一个阶段",
+    "prompt": "测试失败时说明事实、期待结果、实际结果、证迹和再测试条件",
     "status": "not-started"
   },
   {
@@ -596,7 +596,7 @@
     "lessonId": "lesson_19",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "主持一次Discover到Prepare阶段说明",
+    "prompt": "上线当天每30分钟汇报进度、风险、对策和下一次更新时间",
     "status": "not-started"
   },
   {
@@ -628,7 +628,7 @@
     "lessonId": "lesson_20",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "2分钟说明ECC与S/4HANA差异",
+    "prompt": "运维障害受付时收集信息、判断影响范围并说明一次切分动作",
     "status": "not-started"
   },
   {
@@ -660,7 +660,7 @@
     "lessonId": "lesson_21",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "说明ECC到S/4HANA的三个主要差异",
+    "prompt": "请假和资料代确认的办公室日语表达",
     "status": "not-started"
   },
   {
@@ -692,7 +692,7 @@
     "lessonId": "lesson_22",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "汇报一个接口错误和再处理计划",
+    "prompt": "需求会议纪要中明确决定事项、未决事项、行动项、期限和负责人",
     "status": "not-started"
   },
   {
@@ -724,7 +724,7 @@
     "lessonId": "lesson_23",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "完成一次凭证查询操作说明",
+    "prompt": "FI/SD跨模块问题中整理论点、协调关键人员并形成方向",
     "status": "not-started"
   },
   {
@@ -756,7 +756,7 @@
     "lessonId": "lesson_24",
     "type": "recording",
     "title": "Shadowing 录音",
-    "prompt": "2分钟日语项目经验说明",
+    "prompt": "配置错误后的事实、影响、暂定处理、根本原因和再发防止汇报",
     "status": "not-started"
   },
   {

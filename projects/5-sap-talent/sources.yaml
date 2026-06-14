@@ -1,7 +1,20 @@
 meta:
   owner: user
-  updated_by: claude-code
-  note: "上游为 4 号成长体系与 3 号引流；人才/企业数据由用户录入"
+  updated_by: codex
+  updated_at: "2026-05-23T23:46:43+09:00"
+  note: "上游为 4 号成长体系与 3 号引流；人才/企业数据由用户录入；外部法规/市场来源仅用于边界和趋势判断"
 upstream:
   - "projects/4-sap-training/"
-sources: []
+sources:
+  - title: "厚生労働省: 労働者派遣事業について"
+    url: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/roudoushahakennjigyou.html"
+    use: "确认派遣业务许可和报告等合规边界"
+  - title: "厚生労働省: 募集情報等提供と職業紹介の区分"
+    url: "https://www.mhlw.go.jp/stf/shoukaibosyuukubun.html"
+    use: "确认求人/求职信息提供与职业介绍之间的边界"
+  - title: "IPA: AI 時代のデジタル人材育成"
+    url: "https://www.ipa.go.jp/digital/chousa/discussion-paper/j5u9nn000000abx5-att/dx2025_digital_talent_ai_era.pdf"
+    use: "确认日本 DX/AI 人才育成和不足趋势"
+  - title: "METI: IT 人材需給に関する調査概要"
+    url: "https://www.meti.go.jp/policy/it_policy/jinzai/gaiyou.pdf"
+    use: "确认日本 IT 人材需給ギャップ长期背景"

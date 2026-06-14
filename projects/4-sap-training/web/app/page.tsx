@@ -1,6 +1,16 @@
 import Link from "next/link";
-import { BookOpen, GraduationCap, Headphones, Mic2, PlayCircle, Repeat2, RotateCcw } from "lucide-react";
+import {
+  BookOpen,
+  GraduationCap,
+  Headphones,
+  Mic2,
+  PlayCircle,
+  Repeat2,
+  RotateCcw,
+} from "lucide-react";
 import { getAllLessons } from "@/lib/content/lessons";
+import { auth } from "@/lib/auth/options";
+import { rolesFromSession } from "@/lib/auth/roles";
 import { ProgressBar } from "@/components/layout/ProgressBar";
 
 const loop = [
@@ -8,31 +18,43 @@ const loop = [
   { label: "读", desc: "Shadowing 跟读，每句至少 3 遍", icon: PlayCircle },
   { label: "录", desc: "浏览器录音，本地 IndexedDB 保存", icon: Mic2 },
   { label: "回放", desc: "回听自己的项目现场表达", icon: Repeat2 },
-  { label: "复盘", desc: "收藏难句、低分自评、待复习术语", icon: RotateCcw }
+  { label: "复盘", desc: "收藏难句、低分自评、待复习术语", icon: RotateCcw },
 ];
 
 export default async function HomePage() {
+  const session = await auth();
+  const roles = rolesFromSession(session);
+  const canStudy = roles.includes("student") || roles.includes("admin");
+  const canTeach = roles.includes("teacher") || roles.includes("admin");
   const allLessons = await getAllLessons();
   const firstLesson = allLessons[0];
   const entries = [
-    {
-      href: `/courses/lessons/${firstLesson?.id ?? "lesson_01"}`,
-      title: "试听 lesson_01",
-      desc: "从术语预热开始走一遍 5 步训练。",
-      icon: PlayCircle
-    },
-    {
-      href: "/teacher",
-      title: "我是讲师",
-      desc: "查看课程资料、待复核术语和质量检查。",
-      icon: GraduationCap
-    },
+    ...(canStudy
+      ? [
+          {
+            href: `/courses/lessons/${firstLesson?.id ?? "lesson_01"}`,
+            title: "试听 lesson_01",
+            desc: "从术语预热开始走一遍 5 步训练。",
+            icon: PlayCircle,
+          },
+        ]
+      : []),
+    ...(canTeach
+      ? [
+          {
+            href: "/teacher",
+            title: "我是讲师",
+            desc: "查看课程资料、待复核术语和质量检查。",
+            icon: GraduationCap,
+          },
+        ]
+      : []),
     {
       href: "/courses",
       title: "24 课大纲",
       desc: "浏览基础线 jp-foundation 全部课次。",
-      icon: BookOpen
-    }
+      icon: BookOpen,
+    },
   ];
 
   return (
@@ -40,17 +62,32 @@ export default async function HomePage() {
       <section className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
         <div className="panel p-6">
           <p className="text-sm font-semibold text-sap">面向成人 SAP 顾问的日本项目口语训练</p>
-          <h2 className="mt-3 max-w-3xl text-4xl font-bold leading-tight text-ink">把 24 课 SAP 日语内容练成能开口、能复盘、能交付的顾问表达。</h2>
+          <h2 className="mt-3 max-w-3xl text-4xl font-bold leading-tight text-ink">
+            把 24 课 SAP 日语内容练成能开口、能复盘、能交付的顾问表达。
+          </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-            这里不是资料站。每课都围绕听、读、录、回放、复盘展开，学生在浏览器里完成 Shadowing、30 秒任务、60 秒顾问输出和 Role Play。
+            这里不是资料站。每课都围绕听、读、录、回放、复盘展开，学生在浏览器里完成 Shadowing、30
+            秒任务、60 秒顾问输出和 Role Play。
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link className="btn-primary" href={`/courses/lessons/${firstLesson?.id ?? "lesson_01"}`}>
-              开始第 01 课
-            </Link>
-            <Link className="btn-secondary" href="/dashboard">
-              查看今日任务
-            </Link>
+            {canStudy ? (
+              <>
+                <Link
+                  className="btn-primary"
+                  href={`/courses/lessons/${firstLesson?.id ?? "lesson_01"}`}
+                >
+                  开始第 01 课
+                </Link>
+                <Link className="btn-secondary" href="/dashboard">
+                  查看今日任务
+                </Link>
+              </>
+            ) : null}
+            {canTeach ? (
+              <Link className="btn-primary" href="/teacher">
+                进入讲师专区
+              </Link>
+            ) : null}
           </div>
         </div>
         <div className="panel space-y-4 p-5">

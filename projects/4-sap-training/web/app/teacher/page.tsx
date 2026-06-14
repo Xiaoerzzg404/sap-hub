@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { Mic, ScrollText } from "lucide-react";
-import { redirect } from "next/navigation";
-import { auth } from "@/lib/auth/options";
+import { requireRoles } from "@/lib/auth/guards";
 import { getAllLessonsWithContent, getReviewTerms } from "@/lib/content/lessons";
+import { getJapaneseCoachData } from "@/lib/japanese-coach";
+import { JapaneseTeacherCoachPanel } from "@/components/teacher/JapaneseTeacherCoachPanel";
 import { ReviewTermsTable } from "@/components/teacher/ReviewTermsTable";
 import { TeacherLessonAssetsBrowser } from "@/components/teacher/TeacherLessonAssetsBrowser";
 
 export default async function TeacherPage() {
-  const session = await auth();
-  if (!session?.user?.id) redirect("/login?callbackUrl=/teacher");
-  if (session.user.role !== "teacher" && session.user.role !== "admin") redirect("/");
+  await requireRoles(["teacher"], "/teacher");
 
-  const [allLessons, allReviewTerms] = await Promise.all([getAllLessonsWithContent(), getReviewTerms()]);
+  const [allLessons, allReviewTerms] = await Promise.all([
+    getAllLessonsWithContent(),
+    getReviewTerms(),
+  ]);
+  const coachData = getJapaneseCoachData();
   const missing = allLessons.filter(
     (lesson) =>
       lesson.terms.length === 0 ||
@@ -67,11 +70,22 @@ export default async function TeacherPage() {
           </div>
         </div>
       </div>
+      <JapaneseTeacherCoachPanel
+        coachData={coachData}
+        lessons={allLessons.map((lesson) => ({
+          id: lesson.id,
+          order: lesson.order,
+          title: lesson.title,
+        }))}
+      />
       <TeacherLessonAssetsBrowser lessons={allLessons} />
       <section className="grid gap-4 md:grid-cols-4">
         <Metric label="课程设计稿" value={`${allLessons.length}`} />
         <Metric label="课堂逐字稿" value={`${allLessons.length}`} />
-        <Metric label="待复核术语" value={`${allReviewTerms.filter((item) => item.mustReview).length}`} />
+        <Metric
+          label="待复核术语"
+          value={`${allReviewTerms.filter((item) => item.mustReview).length}`}
+        />
         <Metric label="缺失课程" value={`${missing.length}`} />
       </section>
       <section className="space-y-3">
@@ -80,15 +94,29 @@ export default async function TeacherPage() {
       </section>
       <section className="space-y-3">
         <h2 className="text-lg font-semibold text-ink">学生录音作业</h2>
-        <Link href="/teacher/recordings" className="panel flex items-center justify-between gap-3 p-4 hover:bg-mist">
-          <span className="text-sm text-slate-600">进入讲师录音列表，听学生录音并提交评分反馈。</span>
+        <Link
+          href="/teacher/recordings"
+          className="panel flex items-center justify-between gap-3 p-4 hover:bg-mist"
+        >
+          <span className="text-sm text-slate-600">
+            进入讲师录音列表，听学生录音并提交评分反馈。
+          </span>
           <Mic className="h-5 w-5 text-sap" />
         </Link>
       </section>
       <section className="panel p-4">
         <h2 className="font-semibold text-ink">课程质量检查表</h2>
-        <p className="mt-2 text-sm text-slate-600">每课检查：课程设计、逐字稿、术语、句型、Shadowing、30秒训练、60秒输出、Role Play、作业、待复核清单。</p>
-        <div className="mt-3 text-sm text-slate-600">{missing.length ? missing.map((lesson) => <p key={lesson.id}>{lesson.id} 内容不足</p>) : <p>24 课均已具备训练站 MVP 数据。</p>}</div>
+        <p className="mt-2 text-sm text-slate-600">
+          每课检查：课程设计、逐字稿、术语、句型、Shadowing、30秒训练、60秒输出、Role
+          Play、作业、待复核清单。
+        </p>
+        <div className="mt-3 text-sm text-slate-600">
+          {missing.length ? (
+            missing.map((lesson) => <p key={lesson.id}>{lesson.id} 内容不足</p>)
+          ) : (
+            <p>24 课均已具备训练站 MVP 数据。</p>
+          )}
+        </div>
       </section>
     </div>
   );

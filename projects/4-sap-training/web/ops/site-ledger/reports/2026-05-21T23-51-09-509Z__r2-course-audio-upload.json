@@ -1,0 +1,21 @@
+{
+  "uploadedAt": "2026-05-21T23:51:09.509Z",
+  "dryRun": false,
+  "bucketConfigured": true,
+  "publicBaseEnv": "NEXT_PUBLIC_COURSE_AUDIO_BASE_URL",
+  "publicBaseConfigured": false,
+  "prefix": "course-audio/20260521",
+  "counts": {
+    "total": 1543,
+    "uploaded": 1543,
+    "failed": 0
+  },
+  "bytes": 63980702,
+  "sampleKeys": [
+    "course-audio/20260521/phrase/lesson_01-phrase-001.mp3",
+    "course-audio/20260521/phrase/lesson_01-phrase-002.mp3",
+    "course-audio/20260521/phrase/lesson_01-phrase-003.mp3",
+    "course-audio/20260521/phrase/lesson_01-phrase-004.mp3",
+    "course-audio/20260521/phrase/lesson_01-phrase-005.mp3"
+  ]
+}

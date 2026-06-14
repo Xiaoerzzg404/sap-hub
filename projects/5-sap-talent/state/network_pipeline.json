@@ -1,0 +1,42 @@
+{
+  "id": "talent-network-pipeline",
+  "title": "人才信任网络管线模板",
+  "status": "todo",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
+  "links": [
+    "../knowledge/talent-trust-network-playbook.md"
+  ],
+  "talent_stages": [
+    "观察者",
+    "成长访谈",
+    "脱敏画像",
+    "课程训练",
+    "作品展示",
+    "助教候选",
+    "合作顾问"
+  ],
+  "enterprise_stages": [
+    "需求访谈",
+    "脱敏需求画像",
+    "课程改进输入",
+    "能力标准共创",
+    "合规评估后再连接"
+  ],
+  "coach_stages": [
+    "候选名单",
+    "请教访谈",
+    "月度复盘",
+    "专题咨询",
+    "长期合作评估"
+  ],
+  "metrics": {
+    "talent_profiles_target_90d": 30,
+    "enterprise_interviews_target_90d": 10,
+    "assistant_candidates_target_90d": 3,
+    "anonymized_works_target_90d": 15,
+    "coach_interviews_target_90d": 9
+  },
+  "notes": "管线模板仅记录阶段和目标数；真实个人资料必须保存在非 git 跟踪、合规受控位置。"
+}

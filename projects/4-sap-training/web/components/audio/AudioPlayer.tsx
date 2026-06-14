@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from "lucide-react";
+import { resolveCourseAudioSrc } from "@/lib/course-audio";
 import type { AudioSentence } from "@/types/audio";
 import { PlaybackSpeedControl } from "./PlaybackSpeedControl";
 
@@ -18,7 +19,7 @@ export function AudioPlayer({
   initialIndex = 0,
   repeatCount = 1,
   singleLoop = false,
-  onIndexChange
+  onIndexChange,
 }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
@@ -28,6 +29,7 @@ export function AudioPlayer({
   const [playedTimes, setPlayedTimes] = useState(0);
 
   const current = sentences[currentIndex] ?? sentences[0];
+  const currentAudioSrc = resolveCourseAudioSrc(current?.audioSrc);
   const maxRepeats = repeatCount === "infinite" ? Number.POSITIVE_INFINITY : repeatCount;
 
   useEffect(() => {
@@ -88,7 +90,7 @@ export function AudioPlayer({
     <div className="panel space-y-4 p-4">
       <audio
         ref={audioRef}
-        src={current.audioSrc}
+        src={currentAudioSrc}
         onTimeUpdate={(event) => {
           const audio = event.currentTarget;
           setProgress(audio.duration ? (audio.currentTime / audio.duration) * 100 : 0);
@@ -100,11 +102,18 @@ export function AudioPlayer({
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-xs font-semibold text-sap">{current.scenario ?? "口语训练句"}</p>
-          <p lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">{current.japanese}</p>
+          <p lang="ja" className="mt-1 text-lg font-semibold leading-relaxed text-ink">
+            {current.japanese}
+          </p>
           <p className="mt-1 text-sm text-slate-600">{current.chinese}</p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          <button type="button" className="btn-secondary" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+          <button
+            type="button"
+            className="btn-secondary"
+            onClick={() => goTo(currentIndex - 1)}
+            disabled={currentIndex === 0}
+          >
             <ChevronLeft className="h-4 w-4" />
             上一句
           </button>

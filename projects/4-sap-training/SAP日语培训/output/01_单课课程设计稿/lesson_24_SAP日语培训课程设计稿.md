@@ -1,18 +1,28 @@
-# SAP 日语培训：第 24 课《项目经验、报表需求与综合面试输出》
+# SAP 日语培训：第 24 课《职场问题应对日语》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：职场问题应对日语
+- 真实日本 SAP 项目场景：顾问配置错误导致测试数据异常。需要向PM和客户汇报：事实、影响、临时处理、根本原因、再发防止。
+- 对应项目阶段：Incident report / RCA・再発防止
+- 初级顾问必须听懂的关键词：事象 / 影響 / 暫定対応 / 根本原因 / 再発防止策
+- 学生可交付输出：配置错误后的事实、影响、暂定处理、根本原因和再发防止汇报
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：reporter/report、contractor execution、global project、FICO experience、ECC vs S4HANA
-- 迁移后的 SAP 日语课主题：用日语完成SAP项目经验和报表需求的综合表达
-- 对应 SAP 模块：FICO / Reporting / S4HANA
-- 对应项目阶段：Interview / Project meeting
-- 对应顾问能力：把项目经历、报表需求和版本差异说成完整顾问输出
-- 对应日语能力：面试表达、需求总结、综合汇报
-- 本课最终输出任务：2分钟日语项目经验说明
+- 迁移后的 SAP 日语课主题：职场问题应对日语
+- 对应 SAP 模块：PMO / Quality / Incident report
+- 对应项目阶段：Incident report / RCA・再発防止
+- 对应顾问能力：汇报配置错误后的事实、影响、暂定处理、根本原因和再发防止
+- 对应日语能力：事实、影响、暂定处理、根本原因、再发防止汇报
+- 本课最终输出任务：配置错误后的事实、影响、暂定处理、根本原因和再发防止汇报
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：面试官或PM要求顾问说明全球项目经验、报表需求和ECC/S4差异。
+- 本课重点场景：顾问配置错误导致测试数据异常。需要向PM和客户汇报：事实、影响、临时处理、根本原因、再发防止。
 - 本课 input：项目背景、报表目的、模块经验
 - 本课 system action：系统提供执行状态和余额状态追踪
 - 本课 output：项目经验说明和报表需求摘要
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 事象 | event / symptom | 事象 | じしょう | 问题汇报 | 先讲发生了什么，不急着解释原因。 |
+| 影响 | impact | 影響 | えいきょう | 问题汇报 | 说明影响对象、范围、期间和业务后果。 |
+| 暂定处理 | workaround | 暫定対応 | ざんていたいおう | 事故应对 | 先止血，确保业务影响最小化。 |
+| 根本原因 | root cause | 根本原因 | こんぽんげんいん | RCA | 区分直接原因和根本原因。 |
+| 再发防止措施 | preventive action | 再発防止策 | さいはつぼうしさく | 事故复盘 | 必须说明以后如何防止同类问题再发生。 |
 
 ## 5. 顾问日语句型库
 

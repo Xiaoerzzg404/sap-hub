@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth/options";
+import { canAccessAnyRole } from "@/lib/auth/roles";
 import { db } from "@/lib/db";
 import { recordings } from "@/lib/db/schema";
 import { checkRateLimit, limits } from "@/lib/rate-limit";
@@ -15,13 +16,17 @@ function extensionForMimeType(mimeType: string) {
 export async function POST(req: Request) {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!canAccessAnyRole(session, ["student"])) {
+    return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  }
 
   const { success } = await checkRateLimit(limits.upload, session.user.id);
   if (!success) return NextResponse.json({ error: "rate limit exceeded" }, { status: 429 });
 
   const body = await req.json();
   const sizeBytes = Number(body.sizeBytes);
-  const mimeType = typeof body.mimeType === "string" && body.mimeType ? body.mimeType : "audio/webm";
+  const mimeType =
+    typeof body.mimeType === "string" && body.mimeType ? body.mimeType : "audio/webm";
 
   if (!body.lessonId || !body.practiceType) {
     return NextResponse.json({ error: "lessonId and practiceType are required" }, { status: 400 });
@@ -42,17 +47,22 @@ export async function POST(req: Request) {
       durationSec: Number(body.durationSec) || 0,
       sizeBytes,
       selfAssessment: body.selfAssessment ?? null,
-      status: "uploading"
+      status: "uploading",
     })
     .returning();
 
-  const storageKey = recordingKey(session.user.id, body.lessonId, recording.id, extensionForMimeType(mimeType));
+  const storageKey = recordingKey(
+    session.user.id,
+    body.lessonId,
+    recording.id,
+    extensionForMimeType(mimeType)
+  );
   const uploadUrl = await getPresignedPutUrl(storageKey, mimeType, sizeBytes);
 
   return NextResponse.json({
     recordingId: recording.id,
     storageKey,
     uploadUrl,
-    expiresInSec: 300
+    expiresInSec: 300,
   });
 }

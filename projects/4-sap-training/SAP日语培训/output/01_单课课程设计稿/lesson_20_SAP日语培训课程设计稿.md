@@ -1,18 +1,28 @@
-# SAP 日语培训：第 20 课《SAP Activate vs ASAP、ECC到S/4HANA差异》
+# SAP 日语培训：第 20 课《运维阶段日语交流》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：运维阶段日语交流
+- 真实日本 SAP 项目场景：用户说“系统不能用了”，顾问需要用日语快速收集信息并判断影响范围。
+- 对应项目阶段：Run / AMS・運用保守
+- 初级顾问必须听懂的关键词：障害受付 / 影響範囲 / 一次切り分け / 暫定対応 / 恒久対応
+- 学生可交付输出：运维障害受付时收集信息、判断影响范围并说明一次切分动作
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：Activate vs ASAP、S4HANA vs ECC、streamline、migration
-- 迁移后的 SAP 日语课主题：用日语比较方法论和ECC/S4差异
-- 对应 SAP 模块：S4HANA / Common
-- 对应项目阶段：Conversion / Transformation
-- 对应顾问能力：解释差异、简化流程和迁移限制
-- 对应日语能力：比较说明、风险提示、面试回答
-- 本课最终输出任务：2分钟说明ECC与S/4HANA差异
+- 迁移后的 SAP 日语课主题：运维阶段日语交流
+- 对应 SAP 模块：AMS / Basis / Application support
+- 对应项目阶段：Run / AMS・運用保守
+- 对应顾问能力：收集障害信息、判断影响范围并说明一次切分动作
+- 对应日语能力：障害受付、影响范围、一次切分、暂定/恒久对应
+- 本课最终输出任务：运维障害受付时收集信息、判断影响范围并说明一次切分动作
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：客户想从ECC迁移到S/4HANA，顾问要说明方法论差异、简化点和不能自动迁移的内容。
+- 本课重点场景：用户说“系统不能用了”，顾问需要用日语快速收集信息并判断影响范围。
 - 本课 input：ECC现状、目标S/4、迁移对象
 - 本课 system action：评估简化项和配置调整
 - 本课 output：差异清单和迁移风险
@@ -89,6 +99,11 @@
 | 采购订单 | purchase order / PO | 購買発注 | こうばいはっちゅう | 采购执行 | 日本项目可说PO。 |
 | 收货 | goods receipt / GR | 入庫 / 検収 | にゅうこ / けんしゅう | GR步骤 | Good to Receive是ASR疑似错误。 |
 | 三点照合 | three-way match | 三点照合 | さんてんしょうごう | PO/GR/Invoice核对 | MM/FI集成核心。 |
+| 障害受理 | incident intake | 障害受付 | しょうがいうけつけ | 运维初动 | 先收集用户、时间、环境、画面、业务影响。 |
+| 影响范围 | impact scope | 影響範囲 | えいきょうはんい | 障害判断 | 说清用户数、业务流程、期间、数据量。 |
+| 一次切分 | initial triage | 一次切り分け | いちじきりわけ | 运维调查 | 先判断是权限、数据、接口、Job、配置还是程序。 |
+| 暂定处理 | workaround | 暫定対応 | ざんていたいおう | 恢复业务 | 先降低影响，不等于根因解决。 |
+| 永久处理 | permanent fix | 恒久対応 | こうきゅうたいおう | 根因处理 | 从设计、配置、程序或流程上防止再发。 |
 
 ## 5. 顾问日语句型库
 

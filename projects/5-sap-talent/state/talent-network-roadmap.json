@@ -1,0 +1,49 @@
+{
+  "id": "talent-network-roadmap-20260523",
+  "title": "SAP 人才信任网络路线图",
+  "status": "in_progress",
+  "owner": "user",
+  "updated_by": "codex",
+  "updated_at": "2026-05-23T23:46:43+09:00",
+  "links": [
+    "../knowledge/talent-trust-network-playbook.md",
+    "../knowledge/cards/talent-business-cards.md",
+    "../../6-biz-ops/knowledge/company-development-roadmap-20260523.md"
+  ],
+  "current_stage": "信任网络验证",
+  "stage_goals": [
+    {
+      "stage": "0-30天",
+      "goal": "建立脱敏人才画像、企业需求画像、教练名单和公开诊断入口",
+      "exit_criteria": [
+        "脱敏人才画像达到10个",
+        "企业或PM需求访谈达到3个",
+        "潜在教练或导师访谈达到3个",
+        "没有做无牌照职业介绍或派遣承诺"
+      ]
+    },
+    {
+      "stage": "30-90天",
+      "goal": "从课程和自媒体中沉淀种子人才、助教候选人和作品展示",
+      "exit_criteria": [
+        "脱敏人才画像达到30个",
+        "助教候选人达到2-3个",
+        "脱敏作品达到15个",
+        "完成至少1项合规专业咨询"
+      ]
+    },
+    {
+      "stage": "3-12个月",
+      "goal": "形成顾问成长社区、助教运营和企业需求反馈机制",
+      "exit_criteria": [
+        "训练营可连续开2-3期",
+        "助教承担20%-30%的运营动作",
+        "企业侧顾问委员会初步形成",
+        "明确人才连接业务的可做和不可做边界"
+      ]
+    }
+  ],
+  "privacy_boundary": "本状态只记录路线图和指标，不记录真实个人信息、客户信息、薪酬、签证、联系方式或履历原文。",
+  "legal_boundary": "人才派遣、职业介绍、收费推荐、代筛选、代沟通等动作必须先咨询日本专业人士并由用户拍板。",
+  "notes": "5号从传统人力中介切换为先训练、再作品、再信任、最后合规连接的路线。"
+}

@@ -1,10 +1,5 @@
-import { Suspense } from "react";
-import { ConfirmLoginClient } from "./ConfirmLoginClient";
+import { redirect } from "next/navigation";
 
 export default function ConfirmLoginPage() {
-  return (
-    <Suspense fallback={null}>
-      <ConfirmLoginClient />
-    </Suspense>
-  );
+  redirect("/login");
 }

@@ -2,6 +2,7 @@ import { and, eq, isNull } from "drizzle-orm";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { auth } from "@/lib/auth/options";
+import { canAccessAnyRole, hasRole } from "@/lib/auth/roles";
 import { db } from "@/lib/db";
 import { classes, enrollments, recordings, teacherFeedback, users } from "@/lib/db/schema";
 import { checkRateLimit, limits } from "@/lib/rate-limit";
@@ -31,7 +32,13 @@ async function teacherCanAccessStudent(teacherId: string, studentId: string) {
     .select({ enrollmentId: enrollments.id })
     .from(enrollments)
     .innerJoin(classes, eq(classes.id, enrollments.classId))
-    .where(and(eq(classes.teacherId, teacherId), eq(enrollments.studentId, studentId), eq(enrollments.status, "active")))
+    .where(
+      and(
+        eq(classes.teacherId, teacherId),
+        eq(enrollments.studentId, studentId),
+        eq(enrollments.status, "active")
+      )
+    )
     .limit(1);
 
   return rows.length > 0;
@@ -40,7 +47,7 @@ async function teacherCanAccessStudent(teacherId: string, studentId: string) {
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const session = await auth();
   if (!session?.user?.id) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
-  if (session.user.role !== "teacher" && session.user.role !== "admin") {
+  if (!canAccessAnyRole(session, ["teacher"])) {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
 
@@ -55,7 +62,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     fluency: score(body.scoreDim?.fluency),
     naturalness: score(body.scoreDim?.naturalness),
     sapAccuracy: score(body.scoreDim?.sapAccuracy),
-    consultantLike: score(body.scoreDim?.consultantLike)
+    consultantLike: score(body.scoreDim?.consultantLike),
   };
   const comment = optionalText(body.comment);
   const correctedJapanese = optionalText(body.correctedJapanese);
@@ -66,7 +73,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
       studentId: recordings.studentId,
       lessonId: recordings.lessonId,
       studentEmail: users.email,
-      studentName: users.name
+      studentName: users.name,
     })
     .from(recordings)
     .innerJoin(users, eq(users.id, recordings.studentId))
@@ -74,7 +81,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     .limit(1);
 
   if (!recording) return NextResponse.json({ error: "not_found" }, { status: 404 });
-  if (session.user.role === "teacher") {
+  if (hasRole(session, "teacher") && !hasRole(session, "admin")) {
     const allowed = await teacherCanAccessStudent(session.user.id, recording.studentId);
     if (!allowed) return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }
@@ -87,7 +94,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
       scoreOverall,
       scoreDim,
       comment,
-      correctedJapanese
+      correctedJapanese,
     })
     .onConflictDoUpdate({
       target: teacherFeedback.recordingId,
@@ -97,8 +104,8 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         scoreDim,
         comment,
         correctedJapanese,
-        updatedAt: new Date()
-      }
+        updatedAt: new Date(),
+      },
     })
     .returning();
 
@@ -115,7 +122,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         ${correctedJapanese ? `<p>纠正后表达：<br>${escapeHtml(correctedJapanese)}</p>` : ""}
         <p><a href="${process.env.NEXTAUTH_URL}/review">登录查看完整反馈</a></p>
         <p>-- SAP 日语口语训练平台</p>
-      `
+      `,
     });
   } catch {
     return NextResponse.json({ error: "email_notification_failed", feedback }, { status: 502 });

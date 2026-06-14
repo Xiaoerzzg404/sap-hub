@@ -1,0 +1,22 @@
+flowchart TD
+  S[采集源 CSDN/知乎/公众号<br/>RSSHub·WeWe RSS·手动/剪藏] --> H[harvest 复用 collect 通道<br/>WeWe 全文在此丢弃 body]
+  H --> D1[第一段去重<br/>URL规范化+UNIQUE+标题SimHash]
+  D1 --> G{Compliance Gate<br/>+ Tier0 规则审 100%·零LLM}
+  G -->|blocked| X[拒绝入库 + 记 audit]
+  G -->|默认| M[documents: metadata_saved<br/>元数据+摘要 直接入库]
+  M --> E[SAP实体识别·摘要·标签]
+  E --> D2[第二段去重<br/>标题+摘要 embedding<br/>疑似转载→needs_review 人工归并]
+  D2 --> T1[Tier1 LLM 单审<br/>标签/摘要 抽样10%]
+  T1 --> KB[(SAPKB<br/>SQLite+FTS trigram)]
+  KB --> OB[写 SAP_EXTKB/10_articles<br/>唯一物理md + Dataview门户]
+
+  KB -->|状态升级触发| T2{Tier2 双审<br/>self + 独立cross}
+  T2 -->|一致 pass| UP[fulltext_saved / embedded /<br/>license登记 / 进选题池]
+  T2 -->|一致 fail| RD[打回重做]
+  T2 -->|分歧或warning| HU[escalate 给 Ryan]
+  UP --> VEC[(向量库·chunks带<br/>embedding_model/vector_id)]
+  VEC --> QA[RAG 问答<br/>带引用·标置信层]
+  UP -.高质量已授权.-> PIPE[干货流水线选题池<br/>需改写·标来源]
+  OB -. 只读单向引用 .-> FZ[(SAP_FUZHKB 权威库<br/>禁止写入)]
+  classDef forbidden fill:#fee,stroke:#c00;
+  class FZ forbidden;

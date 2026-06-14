@@ -32,10 +32,24 @@ AI/agent 的共同真相源。
 ## 协作纪律
 - 动手前：读 AGENTS.md → 读目标 Project 的 _instructions.md → 读其 state/ 现状
   → 看 inbox/ 是否有未处理交接。
+- 若任务涉及 Project 4 / SAP 日语培训 / sap-jp.training 网站，必须在目标 Project 的
+  _instructions.md 前先读 `projects/4-sap-training/AGENT_GUARDRAILS.md`，其规则
+  对所有 AI 工具和所有身份生效。
 - 动手后：更新 state/ → git commit → 在 inbox/ 留交接（见 inbox 规范）。
 - 不确定就停：路径/凭据/战略不明时，不要猜，在 inbox/ 写 need-input-<日期>.md。
 - 任何破坏性操作（删除、覆盖、改权限、对外发布、付款）必须先在 inbox/ 提案，
   得到用户确认前不执行。
+
+## 语言与说明文档规则
+- 默认用中文与用户沟通。
+- 默认用中文写说明类 Markdown：handoff、need-input、README、指南、审计报告、QA 报告、
+  prompt、state 说明、运维说明、站点说明、交接记录等都应使用中文。
+- 例外只包括：
+  - 用户明确要求输出日文；
+  - SAP 日语培训中必须保持日文自然表达的学习内容、例句、对话、口播、录音文案；
+  - 代码标识、文件名、路由、命令、环境变量、SQL、API 名称、错误码、专有名词或外部英文原文。
+- 完成任务前，检查本轮新增/修改的 `.md`。如果是说明文档且主体是英文，先改成中文再交付。
+- 不要把“说明文档”默认写成英文；除非用户明确指定英文。
 
 ## 禁止
 - 不绕过任何视频/内容的加密或版权保护。

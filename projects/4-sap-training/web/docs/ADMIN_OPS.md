@@ -1,8 +1,83 @@
 # ADMIN_OPS · SAP 日语口语训练平台
 
 - updated_by: codex
-- updated_at: 2026-05-21T12:00:00+09:00
-- scope: Phase 7 launch-readiness operations
+- updated_at: 2026-05-22T08:46:38+09:00
+- scope: Phase 7 上线准备、admin 运维监控台、账号密码登录
+
+## 登录与角色
+
+当前登录方式：
+
+- 用户使用邮箱、用户名和密码注册。
+- 用户可以用邮箱或用户名登录。
+- 密码以 `scrypt` hash 存在 `users.password_hash`。
+- 未登录用户只能看到 `/login`；训练页面、`/audio/*` 和业务 API 都需要 session。
+- 角色是多值模型，存储在 `user_roles`。
+- `users.role` 保留为 legacy 主角色兼容字段。
+- 生产环境注册必须配置 `REGISTRATION_INVITE_CODE`；未配置时 `/api/auth/register` 会拒绝公开注册。
+- 历史无密码账号不能被公开注册直接认领；必须使用一次性 `ACCOUNT_CLAIM_TOKEN`。
+
+角色模型：
+
+| 角色      | 可访问范围                                                    |
+| --------- | ------------------------------------------------------------- |
+| `student` | 学员学习页、口语工具、作业、录音、复盘。                      |
+| `teacher` | 讲师课程工具、学生录音复核、反馈、待复核术语。                |
+| `admin`   | 管理监控和运营总览；admin 为支持排障可访问讲师/学员相关页面。 |
+
+Owner 初始化：
+
+- migration `0003_auth_credentials_multi_role.sql` 会在 `zzg404@gmail.com` 已存在时授予 `student`、`teacher`、`admin` 三个角色。
+- 如果 owner 邮箱在 migration 后才设置密码，必须配置 `OWNER_BOOTSTRAP_TOKEN`，并在一次性初始化请求中通过 `X-Owner-Bootstrap-Token` 或 `ownerBootstrapToken` 提交；没有 token 时不会授予 admin。
+- `OWNER_EMAIL` 可选，未配置时默认使用 `zzg404@gmail.com`。
+- 初始化完成后建议轮换或移除 `OWNER_BOOTSTRAP_TOKEN` 和 `ACCOUNT_CLAIM_TOKEN`。
+
+生产注册/认领建议：
+
+1. Vercel Production env 至少配置 `REGISTRATION_INVITE_CODE`，否则生产环境关闭公开注册。
+2. 若要让既有 magic-link 历史账号设置密码，临时配置 `ACCOUNT_CLAIM_TOKEN`，只发给对应本人。
+3. 若要初始化 owner 账号，临时配置 `OWNER_BOOTSTRAP_TOKEN`，只由 Ryan 本人使用。
+4. 所有 token 只放本地 `.env.local` 或 Vercel env，不写入 handoff、issue、截图或 git。
+
+## 管理监控台
+
+路由：`/admin`
+
+访问边界：
+
+- 未登录用户：跳转 `/login?callbackUrl=/admin`。
+- 非 admin 用户：跳转首页。
+- admin 用户：可见只读管理监控页。
+
+页面内容：
+
+- Neon Postgres 只读统计：用户、学生、讲师、班级、课程、素材、录音、讲师反馈、待复核术语等。
+- 外部平台快捷入口：GitHub、Vercel、Cloudflare、Neon、Sentry、Resend、Upstash、Google Search Console、Safe Browsing 申诉。
+- 环境变量检查：只显示是否配置，不显示值。
+- 本地改订发布流：本地修改 -> typecheck/lint/build/browser check -> commit -> deploy -> 线上复查。
+
+课程 TTS 音频部署：
+
+- mp3 文件保持 gitignored，不 force-add 到 Git。
+- 课程音频上传到 R2 的 `course-audio/20260521/` 前缀；该前缀不要和学员录音 `audio/` 生命周期规则混用。
+- Vercel Production/Preview 需要配置 `NEXT_PUBLIC_COURSE_AUDIO_BASE_URL`，值应指向公开 CDN base URL，例如 CDN 域名下的 `course-audio/20260521`。
+- 未配置该 env 时，前端保留本地 `/audio/...` 路径；Preview/Production 因 mp3 不进 Git 会无法播放课程 TTS。
+
+可选外部监控数据：
+
+| 平台   | 可选 env                                                           | 用途                                   |
+| ------ | ------------------------------------------------------------------ | -------------------------------------- |
+| GitHub | `GITHUB_REPOSITORY`, `GITHUB_TOKEN`                                | 读取最新 GitHub Actions workflow run。 |
+| Vercel | `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, optional `VERCEL_TEAM_ID` | 读取最新 Vercel deployment 状态。      |
+
+这些 token 不得提交到 git。只放在本地 `.env.local` 或 Vercel Project Settings -> Environment Variables。
+
+暂未直接拉取的外部数据：
+
+- Cloudflare R2 用量、lifecycle 规则：先通过 Cloudflare Dashboard 查看。
+- Neon backup/storage 细节：先通过 Neon Console 查看。
+- Sentry issue 列表：先通过 Sentry Console 查看。
+- Google Safe Browsing 申诉状态：先人工跟进。
 
 ## R2 Lifecycle
 
@@ -38,7 +113,7 @@ pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql
 
 备份文件不得提交到 git。建议本地加密保存，或上传到私有 R2/Drive 目录。
 
-## Capacity Monitoring
+## 容量监控
 
 每月第一周人工检查一次：
 
@@ -51,7 +126,7 @@ pg_dump "$DATABASE_URL" > backup-$(date +%Y%m%d).sql
 
 任一指标超过 80% 阈值时，先记录截图和用量，再升级对应 SaaS plan。
 
-## Recording Hard Delete
+## 录音硬删除
 
 Phase 7 已实现：
 
@@ -81,40 +156,68 @@ Vercel Cron schedule：
 
 UTC 03:00 对应东京 12:00。Cron 请求必须带 `Authorization: Bearer $CRON_SECRET`；没有 secret 时端点返回 503。
 
-## Incident Notes
+## 事故记录注意事项
 
 不要在 issue、日志、截图、handoff 里写出完整 `DATABASE_URL`、R2 key secret、Resend key、Upstash token、Sentry auth token 或 `CRON_SECRET`。
 
-## Promote User Role
+## 本地改订与部署
+
+页面、label、课程内容、TTS 音频、反馈功能和老师端功能都先在本地改订，验证后再部署到 Vercel。
+
+执行顺序以 `docs/SITE_ARCHITECTURE.md` 为准：
+
+1. 本地分支修改。
+2. 必要时转换课程数据或生成 TTS。
+3. 本地 typecheck/lint/build。
+4. 本地浏览器检查改动页面。
+5. commit。
+6. 部署。
+7. 上线后检查 Sentry、登录、学生页、老师反馈流。
+
+## 提升用户角色
 
 讲师和 admin 权限只能通过 SQL 手动提升。不要实现前台自助提升接口。
 
 查看用户：
 
 ```sql
-select id, email, role, created_at
+select u.id, u.email, u.username, array_agg(ur.role order by ur.role) as roles, u.created_at
 from users
+left join user_roles ur on ur.user_id = u.id
+group by u.id
 order by created_at desc
 limit 20;
 ```
 
-提升为讲师：
+授予讲师：
 
 ```sql
-update users
-set role = 'teacher', updated_at = now()
-where email = 'teacher@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'teacher', 'admin'
+from users
+where email = 'teacher@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-提升为 admin：
+授予 admin：
 
 ```sql
-update users
-set role = 'admin', updated_at = now()
-where email = 'ryan@example.com';
+insert into user_roles (user_id, role, assigned_by)
+select id, 'admin', 'admin'
+from users
+where email = 'ryan@example.com'
+on conflict (user_id, role) do nothing;
 ```
 
-降级为学生：
+移除讲师权限：
+
+```sql
+delete from user_roles
+where role = 'teacher'
+  and user_id = (select id from users where email = 'teacher@example.com');
+```
+
+同步 legacy 主角色：
 
 ```sql
 update users
@@ -122,7 +225,7 @@ set role = 'student', updated_at = now()
 where email = 'teacher@example.com';
 ```
 
-## Class Enrollment Checks
+## 班级 enrollment 检查
 
 讲师只能看自己班级 active enrollment 的学生。
 
@@ -141,6 +244,8 @@ order by c.created_at desc;
 ## Sentry
 
 Phase 7 已安装 `@sentry/nextjs`，且本地 `.env.local` 已存在 `NEXT_PUBLIC_SENTRY_DSN`。上线前必须确认 Vercel env 同步。
+
+Runtime 初始化由 `sentry.server.config.ts`、`sentry.edge.config.ts`、`sentry.client.config.ts` 读取 `NEXT_PUBLIC_SENTRY_DSN` 完成。`withSentryConfig` 构建插件默认关闭，只在明确设置 `SENTRY_BUILD_PLUGIN_ENABLED=true` 时启用；否则本地/生产 build 不应因为 DSN 存在而改变 Next chunk 输出。
 
 启用步骤：
 
@@ -174,7 +279,7 @@ Vercel env 检查：
 
 临时调整位置：`lib/rate-limit.ts`。
 
-## Backup Runbook
+## 备份 Runbook
 
 每周备份：
 
@@ -186,7 +291,7 @@ Vercel env 检查：
 
 恢复前必须先在 inbox 写提案并得到 Ryan 明确确认。恢复数据库属于破坏性操作。
 
-## User Deletion Request
+## 用户注销请求
 
 用户要求注销账号时：
 
@@ -199,4 +304,4 @@ Vercel env 检查：
 
 处理时限：14 天内。
 
-不要通过聊天窗口索要用户密码。magic link 平台不需要密码。
+不要通过聊天窗口索要用户密码。管理员不需要知道用户密码。

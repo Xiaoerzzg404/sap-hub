@@ -1,8 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { checkRateLimit, clientIpFromHeaders, limits } from "@/lib/rate-limit";
 
-const PUBLIC_PATHS = new Set(["/", "/login", "/login/verify"]);
-const PUBLIC_PREFIXES = ["/login/", "/api/auth/", "/_next/", "/audio/"];
+const PUBLIC_PATHS = new Set(["/login"]);
+const PUBLIC_PREFIXES = ["/api/auth/", "/_next/", "/audio/"];
+const PUBLIC_FILES = new Set(["/favicon.ico", "/robots.txt", "/sitemap.xml"]);
 
 function hasSessionCookie(req: NextRequest): boolean {
   const c = req.cookies;
@@ -17,7 +18,10 @@ function hasSessionCookie(req: NextRequest): boolean {
 export default async function middleware(req: NextRequest): Promise<NextResponse> {
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith("/api/auth/signin")) {
+  if (
+    pathname.startsWith("/api/auth/signin") ||
+    pathname.startsWith("/api/auth/callback/credentials")
+  ) {
     const identifier = clientIpFromHeaders(req.headers);
     const { success } = await checkRateLimit(limits.login, identifier);
     if (!success) {
@@ -36,7 +40,7 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
     return NextResponse.next();
   }
 
-  if (PUBLIC_PATHS.has(pathname)) return NextResponse.next();
+  if (PUBLIC_PATHS.has(pathname) || PUBLIC_FILES.has(pathname)) return NextResponse.next();
   for (const prefix of PUBLIC_PREFIXES) {
     if (pathname.startsWith(prefix)) return NextResponse.next();
   }
@@ -50,7 +54,7 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
     }
     const url = req.nextUrl.clone();
     url.pathname = "/login";
-    url.searchParams.set("callbackUrl", pathname);
+    url.searchParams.set("callbackUrl", `${pathname}${req.nextUrl.search}`);
     return NextResponse.redirect(url);
   }
 
@@ -58,18 +62,5 @@ export default async function middleware(req: NextRequest): Promise<NextResponse
 }
 
 export const config = {
-  matcher: [
-    "/api/auth/signin/:path*",
-    "/dashboard/:path*",
-    "/courses/:path*",
-    "/speaking/:path*",
-    "/roleplay/:path*",
-    "/glossary/:path*",
-    "/phrasebook/:path*",
-    "/library/:path*",
-    "/assignments/:path*",
-    "/review/:path*",
-    "/teacher/:path*",
-    "/api/((?!auth/).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)"],
 };

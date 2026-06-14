@@ -1,0 +1,1752 @@
+{
+  "generatedAt": "2026-06-14T19:08:28+09:00",
+  "tool": "四面台 / sap-four-faces",
+  "days": [
+    {
+      "date": "2026-06-15",
+      "faces": {
+        "face1": {
+          "status": "needs_content",
+          "mediaId": null,
+          "notes": "{\"request\": \"/Users/openclawxiaoer/Documents/OpenClaw/sap-news-pipeline/working/2026-06-15/content_request_face1.md\", \"draftPath\": \"/Users/openclawxiaoer/news/studio/data/drafts/2026-06-15/wechat-article.md\"}"
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "notes": ""
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "notes": ""
+        },
+        "face4": {
+          "status": "pending",
+          "shorts": [],
+          "notes": ""
+        }
+      },
+      "published": false,
+      "facesDone": 0,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": null
+    },
+    {
+      "date": "2026-06-14",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": "otQVcfbnqH0gN97Wv-lt3Ewk5teGlFQN_YX8c5XGf3U9ZubC31Pz_WZrDlLG1kVm",
+          "items": 9,
+          "content": "drafts/2026-06-14/wechat-article.md",
+          "distribution": "美国2 · 欧洲2 · 中东3 · 印度1 · 巴西1",
+          "published": true
+        },
+        "face2": {
+          "status": "done",
+          "objectIds": [
+            "export/UzFfBgAAxOGCMDAPZ3PVjMzT4DCaf2iCRRL8ymFCWBM3IER8uQ",
+            "export/UzFfBgAAxP-CdCttTnPVjMzT4DCaelNxNeEmAZz9vDFvXYdz6w",
+            "export/UzFfBgAAxMyCcFgiV3PVjMzT4DCavdgnkVxcyM0l8dstp8OITQ"
+          ],
+          "count": 3,
+          "titles": [
+            "Joule嵌入客户门户",
+            "AI术语与海湾落地",
+            "经销云与印度AI回报"
+          ]
+        },
+        "face3": {
+          "status": "done",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "Joule 嵌入 SAP for Me：客户门户从点击搜索转向意图驱动，运维与对账入口被重写",
+              "hasCover": true,
+              "mediaId": "otQVcfbnqH0gN97Wv-lt3GzZIeeQMHSe4lnAnvwinHYpYRR35vmp5SyOrelmPRRh"
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "SAP Discovery Center 免费自助门户：把企业 AI 的「从何起步」前移到立项之前",
+              "hasCover": true,
+              "mediaId": "otQVcfbnqH0gN97Wv-lt3BPd0eWcGQkmtSg8XlKMmVMjLPYwILotx4JfIkxExo06"
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "SAP 调研：印度智能体 AI 回报两年五倍至 1440 万美元，ROI 数字背后的财务验证逻辑",
+              "hasCover": true,
+              "mediaId": "otQVcfbnqH0gN97Wv-lt3AKSl3g_lfAsZOkB8PImNaFWlTyu5T2LUHdxKoo6yTwQ"
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "SAP Connect UAE：85% 阿联酋企业依赖 ERP 支撑 AI，核心系统重回企业 AI 的中心",
+              "hasCover": true,
+              "mediaId": "otQVcfbnqH0gN97Wv-lt3OaYSId97DPjGWz2aujGckCdIUsI2JsW7GZvirS8NpDS"
+            },
+            {
+              "slug": "article_06_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_07_v1",
+              "title": "",
+              "hasCover": true
+            }
+          ],
+          "count": 6,
+          "warnings": [
+            "article_01_joule 是 06-13 已发深度稿的重复（深度稿未做去重）。建议 Ryan 在公众号草稿箱删除该 Joule 草稿。其余 3 篇为新选题。"
+          ]
+        },
+        "face4": {
+          "status": "done_with_skips",
+          "pushed": [
+            {
+              "eid": "2026-06-14-sap-ai-1440",
+              "objectId": "export/UzFfBgAAxMqCTGZGaGrVjMzT4DCaBpf32YZ5GNQV3iYEJWjOMA"
+            },
+            {
+              "eid": "2026-06-14-sap-connect-uae-85-erp-ai",
+              "objectId": "export/UzFfBgAAxPCCLDdQJWjVjMzT4DCaTPqthqGiTngGfib6bya8wA"
+            },
+            {
+              "eid": "2026-06-14-sap-discovery-center-ai",
+              "objectId": "export/UzFfBgAAxPCCcCoXMGvVjMzT4DCanGql8GZDg_vfGTHZINJtRQ"
+            },
+            {
+              "eid": "dshort_20260614_04",
+              "objectId": "export/UzFfBgAAxOSCLFsdcnHUjMzT4DCaURYW22Yl2kkf15fJh2Ze8w"
+            },
+            {
+              "eid": "dshort_20260614_05",
+              "objectId": "export/UzFfBgAAxMiCdHk3WXHUjMzT4DCaO0e82FjZI2oWKXOmaXq-6g"
+            }
+          ],
+          "pushedCount": 5,
+          "blocked": [
+            {
+              "eid": "2026-06-14-joule-sap-for-me",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-06-14-joule-sap-for-me",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 4,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face3",
+          "reason": "article_01_joule 是 06-13 已发深度稿的重复（深度稿未做去重）。建议 Ryan 在公众号草稿箱删除该 Joule 草稿。其余 3 篇为新选题。",
+          "kind": "warning"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-14-joule-sap-for-me",
+          "reason": "sourceReuse 去重拦截（源已做过）"
+        }
+      ],
+      "summaryFile": "automation_summary_20260614T002436_FOUR_FACES_DONE.json"
+    },
+    {
+      "date": "2026-06-13",
+      "faces": {
+        "face1": {
+          "status": "content_ready",
+          "mediaId": null,
+          "items": 9,
+          "content": "drafts/2026-06-13/wechat-article.md",
+          "published": false
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_05_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_06_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_07_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_08_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_09_v1",
+              "title": "",
+              "hasCover": true
+            }
+          ],
+          "count": 9,
+          "warnings": []
+        },
+        "face4": {
+          "status": "partial",
+          "pushed": [
+            {
+              "eid": "dshort_20260613_01",
+              "objectId": "export/UzFfBgAAxPmCRAsuTl_KjMzT4DCaWRfZJ3xTp3ZjtXotoh9aZw"
+            },
+            {
+              "eid": "dshort_20260613_04",
+              "objectId": "export/UzFfBgAAxOCCQBcvIl3KjMzT4DCaRasoHMumUexdb4sE8FIo8Q"
+            },
+            {
+              "eid": "dshort_20260613_05",
+              "objectId": "export/UzFfBgAAxOqCEERXZVDKjMzT4DCaPsjg7_7QjrxHDh747wl40w"
+            }
+          ],
+          "pushedCount": 3,
+          "blocked": [
+            {
+              "eid": "dshort_20260613_02",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "eid": "dshort_20260613_03",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "eid": "dshort_20260613_07",
+              "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+            },
+            {
+              "eid": "dshort_20260613_08",
+              "reason": "口播稿: 口播稿事实依据不足; 发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance"
+            },
+            {
+              "eid": "dshort_20260613_09",
+              "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "dshort_20260613_02",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260613_03",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260613_07",
+              "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260613_08",
+              "reason": "口播稿: 口播稿事实依据不足; 发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260613_09",
+              "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+            }
+          ]
+        }
+      },
+      "published": false,
+      "facesDone": 0,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "dshort_20260613_02",
+          "reason": "sourceReuse 去重拦截（源已做过）"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260613_03",
+          "reason": "sourceReuse 去重拦截（源已做过）"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260613_07",
+          "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260613_08",
+          "reason": "口播稿: 口播稿事实依据不足; 发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260613_09",
+          "reason": "发布文案: 发布文案违反平台正文规则; 发布硬门槛: platformCopyCompliance; 最终成片"
+        }
+      ],
+      "summaryFile": "automation_summary_20260612T193247_PARTIAL.json"
+    },
+    {
+      "date": "2026-06-12",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 10,
+          "content": "drafts/2026-06-12/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "done",
+          "objectIds": [
+            "export/UzFfBgAAxPqCOGonAxLIjMzT4DCaCOOWXt1yVc9mVbgiN6bOsg",
+            "export/UzFfBgAAxMOCeB9BaRPIjMzT4DCa-_EQdvYpu0KGoF1VpJ6sgg",
+            "export/UzFfBgAAxOmCOG9HWhLIjMzT4DCa9kfhMJiuXv-IKV0KltPulw"
+          ],
+          "count": 3,
+          "titles": [
+            "数据底座先行差旅成本普涨",
+            "AIUnits计费与6月补丁日",
+            "CERN 改造与澳新 2027 窗口"
+          ]
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_05_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_06_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_07_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_08_v1",
+              "title": "",
+              "hasCover": true
+            },
+            {
+              "slug": "article_09_v1",
+              "title": "",
+              "hasCover": true
+            }
+          ],
+          "count": 9,
+          "warnings": []
+        },
+        "face4": {
+          "status": "partial",
+          "pushed": [
+            {
+              "eid": "dshort_20260612_01",
+              "objectId": "export/UzFfBgAAxMmCRFVDYA7IjMzT4DCaIJPSYuXk39jvZTz1DcUoMQ"
+            },
+            {
+              "eid": "dshort_20260612_02",
+              "objectId": "export/UzFfBgAAxPKCSF50CA3IjMzT4DCaQgSpqpzqUTJW0eGkjIZjag"
+            },
+            {
+              "eid": "dshort_20260612_03",
+              "objectId": "export/UzFfBgAAxP-CTBg6OgLIjMzT4DCa_Pay8vxNJvffyLyOL8b2aw"
+            },
+            {
+              "eid": "dshort_20260612_04",
+              "objectId": "export/UzFfBgAAxPmCXCFWLgPIjMzT4DCaPBO1J1pQ2bjNsE8Jyeew3Q"
+            },
+            {
+              "eid": "dshort_20260612_05",
+              "objectId": "export/UzFfBgAAxMuCMDQWVwDIjMzT4DCaw6D56RLA0CUYF3PpCX3xgg"
+            },
+            {
+              "eid": "dshort_20260612_06",
+              "objectId": "export/UzFfBgAAxMKCGHoDG3TUjMzT4DCapMfAe2kXHC5GhBGjSUtXxg"
+            },
+            {
+              "eid": "dshort_20260612_07",
+              "objectId": "export/UzFfBgAAxJaCbCYJDHTUjMzT4DCaleroWvF1kj1Cf0b76N4Kkw"
+            }
+          ],
+          "pushedCount": 7,
+          "blocked": [
+            {
+              "eid": "dshort_20260612_08",
+              "reason": "口播稿: 口播稿事实依据不足; 街景视频: 背景视频和口播音频不等长; 最终成片"
+            },
+            {
+              "eid": "dshort_20260612_09",
+              "reason": "口播稿: 口播稿事实依据不足; 最终成片"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "dshort_20260612_08",
+              "reason": "口播稿: 口播稿事实依据不足; 街景视频: 背景视频和口播音频不等长; 最终成片"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260612_09",
+              "reason": "口播稿: 口播稿事实依据不足; 最终成片"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 2,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "dshort_20260612_08",
+          "reason": "口播稿: 口播稿事实依据不足; 街景视频: 背景视频和口播音频不等长; 最终成片"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260612_09",
+          "reason": "口播稿: 口播稿事实依据不足; 最终成片"
+        }
+      ],
+      "summaryFile": "automation_summary_20260611_194844_FULL_SUCCESS_unified.json"
+    },
+    {
+      "date": "2026-06-11",
+      "faces": {
+        "face1": {
+          "status": "content_ready",
+          "mediaId": null,
+          "items": 6,
+          "content": "drafts/2026-06-11/wechat-article.md",
+          "published": false
+        },
+        "face2": {
+          "status": "done",
+          "objectIds": [
+            "export/UzFfBgAAxJKCLGAmYWHJjMzT4DCabHV-Av45dXaKMHt91_2xYw",
+            "export/UzFfBgAAxMmCHAdaT2HJjMzT4DCaix-ZQiBpb1W8ctpxNNSTzg"
+          ],
+          "count": 2,
+          "titles": [
+            "AI推理层与ABAP智能体",
+            "数据底座与财务结账合规"
+          ]
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "count": 0,
+          "warnings": []
+        },
+        "face4": {
+          "status": "done_with_skips",
+          "pushed": [
+            {
+              "eid": "dshort_20260515_01",
+              "objectId": "export/UzFfBgAAxMqCdBwBYxnJjMzT4DCa3BggR7s5kQa8qfOniAuXQQ"
+            },
+            {
+              "eid": "dshort_20260515_03",
+              "objectId": "export/UzFfBgAAxMiCPERjJh_JjMzT4DCafDLUNJdSICjFmul0HC7Yyw"
+            }
+          ],
+          "pushedCount": 2,
+          "blocked": [
+            {
+              "eid": "dshort_20260515_02",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "eid": "dshort_20260515_04",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "dshort_20260515_02",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            },
+            {
+              "face": "face4",
+              "eid": "dshort_20260515_04",
+              "reason": "sourceReuse 去重拦截（源已做过）"
+            }
+          ]
+        }
+      },
+      "published": false,
+      "facesDone": 2,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "dshort_20260515_02",
+          "reason": "sourceReuse 去重拦截（源已做过）"
+        },
+        {
+          "face": "face4",
+          "eid": "dshort_20260515_04",
+          "reason": "sourceReuse 去重拦截（源已做过）"
+        }
+      ],
+      "summaryFile": null
+    },
+    {
+      "date": "2026-06-10",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 8,
+          "content": "drafts/2026-06-10/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "SAP Cloud Infrastructure 获德国 VS-NfD 涉密处理许可：受监管行业上云清掉一道硬门槛",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "Ericsson 用 Business Data Fabric 把 AI 推向全企业：规模化 AI 的前提是数据架构，不是模型",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "SAP NOW Taiwan 重申「自主营运企业」愿景：Joule 走向 50+ 业务助理，国巨已落地 POC",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "SAP Customer Checkout 牵手 Viva.com：POS 端「任意设备收款」落地，对账与收入入账被一并改写",
+              "hasCover": true
+            },
+            {
+              "slug": "article_05_v1",
+              "title": "Bridgestone EMEA 用 SAP BTP 重构 CAPEX 管理：跨 30 国投资从表格邮件搬上单一平台，年省 7000 小时",
+              "hasCover": true
+            },
+            {
+              "slug": "article_06_v1",
+              "title": "SAP 与 Climeworks 结成碳移除联盟：数百万欧元、3.7 万吨碳信用，本质是一道财务入账与披露题",
+              "hasCover": true
+            }
+          ],
+          "count": 6,
+          "warnings": []
+        },
+        "face4": {
+          "status": "done",
+          "pushed": [
+            {
+              "eid": "auto_20260609_163d23b9fbf57b",
+              "objectId": "export/UzFfBgAAxJWCZGECOCbOjMzT4DCakcTJM3pSGBoiqWgZjVnTFw"
+            },
+            {
+              "eid": "auto_20260609_1cff773f1350f6",
+              "objectId": "export/UzFfBgAAxOqCJCtad0rOjMzT4DCaeWQrNMEbBLsjTGh3J5nbtw"
+            },
+            {
+              "eid": "auto_20260609_5a2263e9a47d71",
+              "objectId": "export/UzFfBgAAxOSCOC1EA0vOjMzT4DCac8ZAw5H6WhMhv3KE-XQGeg"
+            },
+            {
+              "eid": "auto_20260609_6f949c9e7be247",
+              "objectId": "export/UzFfBgAAxPiCfHUSbEvOjMzT4DCaee_E_UHwfv9Hi2yLrp5NYg"
+            },
+            {
+              "eid": "auto_20260609_fb77079f3fc831",
+              "objectId": "export/UzFfBgAAxPaCTHkJeEjOjMzT4DCafBo7gYk2di0AjQQjpiaQqg"
+            },
+            {
+              "eid": "auto_20260610_climeworks01",
+              "objectId": "export/UzFfBgAAxJaCZCgpYG7JjMzT4DCaQ01Ubf21zOi0IHitPPz-dw"
+            }
+          ],
+          "pushedCount": 6,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": true,
+      "facesDone": 2,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_face34_complete.json"
+    },
+    {
+      "date": "2026-06-09",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": "otQVcfbnqH0gN97Wv-lt3MzK6j0XW_BX3uiprts8XcMFssPnFQhWEoSoFXZzbwV8",
+          "items": 8,
+          "content": "drafts/2026-06-09/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "SAP Business Data Cloud：可信 AI 的数据前提",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "SAP Databricks 合作：AI 数据底座的项目边界",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "SAP Emarsys 零售 AI 报告：数据信任先于自动化",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "SAP × Google Cloud 多代理 AI：权限边界成项目核心",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "partial",
+          "pushed": [
+            {
+              "eid": "auto_20260608_74ef25fdd6cd1c",
+              "objectId": "export/UzFfBgAAxK6DaE0MCyPMjMzT4DCaJs90X66imtGFMxlibRtPqA"
+            },
+            {
+              "eid": "auto_20260608_7915b359d3ebf8",
+              "objectId": "export/UzFfBgAAxKSDOGpZIyHMjMzT4DCaws6VYnQ4N0gesKhy_Me5Yw"
+            },
+            {
+              "eid": "auto_20260608_8af70a2fe9f229",
+              "objectId": "export/UzFfBgAAxKCDHEx0PibMjMzT4DCaXBjHXMZTWQW-6Iihsr1k_g"
+            },
+            {
+              "eid": "auto_20260608_f47b4314c5b8dc",
+              "objectId": "export/UzFfBgAAxLGDRB54bCTMjMzT4DCad254aBgYrNLIhCDfR7l-OQ"
+            }
+          ],
+          "pushedCount": 4,
+          "blocked": [
+            {
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "_progress",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260609T005426_FULL_SUCCESS_cowork_4faces.json"
+    },
+    {
+      "date": "2026-06-08",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 8,
+          "content": "drafts/2026-06-08/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "count": 0,
+          "warnings": []
+        },
+        "face4": {
+          "status": "pending",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": false,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_20260608T194552+0900_partial_failure_hotnews_cover_person_gate.json"
+    },
+    {
+      "date": "2026-06-07",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 4,
+          "content": "drafts/2026-06-07/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "法国主权云投资：Business AI 的合规底座",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "巴塞罗那 Digital Hub：客户运营的二十年信号",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "ASICS HR 云治理：AI 前先统一数据",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "Achmea SAP 合规：安全监控进入日常运营",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "partial",
+          "pushed": [
+            {
+              "eid": "auto_20260607_294d91887fffb3",
+              "objectId": "export/UzFfBgAAxMSCOH99cxPNjMzT4DCaQvxpGqJmwxBHtXWz2fBc7A"
+            },
+            {
+              "eid": "auto_20260607_72014414a8ffa6",
+              "objectId": "export/UzFfBgAAxNCCMDJ9LDHCjMzT4DCafxw-3UIRAlhYYl9zkBIfoA"
+            },
+            {
+              "eid": "auto_20260607_72014414a8ffa6_v2",
+              "objectId": "export/UzFfBgAAxNSCEDd1fxbNjMzT4DCa6myuxgC9PQ0iKVjas0C1oQ"
+            },
+            {
+              "eid": "auto_20260607_7dfc54ae18a3d3",
+              "objectId": "export/UzFfBgAAxLCDYGsNaTHCjMzT4DCa7RQBetFnkoj1_wctkb9REQ"
+            },
+            {
+              "eid": "auto_20260607_7dfc54ae18a3d3_v2",
+              "objectId": "export/UzFfBgAAxMWCMGRfLhHNjMzT4DCaNhq-9IC--D8P5tIJd9baCA"
+            },
+            {
+              "eid": "auto_20260607_c52e3767c3606d",
+              "objectId": "export/UzFfBgAAxL-DQCFQRxbNjMzT4DCajsdQWbKgPGnDlCT7z2ED0Q"
+            }
+          ],
+          "pushedCount": 6,
+          "blocked": [
+            {
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "cover-standard-review",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "presenter_asr_20260607",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "cover-standard-review",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "presenter_asr_20260607",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "_progress",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "cover-standard-review",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "presenter_asr_20260607",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260608T151850+0900_hotnews_resend_confirmed.json"
+    },
+    {
+      "date": "2026-06-06",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 4,
+          "content": "drafts/2026-06-06/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_90_v1",
+              "title": "AI 与 SAP 顾问：分界线不是年资，而是三类工作",
+              "hasCover": true
+            }
+          ],
+          "count": 1,
+          "warnings": []
+        },
+        "face4": {
+          "status": "pending",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": false,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_20260606T042614+0900_partial_failure_hotnews_channels_input_gate.json"
+    },
+    {
+      "date": "2026-06-05",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 4,
+          "content": "drafts/2026-06-05/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "Taulia 财务转型：供应商生态进入 CFO 议题",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "KPMG 中国携手 SAP：云与 AI 的运营边界",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "Signavio 四年 Leader：流程智能先于自动化",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "WMS Leader 认可：仓库执行现代化的边界",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "done",
+          "pushed": [
+            {
+              "eid": "auto_20260605_30a18ce3d49da9",
+              "objectId": "export/UzFfBgAAxPqCVB0DfnTUjMzT4DCaEzejqKZNt2fbujNujM96ZA"
+            },
+            {
+              "eid": "auto_20260605_40ec7021bb60d0",
+              "objectId": "export/UzFfBgAAxOiCHAMsQHTUjMzT4DCaSc7FYa6Gstv2MFyIC0V58g"
+            },
+            {
+              "eid": "auto_20260605_43970d6fc9ac44",
+              "objectId": "export/UzFfBgAAxOKCOD0cK3TUjMzT4DCakDvGanXH87t-vQ0lIRE49w"
+            },
+            {
+              "eid": "auto_20260605_acb8d1f59d117f",
+              "objectId": "export/UzFfBgAAxOCCSHZbG3fUjMzT4DCaVGznyuT5EvlMBERu-fJTnw"
+            }
+          ],
+          "pushedCount": 4,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": true,
+      "facesDone": 2,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_20260605T205820+0900_full_success_detailed.json"
+    },
+    {
+      "date": "2026-06-04",
+      "faces": {
+        "face1": {
+          "status": "pending",
+          "mediaId": null,
+          "items": 0,
+          "content": null,
+          "published": false
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "count": 0,
+          "warnings": []
+        },
+        "face4": {
+          "status": "pending",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": false,
+      "facesDone": 0,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_20260604T190708+0900_partial_failure_studio_write_gate.json"
+    },
+    {
+      "date": "2026-06-03",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 4,
+          "content": "drafts/2026-06-03/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "SAP中国峰会：商业AI进入自主运营企业议题",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "Victrola上云：ECC迁移到Cloud ERP的治理课",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "SAP Q1结果：云转型叙事下的客户沟通边界",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "SAP AI价值报告：智能体AI预期下的落地边界",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "failed",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [
+            {
+              "eid": "2026-06-03-sap-ai-value-report",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-03-sap-q1-cloud-boundary",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-03-sapnow-autonomous-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-03-victrola-cloud-erp",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-06-03-sap-ai-value-report",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-03-sap-q1-cloud-boundary",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-03-sapnow-autonomous-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-03-victrola-cloud-erp",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "2026-06-03-sap-ai-value-report",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-03-sap-q1-cloud-boundary",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-03-sapnow-autonomous-ai",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-03-victrola-cloud-erp",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": null
+    },
+    {
+      "date": "2026-06-02",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 7,
+          "content": "drafts/2026-06-02/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "中国 AI 价值报告：智能体预期升温后的企业落地边界",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "SuccessFactors 1H 2026：HR 云正在重新连接人与企业运营",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "Reltio 收购完成：SAP AI 项目的主数据前置课",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "瑞穗银行采用 MBC：资金连接标准化进入日本银行场景",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "failed",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [
+            {
+              "eid": "2026-06-02-mizuho-mbc",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-02-reltio-master-data",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-02-sap-ai-value-report",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-02-successfactors-hr-cloud",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-06-02-mizuho-mbc",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-02-reltio-master-data",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-02-sap-ai-value-report",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-02-successfactors-hr-cloud",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "2026-06-02-mizuho-mbc",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-02-reltio-master-data",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-02-sap-ai-value-report",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-02-successfactors-hr-cloud",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "_progress",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260602T193958+0900_success_quantity_override.json"
+    },
+    {
+      "date": "2026-06-01",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 8,
+          "content": "drafts/2026-06-01/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "Business AI 发布亮点：SAP 把 AI 放进业务转型管理现场",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "BTP 采购主题：数据、应用与 AI 正进入采购竞争力底座",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "35 亿欧元 Eurobond：SAP 的长期投资能力也是客户风险变量",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "Ziegler 上云案例：传统企业采用 Public Edition 的治理课",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "failed",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [
+            {
+              "eid": "2026-06-01-sap-btp-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-01-sap-q1-2026-release-business-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-01-sap-sap-35-eurobond",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-06-01-sap-ziegler-sap-s-4hana-cloud-public-edition",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "channels-debug",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "qa-depth4",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "qa-depth4-final",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-06-01-sap-btp-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-01-sap-q1-2026-release-business-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-01-sap-sap-35-eurobond",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-06-01-sap-ziegler-sap-s-4hana-cloud-public-edition",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "channels-debug",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "qa-depth4",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "qa-depth4-final",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "2026-06-01-sap-btp-ai",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-01-sap-q1-2026-release-business-ai",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-01-sap-sap-35-eurobond",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-06-01-sap-ziegler-sap-s-4hana-cloud-public-edition",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "channels-debug",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "qa-depth4",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "qa-depth4-final",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260601T230910+0900_full_success.json"
+    },
+    {
+      "date": "2026-05-31",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 8,
+          "content": "drafts/2026-05-31/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "content_ready",
+          "articles": [
+            {
+              "slug": "article_01_v1",
+              "title": "Dremio 收购案：SAP 正把非 SAP 数据纳入 agentic AI 的可治理底座",
+              "hasCover": true
+            },
+            {
+              "slug": "article_02_v1",
+              "title": "Prior Labs 收购案：SAP 在欧洲补前沿 AI 研究能力，而非只做应用层包装",
+              "hasCover": true
+            },
+            {
+              "slug": "article_03_v1",
+              "title": "Reltio 收购完成：主数据治理成为 SAP Business AI 项目的前置条件",
+              "hasCover": true
+            },
+            {
+              "slug": "article_04_v1",
+              "title": "Safie 采用 SAP Cloud ERP：日本成长型企业云 ERP 不是大企业专属议题",
+              "hasCover": true
+            }
+          ],
+          "count": 4,
+          "warnings": []
+        },
+        "face4": {
+          "status": "failed",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [
+            {
+              "eid": "2026-05-31-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-advanced-success-plan-sap-customer-experience",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-dremio-sap-sap-agentic-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-japan-safie-sap-cloud-erp",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-prior-labs-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-reltio",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-sap-signavio-gartner-leader",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-31-sap-southeast-asia-garuda-indonesia-rise-with-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-advanced-success-plan-sap-customer-experience",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-dremio-sap-sap-agentic-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-japan-safie-sap-cloud-erp",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-prior-labs-ai",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-reltio",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-sap-signavio-gartner-leader",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-31-sap-southeast-asia-garuda-indonesia-rise-with-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "_progress",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-advanced-success-plan-sap-customer-experience",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-dremio-sap-sap-agentic-ai",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-japan-safie-sap-cloud-erp",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-prior-labs-ai",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-reltio",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-sap-signavio-gartner-leader",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-31-sap-southeast-asia-garuda-indonesia-rise-with-sap",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "_progress",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260531T210449+0900_full_success.json"
+    },
+    {
+      "date": "2026-05-30",
+      "faces": {
+        "face1": {
+          "status": "done",
+          "mediaId": null,
+          "items": 8,
+          "content": "drafts/2026-05-30/wechat-article.md",
+          "published": true
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "count": 0,
+          "warnings": []
+        },
+        "face4": {
+          "status": "failed",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [
+            {
+              "eid": "2026-05-30-35-eurobond-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "eid": "2026-05-30-business-ai",
+              "reason": "未生成 / 未推"
+            }
+          ],
+          "failReasons": [
+            {
+              "face": "face4",
+              "eid": "2026-05-30-35-eurobond-sap",
+              "reason": "未生成 / 未推"
+            },
+            {
+              "face": "face4",
+              "eid": "2026-05-30-business-ai",
+              "reason": "未生成 / 未推"
+            }
+          ]
+        }
+      },
+      "published": true,
+      "facesDone": 1,
+      "facesTotal": 4,
+      "failReasons": [
+        {
+          "face": "face4",
+          "eid": "2026-05-30-35-eurobond-sap",
+          "reason": "未生成 / 未推"
+        },
+        {
+          "face": "face4",
+          "eid": "2026-05-30-business-ai",
+          "reason": "未生成 / 未推"
+        }
+      ],
+      "summaryFile": "automation_summary_20260531T_resend_20260530.json"
+    },
+    {
+      "date": "2026-05-29",
+      "faces": {
+        "face1": {
+          "status": "pending",
+          "mediaId": null,
+          "items": 0,
+          "content": null,
+          "published": false
+        },
+        "face2": {
+          "status": "pending",
+          "objectIds": [],
+          "count": 0,
+          "titles": []
+        },
+        "face3": {
+          "status": "pending",
+          "articles": [],
+          "count": 0,
+          "warnings": []
+        },
+        "face4": {
+          "status": "pending",
+          "pushed": [],
+          "pushedCount": 0,
+          "blocked": [],
+          "failReasons": []
+        }
+      },
+      "published": false,
+      "facesDone": 0,
+      "facesTotal": 4,
+      "failReasons": [],
+      "summaryFile": "automation_summary_20260529T234223+0900.json"
+    }
+  ]
+}

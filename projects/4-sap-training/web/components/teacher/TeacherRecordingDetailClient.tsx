@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Save } from "lucide-react";
 
@@ -42,12 +42,15 @@ type FeedbackForm = {
   correctedJapanese: string;
 };
 
-const dimensions: { key: keyof Omit<FeedbackForm, "scoreOverall" | "comment" | "correctedJapanese">; label: string }[] = [
+const dimensions: {
+  key: keyof Omit<FeedbackForm, "scoreOverall" | "comment" | "correctedJapanese">;
+  label: string;
+}[] = [
   { key: "pronunciation", label: "发音" },
   { key: "fluency", label: "流利度" },
   { key: "naturalness", label: "自然度" },
   { key: "sapAccuracy", label: "SAP 术语准确度" },
-  { key: "consultantLike", label: "顾问表达感" }
+  { key: "consultantLike", label: "顾问表达感" },
 ];
 
 const initialForm: FeedbackForm = {
@@ -58,7 +61,7 @@ const initialForm: FeedbackForm = {
   sapAccuracy: 3,
   consultantLike: 3,
   comment: "",
-  correctedJapanese: ""
+  correctedJapanese: "",
 };
 
 export function TeacherRecordingDetailClient({ id }: { id: string }) {
@@ -69,7 +72,7 @@ export function TeacherRecordingDetailClient({ id }: { id: string }) {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  async function refresh() {
+  const refresh = useCallback(async () => {
     setLoading(true);
     setError("");
     const response = await fetch(`/api/teacher/recordings?recordingId=${id}`);
@@ -94,14 +97,14 @@ export function TeacherRecordingDetailClient({ id }: { id: string }) {
         sapAccuracy: next.feedback.scoreDim?.sapAccuracy ?? 3,
         consultantLike: next.feedback.scoreDim?.consultantLike ?? 3,
         comment: next.feedback.comment ?? "",
-        correctedJapanese: next.feedback.correctedJapanese ?? ""
+        correctedJapanese: next.feedback.correctedJapanese ?? "",
       });
     }
-  }
+  }, [id]);
 
   useEffect(() => {
     void refresh();
-  }, [id]);
+  }, [refresh]);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -118,11 +121,11 @@ export function TeacherRecordingDetailClient({ id }: { id: string }) {
           fluency: form.fluency,
           naturalness: form.naturalness,
           sapAccuracy: form.sapAccuracy,
-          consultantLike: form.consultantLike
+          consultantLike: form.consultantLike,
         },
         comment: form.comment,
-        correctedJapanese: form.correctedJapanese
-      })
+        correctedJapanese: form.correctedJapanese,
+      }),
     });
     const data = await response.json();
     setSaving(false);
@@ -148,7 +151,11 @@ export function TeacherRecordingDetailClient({ id }: { id: string }) {
       </div>
 
       {loading ? <p className="text-sm text-slate-500">加载中...</p> : null}
-      {error ? <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</div> : null}
+      {error ? (
+        <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          {error}
+        </div>
+      ) : null}
       {recording ? (
         <>
           <section className="panel space-y-3 p-4">
@@ -177,30 +184,66 @@ export function TeacherRecordingDetailClient({ id }: { id: string }) {
                 <span lang="ja">{recording.targetJapanese}</span>
               </p>
             ) : null}
-            {recording.audioGetUrl ? <audio controls src={recording.audioGetUrl} className="w-full" /> : <p className="text-sm text-amber-700">录音文件不可用。</p>}
+            {recording.audioGetUrl ? (
+              <audio controls src={recording.audioGetUrl} className="w-full" />
+            ) : (
+              <p className="text-sm text-amber-700">录音文件不可用。</p>
+            )}
           </section>
 
           <form onSubmit={submit} className="panel space-y-4 p-4">
             <h2 className="font-semibold text-ink">评分</h2>
             {dimensions.map(({ key, label }) => (
-              <label key={key} className="grid grid-cols-[112px_1fr_32px] items-center gap-3 text-sm md:grid-cols-[160px_1fr_32px]">
+              <label
+                key={key}
+                className="grid grid-cols-[112px_1fr_32px] items-center gap-3 text-sm md:grid-cols-[160px_1fr_32px]"
+              >
                 <span>{label}</span>
-                <input type="range" min={1} max={5} value={form[key]} onChange={(event) => setForm((current) => ({ ...current, [key]: Number(event.target.value) }))} />
+                <input
+                  type="range"
+                  min={1}
+                  max={5}
+                  value={form[key]}
+                  onChange={(event) =>
+                    setForm((current) => ({ ...current, [key]: Number(event.target.value) }))
+                  }
+                />
                 <span className="text-right font-semibold text-sap">{form[key]}</span>
               </label>
             ))}
             <label className="grid grid-cols-[112px_1fr_32px] items-center gap-3 text-sm md:grid-cols-[160px_1fr_32px]">
               <span className="font-semibold">总分</span>
-              <input type="range" min={1} max={5} value={form.scoreOverall} onChange={(event) => setForm((current) => ({ ...current, scoreOverall: Number(event.target.value) }))} />
+              <input
+                type="range"
+                min={1}
+                max={5}
+                value={form.scoreOverall}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, scoreOverall: Number(event.target.value) }))
+                }
+              />
               <span className="text-right font-bold text-sap">{form.scoreOverall}</span>
             </label>
             <div>
               <label className="text-sm font-semibold text-ink">纠正后日语表达</label>
-              <textarea className="input mt-1 min-h-20 w-full" lang="ja" value={form.correctedJapanese} onChange={(event) => setForm((current) => ({ ...current, correctedJapanese: event.target.value }))} />
+              <textarea
+                className="input mt-1 min-h-20 w-full"
+                lang="ja"
+                value={form.correctedJapanese}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, correctedJapanese: event.target.value }))
+                }
+              />
             </div>
             <div>
               <label className="text-sm font-semibold text-ink">留言</label>
-              <textarea className="input mt-1 min-h-24 w-full" value={form.comment} onChange={(event) => setForm((current) => ({ ...current, comment: event.target.value }))} />
+              <textarea
+                className="input mt-1 min-h-24 w-full"
+                value={form.comment}
+                onChange={(event) =>
+                  setForm((current) => ({ ...current, comment: event.target.value }))
+                }
+              />
             </div>
             <button type="submit" className="btn-primary" disabled={saving}>
               <Save className="h-4 w-4" />

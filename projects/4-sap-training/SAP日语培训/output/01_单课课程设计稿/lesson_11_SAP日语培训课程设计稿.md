@@ -1,18 +1,28 @@
-# SAP 日语培训：第 11 课《跨公司调拨、STO与供应链需求》
+# SAP 日语培训：第 11 课《日本SAP服务商与合作模式》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 源视频覆盖第10-11节；本课取后半段STO和供应链内容。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本SAP服务商与合作模式
+- 真实日本 SAP 项目场景：多家公司参与项目，顾问需要清楚说明谁负责、找谁确认、怎样升级问题。
+- 对应项目阶段：Project governance / Multi-vendor collaboration
+- 初级顾问必须听懂的关键词：元請け / ベンダー / 責任分界 / 連絡ルート / エスカレーション
+- 学生可交付输出：多公司项目中的职责、确认路径、升级路径说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：store transport order、purchase from branch、quantity required
-- 迁移后的 SAP 日语课主题：用日语说明STO/跨组织补货流程
-- 对应 SAP 模块：MM / SD
-- 对应项目阶段：Design / Integration test
-- 对应顾问能力：解释跨组织业务步骤和库存/采购影响
-- 对应日语能力：流程说明、数量确认、影响范围说明
-- 本课最终输出任务：90秒说明STO业务流程
+- 迁移后的 SAP 日语课主题：日本SAP服务商与合作模式
+- 对应 SAP 模块：PMO / Multi-vendor / Common
+- 对应项目阶段：Project governance / Multi-vendor collaboration
+- 对应顾问能力：说明多公司项目中的责任分工和升级路线
+- 对应日语能力：职责边界、确认路径、升级路径
+- 本课最终输出任务：多公司项目中的职责、确认路径、升级路径说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：小分公司向大分公司申请补货，顾问要说明STO流程、库存影响和后续单据。
+- 本课重点场景：多家公司参与项目，顾问需要清楚说明谁负责、找谁确认、怎样升级问题。
 - 本课 input：需求数量、供货组织、收货组织、库存状态
 - 本课 system action：SAP创建STO并推进发货/收货
 - 本课 output：调拨单据、库存变动、待确认差异

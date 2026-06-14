@@ -1,18 +1,28 @@
-# SAP 日语培训：第 07 课《接口、税务系统与SAP回传字段》
+# SAP 日语培训：第 07 课《日本企业信息化发展趋势》
 
 - generated_at: `2026-05-19T02:19:55+09:00`
 - input_source_policy: `Only files under /Users/openclawxiaoer/sap-hub/projects/4-sap-training/SAP日语培训/Input`
 - source_note: 单课视频；使用完整逐字稿和时间线教程。
 
+## 0. 日本 SAP 顾问审校修正（2026-05-21）
+
+- 审校结论：本课正式学习口径以 V4 课程主题和 v4 teacher_focused 资产为准；下方“原课内容摘要”只作为 Input 旧素材线索，不作为网站正式教学主线。
+- 正式主题：日本企业信息化发展趋势
+- 真实日本 SAP 项目场景：面试或项目初期，顾问需要用简洁日语说明日本企业IT转型的大方向和SAP顾问应关注的点。
+- 对应项目阶段：Strategy / Project entry interview
+- 初级顾问必须听懂的关键词：DX / 標準化 / クラウド / データ活用 / SAP導入
+- 学生可交付输出：日本企业IT转型与SAP顾问关注点说明
+- 讲解要求：不要只背术语；每个表达必须说明“谁在会议上说、为了确认什么、会留下什么行动项”。
+
 ## 1. 本课定位
 
 - 原 SAP 英文课主题：tax system、inbound/outbound、reference field、official invoice number
-- 迁移后的 SAP 日语课主题：用日语说明SAP与外部系统接口和回传结果
-- 对应 SAP 模块：FI / SD / Interface
-- 对应项目阶段：Design / Integration test
-- 对应顾问能力：说明接口输入、系统动作、返回值和异常处理
-- 对应日语能力：接口说明、字段确认、问题追踪
-- 本课最终输出任务：说明一个外部系统回传流程
+- 迁移后的 SAP 日语课主题：日本企业信息化发展趋势
+- 对应 SAP 模块：Common / IT strategy / Interview
+- 对应项目阶段：Strategy / Project entry interview
+- 对应顾问能力：用简洁日语说明日本企业IT转型与SAP顾问价值
+- 对应日语能力：趋势说明、顾问关注点说明
+- 本课最终输出任务：日本企业IT转型与SAP顾问关注点说明
 
 ## 2. 原课内容摘要
 
@@ -44,7 +54,7 @@
 - requirement gathering / business requirement / scope
 - configuration / customizing / master data / transaction data
 - testing / UAT / expected result / actual result / issue
-- 本课重点场景：税务或电子发票系统返回正式发票号码到SAP，顾问要说明字段和异常处理。
+- 本课重点场景：面试或项目初期，顾问需要用简洁日语说明日本企业IT转型的大方向和SAP顾问应关注的点。
 - 本课 input：SAP凭证、外部系统请求、发票号码
 - 本课 system action：接口发送、校验、回写reference field
 - 本课 output：回传号码、日志、错误清单

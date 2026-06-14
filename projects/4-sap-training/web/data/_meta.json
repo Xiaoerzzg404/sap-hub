@@ -1,22 +1,37 @@
 {
   "schemaVersion": "1.4.0",
-  "generatedAt": "2026-05-21T12:03:12+09:00",
-  "sourceCommit": "030692f",
+  "generatedAt": "2026-05-21T23:52:53.180Z",
+  "sourceCommit": "5654676e7971f37cab4940d55f2b5ae79330c217",
   "stats": {
     "tracks": 1,
     "lessons": 24,
     "phrases": 480,
     "shadowing": 480,
     "roleplays": 48,
-    "glossaryTerms": 528,
+    "glossaryTerms": 583,
     "libraryItems": 6,
-    "totalAssets": 240
+    "totalAssets": 240,
+    "japaneseCoachEntries": 24
   },
   "audio": {
     "provider": "azure",
     "voice": "ja-JP-NanamiNeural",
     "generated": false
   },
+  "notes": [
+    "Chinese translation fields for phrases/shadowing are intentionally empty.",
+    "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
+    "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
+    "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
+    "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
+    "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display.",
+    "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance.",
+    "2026-05-21 content audit aligns lesson titles and project-stage guidance to V4 Japanese SAP consultant review sources.",
+    "2026-05-21 adds 55 project-stage/meeting/deliverable glossary terms across Lesson 14-24.",
+    "2026-05-21 adds a teacher coach layer for /teacher with classroom rules, lesson-by-lesson coaching, correction rubrics, and 24 SAP project Japanese teaching missions.",
+    "2026-05-21 adds /me as the student learning home for progress, notes, recordings, and teacher feedback, plus docs/SITE_ARCHITECTURE.md for local revision and deployment discipline.",
+    "2026-05-21 local TTS generation writes /audio/audio-manifest.json and 1543 phrase/shadowing/term mp3 files; public deployment needs an explicit media strategy because mp3 files are gitignored."
+  ],
   "backend": {
     "auth": "next-auth@5",
     "database": "neon postgres",
@@ -32,14 +47,5 @@
     "consentRequired": true,
     "softDeleteEnabled": true,
     "hardDeleteAfterDays": 30
-  },
-  "notes": [
-    "Chinese translation fields for phrases/shadowing are intentionally empty.",
-    "Never fabricate Japanese or Chinese translations; see Phase 3 子任务 1.",
-    "Audio mp3 files are .gitignore'd; run `npm run tts` after providing creds.",
-    "Phase 3 selected TTS path C: script only, no mp3 generation in this commit.",
-    "Phase 5 adds Auth.js v5, Neon Postgres, Resend magic links, DB-backed content reads, progress/recording metadata APIs, and lazy-loaded markdown assets.",
-    "Phase 6 adds Cloudflare R2 direct recording uploads, presigned audio playback, enrollment-scoped teacher recording review, teacher_feedback, and student review feedback display.",
-    "Phase 7 adds magic-link confirm page, RBAC audit, optional Upstash/Sentry soft dependencies, privacy consent, recording soft delete, cleanup endpoint, CI, docs, and launch-readiness operations guidance."
-  ]
+  }
 }
