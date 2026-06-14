@@ -74,3 +74,9 @@
 ## Run13 双审纪要
 - FinalReview(独立子 agent)：PASS。四约束成立(只读不编造/不改其它系统/不碰FUZHKB/写盘安全)。
 - Lead 当轮修：P1(空 dirname 防裸崩)、P3(docstring 措辞精确——会刷新自身 trend/term 快照表,非纯只读)。P2 前向引用已澄清非bug。6 套全绿。
+| agent_output:run14_code | 2 | pass(SelfReview) | warning→fixed(FinalReview独立子会话) | pass | 2026-06-14 |
+
+## Run14 双审纪要
+- FinalReview(独立子 agent)：PASS。六约束成立(draft-only无发布/合规只跑可达公开源/set-e与单源失败继续不冲突·实测/status只读/bash3.2兼容/不碰FUZHKB)。
+- Lead 当轮修：parser 剥行尾注释(.split('#')[0])消除潜在漏选。6 套全绿。
+- 修正发现：旧 runner 手写白名单漂移(只3源)，新版自动选 9 源,优先作者全部纳入每日采集。

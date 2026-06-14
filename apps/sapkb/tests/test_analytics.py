@@ -78,6 +78,13 @@ class AnalyticsTest(unittest.TestCase):
         self.assertIn("新奇术语XX", terms)      # 高频新词入候选
         self.assertNotIn("Joule", terms)        # taxonomy(SAP_AI)已有 → 不入候选
 
+    def test_system_status(self):
+        s = analytics.system_status(self.db)
+        self.assertEqual(s["documents_total"], s["fulltext"] + s["metadata_only"])
+        self.assertGreaterEqual(s["documents_total"], 2)
+        self.assertIn("platforms", s)
+        self.assertIsInstance(s["top_authors"], list)
+
     def test_export_brief(self):
         analytics.recompute_popularity(self.db)
         out = os.path.join(self.tmp.name + "_brief.md") if hasattr(self.tmp, "name") else "/tmp/_b.md"

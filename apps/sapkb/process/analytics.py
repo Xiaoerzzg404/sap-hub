@@ -158,6 +158,41 @@ def detect_term_candidates(db_path: str, taxonomy_path: Optional[str] = None,
         con.close()
 
 
+def system_status(db_path: str) -> Dict[str, Any]:
+    """一屏系统健康（只读）：总量 / 全文比 / 平台 / top 作者 / 提炼 / 发布 / 最近采集。"""
+    con = sqlite3.connect(db_path)
+    con.row_factory = sqlite3.Row
+    try:
+        def one(q, *a):
+            r = con.execute(q, a).fetchone()
+            return r[0] if r else None
+        total = one("SELECT COUNT(*) FROM documents WHERE content_status!='removed'")
+        fulltext = one("SELECT COUNT(*) FROM documents WHERE content_status='fulltext_saved'")
+        reposts = one("SELECT COUNT(*) FROM documents WHERE canonical_document_id IS NOT NULL")
+        platforms = {r[0]: r[1] for r in con.execute(
+            "SELECT source_platform, COUNT(*) FROM documents WHERE content_status!='removed' "
+            "GROUP BY source_platform ORDER BY 2 DESC").fetchall()}
+        top_authors = [{"author": r[0], "docs": r[1]} for r in con.execute(
+            "SELECT a.name, COUNT(*) FROM documents d JOIN authors a ON a.id=d.author_id "
+            "WHERE d.content_status!='removed' GROUP BY a.id ORDER BY 2 DESC LIMIT 8").fetchall()]
+        categories = {r[0]: r[1] for r in con.execute(
+            "SELECT tag_value, COUNT(DISTINCT document_id) FROM document_tags WHERE tag_type='category' "
+            "GROUP BY tag_value ORDER BY 2 DESC LIMIT 12").fetchall()}
+        return {
+            "documents_total": total, "fulltext": fulltext, "metadata_only": total - (fulltext or 0),
+            "reposts_merged": reposts,
+            "authors": one("SELECT COUNT(*) FROM authors"),
+            "csdn_tags": one("SELECT COUNT(*) FROM document_tags WHERE tag_type='csdn_tag'"),
+            "insights": one("SELECT COUNT(*) FROM insights"),
+            "publications": one("SELECT COUNT(*) FROM publications"),
+            "watch_enabled_authors": one("SELECT COUNT(*) FROM authors WHERE watch_enabled=1"),
+            "last_imported": one("SELECT MAX(imported_at) FROM documents"),
+            "platforms": platforms, "top_authors": top_authors, "categories": categories,
+        }
+    finally:
+        con.close()
+
+
 def build_selection_brief(db_path: str, out_path: str, shortlist_n: int = 12,
                           trend_top: int = 10) -> Dict[str, Any]:
     """汇总 SAPKB 情报为一份【选题简报】md：top 选题 + 趋势热点 + 新词候选 + 最近提炼/学习路径。
