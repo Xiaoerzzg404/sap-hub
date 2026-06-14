@@ -80,3 +80,9 @@
 - FinalReview(独立子 agent)：PASS。六约束成立(draft-only无发布/合规只跑可达公开源/set-e与单源失败继续不冲突·实测/status只读/bash3.2兼容/不碰FUZHKB)。
 - Lead 当轮修：parser 剥行尾注释(.split('#')[0])消除潜在漏选。6 套全绿。
 - 修正发现：旧 runner 手写白名单漂移(只3源)，新版自动选 9 源,优先作者全部纳入每日采集。
+| agent_output:run15_code | 2 | pass(SelfReview) | n/a(小只读特性,Lead自审) | pass | 2026-06-14 |
+
+## Run15 双审纪要
+- 源健康监控(source_health.jsonl + source-health/status)。Lead 自审捕获并修真 bug：源失败早返回路径漏记健康(broken 检测关键)→已在 except 分支补 _record_source_health。
+- test_source_health 确定性验证 broken/exhausted/healthy 判定正确。6 套全绿。
+- 本轮只读分析特性+无对外动作,surface 小,Lead 自审为主(Codex token 仍用尽)。

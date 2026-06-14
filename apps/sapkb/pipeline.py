@@ -134,6 +134,8 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
                        {"audit_type": "harvest_source_error", "status": "error",
                         "risk_level": "medium", "findings_json": {"error": str(src_exc)}})
             con.commit()
+            con.close()
+            _record_source_health(db_path, stats)  # 源失败也记健康（Run15：broken 检测的关键）
             return stats
         for rec in records:
             stats["seen"] += 1
@@ -249,7 +251,23 @@ def run_harvest(source: str, db_path: str, vault_root: str = _DEFAULT_VAULT,
         con.commit()
     finally:
         con.close()
+    _record_source_health(db_path, stats)
     return stats
+
+
+def _record_source_health(db_path: str, stats: Dict[str, Any]) -> None:
+    """把本轮采集 stats 追加到 data/source_health.jsonl（源健康监控用，Run15）。失败静默不影响采集。"""
+    try:
+        import json
+        path = os.path.join(os.path.dirname(db_path), "source_health.jsonl")
+        rec = {"date": _today(), "ts": _now(), "source": stats.get("source"),
+               "seen": stats.get("seen", 0), "inserted": stats.get("inserted", 0),
+               "duplicate": stats.get("duplicate", 0), "errors": stats.get("errors", 0),
+               "source_error": stats.get("source_error")}
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
 
 
 def run_search(query: str, db_path: str, limit: int = 20) -> List[Dict[str, Any]]:

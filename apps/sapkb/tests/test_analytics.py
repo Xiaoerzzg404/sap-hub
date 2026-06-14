@@ -78,6 +78,28 @@ class AnalyticsTest(unittest.TestCase):
         self.assertIn("新奇术语XX", terms)      # 高频新词入候选
         self.assertNotIn("Joule", terms)        # taxonomy(SAP_AI)已有 → 不入候选
 
+    def test_source_health(self):
+        import json, tempfile
+        d = tempfile.mkdtemp()
+        db = os.path.join(d, "x.db")
+        rows = [
+            {"source": "srcBroken", "date": "2026-06-13", "seen": 0, "inserted": 0},
+            {"source": "srcBroken", "date": "2026-06-14", "seen": 0, "inserted": 0, "source_error": "404"},
+            {"source": "srcHealthy", "date": "2026-06-14", "seen": 30, "inserted": 5},
+            {"source": "srcExhausted", "date": "2026-06-12", "seen": 20, "inserted": 0},
+            {"source": "srcExhausted", "date": "2026-06-13", "seen": 20, "inserted": 0},
+            {"source": "srcExhausted", "date": "2026-06-14", "seen": 20, "inserted": 0},
+        ]
+        with open(os.path.join(d, "source_health.jsonl"), "w", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        h = analytics.source_health(db)
+        st = {s["source"]: s["state"] for s in h["sources"]}
+        self.assertEqual(st["srcBroken"], "broken")
+        self.assertEqual(st["srcHealthy"], "healthy")
+        self.assertEqual(st["srcExhausted"], "exhausted")
+        self.assertEqual(h["broken"], ["srcBroken"])
+
     def test_system_status(self):
         s = analytics.system_status(self.db)
         self.assertEqual(s["documents_total"], s["fulltext"] + s["metadata_only"])

@@ -116,6 +116,9 @@ def _build_parser() -> argparse.ArgumentParser:
     st = subparsers.add_parser("status", help="系统健康面板（只读）：总量/全文比/平台/top作者/提炼/发布")
     st.add_argument("--db-path", default=DEFAULT_DB_PATH)
 
+    sh = subparsers.add_parser("source-health", help="源健康监控：flag broken(连续抓0)/exhausted/healthy")
+    sh.add_argument("--db-path", default=DEFAULT_DB_PATH)
+
     ins = subparsers.add_parser("insight-new", help="R13 提炼：从源文档建 insight（版权角色硬隔离）")
     ins.add_argument("--type", default="knowledge_card",
                      choices=["knowledge_card", "experience_note", "growth_article", "trend_report", "learning_path"])
@@ -268,7 +271,13 @@ def main() -> None:
         return
     if args.command == "status":
         from process import analytics
-        print(json.dumps(analytics.system_status(args.db_path), ensure_ascii=False, indent=2))
+        s = analytics.system_status(args.db_path)
+        s["source_health"] = analytics.source_health(args.db_path)
+        print(json.dumps(s, ensure_ascii=False, indent=2))
+        return
+    if args.command == "source-health":
+        from process import analytics
+        print(json.dumps(analytics.source_health(args.db_path), ensure_ascii=False, indent=2))
         return
     if args.command == "export-brief":
         from process import analytics

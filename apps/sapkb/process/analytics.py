@@ -158,6 +158,48 @@ def detect_term_candidates(db_path: str, taxonomy_path: Optional[str] = None,
         con.close()
 
 
+def source_health(db_path: str, broken_rounds: int = 2) -> Dict[str, Any]:
+    """读 data/source_health.jsonl，按源给健康判定（Run15）：
+    - broken：最近 broken_rounds 轮 seen 全为 0（可能 404/源失效/反爬）——需关注。
+    - exhausted：近轮 seen>0 但 inserted 长期为 0（源没新文，正常）。
+    - healthy：近轮有 new。
+    """
+    import json
+    import os as _os
+    path = _os.path.join(_os.path.dirname(db_path), "source_health.jsonl")
+    runs: Dict[str, List[Dict[str, Any]]] = {}
+    if _os.path.exists(path):
+        for line in open(path, encoding="utf-8"):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            runs.setdefault(r.get("source") or "?", []).append(r)
+    out = []
+    for src, rs in runs.items():
+        rs = rs[-10:]  # 看最近 10 轮
+        last = rs[-1]
+        recent = rs[-broken_rounds:]
+        zero_seen = all((x.get("seen", 0) == 0) for x in recent) and len(recent) >= broken_rounds
+        has_new = any(x.get("inserted", 0) > 0 for x in rs[-3:])
+        if zero_seen:
+            state = "broken"
+        elif last.get("seen", 0) > 0 and not has_new:
+            state = "exhausted"
+        else:
+            state = "healthy"
+        out.append({"source": src, "state": state, "last_seen": last.get("seen", 0),
+                    "last_new": last.get("inserted", 0), "last_date": last.get("date"),
+                    "last_error": last.get("source_error"), "runs_tracked": len(rs)})
+    out.sort(key=lambda x: {"broken": 0, "exhausted": 1, "healthy": 2}[x["state"]])
+    broken = [x["source"] for x in out if x["state"] == "broken"]
+    return {"sources": out, "broken": broken, "broken_count": len(broken),
+            "total_sources": len(out)}
+
+
 def system_status(db_path: str) -> Dict[str, Any]:
     """一屏系统健康（只读）：总量 / 全文比 / 平台 / top 作者 / 提炼 / 发布 / 最近采集。"""
     con = sqlite3.connect(db_path)
